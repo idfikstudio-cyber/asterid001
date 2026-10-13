@@ -7,7 +7,7 @@
 :root{
   --bg:#f3f5f9; --surface:#ffffff; --ink:#131a2b; --muted:#5a6377; --line:#dde2ec;
   --accent:#1d3a8a; --gold:#e3a823; --gold-ink:#7a5300; --chip:#eef1f8;
-  --c-cut:#c2410c; --c-sfx:#1d7a5f; --c-mg:#1d3a8a; --c-zoom:#8a4fc4;
+  --c-cut:#c2410c; --c-sfx:#1d7a5f; --c-mg:#1d3a8a; --c-zoom:#8a4fc4; --c-broll:#a16207;
   /* on-video graphics: fixed, the video looks the same in every theme */
   --v-navy:#0f1d44; --v-gold:#ffc83d; --v-white:#ffffff; --v-paper:#fbf8f1; --v-red:#e5484d; --v-green:#2fb67c;
   --f-display:"Archivo","Arial Narrow",system-ui,sans-serif;
@@ -16,11 +16,11 @@
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
   --bg:#0c111d; --surface:#141b2b; --ink:#e9edf6; --muted:#9aa4b8; --line:#263049;
   --accent:#8fb0ff; --gold:#ffc83d; --gold-ink:#ffd97a; --chip:#1c2538;
-  --c-cut:#ff8a5c; --c-sfx:#53d1a6; --c-mg:#8fb0ff; --c-zoom:#c79bf2; color-scheme:dark}}
+  --c-cut:#ff8a5c; --c-sfx:#53d1a6; --c-mg:#8fb0ff; --c-zoom:#c79bf2; --c-broll:#f2c14e; color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#0c111d; --surface:#141b2b; --ink:#e9edf6; --muted:#9aa4b8; --line:#263049;
   --accent:#8fb0ff; --gold:#ffc83d; --gold-ink:#ffd97a; --chip:#1c2538;
-  --c-cut:#ff8a5c; --c-sfx:#53d1a6; --c-mg:#8fb0ff; --c-zoom:#c79bf2; color-scheme:dark}
+  --c-cut:#ff8a5c; --c-sfx:#53d1a6; --c-mg:#8fb0ff; --c-zoom:#c79bf2; --c-broll:#f2c14e; color-scheme:dark}
 *{box-sizing:border-box}
 body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.55}
 .wrap{max-width:1180px;margin:0 auto;padding-inline:16px;padding-block:20px 48px}
@@ -86,7 +86,7 @@ h1{font-family:var(--f-display);font-weight:850;font-stretch:88%;font-size:clamp
 .ev .d{font-size:14px;min-width:0}
 .ev .d small{display:block;color:var(--muted);font-size:12.5px}
 @media (max-width:460px){.ev{grid-template-columns:54px minmax(0,1fr)}.ev .k{grid-column:2}.ev .d{grid-column:1/-1;padding-left:64px;margin-top:-4px}}
-.k-cut{color:var(--c-cut)}.k-sfx{color:var(--c-sfx)}.k-mg{color:var(--c-mg)}.k-zoom{color:var(--c-zoom)}
+.k-broll{color:var(--c-broll)}.k-cut{color:var(--c-cut)}.k-sfx{color:var(--c-sfx)}.k-mg{color:var(--c-mg)}.k-zoom{color:var(--c-zoom)}
 .raw{display:flex;flex-direction:column;border-top:1px solid var(--line)}
 .line{display:grid;grid-template-columns:52px minmax(0,1fr) auto;gap:4px 10px;padding:8px 6px;border-bottom:1px solid var(--line);align-items:baseline}
 .line .t{font-variant-numeric:tabular-nums;color:var(--muted);font-size:13px}
@@ -296,7 +296,7 @@ td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
       <div class="pane" id="p-plan" role="tabpanel">
         <h2>Semua yang aku tambah, ikut masa</h2>
         <p>Tekan mana-mana baris untuk lompat ke saat tu dalam preview.</p>
-        <div class="legend"><span><i style="background:var(--c-cut)"></i>Potongan</span><span><i style="background:var(--c-mg)"></i>Grafik</span><span><i style="background:var(--c-sfx)"></i>Sound effect</span><span><i style="background:var(--c-zoom)"></i>Punch-in</span></div>
+        <div class="legend"><span><i style="background:var(--c-cut)"></i>Potongan</span><span><i style="background:var(--c-mg)"></i>Grafik</span><span><i style="background:var(--c-sfx)"></i>Sound effect</span><span><i style="background:var(--c-zoom)"></i>Punch-in</span><span><i style="background:var(--c-broll)"></i>B-roll</span></div>
         <div class="evlist" id="evlist"></div>
       </div>
 
@@ -323,43 +323,42 @@ td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
 
       <div class="pane" id="p-grade" role="tabpanel" hidden>
         <h2>Colour grade &amp; lighting</h2>
-        <p>Tekan <b>Banding warna</b> di bawah video untuk tengok perbezaan secara langsung. Arah: <b>bersih, hangat dan dipercayai</b>, macam studio podcast yang kemas. Aku tak buat look filem gelap sebab penonton ialah ibu bapa.</p>
+        <p>Versi 2: ikut maklum balas kau, aku <b>buang lampu muka</b> dan kekalkan warna kulit asal. Grade sekarang sangat halus, cuma kemaskan gambar tanpa ubah tone. Tekan <b>Banding warna</b> di bawah video untuk banding dengan video asal.</p>
         <div class="tablewrap"><table><thead><tr><th>Langkah</th><th>Apa aku buat</th><th>Kenapa</th></tr></thead><tbody>
-          <tr><td>1. Imbangan putih</td><td>Kurangkan sedikit kuning di bahagian gelap, dan buang sedikit hijau di bahagian tengah.</td><td>Dinding kelabu nampak bersih dan neutral, tak kekuningan.</td></tr>
-          <tr><td>2. Kontras lembut</td><td>Lengkung S yang lembut: hitam diangkat sedikit, highlight dinding tak pecah.</td><td>Nampak premium tapi kulit tak jadi keras.</td></tr>
-          <tr><td>3. Lampu muka</td><td>Cahaya lembut ditambah di kawasan muka dan dada (macam key light), lebih hangat sedikit.</td><td>Muka asal lebih gelap daripada dinding. Sekarang mata penonton terus ke muka.</td></tr>
-          <tr><td>4. Vignette halus</td><td>Tepi dan bucu digelapkan sedikit sahaja.</td><td>Fokus ke penyampai. Sofa kulit nampak lebih kaya.</td></tr>
-          <tr><td>5. Audio</td><td>Buang dengung rendah, kurangkan bunyi bilik, compressor ringan, kuatkan ke −14 LUFS.</td><td>Suara jelas dan sama kuat dengan video lain di TikTok/Reels.</td></tr>
-          <tr><td>6. Punch-in</td><td>Saiz frame bertukar di setiap potongan (1.0× hingga 1.28×), dan zoom perlahan pada kata kunci.</td><td>Sembunyikan jump cut dan beri tenaga tanpa terlalu laju.</td></tr>
+          <tr><td>1. Warna kulit</td><td>Tidak diubah. Tiada lampu tambahan di muka, tiada ubah suhu warna.</td><td>Tone realistik macam rakaman asal.</td></tr>
+          <tr><td>2. Kontras</td><td>+4% sahaja, hitam diangkat sangat sedikit.</td><td>Gambar nampak lebih padat tanpa nampak "efek".</td></tr>
+          <tr><td>3. Ketajaman</td><td>Sharpen ringan.</td><td>TikTok memampatkan video, jadi sharpen ringan bantu kekal tajam.</td></tr>
+          <tr><td>4. Vignette halus</td><td>Hanya bucu dan tepi, sangat sedikit.</td><td>Fokus ke penyampai tanpa ubah warna wajah.</td></tr>
+          <tr><td>5. B-roll</td><td>Saturasi diturunkan sedikit (−8%) supaya warna stok tak terlalu terang berbanding rakaman kau.</td><td>Peralihan antara kau dan B-roll nampak serasi.</td></tr>
+          <tr><td>6. Audio</td><td>Buang dengung rendah, kurangkan bunyi bilik, compressor ringan, kuatkan ke −14 LUFS.</td><td>Suara jelas dan sama kuat dengan video lain di TikTok/Reels.</td></tr>
         </tbody></table></div>
-        <p style="margin-top:10px">Satu had: lampu asal datang dari tingkap/siling dan agak rata. Grade boleh tambah baik, tapi tak boleh cipta bayang dramatik. Untuk rakaman akan datang, letak satu lampu lembut di sisi depan muka (45°). Punch-in sampai 1.28× pada video 1080p akan nampak sedikit lembut dalam render final. Kalau kau ada versi 4K, hantar yang tu.</p>
+        <p style="margin-top:10px">Kalau kau nak lebih dekat dengan asal lagi, aku boleh buang kontras dan vignette terus, tinggal audio dan sharpen sahaja.</p>
       </div>
 
       <div class="pane" id="p-broll" role="tabpanel" hidden>
-        <h2>B-roll</h2>
-        <p>Dalam preview ni, B-roll dibuat sebagai <b>grafik bergerak</b> (jam, kad banding, pemain video, telefon). Semuanya ikut apa yang penyampai cakap, dan tiada masalah hak cipta. Grafik skrin penuh di 0:01 juga menutup saat penyampai menoleh ke tepi.</p>
-        <h3>Cadangan B-roll sebenar (kalau kau ada atau nak aku cari stok percuma)</h3>
-        <div class="tablewrap"><table><thead><tr><th>Masa</th><th>Shot</th><th>Kenapa</th></tr></thead><tbody>
-          <tr><td class="num">0:05–0:08</td><td>Anak buat kerja sekolah, telefon menyala di sebelah buku</td><td>Tunjuk masalah "scroll setiap 5 minit" secara nyata</td></tr>
-          <tr><td class="num">0:22–0:25</td><td>Anak menguap atau merenung kosong depan buku</td><td>"Otak ni mula merewang"</td></tr>
-          <tr><td class="num">0:32–0:36</td><td>Telefon di meja makan / di atas katil dengan notifikasi</td><td>"Masa tidur, masa makan, semua ganggu"</td></tr>
-          <tr><td class="num">Kad akhir</td><td>Rakaman skrin kelas Zoom Aster Edu yang sebenar (2 tutor, murid aktif)</td><td>Paling kuat untuk kepercayaan ibu bapa: mereka nampak kelas betul-betul</td></tr>
-        </tbody></table></div>
-        <p style="margin-top:10px">Setiap B-roll aku hadkan 1 hingga 2 saat, dan muka penyampai kembali cepat. Untuk TOFU, kepercayaan datang dari orang yang bercakap.</p>
+        <h2>B-roll sebenar</h2>
+        <p>Semua klip ialah <b>rakaman kamera sebenar</b> dari Mixkit, bukan janaan AI. Aku hanya pilih klip berlesen <b>Mixkit Free License</b> (boleh guna untuk iklan komersial, tak perlu kredit). Klip berlesen "Restricted" aku elakkan. Setiap B-roll pendek (1 hingga 2 saat), dan muka kau kembali cepat.</p>
+        <div class="tablewrap"><table><thead><tr><th>Masa</th><th>Klip</th><th>Ayat</th></tr></thead><tbody id="brolltable"></tbody></table></div>
+        <p style="margin-top:10px">Satu had: stok percuma kebanyakannya pelakon Barat. Untuk sentuhan lebih tempatan, rakaman sendiri (anak belajar di rumah, kelas Zoom Aster Edu) akan lebih kuat. Kalau ada, hantar dan aku tukar.</p>
       </div>
 
       <div class="pane" id="p-q" role="tabpanel" hidden>
-        <h2>Sebelum aku render final</h2>
+        <h2>Dah dikemas kini (versi 2)</h2>
+        <ul class="qs">
+          <li><b>Grade:</b> lampu muka dibuang, warna kulit asal dikekalkan.</li>
+          <li><b>Hook:</b> kekal "Percaya atau tidak? Sejam belajar…".</li>
+          <li><b>Lower-third:</b> Al-Farhan · Pengasas Aster Edu.</li>
+          <li><b>Harga:</b> tiada.</li>
+          <li><b>CTA:</b> nombor WhatsApp dan alamat website dibuang. Diganti dengan "DM kami untuk info pakej".</li>
+          <li><b>B-roll:</b> 7 shot rakaman sebenar ditambah (tab B-roll).</li>
+        </ul>
+        <h2 style="margin-top:18px">Tinggal sedikit lagi</h2>
         <ol class="qs">
-          <li><b>Hook:</b> setuju dengan pilihan A dalam preview, atau nak B / C? (Tab Hook &amp; struktur)</li>
-          <li><b>Nama penyampai:</b> AI dengar "Al-Farhan". Betul ke ejaan tu? Nak kekalkan nama di lower-third, dan nak tambah jawatan (contoh "Pengasas Aster Edu")?</li>
-          <li><b>Kad akhir:</b> aku hanya guna fakta dari website (Darjah 4 – Tingkatan 5, 5 subjek, 2 tutor dalam 1 kelas, rakaman kelas 24/7, hotline). Aku <b>tak letak harga</b> sebab ini video TOFU. Nak tambah "RM99/bulan untuk 5 subjek" atau "Booking RM20"? Kedua-duanya ada di website.</li>
-          <li><b>Hotline:</b> 011-5596 9070 (dari website). Betul ke untuk iklan ni, atau nak guna "link di bio"?</li>
-          <li><b>Muzik latar:</b> aku tak letak sebab aku tiada muzik berlesen. Cadangan: pilih muzik lembut dalam app TikTok/Reels masa upload, pada volume rendah. Atau hantar fail muzik kau sendiri.</li>
-          <li><b>B-roll sebenar:</b> nak aku cari klip stok percuma (Pexels/Pixabay), atau kau ada rakaman kelas Zoom sendiri? (Tab B-roll)</li>
-          <li><b>Lain-lain:</b> ada grafik atau bunyi yang terlalu banyak atau kurang? Sebut saatnya (contoh "0:25 pemain video tak perlu").</li>
+          <li><b>Jawatan:</b> betul ke "Pengasas Aster Edu"? Website hanya senaraikan Principal dan Managing Director, jadi aku nak pastikan.</li>
+          <li><b>Muzik latar:</b> pilih dalam app TikTok masa upload (volume rendah), atau hantar fail kau sendiri.</li>
+          <li><b>Lain-lain:</b> ada B-roll, grafik atau bunyi yang nak ditukar? Sebut saatnya.</li>
         </ol>
-        <p style="margin-top:12px">Lepas kau setuju, aku render versi final 1080×1920 dengan semua kesan ni dibakar ke dalam video, sedia untuk TikTok dan Reels.</p>
+        <p style="margin-top:12px">Lepas kau setuju, aku render versi final 1080×1920, sedia untuk TikTok.</p>
       </div>
     </section>
   </div>
@@ -394,7 +393,7 @@ function build(g){
     case"player":el.className+=" player-g";h=`<div class="scr"><div class="bar"><i></i></div><span class="len">2:47:10</span></div>`+g.bubbles.map((b,i)=>`<span class="bb" style="--d:${b[1]}s;${i?"right:2cqw;top:30cqw":"left:2cqw;top:22cqw"}">${esc(b[0])}</span>`).join("");break;
     case"phone":el.className+=" phone-g";el.style.cssText=`--allAt:${g.allAt}s`;h=`<div class="ph"><b>99+</b></div><div class="list">${g.chips.map(c=>`<div style="--d:${c[2]}s"><span aria-hidden="true">${c[0]}</span>${esc(c[1])}</div>`).join("")}</div><span class="all">SEMUA GANGGU</span>`;break;
     case"comment":el.className+=" cmt";h=`<i>💬</i>${esc(g.text)}`;break;
-    case"endcard":el.className+=" end";h=`<div class="eb"><i></i>ASTER EDU</div><h3>Tuisyen online untuk anak Darjah 4 hingga Tingkatan 5</h3><ul><li><b>5</b> subjek teras dalam satu pakej</li><li><b>2</b> tutor dalam 1 kelas</li><li><b>24/7</b> rakaman kelas untuk ulang kaji</li></ul><div class="btn-cta">Tanya pakej &amp; jadual kelas</div><div class="ct">WhatsApp <b>011-5596 9070</b> · asteredu11.com.my</div>`;
+    case"endcard":el.className+=" end";h=`<div class="eb"><i></i>ASTER EDU</div><h3>Tuisyen online untuk anak Darjah 4 hingga Tingkatan 5</h3><ul><li><b>5</b> subjek teras dalam satu pakej</li><li><b>2</b> tutor dalam 1 kelas</li><li><b>24/7</b> rakaman kelas untuk ulang kaji</li></ul><div class="btn-cta">DM kami untuk info pakej</div><div class="ct">Tanya subjek, jadual kelas &amp; cara daftar</div>`;
       const bg=document.createElement("div");bg.className="g end-bg";ov.appendChild(bg);GS.push({g,el:bg,on:false});break;
   }
   el.innerHTML=h;ov.appendChild(el);GS.push({g,el,on:false});
@@ -406,7 +405,7 @@ let capIdx=-1;
 /* ---- zoom ---- */
 const ease=x=>x<.5?2*x*x:1-Math.pow(-2*x+2,2)/2;
 stage.style.transformOrigin=`${plan.origin.x}% ${plan.origin.y}%`;
-function zoomAt(t){const Z=plan.zoom;if(t<=Z[0].t)return Z[0].scale;for(let i=1;i<Z.length;i++){if(t<=Z[i].t){const a=Z[i-1],b=Z[i],k=ease((t-a.t)/Math.max(1e-3,b.t-a.t));return a.scale+(b.scale-a.scale)*k}}return Z[Z.length-1].scale}
+function zoomAt(t){if(plan.broll.some(b=>t>=b.s&&t<b.e))return 1;const Z=plan.zoom;if(t<=Z[0].t)return Z[0].scale;for(let i=1;i<Z.length;i++){if(t<=Z[i].t){const a=Z[i-1],b=Z[i],k=ease((t-a.t)/Math.max(1e-3,b.t-a.t));return a.scale+(b.scale-a.scale)*k}}return Z[Z.length-1].scale}
 
 /* ---- render ---- */
 function render(t){
@@ -481,24 +480,26 @@ const EV=[
  ...plan.graphics.filter(g=>g.kind!=="brand").map(g=>({t:g.s,k:"mg",d:g.note})),
  ...plan.sfx.map(s=>({t:s.t,k:"sfx",d:SFXNAME[s.name]||s.name,s:`Volume ${Math.round(s.gain*100)}%`})),
  ...ZNOTE.map(z=>({t:z.t,k:"zoom",d:z.d})),
- {t:plan.end_card,k:"cut",d:"Kad akhir (4.5 s): latar kabur + CTA Aster Edu"}
+ ...plan.broll.map(b=>({t:b.s,k:"broll",d:b.title,s:`Klip Mixkit #${b.clip} · ${(b.e-b.s).toFixed(1)} s`})),
+ {t:plan.end_card,k:"cut",d:"Kad akhir (4.5 s): CTA Aster Edu, ajak DM"}
 ].sort((a,b)=>a.t-b.t);
-const KL={cut:"Potong",mg:"Grafik",sfx:"SFX",zoom:"Zoom"},KC={cut:"k-cut",mg:"k-mg",sfx:"k-sfx",zoom:"k-zoom"};
+const KL={cut:"Potong",mg:"Grafik",sfx:"SFX",zoom:"Zoom",broll:"B-roll"},KC={cut:"k-cut",mg:"k-mg",sfx:"k-sfx",zoom:"k-zoom",broll:"k-broll"};
 const list=$("#evlist");
 EV.forEach(e=>{const b=document.createElement("button");b.className="ev";b.innerHTML=`<span class="t">${fmt(e.t)}</span><span class="k ${KC[e.k]}">${KL[e.k]}</span><span class="d">${esc(e.d)}${e.s?`<small>${esc(e.s)}</small>`:""}</span>`;
   b.onclick=()=>{seek(Math.max(0,e.t-.5));play()};list.appendChild(b)});
 const evEls=[...list.children];let lastHi=-1;
 function highlightEv(t){let k=-1;for(let i=0;i<EV.length;i++){if(EV[i].t<=t+.02)k=i}if(k!==lastHi){if(evEls[lastHi])evEls[lastHi].classList.remove("now");if(evEls[k])evEls[k].classList.add("now");lastHi=k}}
-const marks=$("#marks"),MC={cut:"var(--c-cut)",mg:"var(--c-mg)",sfx:"var(--c-sfx)",zoom:"var(--c-zoom)"};
+const marks=$("#marks"),MC={cut:"var(--c-cut)",mg:"var(--c-mg)",sfx:"var(--c-sfx)",zoom:"var(--c-zoom)",broll:"var(--c-broll)"};
 EV.forEach(e=>{const i=document.createElement("i");i.style.left=(e.t/DUR*100)+"%";i.style.background=MC[e.k];marks.appendChild(i)});
 
+$("#brolltable").innerHTML=plan.broll.map(b=>{const w=plan.captions.flatMap(c=>c.words).filter(x=>x.s>=b.s-.05&&x.s<b.e).map(x=>x.w).join(" ");return `<tr><td class="num">${fmt(b.s)}</td><td><a href="${esc(b.url)}" target="_blank" rel="noopener">${esc(b.title)}</a></td><td>${esc(w||"(kad akhir)")}</td></tr>`}).join("");
 /* ---- raw transcript (all takes) ---- */
 const RAW=__RAW__;
 const segBySrc=src=>plan.cuts.find(c=>src>=c.src_in-0.6&&src<c.src_out);
 $("#raw").innerHTML=RAW.map((r,i)=>`<div class="line ${r.use?"yes":"no"}" data-i="${i}" ${r.use?'tabindex="0" role="button"':""}><span class="t">${fmt0(r.t)}</span><span class="tx">${esc(r.text)}</span><span class="st">${r.use?"Diguna":"Dibuang"}</span><span class="why">${esc(r.why)}</span></div>`).join("");
 document.querySelectorAll("#raw .line.yes").forEach(el=>{const go=()=>{const r=RAW[+el.dataset.i],c=segBySrc(r.t);if(c){seek(c.out);play()}};el.onclick=go;el.onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();go()}}});
 $("#cuttable").innerHTML=plan.cuts.map(c=>`<tr><td>${esc(CUTNAME[c.id])}</td><td class="num">${fmt(c.src_in)} – ${fmt(c.src_out)}</td><td class="num">${fmt(c.out)} – ${fmt(c.out+c.src_out-c.src_in)}</td></tr>`).join("")+`<tr><td>Kad akhir CTA</td><td class="num">(grafik)</td><td class="num">${fmt(plan.end_card)} – ${fmt(DUR)}</td></tr>`;
-$("#flow").innerHTML=[["0:00","Hook: soalan + perbandingan 1 jam vs 3 jam"],["0:08","Siapa saya (kredibiliti)"],["0:14","Pendapat: fokus lebih penting daripada masa"],["0:18","Kenapa: otak hilang fokus bila terlalu lama"],["0:25","Analogi: video panjang = bebel, ceramah"],["0:30","Telefon ganggu semua: belajar, tidur, makan"],["0:37","Ajak komen"],["0:38","CTA: Aster Edu, tanya pakej & jadual"]].map(r=>`<div><b>${r[0]}</b>${esc(r[1])}</div>`).join("");
+$("#flow").innerHTML=[["0:00","Hook: soalan + perbandingan 1 jam vs 3 jam"],["0:08","Siapa saya (kredibiliti)"],["0:14","Pendapat: fokus lebih penting daripada masa"],["0:18","Kenapa: otak hilang fokus bila terlalu lama"],["0:25","Analogi: video panjang = bebel, ceramah"],["0:30","Telefon ganggu semua: belajar, tidur, makan"],["0:37","Ajak komen"],["0:38","CTA: Aster Edu, DM untuk info pakej"]].map(r=>`<div><b>${r[0]}</b>${esc(r[1])}</div>`).join("");
 
 render(0);
 })();

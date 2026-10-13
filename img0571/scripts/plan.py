@@ -31,14 +31,24 @@ G=[
  {"s":0.0,"e":S0,"kind":"hook","text":["PERCAYA","ATAU TIDAK?"],"note":"Hook: tajuk besar, terus ke soalan"},
  {"s":S0,"e":FULL_END,"kind":"compare-full","note":"B-roll grafik skrin penuh: 1 jam fokus. Juga menutup saat penyampai menoleh ke tepi"},
  {"s":FULL_END,"e":seg_out("S"),"kind":"compare","reveal":round(at("S","3")-FULL_END,2),"notif":round(at("S","handphone")-FULL_END,2),"timer":round(at("S","setiap")-FULL_END,2),"note":"Kad banding: 1 jam fokus vs 3 jam + scroll handphone setiap 5 minit"},
- {"s":seg_in("I")+0.05,"e":seg_out("I"),"kind":"name","name":"Al-Farhan","role":"Pengusaha pusat tuisyen online","chip":"Umur 10–17 tahun","chipAt":round(at("I","10")-seg_in("I")-0.05,2),"note":"Lower-third nama + julat umur (ikut apa yang disebut)"},
+ {"s":seg_in("I")+0.05,"e":seg_out("I"),"kind":"name","name":"Al-Farhan","role":"Pengasas Aster Edu","chip":"Tuisyen online · umur 10–17 tahun","chipAt":round(at("I","10")-seg_in("I")-0.05,2),"note":"Lower-third: nama, jawatan, julat umur"},
  {"s":round(at("F","sejam")-0.05,3),"e":seg_out("F"),"kind":"equation","a":"1 JAM","b":"FOKUS","bAt":round(at("F","fokus")-at("F","sejam")+0.05,2),"note":"Kata kunci: 1 jam + fokus = ✓"},
  {"s":round(at("O","fokus")-0.05,3),"e":seg_out("O"),"kind":"checklist","rows":[["ok","Fokus"],["no","Masa yang panjang"]],"rowAt":[0,round(at("O","masa")-at("O","fokus"),2)],"note":"Otak perlukan fokus, bukan masa panjang"},
  {"s":round(at("R","panjang")-0.1,3),"e":seg_out("R"),"kind":"meter","text":"Tahap fokus","drainAt":0.15,"redAt":round(at("R","merewang")-at("R","panjang")+0.1,2),"note":"Meter fokus menurun bila belajar terlalu lama"},
  {"s":round(seg_in("V")+0.05,3),"e":seg_out("V"),"kind":"player","bubbles":[["bebel…",round(at("V","bebel")-seg_in("V")-0.05,2)],["ceramah…",round(at("V","ceramah")-seg_in("V")-0.05,2)]],"note":"Analogi: video panjang = orang kata bebel, ceramah"},
  {"s":round(at("T","telefon")-0.1,3),"e":seg_out("T"),"kind":"phone","chips":[["📚","Masa belajar",round(at("T","masa",0)-at("T","telefon")+0.1,2)],["😴","Masa tidur",round(at("T","masa",1)-at("T","telefon")+0.1,2)],["🍽️","Masa makan",round(at("T","masa",2)-at("T","telefon")+0.1,2)]],"allAt":round(at("T","semua")-at("T","telefon")+0.1,2),"note":"Telefon ganggu: belajar, tidur, makan"},
  {"s":round(at("K","cuba")-0.1,3),"e":END["out_in"],"kind":"comment","text":"Setuju? Komen di bawah","note":"Ajak komen (penyampai sendiri sebut 'Cuba komen')"},
- {"s":END["out_in"],"e":d["duration"],"kind":"endcard","note":"Kad CTA Aster Edu: fakta dari website sahaja, tiada harga/janji keputusan"},
+ {"s":END["out_in"],"e":d["duration"],"kind":"endcard","note":"Kad CTA: DM untuk info pakej (tiada harga, tiada nombor telefon)"},
+]
+# ---- real B-roll (Mixkit Free License: commercial use, no attribution). cx = crop centre (0-1) of the 16:9 clip ----
+BROLL=[
+ {"s":round(at("S","jam",0)-0.02,3),"e":round(at("S","setiap")-0.02,3),"clip":"4908","src":2.5,"cx":0.76,"title":"Tangan scroll telefon sebelah laptop & buku nota","url":"https://mixkit.co/free-stock-video/person-working-while-scrolling-on-social-networks-4908/"},
+ {"s":round(at("F","anak")-0.02,3),"e":round(at("F","itu")-0.02,3),"clip":"4761","src":1.0,"cx":0.42,"title":"Pelajar fokus menulis","url":"https://mixkit.co/free-stock-video/concentrated-boy-studying-at-home-4761/"},
+ {"s":round(at("R","otak")-0.02,3),"e":seg_out("R"),"clip":"28321","src":4.6,"cx":0.33,"title":"Pelajar kusut pegang kepala","url":"https://mixkit.co/free-stock-video/frustrated-student-at-his-school-studying-his-notes-28321/"},
+ {"s":round(at("T","masa",0)-0.02,3),"e":round(at("T","masa",1)-0.02,3),"clip":"4908","src":7.6,"cx":0.6,"title":"Telefon masa belajar","url":"https://mixkit.co/free-stock-video/person-working-while-scrolling-on-social-networks-4908/"},
+ {"s":round(at("T","masa",1)-0.02,3),"e":round(at("T","masa",2)-0.02,3),"clip":"39789","src":4.0,"cx":0.7,"title":"Telefon masa tidur","url":"https://mixkit.co/free-stock-video/girl-lying-down-chatting-on-her-cell-phone-before-sleeping-39789/"},
+ {"s":round(at("T","masa",2)-0.02,3),"e":round(at("T","semua")-0.02,3),"clip":"4857","src":8.0,"cx":0.6,"title":"Telefon masa makan","url":"https://mixkit.co/free-stock-video/couple-having-breakfast-cereal-and-see-their-cell-phones-4857/"},
+ {"s":END["out_in"],"e":d["duration"],"clip":"50127","src":1.0,"cx":0.47,"blur":1,"title":"Latar kad akhir: pelajar membaca di rumah","url":"https://mixkit.co/free-stock-video/a-young-student-reads-information-from-a-book-at-home-50127/"},
 ]
 # ---- sfx (kept minimal and quiet) ----
 SFX=[(0.02,"soft",0.35),(S0-0.06,"whoosh",0.35),(at("S","handphone"),"notif",0.45),(seg_in("I")+0.08,"pop",0.3),
@@ -60,6 +70,6 @@ hold(seg_in("K"),seg_out("K"),1.26)
 Z.append((END["out_in"],1.0))
 Z=[{"t":round(t,3),"scale":s} for t,s in Z]
 json.dump({"duration":d["duration"],"cuts":[{"out":s["out_in"],"src_in":s["src_in"],"src_out":s["src_out"],"id":s["id"],"note":s["note"]} for s in d["segments"]],
-           "end_card":END["out_in"],"origin":{"x":46,"y":40},"captions":chunks,"graphics":G,"sfx":SFX,"zoom":Z},open(sys.argv[2],"w"),ensure_ascii=False,indent=1)
+           "end_card":END["out_in"],"origin":{"x":46,"y":40},"captions":chunks,"graphics":G,"broll":BROLL,"sfx":SFX,"zoom":Z},open(sys.argv[2],"w"),ensure_ascii=False,indent=1)
 print(len(chunks),"caption chunks;",len(G),"graphics;",len(SFX),"sfx")
 for g in G: print(f'{g["s"]:6.2f}-{g["e"]:6.2f} {g["kind"]}')

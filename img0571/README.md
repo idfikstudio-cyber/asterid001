@@ -6,7 +6,8 @@ Status: **preview sahaja, belum render final.** Video asal 2:59 (rakaman mentah 
 - `scripts/edl.py` → `edit/edl.json`: ambilan terbaik setiap ayat, disusun semula (hook di depan, pengenalan dari 2:48 dipindah selepas hook), dipotong pada sempadan frame.
 - `scripts/plan.py` → `edit/plan.json`: sari kata, grafik, SFX, punch-in ikut masa video baru.
 - `scripts/sfx.py` → `edit/sfx/`: sound effect dijana sendiri, bebas hak cipta.
-- `scripts/grade.sh`, `edit/grade_filter.txt`, `edit/keymask.png`, `edit/vigmask.png` (`scripts/masks.py`): colour grade, lampu muka, vignette.
+- `scripts/grade.sh`, `edit/grade_filter.txt`, `edit/vigmask.png` (`scripts/masks.py`): grade natural (warna kulit asal, kontras +4%, sharpen, vignette halus).
+- `scripts/broll.py`: masukkan B-roll sebenar (Mixkit Free License, senarai dalam `edit/plan.json` → `broll`). Klip sumber tidak disimpan dalam repo.
 - `scripts/proxy.py`: potong proxy 540p (graded + asal) dengan audio dibersih (−14 LUFS).
 - `scripts/build_preview.py` + `preview/template.html`: halaman preview interaktif.
 

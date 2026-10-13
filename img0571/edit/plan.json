@@ -708,10 +708,10 @@
    "e": 14.314,
    "kind": "name",
    "name": "Al-Farhan",
-   "role": "Pengusaha pusat tuisyen online",
-   "chip": "Umur 10–17 tahun",
+   "role": "Pengasas Aster Edu",
+   "chip": "Tuisyen online · umur 10–17 tahun",
    "chipAt": 3.16,
-   "note": "Lower-third nama + julat umur (ikut apa yang disebut)"
+   "note": "Lower-third: nama, jawatan, julat umur"
   },
   {
    "s": 15.672,
@@ -802,7 +802,73 @@
    "s": 38.272,
    "e": 42.776,
    "kind": "endcard",
-   "note": "Kad CTA Aster Edu: fakta dari website sahaja, tiada harga/janji keputusan"
+   "note": "Kad CTA: DM untuk info pakej (tiada harga, tiada nombor telefon)"
+  }
+ ],
+ "broll": [
+  {
+   "s": 5.283,
+   "e": 7.463,
+   "clip": "4908",
+   "src": 2.5,
+   "cx": 0.76,
+   "title": "Tangan scroll telefon sebelah laptop & buku nota",
+   "url": "https://mixkit.co/free-stock-video/person-working-while-scrolling-on-social-networks-4908/"
+  },
+  {
+   "s": 15.082,
+   "e": 17.242,
+   "clip": "4761",
+   "src": 1.0,
+   "cx": 0.42,
+   "title": "Pelajar fokus menulis",
+   "url": "https://mixkit.co/free-stock-video/concentrated-boy-studying-at-home-4761/"
+  },
+  {
+   "s": 23.147,
+   "e": 24.958,
+   "clip": "28321",
+   "src": 4.6,
+   "cx": 0.33,
+   "title": "Pelajar kusut pegang kepala",
+   "url": "https://mixkit.co/free-stock-video/frustrated-student-at-his-school-studying-his-notes-28321/"
+  },
+  {
+   "s": 32.782,
+   "e": 33.782,
+   "clip": "4908",
+   "src": 7.6,
+   "cx": 0.6,
+   "title": "Telefon masa belajar",
+   "url": "https://mixkit.co/free-stock-video/person-working-while-scrolling-on-social-networks-4908/"
+  },
+  {
+   "s": 33.782,
+   "e": 34.642,
+   "clip": "39789",
+   "src": 4.0,
+   "cx": 0.7,
+   "title": "Telefon masa tidur",
+   "url": "https://mixkit.co/free-stock-video/girl-lying-down-chatting-on-her-cell-phone-before-sleeping-39789/"
+  },
+  {
+   "s": 34.642,
+   "e": 35.642,
+   "clip": "4857",
+   "src": 8.0,
+   "cx": 0.6,
+   "title": "Telefon masa makan",
+   "url": "https://mixkit.co/free-stock-video/couple-having-breakfast-cereal-and-see-their-cell-phones-4857/"
+  },
+  {
+   "s": 38.272,
+   "e": 42.776,
+   "clip": "50127",
+   "src": 1.0,
+   "cx": 0.47,
+   "blur": 1,
+   "title": "Latar kad akhir: pelajar membaca di rumah",
+   "url": "https://mixkit.co/free-stock-video/a-young-student-reads-information-from-a-book-at-home-50127/"
   }
  ],
  "sfx": [
