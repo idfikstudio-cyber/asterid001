@@ -1,0 +1,952 @@
+{
+ "duration": 42.776,
+ "cuts": [
+  {
+   "out": 0,
+   "src_in": 61.2946,
+   "src_out": 62.6292,
+   "id": "P",
+   "note": "Percaya atau tidak? (ambilan ke-2)"
+  },
+  {
+   "out": 1.335,
+   "src_in": 64.6312,
+   "src_out": 71.9385,
+   "id": "S",
+   "note": "Sejam belajar tanpa gangguan … setiap 5 minit"
+  },
+  {
+   "out": 8.642,
+   "src_in": 168.2347,
+   "src_out": 173.9071,
+   "id": "I",
+   "note": "Pengenalan (ambilan ke-3, tanpa 'Eh')"
+  },
+  {
+   "out": 14.314,
+   "src_in": 25.4921,
+   "src_out": 29.9299,
+   "id": "F",
+   "note": "Saya tak kisah … dia fokus (ambilan ke-1 dari 4)"
+  },
+  {
+   "out": 18.752,
+   "src_in": 75.3086,
+   "src_out": 78.6119,
+   "id": "O",
+   "note": "Otak perlukan fokus …"
+  },
+  {
+   "out": 22.055,
+   "src_in": 88.4884,
+   "src_out": 91.3913,
+   "id": "R",
+   "note": "Sebab kalau panjang … merewang (ambilan ke-2 dari 3)"
+  },
+  {
+   "out": 24.958,
+   "src_in": 106.2728,
+   "src_out": 111.7116,
+   "id": "V",
+   "note": "Kita tengok video panjang-panjang … ceramah lah (ambilan ke-2)"
+  },
+  {
+   "out": 30.397,
+   "src_in": 148.515,
+   "src_out": 154.8547,
+   "id": "T",
+   "note": "Siapa rasa telefon banyak ganggu kita? … semua ganggu"
+  },
+  {
+   "out": 36.737,
+   "src_in": 155.2217,
+   "src_out": 156.7566,
+   "id": "K",
+   "note": "Siapa rasa? Cuba komen."
+  }
+ ],
+ "end_card": 38.272,
+ "origin": {
+  "x": 46,
+  "y": 40
+ },
+ "captions": [
+  {
+   "s": 1.823,
+   "e": 3.183,
+   "words": [
+    {
+     "w": "Sejam",
+     "s": 1.823,
+     "hot": 1
+    },
+    {
+     "w": "belajar",
+     "s": 2.423
+    },
+    {
+     "w": "tanpa",
+     "s": 2.743
+    }
+   ]
+  },
+  {
+   "s": 3.183,
+   "e": 4.483,
+   "words": [
+    {
+     "w": "gangguan",
+     "s": 3.183,
+     "hot": 1
+    },
+    {
+     "w": "lebih",
+     "s": 3.683
+    },
+    {
+     "w": "bernilai",
+     "s": 4.023,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 4.483,
+   "e": 5.703,
+   "words": [
+    {
+     "w": "daripada",
+     "s": 4.483
+    },
+    {
+     "w": "3",
+     "s": 4.843,
+     "hot": 1
+    },
+    {
+     "w": "jam",
+     "s": 5.303,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 5.703,
+   "e": 7.043,
+   "words": [
+    {
+     "w": "belajar",
+     "s": 5.703
+    },
+    {
+     "w": "sambil",
+     "s": 6.123
+    },
+    {
+     "w": "scroll-scroll",
+     "s": 6.543,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 7.043,
+   "e": 8.642,
+   "words": [
+    {
+     "w": "handphone",
+     "s": 7.043,
+     "hot": 1
+    },
+    {
+     "w": "setiap",
+     "s": 7.483
+    },
+    {
+     "w": "5",
+     "s": 8.083
+    },
+    {
+     "w": "minit",
+     "s": 8.243
+    }
+   ]
+  },
+  {
+   "s": 8.642,
+   "e": 9.467,
+   "words": [
+    {
+     "w": "Saya",
+     "s": 8.642
+    },
+    {
+     "w": "Al-Farhan",
+     "s": 8.807
+    }
+   ]
+  },
+  {
+   "s": 9.467,
+   "e": 10.587,
+   "words": [
+    {
+     "w": "pengusaha",
+     "s": 9.467
+    },
+    {
+     "w": "pusat",
+     "s": 10.067
+    },
+    {
+     "w": "tuisyen",
+     "s": 10.327,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 10.587,
+   "e": 11.847,
+   "words": [
+    {
+     "w": "online",
+     "s": 10.587,
+     "hot": 1
+    },
+    {
+     "w": "untuk",
+     "s": 10.967
+    },
+    {
+     "w": "umur",
+     "s": 11.567
+    }
+   ]
+  },
+  {
+   "s": 11.847,
+   "e": 13.167,
+   "words": [
+    {
+     "w": "10",
+     "s": 11.847,
+     "hot": 1
+    },
+    {
+     "w": "tahun",
+     "s": 11.967
+    },
+    {
+     "w": "hingga",
+     "s": 12.567
+    }
+   ]
+  },
+  {
+   "s": 13.167,
+   "e": 14.247,
+   "words": [
+    {
+     "w": "17",
+     "s": 13.167,
+     "hot": 1
+    },
+    {
+     "w": "tahun",
+     "s": 13.667
+    }
+   ]
+  },
+  {
+   "s": 14.402,
+   "e": 15.102,
+   "words": [
+    {
+     "w": "Saya",
+     "s": 14.402
+    },
+    {
+     "w": "tak",
+     "s": 14.482
+    },
+    {
+     "w": "kisah",
+     "s": 14.662
+    }
+   ]
+  },
+  {
+   "s": 15.102,
+   "e": 15.722,
+   "words": [
+    {
+     "w": "anak",
+     "s": 15.102
+    },
+    {
+     "w": "tu",
+     "s": 15.302
+    },
+    {
+     "w": "belajar",
+     "s": 15.462
+    }
+   ]
+  },
+  {
+   "s": 15.722,
+   "e": 16.242,
+   "words": [
+    {
+     "w": "sejam",
+     "s": 15.722,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 16.242,
+   "e": 17.262,
+   "words": [
+    {
+     "w": "asalkan",
+     "s": 16.242
+    },
+    {
+     "w": "satu",
+     "s": 16.842
+    },
+    {
+     "w": "jam",
+     "s": 17.002,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 17.262,
+   "e": 18.502,
+   "words": [
+    {
+     "w": "itu",
+     "s": 17.262
+    },
+    {
+     "w": "dia",
+     "s": 17.442
+    },
+    {
+     "w": "fokus",
+     "s": 17.942,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 18.752,
+   "e": 19.944,
+   "words": [
+    {
+     "w": "Otak",
+     "s": 18.752,
+     "hot": 1
+    },
+    {
+     "w": "perlukan",
+     "s": 19.103
+    },
+    {
+     "w": "fokus",
+     "s": 19.463,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 19.944,
+   "e": 21.124,
+   "words": [
+    {
+     "w": "bukan",
+     "s": 19.944
+    },
+    {
+     "w": "perlukan",
+     "s": 20.543
+    },
+    {
+     "w": "masa",
+     "s": 20.844
+    }
+   ]
+  },
+  {
+   "s": 21.124,
+   "e": 21.964,
+   "words": [
+    {
+     "w": "yang",
+     "s": 21.124
+    },
+    {
+     "w": "panjang",
+     "s": 21.383
+    }
+   ]
+  },
+  {
+   "s": 22.055,
+   "e": 23.167,
+   "words": [
+    {
+     "w": "Sebab",
+     "s": 22.055
+    },
+    {
+     "w": "kalau",
+     "s": 22.407
+    },
+    {
+     "w": "panjang",
+     "s": 22.587
+    }
+   ]
+  },
+  {
+   "s": 23.167,
+   "e": 24.407,
+   "words": [
+    {
+     "w": "otak",
+     "s": 23.167,
+     "hot": 1
+    },
+    {
+     "w": "ni",
+     "s": 23.767
+    },
+    {
+     "w": "mula",
+     "s": 23.947
+    }
+   ]
+  },
+  {
+   "s": 24.407,
+   "e": 24.947,
+   "words": [
+    {
+     "w": "merewang",
+     "s": 24.407,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 24.958,
+   "e": 25.505,
+   "words": [
+    {
+     "w": "Kita",
+     "s": 24.958
+    },
+    {
+     "w": "tengok",
+     "s": 25.005
+    },
+    {
+     "w": "video",
+     "s": 25.386
+    }
+   ]
+  },
+  {
+   "s": 25.505,
+   "e": 26.386,
+   "words": [
+    {
+     "w": "panjang-panjang",
+     "s": 25.505
+    },
+    {
+     "w": "pun",
+     "s": 26.106
+    },
+    {
+     "w": "tak",
+     "s": 26.246
+    }
+   ]
+  },
+  {
+   "s": 26.386,
+   "e": 26.906,
+   "words": [
+    {
+     "w": "boleh",
+     "s": 26.386
+    },
+    {
+     "w": "kan?",
+     "s": 26.586
+    }
+   ]
+  },
+  {
+   "s": 26.906,
+   "e": 27.686,
+   "words": [
+    {
+     "w": "Boleh",
+     "s": 26.906
+    },
+    {
+     "w": "lah",
+     "s": 27.346
+    },
+    {
+     "w": "orang",
+     "s": 27.505
+    }
+   ]
+  },
+  {
+   "s": 27.686,
+   "e": 29.166,
+   "words": [
+    {
+     "w": "kata",
+     "s": 27.686
+    },
+    {
+     "w": "bebel",
+     "s": 28.046,
+     "hot": 1
+    },
+    {
+     "w": "lah",
+     "s": 28.446
+    }
+   ]
+  },
+  {
+   "s": 29.166,
+   "e": 30.006,
+   "words": [
+    {
+     "w": "ceramah",
+     "s": 29.166,
+     "hot": 1
+    },
+    {
+     "w": "lah",
+     "s": 29.766
+    }
+   ]
+  },
+  {
+   "s": 30.397,
+   "e": 31.422,
+   "words": [
+    {
+     "w": "Siapa",
+     "s": 30.397
+    },
+    {
+     "w": "rasa",
+     "s": 30.642
+    },
+    {
+     "w": "telefon",
+     "s": 30.942,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 31.422,
+   "e": 32.802,
+   "words": [
+    {
+     "w": "banyak",
+     "s": 31.422
+    },
+    {
+     "w": "ganggu",
+     "s": 31.842,
+     "hot": 1
+    },
+    {
+     "w": "kita?",
+     "s": 32.422
+    }
+   ]
+  },
+  {
+   "s": 32.802,
+   "e": 33.802,
+   "words": [
+    {
+     "w": "Masa",
+     "s": 32.802
+    },
+    {
+     "w": "belajar",
+     "s": 33.182
+    }
+   ]
+  },
+  {
+   "s": 33.802,
+   "e": 34.662,
+   "words": [
+    {
+     "w": "masa",
+     "s": 33.802
+    },
+    {
+     "w": "tidur",
+     "s": 34.122
+    }
+   ]
+  },
+  {
+   "s": 34.662,
+   "e": 35.662,
+   "words": [
+    {
+     "w": "masa",
+     "s": 34.662
+    },
+    {
+     "w": "makan",
+     "s": 35.102
+    }
+   ]
+  },
+  {
+   "s": 35.662,
+   "e": 36.722,
+   "words": [
+    {
+     "w": "semua",
+     "s": 35.662,
+     "hot": 1
+    },
+    {
+     "w": "ganggu",
+     "s": 36.062,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 36.737,
+   "e": 37.355,
+   "words": [
+    {
+     "w": "Siapa",
+     "s": 36.737
+    },
+    {
+     "w": "rasa?",
+     "s": 36.915
+    }
+   ]
+  },
+  {
+   "s": 37.355,
+   "e": 38.235,
+   "words": [
+    {
+     "w": "Cuba",
+     "s": 37.355
+    },
+    {
+     "w": "komen",
+     "s": 37.815,
+     "hot": 1
+    }
+   ]
+  }
+ ],
+ "graphics": [
+  {
+   "s": 0.0,
+   "e": 38.272,
+   "kind": "brand",
+   "note": "Logo teks Aster Edu kecil di penjuru, sepanjang video (bina kepercayaan)"
+  },
+  {
+   "s": 0.0,
+   "e": 1.335,
+   "kind": "hook",
+   "text": [
+    "PERCAYA",
+    "ATAU TIDAK?"
+   ],
+   "note": "Hook: tajuk besar, terus ke soalan"
+  },
+  {
+   "s": 1.335,
+   "e": 3.663,
+   "kind": "compare-full",
+   "note": "B-roll grafik skrin penuh: 1 jam fokus. Juga menutup saat penyampai menoleh ke tepi"
+  },
+  {
+   "s": 3.663,
+   "e": 8.642,
+   "kind": "compare",
+   "reveal": 1.18,
+   "notif": 3.38,
+   "timer": 3.82,
+   "note": "Kad banding: 1 jam fokus vs 3 jam + scroll handphone setiap 5 minit"
+  },
+  {
+   "s": 8.692,
+   "e": 14.314,
+   "kind": "name",
+   "name": "Al-Farhan",
+   "role": "Pengusaha pusat tuisyen online",
+   "chip": "Umur 10–17 tahun",
+   "chipAt": 3.16,
+   "note": "Lower-third nama + julat umur (ikut apa yang disebut)"
+  },
+  {
+   "s": 15.672,
+   "e": 18.752,
+   "kind": "equation",
+   "a": "1 JAM",
+   "b": "FOKUS",
+   "bAt": 2.27,
+   "note": "Kata kunci: 1 jam + fokus = ✓"
+  },
+  {
+   "s": 19.413,
+   "e": 22.055,
+   "kind": "checklist",
+   "rows": [
+    [
+     "ok",
+     "Fokus"
+    ],
+    [
+     "no",
+     "Masa yang panjang"
+    ]
+   ],
+   "rowAt": [
+    0,
+    1.38
+   ],
+   "note": "Otak perlukan fokus, bukan masa panjang"
+  },
+  {
+   "s": 22.487,
+   "e": 24.958,
+   "kind": "meter",
+   "text": "Tahap fokus",
+   "drainAt": 0.15,
+   "redAt": 1.92,
+   "note": "Meter fokus menurun bila belajar terlalu lama"
+  },
+  {
+   "s": 25.008,
+   "e": 30.397,
+   "kind": "player",
+   "bubbles": [
+    [
+     "bebel…",
+     3.04
+    ],
+    [
+     "ceramah…",
+     4.16
+    ]
+   ],
+   "note": "Analogi: video panjang = orang kata bebel, ceramah"
+  },
+  {
+   "s": 30.842,
+   "e": 36.737,
+   "kind": "phone",
+   "chips": [
+    [
+     "📚",
+     "Masa belajar",
+     1.96
+    ],
+    [
+     "😴",
+     "Masa tidur",
+     2.96
+    ],
+    [
+     "🍽️",
+     "Masa makan",
+     3.82
+    ]
+   ],
+   "allAt": 4.82,
+   "note": "Telefon ganggu: belajar, tidur, makan"
+  },
+  {
+   "s": 37.255,
+   "e": 38.272,
+   "kind": "comment",
+   "text": "Setuju? Komen di bawah",
+   "note": "Ajak komen (penyampai sendiri sebut 'Cuba komen')"
+  },
+  {
+   "s": 38.272,
+   "e": 42.776,
+   "kind": "endcard",
+   "note": "Kad CTA Aster Edu: fakta dari website sahaja, tiada harga/janji keputusan"
+  }
+ ],
+ "sfx": [
+  {
+   "t": 0.02,
+   "name": "soft",
+   "gain": 0.35
+  },
+  {
+   "t": 1.275,
+   "name": "whoosh",
+   "gain": 0.35
+  },
+  {
+   "t": 7.043,
+   "name": "notif",
+   "gain": 0.45
+  },
+  {
+   "t": 8.722,
+   "name": "pop",
+   "gain": 0.3
+  },
+  {
+   "t": 17.942,
+   "name": "ding",
+   "gain": 0.22
+  },
+  {
+   "t": 30.942,
+   "name": "notif",
+   "gain": 0.4
+  },
+  {
+   "t": 37.355,
+   "name": "pop",
+   "gain": 0.32
+  },
+  {
+   "t": 38.272,
+   "name": "soft",
+   "gain": 0.4
+  }
+ ],
+ "zoom": [
+  {
+   "t": 0,
+   "scale": 1.28
+  },
+  {
+   "t": 1.334,
+   "scale": 1.28
+  },
+  {
+   "t": 1.335,
+   "scale": 1.06
+  },
+  {
+   "t": 6.993,
+   "scale": 1.06
+  },
+  {
+   "t": 7.213,
+   "scale": 1.16
+  },
+  {
+   "t": 8.641,
+   "scale": 1.16
+  },
+  {
+   "t": 8.642,
+   "scale": 1.14
+  },
+  {
+   "t": 14.313,
+   "scale": 1.14
+  },
+  {
+   "t": 14.314,
+   "scale": 1.0
+  },
+  {
+   "t": 17.842,
+   "scale": 1.0
+  },
+  {
+   "t": 18.062,
+   "scale": 1.16
+  },
+  {
+   "t": 18.751,
+   "scale": 1.16
+  },
+  {
+   "t": 18.752,
+   "scale": 1.14
+  },
+  {
+   "t": 22.054,
+   "scale": 1.14
+  },
+  {
+   "t": 22.055,
+   "scale": 1.0
+  },
+  {
+   "t": 24.957,
+   "scale": 1.08
+  },
+  {
+   "t": 24.958,
+   "scale": 1.12
+  },
+  {
+   "t": 30.396,
+   "scale": 1.12
+  },
+  {
+   "t": 30.397,
+   "scale": 1.0
+  },
+  {
+   "t": 35.582,
+   "scale": 1.0
+  },
+  {
+   "t": 35.802,
+   "scale": 1.18
+  },
+  {
+   "t": 36.736,
+   "scale": 1.18
+  },
+  {
+   "t": 36.737,
+   "scale": 1.26
+  },
+  {
+   "t": 38.271,
+   "scale": 1.26
+  },
+  {
+   "t": 38.272,
+   "scale": 1.0
+  }
+ ]
+}

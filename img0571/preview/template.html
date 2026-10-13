@@ -1,0 +1,505 @@
+<meta charset="utf-8">
+<title>Preview Video Fokus Belajar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Figtree:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: phone-frame player (sticky) beside a tabbed edit-plan panel; stacks on phones. Navy ink + exam-paper gold, calm for parents. */
+:root{
+  --bg:#f3f5f9; --surface:#ffffff; --ink:#131a2b; --muted:#5a6377; --line:#dde2ec;
+  --accent:#1d3a8a; --gold:#e3a823; --gold-ink:#7a5300; --chip:#eef1f8;
+  --c-cut:#c2410c; --c-sfx:#1d7a5f; --c-mg:#1d3a8a; --c-zoom:#8a4fc4;
+  /* on-video graphics: fixed, the video looks the same in every theme */
+  --v-navy:#0f1d44; --v-gold:#ffc83d; --v-white:#ffffff; --v-paper:#fbf8f1; --v-red:#e5484d; --v-green:#2fb67c;
+  --f-display:"Archivo","Arial Narrow",system-ui,sans-serif;
+  --f-body:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0c111d; --surface:#141b2b; --ink:#e9edf6; --muted:#9aa4b8; --line:#263049;
+  --accent:#8fb0ff; --gold:#ffc83d; --gold-ink:#ffd97a; --chip:#1c2538;
+  --c-cut:#ff8a5c; --c-sfx:#53d1a6; --c-mg:#8fb0ff; --c-zoom:#c79bf2; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0c111d; --surface:#141b2b; --ink:#e9edf6; --muted:#9aa4b8; --line:#263049;
+  --accent:#8fb0ff; --gold:#ffc83d; --gold-ink:#ffd97a; --chip:#1c2538;
+  --c-cut:#ff8a5c; --c-sfx:#53d1a6; --c-mg:#8fb0ff; --c-zoom:#c79bf2; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.55}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:16px;padding-block:20px 48px}
+header.top{display:flex;flex-wrap:wrap;gap:8px 24px;align-items:end;justify-content:space-between;margin-bottom:18px}
+h1{font-family:var(--f-display);font-weight:850;font-stretch:88%;font-size:clamp(26px,4vw,38px);line-height:1.05;margin:0;text-wrap:balance;letter-spacing:-.01em}
+.status{display:flex;flex-wrap:wrap;gap:6px 8px;align-items:center;font-size:13px;color:var(--muted);margin-top:6px}
+.status b{background:var(--gold);color:#2a1d00;font-weight:700;padding:2px 9px;border-radius:999px;font-size:12px;letter-spacing:.04em;text-transform:uppercase}
+.grid{display:grid;grid-template-columns:minmax(0,380px) minmax(0,1fr);gap:28px;align-items:start}
+@media (max-width:820px){.grid{grid-template-columns:minmax(0,1fr)}}
+
+/* ---------- player ---------- */
+.player{position:sticky;top:calc(env(safe-area-inset-top,0px) + 12px);display:flex;flex-direction:column;gap:10px;max-width:380px;width:100%;margin-inline:auto}
+@media (max-width:820px){.player{position:static}}
+.phone{position:relative;width:100%;max-width:100%;aspect-ratio:9/16;border-radius:22px;overflow:hidden;background:#000;box-shadow:0 18px 50px -20px rgba(10,20,50,.55);container-type:size;user-select:none;touch-action:none}
+.stage{position:absolute;inset:0;will-change:transform}
+.stage video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+#vo{clip-path:inset(0 100% 0 0)}
+.ov{position:absolute;inset:0;pointer-events:none;font-family:var(--f-display);color:var(--v-white)}
+.wipe{position:absolute;top:0;bottom:0;width:0;left:50%;pointer-events:none}
+.wipe::before{content:"";position:absolute;inset:0 -1px;background:#fff;box-shadow:0 0 8px rgba(0,0,0,.5)}
+.wipe .knob{position:absolute;top:50%;left:0;transform:translate(-50%,-50%);width:9cqw;height:9cqw;border-radius:50%;background:#fff;color:#111;display:grid;place-items:center;font:700 3.2cqw var(--f-body);pointer-events:auto;cursor:ew-resize;box-shadow:0 2px 10px rgba(0,0,0,.4)}
+.wipe .lab{position:absolute;top:3cqh;font:700 3cqw var(--f-body);background:rgba(0,0,0,.55);color:#fff;padding:.6cqw 2cqw;border-radius:99px;white-space:nowrap}
+.wipe .lab.l{right:2cqw}.wipe .lab.r{left:2cqw}
+.bigplay{position:absolute;inset:0;display:grid;place-items:center;background:rgba(5,10,25,.35);border:0;color:#fff;cursor:pointer;font:700 4.2cqw var(--f-body);gap:2cqh;align-content:center}
+.bigplay span{width:20cqw;height:20cqw;border-radius:50%;background:var(--v-gold);display:grid;place-items:center;color:#1a1200;font-size:8cqw;padding-left:1.2cqw}
+.safe{position:absolute;inset:0;pointer-events:none}
+.safe i{position:absolute;background:repeating-linear-gradient(45deg,rgba(255,60,60,.28) 0 6px,rgba(255,60,60,.12) 6px 12px);outline:1px dashed rgba(255,120,120,.9)}
+
+.controls{display:flex;gap:10px;align-items:center}
+.btn{font:600 14px var(--f-body);border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:10px;padding:8px 12px;cursor:pointer;min-height:40px}
+.btn:focus-visible,.tog:focus-visible,.tab:focus-visible,.ev:focus-visible,.line:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.btn.primary{background:var(--accent);color:var(--bg);border-color:var(--accent);min-width:48px}
+.time{font-variant-numeric:tabular-nums;font-size:13px;color:var(--muted);white-space:nowrap}
+.scrub{position:relative;flex:1;min-width:0;height:40px;display:flex;align-items:center}
+.scrub input{width:100%;margin:0;accent-color:var(--accent);position:relative;z-index:1}
+.marks{position:absolute;left:0;right:0;top:4px;height:6px;pointer-events:none}
+.marks i{position:absolute;width:3px;height:6px;border-radius:2px;transform:translateX(-1px)}
+.toggles{display:flex;flex-wrap:wrap;gap:6px}
+.tog{font:600 13px var(--f-body);border:1px solid var(--line);background:var(--surface);color:var(--muted);border-radius:999px;padding:6px 12px;cursor:pointer;display:inline-flex;gap:6px;align-items:center}
+.tog::before{content:"";width:8px;height:8px;border-radius:50%;border:1.5px solid currentColor}
+.tog[aria-pressed="true"]{color:var(--ink);border-color:var(--ink)}
+.tog[aria-pressed="true"]::before{background:var(--gold);border-color:var(--gold)}
+.hint{font-size:12.5px;color:var(--muted);margin:0}
+
+/* ---------- panel ---------- */
+.panel{min-width:0;display:flex;flex-direction:column;gap:14px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;border-bottom:1px solid var(--line)}
+.tab{font:600 14px var(--f-body);background:none;border:0;border-bottom:2.5px solid transparent;color:var(--muted);padding:10px 10px 9px;cursor:pointer}
+.tab[aria-selected="true"]{color:var(--ink);border-color:var(--gold)}
+.pane{min-width:0}
+.pane h2{font-family:var(--f-display);font-stretch:92%;font-weight:800;font-size:20px;margin:6px 0 6px;text-wrap:balance}
+.pane h3{font-size:15px;margin:18px 0 6px}
+.pane p{margin:0 0 10px;max-width:68ch}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:12.5px;color:var(--muted);margin-bottom:8px}
+.legend span{display:inline-flex;gap:6px;align-items:center}
+.legend i{width:10px;height:10px;border-radius:3px}
+.evlist{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.ev{display:grid;grid-template-columns:62px 72px minmax(0,1fr);gap:10px;align-items:baseline;padding:9px 6px;border:0;border-bottom:1px solid var(--line);background:none;color:inherit;font:inherit;text-align:left;cursor:pointer;border-radius:0}
+.ev:hover{background:var(--chip)}
+.ev.now{background:var(--chip);box-shadow:inset 3px 0 0 var(--gold)}
+.ev .t{font-variant-numeric:tabular-nums;font-weight:600;font-size:13px}
+.ev .k{font-size:11.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+.ev .d{font-size:14px;min-width:0}
+.ev .d small{display:block;color:var(--muted);font-size:12.5px}
+@media (max-width:460px){.ev{grid-template-columns:54px minmax(0,1fr)}.ev .k{grid-column:2}.ev .d{grid-column:1/-1;padding-left:64px;margin-top:-4px}}
+.k-cut{color:var(--c-cut)}.k-sfx{color:var(--c-sfx)}.k-mg{color:var(--c-mg)}.k-zoom{color:var(--c-zoom)}
+.raw{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.line{display:grid;grid-template-columns:52px minmax(0,1fr) auto;gap:4px 10px;padding:8px 6px;border-bottom:1px solid var(--line);align-items:baseline}
+.line .t{font-variant-numeric:tabular-nums;color:var(--muted);font-size:13px}
+.line .why{grid-column:2/-1;font-size:12.5px;color:var(--muted)}
+.line.no .tx{color:var(--muted);text-decoration:line-through;text-decoration-color:color-mix(in srgb,var(--c-cut) 60%,transparent)}
+.line .st{font-size:11.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;white-space:nowrap}
+.line.yes .st{color:var(--c-sfx)}.line.no .st{color:var(--c-cut)}
+.line.yes{cursor:pointer}.line.yes:hover{background:var(--chip)}
+table{border-collapse:collapse;width:100%;font-size:14px}
+.tablewrap{overflow-x:auto}
+th,td{text-align:left;padding:8px 10px 8px 0;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);font-weight:700}
+td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+.hooks{display:grid;gap:10px}
+.hook{border:1px solid var(--line);background:var(--surface);border-radius:12px;padding:12px 14px;display:grid;gap:4px}
+.hook.pick{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold)}
+.hook .tag{font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-ink)}
+.hook q{font-family:var(--f-display);font-weight:800;font-stretch:90%;font-size:18px;quotes:"\201C" "\201D"}
+.hook p{margin:0;color:var(--muted);font-size:13.5px}
+.qs{margin:0;padding-left:20px;display:grid;gap:10px;max-width:70ch}
+.flow{display:grid;gap:0;border-left:2px solid var(--line);margin:4px 0 14px 6px;padding-left:14px}
+.flow div{padding:4px 0;font-size:14px}
+.flow b{font-variant-numeric:tabular-nums;color:var(--gold-ink);margin-right:6px}
+
+/* ---------- on-video graphics (container units of the phone) ---------- */
+.g{position:absolute;opacity:0;visibility:hidden}
+.g.on{opacity:1;visibility:visible}
+.off-mg .g{display:none}
+.cap{position:absolute;left:6cqw;right:6cqw;top:63cqh;text-align:center;font-weight:900;font-stretch:96%;font-size:7cqw;line-height:1.08;text-transform:uppercase;
+  text-shadow:0 .5cqw 0 rgba(0,0,0,.5),0 0 2.5cqw rgba(0,0,0,.45);-webkit-text-stroke:.3cqw rgba(0,0,0,.6);paint-order:stroke fill}
+.cap span{display:inline-block;margin:0 1.2cqw;transition:transform .12s ease,color .12s}
+.cap span.hot{color:var(--v-gold)}
+.cap span.act{transform:scale(1.1) translateY(-.3cqw)}
+.cap.pop{animation:cappop .16s ease-out}
+.off-cap .cap,.on-full .cap{display:none}
+.on-end .cap{display:none}
+@keyframes cappop{from{transform:scale(.9);opacity:.2}to{transform:none;opacity:1}}
+
+.brand{left:5cqw;top:10.5cqh;display:flex;align-items:center;gap:1.4cqw;font:800 3.1cqw var(--f-body);letter-spacing:.14em;color:#fff;background:rgba(15,29,68,.55);padding:1cqw 2.6cqw 1cqw 1.4cqw;border-radius:99px;backdrop-filter:blur(4px)}
+.brand i{width:3.4cqw;height:3.4cqw;border-radius:50%;background:var(--v-gold);display:block;box-shadow:inset 0 0 0 .7cqw var(--v-navy)}
+
+.scrim{position:absolute;left:0;right:0;top:0;height:50cqh;background:linear-gradient(rgba(6,12,32,.72),rgba(6,12,32,0))}
+.hookbox{position:absolute;left:7cqw;right:7cqw;top:17cqh;display:flex;flex-direction:column;align-items:flex-start;gap:.8cqh}
+.hookbox b{display:block;font-weight:900;font-stretch:75%;font-size:14cqw;line-height:.95;opacity:0;transform:translateY(3cqh)}
+.hookbox b:last-child{background:var(--v-gold);color:var(--v-navy);padding:.6cqw 2.4cqw}
+.g.on .hookbox b{animation:rise .3s cubic-bezier(.2,1.4,.4,1) forwards}
+.g.on .hookbox b:nth-child(3){animation-delay:.35s}
+@keyframes rise{to{opacity:1;transform:none}}
+
+/* full-screen comparison cutaway */
+.full{inset:0;background:radial-gradient(120% 70% at 50% 30%,#1a2f6b,#0b1533);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3cqh}
+.full .clock{width:44cqw;height:44cqw;border-radius:50%;border:1.6cqw solid var(--v-gold);position:relative;display:grid;place-items:center;box-shadow:0 0 8cqw rgba(255,200,61,.25)}
+.full .clock::before{content:"";position:absolute;width:1.4cqw;height:16cqw;background:#fff;border-radius:99px;bottom:50%;left:calc(50% - .7cqw);transform-origin:50% 100%}
+.g.on.full .clock::before{animation:sweep 2.2s linear forwards}
+.full .clock b{font-weight:900;font-stretch:80%;font-size:12cqw;margin-top:22cqw;color:var(--v-gold)}
+.full .t1{font-weight:900;font-stretch:80%;font-size:10cqw;line-height:1;text-align:center}
+.full .t2{display:flex;gap:2cqw;align-items:center;font:700 4.6cqw var(--f-body);background:rgba(47,182,124,.18);border:.4cqw solid var(--v-green);color:#d9fbe9;border-radius:99px;padding:1.4cqw 4cqw}
+.g.on.full .t1,.g.on.full .t2{animation:rise .35s .25s cubic-bezier(.2,1.3,.4,1) both}
+@keyframes sweep{from{transform:rotate(0)}to{transform:rotate(330deg)}}
+
+.cmp{left:5cqw;right:5cqw;top:16cqh;display:grid;grid-template-columns:1fr 1fr;gap:2.4cqw}
+.cmp .col{background:rgba(255,255,255,.95);color:var(--v-navy);border-radius:3.5cqw;padding:2.6cqw 3cqw;box-shadow:0 1.5cqw 4cqw rgba(0,0,0,.3);position:relative}
+.cmp .col h4{margin:0;font-weight:900;font-stretch:80%;font-size:9cqw;line-height:1}
+.cmp .col p{margin:.8cqw 0 0;font:700 3.3cqw var(--f-body);color:#47506a}
+.cmp .col .mk{position:absolute;right:2cqw;top:2cqw;width:6.4cqw;height:6.4cqw;border-radius:50%;display:grid;place-items:center;color:#fff;font:900 3.8cqw var(--f-body)}
+.cmp .a .mk{background:var(--v-green)}.cmp .b .mk{background:var(--v-red)}
+.cmp .b{opacity:0}
+.g.on.cmp .a{animation:dropin .35s cubic-bezier(.2,1.3,.4,1)}
+.g.on.cmp .b{animation:dropin .35s var(--reveal) cubic-bezier(.2,1.3,.4,1) both}
+.cmp .nt{position:absolute;right:-1cqw;top:-5cqw;background:#fff;color:var(--v-navy);font:800 3cqw var(--f-body);padding:1cqw 2.2cqw;border-radius:2.4cqw;box-shadow:0 1cqw 3cqw rgba(0,0,0,.3);display:flex;gap:1.2cqw;align-items:center;opacity:0;white-space:nowrap}
+.cmp .nt i{width:2.6cqw;height:2.6cqw;border-radius:50%;background:var(--v-red)}
+.g.on.cmp .nt{animation:pop .3s var(--notif) cubic-bezier(.2,1.6,.4,1) both}
+.cmp .tm{grid-column:2;justify-self:end;font:800 3.4cqw var(--f-body);background:var(--v-red);color:#fff;border-radius:99px;padding:.8cqw 2.6cqw;opacity:0}
+.g.on.cmp .tm{animation:pop .3s var(--timer) cubic-bezier(.2,1.6,.4,1) both}
+@keyframes pop{from{opacity:0;transform:scale(.4)}to{opacity:1;transform:none}}
+@keyframes dropin{from{transform:translateY(-4cqh) scale(.92);opacity:0}to{transform:none;opacity:1}}
+
+.name{left:5cqw;top:16cqh;display:flex;flex-direction:column;align-items:flex-start;gap:1.2cqw}
+.name .n{background:var(--v-paper);color:var(--v-navy);font-weight:900;font-stretch:85%;font-size:7.4cqw;padding:1.2cqw 3.4cqw;border-left:1.6cqw solid var(--v-gold);border-radius:.8cqw}
+.name .r{background:var(--v-navy);color:#fff;font:700 3.6cqw var(--f-body);padding:1.2cqw 3.4cqw;border-radius:.8cqw}
+.name .c{background:var(--v-gold);color:var(--v-navy);font:800 3.6cqw var(--f-body);padding:1cqw 3cqw;border-radius:99px;opacity:0}
+.g.on.name .n,.g.on.name .r{animation:wipein .4s cubic-bezier(.2,1,.3,1) both}
+.g.on.name .r{animation-delay:.12s}
+.g.on.name .c{animation:pop .3s var(--chipAt) cubic-bezier(.2,1.6,.4,1) both}
+@keyframes wipein{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+
+.eq{left:5cqw;right:5cqw;top:17cqh;display:flex;justify-content:center;align-items:center;gap:2.4cqw;font-weight:900;font-stretch:80%;font-size:9.6cqw;text-shadow:0 .5cqw 2cqw rgba(0,0,0,.55)}
+.eq .x,.eq .b{white-space:nowrap}
+.eq .x{background:rgba(15,29,68,.88);border:.5cqw solid var(--v-gold);border-radius:2.6cqw;padding:1cqw 3cqw}
+.eq .p,.eq .b,.eq .ok{opacity:0}
+.eq .b{background:var(--v-gold);color:var(--v-navy);border-radius:2.6cqw;padding:1cqw 3cqw;text-shadow:none}
+.eq .ok{width:10cqw;height:10cqw;border-radius:50%;background:var(--v-green);display:grid;place-items:center;font-size:6cqw;text-shadow:none}
+.g.on.eq .x{animation:pop .3s cubic-bezier(.2,1.5,.4,1)}
+.g.on.eq .p,.g.on.eq .b{animation:pop .3s var(--bAt) cubic-bezier(.2,1.6,.4,1) both}
+.g.on.eq .ok{animation:pop .3s calc(var(--bAt) + .25s) cubic-bezier(.2,1.6,.4,1) both}
+
+.chk{left:5cqw;top:16cqh;display:flex;flex-direction:column;align-items:flex-start;gap:1.6cqw}
+.chk div{display:flex;gap:2.2cqw;align-items:center;background:rgba(255,255,255,.95);color:var(--v-navy);border-radius:99px;padding:1.4cqw 4.4cqw 1.4cqw 1.4cqw;font-weight:900;font-stretch:85%;font-size:6cqw;box-shadow:0 1cqw 3cqw rgba(0,0,0,.3);opacity:0}
+.chk div.no{color:#7a8094;text-decoration:line-through;text-decoration-thickness:.5cqw;text-decoration-color:var(--v-red)}
+.chk i{width:7.4cqw;height:7.4cqw;border-radius:50%;display:grid;place-items:center;color:#fff;font-style:normal;font-size:4.4cqw;text-decoration:none}
+.chk .ok i{background:var(--v-green)}.chk .no i{background:var(--v-red)}
+.g.on.chk div{animation:slidein .35s var(--d) cubic-bezier(.2,1.3,.4,1) both}
+@keyframes slidein{from{transform:translateX(-30cqw);opacity:0}to{transform:none;opacity:1}}
+
+.meter{left:6cqw;right:6cqw;top:17cqh;background:rgba(255,255,255,.95);color:var(--v-navy);border-radius:3.5cqw;padding:3cqw 4cqw;box-shadow:0 1.5cqw 4cqw rgba(0,0,0,.3)}
+.meter .row{display:flex;justify-content:space-between;align-items:baseline;font-weight:900;font-stretch:85%;font-size:5.4cqw}
+.meter .row span{font:700 3.4cqw var(--f-body);color:#5a6377}
+.meter .track{height:3.6cqw;background:#e6e9f2;border-radius:99px;margin-top:1.8cqw;overflow:hidden}
+.meter .track i{display:block;height:100%;width:100%;background:var(--v-green);border-radius:99px}
+.g.on.meter{animation:dropin .35s cubic-bezier(.2,1.3,.4,1)}
+.g.on.meter .track i{animation:drain 2.1s var(--drainAt) cubic-bezier(.5,0,.6,1) forwards,tored .4s var(--redAt) forwards}
+@keyframes drain{to{width:22%}}
+@keyframes tored{to{background:var(--v-red)}}
+
+.player-g{left:6cqw;right:6cqw;top:15cqh}
+.player-g .scr{background:#0b1533;border-radius:3cqw;aspect-ratio:16/9;max-width:100%;position:relative;overflow:hidden;box-shadow:0 1.5cqw 4cqw rgba(0,0,0,.35);border:.4cqw solid rgba(255,255,255,.25)}
+.player-g .scr::after{content:"▶";position:absolute;inset:0;display:grid;place-items:center;font-size:9cqw;color:rgba(255,255,255,.85)}
+.player-g .bar{position:absolute;left:3cqw;right:3cqw;bottom:2.6cqw;height:1.2cqw;background:rgba(255,255,255,.25);border-radius:99px}
+.player-g .bar i{display:block;height:100%;width:3%;background:var(--v-red);border-radius:99px}
+.g.on.player-g .bar i{animation:crawl 5.4s linear forwards}
+@keyframes crawl{to{width:9%}}
+.player-g .len{position:absolute;right:3cqw;bottom:5cqw;font:700 3cqw var(--f-body);color:#fff;background:rgba(0,0,0,.6);padding:.4cqw 1.6cqw;border-radius:1cqw}
+.player-g .bb{position:absolute;background:#fff;color:var(--v-navy);font:800 4.4cqw var(--f-body);padding:1.4cqw 3.4cqw;border-radius:3cqw 3cqw 3cqw .6cqw;box-shadow:0 1cqw 3cqw rgba(0,0,0,.35);opacity:0}
+.g.on.player-g{animation:dropin .35s cubic-bezier(.2,1.3,.4,1)}
+.g.on.player-g .bb{animation:pop .3s var(--d) cubic-bezier(.2,1.6,.4,1) both}
+
+.phone-g{left:5cqw;right:5cqw;top:17cqh;display:grid;grid-template-columns:auto 1fr;gap:3cqw;align-items:start}
+.phone-g .ph{width:17cqw;height:31cqw;border-radius:3cqw;background:#111827;border:.8cqw solid #e5e7eb;position:relative;box-shadow:0 1.5cqw 4cqw rgba(0,0,0,.35)}
+.phone-g .ph b{position:absolute;right:-3cqw;top:-3cqw;min-width:8cqw;height:8cqw;border-radius:99px;background:var(--v-red);color:#fff;display:grid;place-items:center;font:800 3.6cqw var(--f-body);padding:0 1.4cqw;box-shadow:0 0 0 .6cqw #fff}
+.g.on.phone-g .ph{animation:shake .5s .1s ease-in-out 2}
+@keyframes shake{25%{transform:rotate(-7deg)}75%{transform:rotate(7deg)}}
+.phone-g .list{display:flex;flex-direction:column;gap:1.4cqw}
+.phone-g .list div{display:flex;gap:1.8cqw;align-items:center;background:rgba(255,255,255,.95);color:var(--v-navy);border-radius:2.6cqw;padding:1.4cqw 3cqw;font:800 4.2cqw var(--f-body);box-shadow:0 1cqw 3cqw rgba(0,0,0,.3);opacity:0}
+.g.on.phone-g .list div{animation:slidein .35s var(--d) cubic-bezier(.2,1.3,.4,1) both}
+.phone-g .all{grid-column:1/-1;justify-self:start;background:var(--v-red);color:#fff;font-weight:900;font-stretch:80%;font-size:7cqw;padding:1cqw 3.4cqw;border-radius:2cqw;opacity:0;transform:rotate(-3deg)}
+.g.on.phone-g .all{animation:pop .3s var(--allAt) cubic-bezier(.2,1.6,.4,1) both}
+
+.cmt{left:5cqw;top:17cqh;background:#fff;color:var(--v-navy);border-radius:3.5cqw 3.5cqw 3.5cqw .8cqw;padding:2.2cqw 4cqw;font-weight:900;font-stretch:85%;font-size:6cqw;box-shadow:0 1cqw 3cqw rgba(0,0,0,.35);display:flex;gap:2cqw;align-items:center}
+.cmt i{font-style:normal;color:var(--v-gold);font-size:7cqw}
+.g.on.cmt{animation:pop .3s cubic-bezier(.2,1.6,.4,1)}
+
+.end{inset:0;display:flex;flex-direction:column;justify-content:center;padding:0 7cqw;gap:2.4cqh;font-family:var(--f-body)}
+.end .eb{display:flex;gap:1.6cqw;align-items:center;font:800 3.6cqw var(--f-body);letter-spacing:.18em;color:var(--v-gold)}
+.end .eb i{width:4cqw;height:4cqw;border-radius:50%;background:var(--v-gold);box-shadow:inset 0 0 0 .8cqw var(--v-navy)}
+.end h3{margin:0;font-family:var(--f-display);font-weight:900;font-stretch:82%;font-size:9.4cqw;line-height:1.02;color:#fff;text-wrap:balance}
+.end ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:1.4cqw}
+.end li{display:flex;gap:2.4cqw;align-items:center;font:600 4.1cqw var(--f-body);color:#eef1f8;background:rgba(255,255,255,.1);border:.3cqw solid rgba(255,255,255,.18);border-radius:2.4cqw;padding:1.8cqw 3cqw}
+.end li b{color:var(--v-gold);font-weight:800}
+.end .btn-cta{align-self:stretch;text-align:center;background:var(--v-gold);color:var(--v-navy);font:900 5.6cqw var(--f-display);font-stretch:85%;padding:3cqw;border-radius:99px;box-shadow:0 1.2cqw 0 #b88400,0 2cqw 5cqw rgba(0,0,0,.4)}
+.end .ct{font:600 3.6cqw var(--f-body);color:#d6dcea;text-align:center}
+.end .ct b{color:#fff}
+.end > *{opacity:0}
+.g.on.end > *{animation:rise .4s cubic-bezier(.2,1.2,.4,1) forwards}
+.g.on.end > :nth-child(2){animation-delay:.12s}.g.on.end > :nth-child(3){animation-delay:.3s}.g.on.end > :nth-child(4){animation-delay:.6s}.g.on.end > :nth-child(5){animation-delay:.75s}
+.g.on.end .btn-cta{animation:rise .4s .6s cubic-bezier(.2,1.2,.4,1) forwards,pulse 1.2s 1.2s ease-in-out infinite}
+@keyframes pulse{50%{transform:scale(1.04)}}
+.end-bg{inset:0;background:linear-gradient(rgba(11,21,51,.55),rgba(11,21,51,.85))}
+@media (prefers-reduced-motion:reduce){.g.on,.g.on *,.g.on::after,.g.on *::after,.g.on *::before{animation-duration:.01s!important;animation-iteration-count:1!important}}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div>
+      <h1>Preview Video Fokus Belajar</h1>
+      <div class="status"><b>Preview</b><span>Belum render final</span><span>·</span><span>540p</span><span>·</span><span id="durlabel"></span><span>(asal 2:59)</span></div>
+    </div>
+  </header>
+
+  <div class="grid">
+    <section class="player" aria-label="Pemain video preview">
+      <div class="phone" id="phone">
+        <div class="stage" id="stage">
+          <video id="vg" src="graded.mp4" playsinline preload="auto"></video>
+          <video id="vo" src="orig.mp4" playsinline muted preload="auto"></video>
+        </div>
+        <div class="ov" id="ov"></div>
+        <div class="safe" id="safe" hidden><i style="left:0;right:0;top:0;height:9%"></i><i style="right:0;width:15%;top:36%;bottom:16%"></i><i style="left:0;right:0;bottom:0;height:16%"></i></div>
+        <div class="wipe" id="wipe" hidden><span class="lab l">Asal</span><span class="lab r">Grade baru</span><span class="knob" id="knob">⟷</span></div>
+        <button class="bigplay" id="bigplay" aria-label="Main preview"><span>▶</span>Tekan untuk main (dengan bunyi)</button>
+      </div>
+      <div class="controls">
+        <button class="btn primary" id="play" aria-label="Main">▶</button>
+        <div class="scrub"><div class="marks" id="marks"></div><input type="range" id="seek" min="0" max="43" step="0.01" value="0" aria-label="Kedudukan video"></div>
+        <span class="time" id="time">0:00.0</span>
+      </div>
+      <div class="toggles" role="group" aria-label="Lapisan preview">
+        <button class="tog" id="t-cap" aria-pressed="true">Sari kata</button>
+        <button class="tog" id="t-mg" aria-pressed="true">Grafik</button>
+        <button class="tog" id="t-sfx" aria-pressed="true">Sound effect</button>
+        <button class="tog" id="t-zoom" aria-pressed="true">Punch-in</button>
+        <button class="tog" id="t-wipe" aria-pressed="false">Banding warna</button>
+        <button class="tog" id="t-safe" aria-pressed="false">Zon UI TikTok</button>
+      </div>
+      <p class="hint">Hidup atau matikan lapisan untuk bandingkan. "Banding warna" papar garis: kiri video asal, kanan selepas colour grade. Seret bulatan putih untuk gerakkan garis.</p>
+    </section>
+
+    <section class="panel">
+      <div class="tabs" role="tablist">
+        <button class="tab" role="tab" aria-selected="true" data-p="p-plan">Pelan edit</button>
+        <button class="tab" role="tab" aria-selected="false" data-p="p-hook">Hook &amp; struktur</button>
+        <button class="tab" role="tab" aria-selected="false" data-p="p-tx">Transkrip</button>
+        <button class="tab" role="tab" aria-selected="false" data-p="p-grade">Warna &amp; lighting</button>
+        <button class="tab" role="tab" aria-selected="false" data-p="p-broll">B-roll</button>
+        <button class="tab" role="tab" aria-selected="false" data-p="p-q">Perlu jawapan kau</button>
+      </div>
+
+      <div class="pane" id="p-plan" role="tabpanel">
+        <h2>Semua yang aku tambah, ikut masa</h2>
+        <p>Tekan mana-mana baris untuk lompat ke saat tu dalam preview.</p>
+        <div class="legend"><span><i style="background:var(--c-cut)"></i>Potongan</span><span><i style="background:var(--c-mg)"></i>Grafik</span><span><i style="background:var(--c-sfx)"></i>Sound effect</span><span><i style="background:var(--c-zoom)"></i>Punch-in</span></div>
+        <div class="evlist" id="evlist"></div>
+      </div>
+
+      <div class="pane" id="p-hook" role="tabpanel" hidden>
+        <h2>Hook paling kuat</h2>
+        <p>Video asal mula dengan "Saya tak kisah anak tu belajar sejam…", dan pengenalan diri ada di hujung (2:41). Untuk TOFU, penonton baru buat keputusan dalam 1 hingga 3 saat, jadi aku susun semula.</p>
+        <div class="hooks">
+          <div class="hook pick"><span class="tag">Dipilih · dalam preview</span><q>Percaya atau tidak? Sejam belajar tanpa gangguan lebih bernilai daripada 3 jam belajar sambil scroll handphone setiap 5 minit.</q><p>Ada dua nombor yang mudah dibandingkan (1 jam lawan 3 jam), dan masalah yang setiap ibu bapa nampak di rumah (anak pegang telefon masa belajar). "Percaya atau tidak?" buat orang berhenti scroll untuk dengar jawapannya. Diambil dari 1:01 dan 1:05.</p></div>
+          <div class="hook"><span class="tag">Pilihan B</span><q>Saya tak kisah anak tu belajar sejam, asalkan satu jam itu dia fokus.</q><p>Pendapat yang berani dan mesra. Bagus untuk nada lebih lembut, tapi kurang "kenapa" berbanding pilihan A. (Dari 0:25)</p></div>
+          <div class="hook"><span class="tag">Pilihan C</span><q>Siapa rasa telefon banyak ganggu kita?</q><p>Soalan terus dan menarik komen, tapi terlalu umum untuk hentikan scroll ibu bapa. Lebih sesuai di hujung sebagai ajakan komen. (Dari 2:28)</p></div>
+        </div>
+        <h3>Aliran video baru</h3>
+        <div class="flow" id="flow"></div>
+        <p>Pengenalan diri aku letak <b>terus selepas hook</b>. Ibu bapa nak tahu siapa yang bercakap sebelum mereka percaya nasihatnya.</p>
+      </div>
+
+      <div class="pane" id="p-tx" role="tabpanel" hidden>
+        <h2>Transkrip penuh video asal</h2>
+        <p>Video asal 2:59 ialah rakaman mentah dengan banyak ambilan semula. Aku pilih ambilan terbaik bagi setiap ayat: paling lancar, tak tersasul, dan penyampai pandang kamera. Masa di kiri ialah masa dalam video asal. Tekan baris hijau untuk dengar dalam preview.</p>
+        <div class="raw" id="raw"></div>
+        <h3>Potongan akhir</h3>
+        <div class="tablewrap"><table><thead><tr><th>Ayat</th><th>Dari video asal</th><th>Dalam video baru</th></tr></thead><tbody id="cuttable"></tbody></table></div>
+      </div>
+
+      <div class="pane" id="p-grade" role="tabpanel" hidden>
+        <h2>Colour grade &amp; lighting</h2>
+        <p>Tekan <b>Banding warna</b> di bawah video untuk tengok perbezaan secara langsung. Arah: <b>bersih, hangat dan dipercayai</b>, macam studio podcast yang kemas. Aku tak buat look filem gelap sebab penonton ialah ibu bapa.</p>
+        <div class="tablewrap"><table><thead><tr><th>Langkah</th><th>Apa aku buat</th><th>Kenapa</th></tr></thead><tbody>
+          <tr><td>1. Imbangan putih</td><td>Kurangkan sedikit kuning di bahagian gelap, dan buang sedikit hijau di bahagian tengah.</td><td>Dinding kelabu nampak bersih dan neutral, tak kekuningan.</td></tr>
+          <tr><td>2. Kontras lembut</td><td>Lengkung S yang lembut: hitam diangkat sedikit, highlight dinding tak pecah.</td><td>Nampak premium tapi kulit tak jadi keras.</td></tr>
+          <tr><td>3. Lampu muka</td><td>Cahaya lembut ditambah di kawasan muka dan dada (macam key light), lebih hangat sedikit.</td><td>Muka asal lebih gelap daripada dinding. Sekarang mata penonton terus ke muka.</td></tr>
+          <tr><td>4. Vignette halus</td><td>Tepi dan bucu digelapkan sedikit sahaja.</td><td>Fokus ke penyampai. Sofa kulit nampak lebih kaya.</td></tr>
+          <tr><td>5. Audio</td><td>Buang dengung rendah, kurangkan bunyi bilik, compressor ringan, kuatkan ke −14 LUFS.</td><td>Suara jelas dan sama kuat dengan video lain di TikTok/Reels.</td></tr>
+          <tr><td>6. Punch-in</td><td>Saiz frame bertukar di setiap potongan (1.0× hingga 1.28×), dan zoom perlahan pada kata kunci.</td><td>Sembunyikan jump cut dan beri tenaga tanpa terlalu laju.</td></tr>
+        </tbody></table></div>
+        <p style="margin-top:10px">Satu had: lampu asal datang dari tingkap/siling dan agak rata. Grade boleh tambah baik, tapi tak boleh cipta bayang dramatik. Untuk rakaman akan datang, letak satu lampu lembut di sisi depan muka (45°). Punch-in sampai 1.28× pada video 1080p akan nampak sedikit lembut dalam render final. Kalau kau ada versi 4K, hantar yang tu.</p>
+      </div>
+
+      <div class="pane" id="p-broll" role="tabpanel" hidden>
+        <h2>B-roll</h2>
+        <p>Dalam preview ni, B-roll dibuat sebagai <b>grafik bergerak</b> (jam, kad banding, pemain video, telefon). Semuanya ikut apa yang penyampai cakap, dan tiada masalah hak cipta. Grafik skrin penuh di 0:01 juga menutup saat penyampai menoleh ke tepi.</p>
+        <h3>Cadangan B-roll sebenar (kalau kau ada atau nak aku cari stok percuma)</h3>
+        <div class="tablewrap"><table><thead><tr><th>Masa</th><th>Shot</th><th>Kenapa</th></tr></thead><tbody>
+          <tr><td class="num">0:05–0:08</td><td>Anak buat kerja sekolah, telefon menyala di sebelah buku</td><td>Tunjuk masalah "scroll setiap 5 minit" secara nyata</td></tr>
+          <tr><td class="num">0:22–0:25</td><td>Anak menguap atau merenung kosong depan buku</td><td>"Otak ni mula merewang"</td></tr>
+          <tr><td class="num">0:32–0:36</td><td>Telefon di meja makan / di atas katil dengan notifikasi</td><td>"Masa tidur, masa makan, semua ganggu"</td></tr>
+          <tr><td class="num">Kad akhir</td><td>Rakaman skrin kelas Zoom Aster Edu yang sebenar (2 tutor, murid aktif)</td><td>Paling kuat untuk kepercayaan ibu bapa: mereka nampak kelas betul-betul</td></tr>
+        </tbody></table></div>
+        <p style="margin-top:10px">Setiap B-roll aku hadkan 1 hingga 2 saat, dan muka penyampai kembali cepat. Untuk TOFU, kepercayaan datang dari orang yang bercakap.</p>
+      </div>
+
+      <div class="pane" id="p-q" role="tabpanel" hidden>
+        <h2>Sebelum aku render final</h2>
+        <ol class="qs">
+          <li><b>Hook:</b> setuju dengan pilihan A dalam preview, atau nak B / C? (Tab Hook &amp; struktur)</li>
+          <li><b>Nama penyampai:</b> AI dengar "Al-Farhan". Betul ke ejaan tu? Nak kekalkan nama di lower-third, dan nak tambah jawatan (contoh "Pengasas Aster Edu")?</li>
+          <li><b>Kad akhir:</b> aku hanya guna fakta dari website (Darjah 4 – Tingkatan 5, 5 subjek, 2 tutor dalam 1 kelas, rakaman kelas 24/7, hotline). Aku <b>tak letak harga</b> sebab ini video TOFU. Nak tambah "RM99/bulan untuk 5 subjek" atau "Booking RM20"? Kedua-duanya ada di website.</li>
+          <li><b>Hotline:</b> 011-5596 9070 (dari website). Betul ke untuk iklan ni, atau nak guna "link di bio"?</li>
+          <li><b>Muzik latar:</b> aku tak letak sebab aku tiada muzik berlesen. Cadangan: pilih muzik lembut dalam app TikTok/Reels masa upload, pada volume rendah. Atau hantar fail muzik kau sendiri.</li>
+          <li><b>B-roll sebenar:</b> nak aku cari klip stok percuma (Pexels/Pixabay), atau kau ada rakaman kelas Zoom sendiri? (Tab B-roll)</li>
+          <li><b>Lain-lain:</b> ada grafik atau bunyi yang terlalu banyak atau kurang? Sebut saatnya (contoh "0:25 pemain video tak perlu").</li>
+        </ol>
+        <p style="margin-top:12px">Lepas kau setuju, aku render versi final 1080×1920 dengan semua kesan ni dibakar ke dalam video, sedia untuk TikTok dan Reels.</p>
+      </div>
+    </section>
+  </div>
+</div>
+
+<script id="plan" type="application/json">__PLAN__</script>
+<script>
+(function(){
+const $=s=>document.querySelector(s);
+const plan=JSON.parse($("#plan").textContent);
+const vg=$("#vg"),vo=$("#vo"),stage=$("#stage"),ov=$("#ov"),phone=$("#phone");
+const DUR=plan.duration;$("#seek").max=DUR;
+const fmt=t=>{t=Math.max(0,t);const m=Math.floor(t/60),s=t-m*60;return m+":"+(s<10?"0":"")+s.toFixed(1)};
+const fmt0=t=>{const m=Math.floor(t/60),s=Math.floor(t-m*60);return m+":"+(s<10?"0":"")+s};
+$("#durlabel").textContent="0:"+Math.round(DUR)+" saat";
+const st={cap:true,mg:true,sfx:true,zoom:true,wipe:false,wipeX:.5};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+/* ---- graphics DOM ---- */
+function build(g){
+  const el=document.createElement("div");el.className="g";let h="";
+  switch(g.kind){
+    case"brand":el.className+=" brand";h=`<i></i>ASTER EDU`;break;
+    case"hook":el.style.inset="0";h=`<div class="scrim"></div><div class="hookbox"><b>${esc(g.text[0])}</b><b>${esc(g.text[1])}</b></div>`;break;
+    case"compare-full":el.className+=" full";h=`<div class="clock"><b>1 JAM</b></div><div class="t1">BELAJAR TANPA<br>GANGGUAN</div><div class="t2">✓ Fokus penuh</div>`;break;
+    case"compare":el.className+=" cmp";el.style.cssText=`--reveal:${g.reveal}s;--notif:${g.notif}s;--timer:${g.timer}s`;
+      h=`<div class="col a"><span class="mk">✓</span><h4>1 JAM</h4><p>Tanpa gangguan</p></div><div class="col b"><span class="mk">✕</span><h4>3 JAM</h4><p>+ scroll handphone</p><span class="nt"><i></i>1 notifikasi baru</span></div><span class="tm">⏱ setiap 5 minit</span>`;break;
+    case"name":el.className+=" name";el.style.cssText=`--chipAt:${g.chipAt}s`;h=`<span class="n">${esc(g.name)}</span><span class="r">${esc(g.role)}</span><span class="c">${esc(g.chip)}</span>`;break;
+    case"equation":el.className+=" eq";el.style.cssText=`--bAt:${g.bAt}s`;h=`<span class="x">${esc(g.a)}</span><span class="p">+</span><span class="b">${esc(g.b)}</span><span class="ok">✓</span>`;break;
+    case"checklist":el.className+=" chk";h=g.rows.map((r,i)=>`<div class="${r[0]}" style="--d:${g.rowAt[i]}s"><i>${r[0]==="ok"?"✓":"✕"}</i>${esc(r[1])}</div>`).join("");break;
+    case"meter":el.className+=" meter";el.style.cssText=`--drainAt:${g.drainAt}s;--redAt:${g.redAt}s`;h=`<div class="row">${esc(g.text)}<span>belajar terlalu lama</span></div><div class="track"><i></i></div>`;break;
+    case"player":el.className+=" player-g";h=`<div class="scr"><div class="bar"><i></i></div><span class="len">2:47:10</span></div>`+g.bubbles.map((b,i)=>`<span class="bb" style="--d:${b[1]}s;${i?"right:2cqw;top:30cqw":"left:2cqw;top:22cqw"}">${esc(b[0])}</span>`).join("");break;
+    case"phone":el.className+=" phone-g";el.style.cssText=`--allAt:${g.allAt}s`;h=`<div class="ph"><b>99+</b></div><div class="list">${g.chips.map(c=>`<div style="--d:${c[2]}s"><span aria-hidden="true">${c[0]}</span>${esc(c[1])}</div>`).join("")}</div><span class="all">SEMUA GANGGU</span>`;break;
+    case"comment":el.className+=" cmt";h=`<i>💬</i>${esc(g.text)}`;break;
+    case"endcard":el.className+=" end";h=`<div class="eb"><i></i>ASTER EDU</div><h3>Tuisyen online untuk anak Darjah 4 hingga Tingkatan 5</h3><ul><li><b>5</b> subjek teras dalam satu pakej</li><li><b>2</b> tutor dalam 1 kelas</li><li><b>24/7</b> rakaman kelas untuk ulang kaji</li></ul><div class="btn-cta">Tanya pakej &amp; jadual kelas</div><div class="ct">WhatsApp <b>011-5596 9070</b> · asteredu11.com.my</div>`;
+      const bg=document.createElement("div");bg.className="g end-bg";ov.appendChild(bg);GS.push({g,el:bg,on:false});break;
+  }
+  el.innerHTML=h;ov.appendChild(el);GS.push({g,el,on:false});
+}
+const GS=[];plan.graphics.forEach(build);
+const cap=document.createElement("div");cap.className="cap";ov.appendChild(cap);
+let capIdx=-1;
+
+/* ---- zoom ---- */
+const ease=x=>x<.5?2*x*x:1-Math.pow(-2*x+2,2)/2;
+stage.style.transformOrigin=`${plan.origin.x}% ${plan.origin.y}%`;
+function zoomAt(t){const Z=plan.zoom;if(t<=Z[0].t)return Z[0].scale;for(let i=1;i<Z.length;i++){if(t<=Z[i].t){const a=Z[i-1],b=Z[i],k=ease((t-a.t)/Math.max(1e-3,b.t-a.t));return a.scale+(b.scale-a.scale)*k}}return Z[Z.length-1].scale}
+
+/* ---- render ---- */
+function render(t){
+  stage.style.transform=`scale(${(st.zoom?zoomAt(t):1).toFixed(4)})`;
+  let full=false,end=false;
+  for(const o of GS){const on=t>=o.g.s&&t<o.g.e;if(on!==o.on){o.on=on;o.el.classList.toggle("on",on)}if(on&&o.g.kind==="endcard")end=true;if(on&&o.g.kind==="compare-full")full=true}
+  phone.classList.toggle("on-end",end&&st.mg);phone.classList.toggle("on-full",full&&st.mg);
+  let i=-1;for(let k=0;k<plan.captions.length;k++){const c=plan.captions[k];if(t>=c.s&&t<c.e){i=k;break}}
+  if(i!==capIdx){capIdx=i;if(i<0){cap.innerHTML=""}else{cap.innerHTML=plan.captions[i].words.map(w=>`<span class="${w.hot?"hot":""}">${esc(w.w)}</span>`).join(" ");cap.classList.remove("pop");void cap.offsetWidth;cap.classList.add("pop")}}
+  if(i>=0){const ws=plan.captions[i].words;const sp=cap.children;let a=-1;ws.forEach((w,k)=>{if(t>=w.s)a=k});for(let k=0;k<sp.length;k++)sp[k].classList.toggle("act",k===a)}
+  $("#time").textContent=fmt(t);$("#seek").value=t;
+  highlightEv(t);
+}
+
+/* ---- SFX via Web Audio ---- */
+let actx=null,bufs={},lastT=0;
+async function initAudio(){
+  if(actx)return;try{actx=new (window.AudioContext||window.webkitAudioContext)()}catch(e){return}
+  const names=[...new Set(plan.sfx.map(s=>s.name))];
+  await Promise.all(names.map(async n=>{try{const r=await fetch(`sfx/${n}.wav`);bufs[n]=await actx.decodeAudioData(await r.arrayBuffer())}catch(e){}}));
+}
+function fire(s,offset){
+  if(!actx||!bufs[s.name])return;const src=actx.createBufferSource(),g=actx.createGain();
+  src.buffer=bufs[s.name];g.gain.value=s.gain;src.connect(g).connect(actx.destination);src.start(0,Math.max(0,offset||0));
+}
+function sfxTick(t){
+  if(st.sfx&&!vg.paused&&t>lastT&&t-lastT<.4){for(const s of plan.sfx){if(s.t>lastT&&s.t<=t)fire(s,t-s.t)}}
+  lastT=t;
+}
+
+/* ---- loop ---- */
+function loop(){const t=vg.currentTime;sfxTick(t);
+  if(st.wipe&&!vg.paused){if(vo.paused)vo.play().catch(()=>{});if(Math.abs(vo.currentTime-t)>.12)vo.currentTime=t}
+  render(t);requestAnimationFrame(loop)}
+requestAnimationFrame(loop);
+
+/* ---- transport ---- */
+async function play(){$("#bigplay").hidden=true;await initAudio();if(actx&&actx.state==="suspended")actx.resume();if(vg.ended)seek(0);lastT=vg.currentTime;try{await vg.play()}catch(e){} if(st.wipe)vo.play().catch(()=>{})}
+function pause(){vg.pause();vo.pause()}
+function seek(t){vg.currentTime=t;vo.currentTime=t;lastT=t;render(t)}
+vg.addEventListener("play",()=>{$("#play").textContent="❚❚";$("#play").setAttribute("aria-label","Jeda")});
+vg.addEventListener("pause",()=>{$("#play").textContent="▶";$("#play").setAttribute("aria-label","Main");vo.pause()});
+vg.addEventListener("ended",()=>{$("#play").textContent="↺";$("#play").setAttribute("aria-label","Main semula")});
+$("#bigplay").onclick=play;
+$("#play").onclick=()=>vg.paused?play():pause();
+$("#seek").addEventListener("input",e=>seek(+e.target.value));
+document.addEventListener("keydown",e=>{if(e.code==="Space"&&!/INPUT|BUTTON/.test(document.activeElement.tagName)){e.preventDefault();vg.paused?play():pause()}});
+phone.addEventListener("click",e=>{if(e.target.closest(".knob,.bigplay"))return;vg.paused?play():pause()});
+
+/* ---- toggles ---- */
+function tog(id,key,fn){const b=$(id);b.onclick=()=>{st[key]=!st[key];b.setAttribute("aria-pressed",st[key]);fn&&fn()}}
+tog("#t-cap","cap",()=>phone.classList.toggle("off-cap",!st.cap));
+tog("#t-mg","mg",()=>phone.classList.toggle("off-mg",!st.mg));
+tog("#t-sfx","sfx");tog("#t-zoom","zoom");
+tog("#t-wipe","wipe",()=>{$("#wipe").hidden=!st.wipe;setWipe(st.wipeX);if(st.wipe){vo.currentTime=vg.currentTime;if(!vg.paused)vo.play().catch(()=>{})}else{vo.pause();vo.style.clipPath="inset(0 100% 0 0)"}});
+$("#t-safe").onclick=function(){const on=this.getAttribute("aria-pressed")!=="true";this.setAttribute("aria-pressed",on);$("#safe").hidden=!on};
+function setWipe(x){st.wipeX=Math.min(.95,Math.max(.05,x));$("#wipe").style.left=(st.wipeX*100)+"%";vo.style.clipPath=`inset(0 ${(100-st.wipeX*100).toFixed(2)}% 0 0)`}
+const knob=$("#knob");knob.addEventListener("pointerdown",e=>{e.preventDefault();e.stopPropagation();knob.setPointerCapture(e.pointerId);
+  const mv=ev=>{const r=phone.getBoundingClientRect();setWipe((ev.clientX-r.left)/r.width)};
+  knob.addEventListener("pointermove",mv);knob.addEventListener("pointerup",()=>knob.removeEventListener("pointermove",mv),{once:true})});
+knob.addEventListener("click",e=>e.stopPropagation());
+
+/* ---- tabs ---- */
+document.querySelectorAll(".tab").forEach(b=>b.onclick=()=>{document.querySelectorAll(".tab").forEach(x=>x.setAttribute("aria-selected",x===b));document.querySelectorAll(".pane").forEach(p=>p.hidden=p.id!==b.dataset.p)});
+
+/* ---- event list + markers ---- */
+const SFXNAME={whoosh:"Whoosh lembut (masuk grafik)",soft:"Desir lembut",pop:"Pop kecil",ding:"Ding perlahan",notif:"Notifikasi telefon",click:"Klik"};
+const CUTNAME={P:"Hook: “Percaya atau tidak?”",S:"Hook: 1 jam vs 3 jam",I:"Pengenalan (dipindah dari 2:48)",F:"“Saya tak kisah…” (ambilan 1 dari 4)",O:"“Otak perlukan fokus…”",R:"“Sebab kalau panjang…” (ambilan 2 dari 3)",V:"Analogi video panjang",T:"Soalan telefon",K:"“Cuba komen”"};
+const ZNOTE=[];for(let i=1;i<plan.zoom.length;i++){const a=plan.zoom[i-1],b=plan.zoom[i];if(b.scale>a.scale+.05&&b.t-a.t<.3&&b.t-a.t>.05)ZNOTE.push({t:a.t,d:`Punch-in ke ${b.scale.toFixed(2)}×`})}
+const EV=[
+ ...plan.cuts.map(c=>({t:c.out,k:"cut",d:CUTNAME[c.id]||c.id,s:`Dari video asal ${fmt(c.src_in)} – ${fmt(c.src_out)}`})),
+ ...plan.graphics.filter(g=>g.kind!=="brand").map(g=>({t:g.s,k:"mg",d:g.note})),
+ ...plan.sfx.map(s=>({t:s.t,k:"sfx",d:SFXNAME[s.name]||s.name,s:`Volume ${Math.round(s.gain*100)}%`})),
+ ...ZNOTE.map(z=>({t:z.t,k:"zoom",d:z.d})),
+ {t:plan.end_card,k:"cut",d:"Kad akhir (4.5 s): latar kabur + CTA Aster Edu"}
+].sort((a,b)=>a.t-b.t);
+const KL={cut:"Potong",mg:"Grafik",sfx:"SFX",zoom:"Zoom"},KC={cut:"k-cut",mg:"k-mg",sfx:"k-sfx",zoom:"k-zoom"};
+const list=$("#evlist");
+EV.forEach(e=>{const b=document.createElement("button");b.className="ev";b.innerHTML=`<span class="t">${fmt(e.t)}</span><span class="k ${KC[e.k]}">${KL[e.k]}</span><span class="d">${esc(e.d)}${e.s?`<small>${esc(e.s)}</small>`:""}</span>`;
+  b.onclick=()=>{seek(Math.max(0,e.t-.5));play()};list.appendChild(b)});
+const evEls=[...list.children];let lastHi=-1;
+function highlightEv(t){let k=-1;for(let i=0;i<EV.length;i++){if(EV[i].t<=t+.02)k=i}if(k!==lastHi){if(evEls[lastHi])evEls[lastHi].classList.remove("now");if(evEls[k])evEls[k].classList.add("now");lastHi=k}}
+const marks=$("#marks"),MC={cut:"var(--c-cut)",mg:"var(--c-mg)",sfx:"var(--c-sfx)",zoom:"var(--c-zoom)"};
+EV.forEach(e=>{const i=document.createElement("i");i.style.left=(e.t/DUR*100)+"%";i.style.background=MC[e.k];marks.appendChild(i)});
+
+/* ---- raw transcript (all takes) ---- */
+const RAW=__RAW__;
+const segBySrc=src=>plan.cuts.find(c=>src>=c.src_in-0.6&&src<c.src_out);
+$("#raw").innerHTML=RAW.map((r,i)=>`<div class="line ${r.use?"yes":"no"}" data-i="${i}" ${r.use?'tabindex="0" role="button"':""}><span class="t">${fmt0(r.t)}</span><span class="tx">${esc(r.text)}</span><span class="st">${r.use?"Diguna":"Dibuang"}</span><span class="why">${esc(r.why)}</span></div>`).join("");
+document.querySelectorAll("#raw .line.yes").forEach(el=>{const go=()=>{const r=RAW[+el.dataset.i],c=segBySrc(r.t);if(c){seek(c.out);play()}};el.onclick=go;el.onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();go()}}});
+$("#cuttable").innerHTML=plan.cuts.map(c=>`<tr><td>${esc(CUTNAME[c.id])}</td><td class="num">${fmt(c.src_in)} – ${fmt(c.src_out)}</td><td class="num">${fmt(c.out)} – ${fmt(c.out+c.src_out-c.src_in)}</td></tr>`).join("")+`<tr><td>Kad akhir CTA</td><td class="num">(grafik)</td><td class="num">${fmt(plan.end_card)} – ${fmt(DUR)}</td></tr>`;
+$("#flow").innerHTML=[["0:00","Hook: soalan + perbandingan 1 jam vs 3 jam"],["0:08","Siapa saya (kredibiliti)"],["0:14","Pendapat: fokus lebih penting daripada masa"],["0:18","Kenapa: otak hilang fokus bila terlalu lama"],["0:25","Analogi: video panjang = bebel, ceramah"],["0:30","Telefon ganggu semua: belajar, tidur, makan"],["0:37","Ajak komen"],["0:38","CTA: Aster Edu, tanya pakej & jadual"]].map(r=>`<div><b>${r[0]}</b>${esc(r[1])}</div>`).join("");
+
+render(0);
+})();
+</script>
