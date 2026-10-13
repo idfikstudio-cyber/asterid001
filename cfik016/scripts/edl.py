@@ -4,7 +4,6 @@ SEG=[
  ("hook","Klien memang tahu apa yang dia nak, tapi susah nak cerita kat contractor",37.70,41.68),
  ("A","Tak semua orang nak interior design uruskan A sampai Z, daripada design sampai renovation",0.22,5.00),
  ("B","Ada klien yang memang nak design sahaja ... uruskan renovation sendiri",22.80,28.05),
- ("C","Fikir Studio, inilah fungsi, inilah kami",45.72,48.78),
  ("D1","Fikir",71.44,71.86),
  ("D2","studio boleh bantu dengan layout 3D",72.26,74.72),
  ("D3","dan drawing untuk mulakan kerja renovation ini",79.06,81.58),

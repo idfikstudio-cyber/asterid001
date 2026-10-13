@@ -251,8 +251,8 @@ td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
 .handoff .t{position:absolute;left:0;right:0;bottom:0;text-align:center;font-weight:800;font-stretch:84%;font-size:5.6cqw;text-shadow:0 .5cqw 1.6cqw rgba(0,0,0,.75)}
 .handoff .t em{font-style:normal;color:var(--v-brass)}
 .handoff .ok{position:absolute;right:9cqw;top:0;width:9cqw;height:9cqw;border-radius:50%;background:var(--v-green);color:#fff;display:grid;place-items:center;font:800 5cqw var(--f-body);opacity:0}
-.g.on.handoff .sheet{animation:fly 1.2s 2.9s cubic-bezier(.5,0,.3,1) forwards}
-.g.on.handoff .ok{animation:zoomin .35s 4.1s cubic-bezier(.2,1.5,.4,1) forwards}
+.g.on.handoff .sheet{animation:fly 1.2s 3.3s cubic-bezier(.5,0,.3,1) forwards}
+.g.on.handoff .ok{animation:zoomin .35s 4.5s cubic-bezier(.2,1.5,.4,1) forwards}
 .g.on.handoff{animation:dropin .4s cubic-bezier(.2,1.3,.4,1)}
 @keyframes fly{40%{transform:translate(18cqw,-4cqh) rotate(-10deg) scale(.8)}100%{transform:translate(48cqw,2cqh) rotate(6deg) scale(.35);opacity:0}}
 
@@ -276,8 +276,8 @@ td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
       <div class="status"><b>Preview</b> Belum render final · CFik016.MOV · 9:16</div>
     </div>
     <div class="stats" aria-label="Ringkasan edit">
-      <div><b>3:00 → 0:38</b>tempoh</div>
-      <div><b>11</b>potongan</div>
+      <div><b>3:00 → 0:35</b>tempoh</div>
+      <div><b>10</b>potongan</div>
       <div><b>12</b>motion graphic</div>
       <div><b id="nsfx">29</b>sound effect</div>
     </div>
@@ -297,7 +297,7 @@ td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
       </div>
       <div class="controls">
         <button class="btn primary" id="play" aria-label="Main">▶</button>
-        <div class="scrub"><div class="marks" id="marks"></div><input type="range" id="seek" min="0" max="38.6" step="0.01" value="0" aria-label="Kedudukan video"></div>
+        <div class="scrub"><div class="marks" id="marks"></div><input type="range" id="seek" min="0" max="35.55" step="0.01" value="0" aria-label="Kedudukan video"></div>
         <span class="time" id="time">0:00.0</span>
       </div>
       <div class="toggles" role="group" aria-label="Lapisan preview">
@@ -343,7 +343,7 @@ td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
         <p>Tekan ayat untuk main dari situ. Satu take terbaik dipilih untuk setiap ayat.</p>
         <div class="outline" id="outline"></div>
         <h3>Transkrip penuh video asal (3:00)</h3>
-        <p>Perkataan bergaris ialah yang aku buang: take berulang, ayat tersangkut dan jeda panjang. Kau cakap "Fikir Studio boleh bantu…" lebih kurang 10 kali; aku simpan take yang paling lancar (1:11 + 1:19).</p>
+        <p>Perkataan bergaris ialah yang aku buang: take berulang, ayat tersangkut dan jeda panjang. Ayat "Fikir Studio, inilah fungsi, inilah kami" (0:45) juga dibuang sebab tak lancar. Kau cakap "Fikir Studio boleh bantu…" lebih kurang 10 kali; aku simpan take yang paling lancar (1:11 + 1:19).</p>
         <div class="tscript" id="tscript"></div>
         <h3>Senarai potongan</h3>
         <div class="tablewrap"><table><thead><tr><th>Bahagian</th><th>Dari video asal</th><th>Dalam video baru</th></tr></thead><tbody id="cuttable"></tbody></table></div>
@@ -371,13 +371,13 @@ td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
         <ol class="qs">
           <li><b>Hook:</b> setuju dengan pilihan dalam preview, atau nak Pilihan B / C? (Tengok tab Hook.)</li>
           <li><b>B-roll (penting):</b> ada 2 slot B-roll. Sekarang aku isi dengan animasi sementara. Hantar footage sebenar kalau ada:
-            <br>• 0:17–0:22: rakaman skrin pelan lantai atau model 3D (SketchUp/Enscape), atau render 3D projek.
-            <br>• 0:22–0:26: gambar <i>before</i> (bilik kosong / lakaran) dan <i>after</i> (render atau rumah siap) dari projek yang sama.</li>
+            <br>• 0:15–0:19: rakaman skrin pelan lantai atau model 3D (SketchUp/Enscape), atau render 3D projek.
+            <br>• 0:19–0:23: gambar <i>before</i> (bilik kosong / lakaran) dan <i>after</i> (render atau rumah siap) dari projek yang sama.</li>
           <li><b>Logo:</b> hantar logo Fikir Studio (PNG lutsinar). Sekarang 0:14 guna tulisan sahaja.</li>
           <li><b>DM:</b> akaun mana nak orang DM (TikTok atau Instagram)? Aku letak username dalam CTA hujung.</li>
           <li><b>Muzik latar:</b> aku tak letak muzik sebab aku tiada muzik berlesen. Cadangan: pilih lagu trending yang tenang (lo-fi / chill house) terus dalam app TikTok masa upload, volume 10–15%. Atau hantar fail muzik sendiri.</li>
           <li><b>End card:</b> nak aku tambah 1.5 saat di hujung (frame terakhir dibekukan + logo + username)? Bagus untuk orang screenshot.</li>
-          <li><b>Lain-lain:</b> ada grafik atau bunyi yang terlalu banyak atau kurang? Beritahu saat dia (contoh "0:28 mesej DM terlalu cepat").</li>
+          <li><b>Lain-lain:</b> ada grafik atau bunyi yang terlalu banyak atau kurang? Beritahu saat dia (contoh "0:25 mesej DM terlalu cepat").</li>
         </ol>
         <p style="margin-top:12px">Lepas kau setuju, aku render versi final 1080×1920 dengan semua kesan dibakar dalam video, sedia untuk upload ke TikTok dan Reels.</p>
       </div>
@@ -501,7 +501,7 @@ document.querySelectorAll(".tab").forEach(b=>b.onclick=()=>{document.querySelect
 
 /* ---- event list + markers ---- */
 const SFXNAME={whoosh:"Whoosh (peralihan)",pop:"Pop",ding:"Ding",chaching:"Cha-ching",riser:"Riser (bina debar)",impact:"Impact / dentuman",click:"Klik",tick:"Detik",bonk:"Bonk (keliru)",swoosh_down:"Swoosh turun"};
-const CUTNOTE={hook:"Hook dipindah ke depan",A:"Pembuka asal",B:"Take ke-3 (take 1–2 dibuang)",C:"Pengenalan jenama",D1:"Take terbaik servis",D2:"Jeda dibuang",D3:"Sambung ayat (jeda 4 saat dibuang)",E1:"Take terbaik tawaran (5 take sebelum dibuang)",E2:"Sambung (ulangan 'boleh DM kami' dibuang)",F2:"Sambung (retake dibuang)",F3:"Penutup"};
+const CUTNOTE={hook:"Hook dipindah ke depan",A:"Pembuka asal",B:"Take ke-3 (take 1–2 dibuang)",D1:"Take terbaik servis",D2:"Jeda dibuang",D3:"Sambung ayat (jeda 4 saat dibuang)",E1:"Take terbaik tawaran (5 take sebelum dibuang)",E2:"Sambung (ulangan 'boleh DM kami' dibuang)",F2:"Sambung (retake dibuang)",F3:"Penutup"};
 const ZNOTE=[];for(let i=1;i<plan.zoom.length;i++){const a=plan.zoom[i-1],b=plan.zoom[i];if(Math.abs(b.scale-a.scale)>.02&&b.t-a.t<.2)ZNOTE.push({t:a.t,d:b.scale>a.scale?`Punch-in ${Math.round((b.scale-1)*100)}%`:"Kembali ke framing lebar"})}
 const EV=[
  ...plan.cuts.map(c=>({t:c.out,k:"cut",d:CUTNOTE[c.id]||"Sambung",s:`Dari asal ${fmt(c.src_in)} – ${fmt(c.src_out)}`})),
@@ -519,7 +519,7 @@ const marks=$("#marks"),MC={cut:"var(--c-cut)",mg:"var(--c-mg)",broll:"var(--c-b
 EV.forEach(e=>{const i=document.createElement("i");i.style.left=(e.t/DUR*100)+"%";i.style.background=MC[e.k];marks.appendChild(i)});
 
 /* ---- outline of the new video ---- */
-const SENT=[[0,"Klien memang tahu apa yang dia nak, tapi dia susah nak cerita kat kontraktor.","Hook"],[3.94,"Tak semua orang nak interior design uruskan A sampai Z, daripada design sampai renovation."],[8.72,"Ada klien yang memang nak design sahaja, sebab dia dah ada kontraktor sendiri. Jadi dia nak uruskan renovation sendiri."],[14.06,"Fikir Studio, inilah fungsi, inilah kami."],[17.1,"Fikir Studio boleh bantu dengan layout, 3D dan drawing untuk mulakan kerja renovation ini."],[22.46,"Kalau nak design dulu rumah, dapatkan visual akhir rumah tu macam mana, dan kontraktor cari sendiri…"],[27.82,"Boleh DM kami, kita akan bagikan suggestion yang terbaik untuk rumah anda."],[31.76,"Kita akan bincang macam mana nak cantikkan rumah sebelum hantarkan design tu kepada kontraktor untuk buat kerja."],[37.5,"DM kami ya.","CTA"]];
+const SENT=[[0,"Klien memang tahu apa yang dia nak, tapi dia susah nak cerita kat kontraktor.","Hook"],[3.94,"Tak semua orang nak interior design uruskan A sampai Z, daripada design sampai renovation."],[8.72,"Ada klien yang memang nak design sahaja, sebab dia dah ada kontraktor sendiri. Jadi dia nak uruskan renovation sendiri."],[14.04,"Fikir Studio boleh bantu dengan layout, 3D dan drawing untuk mulakan kerja renovation ini."],[19.4,"Kalau nak design dulu rumah, dapatkan visual akhir rumah tu macam mana, dan kontraktor cari sendiri…"],[24.98,"Boleh DM kami, kita akan bagikan suggestion yang terbaik untuk rumah anda."],[28.8,"Kita akan bincang macam mana nak cantikkan rumah sebelum hantarkan design tu kepada kontraktor untuk buat kerja."],[34.46,"DM kami ya.","CTA"]];
 const ol=$("#outline");SENT.forEach(([t,x,tg])=>{const d=document.createElement("div");d.className="line"+(tg==="Hook"?" hookline":"");d.tabIndex=0;d.setAttribute("role","button");d.innerHTML=`<span class="t">${fmt(t)}</span><span>${esc(x)}${tg?`<span class="tag">${tg}</span>`:""}</span>`;const go=()=>{seek(t);play()};d.onclick=go;d.onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();go()}};ol.appendChild(d)});
 
 /* ---- source transcript with removed words struck ---- */

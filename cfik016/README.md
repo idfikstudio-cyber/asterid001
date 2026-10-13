@@ -3,7 +3,7 @@
 Status: **preview sahaja, belum render final.** Preview: https://claude.ai/artifact/4EuXJE9CYeZ8UHG1LKuLau
 
 - `edit/transcript_source.json`: transkrip Whisper large-v3 video asal (3:00, 720×1280).
-- `edit/edl.json` (dari `scripts/edl.py`): 11 potongan, satu take terbaik setiap ayat. Hook (0:37 asal) dipindah ke depan. Tempoh baru 0:38.5.
+- `edit/edl.json` (dari `scripts/edl.py`): 10 potongan, satu take terbaik setiap ayat. Hook (0:37 asal) dipindah ke depan. Ayat "Fikir Studio, inilah fungsi, inilah kami" dibuang (tak lancar). Tempoh baru 0:35.5.
 - `edit/transcript_cut.json`: transkrip semula video selepas potong (semak tiada perkataan terpotong/berulang).
 - `scripts/cut.sh`: potong ikut EDL. `scripts/grade.sh` + `edit/keymask.png`: colour grade + lampu muka.
 - `scripts/plan.py` → `preview/plan.json`: caption, motion graphic, slot B-roll, SFX, zoom.
