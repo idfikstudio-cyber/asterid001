@@ -1,0 +1,30 @@
+<!doctype html><meta charset="utf-8"><title>Fi-K Studio Thumbnail</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Figtree:wght@500;600;700;800&display=swap">
+<style>
+/* 1080x1920 TikTok cover. Key text kept inside the centre 3:4 crop (y 240–1680) used by the profile grid. */
+:root{--ink:#1b1714;--sand:#f1e9dc;--brass:#e0ae5c;--wood:#7a4a2c;--green:#2f4a43}
+*{box-sizing:border-box;margin:0}
+body{width:1080px;height:1920px;overflow:hidden;background:#140e08;font-family:"Figtree",sans-serif}
+.bg{position:absolute;inset:0;background:url(frame.jpg) center/cover;transform:translateY(230px) scale(1.12);transform-origin:50% 40%}
+.scrim{position:absolute;left:0;right:0;top:0;height:1050px;background:linear-gradient(180deg,#140e08 0%,#140e08 14%,rgba(20,14,8,.8) 42%,rgba(20,14,8,0) 100%)}
+.low{position:absolute;left:0;right:0;bottom:0;height:640px;background:linear-gradient(0deg,rgba(20,14,8,.85),rgba(20,14,8,0))}
+.top{position:absolute;left:72px;right:72px;top:270px;display:flex;flex-direction:column;align-items:flex-start;gap:22px}
+.eyebrow{font:800 30px "Figtree";letter-spacing:.2em;text-transform:uppercase;color:var(--brass)}
+h1{font-family:"Bricolage Grotesque";font-weight:800;font-stretch:76%;font-size:150px;line-height:.9;letter-spacing:-.02em;color:#fff;text-shadow:0 6px 30px rgba(0,0,0,.45)}
+h1 em{font-style:normal;color:var(--brass)}
+.ans{font-family:"Bricolage Grotesque";font-weight:800;font-stretch:80%;font-size:78px;line-height:1;color:var(--ink);background:var(--sand);padding:14px 30px 18px;border-radius:14px;transform:rotate(-2deg);box-shadow:0 12px 40px rgba(0,0,0,.4)}
+.bottom{position:absolute;left:72px;right:72px;top:1500px;display:flex;align-items:center;gap:22px}
+.bottom img{width:120px;height:auto}
+.chips{display:flex;gap:12px;flex-wrap:wrap}
+.chips span{font:700 34px "Figtree";color:#fff;border:3px solid rgba(241,233,220,.7);padding:8px 24px;border-radius:99px;background:rgba(20,14,8,.4)}
+</style>
+<div class="bg"></div><div class="scrim"></div><div class="low"></div>
+<div class="top" id="top"></div>
+<div class="bottom"><img src="logo-white.png" alt="Fi-K Studio"><div class="chips"><span>Layout</span><span>3D</span><span>Drawing</span></div></div>
+<script>
+const V={
+ a:`<div class="eyebrow">Interior design</div><h1>DAH ADA<br><em>KONTRAKTOR?</em></h1><div class="ans">Kami design je ✓</div>`,
+ b:`<div class="eyebrow">Untuk pemilik rumah</div><h1>RUMAH IMPIAN<br><em>SUSAH NAK</em><br>TERANG?</h1>`
+};
+document.getElementById("top").innerHTML=V[(location.search.match(/v=(\w)/)||[,"a"])[1]];
+</script>

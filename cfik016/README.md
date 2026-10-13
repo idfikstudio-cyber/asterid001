@@ -18,3 +18,6 @@ Video sumber: folder Google Drive (CFik016.MOV), tidak disimpan dalam repo.
 1. Frame grade 1080×1920: `scripts/grade.sh` → `preview/_frames/%05d.jpg`
 2. Lapisan grafik/caption/zoom: `node scripts/render_overlay.js http://localhost:PORT OUT 0 1051` (halaman preview dengan `?render`, setiap animasi dikawal ikut masa frame)
 3. Audio: `scripts/mix_audio.py` (suara + SFX ikut `plan.json`)
+
+## Thumbnail
+`thumbnail/index.html?v=a|b` (frame 0:34 + logo putih) → `FiK_Studio_thumbnail_a.jpg` (Dah ada kontraktor? Kami design je), `_b.jpg` (Rumah impian susah nak terang?). 1080×1920; teks dalam kawasan tengah 3:4 untuk grid profil.
