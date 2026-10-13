@@ -11,3 +11,4 @@ Status: **preview sahaja, belum render final.** Preview: https://claude.ai/artif
 
 Video sumber: folder Google Drive (CFik016.MOV), tidak disimpan dalam repo.
 - `edit/logo/`: logo Fi-K Studio (hijau, putih). Preview guna hijau (`preview/logo-green.png`) sebab logo muncul atas dinding cerah.
+- Keputusan: B-roll animasi dikekalkan, CTA DM untuk TikTok/Instagram/Facebook, tiada muzik latar, tiada end card.

@@ -186,7 +186,6 @@ td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
 /* B-roll slots */
 .broll{left:6cqw;right:6cqw;top:4cqh;height:20cqh;border-radius:3.5cqw;overflow:hidden;background:#13304a;box-shadow:0 1.5cqw 5cqw rgba(0,0,0,.45);border:.5cqw solid rgba(255,255,255,.9)}
 .broll svg{position:absolute;inset:0;width:100%;height:100%}
-.broll .tagb{position:absolute;left:2.4cqw;top:2cqw;font:700 2.6cqw var(--f-body);letter-spacing:.08em;background:rgba(0,0,0,.55);color:#fff;padding:.6cqw 1.8cqw;border-radius:99px;text-transform:uppercase}
 .broll .plan path,.broll .plan rect{fill:none;stroke:#cfe6ff;stroke-width:1.2;stroke-dasharray:400;stroke-dashoffset:400}
 .g.on.broll .plan path,.g.on.broll .plan rect{animation:draw 1.6s ease-out forwards}
 .broll .iso{opacity:0}
@@ -205,7 +204,6 @@ td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
 .g.on.ba .bar{animation:barR 1.4s 1.6s cubic-bezier(.6,0,.3,1) forwards}
 .ba .l1,.ba .l2{position:absolute;bottom:2cqw;font:700 2.8cqw var(--f-body);letter-spacing:.08em;text-transform:uppercase;background:rgba(0,0,0,.6);color:#fff;padding:.6cqw 1.8cqw;border-radius:99px}
 .ba .l1{left:2.4cqw}.ba .l2{right:2.4cqw}
-.ba .tagb{position:absolute;left:2.4cqw;top:2cqw;font:700 2.6cqw var(--f-body);letter-spacing:.08em;background:rgba(0,0,0,.55);color:#fff;padding:.6cqw 1.8cqw;border-radius:99px;text-transform:uppercase}
 .g.on.ba{animation:popcard .4s cubic-bezier(.2,1.3,.4,1)}
 @keyframes wipeR{to{clip-path:inset(0 0 0 0)}}
 @keyframes barR{0%{opacity:1;left:0}99%{opacity:1}100%{left:100%;opacity:0}}
@@ -262,7 +260,9 @@ td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
 .cta .b::after{content:"";position:absolute;inset:-1.4cqw;border-radius:99px;border:.7cqw solid var(--v-brass);opacity:0}
 .g.on.cta .b{animation:popin .4s cubic-bezier(.2,1.4,.4,1),pulse 1s .5s ease-in-out infinite}
 .g.on.cta .b::after{animation:ring 1s .5s ease-out infinite}
-.cta .s{font:700 3.8cqw var(--f-body);text-shadow:0 .4cqw 1.4cqw rgba(0,0,0,.8)}
+.cta .plat{display:flex;gap:1.6cqw;opacity:0}
+.cta .plat span{font:700 3.4cqw var(--f-body);color:var(--v-ink);background:var(--v-sand);padding:1cqw 2.6cqw;border-radius:99px;box-shadow:0 .8cqw 2cqw rgba(0,0,0,.35)}
+.g.on.cta .plat{animation:popin .35s .25s cubic-bezier(.2,1.4,.4,1) forwards}
 @keyframes popin{from{transform:translateY(8cqh);opacity:0}to{transform:none;opacity:1}}
 @keyframes pulse{50%{transform:scale(1.06)}}
 @keyframes ring{from{opacity:.9;transform:scale(1)}to{opacity:0;transform:scale(1.3,1.6)}}
@@ -317,13 +317,13 @@ td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
         <button class="tab" role="tab" aria-selected="false" data-p="p-hook">Hook</button>
         <button class="tab" role="tab" aria-selected="false" data-p="p-tx">Transkrip &amp; potongan</button>
         <button class="tab" role="tab" aria-selected="false" data-p="p-grade">Warna &amp; lighting</button>
-        <button class="tab" role="tab" aria-selected="false" data-p="p-q">Perlu jawapan kau</button>
+        <button class="tab" role="tab" aria-selected="false" data-p="p-q">Keputusan</button>
       </div>
 
       <div class="pane" id="p-plan" role="tabpanel">
         <h2>Semua yang aku tambah, ikut masa</h2>
         <p>Tekan mana-mana baris untuk lompat ke saat tu dalam preview. Masa ikut video selepas edit.</p>
-        <div class="legend"><span><i style="background:var(--c-cut)"></i>Potong / susun</span><span><i style="background:var(--c-mg)"></i>Motion graphic</span><span><i style="background:var(--c-broll)"></i>Slot B-roll</span><span><i style="background:var(--c-sfx)"></i>Sound effect</span><span><i style="background:var(--c-zoom)"></i>Zoom kamera</span></div>
+        <div class="legend"><span><i style="background:var(--c-cut)"></i>Potong / susun</span><span><i style="background:var(--c-mg)"></i>Motion graphic</span><span><i style="background:var(--c-broll)"></i>B-roll animasi</span><span><i style="background:var(--c-sfx)"></i>Sound effect</span><span><i style="background:var(--c-zoom)"></i>Zoom kamera</span></div>
         <div class="evlist" id="evlist"></div>
       </div>
 
@@ -359,7 +359,7 @@ td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
           <tr><td>4. Lampu muka</td><td>Cahaya lembut pada kawasan muka dan dada, lebih kurang +5%.</td><td>Lampu asal rata. Ini bertindak macam key light, jadi mata penonton terus ke muka.</td></tr>
           <tr><td>5. Vignette halus</td><td>Tepi dan bucu digelapkan sedikit.</td><td>Fokus ke tengah tanpa nampak macam filter.</td></tr>
           <tr><td>6. Ketajaman</td><td>Sharpen ringan.</td><td>TikTok mampatkan video; sharpen ringan bantu kekal tajam.</td></tr>
-          <tr><td>7. Audio</td><td>Buang dengung rendah, compressor ringan, kuatkan ke −14 LUFS.</td><td>Suara jelas dan sama kuat dengan video lain di TikTok.</td></tr>
+          <tr><td>7. Audio</td><td>Buang dengung rendah, compressor ringan, kuatkan ke −14 LUFS. Tiada muzik latar.</td><td>Suara jelas dan sama kuat dengan video lain. Tanpa muzik, SFX dikekalkan perlahan supaya tak ganggu suara.</td></tr>
         </tbody></table></div>
         <h3>Crop 9:16</h3>
         <p>Video asal memang dah 720×1280 (9:16), jadi tak perlu crop tepi. Aku guna zoom: framing tukar antara lebar (1.0×) dan dekat (1.1–1.2×) di setiap potongan, supaya jump cut nampak macam tukar kamera. Teks dan grafik semua di luar zon UI TikTok (tekan "Zon UI TikTok" untuk semak). Render final akan di-upscale ke 1080×1920.</p>
@@ -367,18 +367,18 @@ td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
       </div>
 
       <div class="pane" id="p-q" role="tabpanel" hidden>
-        <h2>Sebelum aku render final</h2>
-        <ol class="qs">
-          <li><b>Hook:</b> setuju dengan pilihan dalam preview, atau nak Pilihan B / C? (Tengok tab Hook.)</li>
-          <li><b>B-roll (penting):</b> ada 2 slot B-roll. Sekarang aku isi dengan animasi sementara. Hantar footage sebenar kalau ada:
-            <br>• 0:15–0:19: rakaman skrin pelan lantai atau model 3D (SketchUp/Enscape), atau render 3D projek.
-            <br>• 0:19–0:23: gambar <i>before</i> (bilik kosong / lakaran) dan <i>after</i> (render atau rumah siap) dari projek yang sama.</li>
-                    <li><b>DM:</b> akaun mana nak orang DM (TikTok atau Instagram)? Aku letak username dalam CTA hujung.</li>
-          <li><b>Muzik latar:</b> aku tak letak muzik sebab aku tiada muzik berlesen. Cadangan: pilih lagu trending yang tenang (lo-fi / chill house) terus dalam app TikTok masa upload, volume 10–15%. Atau hantar fail muzik sendiri.</li>
-          <li><b>End card:</b> nak aku tambah 1.5 saat di hujung (frame terakhir dibekukan + logo + username)? Bagus untuk orang screenshot.</li>
-          <li><b>Lain-lain:</b> ada grafik atau bunyi yang terlalu banyak atau kurang? Beritahu saat dia (contoh "0:25 mesej DM terlalu cepat").</li>
-        </ol>
-        <p style="margin-top:12px">Lepas kau setuju, aku render versi final 1080×1920 dengan semua kesan dibakar dalam video, sedia untuk upload ke TikTok dan Reels.</p>
+        <h2>Keputusan untuk render final</h2>
+        <div class="tablewrap"><table><tbody>
+          <tr><th scope="row">Hook</th><td>"Klien memang tahu apa yang dia nak, tapi dia susah nak cerita kat kontraktor." (dari 0:37 asal)</td></tr>
+          <tr><th scope="row">Potongan</th><td>3:00 → 0:35. Ayat "inilah fungsi, inilah kami" dan "Fi-" tersangkut di 0:14 dibuang.</td></tr>
+          <tr><th scope="row">Jenama</th><td>Ditulis <b>Fi-K Studio</b>, disebut "Fikir". Logo hijau di 0:14.</td></tr>
+          <tr><th scope="row">B-roll</th><td>Animasi dikekalkan: pelan lantai → 3D (0:15–0:19), sebelum / selepas (0:19–0:23).</td></tr>
+          <tr><th scope="row">CTA</th><td>"DM KAMI SEKARANG" dengan TikTok · Instagram · Facebook.</td></tr>
+          <tr><th scope="row">Muzik</th><td>Tiada. Suara + SFX sahaja.</td></tr>
+          <tr><th scope="row">End card</th><td>Tiada. Video tamat pada "DM kami ya".</td></tr>
+          <tr><th scope="row">Format</th><td>1080×1920, 30 fps, H.264 + AAC, −14 LUFS. Sedia untuk TikTok, Reels dan Facebook.</td></tr>
+        </tbody></table></div>
+        <p style="margin-top:12px">Kalau semua dah ok, beritahu aku untuk render final. Semua caption, grafik, B-roll dan SFX akan dibakar ke dalam video.</p>
       </div>
     </section>
   </div>
@@ -414,12 +414,12 @@ function build(g){
     case"split":el.className+=" split";h=`<div class="a"><span class="lbl">Klien nak</span><strong>${esc(g.a)} sahaja</strong><small>Dari designer</small></div><div class="b"><span class="lbl" style="color:var(--v-brass)">Dia urus sendiri</span><strong>${esc(g.b)}</strong><small>Kontraktor sendiri</small></div>`;break;
     case"brand":el.className+=" brand";h=`<div class="logo"><img src="logo-green.png" alt="Fi-K Studio"></div><div class="sub">${esc(g.sub)}</div>`;break;
     case"services":el.className+=" services";h=g.items.map(([n])=>`<div>${ICON[n]||""}<b>${esc(n)}</b></div>`).join("");break;
-    case"broll":el.className+=" broll";h=PLAN_SVG+`<span class="tagb">B-roll · ganti render sebenar</span>`;break;
-    case"beforeafter":el.className+=" ba";h=BA_SVG+`<span class="bar"></span><span class="tagb">B-roll · before / after</span><span class="l1">Sebelum</span><span class="l2">Visual akhir</span>`;break;
+    case"broll":el.className+=" broll";h=PLAN_SVG;break;
+    case"beforeafter":el.className+=" ba";h=BA_SVG+`<span class="bar"></span><span class="l1">Sebelum</span><span class="l2">Visual akhir</span>`;break;
     case"flow":el.className+=" flow";h=g.items.map(([n])=>`<div><i></i>${esc(n)}</div>`).join("");break;
     case"dm":el.className+=" dm";h=`<div class="head"><span>FK</span>Fi-K Studio</div><div class="m me">${esc(g.text)}</div><div class="typing"><i></i><i></i><i></i></div><div class="m them">${esc(g.reply)}</div>`;break;
     case"handoff":el.className+=" handoff";h=`<div class="sheet"><svg viewBox="0 0 60 40"><rect x="6" y="6" width="48" height="28" fill="none" stroke="#3a6fa5" stroke-width="1.2"/><path d="M6 20h22V6M38 6v18h16" fill="none" stroke="#3a6fa5" stroke-width="1.2"/></svg></div><div class="hat"></div><div class="ok">✓</div><div class="t">Design siap <em>→</em> kontraktor</div>`;break;
-    case"cta":el.className+=" cta";h=`<div class="b">${esc(g.text)}</div><div class="s">${esc(g.sub)}</div>`;break;
+    case"cta":el.className+=" cta";h=`<div class="b">${esc(g.text)}</div><div class="plat">${g.sub.split(" · ").map(x=>`<span>${esc(x)}</span>`).join("")}</div>`;break;
   }
   el.innerHTML=h;ov.appendChild(el);return {g,el,on:false};
 }

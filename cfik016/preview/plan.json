@@ -842,8 +842,8 @@
    "s": 15.13,
    "e": 18.87,
    "kind": "broll",
-   "label": "B-ROLL: pelan lantai → render 3D",
-   "note": "Slot B-roll (PIP). Sementara: animasi pelan lantai melukis diri jadi 3D. Ganti dengan render sebenar Fi-K Studio"
+   "label": "B-roll animasi: pelan lantai → 3D",
+   "note": "Animasi pelan lantai melukis diri, kemudian jadi bilik 3D (versi final)"
   },
   {
    "s": 18.99,
@@ -869,8 +869,8 @@
    "s": 18.99,
    "e": 22.97,
    "kind": "beforeafter",
-   "label": "B-ROLL: before / after",
-   "note": "Slot B-roll: lakaran bilik kosong → render siap (wipe). Ganti dengan before/after projek sebenar"
+   "label": "B-roll animasi: sebelum / selepas",
+   "note": "Lakaran bilik kosong → bilik siap dengan wipe (versi final)"
   },
   {
    "s": 24.58,
@@ -892,8 +892,8 @@
    "e": 35.18,
    "kind": "cta",
    "text": "DM KAMI SEKARANG",
-   "sub": "Konsultasi design rumah",
-   "note": "CTA berdenyut"
+   "sub": "TikTok · Instagram · Facebook",
+   "note": "CTA berdenyut + ikon 3 platform"
   }
  ],
  "sfx": [
