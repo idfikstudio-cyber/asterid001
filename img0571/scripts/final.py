@@ -16,16 +16,22 @@ if __name__=="__main__" and sys.argv[1]=="--zoom-expr":
 E_,P_,G,SRC,CLIPS,OV,SFXD,WD,OUT=sys.argv[1:10]
 d=json.load(open(E_));p=json.load(open(P_));segs=d["segments"];ec=d["end_card"];F=0.012
 def run(a): print(" ".join(a[:6]),"…",flush=True);subprocess.run(a,check=True)
-# 1. cut (video from graded 1080 master, audio from camera original, cleaned to -14 LUFS)
+# 1. cut, one segment at a time (a single filtergraph buffers too many 1080p frames when segments are out of order)
+FPS=30000/1001;lst=open(f"{WD}/segs.txt","w")
+for i,s in enumerate(segs):
+    nfr=round((s["src_out"]-s["src_in"])*FPS)
+    run(["ffmpeg","-v","error","-y","-ss",str(s["src_in"]),"-i",G,"-frames:v",str(nfr),"-an","-c:v","libx264","-preset","fast","-crf","12","-pix_fmt","yuv420p",f"{WD}/seg{i}.mov"]);lst.write(f"file 'seg{i}.mov'\n")
+run(["ffmpeg","-v","error","-y","-ss",str(ec["freeze_src"]),"-i",G,"-frames:v","1",f"{WD}/freeze.png"])
+run(["ffmpeg","-v","error","-y","-loop","1","-framerate","30000/1001","-i",f"{WD}/freeze.png","-frames:v",str(round(ec["dur"]*FPS)),"-c:v","libx264","-preset","fast","-crf","12","-pix_fmt","yuv420p",f"{WD}/segend.mov"]);lst.write("file 'segend.mov'\n");lst.close()
+run(["ffmpeg","-v","error","-y","-f","concat","-safe","0","-i",f"{WD}/segs.txt","-c","copy",f"{WD}/1_video.mov"])
 fc=[];n=len(segs)
 for i,s in enumerate(segs):
-    fc.append(f"[0:v]trim={s['src_in']}:{s['src_out']},setpts=PTS-STARTPTS[v{i}]")
-    fc.append(f"[1:a]atrim={s['src_in']}:{s['src_out']},asetpts=PTS-STARTPTS,afade=t=in:d={F},afade=t=out:st={s['src_out']-s['src_in']-F}:d={F}[a{i}]")
-fc.append(f"[0:v]trim={ec['freeze_src']}:{ec['freeze_src']+0.04},setpts=PTS-STARTPTS,tpad=stop_mode=clone:stop_duration={ec['dur']},trim=duration={ec['dur']}[v{n}]")
+    fc.append(f"[0:a]atrim={s['src_in']}:{s['src_out']},asetpts=PTS-STARTPTS,afade=t=in:d={F},afade=t=out:st={s['src_out']-s['src_in']-F}:d={F}[a{i}]")
 fc.append(f"anullsrc=r=48000:cl=stereo,atrim=duration={ec['dur']}[a{n}]")
-fc.append("".join(f"[v{i}][a{i}]" for i in range(n+1))+f"concat=n={n+1}:v=1:a=1[v][araw]")
+fc.append("".join(f"[a{i}]" for i in range(n+1))+f"concat=n={n+1}:v=0:a=1[araw]")
 fc.append("[araw]highpass=f=80,afftdn=nf=-30,acompressor=threshold=-20dB:ratio=2.5:attack=8:release=120:makeup=2,loudnorm=I=-14:TP=-1.5:LRA=9,aresample=48000[a]")
-run(["ffmpeg","-v","error","-y","-i",G,"-i",SRC,"-filter_complex",";".join(fc),"-map","[v]","-map","[a]","-c:v","libx264","-preset","fast","-crf","12","-c:a","pcm_s16le",f"{WD}/1_cut.mov"])
+run(["ffmpeg","-v","error","-y","-i",SRC,"-filter_complex",";".join(fc),"-map","[a]","-c:a","pcm_s16le",f"{WD}/1_audio.wav"])
+run(["ffmpeg","-v","error","-y","-i",f"{WD}/1_video.mov","-i",f"{WD}/1_audio.wav","-map","0:v","-map","1:a","-c","copy",f"{WD}/1_cut.mov"])
 # 2. punch-in: same eased keyframes as the preview, origin (46%,40%); 2x upscale first so slow zooms don't jitter
 Z=p["zoom"];ox=p["origin"]["x"]/100;oy=p["origin"]["y"]/100;expr=zoom_expr(Z)
 open(f"{WD}/zoom_expr.txt","w").write(expr)
