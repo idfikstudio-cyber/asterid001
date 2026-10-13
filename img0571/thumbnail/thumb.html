@@ -1,0 +1,72 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Thumbnail Fokus Belajar</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Figtree:wght@500;700;800&display=swap">
+<style>
+/* 1080x1920 TikTok cover. Title sits inside the 3:4 centre band (y 240–1680) that the profile grid shows. Same navy/gold as the video graphics. */
+:root{--navy:#0f1d44;--gold:#ffc83d;--red:#e5484d;--white:#fff;
+  --display:"Archivo","Arial Narrow",sans-serif;--body:"Figtree",system-ui,sans-serif}
+*{box-sizing:border-box;margin:0}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
+.c{position:relative;width:1080px;height:1920px;overflow:hidden;font-family:var(--display);color:var(--white)}
+.c img{position:absolute;left:0;top:0;width:1080px;height:1920px;transform-origin:0 0}
+.shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,16,40,.92) 0%,rgba(8,16,40,.78) 30%,rgba(8,16,40,.15) 52%,rgba(8,16,40,0) 62%,rgba(8,16,40,.35) 100%)}
+.brand{position:absolute;left:72px;top:262px;display:flex;align-items:center;gap:14px;font:800 30px var(--body);letter-spacing:.2em}
+.brand i{width:30px;height:30px;border-radius:50%;background:var(--gold);box-shadow:inset 0 0 0 7px var(--navy)}
+.t{position:absolute;left:72px;right:72px;top:330px;display:flex;flex-direction:column;align-items:flex-start;gap:14px}
+.eb{font:800 40px var(--body);color:var(--gold);letter-spacing:.01em}
+.big{font-weight:900;font-stretch:76%;font-size:176px;line-height:.9;letter-spacing:-.01em;text-transform:uppercase;text-shadow:0 6px 24px rgba(0,0,0,.35)}
+.box{background:var(--gold);color:var(--navy);padding:6px 26px 2px;border-radius:14px;text-shadow:none;box-shadow:0 10px 0 #b88400,0 18px 40px rgba(0,0,0,.35)}
+.mid{font-weight:900;font-stretch:80%;font-size:92px;line-height:.95;text-transform:uppercase;text-shadow:0 4px 18px rgba(0,0,0,.45)}
+.mid em{font-style:normal;color:var(--gold)}
+.strike{position:relative;display:inline-block}
+.strike::after{content:"";position:absolute;left:-6px;right:-6px;top:52%;height:12px;background:var(--red);border-radius:99px;transform:rotate(-4deg);box-shadow:0 0 0 4px rgba(0,0,0,.25)}
+.sub{font:700 44px var(--body);color:#e6ebf7;margin-top:10px;text-shadow:0 2px 10px rgba(0,0,0,.6)}
+.tag{position:absolute;font:800 46px var(--body);background:var(--white);color:var(--navy);padding:14px 26px;border-radius:22px 22px 22px 6px;box-shadow:0 12px 30px rgba(0,0,0,.35)}
+.tag b{color:var(--red)}
+.v{display:none}
+body[data-v="1"] .v1,body[data-v="2"] .v2,body[data-v="3"] .v3{display:block}
+</style>
+<body data-v="1">
+
+<!-- V1: hook utama, frame 1:09 (3 jari) -->
+<div class="c v v1">
+  <img src="f_69.0.png" alt="" style="transform:translate(-148px,-190px) scale(1.6)">
+  <div class="shade"></div>
+  <div class="brand"><i></i>ASTER EDU</div>
+  <div class="t">
+    <div class="eb">Ibu bapa, percaya atau tidak?</div>
+    <div class="big box">1 jam fokus</div>
+    <div class="mid" style="margin-top:22px">lebih bernilai dari</div>
+    <div class="mid">3 jam <em>+ scroll</em></div>
+  </div>
+  <div class="tag" style="left:72px;top:972px">📱 scroll setiap <b>5 minit</b></div>
+</div>
+
+<!-- V2: soalan masalah ibu bapa, frame 1:01.9 (senyum) -->
+<div class="c v v2">
+  <img src="f_61.9.png" alt="" style="transform:translate(-212px,-174px) scale(1.6)">
+  <div class="shade"></div>
+  <div class="brand"><i></i>ASTER EDU</div>
+  <div class="t">
+    <div class="big">Anak belajar</div>
+    <div class="big box">3 jam</div>
+    <div class="mid" style="margin-top:22px">tapi <em>tak masuk?</em></div>
+    <div class="sub">Mungkin masalahnya bukan masa.</div>
+  </div>
+</div>
+
+<!-- V3: telefon, frame 2:33.6 -->
+<div class="c v v3">
+  <img src="f_153.6.png" alt="" style="transform:translate(-140px,-198px) scale(1.6)">
+  <div class="shade"></div>
+  <div class="brand"><i></i>ASTER EDU</div>
+  <div class="t">
+    <div class="eb">Siapa rasa…</div>
+    <div class="big">Telefon</div>
+    <div class="big box">ganggu</div>
+    <div class="mid" style="margin-top:22px">masa belajar <em>anak?</em></div>
+  </div>
+  <div class="tag" style="left:72px;top:975px">📚 belajar · 😴 tidur · 🍽️ makan</div>
+</div>
+</body>
