@@ -10,6 +10,6 @@ Hasil: satu video 9:16, **0:52** (sasaran bawah 1:30).
 - `edit/transcript_cut.json`: transkrip audio selepas potong (untuk semak potongan dan caption).
 - `edit/plan.json`: caption, B-roll, motion graphic, SFX, zoom, muzik dan end card, ikut masa video baru.
 - `scripts/`: `transcribe.py`, `probe.py` (semak tetingkap audio), `edl.py`, `cutaudio.py`, `grade.sh` (grade per video + key light muka), `render_base.py`, `plan.py`, `build_proxy.py` (B-roll + audio), `music.sh` (muzik dengan ducking).
-- `preview/`: halaman preview interaktif. Fail proxy (`graded.mp4`, `orig.mp4`, `music.m4a`) tidak disimpan dalam git.
+- `preview/`: halaman preview interaktif. Fail proxy (`graded.mp4`, `orig.mp4`, `music.mp3`) tidak disimpan dalam git.
 
 B-roll: Mixkit (Stock Video Free License: video sebenar, boleh guna untuk iklan, tiada kredit diperlukan). Muzik: Mixkit #22 (Stock Music Free License). SFX: dijana sendiri.

@@ -60,5 +60,5 @@ Z=[(0,1.10,42),(1.15,1.10,42),(3.07,1.0,42),(3.60,1.0,42),(3.83,1.0,42),(7.20,1.
    (39.62,1.0,40),(39.66,1.16,38),(42.55,1.16,38),(42.58,1.04,40),(END,1.08,40)]
 Z=[{"t":round(t,2),"scale":s,"oy":o} for t,s,o in Z]
 json.dump({"duration":DUR,"speech_end":END,"parts":edl["parts"],"segments":edl["segments"],"captions":chunks,"broll":B,"graphics":G,"sfx":SFX,"zoom":Z,
-  "music":{"file":"music.m4a","id":22,"note":"Piano tenang perlahan, Mixkit Stock Music Free License"}},open(sys.argv[3],"w"),ensure_ascii=False,indent=1)
+  "music":{"file":"music.mp3","id":22,"note":"Piano tenang perlahan, Mixkit Stock Music Free License"}},open(sys.argv[3],"w"),ensure_ascii=False,indent=1)
 print(len(chunks),"caption chunks; duration",DUR)
