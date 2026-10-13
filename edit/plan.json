@@ -1,0 +1,1430 @@
+{
+ "duration": 61.486,
+ "cuts": [
+  {
+   "out": 0,
+   "src_in": 51.24,
+   "src_out": 54.17,
+   "id": "hook"
+  },
+  {
+   "out": 2.93,
+   "src_in": 0.0,
+   "src_out": 20.83,
+   "id": "A"
+  },
+  {
+   "out": 23.76,
+   "src_in": 20.97,
+   "src_out": 30.79,
+   "id": "B"
+  },
+  {
+   "out": 33.58,
+   "src_in": 30.93,
+   "src_out": 47.8,
+   "id": "C"
+  },
+  {
+   "out": 50.45,
+   "src_in": 47.99,
+   "src_out": 51.24,
+   "id": "D"
+  },
+  {
+   "out": 53.7,
+   "src_in": 54.28,
+   "src_out": 57.45,
+   "id": "E"
+  },
+  {
+   "out": 56.87,
+   "src_in": 57.66,
+   "src_out": 62.276,
+   "id": "F"
+  }
+ ],
+ "captions": [
+  {
+   "s": 0.2,
+   "e": 1.2,
+   "words": [
+    {
+     "w": "Ibu-ibu",
+     "s": 0.2
+    },
+    {
+     "w": "ayah-ayah",
+     "s": 0.58
+    },
+    {
+     "w": "ni",
+     "s": 1.1
+    }
+   ]
+  },
+  {
+   "s": 1.2,
+   "e": 1.7,
+   "words": [
+    {
+     "w": "tak",
+     "s": 1.2
+    },
+    {
+     "w": "nak",
+     "s": 1.38
+    },
+    {
+     "w": "ke",
+     "s": 1.56
+    }
+   ]
+  },
+  {
+   "s": 1.7,
+   "e": 2.46,
+   "words": [
+    {
+     "w": "anak-anak",
+     "s": 1.7
+    },
+    {
+     "w": "skor",
+     "s": 2.0,
+     "hot": 1
+    },
+    {
+     "w": "dalam",
+     "s": 2.28
+    }
+   ]
+  },
+  {
+   "s": 2.46,
+   "e": 2.93,
+   "words": [
+    {
+     "w": "exam?",
+     "s": 2.46,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 2.93,
+   "e": 3.79,
+   "words": [
+    {
+     "w": "Serius",
+     "s": 2.93
+    },
+    {
+     "w": "tau",
+     "s": 3.31
+    },
+    {
+     "w": "untuk",
+     "s": 3.55
+    }
+   ]
+  },
+  {
+   "s": 3.79,
+   "e": 4.77,
+   "words": [
+    {
+     "w": "parents",
+     "s": 3.79
+    },
+    {
+     "w": "yang",
+     "s": 4.23
+    },
+    {
+     "w": "masih",
+     "s": 4.45
+    }
+   ]
+  },
+  {
+   "s": 4.77,
+   "e": 6.29,
+   "words": [
+    {
+     "w": "rasa",
+     "s": 4.77
+    },
+    {
+     "w": "anak-anak",
+     "s": 5.07
+    },
+    {
+     "w": "lemah",
+     "s": 5.83,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 6.29,
+   "e": 7.43,
+   "words": [
+    {
+     "w": "dengan",
+     "s": 6.29
+    },
+    {
+     "w": "subjek-subjek",
+     "s": 6.43
+    },
+    {
+     "w": "yang",
+     "s": 7.13
+    }
+   ]
+  },
+  {
+   "s": 7.43,
+   "e": 8.53,
+   "words": [
+    {
+     "w": "dipelajari",
+     "s": 7.43
+    },
+    {
+     "w": "di",
+     "s": 8.03
+    },
+    {
+     "w": "sekolah",
+     "s": 8.13
+    }
+   ]
+  },
+  {
+   "s": 8.53,
+   "e": 9.77,
+   "words": [
+    {
+     "w": "Dengan",
+     "s": 8.53
+    },
+    {
+     "w": "beberapa",
+     "s": 8.93
+    },
+    {
+     "w": "baki",
+     "s": 9.39
+    }
+   ]
+  },
+  {
+   "s": 9.77,
+   "e": 11.09,
+   "words": [
+    {
+     "w": "bulan",
+     "s": 9.77
+    },
+    {
+     "w": "sebelum",
+     "s": 10.07
+    },
+    {
+     "w": "anak-anak",
+     "s": 10.55
+    }
+   ]
+  },
+  {
+   "s": 11.09,
+   "e": 12.19,
+   "words": [
+    {
+     "w": "nak",
+     "s": 11.09
+    },
+    {
+     "w": "hadapi",
+     "s": 11.29
+    },
+    {
+     "w": "exam",
+     "s": 11.81,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 12.19,
+   "e": 13.47,
+   "words": [
+    {
+     "w": "jangan",
+     "s": 12.19
+    },
+    {
+     "w": "longgokkan",
+     "s": 12.47
+    },
+    {
+     "w": "dia",
+     "s": 13.25
+    }
+   ]
+  },
+  {
+   "s": 13.47,
+   "e": 14.53,
+   "words": [
+    {
+     "w": "dengan",
+     "s": 13.47
+    },
+    {
+     "w": "kerja-kerja",
+     "s": 13.71
+    },
+    {
+     "w": "rumah",
+     "s": 14.31
+    }
+   ]
+  },
+  {
+   "s": 14.53,
+   "e": 15.63,
+   "words": [
+    {
+     "w": "yang",
+     "s": 14.53
+    },
+    {
+     "w": "banyak",
+     "s": 14.75
+    },
+    {
+     "w": "sangat",
+     "s": 15.09
+    }
+   ]
+  },
+  {
+   "s": 15.63,
+   "e": 16.87,
+   "words": [
+    {
+     "w": "Fokuskan",
+     "s": 15.63
+    },
+    {
+     "w": "anak-anak",
+     "s": 16.19
+    },
+    {
+     "w": "dengan",
+     "s": 16.73
+    }
+   ]
+  },
+  {
+   "s": 16.87,
+   "e": 18.13,
+   "words": [
+    {
+     "w": "subjek-subjek",
+     "s": 16.87
+    },
+    {
+     "w": "yang",
+     "s": 17.61
+    },
+    {
+     "w": "lemah",
+     "s": 17.75,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 18.13,
+   "e": 19.45,
+   "words": [
+    {
+     "w": "dengan",
+     "s": 18.13
+    },
+    {
+     "w": "soalan-soalan",
+     "s": 18.37
+    },
+    {
+     "w": "gila",
+     "s": 19.07,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 19.45,
+   "e": 20.41,
+   "words": [
+    {
+     "w": "supaya",
+     "s": 19.45
+    },
+    {
+     "w": "dia",
+     "s": 20.03
+    },
+    {
+     "w": "dapat",
+     "s": 20.19
+    }
+   ]
+  },
+  {
+   "s": 20.41,
+   "e": 21.49,
+   "words": [
+    {
+     "w": "skor",
+     "s": 20.41,
+     "hot": 1
+    },
+    {
+     "w": "dalam",
+     "s": 20.79
+    },
+    {
+     "w": "exam",
+     "s": 20.95,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 21.49,
+   "e": 22.33,
+   "words": [
+    {
+     "w": "Dengan",
+     "s": 21.49
+    },
+    {
+     "w": "tawaran",
+     "s": 21.75
+    },
+    {
+     "w": "4",
+     "s": 22.09
+    }
+   ]
+  },
+  {
+   "s": 22.33,
+   "e": 23.91,
+   "words": [
+    {
+     "w": "subjek",
+     "s": 22.33
+    },
+    {
+     "w": "RM89",
+     "s": 22.73,
+     "hot": 1
+    },
+    {
+     "w": "kami",
+     "s": 23.76
+    }
+   ]
+  },
+  {
+   "s": 23.91,
+   "e": 24.71,
+   "words": [
+    {
+     "w": "daripada",
+     "s": 23.91
+    },
+    {
+     "w": "pusat",
+     "s": 24.25
+    },
+    {
+     "w": "tuition",
+     "s": 24.51
+    }
+   ]
+  },
+  {
+   "s": 24.71,
+   "e": 26.17,
+   "words": [
+    {
+     "w": "Aster",
+     "s": 24.71,
+     "hot": 1
+    },
+    {
+     "w": "akan",
+     "s": 25.07
+    },
+    {
+     "w": "fokuskan",
+     "s": 25.47
+    }
+   ]
+  },
+  {
+   "s": 26.17,
+   "e": 27.59,
+   "words": [
+    {
+     "w": "untuk",
+     "s": 26.17
+    },
+    {
+     "w": "anak-anak",
+     "s": 26.37
+    },
+    {
+     "w": "soalan-soalan",
+     "s": 26.89
+    }
+   ]
+  },
+  {
+   "s": 27.59,
+   "e": 28.57,
+   "words": [
+    {
+     "w": "gila",
+     "s": 27.59,
+     "hot": 1
+    },
+    {
+     "w": "untuk",
+     "s": 27.95
+    },
+    {
+     "w": "dia",
+     "s": 28.37
+    }
+   ]
+  },
+  {
+   "s": 28.57,
+   "e": 29.35,
+   "words": [
+    {
+     "w": "skor",
+     "s": 28.57,
+     "hot": 1
+    },
+    {
+     "w": "dalam",
+     "s": 28.89
+    },
+    {
+     "w": "exam",
+     "s": 29.05,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 29.35,
+   "e": 30.41,
+   "words": [
+    {
+     "w": "Dengan",
+     "s": 29.35
+    },
+    {
+     "w": "adanya",
+     "s": 29.71
+    },
+    {
+     "w": "soalan-soalan",
+     "s": 29.97
+    }
+   ]
+  },
+  {
+   "s": 30.41,
+   "e": 30.89,
+   "words": [
+    {
+     "w": "gila",
+     "s": 30.41,
+     "hot": 1
+    },
+    {
+     "w": "ni",
+     "s": 30.63
+    }
+   ]
+  },
+  {
+   "s": 30.89,
+   "e": 31.71,
+   "words": [
+    {
+     "w": "chance",
+     "s": 30.89
+    },
+    {
+     "w": "untuk",
+     "s": 31.13
+    },
+    {
+     "w": "anak-anak",
+     "s": 31.33
+    }
+   ]
+  },
+  {
+   "s": 31.71,
+   "e": 32.53,
+   "words": [
+    {
+     "w": "gagal",
+     "s": 31.71,
+     "hot": 1
+    },
+    {
+     "w": "tu",
+     "s": 32.07
+    },
+    {
+     "w": "akan",
+     "s": 32.19
+    }
+   ]
+  },
+  {
+   "s": 32.53,
+   "e": 33.58,
+   "words": [
+    {
+     "w": "berkurang",
+     "s": 32.53
+    },
+    {
+     "w": "lah",
+     "s": 33.17
+    }
+   ]
+  },
+  {
+   "s": 33.58,
+   "e": 34.61,
+   "words": [
+    {
+     "w": "Dengan",
+     "s": 33.58
+    },
+    {
+     "w": "kepakaran",
+     "s": 33.75
+    },
+    {
+     "w": "barisan",
+     "s": 34.25
+    }
+   ]
+  },
+  {
+   "s": 34.61,
+   "e": 35.63,
+   "words": [
+    {
+     "w": "guru-guru",
+     "s": 34.61
+    },
+    {
+     "w": "kami",
+     "s": 35.15
+    }
+   ]
+  },
+  {
+   "s": 35.63,
+   "e": 36.85,
+   "words": [
+    {
+     "w": "beberapa",
+     "s": 35.63
+    },
+    {
+     "w": "pengalaman",
+     "s": 36.17
+    }
+   ]
+  },
+  {
+   "s": 36.85,
+   "e": 37.93,
+   "words": [
+    {
+     "w": "guru-guru",
+     "s": 36.85
+    },
+    {
+     "w": "kita",
+     "s": 37.49
+    },
+    {
+     "w": "akan",
+     "s": 37.71
+    }
+   ]
+  },
+  {
+   "s": 37.93,
+   "e": 39.29,
+   "words": [
+    {
+     "w": "fokuskan",
+     "s": 37.93
+    },
+    {
+     "w": "kepada",
+     "s": 38.55
+    },
+    {
+     "w": "soalan-soalan",
+     "s": 38.73
+    }
+   ]
+  },
+  {
+   "s": 39.29,
+   "e": 40.89,
+   "words": [
+    {
+     "w": "gila",
+     "s": 39.29,
+     "hot": 1
+    },
+    {
+     "w": "untuk",
+     "s": 39.59
+    },
+    {
+     "w": "anak-anak",
+     "s": 40.19
+    }
+   ]
+  },
+  {
+   "s": 40.89,
+   "e": 42.15,
+   "words": [
+    {
+     "w": "ni",
+     "s": 40.89
+    },
+    {
+     "w": "target",
+     "s": 41.05
+    },
+    {
+     "w": "markah",
+     "s": 41.53
+    }
+   ]
+  },
+  {
+   "s": 42.15,
+   "e": 42.71,
+   "words": [
+    {
+     "w": "yang",
+     "s": 42.15
+    },
+    {
+     "w": "tinggi",
+     "s": 42.27,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 42.71,
+   "e": 43.89,
+   "words": [
+    {
+     "w": "Inilah",
+     "s": 42.71
+    },
+    {
+     "w": "kepakaran",
+     "s": 43.01
+    },
+    {
+     "w": "kami",
+     "s": 43.55
+    }
+   ]
+  },
+  {
+   "s": 43.89,
+   "e": 44.53,
+   "words": [
+    {
+     "w": "Kami",
+     "s": 43.89
+    },
+    {
+     "w": "akan",
+     "s": 44.13
+    },
+    {
+     "w": "tackle",
+     "s": 44.25
+    }
+   ]
+  },
+  {
+   "s": 44.53,
+   "e": 46.03,
+   "words": [
+    {
+     "w": "soalan-soalan",
+     "s": 44.53
+    },
+    {
+     "w": "gila",
+     "s": 45.07,
+     "hot": 1
+    },
+    {
+     "w": "supaya",
+     "s": 45.37
+    }
+   ]
+  },
+  {
+   "s": 46.03,
+   "e": 46.81,
+   "words": [
+    {
+     "w": "anak-anak",
+     "s": 46.03
+    },
+    {
+     "w": "dapat",
+     "s": 46.31
+    },
+    {
+     "w": "skor",
+     "s": 46.47,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 46.81,
+   "e": 47.65,
+   "words": [
+    {
+     "w": "subjek",
+     "s": 46.81
+    },
+    {
+     "w": "tersebut",
+     "s": 47.13
+    }
+   ]
+  },
+  {
+   "s": 47.65,
+   "e": 48.25,
+   "words": [
+    {
+     "w": "Kami",
+     "s": 47.65
+    },
+    {
+     "w": "tak",
+     "s": 48.01
+    },
+    {
+     "w": "nak",
+     "s": 48.11
+    }
+   ]
+  },
+  {
+   "s": 48.25,
+   "e": 49.13,
+   "words": [
+    {
+     "w": "anak-anak",
+     "s": 48.25
+    },
+    {
+     "w": "tuan-tuan",
+     "s": 48.61
+    },
+    {
+     "w": "ni",
+     "s": 48.99
+    }
+   ]
+  },
+  {
+   "s": 49.13,
+   "e": 49.69,
+   "words": [
+    {
+     "w": "gagal",
+     "s": 49.13,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 49.69,
+   "e": 50.45,
+   "words": [
+    {
+     "w": "At",
+     "s": 49.69
+    },
+    {
+     "w": "least",
+     "s": 49.91
+    }
+   ]
+  },
+  {
+   "s": 50.45,
+   "e": 51.34,
+   "words": [
+    {
+     "w": "dia",
+     "s": 50.45
+    },
+    {
+     "w": "dapat",
+     "s": 50.54
+    },
+    {
+     "w": "ubahkan",
+     "s": 50.78
+    }
+   ]
+  },
+  {
+   "s": 51.34,
+   "e": 52.22,
+   "words": [
+    {
+     "w": "markah",
+     "s": 51.34
+    },
+    {
+     "w": "yang",
+     "s": 51.72
+    },
+    {
+     "w": "rendah",
+     "s": 51.82
+    }
+   ]
+  },
+  {
+   "s": 52.22,
+   "e": 53.28,
+   "words": [
+    {
+     "w": "kepada",
+     "s": 52.22
+    },
+    {
+     "w": "naik",
+     "s": 52.42,
+     "hot": 1
+    },
+    {
+     "w": "sikit",
+     "s": 52.92
+    }
+   ]
+  },
+  {
+   "s": 53.28,
+   "e": 53.7,
+   "words": [
+    {
+     "w": "pun",
+     "s": 53.28
+    },
+    {
+     "w": "tak",
+     "s": 53.44
+    },
+    {
+     "w": "apa",
+     "s": 53.58
+    }
+   ]
+  },
+  {
+   "s": 53.7,
+   "e": 54.16,
+   "words": [
+    {
+     "w": "Klik",
+     "s": 53.7,
+     "hot": 1
+    },
+    {
+     "w": "link",
+     "s": 53.84
+    },
+    {
+     "w": "di",
+     "s": 54.04
+    }
+   ]
+  },
+  {
+   "s": 54.16,
+   "e": 55.04,
+   "words": [
+    {
+     "w": "bawah",
+     "s": 54.16
+    },
+    {
+     "w": "untuk",
+     "s": 54.4
+    },
+    {
+     "w": "berdaftar",
+     "s": 54.66
+    }
+   ]
+  },
+  {
+   "s": 55.04,
+   "e": 55.76,
+   "words": [
+    {
+     "w": "tuition",
+     "s": 55.04
+    },
+    {
+     "w": "bersama",
+     "s": 55.3
+    }
+   ]
+  },
+  {
+   "s": 55.76,
+   "e": 57.09,
+   "words": [
+    {
+     "w": "kami",
+     "s": 55.76
+    },
+    {
+     "w": "sebelum",
+     "s": 55.96
+    },
+    {
+     "w": "exam",
+     "s": 56.87,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 57.09,
+   "e": 58.559999999999995,
+   "words": [
+    {
+     "w": "akhir",
+     "s": 57.09
+    },
+    {
+     "w": "tahun",
+     "s": 57.63
+    }
+   ]
+  }
+ ],
+ "graphics": [
+  {
+   "s": 0.0,
+   "e": 2.85,
+   "kind": "hook",
+   "text": [
+    "IBU AYAH,",
+    "TAK NAK KE",
+    "ANAK-ANAK",
+    "SKOR?"
+   ],
+   "note": "Hook: soalan terus kepada ibu bapa (dipindah dari minit 0:51)"
+  },
+  {
+   "s": 5.7,
+   "e": 8.4,
+   "kind": "chip",
+   "pos": "top",
+   "text": "Anak lemah subjek?",
+   "tone": "warn",
+   "note": "Kenal pasti masalah ibu bapa"
+  },
+  {
+   "s": 8.53,
+   "e": 11.95,
+   "kind": "countdown",
+   "text": "Exam makin dekat",
+   "sub": "Tinggal beberapa bulan",
+   "note": "Rasa urgent: masa makin suntuk"
+  },
+  {
+   "s": 12.19,
+   "e": 15.4,
+   "kind": "homework",
+   "text": "Kerja rumah bertimbun",
+   "note": "Timbunan buku jatuh + pangkah"
+  },
+  {
+   "s": 15.63,
+   "e": 18.2,
+   "kind": "target",
+   "text": "Fokus subjek lemah",
+   "note": "Gelang fokus"
+  },
+  {
+   "s": 18.37,
+   "e": 20.95,
+   "kind": "stamp",
+   "text": "SOALAN GILA",
+   "note": "Cop 'Soalan Gila', motif berulang"
+  },
+  {
+   "s": 21.49,
+   "e": 26.1,
+   "kind": "price",
+   "text": "4 SUBJEK",
+   "price": "RM89",
+   "sub": "Pusat Tuisyen Aster",
+   "note": "Kad harga: tawaran utama"
+  },
+  {
+   "s": 26.89,
+   "e": 28.4,
+   "kind": "stamp-sm",
+   "text": "SOALAN GILA",
+   "note": "Ulang motif"
+  },
+  {
+   "s": 30.6,
+   "e": 33.4,
+   "kind": "chart-down",
+   "text": "Risiko gagal",
+   "note": "Graf menurun"
+  },
+  {
+   "s": 33.58,
+   "e": 37.4,
+   "kind": "badge",
+   "text": "Guru berpengalaman",
+   "note": "Lencana kepercayaan"
+  },
+  {
+   "s": 38.55,
+   "e": 42.5,
+   "kind": "chart-up",
+   "text": "Target markah tinggi",
+   "note": "Graf menaik"
+  },
+  {
+   "s": 44.25,
+   "e": 45.9,
+   "kind": "stamp-sm",
+   "text": "SOALAN GILA",
+   "note": "Ulang motif"
+  },
+  {
+   "s": 47.65,
+   "e": 49.6,
+   "kind": "heart",
+   "text": "Kami tak nak anak tuan-tuan gagal",
+   "note": "Momen emosi: grade sedikit hangat"
+  },
+  {
+   "s": 49.69,
+   "e": 53.6,
+   "kind": "grade-bar",
+   "from": "Rendah",
+   "to": "Naik",
+   "note": "Bar markah naik"
+  },
+  {
+   "s": 53.7,
+   "e": 58.9,
+   "kind": "cta",
+   "text": "Klik link di bawah",
+   "sub": "Daftar sebelum exam akhir tahun",
+   "note": "CTA berdenyut + anak panah"
+  },
+  {
+   "s": 55.3,
+   "e": 58.9,
+   "kind": "comment",
+   "text": "Komen “NAK” untuk info",
+   "note": "Ajak komen (engagement TikTok)"
+  }
+ ],
+ "sfx": [
+  {
+   "t": 0.06,
+   "name": "impact",
+   "gain": 0.9
+  },
+  {
+   "t": 0.0,
+   "name": "riser",
+   "gain": 0.35
+  },
+  {
+   "t": 2.0,
+   "name": "pop",
+   "gain": 0.7
+  },
+  {
+   "t": 2.9,
+   "name": "whoosh",
+   "gain": 0.8
+  },
+  {
+   "t": 5.8,
+   "name": "pop",
+   "gain": 0.7
+  },
+  {
+   "t": 8.55,
+   "name": "tick",
+   "gain": 0.6
+  },
+  {
+   "t": 12.19,
+   "name": "bonk",
+   "gain": 0.7
+  },
+  {
+   "t": 12.6,
+   "name": "pop",
+   "gain": 0.4
+  },
+  {
+   "t": 15.6,
+   "name": "whoosh",
+   "gain": 0.6
+  },
+  {
+   "t": 19.05,
+   "name": "impact",
+   "gain": 0.75
+  },
+  {
+   "t": 21.45,
+   "name": "whoosh",
+   "gain": 0.7
+  },
+  {
+   "t": 22.7,
+   "name": "chaching",
+   "gain": 0.85
+  },
+  {
+   "t": 26.9,
+   "name": "pop",
+   "gain": 0.5
+  },
+  {
+   "t": 30.62,
+   "name": "swoosh_down",
+   "gain": 0.7
+  },
+  {
+   "t": 33.65,
+   "name": "ding",
+   "gain": 0.6
+  },
+  {
+   "t": 38.6,
+   "name": "riser",
+   "gain": 0.35
+  },
+  {
+   "t": 40.1,
+   "name": "pop",
+   "gain": 0.55
+  },
+  {
+   "t": 42.7,
+   "name": "impact",
+   "gain": 0.6
+  },
+  {
+   "t": 44.25,
+   "name": "pop",
+   "gain": 0.5
+  },
+  {
+   "t": 49.75,
+   "name": "pop",
+   "gain": 0.5
+  },
+  {
+   "t": 51.3,
+   "name": "ding",
+   "gain": 0.5
+  },
+  {
+   "t": 53.7,
+   "name": "click",
+   "gain": 0.8
+  },
+  {
+   "t": 53.72,
+   "name": "whoosh",
+   "gain": 0.6
+  },
+  {
+   "t": 55.35,
+   "name": "pop",
+   "gain": 0.6
+  },
+  {
+   "t": 58.9,
+   "name": "whoosh",
+   "gain": 0.7
+  }
+ ],
+ "zoom": [
+  {
+   "t": 0,
+   "scale": 1.18,
+   "oy": 38
+  },
+  {
+   "t": 2.85,
+   "scale": 1.18,
+   "oy": 38
+  },
+  {
+   "t": 2.93,
+   "scale": 1.0,
+   "oy": 40
+  },
+  {
+   "t": 15.55,
+   "scale": 1.0,
+   "oy": 40
+  },
+  {
+   "t": 15.63,
+   "scale": 1.12,
+   "oy": 36
+  },
+  {
+   "t": 18.3,
+   "scale": 1.12,
+   "oy": 36
+  },
+  {
+   "t": 18.37,
+   "scale": 1.0,
+   "oy": 40
+  },
+  {
+   "t": 21.45,
+   "scale": 1.0,
+   "oy": 40
+  },
+  {
+   "t": 21.49,
+   "scale": 1.08,
+   "oy": 34
+  },
+  {
+   "t": 26.0,
+   "scale": 1.08,
+   "oy": 34
+  },
+  {
+   "t": 26.1,
+   "scale": 1.0,
+   "oy": 40
+  },
+  {
+   "t": 42.65,
+   "scale": 1.0,
+   "oy": 40
+  },
+  {
+   "t": 42.71,
+   "scale": 1.14,
+   "oy": 36
+  },
+  {
+   "t": 44.2,
+   "scale": 1.14,
+   "oy": 36
+  },
+  {
+   "t": 44.25,
+   "scale": 1.0,
+   "oy": 40
+  },
+  {
+   "t": 47.65,
+   "scale": 1.0,
+   "oy": 40
+  },
+  {
+   "t": 49.6,
+   "scale": 1.1,
+   "oy": 36
+  },
+  {
+   "t": 49.69,
+   "scale": 1.0,
+   "oy": 40
+  },
+  {
+   "t": 53.65,
+   "scale": 1.0,
+   "oy": 40
+  },
+  {
+   "t": 53.7,
+   "scale": 1.06,
+   "oy": 38
+  },
+  {
+   "t": 58.9,
+   "scale": 1.06,
+   "oy": 38
+  },
+  {
+   "t": 58.94,
+   "scale": 1.0,
+   "oy": 50
+  }
+ ],
+ "outro_at": 58.94
+}
