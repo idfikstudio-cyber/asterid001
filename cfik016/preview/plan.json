@@ -1,5 +1,5 @@
 {
- "duration": 35.55,
+ "duration": 35.1,
  "cuts": [
   {
    "out": 0,
@@ -24,48 +24,41 @@
   },
   {
    "out": 14.01,
-   "src_in": 71.44,
-   "src_out": 71.86,
-   "id": "D1",
-   "text": "Fikir"
-  },
-  {
-   "out": 14.43,
    "src_in": 72.26,
    "src_out": 74.72,
    "id": "D2",
-   "text": "studio boleh bantu dengan layout 3D"
+   "text": "Fikir Studio boleh bantu dengan layout 3D (take 71.4 bermula dengan 'Fi-' tersangkut, dibuang)"
   },
   {
-   "out": 16.89,
+   "out": 16.47,
    "src_in": 79.06,
    "src_out": 81.58,
    "id": "D3",
    "text": "dan drawing untuk mulakan kerja renovation ini"
   },
   {
-   "out": 19.41,
+   "out": 18.99,
    "src_in": 143.42,
    "src_out": 149.04,
    "id": "E1",
    "text": "Kalau nak design rumah dulu, dapatkan visual akhir ... kontraktor cari sendiri"
   },
   {
-   "out": 25.03,
+   "out": 24.61,
    "src_in": 160.72,
    "src_out": 164.52,
    "id": "E2",
    "text": "Boleh DM kami, kita akan bagikan suggestion yang terbaik untuk rumah anda"
   },
   {
-   "out": 28.83,
+   "out": 28.41,
    "src_in": 170.66,
    "src_out": 176.28,
    "id": "F2",
    "text": "kita akan bincang macam mana nak cantikkan rumah sebelum hantarkan design tu kepada kontraktor untuk buat kerja"
   },
   {
-   "out": 34.45,
+   "out": 34.03,
    "src_in": 176.58,
    "src_out": 177.55,
    "id": "F3",
@@ -111,18 +104,12 @@
   },
   {
    "s": 1.78,
-   "e": 1.98,
+   "e": 2.48,
    "words": [
     {
      "w": "nak",
      "s": 1.78
-    }
-   ]
-  },
-  {
-   "s": 1.98,
-   "e": 2.86,
-   "words": [
+    },
     {
      "w": "tapi",
      "s": 1.98
@@ -130,18 +117,18 @@
     {
      "w": "dia",
      "s": 2.28
-    },
-    {
-     "w": "susah",
-     "s": 2.48,
-     "hot": 1
     }
    ]
   },
   {
-   "s": 2.86,
-   "e": 3.36,
+   "s": 2.48,
+   "e": 3.24,
    "words": [
+    {
+     "w": "susah",
+     "s": 2.48,
+     "hot": 1
+    },
     {
      "w": "nak",
      "s": 2.86
@@ -149,17 +136,17 @@
     {
      "w": "cerita",
      "s": 2.94
-    },
-    {
-     "w": "kat",
-     "s": 3.24
     }
    ]
   },
   {
-   "s": 3.36,
+   "s": 3.24,
    "e": 3.94,
    "words": [
+    {
+     "w": "kat",
+     "s": 3.24
+    },
     {
      "w": "kontraktor",
      "s": 3.36,
@@ -181,13 +168,13 @@
     },
     {
      "w": "orang",
-     "s": 4.38
+     "s": 4.36
     }
    ]
   },
   {
    "s": 4.7,
-   "e": 5.64,
+   "e": 5.72,
    "words": [
     {
      "w": "nak",
@@ -205,12 +192,12 @@
    ]
   },
   {
-   "s": 5.64,
+   "s": 5.72,
    "e": 6.94,
    "words": [
     {
      "w": "uruskan",
-     "s": 5.64
+     "s": 5.72
     },
     {
      "w": "A",
@@ -225,7 +212,7 @@
   },
   {
    "s": 6.94,
-   "e": 7.66,
+   "e": 7.98,
    "words": [
     {
      "w": "Z",
@@ -235,36 +222,36 @@
     {
      "w": "daripada",
      "s": 7.26
-    }
-   ]
-  },
-  {
-   "s": 7.66,
-   "e": 8.74,
-   "words": [
+    },
     {
      "w": "design",
      "s": 7.66,
      "hot": 1
-    },
+    }
+   ]
+  },
+  {
+   "s": 7.98,
+   "e": 8.72,
+   "words": [
     {
      "w": "sampai",
      "s": 7.98
     },
     {
      "w": "renovation",
-     "s": 8.38,
+     "s": 8.36,
      "hot": 1
     }
    ]
   },
   {
-   "s": 8.74,
+   "s": 8.72,
    "e": 9.64,
    "words": [
     {
      "w": "Ada",
-     "s": 8.74
+     "s": 8.72
     },
     {
      "w": "klien",
@@ -278,7 +265,7 @@
   },
   {
    "s": 9.64,
-   "e": 10.3,
+   "e": 10.28,
    "words": [
     {
      "w": "memang",
@@ -296,12 +283,12 @@
    ]
   },
   {
-   "s": 10.3,
+   "s": 10.28,
    "e": 11.08,
    "words": [
     {
      "w": "sahaja",
-     "s": 10.3
+     "s": 10.28
     },
     {
      "w": "sebab",
@@ -334,13 +321,19 @@
   },
   {
    "s": 11.68,
-   "e": 12.56,
+   "e": 11.9,
    "words": [
     {
      "w": "sendiri",
      "s": 11.68,
      "hot": 1
-    },
+    }
+   ]
+  },
+  {
+   "s": 11.9,
+   "e": 12.7,
+   "words": [
     {
      "w": "jadi",
      "s": 11.9
@@ -348,17 +341,17 @@
     {
      "w": "dia",
      "s": 12.26
+    },
+    {
+     "w": "nak",
+     "s": 12.56
     }
    ]
   },
   {
-   "s": 12.56,
-   "e": 13.36,
+   "s": 12.7,
+   "e": 14.02,
    "words": [
-    {
-     "w": "nak",
-     "s": 12.56
-    },
     {
      "w": "uruskan",
      "s": 12.7
@@ -367,13 +360,7 @@
      "w": "renovation",
      "s": 13.14,
      "hot": 1
-    }
-   ]
-  },
-  {
-   "s": 13.36,
-   "e": 14.04,
-   "words": [
+    },
     {
      "w": "sendiri",
      "s": 13.36,
@@ -382,422 +369,409 @@
    ]
   },
   {
-   "s": 14.04,
-   "e": 15.08,
+   "s": 14.02,
+   "e": 14.66,
    "words": [
     {
-     "w": "Fikir",
-     "s": 14.04,
-     "hot": 1
+     "w": "Fi-K",
+     "s": 14.02
     },
     {
      "w": "Studio",
-     "s": 14.32,
+     "s": 14.1,
      "hot": 1
     },
     {
      "w": "boleh",
-     "s": 14.76
+     "s": 14.34
     }
    ]
   },
   {
-   "s": 15.08,
-   "e": 15.54,
+   "s": 14.66,
+   "e": 15.76,
    "words": [
     {
      "w": "bantu",
-     "s": 15.08
+     "s": 14.66
     },
     {
      "w": "dengan",
-     "s": 15.38
-    }
-   ]
-  },
-  {
-   "s": 15.54,
-   "e": 16.18,
-   "words": [
+     "s": 14.94
+    },
     {
      "w": "layout",
-     "s": 15.54,
+     "s": 15.1,
      "hot": 1
     }
    ]
   },
   {
-   "s": 16.18,
-   "e": 17.38,
+   "s": 15.76,
+   "e": 16.96,
    "words": [
     {
      "w": "3D",
-     "s": 16.18,
+     "s": 15.76,
      "hot": 1
     },
     {
      "w": "dan",
-     "s": 16.68
+     "s": 16.24
     },
     {
      "w": "drawing",
-     "s": 17.08,
+     "s": 16.64,
      "hot": 1
     }
    ]
   },
   {
-   "s": 17.38,
-   "e": 18.6,
+   "s": 16.96,
+   "e": 18.18,
    "words": [
     {
      "w": "untuk",
-     "s": 17.38
+     "s": 16.96
     },
     {
      "w": "mulakan",
-     "s": 17.84
+     "s": 17.4
     },
     {
      "w": "kerja",
-     "s": 18.2
+     "s": 17.78
     }
    ]
   },
   {
-   "s": 18.6,
-   "e": 19.4,
+   "s": 18.18,
+   "e": 18.96,
    "words": [
     {
      "w": "renovation",
-     "s": 18.6,
+     "s": 18.18,
      "hot": 1
     },
     {
      "w": "ini",
-     "s": 18.82
+     "s": 18.4
     }
    ]
   },
   {
-   "s": 19.4,
-   "e": 20.28,
+   "s": 18.96,
+   "e": 19.84,
    "words": [
     {
      "w": "Kalau",
-     "s": 19.4
+     "s": 18.96
     },
     {
      "w": "nak",
-     "s": 19.64
+     "s": 19.22
     },
     {
      "w": "design",
-     "s": 19.92,
+     "s": 19.5,
      "hot": 1
     }
    ]
   },
   {
-   "s": 20.28,
-   "e": 21.0,
+   "s": 19.84,
+   "e": 20.56,
    "words": [
     {
      "w": "dulu",
-     "s": 20.28
+     "s": 19.84
     },
     {
      "w": "rumah",
-     "s": 20.48
+     "s": 20.06
     }
    ]
   },
   {
-   "s": 21.0,
-   "e": 21.72,
+   "s": 20.56,
+   "e": 21.94,
    "words": [
     {
      "w": "dapatkan",
-     "s": 21.0
-    }
-   ]
-  },
-  {
-   "s": 21.72,
-   "e": 22.7,
-   "words": [
+     "s": 20.56
+    },
     {
      "w": "visual",
-     "s": 21.72,
+     "s": 21.28,
      "hot": 1
     },
     {
      "w": "akhir",
-     "s": 22.0
-    },
-    {
-     "w": "rumah",
-     "s": 22.36
+     "s": 21.56
     }
    ]
   },
   {
-   "s": 22.7,
-   "e": 23.34,
+   "s": 21.94,
+   "e": 22.62,
    "words": [
     {
+     "w": "rumah",
+     "s": 21.94
+    },
+    {
      "w": "tu",
-     "s": 22.7
+     "s": 22.3
     },
     {
      "w": "macam",
-     "s": 22.88
-    },
-    {
-     "w": "mana",
-     "s": 23.02
+     "s": 22.44
     }
    ]
   },
   {
-   "s": 23.34,
-   "e": 24.46,
+   "s": 22.62,
+   "e": 22.92,
+   "words": [
+    {
+     "w": "mana",
+     "s": 22.62
+    }
+   ]
+  },
+  {
+   "s": 22.92,
+   "e": 24.08,
    "words": [
     {
      "w": "dan",
-     "s": 23.34
+     "s": 22.92
     },
     {
      "w": "kontraktor",
-     "s": 23.68,
+     "s": 23.24,
      "hot": 1
     },
     {
      "w": "cari",
-     "s": 24.22
+     "s": 23.78
     }
    ]
   },
   {
-   "s": 24.46,
-   "e": 24.98,
+   "s": 24.08,
+   "e": 24.56,
    "words": [
     {
      "w": "sendiri",
-     "s": 24.46,
+     "s": 24.08,
      "hot": 1
     }
    ]
   },
   {
-   "s": 24.98,
-   "e": 25.24,
+   "s": 24.56,
+   "e": 25.36,
    "words": [
     {
      "w": "boleh",
-     "s": 24.98
-    }
-   ]
-  },
-  {
-   "s": 25.24,
-   "e": 25.9,
-   "words": [
+     "s": 24.56
+    },
     {
      "w": "DM",
-     "s": 25.24,
+     "s": 24.82,
      "hot": 1
     },
     {
      "w": "kami",
-     "s": 25.52
+     "s": 25.08
     }
    ]
   },
   {
-   "s": 25.9,
-   "e": 26.68,
-   "words": [
-    {
-     "w": "Kita",
-     "s": 25.9
-    },
-    {
-     "w": "akan",
-     "s": 26.08
-    },
-    {
-     "w": "bagikan",
-     "s": 26.28
-    }
-   ]
-  },
-  {
-   "s": 26.68,
-   "e": 27.7,
-   "words": [
-    {
-     "w": "suggestion",
-     "s": 26.68
-    },
-    {
-     "w": "yang",
-     "s": 27.0
-    },
-    {
-     "w": "terbaik",
-     "s": 27.28,
-     "hot": 1
-    }
-   ]
-  },
-  {
-   "s": 27.7,
-   "e": 28.8,
-   "words": [
-    {
-     "w": "untuk",
-     "s": 27.7
-    },
-    {
-     "w": "rumah",
-     "s": 28.0
-    },
-    {
-     "w": "anda",
-     "s": 28.48
-    }
-   ]
-  },
-  {
-   "s": 28.8,
-   "e": 29.54,
+   "s": 25.36,
+   "e": 26.24,
    "words": [
     {
      "w": "kita",
-     "s": 28.8
+     "s": 25.36
     },
     {
      "w": "akan",
-     "s": 28.92
+     "s": 25.66
     },
     {
-     "w": "bincang",
-     "s": 29.08
+     "w": "bagikan",
+     "s": 25.84
     }
    ]
   },
   {
-   "s": 29.54,
-   "e": 30.14,
+   "s": 26.24,
+   "e": 27.26,
    "words": [
     {
-     "w": "macam",
-     "s": 29.54
+     "w": "suggestion",
+     "s": 26.24
     },
     {
-     "w": "mana",
-     "s": 29.82
+     "w": "yang",
+     "s": 26.56
     },
     {
-     "w": "nak",
-     "s": 29.96
-    }
-   ]
-  },
-  {
-   "s": 30.14,
-   "e": 30.8,
-   "words": [
-    {
-     "w": "cantikkan",
-     "s": 30.14,
+     "w": "terbaik",
+     "s": 26.84,
      "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 27.26,
+   "e": 28.36,
+   "words": [
+    {
+     "w": "untuk",
+     "s": 27.26
     },
     {
      "w": "rumah",
-     "s": 30.62
+     "s": 27.66
+    },
+    {
+     "w": "anda",
+     "s": 28.04
     }
    ]
   },
   {
-   "s": 30.8,
-   "e": 32.5,
+   "s": 28.36,
+   "e": 29.12,
    "words": [
     {
-     "w": "sebelum",
-     "s": 30.8
+     "w": "kita",
+     "s": 28.36
     },
     {
-     "w": "hantarkan",
-     "s": 31.62
+     "w": "akan",
+     "s": 28.48
     },
     {
-     "w": "design",
-     "s": 32.18,
+     "w": "bincang",
+     "s": 28.66
+    }
+   ]
+  },
+  {
+   "s": 29.12,
+   "e": 29.7,
+   "words": [
+    {
+     "w": "macam",
+     "s": 29.12
+    },
+    {
+     "w": "mana",
+     "s": 29.36
+    },
+    {
+     "w": "nak",
+     "s": 29.54
+    }
+   ]
+  },
+  {
+   "s": 29.7,
+   "e": 30.18,
+   "words": [
+    {
+     "w": "cantikkan",
+     "s": 29.7,
      "hot": 1
     }
    ]
   },
   {
-   "s": 32.5,
-   "e": 33.02,
+   "s": 30.18,
+   "e": 31.74,
    "words": [
     {
-     "w": "tu",
-     "s": 32.5
+     "w": "rumah",
+     "s": 30.18
     },
     {
-     "w": "kepada",
-     "s": 32.76
+     "w": "sebelum",
+     "s": 30.4
+    },
+    {
+     "w": "hantarkan",
+     "s": 31.18
     }
    ]
   },
   {
-   "s": 33.02,
-   "e": 34.12,
+   "s": 31.74,
+   "e": 32.58,
+   "words": [
+    {
+     "w": "design",
+     "s": 31.74,
+     "hot": 1
+    },
+    {
+     "w": "tu",
+     "s": 32.1
+    },
+    {
+     "w": "kepada",
+     "s": 32.34
+    }
+   ]
+  },
+  {
+   "s": 32.58,
+   "e": 33.48,
    "words": [
     {
      "w": "kontraktor",
-     "s": 33.02,
+     "s": 32.58,
      "hot": 1
     },
     {
      "w": "untuk",
-     "s": 33.54
-    },
-    {
-     "w": "buat",
-     "s": 33.9
+     "s": 33.1
     }
    ]
   },
   {
-   "s": 34.12,
-   "e": 34.46,
+   "s": 33.48,
+   "e": 34.02,
    "words": [
     {
+     "w": "buat",
+     "s": 33.48
+    },
+    {
      "w": "kerja",
-     "s": 34.12
+     "s": 33.68
     }
    ]
   },
   {
-   "s": 34.46,
-   "e": 35.24,
+   "s": 34.02,
+   "e": 34.800000000000004,
    "words": [
     {
      "w": "DM",
-     "s": 34.46,
+     "s": 34.02,
      "hot": 1
     },
     {
      "w": "kami",
-     "s": 34.58
+     "s": 34.14
     },
     {
      "w": "ya",
-     "s": 34.86
+     "s": 34.42
     }
    ]
   }
@@ -838,84 +812,84 @@
   },
   {
    "s": 14.01,
-   "e": 15.55,
+   "e": 15.13,
    "kind": "brand",
-   "text": "FIKIR STUDIO",
+   "text": "Fi-K STUDIO",
    "sub": "Design · Layout · 3D",
-   "note": "Logo reveal + kilauan cahaya masa sebut 'Fikir Studio'"
+   "note": "Logo Fi-K Studio (hijau) muncul masa sebut 'Fikir Studio'"
   },
   {
-   "s": 15.54,
-   "e": 19.29,
+   "s": 15.12,
+   "e": 18.87,
    "kind": "services",
    "items": [
     [
      "Layout",
-     15.56
+     15.14
     ],
     [
      "3D",
-     16.18
+     15.76
     ],
     [
      "Drawing",
-     17.08
+     16.66
     ]
    ],
    "note": "3 kad servis muncul ikut perkataan"
   },
   {
-   "s": 15.55,
-   "e": 19.29,
+   "s": 15.13,
+   "e": 18.87,
    "kind": "broll",
    "label": "B-ROLL: pelan lantai → render 3D",
-   "note": "Slot B-roll (PIP). Sementara: animasi pelan lantai melukis diri jadi 3D. Ganti dengan render sebenar Fikir Studio"
+   "note": "Slot B-roll (PIP). Sementara: animasi pelan lantai melukis diri jadi 3D. Ganti dengan render sebenar Fi-K Studio"
   },
   {
-   "s": 19.41,
-   "e": 24.79,
+   "s": 18.99,
+   "e": 24.37,
    "kind": "flow",
    "items": [
     [
      "Design dulu",
-     19.84
+     19.42
     ],
     [
      "Visual akhir",
-     21.7
+     21.28
     ],
     [
      "Kontraktor sendiri",
-     23.68
+     23.26
     ]
    ],
    "note": "Aliran 3 langkah, setiap langkah tick ikut ucapan"
   },
   {
-   "s": 19.41,
-   "e": 23.39,
+   "s": 18.99,
+   "e": 22.97,
    "kind": "beforeafter",
    "label": "B-ROLL: before / after",
    "note": "Slot B-roll: lakaran bilik kosong → render siap (wipe). Ganti dengan before/after projek sebenar"
   },
   {
-   "s": 25.0,
-   "e": 28.74,
+   "s": 24.58,
+   "e": 28.32,
    "kind": "dm",
-   "text": "Hai Fikir Studio! Nak design rumah 🏠",
+   "text": "Hai Fi-K Studio! Nak design rumah 🏠",
    "reply": "Boleh! Kami bagi suggestion terbaik ✨",
    "note": "Mockup DM: mesej masuk + balasan"
   },
   {
-   "s": 28.79,
-   "e": 34.39,
+   "s": 28.37,
+   "e": 33.97,
    "kind": "handoff",
    "text": "Design siap → kontraktor",
    "note": "Kertas pelan terbang ke topi keselamatan kontraktor"
   },
   {
-   "s": 34.24,
-   "e": 35.6,
+   "s": 33.82,
+   "e": 35.18,
    "kind": "cta",
    "text": "DM KAMI SEKARANG",
    "sub": "Konsultasi design rumah",
@@ -989,77 +963,77 @@
    "gain": 0.5
   },
   {
-   "t": 15.5,
+   "t": 15.08,
    "name": "swoosh_down",
    "gain": 0.5
   },
   {
-   "t": 15.58,
+   "t": 15.16,
    "name": "pop",
    "gain": 0.6
   },
   {
-   "t": 16.18,
+   "t": 15.76,
    "name": "pop",
    "gain": 0.6
   },
   {
-   "t": 17.08,
+   "t": 16.66,
    "name": "pop",
+   "gain": 0.6
+  },
+  {
+   "t": 19.0,
+   "name": "whoosh",
    "gain": 0.6
   },
   {
    "t": 19.42,
-   "name": "whoosh",
-   "gain": 0.6
-  },
-  {
-   "t": 19.84,
    "name": "click",
    "gain": 0.6
   },
   {
-   "t": 21.7,
+   "t": 21.28,
    "name": "click",
    "gain": 0.6
   },
   {
-   "t": 23.68,
+   "t": 23.26,
    "name": "click",
    "gain": 0.6
   },
   {
-   "t": 25.22,
+   "t": 24.8,
    "name": "ding",
    "gain": 0.7
   },
   {
-   "t": 26.34,
+   "t": 25.92,
    "name": "pop",
    "gain": 0.5
   },
   {
-   "t": 28.82,
+   "t": 28.4,
    "name": "whoosh",
    "gain": 0.6
   },
   {
-   "t": 31.64,
+   "t": 31.22,
    "name": "swoosh_down",
    "gain": 0.6
   },
   {
-   "t": 33.04,
+   "t": 32.62,
    "name": "chaching",
    "gain": 0.5
   },
   {
-   "t": 34.24,
+   "t": 33.82,
    "name": "click",
    "gain": 0.8
   },
   {
-   "t": 34.26,
+   "t": 33.84,
    "name": "whoosh",
    "gain": 0.5
   }
@@ -1097,71 +1071,61 @@
   },
   {
    "t": 14.01,
-   "scale": 1.0,
-   "oy": 40
-  },
-  {
-   "t": 14.39,
-   "scale": 1.0,
-   "oy": 40
-  },
-  {
-   "t": 14.43,
    "scale": 1.18,
    "oy": 28
   },
   {
-   "t": 16.85,
+   "t": 16.43,
    "scale": 1.18,
    "oy": 28
   },
   {
-   "t": 16.89,
+   "t": 16.47,
    "scale": 1.0,
    "oy": 40
   },
   {
-   "t": 19.34,
+   "t": 18.92,
    "scale": 1.0,
    "oy": 40
   },
   {
-   "t": 19.41,
+   "t": 18.99,
    "scale": 1.1,
    "oy": 34
   },
   {
-   "t": 24.97,
+   "t": 24.55,
    "scale": 1.1,
    "oy": 34
   },
   {
-   "t": 25.03,
+   "t": 24.61,
    "scale": 1.0,
    "oy": 40
   },
   {
-   "t": 28.77,
+   "t": 28.35,
    "scale": 1.0,
    "oy": 40
   },
   {
-   "t": 28.83,
+   "t": 28.41,
    "scale": 1.12,
    "oy": 32
   },
   {
-   "t": 32.9,
+   "t": 32.48,
    "scale": 1.15,
    "oy": 31
   },
   {
-   "t": 34.24,
+   "t": 33.82,
    "scale": 1.0,
    "oy": 40
   },
   {
-   "t": 35.6,
+   "t": 35.18,
    "scale": 1.0,
    "oy": 40
   }
