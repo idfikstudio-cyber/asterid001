@@ -1,6 +1,6 @@
 # IMG_0571: video TOFU "Fokus belajar" (Aster Edu)
 
-Status: **preview sahaja, belum render final.** Video asal 2:59 (rakaman mentah dengan ambilan semula) dipotong ke 42.8 s.
+Status: **diluluskan, render final 1080×1920.** Video asal 2:59 (rakaman mentah dengan ambilan semula) dipotong ke 42.8 s.
 
 - `edit/transcript.json`, `edit/chunks0.json`: transkrip Whisper large-v3 dengan masa setiap perkataan (bahagian 0:13–1:03 ditranskrip semula ikut blok).
 - `scripts/edl.py` → `edit/edl.json`: ambilan terbaik setiap ayat, disusun semula (hook di depan, pengenalan dari 2:48 dipindah selepas hook), dipotong pada sempadan frame.
@@ -12,3 +12,9 @@ Status: **preview sahaja, belum render final.** Video asal 2:59 (rakaman mentah 
 - `scripts/build_preview.py` + `preview/template.html`: halaman preview interaktif.
 
 Video sumber: Google Drive (tidak disimpan dalam repo kerana saiz).
+
+## Render final
+1. `scripts/grade.sh` (atau filter dalam `edit/grade_filter.txt`) → master graded 1080×1920.
+2. `scripts/build_preview.py` → halaman preview; layankan dengan `python3 -m http.server`.
+3. `node scripts/render_overlay.js http://localhost:PORT/index.html ovdir 42.776`: grafik + sari kata sebagai PNG telus (mod `#render` dalam halaman yang sama dengan preview).
+4. `scripts/final.py`: potong, punch-in (zoompan, keyframe sama dengan preview), B-roll, overlay, SFX → MP4 H.264 + AAC.

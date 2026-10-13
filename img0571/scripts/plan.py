@@ -31,7 +31,7 @@ G=[
  {"s":0.0,"e":S0,"kind":"hook","text":["PERCAYA","ATAU TIDAK?"],"note":"Hook: tajuk besar, terus ke soalan"},
  {"s":S0,"e":FULL_END,"kind":"compare-full","note":"B-roll grafik skrin penuh: 1 jam fokus. Juga menutup saat penyampai menoleh ke tepi"},
  {"s":FULL_END,"e":seg_out("S"),"kind":"compare","reveal":round(at("S","3")-FULL_END,2),"notif":round(at("S","handphone")-FULL_END,2),"timer":round(at("S","setiap")-FULL_END,2),"note":"Kad banding: 1 jam fokus vs 3 jam + scroll handphone setiap 5 minit"},
- {"s":seg_in("I")+0.05,"e":seg_out("I"),"kind":"name","name":"Al-Farhan","role":"Pengasas Aster Edu","chip":"Tuisyen online · umur 10–17 tahun","chipAt":round(at("I","10")-seg_in("I")-0.05,2),"note":"Lower-third: nama, jawatan, julat umur"},
+ {"s":seg_in("I")+0.05,"e":seg_out("I"),"kind":"name","name":"Al-Farhan","role":"","chip":"Tuisyen online · umur 10–17 tahun","chipAt":round(at("I","10")-seg_in("I")-0.05,2),"note":"Lower-third: nama + julat umur (tanpa jawatan)"},
  {"s":round(at("F","sejam")-0.05,3),"e":seg_out("F"),"kind":"equation","a":"1 JAM","b":"FOKUS","bAt":round(at("F","fokus")-at("F","sejam")+0.05,2),"note":"Kata kunci: 1 jam + fokus = ✓"},
  {"s":round(at("O","fokus")-0.05,3),"e":seg_out("O"),"kind":"checklist","rows":[["ok","Fokus"],["no","Masa yang panjang"]],"rowAt":[0,round(at("O","masa")-at("O","fokus"),2)],"note":"Otak perlukan fokus, bukan masa panjang"},
  {"s":round(at("R","panjang")-0.1,3),"e":seg_out("R"),"kind":"meter","text":"Tahap fokus","drainAt":0.15,"redAt":round(at("R","merewang")-at("R","panjang")+0.1,2),"note":"Meter fokus menurun bila belajar terlalu lama"},

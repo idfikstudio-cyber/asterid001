@@ -244,6 +244,12 @@ td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
 .g.on.end .btn-cta{animation:rise .4s .6s cubic-bezier(.2,1.2,.4,1) forwards,pulse 1.2s 1.2s ease-in-out infinite}
 @keyframes pulse{50%{transform:scale(1.04)}}
 .end-bg{inset:0;background:linear-gradient(rgba(11,21,51,.55),rgba(11,21,51,.85))}
+/* render mode (#render): overlay only, 1080x1920, transparent, driven frame by frame by scripts/render_overlay.js */
+.rmode,.rmode body{background:transparent!important}
+.rmode header.top,.rmode .panel,.rmode .controls,.rmode .toggles,.rmode .hint,.rmode .stage,.rmode .bigplay,.rmode .wipe,.rmode .safe{display:none!important}
+.rmode .wrap{padding:0;max-width:none}
+.rmode .phone{position:fixed;left:0;top:0;width:1080px;height:1920px;max-width:none;border-radius:0;background:transparent;box-shadow:none}
+.rmode .cap span{transition:none}
 @media (prefers-reduced-motion:reduce){.g.on,.g.on *,.g.on::after,.g.on *::after,.g.on *::before{animation-duration:.01s!important;animation-iteration-count:1!important}}
 </style>
 
@@ -386,7 +392,7 @@ function build(g){
     case"compare-full":el.className+=" full";h=`<div class="clock"><b>1 JAM</b></div><div class="t1">BELAJAR TANPA<br>GANGGUAN</div><div class="t2">✓ Fokus penuh</div>`;break;
     case"compare":el.className+=" cmp";el.style.cssText=`--reveal:${g.reveal}s;--notif:${g.notif}s;--timer:${g.timer}s`;
       h=`<div class="col a"><span class="mk">✓</span><h4>1 JAM</h4><p>Tanpa gangguan</p></div><div class="col b"><span class="mk">✕</span><h4>3 JAM</h4><p>+ scroll handphone</p><span class="nt"><i></i>1 notifikasi baru</span></div><span class="tm">⏱ setiap 5 minit</span>`;break;
-    case"name":el.className+=" name";el.style.cssText=`--chipAt:${g.chipAt}s`;h=`<span class="n">${esc(g.name)}</span><span class="r">${esc(g.role)}</span><span class="c">${esc(g.chip)}</span>`;break;
+    case"name":el.className+=" name";el.style.cssText=`--chipAt:${g.chipAt}s`;h=`<span class="n">${esc(g.name)}</span>${g.role?`<span class="r">${esc(g.role)}</span>`:""}<span class="c">${esc(g.chip)}</span>`;break;
     case"equation":el.className+=" eq";el.style.cssText=`--bAt:${g.bAt}s`;h=`<span class="x">${esc(g.a)}</span><span class="p">+</span><span class="b">${esc(g.b)}</span><span class="ok">✓</span>`;break;
     case"checklist":el.className+=" chk";h=g.rows.map((r,i)=>`<div class="${r[0]}" style="--d:${g.rowAt[i]}s"><i>${r[0]==="ok"?"✓":"✕"}</i>${esc(r[1])}</div>`).join("");break;
     case"meter":el.className+=" meter";el.style.cssText=`--drainAt:${g.drainAt}s;--redAt:${g.redAt}s`;h=`<div class="row">${esc(g.text)}<span>belajar terlalu lama</span></div><div class="track"><i></i></div>`;break;
@@ -394,9 +400,9 @@ function build(g){
     case"phone":el.className+=" phone-g";el.style.cssText=`--allAt:${g.allAt}s`;h=`<div class="ph"><b>99+</b></div><div class="list">${g.chips.map(c=>`<div style="--d:${c[2]}s"><span aria-hidden="true">${c[0]}</span>${esc(c[1])}</div>`).join("")}</div><span class="all">SEMUA GANGGU</span>`;break;
     case"comment":el.className+=" cmt";h=`<i>💬</i>${esc(g.text)}`;break;
     case"endcard":el.className+=" end";h=`<div class="eb"><i></i>ASTER EDU</div><h3>Tuisyen online untuk anak Darjah 4 hingga Tingkatan 5</h3><ul><li><b>5</b> subjek teras dalam satu pakej</li><li><b>2</b> tutor dalam 1 kelas</li><li><b>24/7</b> rakaman kelas untuk ulang kaji</li></ul><div class="btn-cta">DM kami untuk info pakej</div><div class="ct">Tanya subjek, jadual kelas &amp; cara daftar</div>`;
-      const bg=document.createElement("div");bg.className="g end-bg";ov.appendChild(bg);GS.push({g,el:bg,on:false});break;
+      const bg=document.createElement("div");bg.className="g end-bg";bg.dataset.s=g.s;ov.appendChild(bg);GS.push({g,el:bg,on:false});break;
   }
-  el.innerHTML=h;ov.appendChild(el);GS.push({g,el,on:false});
+  el.dataset.s=g.s;el.innerHTML=h;ov.appendChild(el);GS.push({g,el,on:false});
 }
 const GS=[];plan.graphics.forEach(build);
 const cap=document.createElement("div");cap.className="cap";ov.appendChild(cap);
@@ -414,7 +420,7 @@ function render(t){
   for(const o of GS){const on=t>=o.g.s&&t<o.g.e;if(on!==o.on){o.on=on;o.el.classList.toggle("on",on)}if(on&&o.g.kind==="endcard")end=true;if(on&&o.g.kind==="compare-full")full=true}
   phone.classList.toggle("on-end",end&&st.mg);phone.classList.toggle("on-full",full&&st.mg);
   let i=-1;for(let k=0;k<plan.captions.length;k++){const c=plan.captions[k];if(t>=c.s&&t<c.e){i=k;break}}
-  if(i!==capIdx){capIdx=i;if(i<0){cap.innerHTML=""}else{cap.innerHTML=plan.captions[i].words.map(w=>`<span class="${w.hot?"hot":""}">${esc(w.w)}</span>`).join(" ");cap.classList.remove("pop");void cap.offsetWidth;cap.classList.add("pop")}}
+  if(i!==capIdx){capIdx=i;if(i<0){cap.innerHTML=""}else{cap.dataset.s=plan.captions[i].s;cap.innerHTML=plan.captions[i].words.map(w=>`<span class="${w.hot?"hot":""}">${esc(w.w)}</span>`).join(" ");cap.classList.remove("pop");void cap.offsetWidth;cap.classList.add("pop")}}
   if(i>=0){const ws=plan.captions[i].words;const sp=cap.children;let a=-1;ws.forEach((w,k)=>{if(t>=w.s)a=k});for(let k=0;k<sp.length;k++)sp[k].classList.toggle("act",k===a)}
   $("#time").textContent=fmt(t);$("#seek").value=t;
   highlightEv(t);
@@ -436,8 +442,15 @@ function sfxTick(t){
   lastT=t;
 }
 
+/* ---- render mode: deterministic frame t (seconds) ---- */
+const RMODE=location.hash==="#render";
+if(RMODE){document.documentElement.classList.add("rmode");$("#bigplay").hidden=true;
+  window.renderAt=t=>{render(t);
+    for(const a of ov.getAnimations({subtree:true})){const el=a.effect&&a.effect.target;const host=el&&el.closest("[data-s]");
+      a.pause();a.currentTime=Math.max(0,(t-(host?+host.dataset.s:0))*1000)}
+    return true}}
 /* ---- loop ---- */
-function loop(){const t=vg.currentTime;sfxTick(t);
+function loop(){if(RMODE)return;const t=vg.currentTime;sfxTick(t);
   if(st.wipe&&!vg.paused){if(vo.paused)vo.play().catch(()=>{});if(Math.abs(vo.currentTime-t)>.12)vo.currentTime=t}
   render(t);requestAnimationFrame(loop)}
 requestAnimationFrame(loop);

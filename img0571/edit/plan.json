@@ -708,10 +708,10 @@
    "e": 14.314,
    "kind": "name",
    "name": "Al-Farhan",
-   "role": "Pengasas Aster Edu",
+   "role": "",
    "chip": "Tuisyen online · umur 10–17 tahun",
    "chipAt": 3.16,
-   "note": "Lower-third: nama, jawatan, julat umur"
+   "note": "Lower-third: nama + julat umur (tanpa jawatan)"
   },
   {
    "s": 15.672,
