@@ -1,0 +1,2555 @@
+{
+ "duration": 38.6,
+ "cuts": [
+  {
+   "out": 0,
+   "src_in": 37.7,
+   "src_out": 41.68,
+   "id": "hook",
+   "text": "Klien memang tahu apa yang dia nak, tapi susah nak cerita kat contractor"
+  },
+  {
+   "out": 3.98,
+   "src_in": 0.22,
+   "src_out": 5.0,
+   "id": "A",
+   "text": "Tak semua orang nak interior design uruskan A sampai Z, daripada design sampai renovation"
+  },
+  {
+   "out": 8.76,
+   "src_in": 22.8,
+   "src_out": 28.05,
+   "id": "B",
+   "text": "Ada klien yang memang nak design sahaja ... uruskan renovation sendiri"
+  },
+  {
+   "out": 14.01,
+   "src_in": 45.72,
+   "src_out": 48.78,
+   "id": "C",
+   "text": "Fikir Studio, inilah fungsi, inilah kami"
+  },
+  {
+   "out": 17.07,
+   "src_in": 71.44,
+   "src_out": 71.86,
+   "id": "D1",
+   "text": "Fikir"
+  },
+  {
+   "out": 17.49,
+   "src_in": 72.26,
+   "src_out": 74.72,
+   "id": "D2",
+   "text": "studio boleh bantu dengan layout 3D"
+  },
+  {
+   "out": 19.95,
+   "src_in": 79.06,
+   "src_out": 81.58,
+   "id": "D3",
+   "text": "dan drawing untuk mulakan kerja renovation ini"
+  },
+  {
+   "out": 22.47,
+   "src_in": 143.42,
+   "src_out": 149.04,
+   "id": "E1",
+   "text": "Kalau nak design rumah dulu, dapatkan visual akhir ... kontraktor cari sendiri"
+  },
+  {
+   "out": 28.09,
+   "src_in": 160.72,
+   "src_out": 164.52,
+   "id": "E2",
+   "text": "Boleh DM kami, kita akan bagikan suggestion yang terbaik untuk rumah anda"
+  },
+  {
+   "out": 31.89,
+   "src_in": 170.66,
+   "src_out": 176.28,
+   "id": "F2",
+   "text": "kita akan bincang macam mana nak cantikkan rumah sebelum hantarkan design tu kepada kontraktor untuk buat kerja"
+  },
+  {
+   "out": 37.51,
+   "src_in": 176.58,
+   "src_out": 177.55,
+   "id": "F3",
+   "text": "DM kami ya"
+  }
+ ],
+ "captions": [
+  {
+   "s": 0.0,
+   "e": 0.98,
+   "words": [
+    {
+     "w": "Klien",
+     "s": 0.0
+    },
+    {
+     "w": "memang",
+     "s": 0.34
+    },
+    {
+     "w": "tahu",
+     "s": 0.6
+    }
+   ]
+  },
+  {
+   "s": 0.98,
+   "e": 1.78,
+   "words": [
+    {
+     "w": "apa",
+     "s": 0.98
+    },
+    {
+     "w": "yang",
+     "s": 1.32
+    },
+    {
+     "w": "dia",
+     "s": 1.54
+    }
+   ]
+  },
+  {
+   "s": 1.78,
+   "e": 2.48,
+   "words": [
+    {
+     "w": "nak",
+     "s": 1.78
+    },
+    {
+     "w": "tapi",
+     "s": 1.98
+    },
+    {
+     "w": "dia",
+     "s": 2.28
+    }
+   ]
+  },
+  {
+   "s": 2.48,
+   "e": 3.24,
+   "words": [
+    {
+     "w": "susah",
+     "s": 2.48,
+     "hot": 1
+    },
+    {
+     "w": "nak",
+     "s": 2.86
+    },
+    {
+     "w": "cerita",
+     "s": 2.94
+    }
+   ]
+  },
+  {
+   "s": 3.24,
+   "e": 3.94,
+   "words": [
+    {
+     "w": "kat",
+     "s": 3.24
+    },
+    {
+     "w": "kontraktor",
+     "s": 3.36,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 3.94,
+   "e": 4.7,
+   "words": [
+    {
+     "w": "Tak",
+     "s": 3.94
+    },
+    {
+     "w": "semua",
+     "s": 4.08
+    },
+    {
+     "w": "orang",
+     "s": 4.38
+    }
+   ]
+  },
+  {
+   "s": 4.7,
+   "e": 5.72,
+   "words": [
+    {
+     "w": "nak",
+     "s": 4.7
+    },
+    {
+     "w": "interior",
+     "s": 4.94
+    },
+    {
+     "w": "design",
+     "s": 5.26,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 5.72,
+   "e": 6.92,
+   "words": [
+    {
+     "w": "uruskan",
+     "s": 5.72
+    },
+    {
+     "w": "A",
+     "s": 6.26,
+     "hot": 1
+    },
+    {
+     "w": "sampai",
+     "s": 6.52
+    }
+   ]
+  },
+  {
+   "s": 6.92,
+   "e": 7.98,
+   "words": [
+    {
+     "w": "Z",
+     "s": 6.92,
+     "hot": 1
+    },
+    {
+     "w": "daripada",
+     "s": 7.26
+    },
+    {
+     "w": "design",
+     "s": 7.66,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 7.98,
+   "e": 8.72,
+   "words": [
+    {
+     "w": "sampai",
+     "s": 7.98
+    },
+    {
+     "w": "renovation",
+     "s": 8.38,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 8.72,
+   "e": 9.64,
+   "words": [
+    {
+     "w": "Ada",
+     "s": 8.72
+    },
+    {
+     "w": "klien",
+     "s": 8.92
+    },
+    {
+     "w": "yang",
+     "s": 9.46
+    }
+   ]
+  },
+  {
+   "s": 9.64,
+   "e": 10.3,
+   "words": [
+    {
+     "w": "memang",
+     "s": 9.64
+    },
+    {
+     "w": "nak",
+     "s": 9.88
+    },
+    {
+     "w": "design",
+     "s": 10.02,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 10.3,
+   "e": 11.08,
+   "words": [
+    {
+     "w": "sahaja",
+     "s": 10.3
+    },
+    {
+     "w": "sebab",
+     "s": 10.64
+    },
+    {
+     "w": "dia",
+     "s": 10.92
+    }
+   ]
+  },
+  {
+   "s": 11.08,
+   "e": 11.66,
+   "words": [
+    {
+     "w": "dah",
+     "s": 11.08
+    },
+    {
+     "w": "ada",
+     "s": 11.18
+    },
+    {
+     "w": "kontraktor",
+     "s": 11.26,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 11.66,
+   "e": 11.9,
+   "words": [
+    {
+     "w": "sendiri",
+     "s": 11.66,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 11.9,
+   "e": 12.7,
+   "words": [
+    {
+     "w": "jadi",
+     "s": 11.9
+    },
+    {
+     "w": "dia",
+     "s": 12.26
+    },
+    {
+     "w": "nak",
+     "s": 12.56
+    }
+   ]
+  },
+  {
+   "s": 12.7,
+   "e": 14.06,
+   "words": [
+    {
+     "w": "uruskan",
+     "s": 12.7
+    },
+    {
+     "w": "renovation",
+     "s": 13.14,
+     "hot": 1
+    },
+    {
+     "w": "sendiri",
+     "s": 13.36,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 14.06,
+   "e": 14.86,
+   "words": [
+    {
+     "w": "Fikir",
+     "s": 14.06,
+     "hot": 1
+    },
+    {
+     "w": "Studio",
+     "s": 14.22,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 14.86,
+   "e": 16.08,
+   "words": [
+    {
+     "w": "inilah",
+     "s": 14.86
+    },
+    {
+     "w": "fungsi",
+     "s": 15.64
+    }
+   ]
+  },
+  {
+   "s": 16.08,
+   "e": 17.1,
+   "words": [
+    {
+     "w": "inilah",
+     "s": 16.08
+    },
+    {
+     "w": "kami",
+     "s": 16.72
+    }
+   ]
+  },
+  {
+   "s": 17.1,
+   "e": 18.14,
+   "words": [
+    {
+     "w": "Fikir",
+     "s": 17.1,
+     "hot": 1
+    },
+    {
+     "w": "Studio",
+     "s": 17.58,
+     "hot": 1
+    },
+    {
+     "w": "boleh",
+     "s": 17.84
+    }
+   ]
+  },
+  {
+   "s": 18.14,
+   "e": 19.24,
+   "words": [
+    {
+     "w": "bantu",
+     "s": 18.14
+    },
+    {
+     "w": "dengan",
+     "s": 18.44
+    },
+    {
+     "w": "layout",
+     "s": 18.62,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 19.24,
+   "e": 20.46,
+   "words": [
+    {
+     "w": "3D",
+     "s": 19.24,
+     "hot": 1
+    },
+    {
+     "w": "dan",
+     "s": 19.76
+    },
+    {
+     "w": "drawing",
+     "s": 20.14,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 20.46,
+   "e": 21.68,
+   "words": [
+    {
+     "w": "untuk",
+     "s": 20.46
+    },
+    {
+     "w": "mulakan",
+     "s": 20.9
+    },
+    {
+     "w": "kerja",
+     "s": 21.28
+    }
+   ]
+  },
+  {
+   "s": 21.68,
+   "e": 22.46,
+   "words": [
+    {
+     "w": "renovation",
+     "s": 21.68,
+     "hot": 1
+    },
+    {
+     "w": "ini",
+     "s": 21.9
+    }
+   ]
+  },
+  {
+   "s": 22.46,
+   "e": 23.34,
+   "words": [
+    {
+     "w": "Kalau",
+     "s": 22.46
+    },
+    {
+     "w": "nak",
+     "s": 22.7
+    },
+    {
+     "w": "design",
+     "s": 23.0,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 23.34,
+   "e": 24.06,
+   "words": [
+    {
+     "w": "dulu",
+     "s": 23.34
+    },
+    {
+     "w": "rumah",
+     "s": 23.56
+    }
+   ]
+  },
+  {
+   "s": 24.06,
+   "e": 25.46,
+   "words": [
+    {
+     "w": "dapatkan",
+     "s": 24.06
+    },
+    {
+     "w": "visual",
+     "s": 24.76,
+     "hot": 1
+    },
+    {
+     "w": "akhir",
+     "s": 25.06
+    }
+   ]
+  },
+  {
+   "s": 25.46,
+   "e": 26.08,
+   "words": [
+    {
+     "w": "rumah",
+     "s": 25.46
+    },
+    {
+     "w": "tu",
+     "s": 25.8
+    },
+    {
+     "w": "macam",
+     "s": 25.94
+    }
+   ]
+  },
+  {
+   "s": 26.08,
+   "e": 26.44,
+   "words": [
+    {
+     "w": "mana",
+     "s": 26.08
+    }
+   ]
+  },
+  {
+   "s": 26.44,
+   "e": 27.64,
+   "words": [
+    {
+     "w": "dan",
+     "s": 26.44
+    },
+    {
+     "w": "kontraktor",
+     "s": 26.74,
+     "hot": 1
+    },
+    {
+     "w": "cari",
+     "s": 27.28
+    }
+   ]
+  },
+  {
+   "s": 27.64,
+   "e": 27.82,
+   "words": [
+    {
+     "w": "sendiri",
+     "s": 27.64,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 27.82,
+   "e": 28.84,
+   "words": [
+    {
+     "w": "boleh",
+     "s": 27.82
+    },
+    {
+     "w": "DM",
+     "s": 28.4,
+     "hot": 1
+    },
+    {
+     "w": "kami",
+     "s": 28.56
+    }
+   ]
+  },
+  {
+   "s": 28.84,
+   "e": 29.76,
+   "words": [
+    {
+     "w": "kita",
+     "s": 28.84
+    },
+    {
+     "w": "akan",
+     "s": 29.12
+    },
+    {
+     "w": "bagikan",
+     "s": 29.34
+    }
+   ]
+  },
+  {
+   "s": 29.76,
+   "e": 30.78,
+   "words": [
+    {
+     "w": "suggestion",
+     "s": 29.76
+    },
+    {
+     "w": "yang",
+     "s": 30.14
+    },
+    {
+     "w": "terbaik",
+     "s": 30.34,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 30.78,
+   "e": 31.76,
+   "words": [
+    {
+     "w": "untuk",
+     "s": 30.78
+    },
+    {
+     "w": "rumah",
+     "s": 31.3
+    },
+    {
+     "w": "anda",
+     "s": 31.54
+    }
+   ]
+  },
+  {
+   "s": 31.76,
+   "e": 32.6,
+   "words": [
+    {
+     "w": "kita",
+     "s": 31.76
+    },
+    {
+     "w": "akan",
+     "s": 31.98
+    },
+    {
+     "w": "bincang",
+     "s": 32.16
+    }
+   ]
+  },
+  {
+   "s": 32.6,
+   "e": 33.2,
+   "words": [
+    {
+     "w": "macam",
+     "s": 32.6
+    },
+    {
+     "w": "mana",
+     "s": 32.94
+    },
+    {
+     "w": "nak",
+     "s": 33.04
+    }
+   ]
+  },
+  {
+   "s": 33.2,
+   "e": 33.88,
+   "words": [
+    {
+     "w": "cantikkan",
+     "s": 33.2,
+     "hot": 1
+    },
+    {
+     "w": "rumah",
+     "s": 33.68
+    }
+   ]
+  },
+  {
+   "s": 33.88,
+   "e": 35.26,
+   "words": [
+    {
+     "w": "sebelum",
+     "s": 33.88
+    },
+    {
+     "w": "hantarkan",
+     "s": 34.68
+    }
+   ]
+  },
+  {
+   "s": 35.26,
+   "e": 36.08,
+   "words": [
+    {
+     "w": "design",
+     "s": 35.26,
+     "hot": 1
+    },
+    {
+     "w": "tu",
+     "s": 35.52
+    },
+    {
+     "w": "kepada",
+     "s": 35.84
+    }
+   ]
+  },
+  {
+   "s": 36.08,
+   "e": 36.62,
+   "words": [
+    {
+     "w": "kontraktor",
+     "s": 36.08,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 36.62,
+   "e": 37.5,
+   "words": [
+    {
+     "w": "untuk",
+     "s": 36.62
+    },
+    {
+     "w": "buat",
+     "s": 37.08
+    },
+    {
+     "w": "kerja",
+     "s": 37.2
+    }
+   ]
+  },
+  {
+   "s": 37.5,
+   "e": 38.300000000000004,
+   "words": [
+    {
+     "w": "DM",
+     "s": 37.5,
+     "hot": 1
+    },
+    {
+     "w": "kami",
+     "s": 37.62
+    },
+    {
+     "w": "ya",
+     "s": 37.94
+    }
+   ]
+  }
+ ],
+ "graphics": [
+  {
+   "s": 0.0,
+   "e": 3.88,
+   "kind": "hook",
+   "text": [
+    "DAH TAHU",
+    "RUMAH IMPIAN,",
+    "TAPI SUSAH NAK",
+    "TERANG KAT KONTRAKTOR?"
+   ],
+   "note": "Hook: masalah klien (dipindah dari minit 0:37 video asal)"
+  },
+  {
+   "s": 1.95,
+   "e": 3.88,
+   "kind": "confused",
+   "note": "Ikon kontraktor keliru (???) masa sebut 'kontraktor'"
+  },
+  {
+   "s": 4.0,
+   "e": 8.7,
+   "kind": "atoz",
+   "text": "Design → Renovation",
+   "note": "Bar A sampai Z, isi ikut ucapan"
+  },
+  {
+   "s": 8.8,
+   "e": 13.8,
+   "kind": "split",
+   "a": "Design",
+   "b": "Renovation",
+   "note": "Dua kad: Design (kami) | Renovation (kontraktor sendiri)"
+  },
+  {
+   "s": 14.01,
+   "e": 17.05,
+   "kind": "brand",
+   "text": "FIKIR STUDIO",
+   "sub": "Design · Layout · 3D",
+   "note": "Logo reveal + kilauan cahaya"
+  },
+  {
+   "s": 18.6,
+   "e": 22.35,
+   "kind": "services",
+   "items": [
+    [
+     "Layout",
+     18.62
+    ],
+    [
+     "3D",
+     19.24
+    ],
+    [
+     "Drawing",
+     20.14
+    ]
+   ],
+   "note": "3 kad servis muncul ikut perkataan"
+  },
+  {
+   "s": 17.1,
+   "e": 22.35,
+   "kind": "broll",
+   "label": "B-ROLL: pelan lantai → render 3D",
+   "note": "Slot B-roll (PIP). Sementara: animasi pelan lantai melukis diri jadi 3D. Ganti dengan render sebenar Fikir Studio"
+  },
+  {
+   "s": 22.47,
+   "e": 27.85,
+   "kind": "flow",
+   "items": [
+    [
+     "Design dulu",
+     22.9
+    ],
+    [
+     "Visual akhir",
+     24.76
+    ],
+    [
+     "Kontraktor sendiri",
+     26.74
+    ]
+   ],
+   "note": "Aliran 3 langkah, setiap langkah tick ikut ucapan"
+  },
+  {
+   "s": 22.47,
+   "e": 26.45,
+   "kind": "beforeafter",
+   "label": "B-ROLL: before / after",
+   "note": "Slot B-roll: lakaran bilik kosong → render siap (wipe). Ganti dengan before/after projek sebenar"
+  },
+  {
+   "s": 27.85,
+   "e": 31.8,
+   "kind": "dm",
+   "text": "Hai Fikir Studio! Nak design rumah 🏠",
+   "reply": "Boleh! Kami bagi suggestion terbaik ✨",
+   "note": "Mockup DM: mesej masuk + balasan"
+  },
+  {
+   "s": 31.85,
+   "e": 37.45,
+   "kind": "handoff",
+   "text": "Design siap → kontraktor",
+   "note": "Kertas pelan terbang ke topi keselamatan kontraktor"
+  },
+  {
+   "s": 37.3,
+   "e": 38.6,
+   "kind": "cta",
+   "text": "DM KAMI SEKARANG",
+   "sub": "Konsultasi design rumah",
+   "note": "CTA berdenyut + anak panah"
+  }
+ ],
+ "sfx": [
+  {
+   "t": 0.0,
+   "name": "riser",
+   "gain": 0.3
+  },
+  {
+   "t": 0.04,
+   "name": "impact",
+   "gain": 0.75
+  },
+  {
+   "t": 1.95,
+   "name": "bonk",
+   "gain": 0.45
+  },
+  {
+   "t": 3.96,
+   "name": "whoosh",
+   "gain": 0.7
+  },
+  {
+   "t": 6.26,
+   "name": "pop",
+   "gain": 0.5
+  },
+  {
+   "t": 6.92,
+   "name": "pop",
+   "gain": 0.55
+  },
+  {
+   "t": 8.4,
+   "name": "ding",
+   "gain": 0.4
+  },
+  {
+   "t": 8.78,
+   "name": "whoosh",
+   "gain": 0.55
+  },
+  {
+   "t": 10.02,
+   "name": "pop",
+   "gain": 0.5
+  },
+  {
+   "t": 11.26,
+   "name": "pop",
+   "gain": 0.5
+  },
+  {
+   "t": 13.3,
+   "name": "riser",
+   "gain": 0.35
+  },
+  {
+   "t": 14.02,
+   "name": "impact",
+   "gain": 0.8
+  },
+  {
+   "t": 14.3,
+   "name": "whoosh",
+   "gain": 0.5
+  },
+  {
+   "t": 15.7,
+   "name": "ding",
+   "gain": 0.35
+  },
+  {
+   "t": 17.12,
+   "name": "swoosh_down",
+   "gain": 0.5
+  },
+  {
+   "t": 18.62,
+   "name": "pop",
+   "gain": 0.6
+  },
+  {
+   "t": 19.24,
+   "name": "pop",
+   "gain": 0.6
+  },
+  {
+   "t": 20.14,
+   "name": "pop",
+   "gain": 0.6
+  },
+  {
+   "t": 22.48,
+   "name": "whoosh",
+   "gain": 0.6
+  },
+  {
+   "t": 22.9,
+   "name": "click",
+   "gain": 0.6
+  },
+  {
+   "t": 24.76,
+   "name": "click",
+   "gain": 0.6
+  },
+  {
+   "t": 26.74,
+   "name": "click",
+   "gain": 0.6
+  },
+  {
+   "t": 27.86,
+   "name": "ding",
+   "gain": 0.7
+  },
+  {
+   "t": 29.4,
+   "name": "pop",
+   "gain": 0.5
+  },
+  {
+   "t": 31.88,
+   "name": "whoosh",
+   "gain": 0.6
+  },
+  {
+   "t": 34.7,
+   "name": "swoosh_down",
+   "gain": 0.6
+  },
+  {
+   "t": 36.1,
+   "name": "chaching",
+   "gain": 0.5
+  },
+  {
+   "t": 37.3,
+   "name": "click",
+   "gain": 0.8
+  },
+  {
+   "t": 37.32,
+   "name": "whoosh",
+   "gain": 0.5
+  }
+ ],
+ "zoom": [
+  {
+   "t": 0,
+   "scale": 1.16,
+   "oy": 20
+  },
+  {
+   "t": 3.94,
+   "scale": 1.16,
+   "oy": 20
+  },
+  {
+   "t": 3.98,
+   "scale": 1.0,
+   "oy": 40
+  },
+  {
+   "t": 8.72,
+   "scale": 1.0,
+   "oy": 40
+  },
+  {
+   "t": 8.76,
+   "scale": 1.1,
+   "oy": 34
+  },
+  {
+   "t": 13.95,
+   "scale": 1.1,
+   "oy": 34
+  },
+  {
+   "t": 14.01,
+   "scale": 1.22,
+   "oy": 28
+  },
+  {
+   "t": 16.95,
+   "scale": 1.22,
+   "oy": 28
+  },
+  {
+   "t": 17.07,
+   "scale": 1.0,
+   "oy": 40
+  },
+  {
+   "t": 22.4,
+   "scale": 1.0,
+   "oy": 40
+  },
+  {
+   "t": 22.47,
+   "scale": 1.1,
+   "oy": 34
+  },
+  {
+   "t": 27.8,
+   "scale": 1.1,
+   "oy": 34
+  },
+  {
+   "t": 27.86,
+   "scale": 1.0,
+   "oy": 40
+  },
+  {
+   "t": 31.8,
+   "scale": 1.0,
+   "oy": 40
+  },
+  {
+   "t": 31.89,
+   "scale": 1.12,
+   "oy": 32
+  },
+  {
+   "t": 36.0,
+   "scale": 1.15,
+   "oy": 31
+  },
+  {
+   "t": 37.3,
+   "scale": 1.0,
+   "oy": 40
+  },
+  {
+   "t": 38.6,
+   "scale": 1.0,
+   "oy": 40
+  }
+ ],
+ "source": [
+  {
+   "s": 0.0,
+   "words": [
+    [
+     "Tak",
+     1
+    ],
+    [
+     "semua",
+     1
+    ],
+    [
+     "orang",
+     1
+    ],
+    [
+     "nak",
+     1
+    ],
+    [
+     "inter",
+     1
+    ],
+    [
+     "design",
+     1
+    ],
+    [
+     "uruskan",
+     1
+    ],
+    [
+     "A",
+     1
+    ],
+    [
+     "sampai",
+     1
+    ],
+    [
+     "Z",
+     1
+    ]
+   ]
+  },
+  {
+   "s": 3.44,
+   "words": [
+    [
+     "Daripada",
+     1
+    ],
+    [
+     "design",
+     1
+    ],
+    [
+     "sampai",
+     1
+    ],
+    [
+     "renovation",
+     1
+    ]
+   ]
+  },
+  {
+   "s": 4.9,
+   "words": [
+    [
+     "Ada",
+     0
+    ],
+    [
+     "klien",
+     0
+    ],
+    [
+     "yang",
+     0
+    ],
+    [
+     "mahu",
+     0
+    ]
+   ]
+  },
+  {
+   "s": 10.25,
+   "words": [
+    [
+     "Ada",
+     0
+    ],
+    [
+     "klien",
+     0
+    ],
+    [
+     "yang",
+     0
+    ],
+    [
+     "memang",
+     0
+    ],
+    [
+     "nak",
+     0
+    ],
+    [
+     "design",
+     0
+    ],
+    [
+     "sahaja",
+     0
+    ]
+   ]
+  },
+  {
+   "s": 13.72,
+   "words": [
+    [
+     "Sebab",
+     0
+    ],
+    [
+     "dia",
+     0
+    ],
+    [
+     "ada",
+     0
+    ],
+    [
+     "contractor",
+     0
+    ],
+    [
+     "sendiri",
+     0
+    ]
+   ]
+  },
+  {
+   "s": 17.76,
+   "words": [
+    [
+     "Ada",
+     1
+    ],
+    [
+     "klien",
+     1
+    ],
+    [
+     "yang",
+     1
+    ],
+    [
+     "memang",
+     1
+    ],
+    [
+     "nak",
+     1
+    ],
+    [
+     "design",
+     1
+    ],
+    [
+     "sahaja",
+     1
+    ]
+   ]
+  },
+  {
+   "s": 24.66,
+   "words": [
+    [
+     "Sebab",
+     1
+    ],
+    [
+     "dia",
+     1
+    ],
+    [
+     "dah",
+     1
+    ],
+    [
+     "ada",
+     1
+    ],
+    [
+     "contractor",
+     1
+    ],
+    [
+     "sendiri",
+     1
+    ]
+   ]
+  },
+  {
+   "s": 25.9,
+   "words": [
+    [
+     "Jadi",
+     1
+    ],
+    [
+     "dia",
+     1
+    ],
+    [
+     "nak",
+     1
+    ],
+    [
+     "uruskan",
+     1
+    ],
+    [
+     "renovation",
+     1
+    ],
+    [
+     "sendiri",
+     1
+    ]
+   ]
+  },
+  {
+   "s": 37.35,
+   "words": [
+    [
+     "Klien",
+     1
+    ],
+    [
+     "memang",
+     1
+    ],
+    [
+     "tahu",
+     1
+    ],
+    [
+     "apa",
+     1
+    ],
+    [
+     "yang",
+     1
+    ],
+    [
+     "dia",
+     1
+    ],
+    [
+     "nak",
+     1
+    ]
+   ]
+  },
+  {
+   "s": 39.67,
+   "words": [
+    [
+     "Tapi",
+     1
+    ],
+    [
+     "dia",
+     1
+    ],
+    [
+     "susah",
+     1
+    ],
+    [
+     "nak",
+     1
+    ],
+    [
+     "cerita",
+     1
+    ],
+    [
+     "kat",
+     1
+    ],
+    [
+     "contractor",
+     1
+    ]
+   ]
+  },
+  {
+   "s": 41.53,
+   "words": [
+    [
+     "Fikir",
+     1
+    ],
+    [
+     "studio",
+     1
+    ],
+    [
+     "inilah",
+     1
+    ],
+    [
+     "fungsi",
+     1
+    ]
+   ]
+  },
+  {
+   "s": 47.66,
+   "words": [
+    [
+     "Inilah",
+     1
+    ],
+    [
+     "kami",
+     1
+    ]
+   ]
+  },
+  {
+   "s": 48.7,
+   "words": [
+    [
+     "Fikir",
+     0
+    ],
+    [
+     "studio",
+     0
+    ],
+    [
+     "boleh",
+     0
+    ],
+    [
+     "bantu",
+     0
+    ]
+   ]
+  },
+  {
+   "s": 51.26,
+   "words": [
+    [
+     "Desain",
+     0
+    ],
+    [
+     "layout",
+     0
+    ]
+   ]
+  },
+  {
+   "s": 52.02,
+   "words": [
+    [
+     "Fikir",
+     0
+    ],
+    [
+     "studio",
+     0
+    ],
+    [
+     "boleh",
+     0
+    ],
+    [
+     "bantu",
+     0
+    ]
+   ]
+  },
+  {
+   "s": 56.23,
+   "words": [
+    [
+     "Fikir",
+     0
+    ],
+    [
+     "studio",
+     0
+    ],
+    [
+     "boleh",
+     0
+    ],
+    [
+     "bantu",
+     0
+    ],
+    [
+     "untuk",
+     0
+    ],
+    [
+     "desainkan",
+     0
+    ],
+    [
+     "layout",
+     0
+    ]
+   ]
+  },
+  {
+   "s": 59.85,
+   "words": [
+    [
+     "Fikir",
+     0
+    ],
+    [
+     "studio",
+     0
+    ],
+    [
+     "boleh",
+     0
+    ],
+    [
+     "bantu",
+     0
+    ]
+   ]
+  },
+  {
+   "s": 61.47,
+   "words": [
+    [
+     "Fikir",
+     0
+    ],
+    [
+     "studio",
+     0
+    ],
+    [
+     "boleh",
+     0
+    ],
+    [
+     "bantu",
+     0
+    ]
+   ]
+  },
+  {
+   "s": 65.22,
+   "words": [
+    [
+     "Dengan",
+     0
+    ],
+    [
+     "layout",
+     0
+    ]
+   ]
+  },
+  {
+   "s": 71.6,
+   "words": [
+    [
+     "Fikir",
+     1
+    ],
+    [
+     "studio",
+     1
+    ],
+    [
+     "boleh",
+     1
+    ],
+    [
+     "bantu",
+     1
+    ]
+   ]
+  },
+  {
+   "s": 73.14,
+   "words": [
+    [
+     "Dengan",
+     1
+    ],
+    [
+     "layout",
+     1
+    ],
+    [
+     "3D",
+     1
+    ]
+   ]
+  },
+  {
+   "s": 74.56,
+   "words": [
+    [
+     "Dan",
+     1
+    ],
+    [
+     "drawing",
+     1
+    ],
+    [
+     "untuk",
+     1
+    ],
+    [
+     "mulakan",
+     1
+    ]
+   ]
+  },
+  {
+   "s": 80.34,
+   "words": [
+    [
+     "Kerja",
+     1
+    ],
+    [
+     "renovation",
+     1
+    ],
+    [
+     "ini",
+     1
+    ]
+   ]
+  },
+  {
+   "s": 81.42,
+   "words": [
+    [
+     "Fikir",
+     0
+    ],
+    [
+     "studio",
+     0
+    ],
+    [
+     "boleh",
+     0
+    ],
+    [
+     "bantu",
+     0
+    ],
+    [
+     "layout",
+     0
+    ]
+   ]
+  },
+  {
+   "s": 84.73,
+   "words": [
+    [
+     "3D",
+     0
+    ]
+   ]
+  },
+  {
+   "s": 85.81,
+   "words": [
+    [
+     "VK",
+     0
+    ],
+    [
+     "Studio",
+     0
+    ],
+    [
+     "boleh",
+     0
+    ],
+    [
+     "bantu",
+     0
+    ],
+    [
+     "layout",
+     0
+    ]
+   ]
+  },
+  {
+   "s": 89.52,
+   "words": [
+    [
+     "3D,",
+     0
+    ],
+    [
+     "design",
+     0
+    ]
+   ]
+  },
+  {
+   "s": 93.98,
+   "words": [
+    [
+     "VK",
+     0
+    ],
+    [
+     "Studio",
+     0
+    ],
+    [
+     "boleh",
+     0
+    ],
+    [
+     "bantu",
+     0
+    ]
+   ]
+  },
+  {
+   "s": 95.52,
+   "words": [
+    [
+     "Layout",
+     0
+    ],
+    [
+     "3D",
+     0
+    ]
+   ]
+  },
+  {
+   "s": 103.56,
+   "words": [
+    [
+     "VK",
+     0
+    ],
+    [
+     "Studio",
+     0
+    ],
+    [
+     "boleh",
+     0
+    ],
+    [
+     "bantu",
+     0
+    ]
+   ]
+  },
+  {
+   "s": 105.14,
+   "words": [
+    [
+     "Sediakan",
+     0
+    ],
+    [
+     "layout",
+     0
+    ]
+   ]
+  },
+  {
+   "s": 106.42,
+   "words": [
+    [
+     "VK",
+     0
+    ],
+    [
+     "Studio",
+     0
+    ],
+    [
+     "boleh",
+     0
+    ],
+    [
+     "bantu",
+     0
+    ],
+    [
+     "uruskan",
+     0
+    ]
+   ]
+  },
+  {
+   "s": 108.44,
+   "words": [
+    [
+     "VK",
+     0
+    ],
+    [
+     "Studio",
+     0
+    ],
+    [
+     "boleh",
+     0
+    ],
+    [
+     "bantu",
+     0
+    ],
+    [
+     "dengan",
+     0
+    ],
+    [
+     "layout",
+     0
+    ]
+   ]
+  },
+  {
+   "s": 111.96,
+   "words": [
+    [
+     "3D,",
+     0
+    ],
+    [
+     "drawing",
+     0
+    ]
+   ]
+  },
+  {
+   "s": 113.2,
+   "words": [
+    [
+     "Yang",
+     0
+    ],
+    [
+     "diperlukan",
+     0
+    ],
+    [
+     "untuk",
+     0
+    ],
+    [
+     "kerja",
+     0
+    ]
+   ]
+  },
+  {
+   "s": 116.75,
+   "words": [
+    [
+     "Yang",
+     0
+    ],
+    [
+     "diperlukan",
+     0
+    ],
+    [
+     "untuk",
+     0
+    ],
+    [
+     "kerja",
+     0
+    ]
+   ]
+  },
+  {
+   "s": 125.86,
+   "words": [
+    [
+     "Kalau",
+     0
+    ],
+    [
+     "nak",
+     0
+    ],
+    [
+     "design",
+     0
+    ],
+    [
+     "dulu",
+     0
+    ]
+   ]
+  },
+  {
+   "s": 126.86,
+   "words": [
+    [
+     "Kalau",
+     0
+    ],
+    [
+     "nak",
+     0
+    ],
+    [
+     "design",
+     0
+    ],
+    [
+     "dulu",
+     0
+    ]
+   ]
+  },
+  {
+   "s": 128.54,
+   "words": [
+    [
+     "Kalau",
+     0
+    ],
+    [
+     "nak",
+     0
+    ],
+    [
+     "design",
+     0
+    ],
+    [
+     "dulu",
+     0
+    ],
+    [
+     "sebelum",
+     0
+    ],
+    [
+     "renovation",
+     0
+    ]
+   ]
+  },
+  {
+   "s": 131.24,
+   "words": [
+    [
+     "renovation,",
+     0
+    ],
+    [
+     "kalau",
+     0
+    ],
+    [
+     "nak",
+     0
+    ],
+    [
+     "design",
+     0
+    ],
+    [
+     "dulu",
+     0
+    ],
+    [
+     "sebelum",
+     0
+    ],
+    [
+     "renovation",
+     0
+    ],
+    [
+     "ataupun",
+     0
+    ]
+   ]
+  },
+  {
+   "s": 136.35,
+   "words": [
+    [
+     "cari",
+     0
+    ],
+    [
+     "kontraktor,",
+     0
+    ],
+    [
+     "kalau",
+     0
+    ],
+    [
+     "nak",
+     0
+    ],
+    [
+     "design",
+     0
+    ],
+    [
+     "dulu,",
+     0
+    ],
+    [
+     "kalau",
+     0
+    ],
+    [
+     "nak",
+     0
+    ],
+    [
+     "design",
+     0
+    ]
+   ]
+  },
+  {
+   "s": 140.19,
+   "words": [
+    [
+     "rumah",
+     0
+    ],
+    [
+     "dulu,",
+     0
+    ],
+    [
+     "dapatkan",
+     0
+    ],
+    [
+     "visual",
+     0
+    ],
+    [
+     "akhir",
+     0
+    ],
+    [
+     "dulu,",
+     0
+    ],
+    [
+     "kalau",
+     1
+    ],
+    [
+     "nak",
+     1
+    ],
+    [
+     "design",
+     1
+    ],
+    [
+     "dulu",
+     1
+    ]
+   ]
+  },
+  {
+   "s": 144.45,
+   "words": [
+    [
+     "rumah,",
+     1
+    ],
+    [
+     "dapatkan",
+     1
+    ],
+    [
+     "visual",
+     1
+    ],
+    [
+     "akhir",
+     1
+    ],
+    [
+     "rumah",
+     1
+    ],
+    [
+     "tu",
+     1
+    ],
+    [
+     "macam",
+     1
+    ],
+    [
+     "mana",
+     1
+    ],
+    [
+     "dan",
+     1
+    ]
+   ]
+  },
+  {
+   "s": 147.61,
+   "words": [
+    [
+     "kontraktor",
+     1
+    ],
+    [
+     "cari",
+     1
+    ],
+    [
+     "sendiri,",
+     1
+    ],
+    [
+     "boleh",
+     1
+    ],
+    [
+     "DM",
+     0
+    ],
+    [
+     "kami,",
+     0
+    ],
+    [
+     "kami",
+     0
+    ],
+    [
+     "akan",
+     0
+    ],
+    [
+     "consert",
+     0
+    ]
+   ]
+  },
+  {
+   "s": 150.67,
+   "words": [
+    [
+     "anda.",
+     0
+    ],
+    [
+     "Boleh",
+     0
+    ],
+    [
+     "DM",
+     0
+    ],
+    [
+     "kami.",
+     0
+    ],
+    [
+     "Boleh",
+     0
+    ],
+    [
+     "DM",
+     0
+    ],
+    [
+     "kami,",
+     0
+    ],
+    [
+     "kami",
+     0
+    ],
+    [
+     "akan",
+     0
+    ],
+    [
+     "consert",
+     0
+    ]
+   ]
+  },
+  {
+   "s": 157.17,
+   "words": [
+    [
+     "anda.",
+     0
+    ],
+    [
+     "Boleh",
+     0
+    ],
+    [
+     "DM",
+     0
+    ],
+    [
+     "kami,",
+     0
+    ],
+    [
+     "kami",
+     0
+    ],
+    [
+     "akan",
+     0
+    ],
+    [
+     "consert.",
+     0
+    ],
+    [
+     "Boleh",
+     1
+    ],
+    [
+     "DM",
+     1
+    ],
+    [
+     "kami,",
+     1
+    ],
+    [
+     "kita",
+     1
+    ]
+   ]
+  },
+  {
+   "s": 161.74,
+   "words": [
+    [
+     "akan",
+     1
+    ],
+    [
+     "bagikan",
+     1
+    ],
+    [
+     "suggestion",
+     1
+    ],
+    [
+     "yang",
+     1
+    ],
+    [
+     "terbaik",
+     1
+    ],
+    [
+     "untuk",
+     1
+    ],
+    [
+     "rumah",
+     1
+    ],
+    [
+     "anda",
+     1
+    ],
+    [
+     "dan",
+     0
+    ]
+   ]
+  },
+  {
+   "s": 164.88,
+   "words": [
+    [
+     "Dan",
+     0
+    ],
+    [
+     "apatkan",
+     0
+    ],
+    [
+     "visual",
+     0
+    ],
+    [
+     "akhir",
+     0
+    ],
+    [
+     "rumah",
+     0
+    ],
+    [
+     "anda.",
+     0
+    ]
+   ]
+  },
+  {
+   "s": 167.26,
+   "words": [
+    [
+     "Boleh",
+     0
+    ],
+    [
+     "DM",
+     0
+    ],
+    [
+     "kami.",
+     0
+    ]
+   ]
+  },
+  {
+   "s": 168.42,
+   "words": [
+    [
+     "Kita",
+     0
+    ],
+    [
+     "akan",
+     0
+    ],
+    [
+     "bincang",
+     1
+    ],
+    [
+     "macam",
+     1
+    ],
+    [
+     "mana",
+     1
+    ],
+    [
+     "nak",
+     1
+    ],
+    [
+     "cantikkan",
+     1
+    ],
+    [
+     "rumah.",
+     1
+    ]
+   ]
+  },
+  {
+   "s": 172.86,
+   "words": [
+    [
+     "Sebelum",
+     1
+    ],
+    [
+     "hantarkan",
+     1
+    ],
+    [
+     "design",
+     1
+    ],
+    [
+     "tu",
+     1
+    ],
+    [
+     "kepada",
+     1
+    ],
+    [
+     "kontraktor",
+     1
+    ],
+    [
+     "untuk",
+     1
+    ],
+    [
+     "buat",
+     1
+    ],
+    [
+     "kerja.",
+     1
+    ]
+   ]
+  },
+  {
+   "s": 176.24,
+   "words": [
+    [
+     "DM",
+     0
+    ],
+    [
+     "kami",
+     1
+    ],
+    [
+     "ya.",
+     1
+    ]
+   ]
+  }
+ ]
+}
