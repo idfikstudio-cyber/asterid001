@@ -1,0 +1,1417 @@
+{
+ "duration": 51.86,
+ "speech_end": 46.86,
+ "parts": [
+  {
+   "seg": "hook",
+   "clip": "B",
+   "in": 30.92,
+   "out": 34.094,
+   "t": 0
+  },
+  {
+   "seg": "hook",
+   "clip": "B",
+   "in": 34.374,
+   "out": 34.9,
+   "t": 3.174
+  },
+  {
+   "seg": "fokus",
+   "clip": "A",
+   "in": 13.22,
+   "out": 13.621,
+   "t": 3.7
+  },
+  {
+   "seg": "fokus",
+   "clip": "A",
+   "in": 13.87,
+   "out": 16.92,
+   "t": 4.101
+  },
+  {
+   "seg": "faham",
+   "clip": "A",
+   "in": 23.12,
+   "out": 27.461,
+   "t": 7.15
+  },
+  {
+   "seg": "faham",
+   "clip": "A",
+   "in": 27.695,
+   "out": 30.3,
+   "t": 11.492
+  },
+  {
+   "seg": "proses",
+   "clip": "A",
+   "in": 31.82,
+   "out": 36.0,
+   "t": 14.096
+  },
+  {
+   "seg": "yakin",
+   "clip": "A",
+   "in": 39.62,
+   "out": 41.56,
+   "t": 18.276
+  },
+  {
+   "seg": "tanya1",
+   "clip": "A",
+   "in": 43.12,
+   "out": 44.22,
+   "t": 20.216
+  },
+  {
+   "seg": "tanya2",
+   "clip": "A",
+   "in": 44.62,
+   "out": 46.1,
+   "t": 21.316
+  },
+  {
+   "seg": "seronok",
+   "clip": "A",
+   "in": 48.42,
+   "out": 51.92,
+   "t": 22.796
+  },
+  {
+   "seg": "sikap",
+   "clip": "A",
+   "in": 60.58,
+   "out": 63.56,
+   "t": 26.296
+  },
+  {
+   "seg": "berlari",
+   "clip": "A",
+   "in": 76.15,
+   "out": 79.55,
+   "t": 29.276
+  },
+  {
+   "seg": "masa",
+   "clip": "B",
+   "in": 34.84,
+   "out": 34.981,
+   "t": 32.676
+  },
+  {
+   "seg": "masa",
+   "clip": "B",
+   "in": 35.318,
+   "out": 41.45,
+   "t": 32.818
+  },
+  {
+   "seg": "penting",
+   "clip": "A",
+   "in": 92.46,
+   "out": 96.16,
+   "t": 38.95
+  },
+  {
+   "seg": "komen",
+   "clip": "A",
+   "in": 110.4,
+   "out": 110.997,
+   "t": 42.65
+  },
+  {
+   "seg": "komen",
+   "clip": "A",
+   "in": 111.363,
+   "out": 112.571,
+   "t": 43.247
+  },
+  {
+   "seg": "komen",
+   "clip": "A",
+   "in": 112.799,
+   "out": 115.2,
+   "t": 44.455
+  }
+ ],
+ "segments": [
+  {
+   "id": "hook",
+   "clip": "B",
+   "in": 30.92,
+   "out": 34.9,
+   "text": "Pokok takkan terus berbuah selepas kita tanam. Betul tak?"
+  },
+  {
+   "id": "fokus",
+   "clip": "A",
+   "in": 13.22,
+   "out": 16.92,
+   "text": "Saya rasa ramai ibu ayah fokus pada markah SPM."
+  },
+  {
+   "id": "faham",
+   "clip": "A",
+   "in": 23.12,
+   "out": 30.3,
+   "text": "Saya faham, semua ibu ayah memang nak anak-anak score dan dapatkan straight A dalam SPM."
+  },
+  {
+   "id": "proses",
+   "clip": "A",
+   "in": 31.82,
+   "out": 36.0,
+   "text": "Tapi sebelum tengok markah, kita kena tengok proses dia."
+  },
+  {
+   "id": "yakin",
+   "clip": "A",
+   "in": 39.62,
+   "out": 41.56,
+   "text": "Adakah dia lebih yakin?"
+  },
+  {
+   "id": "tanya1",
+   "clip": "A",
+   "in": 43.12,
+   "out": 44.22,
+   "text": "Adakah dia"
+  },
+  {
+   "id": "tanya2",
+   "clip": "A",
+   "in": 44.62,
+   "out": 46.1,
+   "text": "banyak bertanya ke?"
+  },
+  {
+   "id": "seronok",
+   "clip": "A",
+   "in": 48.42,
+   "out": 51.92,
+   "text": "Lebih konsisten ke, lebih seronok nak belajar ke?"
+  },
+  {
+   "id": "sikap",
+   "clip": "A",
+   "in": 60.58,
+   "out": 63.56,
+   "text": "Kadang-kadang perubahan sikap ni datang dulu,"
+  },
+  {
+   "id": "berlari",
+   "clip": "A",
+   "in": 76.15,
+   "out": 79.55,
+   "text": "baru markah datang berlari-lari dekat dia."
+  },
+  {
+   "id": "masa",
+   "clip": "B",
+   "in": 34.84,
+   "out": 41.45,
+   "text": "Kita perlukan masa, masa, masa. Dan proses tu lah yang mengukuhkan akar dia."
+  },
+  {
+   "id": "penting",
+   "clip": "A",
+   "in": 92.46,
+   "out": 96.16,
+   "text": "Proses lebih penting daripada keputusan jangka pendek."
+  },
+  {
+   "id": "komen",
+   "clip": "A",
+   "in": 110.4,
+   "out": 115.2,
+   "text": "Apa pandangan ibu ayah? Cuba komen kat bawah. Saya nak tengok, saya nak baca."
+  }
+ ],
+ "captions": [
+  {
+   "s": 0.27,
+   "e": 1.51,
+   "words": [
+    {
+     "w": "Pokok",
+     "s": 0.27
+    },
+    {
+     "w": "takkan",
+     "s": 0.83
+    },
+    {
+     "w": "terus",
+     "s": 1.25
+    }
+   ]
+  },
+  {
+   "s": 1.51,
+   "e": 2.63,
+   "words": [
+    {
+     "w": "berbuah",
+     "s": 1.51,
+     "hot": 1
+    },
+    {
+     "w": "lepas",
+     "s": 2.09
+    },
+    {
+     "w": "kita",
+     "s": 2.47
+    }
+   ]
+  },
+  {
+   "s": 2.63,
+   "e": 3.07,
+   "words": [
+    {
+     "w": "tanam",
+     "s": 2.63,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 3.07,
+   "e": 3.83,
+   "words": [
+    {
+     "w": "Betul",
+     "s": 3.07
+    },
+    {
+     "w": "tak?",
+     "s": 3.45
+    }
+   ]
+  },
+  {
+   "s": 3.83,
+   "e": 5.21,
+   "words": [
+    {
+     "w": "Saya",
+     "s": 3.83
+    },
+    {
+     "w": "rasa",
+     "s": 4.25
+    },
+    {
+     "w": "ramai",
+     "s": 4.55
+    }
+   ]
+  },
+  {
+   "s": 5.21,
+   "e": 6.17,
+   "words": [
+    {
+     "w": "ibu",
+     "s": 5.21
+    },
+    {
+     "w": "ayah",
+     "s": 5.39
+    },
+    {
+     "w": "fokus",
+     "s": 5.77
+    }
+   ]
+  },
+  {
+   "s": 6.17,
+   "e": 7.21,
+   "words": [
+    {
+     "w": "pada",
+     "s": 6.17
+    },
+    {
+     "w": "markah",
+     "s": 6.41,
+     "hot": 1
+    },
+    {
+     "w": "SPM",
+     "s": 6.83,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 7.21,
+   "e": 8.93,
+   "words": [
+    {
+     "w": "Saya",
+     "s": 7.21
+    },
+    {
+     "w": "faham",
+     "s": 7.51
+    },
+    {
+     "w": "semua",
+     "s": 8.61
+    }
+   ]
+  },
+  {
+   "s": 8.93,
+   "e": 9.87,
+   "words": [
+    {
+     "w": "ibu",
+     "s": 8.93
+    },
+    {
+     "w": "ayah",
+     "s": 9.27
+    },
+    {
+     "w": "memang",
+     "s": 9.63
+    }
+   ]
+  },
+  {
+   "s": 9.87,
+   "e": 11.05,
+   "words": [
+    {
+     "w": "nak",
+     "s": 9.87
+    },
+    {
+     "w": "anak-anak",
+     "s": 10.25
+    },
+    {
+     "w": "skor",
+     "s": 10.73,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 11.05,
+   "e": 12.53,
+   "words": [
+    {
+     "w": "dan",
+     "s": 11.05
+    },
+    {
+     "w": "dapatkan",
+     "s": 11.55
+    },
+    {
+     "w": "straight",
+     "s": 12.03,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 12.53,
+   "e": 14.02,
+   "words": [
+    {
+     "w": "A",
+     "s": 12.53,
+     "hot": 1
+    },
+    {
+     "w": "dalam",
+     "s": 12.99
+    },
+    {
+     "w": "SPM",
+     "s": 13.55,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 14.75,
+   "e": 15.79,
+   "words": [
+    {
+     "w": "Tapi",
+     "s": 14.75
+    },
+    {
+     "w": "sebelum",
+     "s": 15.13
+    },
+    {
+     "w": "tengok",
+     "s": 15.49
+    }
+   ]
+  },
+  {
+   "s": 15.79,
+   "e": 16.35,
+   "words": [
+    {
+     "w": "markah",
+     "s": 15.79,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 16.35,
+   "e": 17.19,
+   "words": [
+    {
+     "w": "kita",
+     "s": 16.35
+    },
+    {
+     "w": "kena",
+     "s": 16.69
+    },
+    {
+     "w": "tengok",
+     "s": 16.97
+    }
+   ]
+  },
+  {
+   "s": 17.19,
+   "e": 18.27,
+   "words": [
+    {
+     "w": "proses",
+     "s": 17.19,
+     "hot": 1
+    },
+    {
+     "w": "dia",
+     "s": 17.83
+    }
+   ]
+  },
+  {
+   "s": 18.27,
+   "e": 18.99,
+   "words": [
+    {
+     "w": "Adakah",
+     "s": 18.27
+    },
+    {
+     "w": "dia",
+     "s": 18.61
+    },
+    {
+     "w": "lebih",
+     "s": 18.79
+    }
+   ]
+  },
+  {
+   "s": 18.99,
+   "e": 19.78,
+   "words": [
+    {
+     "w": "yakin?",
+     "s": 18.99,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 20.43,
+   "e": 22.01,
+   "words": [
+    {
+     "w": "Adakah",
+     "s": 20.43
+    },
+    {
+     "w": "dia",
+     "s": 21.09
+    },
+    {
+     "w": "banyak",
+     "s": 21.69
+    }
+   ]
+  },
+  {
+   "s": 22.01,
+   "e": 22.85,
+   "words": [
+    {
+     "w": "bertanya",
+     "s": 22.01,
+     "hot": 1
+    },
+    {
+     "w": "ke?",
+     "s": 22.47
+    }
+   ]
+  },
+  {
+   "s": 22.85,
+   "e": 24.53,
+   "words": [
+    {
+     "w": "Lebih",
+     "s": 22.85
+    },
+    {
+     "w": "konsisten",
+     "s": 23.53,
+     "hot": 1
+    },
+    {
+     "w": "ke?",
+     "s": 24.07
+    }
+   ]
+  },
+  {
+   "s": 24.53,
+   "e": 25.47,
+   "words": [
+    {
+     "w": "Lebih",
+     "s": 24.53
+    },
+    {
+     "w": "seronok",
+     "s": 25.01,
+     "hot": 1
+    },
+    {
+     "w": "nak",
+     "s": 25.37
+    }
+   ]
+  },
+  {
+   "s": 25.47,
+   "e": 26.17,
+   "words": [
+    {
+     "w": "belajar",
+     "s": 25.47
+    },
+    {
+     "w": "ke?",
+     "s": 25.95
+    }
+   ]
+  },
+  {
+   "s": 26.17,
+   "e": 28.53,
+   "words": [
+    {
+     "w": "Kadang-kadang",
+     "s": 26.17
+    },
+    {
+     "w": "perubahan",
+     "s": 27.59
+    },
+    {
+     "w": "sikap",
+     "s": 28.05,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 28.53,
+   "e": 29.19,
+   "words": [
+    {
+     "w": "ni",
+     "s": 28.53
+    },
+    {
+     "w": "datang",
+     "s": 28.61
+    },
+    {
+     "w": "dulu",
+     "s": 29.05
+    }
+   ]
+  },
+  {
+   "s": 29.19,
+   "e": 31.51,
+   "words": [
+    {
+     "w": "Baru",
+     "s": 29.19
+    },
+    {
+     "w": "markah",
+     "s": 30.45,
+     "hot": 1
+    },
+    {
+     "w": "datang",
+     "s": 30.83
+    }
+   ]
+  },
+  {
+   "s": 31.51,
+   "e": 32.37,
+   "words": [
+    {
+     "w": "berlari-lari",
+     "s": 31.51,
+     "hot": 1
+    },
+    {
+     "w": "dekat",
+     "s": 32.01
+    },
+    {
+     "w": "dia",
+     "s": 32.19
+    }
+   ]
+  },
+  {
+   "s": 32.37,
+   "e": 33.94,
+   "words": [
+    {
+     "w": "Kita",
+     "s": 32.37
+    },
+    {
+     "w": "perlukan",
+     "s": 33.06
+    },
+    {
+     "w": "masa",
+     "s": 33.44,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 33.94,
+   "e": 34.6,
+   "words": [
+    {
+     "w": "masa",
+     "s": 33.94,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 34.6,
+   "e": 36.0,
+   "words": [
+    {
+     "w": "masa",
+     "s": 34.6,
+     "hot": 1
+    },
+    {
+     "w": "Dan",
+     "s": 34.9
+    },
+    {
+     "w": "proses",
+     "s": 35.3,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 36.0,
+   "e": 36.89,
+   "words": [
+    {
+     "w": "tu",
+     "s": 36.0
+    },
+    {
+     "w": "lah",
+     "s": 36.14
+    },
+    {
+     "w": "yang",
+     "s": 36.36
+    }
+   ]
+  },
+  {
+   "s": 36.89,
+   "e": 39.02,
+   "words": [
+    {
+     "w": "mengukuhkan",
+     "s": 36.89
+    },
+    {
+     "w": "akar",
+     "s": 38.03,
+     "hot": 1
+    },
+    {
+     "w": "dia",
+     "s": 38.71
+    }
+   ]
+  },
+  {
+   "s": 39.66,
+   "e": 41.02,
+   "words": [
+    {
+     "w": "Proses",
+     "s": 39.66
+    },
+    {
+     "w": "lebih",
+     "s": 40.34
+    },
+    {
+     "w": "penting",
+     "s": 40.56,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 41.02,
+   "e": 42.22,
+   "words": [
+    {
+     "w": "daripada",
+     "s": 41.02
+    },
+    {
+     "w": "keputusan",
+     "s": 41.42
+    },
+    {
+     "w": "jangka",
+     "s": 41.98,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 42.22,
+   "e": 43.76,
+   "words": [
+    {
+     "w": "pendek",
+     "s": 42.22,
+     "hot": 1
+    },
+    {
+     "w": "Apa",
+     "s": 42.58
+    },
+    {
+     "w": "pandangan",
+     "s": 42.82
+    }
+   ]
+  },
+  {
+   "s": 43.76,
+   "e": 44.28,
+   "words": [
+    {
+     "w": "ibu",
+     "s": 43.76
+    },
+    {
+     "w": "ayah?",
+     "s": 44.0
+    }
+   ]
+  },
+  {
+   "s": 44.28,
+   "e": 45.04,
+   "words": [
+    {
+     "w": "Cuba",
+     "s": 44.28
+    },
+    {
+     "w": "komen",
+     "s": 44.54,
+     "hot": 1
+    },
+    {
+     "w": "kat",
+     "s": 44.88
+    }
+   ]
+  },
+  {
+   "s": 45.04,
+   "e": 45.74,
+   "words": [
+    {
+     "w": "bawah",
+     "s": 45.04
+    },
+    {
+     "w": "Saya",
+     "s": 45.3
+    },
+    {
+     "w": "nak",
+     "s": 45.58
+    }
+   ]
+  },
+  {
+   "s": 45.74,
+   "e": 46.08,
+   "words": [
+    {
+     "w": "tengok",
+     "s": 45.74
+    }
+   ]
+  },
+  {
+   "s": 46.08,
+   "e": 46.87,
+   "words": [
+    {
+     "w": "saya",
+     "s": 46.08
+    },
+    {
+     "w": "nak",
+     "s": 46.34
+    },
+    {
+     "w": "baca",
+     "s": 46.5
+    }
+   ]
+  }
+ ],
+ "broll": [
+  {
+   "s": 1.15,
+   "e": 3.07,
+   "id": 47540,
+   "src": 24,
+   "x": 0.5,
+   "d": "Benih bercambah (time-lapse)",
+   "why": "Visual terus untuk ayat hook 'pokok takkan terus berbuah'",
+   "url": "https://mixkit.co/free-stock-video/time-lapse-of-seedlings-growing-47540/"
+  },
+  {
+   "s": 5.7,
+   "e": 7.05,
+   "id": 20468,
+   "src": 6,
+   "x": 0.36,
+   "d": "Kertas jawapan peperiksaan",
+   "why": "'markah SPM'",
+   "url": "https://mixkit.co/free-stock-video/answering-an-exam-question-20468/"
+  },
+  {
+   "s": 9.85,
+   "e": 12.0,
+   "id": 6101,
+   "src": 5,
+   "x": 0.56,
+   "d": "Pelajar tertekan",
+   "why": "Tekanan nak skor straight A",
+   "url": "https://mixkit.co/free-stock-video/female-student-with-a-headache-6101/"
+  },
+  {
+   "s": 20.4,
+   "e": 22.7,
+   "id": 28319,
+   "src": 3,
+   "x": 0.62,
+   "d": "Pelajar bertanya, dibantu rakan",
+   "why": "'banyak bertanya ke?'",
+   "url": "https://mixkit.co/free-stock-video/student-confused-with-homework-is-helped-by-her-classmate-28319/"
+  },
+  {
+   "s": 24.5,
+   "e": 26.17,
+   "id": 6264,
+   "src": 3,
+   "x": 0.4,
+   "d": "Anak seronok belajar",
+   "why": "'lebih seronok nak belajar'",
+   "url": "https://mixkit.co/free-stock-video/happy-child-doing-her-homework-6264/"
+  },
+  {
+   "s": 29.19,
+   "e": 32.37,
+   "id": 48690,
+   "src": 2,
+   "x": 0.56,
+   "d": "Ibu dan anak belajar online",
+   "why": "'markah datang berlari-lari' (hasil yang ibu bapa nak)",
+   "url": "https://mixkit.co/free-stock-video/mother-helping-her-daughter-with-online-homework-48690/"
+  },
+  {
+   "s": 32.37,
+   "e": 34.9,
+   "id": 33570,
+   "src": 4,
+   "x": 0.44,
+   "d": "Siram anak pokok",
+   "why": "'kita perlukan masa' (sambung metafora pokok)",
+   "url": "https://mixkit.co/free-stock-video/hand-watering-a-small-plant-close-up-33570/"
+  },
+  {
+   "s": 36.89,
+   "e": 38.87,
+   "id": 46091,
+   "src": 1,
+   "x": 0.5,
+   "d": "Anak pokok tumbuh rapat",
+   "why": "'mengukuhkan akar dia'",
+   "url": "https://mixkit.co/free-stock-video/small-seedlings-sprouting-new-shoots-46091/"
+  },
+  {
+   "s": 46.86,
+   "e": 51.86,
+   "id": 48671,
+   "src": 1,
+   "x": 0.46,
+   "d": "Ibu dan anak kelas online (latar end card)",
+   "why": "Latar CTA",
+   "url": "https://mixkit.co/free-stock-video/a-mother-and-her-daughter-doing-an-online-lesson-on-48671/"
+  }
+ ],
+ "graphics": [
+  {
+   "s": 0.0,
+   "e": 3.6,
+   "kind": "hook",
+   "text": [
+    "MARKAH ANAK",
+    "BELUM NAIK?"
+   ],
+   "sub": "Ibu ayah, tengok ni dulu",
+   "note": "Tajuk hook: sakit utama ibu bapa, terus di saat pertama"
+  },
+  {
+   "s": 4.55,
+   "e": 7.05,
+   "kind": "chip",
+   "text": "Fokus pada markah SPM",
+   "ic": "A+",
+   "note": "Kenal pasti fokus ibu bapa"
+  },
+  {
+   "s": 12.0,
+   "e": 13.9,
+   "kind": "stamp",
+   "text": "STRAIGHT A",
+   "note": "Cop 'Straight A' (impian ibu bapa)"
+  },
+  {
+   "s": 15.1,
+   "e": 18.2,
+   "kind": "swap",
+   "from": "MARKAH",
+   "to": "PROSES",
+   "note": "Pusing: dari markah ke proses (idea utama)"
+  },
+  {
+   "s": 18.27,
+   "e": 26.17,
+   "kind": "checklist",
+   "items": [
+    [
+     "Lebih yakin?",
+     18.99
+    ],
+    [
+     "Banyak bertanya?",
+     21.69
+    ],
+    [
+     "Lebih konsisten?",
+     23.53
+    ],
+    [
+     "Seronok belajar?",
+     25.01
+    ]
+   ],
+   "note": "Senarai semak ditanda satu-satu ikut suara"
+  },
+  {
+   "s": 26.6,
+   "e": 32.37,
+   "kind": "steps",
+   "a": "Sikap berubah",
+   "b": "Markah naik",
+   "tb": 29.2,
+   "note": "Turutan: sikap dulu, baru markah"
+  },
+  {
+   "s": 33.44,
+   "e": 34.95,
+   "kind": "masa",
+   "times": [
+    33.44,
+    33.94,
+    34.6
+   ],
+   "note": "'Masa' muncul 3 kali ikut sebutan"
+  },
+  {
+   "s": 35.3,
+   "e": 38.87,
+   "kind": "roots",
+   "text": "Proses = akar",
+   "note": "Ilustrasi akar tumbuh di bawah anak pokok"
+  },
+  {
+   "s": 39.66,
+   "e": 42.58,
+   "kind": "quote",
+   "a": "PROSES",
+   "b": "keputusan jangka pendek",
+   "note": "Kad petikan utama (boleh jadi thumbnail)"
+  },
+  {
+   "s": 42.58,
+   "e": 46.86,
+   "kind": "comment",
+   "text": "Apa pandangan ibu ayah?",
+   "sub": "Komen di bawah",
+   "note": "Ajak komen (engagement, sesuai TOFU)"
+  },
+  {
+   "s": 46.86,
+   "e": 51.86,
+   "kind": "endcard",
+   "note": "End card + CTA pendaftaran (maklumat dari asteredu11.com.my)",
+   "brand": "Aster Edu",
+   "prog": "Math Turbo",
+   "lines": [
+    "Kelas LIVE di Zoom + rakaman 24/7",
+    "2 cikgu setiap kelas",
+    "Darjah 4 hingga Tingkatan 5"
+   ],
+   "price": "RM99",
+   "per": "/bulan · 5 subjek",
+   "btn": "Daftar sekarang",
+   "url": "asteredu11.com.my",
+   "trust": "Dipercayai 50,000+ ibu bapa"
+  }
+ ],
+ "sfx": [
+  {
+   "t": 0.0,
+   "name": "impact",
+   "gain": 0.75
+  },
+  {
+   "t": 0.02,
+   "name": "whoosh",
+   "gain": 0.6
+  },
+  {
+   "t": 1.15,
+   "name": "swoosh_down",
+   "gain": 0.45
+  },
+  {
+   "t": 3.07,
+   "name": "whoosh",
+   "gain": 0.45
+  },
+  {
+   "t": 4.58,
+   "name": "pop",
+   "gain": 0.55
+  },
+  {
+   "t": 5.7,
+   "name": "whoosh",
+   "gain": 0.4
+  },
+  {
+   "t": 9.85,
+   "name": "whoosh",
+   "gain": 0.4
+  },
+  {
+   "t": 12.02,
+   "name": "impact",
+   "gain": 0.7
+  },
+  {
+   "t": 15.12,
+   "name": "whoosh",
+   "gain": 0.55
+  },
+  {
+   "t": 16.3,
+   "name": "bonk",
+   "gain": 0.45
+  },
+  {
+   "t": 16.55,
+   "name": "ding",
+   "gain": 0.6
+  },
+  {
+   "t": 18.99,
+   "name": "tick",
+   "gain": 0.6
+  },
+  {
+   "t": 20.4,
+   "name": "whoosh",
+   "gain": 0.35
+  },
+  {
+   "t": 21.69,
+   "name": "tick",
+   "gain": 0.6
+  },
+  {
+   "t": 23.53,
+   "name": "tick",
+   "gain": 0.6
+  },
+  {
+   "t": 24.5,
+   "name": "whoosh",
+   "gain": 0.35
+  },
+  {
+   "t": 25.01,
+   "name": "tick",
+   "gain": 0.6
+  },
+  {
+   "t": 26.62,
+   "name": "pop",
+   "gain": 0.5
+  },
+  {
+   "t": 29.2,
+   "name": "riser",
+   "gain": 0.35
+  },
+  {
+   "t": 29.25,
+   "name": "ding",
+   "gain": 0.5
+  },
+  {
+   "t": 32.37,
+   "name": "whoosh",
+   "gain": 0.45
+  },
+  {
+   "t": 33.44,
+   "name": "pop",
+   "gain": 0.5
+  },
+  {
+   "t": 33.94,
+   "name": "pop",
+   "gain": 0.55
+  },
+  {
+   "t": 34.6,
+   "name": "pop",
+   "gain": 0.6
+  },
+  {
+   "t": 35.3,
+   "name": "swoosh_down",
+   "gain": 0.35
+  },
+  {
+   "t": 36.89,
+   "name": "whoosh",
+   "gain": 0.35
+  },
+  {
+   "t": 39.66,
+   "name": "impact",
+   "gain": 0.6
+  },
+  {
+   "t": 42.6,
+   "name": "pop",
+   "gain": 0.55
+  },
+  {
+   "t": 46.86,
+   "name": "whoosh",
+   "gain": 0.6
+  },
+  {
+   "t": 48.06,
+   "name": "chaching",
+   "gain": 0.55
+  },
+  {
+   "t": 49.46,
+   "name": "click",
+   "gain": 0.7
+  }
+ ],
+ "zoom": [
+  {
+   "t": 0,
+   "scale": 1.1,
+   "oy": 42
+  },
+  {
+   "t": 1.15,
+   "scale": 1.1,
+   "oy": 42
+  },
+  {
+   "t": 3.07,
+   "scale": 1.0,
+   "oy": 42
+  },
+  {
+   "t": 3.6,
+   "scale": 1.0,
+   "oy": 42
+  },
+  {
+   "t": 3.83,
+   "scale": 1.0,
+   "oy": 42
+  },
+  {
+   "t": 7.2,
+   "scale": 1.06,
+   "oy": 40
+  },
+  {
+   "t": 9.85,
+   "scale": 1.06,
+   "oy": 40
+  },
+  {
+   "t": 12.0,
+   "scale": 1.14,
+   "oy": 38
+  },
+  {
+   "t": 13.9,
+   "scale": 1.14,
+   "oy": 38
+  },
+  {
+   "t": 14.0,
+   "scale": 1.0,
+   "oy": 42
+  },
+  {
+   "t": 14.75,
+   "scale": 1.0,
+   "oy": 42
+  },
+  {
+   "t": 14.8,
+   "scale": 1.1,
+   "oy": 40
+  },
+  {
+   "t": 18.2,
+   "scale": 1.1,
+   "oy": 40
+  },
+  {
+   "t": 18.27,
+   "scale": 1.0,
+   "oy": 42
+  },
+  {
+   "t": 26.17,
+   "scale": 1.0,
+   "oy": 42
+  },
+  {
+   "t": 26.2,
+   "scale": 1.06,
+   "oy": 40
+  },
+  {
+   "t": 29.19,
+   "scale": 1.06,
+   "oy": 40
+  },
+  {
+   "t": 34.9,
+   "scale": 1.0,
+   "oy": 40
+  },
+  {
+   "t": 36.89,
+   "scale": 1.0,
+   "oy": 40
+  },
+  {
+   "t": 39.62,
+   "scale": 1.0,
+   "oy": 40
+  },
+  {
+   "t": 39.66,
+   "scale": 1.16,
+   "oy": 38
+  },
+  {
+   "t": 42.55,
+   "scale": 1.16,
+   "oy": 38
+  },
+  {
+   "t": 42.58,
+   "scale": 1.04,
+   "oy": 40
+  },
+  {
+   "t": 46.86,
+   "scale": 1.08,
+   "oy": 40
+  }
+ ],
+ "music": {
+  "file": "music.m4a",
+  "id": 22,
+  "note": "Piano tenang perlahan, Mixkit Stock Music Free License"
+ }
+}

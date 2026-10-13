@@ -1,0 +1,231 @@
+{
+ "segments": [
+  {
+   "id": "hook",
+   "clip": "B",
+   "in": 30.92,
+   "out": 34.9,
+   "text": "Pokok takkan terus berbuah selepas kita tanam. Betul tak?"
+  },
+  {
+   "id": "fokus",
+   "clip": "A",
+   "in": 13.22,
+   "out": 16.92,
+   "text": "Saya rasa ramai ibu ayah fokus pada markah SPM."
+  },
+  {
+   "id": "faham",
+   "clip": "A",
+   "in": 23.12,
+   "out": 30.3,
+   "text": "Saya faham, semua ibu ayah memang nak anak-anak score dan dapatkan straight A dalam SPM."
+  },
+  {
+   "id": "proses",
+   "clip": "A",
+   "in": 31.82,
+   "out": 36.0,
+   "text": "Tapi sebelum tengok markah, kita kena tengok proses dia."
+  },
+  {
+   "id": "yakin",
+   "clip": "A",
+   "in": 39.62,
+   "out": 41.56,
+   "text": "Adakah dia lebih yakin?"
+  },
+  {
+   "id": "tanya1",
+   "clip": "A",
+   "in": 43.12,
+   "out": 44.22,
+   "text": "Adakah dia"
+  },
+  {
+   "id": "tanya2",
+   "clip": "A",
+   "in": 44.62,
+   "out": 46.1,
+   "text": "banyak bertanya ke?"
+  },
+  {
+   "id": "seronok",
+   "clip": "A",
+   "in": 48.42,
+   "out": 51.92,
+   "text": "Lebih konsisten ke, lebih seronok nak belajar ke?"
+  },
+  {
+   "id": "sikap",
+   "clip": "A",
+   "in": 60.58,
+   "out": 63.56,
+   "text": "Kadang-kadang perubahan sikap ni datang dulu,"
+  },
+  {
+   "id": "berlari",
+   "clip": "A",
+   "in": 76.15,
+   "out": 79.55,
+   "text": "baru markah datang berlari-lari dekat dia."
+  },
+  {
+   "id": "masa",
+   "clip": "B",
+   "in": 34.84,
+   "out": 41.45,
+   "text": "Kita perlukan masa, masa, masa. Dan proses tu lah yang mengukuhkan akar dia."
+  },
+  {
+   "id": "penting",
+   "clip": "A",
+   "in": 92.46,
+   "out": 96.16,
+   "text": "Proses lebih penting daripada keputusan jangka pendek."
+  },
+  {
+   "id": "komen",
+   "clip": "A",
+   "in": 110.4,
+   "out": 115.2,
+   "text": "Apa pandangan ibu ayah? Cuba komen kat bawah. Saya nak tengok, saya nak baca."
+  }
+ ],
+ "parts": [
+  {
+   "seg": "hook",
+   "clip": "B",
+   "in": 30.92,
+   "out": 34.094,
+   "t": 0
+  },
+  {
+   "seg": "hook",
+   "clip": "B",
+   "in": 34.374,
+   "out": 34.9,
+   "t": 3.174
+  },
+  {
+   "seg": "fokus",
+   "clip": "A",
+   "in": 13.22,
+   "out": 13.621,
+   "t": 3.7
+  },
+  {
+   "seg": "fokus",
+   "clip": "A",
+   "in": 13.87,
+   "out": 16.92,
+   "t": 4.101
+  },
+  {
+   "seg": "faham",
+   "clip": "A",
+   "in": 23.12,
+   "out": 27.461,
+   "t": 7.15
+  },
+  {
+   "seg": "faham",
+   "clip": "A",
+   "in": 27.695,
+   "out": 30.3,
+   "t": 11.492
+  },
+  {
+   "seg": "proses",
+   "clip": "A",
+   "in": 31.82,
+   "out": 36.0,
+   "t": 14.096
+  },
+  {
+   "seg": "yakin",
+   "clip": "A",
+   "in": 39.62,
+   "out": 41.56,
+   "t": 18.276
+  },
+  {
+   "seg": "tanya1",
+   "clip": "A",
+   "in": 43.12,
+   "out": 44.22,
+   "t": 20.216
+  },
+  {
+   "seg": "tanya2",
+   "clip": "A",
+   "in": 44.62,
+   "out": 46.1,
+   "t": 21.316
+  },
+  {
+   "seg": "seronok",
+   "clip": "A",
+   "in": 48.42,
+   "out": 51.92,
+   "t": 22.796
+  },
+  {
+   "seg": "sikap",
+   "clip": "A",
+   "in": 60.58,
+   "out": 63.56,
+   "t": 26.296
+  },
+  {
+   "seg": "berlari",
+   "clip": "A",
+   "in": 76.15,
+   "out": 79.55,
+   "t": 29.276
+  },
+  {
+   "seg": "masa",
+   "clip": "B",
+   "in": 34.84,
+   "out": 34.981,
+   "t": 32.676
+  },
+  {
+   "seg": "masa",
+   "clip": "B",
+   "in": 35.318,
+   "out": 41.45,
+   "t": 32.818
+  },
+  {
+   "seg": "penting",
+   "clip": "A",
+   "in": 92.46,
+   "out": 96.16,
+   "t": 38.95
+  },
+  {
+   "seg": "komen",
+   "clip": "A",
+   "in": 110.4,
+   "out": 110.997,
+   "t": 42.65
+  },
+  {
+   "seg": "komen",
+   "clip": "A",
+   "in": 111.363,
+   "out": 112.571,
+   "t": 43.247
+  },
+  {
+   "seg": "komen",
+   "clip": "A",
+   "in": 112.799,
+   "out": 115.2,
+   "t": 44.455
+  }
+ ],
+ "duration": 46.856
+}
