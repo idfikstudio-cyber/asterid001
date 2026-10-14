@@ -19,3 +19,4 @@ Status: **render final siap** (`output/Aster_Tuisyen_Online_2027.mp4`, 14.4s, 10
 2. `scripts/words.py`: masa perkataan untuk caption.
 3. `node scripts/render.mjs <work>/frames <out>`: render `compose.html` (hook, caption, B-roll, motion graphic, end card).
 4. `scripts/mix.py`: muzik latar dijana sendiri + SFX (`edit/sfx`) + ducking, kemudian ffmpeg mux.
+5. Thumbnail: `node scripts/thumb.mjs ../output` (dari `tuisyen2027/`) render `thumb.html` → `Thumbnail_9x16.png` + `Thumbnail_4x5.png` (grid IG). Cutout dibuat dengan rembg (`u2net_human_seg`) dari frame 369.

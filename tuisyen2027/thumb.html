@@ -1,0 +1,49 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Thumbnail Tuisyen 2027</title>
+<style>
+@font-face{font-family:P;src:url(assets/fonts/Poppins-700.ttf);font-weight:700}
+@font-face{font-family:P;src:url(assets/fonts/Poppins-800.ttf);font-weight:800}
+@font-face{font-family:P;src:url(assets/fonts/Poppins-900.ttf);font-weight:900}
+:root{--red:#EB0A1E;--yel:#FFD800}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;font-family:P,'Noto Color Emoji',sans-serif}
+.abs{position:absolute}
+#bg{position:absolute;inset:0;background:radial-gradient(circle at 58% 52%,#ff4553 0,var(--red) 38%,#7d000a 100%)}
+#rays{position:absolute;left:640px;top:1000px;width:0;height:0}
+#rays i{position:absolute;left:-60px;top:0;width:120px;height:1400px;transform-origin:60px 0;background:linear-gradient(rgba(255,255,255,.13),rgba(255,255,255,0))}
+#dots{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.14) 3px,transparent 3.5px);background-size:46px 46px}
+#me{position:absolute;left:13px;top:640px;width:1089px;filter:drop-shadow(0 0 0 #fff) drop-shadow(7px 0 0 #fff) drop-shadow(-7px 0 0 #fff) drop-shadow(0 -7px 0 #fff) drop-shadow(0 30px 40px rgba(0,0,0,.5))}
+#kick{left:0;right:0;top:305px;text-align:center}
+#kick span{display:inline-block;background:#111;color:var(--yel);font-weight:900;font-size:50px;padding:14px 40px;border-radius:60px;border:5px solid var(--yel);transform:rotate(-2deg)}
+#slab{left:0;right:0;top:415px;text-align:center}
+#slab span{display:inline-block;background:#fff;color:var(--red);font-weight:900;font-size:112px;line-height:1;padding:24px 40px 16px;white-space:nowrap;border-radius:18px;transform:skewX(-6deg) rotate(-2deg);box-shadow:0 18px 0 #111}
+#l2{left:0;right:0;top:600px;text-align:center;font-weight:900;font-size:112px;line-height:1;color:var(--yel);text-shadow:0 8px 0 #111,0 0 40px rgba(0,0,0,.4);transform:rotate(-2deg)}
+#l2 b{color:#fff}
+#burst{left:-20px;top:1060px;width:470px;height:450px;transform:rotate(-10deg)}
+#burst .t{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#111;text-align:center}
+#burst .a{font-weight:900;font-size:40px;letter-spacing:1px}
+#burst .b{font-weight:900;font-size:120px;line-height:.95;color:var(--red);text-shadow:0 5px 0 #111}
+#burst .c{font-weight:900;font-size:40px}
+#subs{left:0;right:0;top:1520px;text-align:center}
+#subs span{display:inline-block;background:#fff;color:#111;font-weight:800;font-size:44px;padding:14px 34px;border-radius:50px;border:5px solid #111;box-shadow:0 12px 30px rgba(0,0,0,.4)}
+#subs em{font-style:normal;color:var(--red)}
+#bottom{left:0;right:0;top:1680px;text-align:center}
+#bottom span{display:inline-block;background:var(--yel);color:#111;font-weight:900;font-size:58px;padding:18px 46px;border-radius:24px;box-shadow:0 12px 0 #111;transform:rotate(-1.5deg)}
+</style></head><body>
+<div id="bg"></div><div id="rays"></div><div id="dots"></div>
+<img id="me" src="assets/thumb_cutout.png">
+<div class="abs" id="kick"><span>IBU AYAH, TENGOK NI! 👀</span></div>
+<div class="abs" id="slab"><span>TUISYEN ONLINE</span></div>
+<div class="abs" id="l2">SESI <b>2027</b> DIBUKA!</div>
+<div class="abs" id="burst">
+  <svg width="470" height="450" viewBox="-235 -225 470 450"><polygon id="bp" fill="#FFD800" stroke="#111" stroke-width="9"/></svg>
+  <div class="t"><div class="a">5 SUBJEK</div><div class="b">RM99</div><div class="c">SEBULAN</div></div>
+</div>
+<div class="abs" id="subs"><span>BM <em>•</em> BI <em>•</em> MATH <em>•</em> SAINS <em>•</em> SEJARAH</span></div>
+<div class="abs" id="bottom"><span>👉 Booking RM20 je!</span></div>
+<script>
+const p=[];for(let i=0;i<44;i++){const r=i%2?180:222,a=i/44*Math.PI*2;p.push((Math.cos(a)*r).toFixed(1)+','+(Math.sin(a)*r*.96).toFixed(1))}
+document.getElementById('bp').setAttribute('points',p.join(' '));
+const R=document.getElementById('rays');for(let i=0;i<16;i++){const e=document.createElement('i');e.style.transform=`rotate(${i*22.5}deg)`;R.appendChild(e)}
+window.READY=Promise.all([document.fonts.ready,...[...document.images].map(i=>i.decode())]);
+</script></body></html>
