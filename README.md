@@ -26,3 +26,4 @@ Status: **preview sahaja, belum render final.** Preview: https://claude.ai/artif
 - `scripts/sfx2.py`: SFX tambahan dijana sendiri (marker, belon pecah, chime, zap, boop).
 - `preview/adudu/index.html`: halaman preview (perlu `adudu{1,2}/{plan.json,graded.mp4,orig.mp4}` dan `sfx/` di folder sama).
 - `scripts/render_final.py`: render final. Halaman preview dibuka dalam mod render (`?render=adudu1`), setiap frame grafik dirakam dengan latar telus (semua animasi CSS dikunci pada masa frame), lalu ditindih pada `base.mkv` (dari `proxy.py ... 1920 final`) bersama zoom yang sama dan SFX. Output 1080×1920, 30 fps, H.264 + AAC 192k.
+- `thumbnail/thumb.html` (`?v=1` / `?v=2`) + `scripts/thumb_shot.py <dir>`: thumbnail 1080×1920. Perlukan `bg1.png` (frame 0:10.7 Adudu1) dan `bg2.png` (frame 1:27.3 Adudu2) dari `base.mkv` di folder sama.
