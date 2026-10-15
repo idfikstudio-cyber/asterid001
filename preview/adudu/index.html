@@ -235,7 +235,8 @@ td s{color:var(--muted)}
 .a-askTR .tri .glow.r{animation:blink .5s ease-in-out infinite alternate}
 @keyframes blink{to{opacity:.25}}
 .tri .bolt{fill:var(--v-yel);stroke:#ff9d00;stroke-width:2;opacity:0}
-.tri .hero{transition:opacity .3s;transform:scale(1.25);transform-origin:62px 190px}
+.tri .hero{opacity:0;transition:opacity .3s;transform:scale(1.25);transform-origin:62px 190px}
+.a-hero .tri .hero{opacity:1}
 .tri .hero path{stroke:var(--v-ink);stroke-width:3;transition:stroke-dashoffset .6s ease-out,fill .3s .5s}
 .tri .hero .hc{fill:transparent;stroke-width:3}
 .tri .hero .hb{stroke-width:5}
@@ -292,6 +293,11 @@ td s{color:var(--muted)}
 .a-k1 .col .k1,.a-k2 .col .k2,.a-kl .col .kl,.a-k3 .col .k3{clip-path:inset(-20% -10% -20% -10%)}
 .vf{position:absolute;left:44%;right:3%;bottom:3%;font:700 6cqh var(--f-body);background:#e6f7ee;color:#0c6b3d;border-radius:1.6cqh;padding:.8cqh 1.6cqh;text-align:center;opacity:0;transform:translateY(40%);transition:opacity .3s,transform .3s}
 .a-verify .vf{opacity:1;transform:none}
+/* render mode (?render=adudu1): only the 1080x1920 overlay, transparent, driven frame by frame by scripts/render_final.py */
+html.rendering,html.rendering body{background:transparent;padding:0;margin:0}
+html.rendering .wrap{display:none}
+html.rendering #phone{position:fixed;left:0;top:0;width:1080px;height:1920px;border-radius:0;background:transparent;box-shadow:none}
+html.rendering .stage,html.rendering .bigplay,html.rendering .loading,html.rendering .wipe,html.rendering .safe{display:none!important}
 @media (prefers-reduced-motion:reduce){.g.on,.g.on *,.g.on::after,.g.on *::after,.g.on *::before{animation-duration:.01s!important;animation-iteration-count:1!important}.tri *,.bx,.col div{transition-duration:.01s!important}}
 </style>
 
@@ -399,6 +405,7 @@ const $=s=>document.querySelector(s);
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const fmt=t=>{t=Math.max(0,t);const m=Math.floor(t/60),s=t-m*60;return m+":"+(s<10?"0":"")+s.toFixed(1)};
 const vg=$("#vg"),vo=$("#vo"),stage=$("#stage"),ov=$("#ov"),phone=$("#phone");
+const RENDER=new URLSearchParams(location.search).get("render");
 
 /* ---------- per-video copy ---------- */
 const CFG={
@@ -563,8 +570,8 @@ function sfxTick(t){if(plan&&st.sfx&&!vg.paused&&t>lastT&&t-lastT<.4){for(const 
 /* ---------- loop ---------- */
 function loop(){const t=vg.currentTime;sfxTick(t);
  if(st.wipe&&!vg.paused){if(vo.paused)vo.play().catch(()=>{});if(Math.abs(vo.currentTime-t)>.12)vo.currentTime=t}
- render(t);requestAnimationFrame(loop)}
-requestAnimationFrame(loop);
+ render(t);if(!RENDER)requestAnimationFrame(loop)}
+if(!RENDER)requestAnimationFrame(loop);
 
 /* ---------- transport ---------- */
 async function play(){$("#bigplay").hidden=true;await initAudio();if(actx&&actx.state==="suspended")actx.resume();lastT=vg.currentTime;try{await vg.play()}catch(e){}if(st.wipe)vo.play().catch(()=>{})}
@@ -643,14 +650,20 @@ async function load(id){
   plan=cache[id]||(cache[id]=await (await fetch(`${id}/plan.json`)).json());
  }catch(e){$("#evlist").textContent="Data pelan tak dapat dimuat. Muat semula halaman.";return}
  if(cur!==id)return;
- $("#loading").hidden=false;$("#loading").textContent="Memuat video…";
- vg.src=`${id}/graded.mp4`;vo.src=`${id}/orig.mp4`;vg.load();vo.load();
+ if(!RENDER){$("#loading").hidden=false;$("#loading").textContent="Memuat video…";
+ vg.src=`${id}/graded.mp4`;vo.src=`${id}/orig.mp4`;vg.load();vo.load()}
  $("#seek").max=plan.duration;$("#bigplay").hidden=false;$("#play").textContent="▶";
  setup();buildPanel();lastT=0;render(0);
  if(actx)initAudio();
 }
 document.querySelectorAll(".vsw button").forEach(b=>b.onclick=()=>load(b.dataset.v));
 let first="adudu1";if(location.hash==="#v2")first="adudu2";else{try{const v=localStorage.getItem("adudu-v");if(v&&CFG[v])first=v}catch(e){}}
-load(first);
+if(RENDER&&CFG[RENDER]){
+ document.documentElement.classList.add("rendering");document.body.appendChild(phone);
+ // every CSS animation/transition is paused and placed at (frame time - time it first appeared)
+ const born=new Map();
+ window.__frame=t=>{render(t);for(const a of document.getAnimations()){if(!born.has(a))born.set(a,t);a.pause();a.currentTime=Math.max(0,(t-born.get(a))*1000)}return true};
+ window.__ready=(async()=>{await load(RENDER);await document.fonts.ready;return plan.duration})();
+}else load(first);
 })();
 </script>
