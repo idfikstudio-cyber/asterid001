@@ -662,7 +662,15 @@ if(RENDER&&CFG[RENDER]){
  document.documentElement.classList.add("rendering");document.body.appendChild(phone);
  // every CSS animation/transition is paused and placed at (frame time - time it first appeared)
  const born=new Map();
- window.__frame=t=>{render(t);for(const a of document.getAnimations()){if(!born.has(a))born.set(a,t);a.pause();a.currentTime=Math.max(0,(t-born.get(a))*1000)}return true};
+ // API-paused CSS animations are not cancelled when their class goes away, so drop any whose name left the
+ // element's style, and keep only the newest animation/transition per element+name.
+ window.__frame=t=>{render(t);const newest=new Map(),list=document.getAnimations();
+  for(const a of list){if(!born.has(a))born.set(a,t);const e=a.effect,tg=e&&e.target;if(!tg)continue;
+   const name=a.animationName||("t:"+a.transitionProperty);
+   if(a.animationName){const cs=getComputedStyle(tg,e.pseudoElement||null).animationName.split(/,\s*/);if(!cs.includes(a.animationName)){a.cancel();born.delete(a);continue}}
+   const k=name;let m=newest.get(tg);if(!m){m=new Map();newest.set(tg,m)}const o=m.get(k);
+   if(o&&born.get(o)<=born.get(a)){o.cancel();born.delete(o);m.set(k,a)}else if(o){a.cancel();born.delete(a);continue}else m.set(k,a)}
+  for(const a of document.getAnimations()){if(!born.has(a))continue;a.pause();a.currentTime=Math.max(0,(t-born.get(a))*1000)}return true};
  window.__ready=(async()=>{await load(RENDER);await document.fonts.ready;return plan.duration})();
 }else load(first);
 })();
