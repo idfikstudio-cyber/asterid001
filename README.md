@@ -10,3 +10,17 @@ Status: **preview sahaja, belum render final.**
 - `preview/index.html`: halaman preview interaktif (perlu `graded.mp4`/`orig.mp4` proxy di folder sama; tidak disimpan dalam git).
 
 Video sumber: folder Google Drive "Aster" (tidak disimpan dalam repo kerana saiz).
+
+# Adudu1 + Adudu2: Teknik Belon Adudu (2 video berasingan)
+
+Status: **preview sahaja, belum render final.** Preview: https://claude.ai/artifact/VumjkzERSCrszijCaYF6bx
+
+- `edit/adudu{1,2}/transcript.json`: transkrip Whisper large-v3 (masa setiap perkataan).
+- `edit/adudu{1,2}/keep.json` → `scripts/edl2.py` → `edl.json`: bahagian yang disimpan. Titik potong dianjak ke frame paling senyap (±0.12 s).
+  - Adudu1 (engagement): 42.0 s → 38.4 s. Hook "Mostly anak kita tak boleh jawab" dipindah dari 0:34 ke depan; ulangan dan 6 jeda dibuang; 4.2 s kad kuiz di hujung.
+  - Adudu2 (edukasi): 2:10.3 → 1:48.7. Pengisi dan ulangan dibuang; 7.6 s untuk jawapan 357 + CTA.
+- `scripts/plan_adudu.py` → `edit/adudu{1,2}/plan.json`: caption, grafik, langkah B-roll papan putih, SFX dan zoom ikut masa video baru.
+- `edit/grade.txt`, `edit/audio.txt`: rantaian ffmpeg untuk colour grade dan pembersihan suara (`MODEL` = RNNoise `sh.rnnn`).
+- `scripts/proxy.py`: render proxy preview (crop 9:16 + grade + audio bersih). Render final guna rantaian sama pada 1080×1920.
+- `scripts/sfx2.py`: SFX tambahan dijana sendiri (marker, belon pecah, chime, zap, boop).
+- `preview/adudu/index.html`: halaman preview (perlu `adudu{1,2}/{plan.json,graded.mp4,orig.mp4}` dan `sfx/` di folder sama).

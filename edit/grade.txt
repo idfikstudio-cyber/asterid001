@@ -1,0 +1,1 @@
+hqdn3d=2:1.5:4:4,curves=all='0/0.02 0.08/0.065 0.5/0.53 0.8/0.83 0.92/0.9 1/0.96',colorbalance=rs=-0.015:bs=0.02:rh=-0.01:bh=0.005,huesaturation=hue=0:saturation=-0.22:intensity=-0.04:colors=y:strength=2,eq=contrast=1.04:saturation=1.04:gamma=1.03,unsharp=5:5:0.45:5:5:0
