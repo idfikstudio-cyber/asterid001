@@ -16,9 +16,10 @@ Video sumber: folder Google Drive "Aster" (tidak disimpan dalam repo kerana saiz
 Status: **preview sahaja, belum render final.** Preview: https://claude.ai/artifact/VumjkzERSCrszijCaYF6bx
 
 - `edit/adudu{1,2}/transcript.json`: transkrip Whisper large-v3 (masa setiap perkataan).
-- `edit/adudu{1,2}/keep.json` → `scripts/edl2.py` → `edl.json`: bahagian yang disimpan. Titik potong dianjak ke frame paling senyap (±0.12 s).
-  - Adudu1 (engagement): 42.0 s → 38.4 s. Hook "Mostly anak kita tak boleh jawab" dipindah dari 0:34 ke depan; ulangan dan 6 jeda dibuang; 4.2 s kad kuiz di hujung.
-  - Adudu2 (edukasi): 2:10.3 → 1:48.7. Pengisi dan ulangan dibuang; 7.6 s untuk jawapan 357 + CTA.
+- `edit/adudu{1,2}/keep.json` → `scripts/edl2.py` → `edl.json`: bahagian yang disimpan. Setiap titik potong dianjak ke senyap sebenar (masa Whisper selalu awal); `bounds` mengunci titik yang disemak dengar. `scripts/checkcuts.py` transkrip semula setiap sempadan untuk kesan perkataan terpotong.
+- `edit/adudu{1,2}/edl_v1.json`: garis masa preview pertama. Masa dalam `plan_adudu.py` ditulis ikut garis masa ini dan dipetakan ke potongan semasa.
+  - Adudu1 (engagement): 42.0 s → 39.1 s. Hook "Mostly anak kita tak boleh jawab" dipindah dari 0:34 ke depan; ulangan dan 6 jeda dibuang; 4.2 s kad kuiz di hujung.
+  - Adudu2 (edukasi): 2:10.3 → 1:50.8. Pengisi dan ulangan dibuang; 7.6 s untuk jawapan 357 + CTA.
 - `scripts/plan_adudu.py` → `edit/adudu{1,2}/plan.json`: caption, grafik, langkah B-roll papan putih, SFX dan zoom ikut masa video baru.
 - `edit/grade.txt`, `edit/audio.txt`: rantaian ffmpeg untuk colour grade dan pembersihan suara (`MODEL` = RNNoise `sh.rnnn`).
 - `scripts/proxy.py`: render proxy preview (crop 9:16 + grade + audio bersih). Render final guna rantaian sama pada 1080×1920.

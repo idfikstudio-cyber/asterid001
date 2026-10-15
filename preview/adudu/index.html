@@ -235,6 +235,17 @@ td s{color:var(--muted)}
 .a-askTR .tri .glow.r{animation:blink .5s ease-in-out infinite alternate}
 @keyframes blink{to{opacity:.25}}
 .tri .bolt{fill:var(--v-yel);stroke:#ff9d00;stroke-width:2;opacity:0}
+.tri .hero{transition:opacity .3s;transform:scale(1.25);transform-origin:62px 190px}
+.tri .hero path{stroke:var(--v-ink);stroke-width:3;transition:stroke-dashoffset .6s ease-out,fill .3s .5s}
+.tri .hero .hc{fill:transparent;stroke-width:3}
+.tri .hero .hb{stroke-width:5}
+.tri .hero .hl{fill:transparent;stroke:none;stroke-dasharray:none;stroke-dashoffset:0}
+.a-hero .tri .hero path{stroke-dashoffset:0}
+.a-hero .tri .hero .hc{fill:#e8372c}
+.a-hero .tri .hero .hl{fill:var(--v-yel)}
+.a-zap .tri .hero{animation:shake .08s linear infinite}
+@keyframes shake{50%{transform:scale(1.25) translate(1px,-1px)}}
+.a-col .tri .hero{opacity:0}
 .a-zap .tri .bolt{opacity:1;animation:flick .09s steps(2) infinite}
 @keyframes flick{50%{opacity:.35}}
 .bx{position:absolute;transform:translate(-50%,-50%);font:700 9cqh var(--f-hand);line-height:1;white-space:nowrap;transition:opacity .3s,transform .35s cubic-bezier(.2,1.5,.4,1)}
@@ -288,7 +299,7 @@ td s{color:var(--muted)}
   <header class="top">
     <div>
       <h1>Preview Teknik Adudu</h1>
-      <div class="status"><b>Preview</b> Belum render final · proxy 540p · 2 video berasingan</div>
+      <div class="status"><b>Preview v2</b> Belum render final · proxy 540p · 2 video berasingan</div>
     </div>
     <div class="vsw" role="group" aria-label="Pilih video">
       <button id="sw1" aria-pressed="true" data-v="adudu1">Video 1 · Engagement<small id="sw1d">Adudu1</small></button>
@@ -332,7 +343,7 @@ td s{color:var(--muted)}
         <button class="tab" role="tab" aria-selected="false" data-p="p-hook">Hook</button>
         <button class="tab" role="tab" aria-selected="false" data-p="p-tx">Transkrip &amp; potongan</button>
         <button class="tab" role="tab" aria-selected="false" data-p="p-grade">Warna &amp; audio</button>
-        <button class="tab" role="tab" aria-selected="false" data-p="p-q">Perlu jawapan kau</button>
+        <button class="tab" role="tab" aria-selected="false" data-p="p-q">Keputusan</button>
       </div>
 
       <div class="pane" id="p-plan" role="tabpanel">
@@ -374,9 +385,9 @@ td s{color:var(--muted)}
       </div>
 
       <div class="pane" id="p-q" role="tabpanel" hidden>
-        <h2>Sebelum aku render final</h2>
+        <h2>Keputusan yang dah dipersetujui</h2>
         <ol class="qs" id="qs"></ol>
-        <p style="margin-top:12px">Lepas kau setuju, aku render kedua-dua video sebagai fail berasingan, 1080×1920, dengan semua kesan dibakar ke dalam video, sedia untuk upload ke TikTok, Reels dan Shorts.</p>
+        <p style="margin-top:12px">Kalau preview ni OK, aku render kedua-dua video sebagai fail berasingan, 1080×1920, dengan semua kesan dibakar ke dalam video, sedia untuk upload ke TikTok, Reels dan Shorts.</p>
       </div>
     </section>
   </div>
@@ -407,10 +418,11 @@ const CFG={
    ["0:00.0 – 0:00.4, 0:02.8, 0:04.8, 0:07.3, 0:20.7, 0:36.0","(jeda)","6 awkward pause, 0.4 hingga 0.8 saat setiap satu"]],
   fixes:["Belon","Adudu.","Matematik,","UASA,","Matematik","UASA","Adudu"],
   qs:[
-   `<b>Hook:</b> setuju dengan tajuk "Anak tahu tambah &amp; tolak… tapi tak boleh jawab?" atau nak pilihan lain di tab Hook?`,
-   `<b>Kad penutup "Part 2":</b> Video 2 akan dipost sebagai Part 2? Kalau ya, aku kekalkan "Jawapan + teknik penuh di Part 2". Kalau tak, aku tukar jadi "Follow untuk jawapan esok".`,
-   `<b>Kuiz A/B:</b> ajakan "Komen A atau B" naikkan komen, tapi kena ada orang yang balas komen. OK?`,
-   `<b>Ayat 0:22:</b> AI dengar "darjah 4, <i>matrik</i>, darjah 5, darjah 6, <i>yuasa</i>". Aku tulis "Matematik" dan "UASA" dalam caption. Betul ke?`]
+   `<b>Hook:</b> "Anak tahu tambah &amp; tolak… tapi tak boleh jawab?" dikekalkan.`,
+   `<b>Kad penutup:</b> kekal "Jawapan penuh di Part 2". Video 2 dipost sebagai Part 2.`,
+   `<b>Kuiz A/B:</b> kekal, ajak ibu ayah komen A atau B.`,
+   `<b>Caption 0:22:</b> "Matematik" dan "UASA" disahkan.`,
+   `<b>Muzik latar:</b> tiada, supaya suara dan info tak terganggu.`]
  },
  adudu2:{
   eyebrow:"Video 2 · Edukasi (TOFU)",
@@ -436,17 +448,17 @@ const CFG={
    ["2:01.9 – 2:06.3","Nampak tak? Jelas. Ni, jelas kita nampak.","Ulangan, terus ke kesimpulan"]],
   fixes:["belon","Adudu","Adudu.","BoBoiBoy","6965","6608"],
   qs:[
-   `<b>Ayat 0:06 hingga 0:09:</b> AI dengar "dekat sebelah <i>kiri</i>, tulis tolak" <b>dua kali</b>. Aku rasa kali kedua sepatutnya "kanan". Kau sebut apa? Caption sekarang ikut AI ("kiri" dua kali).`,
-   `<b>Jawapan 357 (1:41):</b> dalam video asal kau berhenti pada "operasi tolak" dan tak sebut jawapan. Aku tambah kiraan 6965 − 6608 = 357 dan semak 357 + 6608 = 6965 guna sisi "+". Setuju? Atau kau nak rakam 3 saat suara "jawapannya 357"?`,
-   `<b>CTA hujung:</b> aku guna maklumat landing page (Sesi 2027, kelas live Zoom, 2 tutor, rakaman 24/7, 5 subjek RM99/bulan). Untuk video TOFU, nak papar harga, atau CTA lembut tanpa harga ("Follow untuk teknik lain")?`,
-   `<b>BoBoiBoy &amp; Adudu:</b> nama watak disebut dalam suara sahaja. Aku tak guna gambar watak sebenar (hak cipta Monsta). Kotak Adudu di papan dilukis macam doodle kau sendiri. OK?`,
-   `<b>Muzik latar:</b> aku tak letak muzik sebab tiada muzik berlesen. Cadangan: tambah lagu trending terus dalam app TikTok/Reels masa upload, volume rendah. Atau hantar fail muzik kau.`]
+   `<b>Potongan dibaiki (v2):</b> "masuk" (0:13), "tolak juga" (0:48), "dah ada" (0:54), "Tolak. Dah ada" (0:55) dan "dekat sini" (1:06) kini disebut penuh. Setiap titik potong disemak semula dengan AI transkrip.`,
+   `<b>Caption 0:08:</b> kali kedua kini "dekat sebelah <b>kanan</b>, tulis tolak".`,
+   `<b>Doodle BoBoiBoy (1:09):</b> muncul bila kau sebut "panggil BoBoiBoy". Kilat zap keluar dari tangannya ke belon Adudu. Dilukis gaya doodle papan tulis, bukan gambar rasmi watak.`,
+   `<b>Jawapan 357</b> dan <b>CTA dengan harga RM99</b> dikekalkan.`,
+   `<b>Muzik latar:</b> tiada. Video edukasi kekal fokus pada suara dan penerangan.`]
  }
 };
 const BNAME={q:"Soalan muncul di papan",b:"Lukis 3 belon (animasi menulis)",tie:"Ikat belon (garis penyambung)",fly:"Belon terapung, lawak \"terbang\"",m1:"Tulis − (sisi kiri)",m2:"Tulis − (sisi kanan)",pl:"Tulis + (bawah)",
  qglow:"Sorot soalan",hiA:"Sorot \"6 965 −\"",hiB:"Sorot kotak",n1:"Tulis 6965 dalam belon atas",gL:"Garis tolak kiri menyala",gR:"Garis tolak kanan menyala",where:"? Kotak nak masuk belon mana",
  boxL:"Kotak jatuh ke belon kiri",ghostR:"Kotak alternatif di kanan: boleh juga",c1:"✓ 6965 dah ada",c2:"✓ Tolak dah ada",c3:"✓ Kotak dah ada",c4:"✓ 6608 dah ada",askR:"? Belon kosong terakhir",n2:"Tulis 6608",
- face:"Kotak jadi muka Adudu",zap:"Zap! (serang)",popL:"Belon Adudu pecah, POW!",askTR:"? Operasi yang tinggal",gTR:"Garis tolak menyala, jawapan: TOLAK",col:"Tukar ke kiraan lajur",
+ face:"Kotak jadi muka Adudu",hero:"Doodle BoBoiBoy muncul (kilat keluar dari tangan)",zap:"Zap! (serang)",popL:"Belon Adudu pecah, POW!",askTR:"? Operasi yang tinggal",gTR:"Garis tolak menyala, jawapan: TOLAK",col:"Tukar ke kiraan lajur",
  k1:"Tulis 6965",k2:"Tulis − 6608",kl:"Garis jawapan",k3:"Jawapan 357",fillq:"Isi 357 dalam kotak soalan",verify:"Semak: 357 + 6608 = 6965",ops:"Pilihan TAMBAH? TOLAK?",opA:"Tambah: anak tahu ✓",opB:"Tolak: anak tahu ✓",qq:"Tanda soal besar"};
 const SFXNAME={whoosh:"Whoosh",pop:"Pop",ding:"Ding",chaching:"Cha-ching",riser:"Riser (bina debar)",impact:"Impact",click:"Klik",tick:"Detik jam",bonk:"Bonk (salah)",swoosh_down:"Swoosh turun",
  scribble:"Bunyi marker menulis",balloonpop:"Belon meletup",correct:"Chime betul",zap:"Zap laser",boop:"Boop (tanda)"};
@@ -467,7 +479,15 @@ function boardHTML(){
   <path class="glow l" pathLength="1" d="M222 136 L168 208"/><path class="glow r" pathLength="1" d="M258 136 L312 208"/>
   <path class="ln pp" pathLength="1" d="M222 136 L168 208"/><path class="ln" pathLength="1" d="M258 136 L312 208"/><path class="ln pp" pathLength="1" d="M180 232 L300 232"/>
   ${circ(240,112,30,"b1")}${circ(150,232,30,"b2 pp")}${circ(330,232,30,"b3")}
-  <path class="bolt" d="M30 70 L92 132 L74 138 L132 204 L104 150 L122 146 L66 84 Z"/>
+  <g class="hero">
+   <path class="hc" pathLength="1" d="M40 98 Q41 76 62 74 Q83 76 84 98 Z"/>
+   <path class="hb" pathLength="1" d="M76 94 L102 98"/>
+   <path class="hl" d="M58 77 L66 77 L61 85 L68 85 L56 97 L60 88 L54 88 Z"/>
+   <path class="hs" pathLength="1" d="M62 98 m-17 0 a17 17 0 1 0 34 0 a17 17 0 1 0 -34 0"/>
+   <path class="hs" pathLength="1" d="M55 104 l0 3 M69 104 l0 3 M56 112 q6 5 12 0"/>
+   <path class="hs" pathLength="1" d="M62 115 L62 160 M62 160 L50 188 M62 160 L74 188 M62 128 L42 142 M62 128 L96 134"/>
+  </g>
+  <path class="bolt" d="M106 120 L134 156 L122 160 L146 206 L112 168 L124 164 L102 128 Z"/>
  </svg>
  <span class="bx sg m1" style="${P(176,160)}">−</span><span class="bx sg m2" style="${P(304,160)}">−</span><span class="bx sg pl" style="${P(240,268)}">+</span>
  <span class="bx num n1" style="${P(240,114)}">6965</span><span class="bx num n2" style="${P(330,234)}">6608</span>
