@@ -32,13 +32,13 @@
    "id": "lukis",
    "clip": "A",
    "in": 73.38,
-   "out": 77.45,
+   "out": 77.26,
    "text": "Bila kami lukis ikut 3D dan ukuran sebenar rumah korang,"
   },
   {
    "id": "lukis2",
    "clip": "A",
-   "in": 80.08,
+   "in": 80.12,
    "out": 85.36,
    "text": "masalah ni akan dapat kita detect sebelum papan tu mula melekat dekat dinding."
   },
@@ -118,44 +118,44 @@
    "seg": "lukis",
    "clip": "A",
    "in": 73.38,
-   "out": 77.45,
+   "out": 77.26,
    "t": 23.253
   },
   {
    "seg": "lukis2",
    "clip": "A",
-   "in": 80.08,
+   "in": 80.12,
    "out": 85.36,
-   "t": 27.323
+   "t": 27.133
   },
   {
    "seg": "murah",
    "clip": "A",
    "in": 91.86,
    "out": 93.555,
-   "t": 32.603
+   "t": 32.373
   },
   {
    "seg": "murah",
    "clip": "A",
    "in": 93.844,
    "out": 94.62,
-   "t": 34.298
+   "t": 34.068
   },
   {
    "seg": "mahal2",
    "clip": "A",
    "in": 97.95,
    "out": 101.3,
-   "t": 35.074
+   "t": 34.844
   },
   {
    "seg": "follow",
    "clip": "A",
    "in": 108.85,
    "out": 110.75,
-   "t": 38.424
+   "t": 38.194
   }
  ],
- "duration": 40.324
+ "duration": 40.094
 }

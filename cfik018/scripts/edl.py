@@ -1,5 +1,5 @@
 # Build the cut list for CFik018. Source A = IMG_1472.MOV (B unused; pass the same .sil twice).
-# v2: cuts requested after preview 1 (start on 'Ramai', false start before 'Masalahnya', pauses at 0:28, 0:34, 0:37).
+# v2: cuts requested after preview 1 (start on "Ramai", false start before "Masalahnya", pauses at 0:28, 0:34, 0:37); v3: pause at 0:27 (v2).
 # Each segment = best take of one line; pauses > MAXGAP inside a segment are squeezed to KEEP seconds.
 # usage: edl.py A.sil B.sil out.json
 import json,sys
@@ -9,8 +9,8 @@ SEG=[ # id, clip, in, out, text (single source IMG_1472.MOV = clip "A")
  ("situasi","A",20.60,26.78,"Situasi yang biasa kita jumpa adalah klien datang kat kita. Dia nak buat macam dia jumpa dekat Pinterest."),
  ("masalah","A",37.90,44.20,"Masalahnya, dapur dekat gambar Pinterest tu 15 kaki. Tapi rumah korang tu 9 kaki je."),
  ("muat","A",55.62,63.92,"Peti ais tak muat, laluan jadi sempit, pintu kabinet berlaga-laga."),
- ("lukis","A",73.38,77.45,"Bila kami lukis ikut 3D dan ukuran sebenar rumah korang,"),
- ("lukis2","A",80.08,85.36,"masalah ni akan dapat kita detect sebelum papan tu mula melekat dekat dinding."),
+ ("lukis","A",73.38,77.26,"Bila kami lukis ikut 3D dan ukuran sebenar rumah korang,"),
+ ("lukis2","A",80.12,85.36,"masalah ni akan dapat kita detect sebelum papan tu mula melekat dekat dinding."),
  ("murah","A",91.86,94.62,"Ubah 3D tak susah, tak mahal."),
  ("mahal2","A",97.95,101.30,"Ubah time renovation, beribu hilang."),
  ("follow","A",108.85,110.75,"Follow dan share."),
