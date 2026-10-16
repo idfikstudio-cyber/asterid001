@@ -3,7 +3,7 @@
   {
    "id": "hook",
    "clip": "A",
-   "in": 8.52,
+   "in": 9.22,
    "out": 13.45,
    "text": "Ramai hampir rugi berbelas ribu sebabkan satu gambar dekat Pinterest."
   },
@@ -17,7 +17,7 @@
   {
    "id": "masalah",
    "clip": "A",
-   "in": 36.95,
+   "in": 37.9,
    "out": 44.2,
    "text": "Masalahnya, dapur dekat gambar Pinterest tu 15 kaki. Tapi rumah korang tu 9 kaki je."
   },
@@ -32,29 +32,29 @@
    "id": "lukis",
    "clip": "A",
    "in": 73.38,
-   "out": 85.85,
-   "text": "Bila kami lukis ikut 3D dan ukuran sebenar rumah korang, masalah ni akan dapat kita detect sebelum papan tu mula melekat dekat dinding."
+   "out": 77.45,
+   "text": "Bila kami lukis ikut 3D dan ukuran sebenar rumah korang,"
+  },
+  {
+   "id": "lukis2",
+   "clip": "A",
+   "in": 80.08,
+   "out": 85.36,
+   "text": "masalah ni akan dapat kita detect sebelum papan tu mula melekat dekat dinding."
   },
   {
    "id": "murah",
    "clip": "A",
-   "in": 91.2,
+   "in": 91.86,
    "out": 94.62,
-   "text": "Nak ubah 3D ni tak susah, tak mahal."
-  },
-  {
-   "id": "mahal",
-   "clip": "A",
-   "in": 96.15,
-   "out": 96.47,
-   "text": "Nak"
+   "text": "Ubah 3D tak susah, tak mahal."
   },
   {
    "id": "mahal2",
    "clip": "A",
    "in": 97.95,
    "out": 101.3,
-   "text": "ubah time renovation, beribu hilang."
+   "text": "Ubah time renovation, beribu hilang."
   },
   {
    "id": "follow",
@@ -68,7 +68,7 @@
   {
    "seg": "hook",
    "clip": "A",
-   "in": 8.52,
+   "in": 9.22,
    "out": 13.45,
    "t": 0
   },
@@ -77,120 +77,85 @@
    "clip": "A",
    "in": 20.6,
    "out": 26.78,
-   "t": 4.93
+   "t": 4.23
   },
   {
    "seg": "masalah",
    "clip": "A",
-   "in": 36.95,
-   "out": 37.406,
-   "t": 11.11
-  },
-  {
-   "seg": "masalah",
-   "clip": "A",
-   "in": 37.918,
+   "in": 37.9,
    "out": 38.967,
-   "t": 11.566
+   "t": 10.41
   },
   {
    "seg": "masalah",
    "clip": "A",
    "in": 39.178,
    "out": 44.2,
-   "t": 12.615
+   "t": 11.477
   },
   {
    "seg": "muat",
    "clip": "A",
    "in": 55.62,
    "out": 58.611,
-   "t": 17.637
+   "t": 16.498
   },
   {
    "seg": "muat",
    "clip": "A",
    "in": 58.896,
    "out": 59.008,
-   "t": 20.627
+   "t": 19.489
   },
   {
    "seg": "muat",
    "clip": "A",
    "in": 60.267,
    "out": 63.92,
-   "t": 20.739
+   "t": 19.6
   },
   {
    "seg": "lukis",
    "clip": "A",
    "in": 73.38,
-   "out": 77.292,
-   "t": 24.391
+   "out": 77.45,
+   "t": 23.253
   },
   {
-   "seg": "lukis",
+   "seg": "lukis2",
    "clip": "A",
-   "in": 78.566,
-   "out": 79.465,
-   "t": 28.303
-  },
-  {
-   "seg": "lukis",
-   "clip": "A",
-   "in": 79.709,
-   "out": 79.842,
-   "t": 29.202
-  },
-  {
-   "seg": "lukis",
-   "clip": "A",
-   "in": 80.119,
-   "out": 85.85,
-   "t": 29.335
+   "in": 80.08,
+   "out": 85.36,
+   "t": 27.323
   },
   {
    "seg": "murah",
    "clip": "A",
-   "in": 91.2,
-   "out": 91.526,
-   "t": 35.066
-  },
-  {
-   "seg": "murah",
-   "clip": "A",
-   "in": 91.889,
+   "in": 91.86,
    "out": 93.555,
-   "t": 35.392
+   "t": 32.603
   },
   {
    "seg": "murah",
    "clip": "A",
    "in": 93.844,
    "out": 94.62,
-   "t": 37.058
-  },
-  {
-   "seg": "mahal",
-   "clip": "A",
-   "in": 96.15,
-   "out": 96.47,
-   "t": 37.834
+   "t": 34.298
   },
   {
    "seg": "mahal2",
    "clip": "A",
    "in": 97.95,
    "out": 101.3,
-   "t": 38.154
+   "t": 35.074
   },
   {
    "seg": "follow",
    "clip": "A",
    "in": 108.85,
    "out": 110.75,
-   "t": 41.504
+   "t": 38.424
   }
  ],
- "duration": 43.404
+ "duration": 40.324
 }
