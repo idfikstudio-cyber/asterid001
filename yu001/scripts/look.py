@@ -6,8 +6,11 @@ OW,OH=(int(sys.argv[4]),int(sys.argv[5])) if len(sys.argv)>5 and not sys.argv[4]
 seg=vision.ImageSegmenter.create_from_options(vision.ImageSegmenterOptions(base_options=BaseOptions(model_asset_path=model),output_confidence_masks=True))
 def disc(r):
     k=np.zeros((2*r+1,2*r+1),np.float32);cv2.circle(k,(r,r),r,1,-1,cv2.LINE_AA);return k/k.sum()
-K=disc(7)
-yy,xx=np.mgrid[0:H,0:W].astype(np.float32);vig=1-0.22*np.clip(((xx/W-.5)**2*1.6+(yy/H-.45)**2)*2.2,0,1)**1.4
+K=disc(5)   # at 1/2 res => ~10px disc at 1080w: roughly f/2.8 look, not f/1.4
+# desk at the bottom sits near the focus plane, so it gets less blur than the far wall
+DOF=None
+yy,xx=np.mgrid[0:H,0:W].astype(np.float32);DOF=np.clip(1.0-np.clip((yy/H-0.62)/0.3,0,1)*0.55,0,1).astype(np.float32)
+vig=1-0.22*np.clip(((xx/W-.5)**2*1.6+(yy/H-.45)**2)*2.2,0,1)**1.4
 def curve(x):  # gentle S with highlight roll-off (keeps skin from clipping)
     x=np.clip(x,0,1);s=x+0.06*np.sin(2*np.pi*x)*(1-x)*1.2  # mild contrast
     return 1-(1-s)**1.04*0.985+0.0  # tiny lift of blacks handled below
@@ -17,15 +20,16 @@ def frame(img):
     rgb=cv2.cvtColor(img,cv2.COLOR_BGR2RGB)
     r=seg.segment(mp.Image(image_format=mp.ImageFormat.SRGB,data=np.ascontiguousarray(rgb)))
     m=1-r.confidence_masks[0].numpy_view().astype(np.float32)   # person prob
-    m=cv2.resize(m,(W,H));prev=m if prev is None else 0.6*m+0.4*prev;m=prev
-    m=cv2.GaussianBlur(np.clip((m-0.35)/0.4,0,1),(0,0),2.5)
+    m=cv2.resize(m,(W,H),interpolation=cv2.INTER_LINEAR)
+    m=cv2.GaussianBlur(np.clip((m-0.3)/0.45,0,1),(0,0),5)   # wide feather: no hard cut-out edge
+    prev=m if prev is None else 0.45*m+0.55*prev;m=prev     # stronger temporal smoothing: no edge flicker
     f=img.astype(np.float32)/255
     # ---- bokeh: mask-normalised disc blur at 1/4 res so the person doesn't bleed into the background
-    sw,sh=W//4,H//4;fs=cv2.resize(f,(sw,sh),interpolation=cv2.INTER_AREA);bs=cv2.resize(1-m,(sw,sh))[...,None]
-    hl=np.clip((fs.max(2,keepdims=True)-0.72)*3,0,1)       # boost highlights so they bloom into discs
-    num=cv2.filter2D(fs*(1+1.5*hl)*bs,-1,K);den=cv2.filter2D(np.repeat(bs,3,2),-1,K)+1e-4
-    bg=cv2.resize(np.clip(num/den,0,1.2),(W,H),interpolation=cv2.INTER_CUBIC)
-    a=m[...,None];f=f*a+bg*(1-a)
+    sw,sh=W//2,H//2;fs=cv2.resize(f,(sw,sh),interpolation=cv2.INTER_AREA);bs=cv2.resize(1-m,(sw,sh))[...,None]
+    hl=np.clip((fs.max(2,keepdims=True)-0.8)*3,0,1)        # gentle highlight bloom
+    num=cv2.filter2D(fs*(1+0.4*hl)*bs,-1,K);den=cv2.filter2D(np.repeat(bs,3,2),-1,K)+1e-4
+    bg=cv2.resize(np.clip(num/den,0,1.1),(W,H),interpolation=cv2.INTER_LINEAR)
+    a=m[...,None];k=(1-a)*DOF[...,None];f=f*(1-k)+bg*k
     # ---- grade
     f=f[...,::-1]  # RGB
     f=f*np.array([0.975,1.0,1.03],np.float32)                 # neutralise the yellow room light
