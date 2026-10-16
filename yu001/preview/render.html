@@ -1,0 +1,513 @@
+<meta charset="utf-8">
+<title>YU001 Edit Preview</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700;800&family=Figtree:wght@400;500;600;700&family=Lexend:wght@600;800;900&display=swap">
+<style>
+/* Layout: phone-frame player (sticky) beside a tabbed edit-plan panel; stacks on phones. Ledger green-paper + Yuran.my cyan. */
+:root{
+  --bg:#f2f5f4; --surface:#ffffff; --ink:#10201f; --muted:#56656a; --line:#d8e1df; --chip:#e8efee;
+  --accent:#0a7fb8; --accent-ink:#ffffff; --ledger:#b9e6cc; --flag:#b25a00; --flag-bg:#fff1dc;
+  --c-broll:#0a7fb8; --c-mg:#7a4fc4; --c-sfx:#13805e; --c-zoom:#c0560f;
+  /* on-video graphics are fixed: the video looks the same in every theme */
+  --v-cyan:#16a9e6; --v-navy:#0a2440; --v-white:#ffffff; --v-yellow:#ffd23f; --v-red:#ff5a4e; --v-green:#3ed69e;
+  --f-display:"Sora","Trebuchet MS",system-ui,sans-serif;
+  --f-body:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-video:"Lexend","Arial Black",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0b1414; --surface:#121e1f; --ink:#e6efee; --muted:#9aaeb0; --line:#24353a; --chip:#1a2829;
+  --accent:#4cc3f5; --accent-ink:#061821; --ledger:#2c5a42; --flag:#ffb35c; --flag-bg:#3a2a12;
+  --c-broll:#4cc3f5; --c-mg:#b896f2; --c-sfx:#4fd3a4; --c-zoom:#ff9a5c; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0b1414; --surface:#121e1f; --ink:#e6efee; --muted:#9aaeb0; --line:#24353a; --chip:#1a2829;
+  --accent:#4cc3f5; --accent-ink:#061821; --ledger:#2c5a42; --flag:#ffb35c; --flag-bg:#3a2a12;
+  --c-broll:#4cc3f5; --c-mg:#b896f2; --c-sfx:#4fd3a4; --c-zoom:#ff9a5c; color-scheme:dark}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.55}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:22px 56px}
+header.top{display:flex;flex-wrap:wrap;gap:6px 24px;align-items:end;justify-content:space-between;margin-bottom:18px}
+h1{font-family:var(--f-display);font-weight:800;font-size:clamp(24px,3.6vw,34px);line-height:1.1;margin:0;text-wrap:balance;letter-spacing:-.015em}
+.sub{margin:4px 0 0;color:var(--muted);font-size:14px}
+.status{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:var(--ledger);color:var(--ink);padding:4px 10px;border-radius:6px}
+.grid{display:grid;grid-template-columns:minmax(0,380px) minmax(0,1fr);gap:30px;align-items:start}
+@media (max-width:820px){.grid{grid-template-columns:minmax(0,1fr)}}
+
+/* ---------- player ---------- */
+.player{position:sticky;top:calc(env(safe-area-inset-top,0px) + 12px);display:flex;flex-direction:column;gap:10px;max-width:380px;width:100%;margin-inline:auto}
+@media (max-width:820px){.player{position:static}}
+.phone{position:relative;width:100%;max-width:100%;aspect-ratio:9/16;border-radius:20px;overflow:hidden;background:#000;box-shadow:0 18px 44px -22px rgba(5,30,30,.6);container-type:size;user-select:none}
+.stage{position:absolute;inset:0;transform-origin:50% 38%;will-change:transform}
+.stage video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+#vo{clip-path:inset(0 50% 0 0)}
+.layer{position:absolute;inset:0;opacity:0;visibility:hidden;overflow:hidden}
+.layer.on{opacity:1;visibility:visible}
+.layer video,.layer img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.layer img{transform-origin:50% 50%}
+.ov{position:absolute;inset:0;pointer-events:none;font-family:var(--f-video);color:var(--v-white)}
+.ov>*{position:absolute;opacity:0;visibility:hidden}
+.ov>.on{visibility:visible;opacity:1}
+/* every animation is paused; JS sets animation-delay to -localTime so scrubbing is frame-exact */
+.ov *,.layer,.layer img{animation-play-state:paused!important;animation-fill-mode:both!important}
+
+/* hook */
+.hook{left:6cqw;right:6cqw;top:13cqh;text-align:left}
+.hook .l1{display:inline-block;font-weight:900;font-size:8.2cqw;line-height:1.02;letter-spacing:-.01em;text-transform:uppercase;text-shadow:0 .5cqw 2.4cqw rgba(0,0,0,.45);animation:rise .45s cubic-bezier(.2,.9,.2,1.2)}
+.hook .l1 b{color:var(--v-cyan);font-weight:900}
+.hook .l2{display:inline-block;margin-top:2cqw;background:var(--v-yellow);color:#1b1500;font-weight:800;font-size:6cqw;padding:1cqw 3cqw;border-radius:1.6cqw;transform:rotate(-2deg);animation:pop .4s cubic-bezier(.2,1.4,.3,1) 2.3s both}
+@keyframes rise{from{opacity:0;transform:translateY(4cqh)}to{opacity:1;transform:none}}
+@keyframes pop{0%{opacity:0;transform:scale(.4) rotate(-8deg)}100%{opacity:1;transform:scale(1) rotate(-2deg)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes kbIn{from{transform:scale(1.04)}to{transform:scale(1.16)}}
+@keyframes kbPan{from{transform:scale(1.18) translateX(4%)}to{transform:scale(1.18) translateX(-4%)}}
+@keyframes kbPop{0%{transform:scale(1.35)}18%{transform:scale(1.05)}100%{transform:scale(1.1)}}
+.layer{animation:fadeIn .16s linear}
+.kb-in img{animation:kbIn 2.2s linear}.kb-pan img{animation:kbPan 3s linear}.kb-pop img{animation:kbPop 1.3s cubic-bezier(.2,.9,.2,1)}
+.layer.contain img{object-fit:contain;background:#dfe9e6}
+
+/* chips / labels */
+.chip{left:6cqw;top:12cqh;display:flex;align-items:center;gap:2.2cqw;background:rgba(10,36,64,.86);border:.35cqw solid rgba(255,255,255,.18);padding:2.2cqw 3.6cqw;border-radius:3cqw;font-weight:800;font-size:5cqw;box-shadow:0 1cqw 4cqw rgba(0,0,0,.35);animation:slideIn .35s cubic-bezier(.2,1.2,.3,1)}
+.chip i{font-style:normal;display:grid;place-items:center;width:7.5cqw;height:7.5cqw;border-radius:50%;background:var(--v-cyan);color:var(--v-navy);font-size:4.4cqw}
+.chip.warn i{background:var(--v-yellow)}
+.chip.bad i{background:var(--v-red);color:#fff}
+.chip.ok i{background:var(--v-green)}
+@keyframes slideIn{from{opacity:0;transform:translateX(-12cqw)}to{opacity:1;transform:none}}
+.label{left:50%;bottom:44cqh;transform:translateX(-50%);white-space:nowrap;background:#fff;color:var(--v-navy);font-weight:900;font-size:6cqw;padding:1.6cqw 4cqw;border-radius:2cqw;letter-spacing:.01em;box-shadow:0 1cqw 5cqw rgba(0,0,0,.4);animation:labelPop .35s cubic-bezier(.2,1.5,.3,1)}
+@keyframes labelPop{from{opacity:0;transform:translateX(-50%) scale(.5)}to{opacity:1;transform:translateX(-50%) scale(1)}}
+
+/* tally counter */
+.tally{left:8cqw;right:8cqw;top:12cqh;background:rgba(255,255,255,.96);color:var(--v-navy);border-radius:3.5cqw;padding:3.5cqw 4.5cqw;box-shadow:0 2cqw 6cqw rgba(0,0,0,.4);animation:slideDown .35s cubic-bezier(.2,1.1,.3,1);font-family:var(--f-video)}
+.tally .row{display:flex;justify-content:space-between;align-items:baseline;font-weight:600;font-size:4.2cqw;padding-block:1cqw;border-bottom:.3cqw dashed #b9cfd0}
+.tally .row b{font-weight:900;font-size:5.2cqw;font-variant-numeric:tabular-nums}
+.tally .row:last-child{border:0}
+.tally .x{color:var(--v-red);opacity:0;animation:pop .3s cubic-bezier(.2,1.4,.3,1) 2.2s both}
+@keyframes slideDown{from{opacity:0;transform:translateY(-6cqh)}to{opacity:1;transform:none}}
+
+/* JAIS stamp */
+.stamp{left:50%;top:15cqh;transform:translateX(-50%) rotate(-7deg);border:1.2cqw solid var(--v-red);color:var(--v-red);background:rgba(255,255,255,.92);font-weight:900;font-size:7.4cqw;letter-spacing:.04em;padding:1.5cqw 4cqw;border-radius:2cqw;white-space:nowrap;animation:stampIn .32s cubic-bezier(.2,1.6,.4,1) .3s both}
+.stamp small{display:block;font-size:3.6cqw;letter-spacing:.14em;font-weight:800;text-align:center}
+@keyframes stampIn{0%{opacity:0;transform:translateX(-50%) rotate(-7deg) scale(2.2)}100%{opacity:1;transform:translateX(-50%) rotate(-7deg) scale(1)}}
+.flash{inset:0;background:#fff;animation:flash .25s ease-out .3s both}
+@keyframes flash{0%{opacity:.75}100%{opacity:0}}
+
+/* organized checklist */
+.org{left:7cqw;right:7cqw;top:10cqh;background:rgba(255,255,255,.97);color:var(--v-navy);border-radius:4cqw;padding:4cqw 4.5cqw 3cqw;box-shadow:0 2cqw 7cqw rgba(0,0,0,.4);animation:slideDown .4s cubic-bezier(.2,1.1,.3,1)}
+.org h4{margin:0 0 2cqw;font-size:4.2cqw;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#4b6670}
+.org ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:1.8cqw}
+.org li{display:flex;align-items:center;gap:2.6cqw;font-weight:700;font-size:5cqw}
+.org li i{flex:none;width:6.5cqw;height:6.5cqw;border-radius:50%;border:.6cqw solid #b9cfd0;display:grid;place-items:center;font-style:normal;font-size:3.8cqw;color:transparent;position:relative}
+.org li i s{text-decoration:none;position:absolute;inset:-.6cqw;border-radius:50%;background:var(--v-green);color:#063;display:grid;place-items:center;animation:tickIn .3s cubic-bezier(.2,1.4,.3,1) both}
+.org li:nth-child(1) i s{animation-delay:.65s}.org li:nth-child(2) i s{animation-delay:1.4s}.org li:nth-child(3) i s{animation-delay:2.6s}
+@keyframes tickIn{from{opacity:0;transform:scale(.3)}to{opacity:1;transform:scale(1)}}
+.org .bar{height:1.6cqw;border-radius:1cqw;background:#e2eeee;margin-top:3cqw;overflow:hidden}
+.org .bar span{display:block;height:100%;background:linear-gradient(90deg,var(--v-cyan),var(--v-green));transform-origin:left;animation:grow 3.2s cubic-bezier(.4,0,.2,1) .3s both}
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.tag{left:6cqw;top:5cqh;font-weight:800;font-size:4.4cqw;letter-spacing:.06em;text-transform:uppercase;color:var(--v-yellow);text-shadow:0 .4cqw 2cqw rgba(0,0,0,.6);animation:fadeIn .3s}
+.dream{inset:0;background:radial-gradient(120% 70% at 50% 30%,rgba(255,240,210,.18),rgba(255,255,255,0) 60%);animation:fadeIn .5s}
+
+/* CTA */
+.logo{left:50%;top:6cqh;transform:translateX(-50%);background:rgba(10,36,64,.82);padding:2.4cqw 5cqw;border-radius:99px;box-shadow:0 1cqw 5cqw rgba(0,0,0,.35);animation:slideDown .4s cubic-bezier(.2,1.1,.3,1)}
+.logo img{display:block;height:7cqw;width:auto}
+.follow{left:50%;top:17cqh;transform:translateX(-50%);display:flex;align-items:center;gap:2cqw;background:var(--v-cyan);color:#fff;font-weight:900;font-size:5.6cqw;padding:2.4cqw 6cqw;border-radius:99px;box-shadow:0 0 0 0 rgba(22,169,230,.6);animation:followPulse 1.4s ease-out .2s 3}
+.follow .plus{display:grid;place-items:center;width:6cqw;height:6cqw;border-radius:50%;background:#fff;color:var(--v-cyan);font-size:5cqw;line-height:1}
+@keyframes followPulse{0%{box-shadow:0 0 0 0 rgba(22,169,230,.7);transform:translateX(-50%) scale(1)}15%{transform:translateX(-50%) scale(.92)}35%{transform:translateX(-50%) scale(1.04)}100%{box-shadow:0 0 0 6cqw rgba(22,169,230,0);transform:translateX(-50%) scale(1)}}
+.tap{left:58%;top:19cqh;width:9cqw;height:9cqw;border-radius:50%;background:rgba(255,255,255,.85);box-shadow:0 0 0 1.4cqw rgba(255,255,255,.35);animation:tap .6s ease-out}
+@keyframes tap{0%{opacity:0;transform:translate(6cqw,6cqh) scale(1)}50%{opacity:1;transform:scale(1)}75%{transform:scale(.7)}100%{opacity:0;transform:scale(1.2)}}
+.endcard{left:0;right:0;bottom:0;height:36cqh;background:linear-gradient(to top,rgba(6,22,40,.95),rgba(6,22,40,0));display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding-bottom:14cqh;gap:2cqw;animation:fadeIn .4s}
+.endcard img{height:10cqw;width:auto}
+.endcard p{margin:0;font-family:var(--f-video);font-weight:600;font-size:4cqw;color:#cfe9f5;letter-spacing:.02em}
+
+/* captions */
+.cap{left:5cqw;right:5cqw;top:63cqh;text-align:center;font-weight:900;font-size:6.3cqw;line-height:1.14;text-transform:uppercase;letter-spacing:-.005em;paint-order:stroke fill;-webkit-text-stroke:1.4cqw #000;text-shadow:0 .8cqw 2cqw rgba(0,0,0,.5);visibility:visible!important;opacity:1}
+.cap span{display:inline-block;margin:0 .6cqw;transition:none}
+.cap span.now{color:var(--v-yellow);transform:scale(1.08)}
+.cap span.hot{color:var(--v-cyan)}
+.cap span.hot.now{color:var(--v-yellow)}
+
+.bigplay{position:absolute;inset:0;display:grid;place-items:center;align-content:center;gap:2cqh;background:rgba(3,15,20,.38);border:0;color:#fff;cursor:pointer;font:700 4.2cqw var(--f-body)}
+.bigplay span{width:19cqw;height:19cqw;border-radius:50%;background:var(--v-cyan);display:grid;place-items:center;color:#fff;font-size:7.5cqw;padding-left:1.2cqw}
+.wipe{position:absolute;top:0;bottom:0;left:50%;width:0;pointer-events:none}
+.wipe::before{content:"";position:absolute;inset:0 -1px;background:#fff;box-shadow:0 0 8px rgba(0,0,0,.5)}
+.wipe .lab{position:absolute;top:2.5cqh;font:700 3cqw var(--f-body);background:rgba(0,0,0,.6);color:#fff;padding:.6cqw 2cqw;border-radius:99px;white-space:nowrap}
+.wipe .lab.l{right:2cqw}.wipe .lab.r{left:2cqw}
+.safe{position:absolute;inset:0;pointer-events:none}
+.safe i{position:absolute;background:repeating-linear-gradient(45deg,rgba(255,60,60,.28) 0 6px,rgba(255,60,60,.1) 6px 12px);outline:1px dashed rgba(255,130,130,.9)}
+
+.controls{display:flex;gap:10px;align-items:center}
+.btn{font:600 14px var(--f-body);border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:10px;padding:8px 12px;cursor:pointer;min-height:40px}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);min-width:48px}
+.btn:focus-visible,.tog:focus-visible,.tab:focus-visible,.ev:focus-visible,.seg button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.time{font-variant-numeric:tabular-nums;font-size:13px;color:var(--muted);white-space:nowrap}
+.scrub{position:relative;flex:1;min-width:0;height:40px;display:flex;align-items:center}
+.scrub input{width:100%;margin:0;accent-color:var(--accent);position:relative;z-index:1}
+.marks{position:absolute;left:0;right:0;top:3px;height:6px;pointer-events:none}
+.marks i{position:absolute;width:3px;height:6px;border-radius:2px;transform:translateX(-1px)}
+.seg{display:flex;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--surface)}
+.seg button{flex:1;font:600 13px var(--f-body);border:0;background:none;color:var(--muted);padding:8px 10px;cursor:pointer;min-height:38px}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink)}
+.toggles{display:flex;flex-wrap:wrap;gap:6px}
+.tog{font:600 13px var(--f-body);border:1px solid var(--line);background:var(--surface);color:var(--muted);border-radius:999px;padding:6px 12px;cursor:pointer;display:inline-flex;gap:6px;align-items:center}
+.tog::before{content:"";width:8px;height:8px;border-radius:50%;border:1.5px solid currentColor}
+.tog[aria-pressed="true"]{color:var(--ink);border-color:var(--ink)}
+.tog[aria-pressed="true"]::before{background:var(--accent);border-color:var(--accent)}
+.hint{font-size:12.5px;color:var(--muted);margin:0}
+
+/* ---------- panel ---------- */
+.panel{min-width:0;display:flex;flex-direction:column;gap:14px}
+.tabs{display:flex;gap:2px;flex-wrap:wrap;border-bottom:1px solid var(--line)}
+.tab{font:600 14px var(--f-body);background:none;border:0;border-bottom:2.5px solid transparent;color:var(--muted);padding:10px 10px 9px;cursor:pointer}
+.tab[aria-selected="true"]{color:var(--ink);border-color:var(--accent)}
+.pane{min-width:0}
+.pane h2{font-family:var(--f-display);font-weight:700;font-size:19px;margin:6px 0 8px;letter-spacing:-.01em}
+.pane h3{font-family:var(--f-display);font-weight:700;font-size:15px;margin:20px 0 6px}
+.pane p,.pane li{max-width:68ch}
+.pane p{margin:0 0 10px}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:4px 0 14px}
+.fact{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.fact b{display:block;font-family:var(--f-display);font-size:18px;font-variant-numeric:tabular-nums}
+.fact span{font-size:12.5px;color:var(--muted)}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:12.5px;color:var(--muted);margin-bottom:8px}
+.legend span{display:inline-flex;gap:6px;align-items:center}
+.legend i{width:10px;height:10px;border-radius:3px}
+.evlist{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.ev{display:grid;grid-template-columns:62px 74px minmax(0,1fr);gap:10px;align-items:start;padding:9px 6px;border:0;border-bottom:1px solid var(--line);background:none;color:inherit;text-align:left;font:inherit;cursor:pointer}
+.ev:hover{background:var(--chip)}
+.ev.cur{background:var(--chip);box-shadow:inset 3px 0 0 var(--accent)}
+.ev .t{font-variant-numeric:tabular-nums;font-size:13px;color:var(--muted);padding-top:1px}
+.ev .k{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:2px 6px;border-radius:5px;justify-self:start;color:#fff}
+.k-broll{background:var(--c-broll)}.k-mg{background:var(--c-mg)}.k-sfx{background:var(--c-sfx)}.k-zoom{background:var(--c-zoom)}
+.ev .d{min-width:0}
+.ev .d b{font-weight:600}
+.ev .d small{display:block;color:var(--muted);font-size:12.5px}
+.tr{display:flex;flex-direction:column;gap:8px}
+.tr p{margin:0;display:grid;grid-template-columns:52px minmax(0,1fr);gap:10px}
+.tr p span.ts{font-variant-numeric:tabular-nums;font-size:13px;color:var(--muted);padding-top:2px;cursor:pointer}
+mark{background:var(--flag-bg);color:var(--flag);font-weight:700;padding:0 3px;border-radius:3px}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;font-size:13.5px;min-width:520px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);background:var(--chip)}
+tr:last-child td{border-bottom:0}
+a{color:var(--accent)}
+.thumbs{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:8px}
+.thumbs figure{margin:0}
+.thumbs img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:8px;border:1px solid var(--line)}
+.thumbs figcaption{font-size:12px;color:var(--muted)}
+.q{display:flex;flex-direction:column;gap:10px;padding:0;margin:0;list-style:none}
+.q li{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+@media (prefers-reduced-motion:reduce){.chip,.label,.tally,.org,.logo{animation-duration:.01s!important}}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div>
+      <h1>YU001 · Iklan Yuran.my untuk guru KAFA</h1>
+      <p class="sub">Preview edit penuh (belum render). 27.9 saat, 9:16, untuk TikTok.</p>
+    </div>
+    <span class="status">Preview v2, belum render</span>
+  </header>
+
+  <div class="grid">
+    <section class="player" aria-label="Pemain preview">
+      <div class="phone" id="phone">
+        <div class="stage" id="stage">
+          <video id="vg" src="graded.webm" playsinline preload="auto"></video>
+          <video id="vo" playsinline preload="auto" muted hidden></video>
+          <div class="layer" data-ev="quran"><video src="a/b_quran.webm" muted playsinline preload="auto"></video></div>
+          <div class="layer kb-in" data-ev="murid"><img src="a/img_Pelajar1.jpg" alt=""></div>
+          <div class="layer" data-ev="cash"><video src="a/b_cash.webm" muted playsinline preload="auto"></video></div>
+          <div class="layer" data-ev="write"><video src="a/b_write.webm" muted playsinline preload="auto"></video></div>
+          <div class="layer contain kb-pop" data-ev="suwa"><img src="a/img_suwa.jpg" alt=""></div>
+          <div class="layer" data-ev="calc"><video src="a/b_calc.webm" muted playsinline preload="auto"></video></div>
+          <div class="layer kb-pan" data-ev="guru"><img src="a/img_Guru_mengajar.jpg" alt=""></div>
+        </div>
+        <div class="ov" id="ov">
+          <div class="dream" data-ev="dream"></div>
+          <div class="flash" data-ev="jais"></div>
+          <div class="hook" data-ev="hook"><span class="l1">Ustaz &amp; Ustazah <b>KAFA</b></span><br><span class="l2">yang tak pandai akaun?</span></div>
+          <div class="hook" data-ev="hookB"><span class="l1">Habis masa catat <b>buku SUWA</b>?</span></div>
+          <div class="chip ok" data-ev="c_agama"><i>✓</i>Tugas: didik anak murid</div>
+          <div class="chip warn" data-ev="c_yuran"><i>⏱</i>Masa habis kutip yuran</div>
+          <div class="label" data-ev="l_write">Catat manual, satu-satu</div>
+          <div class="label" data-ev="l_suwa">Buku SUWA Tunai</div>
+          <div class="tally" data-ev="tally">
+            <div class="row"><span>Baki akhir</span><b id="tallyNum">RM 0.00</b></div>
+            <div class="row"><span>Tally dengan report</span><b class="x">✗ Tak sama</b></div>
+          </div>
+          <div class="stamp" data-ev="jais">JAIS NAK TENGOK<small>AUDIT</small></div>
+          <div class="tag" data-ev="dream">Bayangkan…</div>
+          <div class="org" data-ev="org"><h4>Urusan yuran</h4><ul><li><i><s>✓</s></i>Rekod bayaran tersusun</li><li><i><s>✓</s></i>Baki dikira automatik</li><li><i><s>✓</s></i>Report siap untuk JAIS</li></ul><div class="bar"><span></span></div></div>
+          <div class="label" data-ev="l_guru">Lebih masa untuk mengajar</div>
+          <div class="logo" data-ev="cta"><img src="a/logo_white.png" alt="Yuran.my"></div>
+          <div class="follow" data-ev="cta"><span class="plus">+</span>Follow</div>
+          <div class="tap" data-ev="tap"></div>
+          <div class="endcard" data-ev="end"><img src="a/logo_white.png" alt="Yuran.my"><p>Sistem pengurusan yuran KAFA</p></div>
+          <div class="cap" id="cap"></div>
+        </div>
+        <div class="safe" id="safe" hidden><i style="right:0;top:35%;width:17%;height:50%"></i><i style="left:0;right:0;bottom:0;height:17%"></i><i style="left:0;right:0;top:0;height:7%"></i></div>
+        <div class="wipe" id="wipe" hidden><span class="lab l">Asal</span><span class="lab r">Grade + bokeh</span></div>
+        <button class="bigplay" id="bigplay" aria-label="Main preview"><span>▶</span>Main dengan bunyi</button>
+      </div>
+      <div class="controls">
+        <button class="btn primary" id="play" aria-label="Main / jeda">▶</button>
+        <div class="scrub"><div class="marks" id="marks"></div><input type="range" id="scrub" min="0" max="27.88" step="0.01" value="0" aria-label="Kedudukan masa"></div>
+        <span class="time" id="time">0:00.0</span>
+      </div>
+      <div class="seg" role="group" aria-label="Pilihan hook">
+        <button id="hookA" aria-pressed="true">Hook A: terus panggil KAFA</button>
+        <button id="hookB" aria-pressed="false">Hook B: cold open SUWA</button>
+      </div>
+      <div class="toggles" role="group" aria-label="Lapisan">
+        <button class="tog" data-t="broll" aria-pressed="true">B-roll</button>
+        <button class="tog" data-t="mg" aria-pressed="true">Motion</button>
+        <button class="tog" data-t="cap" aria-pressed="true">Caption</button>
+        <button class="tog" data-t="sfx" aria-pressed="true">SFX</button>
+        <button class="tog" data-t="music" aria-pressed="true">Muzik</button>
+        <button class="tog" data-t="cmp" aria-pressed="false">Banding grade</button>
+        <button class="tog" data-t="safe" aria-pressed="false">Zon UI TikTok</button>
+      </div>
+      <p class="hint">Tutup lapisan untuk dengar atau lihat versi tanpa elemen itu. "Banding grade" bahagi skrin: kiri video asal, kanan selepas grade.</p>
+    </section>
+
+    <section class="panel">
+      <div class="tabs" role="tablist">
+        <button class="tab" role="tab" aria-selected="true" data-p="sum">Ringkasan</button>
+        <button class="tab" role="tab" aria-selected="false" data-p="plan">Pelan edit</button>
+        <button class="tab" role="tab" aria-selected="false" data-p="tr">Transkrip</button>
+        <button class="tab" role="tab" aria-selected="false" data-p="assets">Aset &amp; lesen</button>
+        <button class="tab" role="tab" aria-selected="false" data-p="q">Keputusan</button>
+      </div>
+
+      <div class="pane" id="p-sum">
+        <h2>Apa yang dah dibuat</h2>
+        <div class="facts">
+          <div class="fact"><b>27.9 s</b><span>Durasi (had 60 s)</span></div>
+          <div class="fact"><b>7</b><span>Sisipan B-roll / gambar</span></div>
+          <div class="fact"><b>14</b><span>Sound effect</span></div>
+          <div class="fact"><b>0</b><span>Muka murid yang jelas</span></div>
+        </div>
+        <h3>Hook (3 saat awal)</h3>
+        <p><b>Cadangan: Hook A.</b> Ayat pembuka awak sendiri, "Ustaz dan Ustazah KAFA yang tak pandai akaun", ialah hook paling kuat sebab ia terus panggil penonton sasaran dan sebut masalah dalam satu ayat. Teks besar muncul dari frame pertama, jadi "Assalamualaikum" tak membazir masa hook. Video tak dipotong.</p>
+        <p><b>Hook B</b> pula buka dengan klip 2.7 s "Habis masa dalam mencatat dalam buku SUWA Tunai" sebelum masuk ke salam. Ia lebih kepada rasa sakit, tapi ayat tu akan didengar dua kali dan durasi naik ke 30.6 s. Tekan butang Hook B untuk tengok.</p>
+        <h3>Grade, lampu dan bokeh</h3>
+        <p><b>Versi 2:</b> bokeh dikurangkan ke rupa lebih kurang f/2.8. Rak dan lukisan di belakang masih boleh dikenal, cuma lembut. Tepi rambut dan bahu dilembutkan, dan topeng dilicinkan antara frame supaya tepi tak berkelip. Meja di bawah dikaburkan kurang sebab ia hampir dengan awak.</p>
+        <p>Latar dipisahkan daripada badan awak (segmentasi), kemudian dikaburkan dengan kanta bulat. Cahaya kuning bilik dineutralkan sedikit, shadow muka diangkat lembut, dan highlight ditekan supaya kulit tak overexpose. Latar diturunkan sekitar 10% supaya muka menonjol. Guna "Banding grade" untuk lihat beza.</p>
+        <h3>Muzik</h3>
+        <p>Ada muzik latar yang saya hasilkan sendiri (bukan sampel orang lain, jadi tiada isu lesen iklan). Bahagian masalah lebih perlahan dan senyap seketika pada "Sebab JAIS nak tengok", kemudian jadi lebih ceria bermula "Bayangkan…". Kalau awak rasa suara lebih kuat tanpa muzik, tutup "Muzik" dan saya buang masa render.</p>
+        <h3>Wajah murid</h3>
+        <p>Semua wajah dalam gambar Pelajar, Pelajar1 dan Guru mengajar dikaburkan (pengesan wajah automatik, kemudian saya semak dan tambah yang tertinggal secara manual). B-roll stok hanya tunjuk tangan, tiada muka.</p>
+      </div>
+
+      <div class="pane" id="p-plan" hidden>
+        <h2>Pelan edit ikut masa</h2>
+        <div class="legend"><span><i class="k-broll"></i>B-roll / gambar</span><span><i class="k-mg"></i>Motion design</span><span><i class="k-sfx"></i>Sound effect</span><span><i class="k-zoom"></i>Zoom</span></div>
+        <p class="hint">Masa ikut Hook A. Tekan baris untuk lompat ke situ.</p>
+        <div class="evlist" id="evlist"></div>
+      </div>
+
+      <div class="pane" id="p-tr" hidden>
+        <h2>Transkrip</h2>
+        <p class="hint">Dari Whisper large-v3 dengan masa setiap perkataan. Perkataan <mark>bertanda</mark> saya betulkan sendiri daripada bacaan mesin. Sila sahkan.</p>
+        <div class="tr" id="tr"></div>
+      </div>
+
+      <div class="pane" id="p-assets" hidden>
+        <h2>Aset dan lesen</h2>
+        <h3>B-roll stok (rakaman sebenar, bukan AI)</h3>
+        <p>Semua dari Pexels. <a href="https://www.pexels.com/license/" target="_blank" rel="noopener">Lesen Pexels</a> membenarkan guna percuma untuk komersial dan iklan, tanpa perlu kredit. Lesen ini tak benarkan jual semula klip itu sendiri atau gambarkan orang dalam klip menyokong produk; klip ini cuma tangan, jadi selamat.</p>
+        <div class="tbl"><table>
+          <thead><tr><th>Masa</th><th>Klip</th><th>Sebab</th></tr></thead>
+          <tbody>
+            <tr><td>0:04.7</td><td><a href="https://www.pexels.com/video/a-person-flipping-the-pages-of-the-quran-7401908/" target="_blank" rel="noopener">Selak muka surat Al-Quran (7401908)</a></td><td>"mendidik"</td></tr>
+            <tr><td>0:07.5</td><td><a href="https://www.pexels.com/video/a-person-counting-cash-6700265/" target="_blank" rel="noopener">Kira wang tunai (6700265)</a></td><td>"kutip yuran"</td></tr>
+            <tr><td>0:10.6</td><td><a href="https://www.pexels.com/video/writing-on-a-notebook-7560165/" target="_blank" rel="noopener">Tulis dalam buku (7560165)</a></td><td>"mencatat"</td></tr>
+            <tr><td>0:13.4</td><td><a href="https://www.pexels.com/video/person-using-calculator-6780089/" target="_blank" rel="noopener">Guna kalkulator (6780089)</a></td><td>"mengira baki akhir"</td></tr>
+          </tbody>
+        </table></div>
+        <p class="hint">Klip wang tunai menunjukkan duit dolar tapi dalam cahaya malap, jadi mata wang hampir tak kelihatan. Kalau awak ada rakaman duit RM sendiri, itu lebih baik.</p>
+        <h3>Aset daripada awak (wajah sudah dikaburkan)</h3>
+        <div class="thumbs">
+          <figure><img src="a/img_Pelajar1.jpg" alt="Pelajar1 dengan wajah dikaburkan"><figcaption>Pelajar1 · 0:05.7</figcaption></figure>
+          <figure><img src="a/img_suwa.jpg" alt="Buku SUWA Tunai"><figcaption>Buku SUWA Tunai · 0:12.2</figcaption></figure>
+          <figure><img src="a/img_Guru_mengajar.jpg" alt="Guru mengajar dengan wajah dikaburkan"><figcaption>Guru mengajar · 0:21.1</figcaption></figure>
+          <figure><img src="a/img_Pelajar.jpg" alt="Pelajar dengan wajah dikaburkan"><figcaption>Pelajar · simpanan</figcaption></figure>
+        </div>
+        <p class="hint">Gambar "Pelajar" (dewan peperiksaan) tak digunakan sebab suasana exam tak kena dengan kelas KAFA. Ia sudah dikaburkan kalau awak nak guna.</p>
+        <h3>Logo</h3>
+        <p>Logo Yuran.my <b>putih</b> dipakai atas latar biru gelap, sebab video awak agak gelap dan logo hitam akan tenggelam.</p>
+        <h3>Muzik dan sound effect</h3>
+        <p>Kedua-duanya saya jana sendiri dengan kod (sintesis bunyi), tiada sampel pihak ketiga. Awak bebas guna untuk iklan.</p>
+      </div>
+
+      <div class="pane" id="p-q" hidden>
+        <h2>Keputusan yang dah disahkan</h2>
+        <ol class="q">
+          <li><b>Ejaan caption:</b> KAFA, Tugas, tally-kan, JAIS. ✓ Disahkan.</li>
+          <li><b>Hook:</b> Hook A (terus panggil KAFA). ✓ Disahkan.</li>
+          <li><b>Muzik latar:</b> kekal. ✓ Disahkan.</li>
+          <li><b>Kad "Urusan yuran":</b> teks kekal. ✓ Disahkan.</li>
+          <li><b>Bokeh:</b> dikurangkan ke rupa lebih kurang f/2.8, tepi rambut dan badan dilembutkan. Menunggu semakan awak.</li>
+        </ol>
+      </div>
+    </section>
+  </div>
+</div>
+
+<script>
+const DATA={"caps": [{"s": 0.0, "e": 1.34, "w": [{"t": "Assalamualaikum", "s": 0.0, "hot": 0}, {"t": "Ustaz", "s": 0.72, "hot": 0}, {"t": "dan", "s": 1.2, "hot": 0}]}, {"s": 1.34, "e": 2.32, "w": [{"t": "Ustazah", "s": 1.34, "hot": 0}, {"t": "KAFA", "s": 1.78, "hot": 1}, {"t": "yang", "s": 2.16, "hot": 0}]}, {"s": 2.32, "e": 3.44, "w": [{"t": "tak", "s": 2.32, "hot": 0}, {"t": "pandai", "s": 2.5, "hot": 0}, {"t": "akaun", "s": 2.84, "hot": 1}]}, {"s": 3.44, "e": 4.2, "w": [{"t": "Tugas", "s": 3.44, "hot": 0}, {"t": "Ustaz", "s": 3.62, "hot": 0}, {"t": "dan", "s": 4.04, "hot": 0}]}, {"s": 4.2, "e": 5.68, "w": [{"t": "Ustazah", "s": 4.2, "hot": 0}, {"t": "adalah", "s": 4.7, "hot": 0}, {"t": "mendidik", "s": 4.84, "hot": 0}]}, {"s": 5.68, "e": 6.7, "w": [{"t": "anak-anak", "s": 5.68, "hot": 0}, {"t": "murid", "s": 6.14, "hot": 0}, {"t": "untuk", "s": 6.52, "hot": 0}]}, {"s": 6.7, "e": 7.52, "w": [{"t": "pandai", "s": 6.7, "hot": 0}, {"t": "agama", "s": 7.08, "hot": 1}]}, {"s": 7.52, "e": 8.8, "w": [{"t": "Tapi", "s": 7.52, "hot": 0}, {"t": "ramai", "s": 7.78, "hot": 0}, {"t": "terpaksa", "s": 8.28, "hot": 0}]}, {"s": 8.8, "e": 10.28, "w": [{"t": "luangkan", "s": 8.8, "hot": 0}, {"t": "masa", "s": 9.14, "hot": 0}, {"t": "kutip", "s": 9.52, "hot": 0}]}, {"s": 10.28, "e": 10.62, "w": [{"t": "yuran", "s": 10.28, "hot": 1}]}, {"s": 10.62, "e": 11.62, "w": [{"t": "Habis", "s": 10.62, "hot": 0}, {"t": "masa", "s": 11.08, "hot": 0}, {"t": "dalam", "s": 11.24, "hot": 0}]}, {"s": 11.62, "e": 12.58, "w": [{"t": "mencatat", "s": 11.62, "hot": 0}, {"t": "dalam", "s": 12.12, "hot": 0}, {"t": "buku", "s": 12.24, "hot": 0}]}, {"s": 12.58, "e": 13.38, "w": [{"t": "SUWA", "s": 12.58, "hot": 1}, {"t": "Tunai", "s": 12.82, "hot": 1}]}, {"s": 13.38, "e": 14.3, "w": [{"t": "mengira", "s": 13.38, "hot": 0}, {"t": "baki", "s": 13.78, "hot": 1}, {"t": "akhir", "s": 14.2, "hot": 0}]}, {"s": 14.3, "e": 15.68, "w": [{"t": "dan", "s": 14.3, "hot": 0}, {"t": "tally-kan", "s": 14.98, "hot": 0}, {"t": "dengan", "s": 15.44, "hot": 0}]}, {"s": 15.68, "e": 16.2, "w": [{"t": "report", "s": 15.68, "hot": 1}]}, {"s": 16.2, "e": 16.96, "w": [{"t": "Sebab", "s": 16.2, "hot": 0}, {"t": "JAIS", "s": 16.54, "hot": 1}, {"t": "nak", "s": 16.8, "hot": 0}]}, {"s": 16.96, "e": 17.38, "w": [{"t": "tengok", "s": 16.96, "hot": 0}]}, {"s": 17.38, "e": 18.66, "w": [{"t": "Bayangkan", "s": 17.38, "hot": 0}, {"t": "urusan", "s": 17.9, "hot": 0}, {"t": "yuran", "s": 18.34, "hot": 1}]}, {"s": 18.66, "e": 19.64, "w": [{"t": "ni", "s": 18.66, "hot": 0}, {"t": "boleh", "s": 18.78, "hot": 0}, {"t": "diurus", "s": 19.06, "hot": 0}]}, {"s": 19.64, "e": 20.96, "w": [{"t": "dengan", "s": 19.64, "hot": 0}, {"t": "lebih", "s": 19.86, "hot": 0}, {"t": "tersusun", "s": 20.3, "hot": 1}]}, {"s": 20.96, "e": 21.7, "w": [{"t": "dan", "s": 20.96, "hot": 0}, {"t": "masa", "s": 21.14, "hot": 0}, {"t": "yang", "s": 21.48, "hot": 0}]}, {"s": 21.7, "e": 22.46, "w": [{"t": "lebih", "s": 21.7, "hot": 0}, {"t": "tu", "s": 21.94, "hot": 0}, {"t": "kita", "s": 22.12, "hot": 0}]}, {"s": 22.46, "e": 23.34, "w": [{"t": "akan", "s": 22.46, "hot": 0}, {"t": "fokus", "s": 22.74, "hot": 1}, {"t": "pada", "s": 23.18, "hot": 0}]}, {"s": 23.34, "e": 24.08, "w": [{"t": "pengajaran", "s": 23.34, "hot": 1}]}, {"s": 24.08, "e": 25.04, "w": [{"t": "Follow", "s": 24.08, "hot": 1}, {"t": "kami", "s": 24.28, "hot": 0}, {"t": "untuk", "s": 24.56, "hot": 0}]}, {"s": 25.04, "e": 26.32, "w": [{"t": "sistem", "s": 25.04, "hot": 0}, {"t": "pengurusan", "s": 25.46, "hot": 0}, {"t": "yuran", "s": 26.04, "hot": 1}]}, {"s": 26.32, "e": 27.9, "w": [{"t": "yang", "s": 26.32, "hot": 0}, {"t": "lebih", "s": 26.56, "hot": 0}, {"t": "sistematik", "s": 26.86, "hot": 1}]}], "sent": [{"s": 0.0, "words": [{"t": "Assalamualaikum", "flag": false}, {"t": "Ustaz", "flag": false}, {"t": "dan", "flag": false}, {"t": "Ustazah", "flag": false}, {"t": "KAFA", "flag": true}, {"t": "yang", "flag": false}, {"t": "tak", "flag": false}, {"t": "pandai", "flag": false}, {"t": "akaun.", "flag": false}]}, {"s": 3.44, "words": [{"t": "Tugas", "flag": true}, {"t": "Ustaz", "flag": false}, {"t": "dan", "flag": false}, {"t": "Ustazah", "flag": false}, {"t": "adalah", "flag": false}, {"t": "mendidik", "flag": false}, {"t": "anak-anak", "flag": false}, {"t": "murid", "flag": false}, {"t": "untuk", "flag": false}, {"t": "pandai", "flag": false}, {"t": "agama.", "flag": false}]}, {"s": 7.52, "words": [{"t": "Tapi", "flag": false}, {"t": "ramai", "flag": false}, {"t": "terpaksa", "flag": false}, {"t": "luangkan", "flag": false}, {"t": "masa", "flag": false}, {"t": "kutip", "flag": false}, {"t": "yuran.", "flag": false}]}, {"s": 10.62, "words": [{"t": "Habis", "flag": false}, {"t": "masa", "flag": false}, {"t": "dalam", "flag": false}, {"t": "mencatat", "flag": false}, {"t": "dalam", "flag": false}, {"t": "buku", "flag": false}, {"t": "SUWA", "flag": false}, {"t": "Tunai,", "flag": false}, {"t": "mengira", "flag": false}, {"t": "baki", "flag": false}, {"t": "akhir", "flag": false}, {"t": "dan", "flag": false}, {"t": "tally-kan", "flag": true}, {"t": "dengan", "flag": false}, {"t": "report.", "flag": false}]}, {"s": 16.2, "words": [{"t": "Sebab", "flag": false}, {"t": "JAIS", "flag": true}, {"t": "nak", "flag": false}, {"t": "tengok.", "flag": false}]}, {"s": 17.38, "words": [{"t": "Bayangkan", "flag": false}, {"t": "urusan", "flag": false}, {"t": "yuran", "flag": false}, {"t": "ni", "flag": false}, {"t": "boleh", "flag": false}, {"t": "diurus", "flag": false}, {"t": "dengan", "flag": false}, {"t": "lebih", "flag": false}, {"t": "tersusun", "flag": false}, {"t": "dan", "flag": false}, {"t": "masa", "flag": false}, {"t": "yang", "flag": false}, {"t": "lebih", "flag": false}, {"t": "tu", "flag": false}, {"t": "kita", "flag": false}, {"t": "akan", "flag": false}, {"t": "fokus", "flag": false}, {"t": "pada", "flag": false}, {"t": "pengajaran.", "flag": false}]}, {"s": 24.08, "words": [{"t": "Follow", "flag": false}, {"t": "kami", "flag": false}, {"t": "untuk", "flag": false}, {"t": "sistem", "flag": false}, {"t": "pengurusan", "flag": false}, {"t": "yuran", "flag": false}, {"t": "yang", "flag": false}, {"t": "lebih", "flag": false}, {"t": "sistematik.", "flag": false}]}]};
+const DUR_A=27.88, TEASE=[10.62,13.30], TL=TEASE[1]-TEASE[0];
+// Events on the Hook A timeline (= source time). kind: broll | mg | sfx | zoom (for the plan list)
+const EV=[
+ {id:"hook",s:0,e:3.42,kind:"mg",t:"Hook teks: USTAZ & USTAZAH KAFA / yang tak pandai akaun?",why:"Panggil penonton sasaran dari frame pertama"},
+ {id:"quran",s:4.70,e:5.66,kind:"broll",t:"B-roll: selak Al-Quran",why:"\"mendidik\""},
+ {id:"murid",s:5.66,e:7.48,kind:"broll",t:"Gambar Pelajar1 (wajah dikabur), zoom perlahan",why:"\"anak-anak murid untuk pandai agama\""},
+ {id:"c_agama",s:5.80,e:7.48,kind:"mg",t:"Chip: Tugas: didik anak murid",why:""},
+ {id:"cash",s:7.50,e:10.58,kind:"broll",t:"B-roll: kira wang tunai",why:"\"kutip yuran\""},
+ {id:"c_yuran",s:8.20,e:10.58,kind:"mg",t:"Chip: Masa habis kutip yuran",why:""},
+ {id:"write",s:10.58,e:12.20,kind:"broll",t:"B-roll: tulis dalam buku",why:"\"mencatat\""},
+ {id:"l_write",s:10.90,e:12.20,kind:"mg",t:"Label: Catat manual, satu-satu",why:""},
+ {id:"suwa",s:12.20,e:13.36,kind:"broll",t:"Gambar Buku SUWA Tunai (pop-in)",why:"\"buku SUWA Tunai\""},
+ {id:"l_suwa",s:12.30,e:13.36,kind:"mg",t:"Label: Buku SUWA Tunai",why:""},
+ {id:"calc",s:13.36,e:16.15,kind:"broll",t:"B-roll: kalkulator",why:"\"mengira baki akhir\""},
+ {id:"tally",s:13.40,e:16.15,kind:"mg",t:"Kad kiraan: baki akhir naik, tally ✗ tak sama",why:"\"tally-kan dengan report\""},
+ {id:"jais",s:16.20,e:17.34,kind:"mg",t:"Cop merah: JAIS NAK TENGOK + kilat putih",why:"Titik tekanan; muzik senyap"},
+ {id:"dream",s:17.38,e:21.10,kind:"mg",t:"Tag \"Bayangkan…\" + cahaya hangat",why:"Pertukaran ke penyelesaian"},
+ {id:"org",s:17.70,e:21.10,kind:"mg",t:"Kad Urusan yuran: 3 tanda ✓ + bar progres",why:"\"lebih tersusun\""},
+ {id:"guru",s:21.10,e:23.98,kind:"broll",t:"Gambar Guru mengajar (wajah dikabur), pan",why:"\"fokus pada pengajaran\""},
+ {id:"l_guru",s:21.30,e:23.98,kind:"mg",t:"Label: Lebih masa untuk mengajar",why:""},
+ {id:"cta",s:24.04,e:27.88,kind:"mg",t:"Logo Yuran.my putih + butang Follow berdenyut",why:"\"Follow kami\""},
+ {id:"tap",s:24.25,e:24.85,kind:"mg",t:"Animasi jari tekan Follow",why:""},
+ {id:"end",s:26.95,e:27.88,kind:"mg",t:"End card logo",why:""},
+];
+const SFX=[
+ {s:0.00,f:"whoosh",v:.55,t:"Whoosh buka hook"},{s:1.78,f:"pop",v:.6,t:"Pop pada \"KAFA\""},{s:2.30,f:"pop",v:.5,t:"Pop: kotak kuning"},
+ {s:4.62,f:"whoosh",v:.45,t:"Whoosh masuk B-roll"},{s:7.08,f:"ding",v:.35,t:"Ding pada \"agama\""},
+ {s:8.20,f:"tick",v:.45,t:"Detik jam: masa terbuang"},{s:9.52,f:"chaching",v:.45,t:"Cha-ching pada \"kutip yuran\""},
+ {s:11.62,f:"click",v:.5,t:"Klik pen"},{s:12.24,f:"pop",v:.6,t:"Pop: buku SUWA"},
+ {s:15.62,f:"bonk",v:.55,t:"Bonk: tally tak sama"},{s:16.48,f:"impact",v:.7,t:"Impact: cop JAIS"},
+ {s:17.30,f:"whoosh",v:.45,t:"Whoosh ke \"Bayangkan\""},{s:20.30,f:"ding",v:.4,t:"Ding pada \"tersusun\""},
+ {s:24.25,f:"click",v:.6,t:"Tap Follow"},
+];
+const ZOOM=[[0,1],[3.42,1.10],[3.43,1.0],[16.19,1.0],[16.2,1.14],[17.34,1.14],[17.35,1.0],[21.1,1.05],[24.03,1.05],[24.04,1.0],[27.88,1.07]];
+const PLAN_ZOOM=[{s:0,t:"Push-in perlahan 1.00→1.10 sepanjang hook"},{s:3.43,t:"Jump cut zoom keluar pada \"Tugas\""},{s:16.2,t:"Punch-in 1.14 pada \"Sebab JAIS nak tengok\""},{s:24.04,t:"Reset, push-in perlahan ke penutup"}];
+
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const vg=$("#vg"), vo=$("#vo"), stage=$("#stage");
+const on={broll:true,mg:true,cap:true,sfx:true,music:true,cmp:false,safe:false};
+let hook="A", playing=false, outT=0, raf=0;
+const dur=()=>hook==="A"?DUR_A:DUR_A+TL;
+// map output time -> {src time, evT (Hook A time used for overlays), teaser}
+function map(t){
+  if(hook==="A") return {src:t,ev:t,tz:false};
+  if(t<TL) return {src:TEASE[0]+t,ev:null,tz:true,lt:t};
+  return {src:t-TL,ev:t-TL,tz:false};
+}
+// ---- audio: WebAudio for sfx + music so they stay locked to the clock
+let ac=null, buf={}, gainMusic=null, musicNode=null, sfxNodes=[];
+async function initAudio(){
+  if(ac) return; ac=new (window.AudioContext||window.webkitAudioContext)();
+  const names=[...new Set(SFX.map(x=>x.f)),"music"];
+  await Promise.all(names.map(async n=>{try{const r=await fetch(`a/sfx/${n}.mp3`);buf[n]=await ac.decodeAudioData(await r.arrayBuffer());}catch(e){}}));
+}
+function stopAudio(){sfxNodes.forEach(n=>{try{n.stop()}catch(e){}});sfxNodes=[];if(musicNode){try{musicNode.stop()}catch(e){}musicNode=null}}
+function startAudio(t){
+  stopAudio(); if(!ac) return; const now=ac.currentTime+0.03;
+  const off=hook==="A"?0:TL;
+  if(on.sfx){
+    const list=SFX.map(x=>({...x,s:x.s+off}));
+    if(hook==="B") list.unshift({s:0,f:"whoosh",v:.55},{s:0.3,f:"pop",v:.55},{s:TL-0.15,f:"whoosh",v:.4});
+    list.forEach(x=>{if(x.s>=t-0.02&&buf[x.f]){const s=ac.createBufferSource(),g=ac.createGain();g.gain.value=x.v;s.buffer=buf[x.f];s.connect(g).connect(ac.destination);s.start(now+(x.s-t));sfxNodes.push(s);}});
+  }
+  if(on.music&&buf.music){
+    const mt=t-off; const s=ac.createBufferSource(),g=ac.createGain();g.gain.value=.16;s.buffer=buf.music;s.connect(g).connect(ac.destination);
+    if(mt>=0) s.start(now,mt); else s.start(now-mt,0); musicNode=s;
+  }
+}
+// ---- render
+const layers=$$(".stage .layer"), ovs=$$("#ov>[data-ev]");
+const EVM=Object.fromEntries(EV.map(e=>[e.id,e]));
+function setAnim(el,lt){el.style.animationDelay=(-lt)+"s";el.querySelectorAll("*").forEach(c=>{const base=c.dataset.d??(c.dataset.d=parseFloat(getComputedStyle(c).animationDelay)||0);c.style.animationDelay=(base-lt)+"s"})}
+function zoomAt(t){for(let i=ZOOM.length-1;i>=0;i--){if(t>=ZOOM[i][0]){const a=ZOOM[i],b=ZOOM[i+1];if(!b)return a[1];return a[1]+(b[1]-a[1])*(t-a[0])/(b[0]-a[0])}}return 1}
+function active(id,et,tz,lt){
+  if(tz){ // Hook B teaser: SUWA pictures + its own hook line
+    if(id==="hookB") return lt; if(id==="write"&&lt<1.4) return lt; if(id==="suwa"&&lt>=1.4) return lt-1.4; return null;
+  }
+  const e=EVM[id]; if(!e||et==null) return null; return (et>=e.s&&et<e.e)?et-e.s:null;
+}
+function render(){
+  const m=map(outT), et=m.ev;
+  stage.style.transform=`scale(${m.tz?1.08:zoomAt(et)})`;
+  layers.forEach(l=>{const lt=on.broll?active(l.dataset.ev,et,m.tz,m.lt):null;const v=l.querySelector("video");
+    if(lt!=null){l.classList.add("on");setAnim(l,lt);setAnim(l.querySelector("img")||l,lt);if(v){if(Math.abs(v.currentTime-lt)>0.25)v.currentTime=lt;if(playing&&v.paused)v.play().catch(()=>{});if(!playing&&!v.paused)v.pause()}}
+    else{l.classList.remove("on");if(v&&!v.paused)v.pause()}});
+  ovs.forEach(o=>{const lt=on.mg?active(o.dataset.ev,et,m.tz,m.lt):null;
+    if(o.dataset.ev==="hookB"&&hook==="A"){o.classList.remove("on");o.style.opacity=0;return}
+    if(lt!=null){o.classList.add("on");o.style.opacity="";setAnim(o,lt)}else{o.classList.remove("on");o.style.opacity=0}});
+  // tally counter
+  const tl=active("tally",et,m.tz,m.lt); if(tl!=null){$("#tallyNum").textContent="RM "+(Math.min(1,tl/1.8)*2475.5).toLocaleString("en-MY",{minimumFractionDigits:2,maximumFractionDigits:2})}
+  // captions (hidden during hook text)
+  const cap=$("#cap"); let html="";
+  if(on.cap){const st=m.src; const hookOn=on.mg&&(m.tz||(et!=null&&et<3.42));
+    const c=DATA.caps.find(c=>st>=c.s&&st<c.e);
+    if(c&&!hookOn){const spans=c.w.filter(w=>st>=w.s);html=c.w.map((w,i)=>`<span class="${w.hot?"hot":""} ${w===spans[spans.length-1]?"now":""}">${w.t}</span>`).join(" ")}}
+  cap.innerHTML=html;
+  $("#scrub").value=outT; $("#time").textContent=fmt(outT);
+  $$(".ev").forEach(b=>b.classList.toggle("cur",et!=null&&et>=+b.dataset.s&&et<+b.dataset.e));
+}
+const fmt=t=>`${Math.floor(t/60)}:${(t%60).toFixed(1).padStart(4,"0")}`;
+// ---- clock: video is master while playing
+function seekVideo(){const m=map(outT);vg.currentTime=m.src;if(on.cmp)vo.currentTime=m.src}
+function tick(){
+  if(!playing) return;
+  const m=map(outT);
+  if(m.tz){ outT=vg.currentTime-TEASE[0]; if(vg.currentTime>=TEASE[1]-0.02){outT=TL;vg.currentTime=0;if(on.cmp)vo.currentTime=0} }
+  else outT=vg.currentTime+(hook==="B"?TL:0);
+  if(on.cmp&&Math.abs(vo.currentTime-vg.currentTime)>0.12)vo.currentTime=vg.currentTime;
+  if(outT>=dur()-0.03||vg.ended){pause();outT=dur();}
+  render(); raf=requestAnimationFrame(tick);
+}
+async function play(){
+  await initAudio(); if(ac.state==="suspended") await ac.resume();
+  if(outT>=dur()-0.05) outT=0;
+  seekVideo(); vg.muted=false; playing=true; $("#bigplay").hidden=true; $("#play").textContent="❚❚";
+  try{await vg.play()}catch(e){} if(on.cmp) vo.play().catch(()=>{});
+  startAudio(outT); tick();
+}
+function pause(){playing=false;vg.pause();vo.pause();stopAudio();cancelAnimationFrame(raf);$("#play").textContent="▶";$$(".layer video").forEach(v=>v.pause())}
+$("#play").onclick=()=>playing?pause():play();
+$("#bigplay").onclick=play;
+$("#scrub").oninput=e=>{outT=+e.target.value;seekVideo();if(playing)startAudio(outT);render()};
+function setHook(h){const was=playing;pause();hook=h;outT=0;$("#hookA").setAttribute("aria-pressed",h==="A");$("#hookB").setAttribute("aria-pressed",h==="B");$("#scrub").max=dur();marks();seekVideo();render();if(was)play()}
+$("#hookA").onclick=()=>setHook("A");$("#hookB").onclick=()=>setHook("B");
+$$(".tog").forEach(b=>b.onclick=()=>{const k=b.dataset.t;on[k]=!on[k];b.setAttribute("aria-pressed",on[k]);
+  if(k==="cmp"){vo.hidden=!on.cmp;$("#wipe").hidden=!on.cmp;if(on.cmp){vo.currentTime=vg.currentTime;if(playing)vo.play().catch(()=>{})}else vo.pause()}
+  if(k==="safe")$("#safe").hidden=!on.safe;
+  if((k==="sfx"||k==="music")&&playing)startAudio(outT);
+  render()});
+// keyboard: space toggles
+document.addEventListener("keydown",e=>{if(e.code==="Space"&&!/INPUT|BUTTON/.test(document.activeElement.tagName)){e.preventDefault();playing?pause():play()}});
+// ---- plan list + marks
+const COL={broll:"var(--c-broll)",mg:"var(--c-mg)",sfx:"var(--c-sfx)",zoom:"var(--c-zoom)"};
+function marks(){const off=hook==="A"?0:TL;$("#marks").innerHTML=[...EV.filter(e=>e.kind==="broll").map(e=>({s:e.s,k:"broll"})),...SFX.map(x=>({s:x.s,k:"sfx"}))].map(x=>`<i style="left:${(x.s+off)/dur()*100}%;background:${COL[x.k]}"></i>`).join("")}
+const rows=[...EV.map(e=>({s:e.s,e:e.e,k:e.kind,t:e.t,why:e.why})),...SFX.map(x=>({s:x.s,e:x.s+.5,k:"sfx",t:x.t})),...PLAN_ZOOM.map(z=>({s:z.s,e:z.s+.5,k:"zoom",t:z.t}))].sort((a,b)=>a.s-b.s);
+const KN={broll:"B-roll",mg:"Motion",sfx:"SFX",zoom:"Zoom"};
+$("#evlist").innerHTML=rows.map(r=>`<button class="ev" data-s="${r.s}" data-e="${r.e}"><span class="t">${fmt(r.s)}</span><span class="k k-${r.k}">${KN[r.k]}</span><span class="d"><b>${r.t}</b>${r.why?`<small>${r.why}</small>`:""}</span></button>`).join("");
+$$(".ev").forEach(b=>b.onclick=()=>{if(hook!=="A")setHook("A");outT=+b.dataset.s;seekVideo();if(playing)startAudio(outT);render()});
+$("#tr").innerHTML=DATA.sent.map(s=>`<p><span class="ts" data-s="${s.s}">${fmt(s.s)}</span><span>${s.words.map(w=>w.flag?`<mark>${w.t}</mark>`:w.t).join(" ")}</span></p>`).join("");
+$$(".ts").forEach(x=>x.onclick=()=>{if(hook!=="A")setHook("A");outT=+x.dataset.s;seekVideo();if(playing)startAudio(outT);render()});
+// tabs
+$$(".tab").forEach(t=>t.onclick=()=>{$$(".tab").forEach(x=>x.setAttribute("aria-selected",x===t));$$(".pane").forEach(p=>p.hidden=p.id!=="p-"+t.dataset.p)});
+marks(); vg.addEventListener("loadeddata",render); render();
+</script>
+<script>
+const seek=(v,t)=>new Promise(r=>{if(Math.abs(v.currentTime-t)<1e-4&&v.readyState>=2)return r();const f=()=>{v.removeEventListener('seeked',f);r()};v.addEventListener('seeked',f);v.currentTime=t});
+window.renderAt=async t=>{outT=t;render();const m=map(t);await seek(vg,m.src+0.001);
+ for(const l of layers){const v=l.querySelector('video');if(v&&l.classList.contains('on')){v.pause();const lt=active(l.dataset.ev,m.ev,m.tz,m.lt);await seek(v,Math.max(0,lt)+0.001)}}
+ render();await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));};
+</script><style>
+body{margin:0;background:#000}.wrap{padding:0!important;max-width:none}header.top,.panel,.controls,.seg,.toggles,.hint,#bigplay{display:none!important}
+.grid{display:block!important}.player{position:static!important;max-width:none!important;width:1080px;margin:0}
+.phone{width:1080px!important;height:1920px;border-radius:0!important;box-shadow:none!important}
+</style>
