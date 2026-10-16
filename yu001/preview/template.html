@@ -1,3 +1,4 @@
+<meta charset="utf-8">
 <title>YU001 Edit Preview</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,6 +25,7 @@
   --accent:#4cc3f5; --accent-ink:#061821; --ledger:#2c5a42; --flag:#ffb35c; --flag-bg:#3a2a12;
   --c-broll:#4cc3f5; --c-mg:#b896f2; --c-sfx:#4fd3a4; --c-zoom:#ff9a5c; color-scheme:dark}
 *{box-sizing:border-box}
+[hidden]{display:none!important}
 body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.55}
 .wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:22px 56px}
 header.top{display:flex;flex-wrap:wrap;gap:6px 24px;align-items:end;justify-content:space-between;margin-bottom:18px}
@@ -84,7 +86,7 @@ h1{font-family:var(--f-display);font-weight:800;font-size:clamp(24px,3.6vw,34px)
 @keyframes slideDown{from{opacity:0;transform:translateY(-6cqh)}to{opacity:1;transform:none}}
 
 /* JAIS stamp */
-.stamp{left:50%;top:15cqh;transform:translateX(-50%) rotate(-7deg);border:1.2cqw solid var(--v-red);color:var(--v-red);background:rgba(255,255,255,.92);font-weight:900;font-size:8.5cqw;letter-spacing:.04em;padding:1.5cqw 4.5cqw;border-radius:2cqw;white-space:nowrap;animation:stampIn .32s cubic-bezier(.2,1.6,.4,1) .3s both}
+.stamp{left:50%;top:15cqh;transform:translateX(-50%) rotate(-7deg);border:1.2cqw solid var(--v-red);color:var(--v-red);background:rgba(255,255,255,.92);font-weight:900;font-size:7.4cqw;letter-spacing:.04em;padding:1.5cqw 4cqw;border-radius:2cqw;white-space:nowrap;animation:stampIn .32s cubic-bezier(.2,1.6,.4,1) .3s both}
 .stamp small{display:block;font-size:3.6cqw;letter-spacing:.14em;font-weight:800;text-align:center}
 @keyframes stampIn{0%{opacity:0;transform:translateX(-50%) rotate(-7deg) scale(2.2)}100%{opacity:1;transform:translateX(-50%) rotate(-7deg) scale(1)}}
 .flash{inset:0;background:#fff;animation:flash .25s ease-out .3s both}
@@ -118,7 +120,7 @@ h1{font-family:var(--f-display);font-weight:800;font-size:clamp(24px,3.6vw,34px)
 .endcard p{margin:0;font-family:var(--f-video);font-weight:600;font-size:4cqw;color:#cfe9f5;letter-spacing:.02em}
 
 /* captions */
-.cap{left:5cqw;right:5cqw;top:63cqh;text-align:center;font-weight:900;font-size:7cqw;line-height:1.12;text-transform:uppercase;letter-spacing:-.005em;paint-order:stroke fill;-webkit-text-stroke:1.4cqw #000;text-shadow:0 .8cqw 2cqw rgba(0,0,0,.5);visibility:visible!important;opacity:1}
+.cap{left:5cqw;right:5cqw;top:63cqh;text-align:center;font-weight:900;font-size:6.3cqw;line-height:1.14;text-transform:uppercase;letter-spacing:-.005em;paint-order:stroke fill;-webkit-text-stroke:1.4cqw #000;text-shadow:0 .8cqw 2cqw rgba(0,0,0,.5);visibility:visible!important;opacity:1}
 .cap span{display:inline-block;margin:0 .6cqw;transition:none}
 .cap span.now{color:var(--v-yellow);transform:scale(1.08)}
 .cap span.hot{color:var(--v-cyan)}
