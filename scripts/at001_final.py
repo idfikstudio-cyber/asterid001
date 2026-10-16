@@ -45,7 +45,8 @@ for i in range(N):
         ox,oyp=W/2,H*oy/100;M=np.float32([[s,0,(1-s)*ox],[0,s,(1-s)*oyp]])
         f=cv2.warpAffine(f,M,(W,H),flags=cv2.INTER_LANCZOS4,borderMode=cv2.BORDER_REFLECT)
     o=cv2.imread(f"{ovd}/o{i:05d}.png",cv2.IMREAD_UNCHANGED)
-    if o is not None and o[...,3].any():
+    if o is not None and o.ndim==3 and o.shape[2]==3: f=o   # fully opaque frame (full-screen b-roll / end card) is saved without alpha
+    elif o is not None and o[...,3].any():
         al=o[...,3:].astype(np.float32)/255;f=(f*(1-al)+o[...,:3]*al+.5).astype(np.uint8)
     enc.stdin.write(f.tobytes())
     if i%150==0:print("frame",i,"/",N,flush=True)
