@@ -1,8 +1,8 @@
 #!/bin/bash
 # Build 540p preview proxies for AT001 from plan.json cuts.
-# usage: at001_proxy.sh source.mp4 look_full.mp4 plan.json outdir
+# usage: at001_proxy.sh source.mp4 look_full.mp4 plan.json outdir [look_nobokeh.mp4]
 set -e
-SRC=$1 LOOK=$2 PLAN=$3 OUT=$4
+SRC=$1 LOOK=$2 PLAN=$3 OUT=$4 LOOK_NB=$5
 mkdir -p "$OUT"
 read -r END_CARD <<<"$(python3 -c "import json;p=json.load(open('$PLAN'));print(round(p['total']-p['duration'],3))")"
 # trim+concat filter for N cuts; 8 ms audio fades at every join so cuts don't click
@@ -21,6 +21,10 @@ EOF
 VOICE="highpass=f=80,afftdn=nr=10:nf=-45,equalizer=f=250:t=q:w=1.2:g=-2.5,equalizer=f=3500:t=q:w=1:g=2.5,deesser=i=0.4,acompressor=threshold=-20dB:ratio=3:attack=5:release=80:makeup=2,loudnorm=I=-14:TP=-1.5:LRA=7,aresample=44100"
 ffmpeg -v error -y -i "$LOOK" -i "$SRC" -filter_complex "$FC;[vc]tpad=stop_mode=clone:stop_duration=$END_CARD,scale=540:960:flags=lanczos,fps=30[v];[ac]$VOICE,apad=pad_dur=$END_CARD[a]" \
   -map "[v]" -map "[a]" -c:v libx264 -preset slow -crf 23 -g 15 -pix_fmt yuv420p -c:a aac -b:a 128k -movflags +faststart "$OUT/graded.mp4"
+if [ -n "$LOOK_NB" ]; then
+ffmpeg -v error -y -i "$LOOK_NB" -i "$SRC" -filter_complex "$FC;[vc]tpad=stop_mode=clone:stop_duration=$END_CARD,scale=540:960:flags=lanczos,fps=30[v];[ac]$VOICE,apad=pad_dur=$END_CARD[a]" \
+  -map "[v]" -map "[a]" -c:v libx264 -preset slow -crf 23 -g 15 -pix_fmt yuv420p -c:a aac -b:a 128k -movflags +faststart "$OUT/graded_nb.mp4"
+fi
 ffmpeg -v error -y -i "$SRC" -i "$SRC" -filter_complex "$FC;[vc]tpad=stop_mode=clone:stop_duration=$END_CARD,scale=540:960:flags=lanczos,fps=30[v];[ac]anullsink" \
   -map "[v]" -an -c:v libx264 -preset slow -crf 25 -g 15 -pix_fmt yuv420p -movflags +faststart "$OUT/orig.mp4"
 # A/B of audio only (original vs cleaned), for the "Audio" tab

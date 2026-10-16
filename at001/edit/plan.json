@@ -620,10 +620,12 @@
    "s": 24.68,
    "e": 28.14,
    "kind": "follow",
-   "name": "Aster Edu",
-   "sub": "Tips bantu anak kuasai matematik",
-   "tap": 25.1,
-   "note": "Kad profil + butang Follow ditekan; anak panah ke butang Follow TikTok"
+   "name": "Aster.edu_tpg",
+   "handle": "@aster.edu_tpg",
+   "logo": "brand/avatar.png",
+   "sub": "Tuisyen online bersama guru pakar & guru pemeriksa kertas",
+   "tap": 25.3,
+   "note": "'Follow saya': logo/gambar profil muncul besar, kemudian mengecil ke kad profil TikTok + butang Follow ditekan"
   },
   {
    "s": 25.9,
@@ -638,6 +640,8 @@
    "e": 29.641,
    "kind": "endcard",
    "text": "ASTER EDU",
+   "handle": "@aster.edu_tpg",
+   "logo": "brand/avatar.png",
    "sub": "Tuisyen Online · Darjah 4 – Tingkatan 5",
    "note": "Kad penutup jenama (1.5s, video dibekukan)"
   }
@@ -799,7 +803,12 @@
    "gain": 0.6
   },
   {
-   "t": 25.1,
+   "t": 24.7,
+   "name": "whoosh",
+   "gain": 0.5
+  },
+  {
+   "t": 25.3,
    "name": "click",
    "gain": 0.8
   },

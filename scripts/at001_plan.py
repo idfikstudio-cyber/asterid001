@@ -45,9 +45,10 @@ G=[
  {"s":18.54,"e":20.88,"kind":"checklist","items":[["Teknik betul",19.82],["Konsisten",20.30]],"note":"Senarai semak, tanda ✓ dilukis ikut sebutan"},
  {"s":20.90,"e":22.70,"kind":"full-solve","text":"7 × 8 = 56","sub":"Tanpa kira jari","note":"B-roll penuh: jawapan soalan hook ditulis laju + ✓ + bintang (callback hook)"},
  {"s":22.72,"e":24.64,"kind":"path","text":"KUASAI MATEMATIK","goal":23.72,"note":"Jalan berliku dilukis naik ke trofi"},
- {"s":24.68,"e":28.14,"kind":"follow","name":"Aster Edu","sub":"Tips bantu anak kuasai matematik","tap":25.10,"note":"Kad profil + butang Follow ditekan; anak panah ke butang Follow TikTok"},
+ {"s":24.68,"e":28.14,"kind":"follow","name":"Aster.edu_tpg","handle":"@aster.edu_tpg","logo":"brand/avatar.png","sub":"Tuisyen online bersama guru pakar & guru pemeriksa kertas","tap":25.30,
+  "note":"'Follow saya': logo/gambar profil muncul besar, kemudian mengecil ke kad profil TikTok + butang Follow ditekan"},
  {"s":25.90,"e":28.14,"kind":"comment","text":"Anak kira guna jari juga?","ask":"Komen “YA” 👇","note":"Ajak komen (interaktif, naikkan engagement)"},
- {"s":DUR,"e":DUR+END_CARD,"kind":"endcard","text":"ASTER EDU","sub":"Tuisyen Online · Darjah 4 – Tingkatan 5","note":"Kad penutup jenama (1.5s, video dibekukan)"},
+ {"s":DUR,"e":DUR+END_CARD,"kind":"endcard","text":"ASTER EDU","handle":"@aster.edu_tpg","logo":"brand/avatar.png","sub":"Tuisyen Online · Darjah 4 – Tingkatan 5","note":"Kad penutup jenama (1.5s, video dibekukan)"},
 ]
 for g in G:
     for k in ("s","e","dock","score","stamp_at","write","goal","tap"):
@@ -57,7 +58,7 @@ SFX=[(0.00,"impact",.85),(0.60,"pop",.7),(0.78,"whoosh",.55),(2.08,"swoosh_down"
  (7.20,"bonk",.7),(8.55,"whoosh",.7),(8.95,"scribble",.45),(9.35,"scribble",.45),(9.75,"scribble",.45),(10.45,"bonk",.6),
  (11.15,"whoosh",.6),(12.40,"lock",.7),(14.38,"impact",.7),(14.94,"whoosh",.55),(16.30,"scribble",.6),(18.54,"pop",.5),
  (19.82,"check",.6),(20.30,"check",.65),(20.90,"whoosh",.6),(21.00,"scribble",.55),(21.95,"ding",.6),(22.70,"whoosh",.5),
- (22.80,"riser",.35),(23.72,"sparkle",.6),(24.68,"pop",.6),(25.10,"click",.8),(25.92,"pop",.5),
+ (22.80,"riser",.35),(23.72,"sparkle",.6),(24.68,"pop",.6),(24.70,"whoosh",.5),(25.30,"click",.8),(25.92,"pop",.5),
  (DUR,"whoosh",.7),(DUR+.25,"ding",.55)]
 SFX=[{"t":round(t,3),"name":n,"gain":g} for t,n,g in SFX]
 Z=[(0,1.08,40),(2.04,1.14,40),(2.08,1.0,42),(7.14,1.0,42),(7.18,1.10,36),(8.50,1.10,36),(8.55,1.0,42),(11.70,1.0,42),(11.76,1.06,38),

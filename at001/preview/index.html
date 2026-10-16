@@ -231,15 +231,21 @@ td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
 .path .start{position:absolute;left:0;bottom:0;font:800 3.6cqw var(--f-body);background:rgba(0,0,0,.55);border-radius:99px;padding:.6cqw 2.4cqw}
 
 /* follow CTA */
-.follow{left:6cqw;right:6cqw;top:9cqh;display:flex;align-items:center;gap:3cqw;background:rgba(255,255,255,.97);color:var(--v-navy);border-radius:4cqw;padding:3cqw;box-shadow:0 1.5cqw 5cqw rgba(0,0,0,.4);animation:upin .4s calc(0s - var(--late)) cubic-bezier(.2,1.3,.4,1) both}
-.follow .av{width:14cqw;height:14cqw;border-radius:50%;background:var(--v-navy);color:var(--v-gold);display:grid;place-items:center;font:900 7cqw var(--f-display);border:.7cqw solid var(--v-gold);flex:none}
+.follow{inset:0}
+.follow .lgbig{position:absolute;left:50%;top:9cqh;width:44cqw;margin-left:-22cqw;display:flex;flex-direction:column;align-items:center;gap:1.4cqw;animation:lgbig 1s calc(0s - var(--late)) cubic-bezier(.3,1.3,.4,1) both}
+.follow .lgbig img{width:44cqw;height:44cqw;border-radius:50%;border:1.2cqw solid var(--v-gold);box-shadow:0 2cqw 6cqw rgba(0,0,0,.5);display:block}
+.follow .lgbig b{font-weight:900;font-size:6.4cqw;font-stretch:85%;text-shadow:0 .5cqw 1.6cqw rgba(0,0,0,.8);white-space:nowrap}
+@keyframes lgbig{0%{transform:scale(0);opacity:0}25%{transform:scale(1.08);opacity:1}55%{transform:none;opacity:1}100%{transform:translate(-26cqw,-4cqh) scale(.3);opacity:0}}
+.follow .fcard{position:absolute;left:6cqw;right:6cqw;top:9cqh;display:flex;align-items:center;gap:3cqw;background:rgba(255,255,255,.97);color:var(--v-navy);border-radius:4cqw;padding:3cqw;box-shadow:0 1.5cqw 5cqw rgba(0,0,0,.4);animation:show .2s calc(.85s - var(--late)) both;opacity:0}
+.follow .av{width:14cqw;height:14cqw;border-radius:50%;border:.7cqw solid var(--v-gold);flex:none;object-fit:cover}
 .follow .nm{flex:1;min-width:0}
-.follow .nm b{display:block;font-weight:900;font-size:6cqw;font-stretch:85%;line-height:1}
+.follow .nm b{display:block;font-weight:900;font-size:5.4cqw;font-stretch:85%;line-height:1}
+.follow .nm i{display:block;font:600 3.2cqw var(--f-body);font-style:normal;color:#4a5370;margin-top:.4cqw}
 .follow .nm small{display:block;font:600 3.2cqw var(--f-body);color:#4a5370;margin-top:.8cqw;line-height:1.2}
 .follow .fb{position:relative;min-width:25cqw;text-align:center;font:900 4.6cqw var(--f-display);font-stretch:85%;border-radius:2cqw;padding:2cqw 3.4cqw;background:#fe2c55;color:#fff;white-space:nowrap}
 .follow .fb .a,.follow .fb .b{display:block}
 .follow .fb .b{position:absolute;inset:0;display:grid;place-items:center;background:#e6e9f2;color:var(--v-navy);border-radius:2cqw;opacity:0;animation:show .01s calc(var(--d) - var(--late)) forwards}
-.follow .tapper{position:absolute;right:2cqw;top:9cqw;font-size:10cqw;animation:tap 1s calc(var(--d) - .5s - var(--late)) both}
+.follow .tapper{position:absolute;right:2cqw;top:9cqw;z-index:1;font-size:10cqw;animation:tap 1s calc(var(--d) - .5s - var(--late)) both}
 @keyframes tap{0%{opacity:0;transform:translate(12cqw,10cqw)}40%{opacity:1;transform:translate(0,0)}50%{transform:scale(.85)}60%{transform:scale(1)}100%{opacity:0;transform:translate(4cqw,6cqw)}}
 .follow .rp{position:absolute;right:6cqw;top:3.6cqw;width:12cqw;height:8cqw;border-radius:2cqw;border:.6cqw solid #fe2c55;opacity:0;animation:ping .6s calc(var(--d) - var(--late)) both}
 .comment{left:6cqw;top:27cqh;background:#fff;color:var(--v-navy);border-radius:3.5cqw 3.5cqw 3.5cqw .8cqw;padding:2.2cqw 3.6cqw;font-weight:900;font-size:5cqw;font-stretch:85%;line-height:1.15;box-shadow:0 1cqw 3cqw rgba(0,0,0,.35);animation:slidein .35s calc(0s - var(--late)) cubic-bezier(.2,1.3,.4,1) both}
@@ -247,7 +253,8 @@ td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
 
 /* end card */
 .endcard{inset:0;background:radial-gradient(120% 80% at 50% 30%,#1d3a8a,#0a1433);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2cqh;text-align:center;animation:show .3s calc(0s - var(--late)) both;opacity:0}
-.endcard .lg{width:30cqw;height:30cqw;border-radius:50%;border:1.4cqw solid var(--v-gold);display:grid;place-items:center;font:900 16cqw var(--f-display);color:var(--v-gold);animation:popin .45s calc(.05s - var(--late)) both}
+.endcard .lg{width:32cqw;height:32cqw;border-radius:50%;border:1.2cqw solid var(--v-gold);object-fit:cover;animation:popin .45s calc(.05s - var(--late)) both}
+.endcard .hd{font:800 5cqw var(--f-body);color:var(--v-gold);animation:rise .35s calc(.28s - var(--late)) both}
 .endcard b{font-weight:900;font-stretch:80%;font-size:13cqw;letter-spacing:.04em;line-height:1;animation:rise .35s calc(.2s - var(--late)) both}
 .endcard small{font:700 4cqw var(--f-body);opacity:.9;padding-inline:8cqw;animation:rise .35s calc(.35s - var(--late)) both}
 .endcard .fl{font:900 4.6cqw var(--f-display);background:var(--v-gold);color:var(--v-navy);border-radius:99px;padding:1.6cqw 5cqw;animation:rise .35s calc(.5s - var(--late)) both}
@@ -258,7 +265,7 @@ td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
   <header class="top">
     <div>
       <h1>Preview AT001: Anak Lemah Sifir</h1>
-      <div class="status"><b>Preview</b> Belum render final · 540p · 0:29.6 (asal 0:28.4) · video TOFU 1 daripada 2</div>
+      <div class="status"><b>Preview v2</b> Belum render final · 540p · 0:29.6 (asal 0:28.4) · video TOFU 1 daripada 2</div>
     </div>
   </header>
 
@@ -286,11 +293,12 @@ td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
         <button class="tog" id="t-broll" aria-pressed="true">B-roll</button>
         <button class="tog" id="t-sfx" aria-pressed="true">Sound effect</button>
         <button class="tog" id="t-zoom" aria-pressed="true">Zoom</button>
+        <button class="tog" id="t-bokeh" aria-pressed="true">Bokeh</button>
         <button class="tog" id="t-wipe" aria-pressed="false">Banding warna &amp; bokeh</button>
         <button class="tog" id="t-aorig" aria-pressed="false">Audio asal</button>
         <button class="tog" id="t-safe" aria-pressed="false">Zon UI TikTok</button>
       </div>
-      <p class="hint">Hidup/matikan lapisan untuk bandingkan. "Banding warna &amp; bokeh" papar garis: kiri video asal, kanan selepas bokeh dan colour grade. Seret bulatan putih untuk gerakkan garis. "Audio asal" main suara sebelum dibersihkan.</p>
+      <p class="hint">Tekan <b>Bokeh</b> untuk banding versi dengan bokeh dan tanpa bokeh (grade warna sama). Hidup/matikan lapisan lain untuk bandingkan. "Banding warna &amp; bokeh" papar garis: kiri video asal, kanan selepas bokeh dan colour grade. Seret bulatan putih untuk gerakkan garis. "Audio asal" main suara sebelum dibersihkan.</p>
     </section>
 
     <section class="panel">
@@ -333,7 +341,7 @@ td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
         <h2>Bokeh, warna &amp; audio</h2>
         <p>Tekan <b>Banding warna &amp; bokeh</b> di bawah video untuk tengok sebelum/selepas secara langsung. Tekan <b>Audio asal</b> untuk dengar suara sebelum dibersihkan.</p>
         <div class="tablewrap"><table><thead><tr><th>Langkah</th><th>Apa aku buat</th><th>Kenapa</th></tr></thead><tbody>
-          <tr><td>1. Bokeh f/2.8</td><td>AI asingkan badan kau dari latar setiap frame, kemudian latar dikaburkan dengan bentuk kanta bulat (bukan blur biasa). Topeng dilicinkan antara frame supaya tepi rambut tak berkelip.</td><td>Rak buku dan kerusi jadi lembut macam kamera f/2.8. Mata penonton terus ke muka kau.</td></tr>
+          <tr><td>1. Bokeh (v2)</td><td>Versi 1 guna topeng AI gambar biasa, jadi tepi badan bergoyang dan ada "halo" kabur di sekeliling lengan dan rambut. Versi 2 guna AI khas video (Robust Video Matting) yang ingat frame sebelumnya, jadi tepi kekal stabil. Latar dikaburkan tanpa warna badan kau "bocor" ke dalamnya, dan kekaburan dikurangkan sedikit supaya nampak lebih natural.</td><td>Tepi lebih kemas. Kalau kau masih rasa tak natural, tekan butang <b>Bokeh</b> untuk tengok versi tanpa bokeh. Pilih mana satu untuk render final.</td></tr>
           <tr><td>2. Imbangan putih</td><td>Dinding asal kekuningan (lampu bilik). Aku neutralkan ke krim-kelabu.</td><td>Video nampak lebih bersih dan "clear".</td></tr>
           <tr><td>3. Lindungi kulit</td><td>AI kesan kawasan kulit muka dan tangan. Kulit cuma dapat 30% daripada pembetulan warna, dan saturasi kulit tak diubah langsung.</td><td>Warna kulit kekal asli dan hangat, tak jadi pucat atau kelabu.</td></tr>
           <tr><td>4. Kontras lembut</td><td>Hitam diangkat sikit, mid naik sikit, highlight tak pecah.</td><td>Lebih cerah dan mesra untuk ibu bapa.</td></tr>
@@ -341,7 +349,7 @@ td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
           <tr><td>6. Vignette &amp; ketajaman</td><td>Bucu digelapkan sedikit, sharpen ringan.</td><td>Fokus ke tengah. Video kekal tajam selepas TikTok mampatkan.</td></tr>
           <tr><td>7. Audio</td><td>Buang dengung rendah (80 Hz), kurangkan bunyi bising, kurangkan "boom" bilik (250 Hz), naikkan kejelasan suara (3.5 kHz), kurangkan bunyi "s" tajam, compressor ringan, kuatkan ke −14 LUFS.</td><td>Suara jelas, dan sama kuat dengan video lain di TikTok/Reels.</td></tr>
         </tbody></table></div>
-        <p style="margin-top:10px">Had bokeh: tangan yang bergerak laju kadang-kadang ada tepi lembut sedikit. Dalam render final aku guna topeng resolusi penuh, dan aku akan semak frame tangan satu per satu.</p>
+        <p style="margin-top:10px">Had bokeh: bokeh digital daripada video telefon tak akan 100% sama dengan kanta sebenar. Tangan yang bergerak laju (motion blur) masih kadang-kadang ada tepi lembut sedikit.</p>
       </div>
 
       <div class="pane" id="p-q" role="tabpanel" hidden>
@@ -350,7 +358,7 @@ td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
           <li><b>Video kedua:</b> kau kata "kedua-dua video", tapi link Google Drive cuma ada satu fail (AT001.mp4). Hantar link video kedua, dan aku edit sebagai video berasingan dengan gaya yang sama.</li>
           <li><b>Ayat 0:12:</b> AI dengar "dia <i>block mic</i>". Aku rasa sebenarnya <b>"blok minda"</b>, jadi caption dan grafik guna "BLOK MINDA". Betul ke?</li>
           <li><b>Hook:</b> setuju dengan tajuk dalam preview, atau nak Pilihan B / C? (Tengok tab Hook)</li>
-          <li><b>Kad penutup:</b> aku letak "ASTER EDU · Tuisyen Online · Darjah 4 – Tingkatan 5" (ikut landing page). Kalau ada fail logo Aster, hantar dan aku guna logo sebenar.</li>
+          <li><b>Logo:</b> link logo masih private (Google minta sign in). Tukar sharing kepada "Anyone with the link". Buat masa ni kad "Follow saya" (0:24.7) dan kad penutup guna gambar profil TikTok kau dengan nama <b>@aster.edu_tpg</b>. Bila logo dapat dibuka, aku tukar terus.</li>
           <li><b>"Komen YA":</b> nak kekalkan ajakan komen di hujung? Ia naikkan engagement, tapi kena ada orang yang balas komen.</li>
           <li><b>Muzik latar:</b> aku tak letak muzik sebab aku tiada muzik berlesen. Cadangan aku: guna lagu trending terus dalam app TikTok/Reels masa upload (volume 10–15%). Atau hantar fail muzik kau sendiri.</li>
           <li><b>Lain-lain:</b> ada grafik atau bunyi yang terlalu banyak atau kurang? Beritahu saat dia (contoh "0:08 kertas ujian terlalu lama").</li>
@@ -402,9 +410,9 @@ function build(g){
     case"path":el.className+=" path";
       h=`<svg viewBox="0 0 100 100" preserveAspectRatio="none"><defs><mask id="pm"><path class="mask" d="M6 96 C40 92 10 66 42 62 S70 40 50 30 S70 8 86 10"/></mask></defs><path class="road" mask="url(#pm)" d="M6 96 C40 92 10 66 42 62 S70 40 50 30 S70 8 86 10"/></svg><span class="start">Teknik betul</span><div class="cup" style="${D(g,g.goal)}"><span>🏆</span><b>${esc(g.text)}</b></div>`;break;
     case"follow":el.className+=" follow";
-      h=`<span class="av">A</span><span class="nm"><b>${esc(g.name)}</b><small>${esc(g.sub)}</small></span><span class="fb"><span class="a">+ Follow</span><span class="b" style="${D(g,g.tap)}">✓ Followed</span></span><span class="rp" style="${D(g,g.tap)}"></span><span class="tapper" style="${D(g,g.tap)}">👆</span>`;break;
+      h=`<div class="lgbig"><img src="${esc(g.logo)}" alt=""><b>${esc(g.handle)}</b></div><div class="fcard"><img class="av" src="${esc(g.logo)}" alt=""><span class="nm"><b>${esc(g.name)}</b><i>${esc(g.handle)}</i><small>${esc(g.sub)}</small></span><span class="fb"><span class="a">+ Follow</span><span class="b" style="${D(g,g.tap)}">✓ Followed</span></span><span class="rp" style="${D(g,g.tap)}"></span><span class="tapper" style="${D(g,g.tap)}">👆</span></div>`;break;
     case"comment":el.className+=" comment";h=`${esc(g.text)}<b>${esc(g.ask)}</b>`;break;
-    case"endcard":el.className+=" endcard";h=`<span class="lg">A</span><b>${esc(g.text)}</b><small>${esc(g.sub)}</small><span class="fl">Follow untuk tips matematik</span>`;break;
+    case"endcard":el.className+=" endcard";h=`<img class="lg" src="${esc(g.logo)}" alt=""><b>${esc(g.text)}</b><span class="hd">${esc(g.handle)}</span><small>${esc(g.sub)}</small><span class="fl">Follow untuk tips matematik</span>`;break;
   }
   el.innerHTML=h;ov.appendChild(el);return {g,el,on:false};
 }
@@ -476,6 +484,7 @@ tog("#t-cap","cap",()=>phone.classList.toggle("off-cap",!st.cap));
 tog("#t-mg","mg",()=>phone.classList.toggle("off-mg",!st.mg));
 tog("#t-broll","broll",()=>phone.classList.toggle("off-broll",!st.broll));
 tog("#t-sfx","sfx");tog("#t-zoom","zoom");
+st.bokeh=true;tog("#t-bokeh","bokeh",()=>{const t=vg.currentTime,pl=!vg.paused;vg.src=st.bokeh?"graded.mp4":"graded_nb.mp4";vg.addEventListener("loadedmetadata",()=>{vg.currentTime=t;if(pl)vg.play().catch(()=>{})},{once:true});document.querySelector("#wipe .lab.r").textContent=st.bokeh?"Bokeh + grade":"Grade sahaja"});
 tog("#t-aorig","aorig",()=>{vg.muted=st.aorig;if(st.aorig){ao.currentTime=Math.min(vg.currentTime,plan.duration);if(!vg.paused)ao.play().catch(()=>{})}else ao.pause()});
 tog("#t-wipe","wipe",()=>{$("#wipe").hidden=!st.wipe;setWipe(st.wipeX);if(st.wipe){vo.currentTime=vg.currentTime;if(!vg.paused)vo.play().catch(()=>{})}else{vo.pause();vo.style.clipPath="inset(0 100% 0 0)"}});
 $("#t-safe").onclick=function(){const on=this.getAttribute("aria-pressed")!=="true";this.setAttribute("aria-pressed",on);$("#safe").hidden=!on};

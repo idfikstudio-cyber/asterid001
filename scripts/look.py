@@ -1,9 +1,11 @@
 # Bokeh (f/2.8 look) + skin-protected colour grade, frame by frame.
-# usage: python3 look.py in.mp4 selfie_multiclass_256x256.tflite out.mp4 [scale]
+# usage: python3 look.py in.mp4 selfie_multiclass_256x256.tflite out.mp4 [scale] [rvm.onnx|none]
+# matte: Robust Video Matting (recurrent, temporally stable edges); 'none' = grade only, no bokeh
 # classes of the multiclass model: 0 bg, 1 hair, 2 body-skin, 3 face-skin, 4 clothes, 5 others
 import sys,subprocess,json,cv2,numpy as np,mediapipe as mp
 from mediapipe.tasks.python import vision,BaseOptions
 src,model,dst=sys.argv[1:4];sc=float(sys.argv[4]) if len(sys.argv)>4 else 1.0
+RVM=sys.argv[5] if len(sys.argv)>5 else "none"
 pr=json.loads(subprocess.check_output(["ffprobe","-v","error","-select_streams","v:0","-show_entries","stream=width,height,r_frame_rate","-of","json",src]))["streams"][0]
 W,H=int(pr["width"]*sc)//2*2,int(pr["height"]*sc)//2*2;fps=pr["r_frame_rate"]
 dec=subprocess.Popen(["ffmpeg","-v","error","-i",src,"-vf",f"scale={W}:{H}:flags=lanczos","-f","rawvideo","-pix_fmt","bgr24","-"],stdout=subprocess.PIPE)
@@ -11,8 +13,12 @@ enc=subprocess.Popen(["ffmpeg","-v","error","-y","-f","rawvideo","-pix_fmt","bgr
   "-vf","unsharp=5:5:0.35:5:5:0","-c:v","libx264","-preset","medium","-crf","15","-pix_fmt","yuv420p",dst],stdin=subprocess.PIPE)
 seg=vision.ImageSegmenter.create_from_options(vision.ImageSegmenterOptions(base_options=BaseOptions(model_asset_path=model),output_confidence_masks=True))
 
+if RVM!="none":
+    import onnxruntime as ort
+    rvm=ort.InferenceSession(RVM,providers=["CPUExecutionProvider"])
+    rec=[np.zeros((1,1,1,1),np.float32)]*4;dsr=np.array([0.25],np.float32)
 # --- lens: disc kernel with slightly bright rim (cat-eye-free), radius ~ f/2.8 at this distance
-R=max(5,int(13*W/1080));k=2*R+1;yy,xx=np.mgrid[-R:R+1,-R:R+1];rr=np.sqrt(xx**2+yy**2)
+R=max(4,int(9*W/1080));k=2*R+1;yy,xx=np.mgrid[-R:R+1,-R:R+1];rr=np.sqrt(xx**2+yy**2)
 disc=np.clip(R+.5-rr,0,1)*(1+.25*(rr/R)**4);disc=(disc/disc.sum()).astype(np.float32)
 # --- grade constants (BGR order)
 WB=np.array([1.13,1.00,0.95],np.float32)   # neutralise tungsten cast on wall (136,118,93 -> ~ 130,118,105)
@@ -28,7 +34,6 @@ while True:
     cm=[np.squeeze(c.numpy_view()).astype(np.float32) for c in r.confidence_masks]  # 6 x 256x256
     ema=cm if ema is None else [.55*a+.45*b for a,b in zip(cm,ema)]                             # temporal smoothing: no edge flicker
     m=[cv2.resize(x,(W,H),interpolation=cv2.INTER_LINEAR) for x in ema]
-    person=cv2.GaussianBlur(np.clip(1-m[0],0,1),(0,0),2.2*W/1080)
     skin=cv2.GaussianBlur(np.clip(m[2]+m[3],0,1),(0,0),4*W/1080)[...,None]
     face=cv2.GaussianBlur(m[3],(0,0),40*W/1080)[...,None]
     f=img.astype(np.float32)/255
@@ -43,10 +48,19 @@ while True:
     f=f*(1+.06*face)
     f=np.clip(f*vig,0,1)
     # bokeh: blur half-res, composite behind subject; light highlight bloom inside blur
-    sm=cv2.resize(f,(W//2,H//2),interpolation=cv2.INTER_AREA)
-    lin=sm**2.2;b=cv2.filter2D(lin,-1,disc)**(1/2.2)
-    b=cv2.resize(b,(W,H),interpolation=cv2.INTER_LINEAR)
-    p=person[...,None];out=f*p+b*(1-p)
+    if RVM=="none":
+        out=f
+    else:
+        o=rvm.run(None,{"src":np.ascontiguousarray(img[...,::-1].transpose(2,0,1)[None],np.float32)/255,"r1i":rec[0],"r2i":rec[1],"r3i":rec[2],"r4i":rec[3],"downsample_ratio":dsr})
+        rec=o[2:];a=o[1][0,0]
+        # halo-free: blur only background pixels (subject cut out), normalise by blurred coverage
+        bg=cv2.resize(1-a,(W//2,H//2),interpolation=cv2.INTER_AREA)[...,None]
+        sm=cv2.resize(f,(W//2,H//2),interpolation=cv2.INTER_AREA)**2.2
+        num=cv2.filter2D(sm*bg,-1,disc);den=cv2.filter2D(bg,-1,disc)[...,None]
+        b=(num/np.maximum(den,1e-3))**(1/2.2)
+        b=np.where(den>.02,b,sm**(1/2.2))
+        b=cv2.resize(b,(W,H),interpolation=cv2.INTER_LINEAR)
+        p=a[...,None];out=f*p+b*(1-p)
     enc.stdin.write((np.clip(out,0,1)*255+.5).astype(np.uint8).tobytes());n+=1
     if n%60==0:print(n,"frames",flush=True)
 enc.stdin.close();enc.wait();print("done",n)
