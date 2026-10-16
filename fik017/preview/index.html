@@ -56,12 +56,9 @@ h1 b{font-weight:600;color:var(--brand)}
 .stamp{position:absolute;left:50%;top:13cqh;transform:translateX(-50%) rotate(-6deg);font:600 8cqw var(--f-display);letter-spacing:.24em;color:var(--v-white);border:.9cqw solid var(--v-white);padding:.6cqw 3cqw .6cqw 4.4cqw;border-radius:1cqw;text-shadow:0 .5cqw 2cqw rgba(0,0,0,.4);box-shadow:0 .5cqw 2cqw rgba(0,0,0,.25)}
 .count{position:absolute;right:5cqw;bottom:22cqh;font:500 3cqw var(--f-display);color:var(--v-white);letter-spacing:.15em;background:rgba(0,0,0,.45);padding:.8cqw 2cqw;border-radius:99px}
 .flash{position:absolute;inset:0;background:var(--v-white);opacity:0;pointer-events:none}
-.lower{position:absolute;left:5cqw;bottom:30cqh;display:flex;flex-direction:column;gap:.6cqh}
-.lower b{font:500 6cqw var(--f-display);color:var(--v-white);background:var(--v-green);padding:1cqw 3.2cqw;align-self:flex-start;border-radius:1cqw}
-.lower span{font:400 3.4cqw var(--f-display);color:var(--v-green);background:var(--v-paper);padding:.8cqw 3.2cqw;align-self:flex-start;border-radius:1cqw;letter-spacing:.04em}
 .paper{position:absolute;inset:0;background:var(--v-paper)}
 .logoMark{position:absolute;left:50%;top:40%;width:54cqw;transform:translate(-50%,-50%)}
-.logoTag{position:absolute;left:0;right:0;top:63cqh;text-align:center;font:400 4.6cqw var(--f-display);letter-spacing:.32em;color:var(--v-green);text-transform:uppercase}
+.logoTag{position:absolute;left:0;right:0;top:63cqh;text-align:center;font:400 3.6cqw var(--f-display);letter-spacing:.32em;color:var(--v-green);text-transform:uppercase}
 .rule{position:absolute;left:50%;top:60cqh;height:.35cqw;background:var(--v-green);transform:translateX(-50%)}
 #pano canvas{position:absolute;inset:0;width:100%!important;height:100%!important;cursor:grab}
 .grid3d{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.55) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.55) 1px,transparent 1px);background-size:9cqw 9cqw;mix-blend-mode:overlay;pointer-events:none}
@@ -83,7 +80,7 @@ h1 b{font-weight:600;color:var(--brand)}
 .endCta{position:absolute;left:50%;top:70cqh;transform:translateX(-50%);font:500 5cqw var(--f-display);color:var(--v-white);background:var(--v-green);padding:2cqw 7cqw;border-radius:99px;white-space:nowrap}
 .wm{position:absolute;right:4.5cqw;top:4.5cqh;width:11cqw;opacity:.92;filter:drop-shadow(0 .3cqw 1.2cqw rgba(0,0,0,.35));pointer-events:none}
 .caps{position:absolute;left:5cqw;right:5cqw;bottom:13cqh;display:flex;flex-wrap:wrap;justify-content:center;gap:.4cqh 1.6cqw;pointer-events:none}
-.caps span{font:500 6.2cqw/1.15 var(--f-display);color:var(--v-white);text-shadow:0 0 .6cqw rgba(0,0,0,.85),0 .5cqw 2cqw rgba(0,0,0,.6);padding:0 1cqw;border-radius:1cqw;transition:background .08s}
+.caps span{display:inline-block;font:500 6.2cqw/1.15 var(--f-display);color:var(--v-white);text-shadow:0 0 .6cqw rgba(0,0,0,.85),0 .5cqw 2cqw rgba(0,0,0,.6);padding:0 1cqw;border-radius:1cqw;transition:background .08s}
 .caps span.now{background:var(--v-green);text-shadow:none}
 .caps span.wait{opacity:.45}
 .bigplay{position:absolute;inset:0;display:grid;place-items:center;background:rgba(15,22,20,.35);border:0;color:#fff;cursor:pointer;font:500 4.4cqw var(--f-display);letter-spacing:.1em}
@@ -142,7 +139,7 @@ tr.cur td{background:var(--brand-soft)}
       <div class="eyebrow">Fi-K Studio · Projek CFik017 · Reels / TikTok 9:16</div>
       <h1>Video handover <b>CFik017</b></h1>
     </div>
-    <div class="status"><b>Preview</b> belum render final · 66 s · 1080×1920 bila render</div>
+    <div class="status"><b>Preview v2</b> belum render final · 49.5 s · 1080×1920 bila render</div>
   </header>
 
   <div class="grid">
@@ -150,8 +147,7 @@ tr.cur td{background:var(--brand-soft)}
       <div class="phone" id="phone">
         <div class="layer" id="L-hook"></div>
         <div class="layer" id="L-before"></div>
-        <div class="layer" id="L-founder"><video id="vFounder" class="fill" muted playsinline preload="auto"><source src="vid/founder.mp4" type="video/mp4"><source src="vid/founder.webm" type="video/webm"></video><div class="lower" id="lower"><b></b><span></span></div></div>
-        <div class="layer" id="L-logo"><div class="paper"></div><div class="rule" id="logoRule"></div><img class="logoMark" id="logoMark" src="img/logo_green.png" alt="Logo Fi-K Studio"><div class="logoTag" id="logoTag">Inilah fungsi kami</div></div>
+                <div class="layer" id="L-logo"><div class="paper"></div><div class="rule" id="logoRule"></div><img class="logoMark" id="logoMark" src="img/logo_green.png" alt="Logo Fi-K Studio"><div class="logoTag" id="logoTag">Interior Design · 3D · Renovation</div><div class="endSvc" id="logoProj" style="top:70cqh">Projek CFik017</div></div>
         <div class="layer" id="L-pano"><div id="pano"></div><div class="grid3d" id="grid3d"></div>
           <div class="badge3d" id="badge3d"><small>LANGKAH 1</small><span>Rekaan 3D</span></div>
           <div class="chips" id="chips"></div>
@@ -168,11 +164,11 @@ tr.cur td{background:var(--brand-soft)}
         <div class="hint" id="hint" hidden></div>
         <button class="bigplay" id="bigplay" aria-label="Main preview dengan bunyi"><span>▶ Main dengan bunyi</span></button>
       </div>
-      <div class="track" id="track" role="slider" tabindex="0" aria-label="Kedudukan masa" aria-valuemin="0" aria-valuemax="66" aria-valuenow="0"><div class="bar" id="bar"></div><div class="head" id="head"></div></div>
+      <div class="track" id="track" role="slider" tabindex="0" aria-label="Kedudukan masa" aria-valuemin="0" aria-valuemax="49.5" aria-valuenow="0"><div class="bar" id="bar"></div><div class="head" id="head"></div></div>
       <div class="controls">
         <button class="btn primary" id="play">Main</button>
         <button class="btn" id="back" aria-label="Undur 5 saat">−5 s</button>
-        <span class="time" id="time">0:00.0 / 1:06</span>
+        <span class="time" id="time">0:00.0 / 0:49.5</span>
       </div>
       <div class="opts">
         <span>Warna gambar</span>
@@ -214,12 +210,12 @@ tr.cur td{background:var(--brand-soft)}
             <p>Logo putih jadi watermark kecil atas footage, sebab dinding rumah ini kebanyakannya cerah tetapi bahagian atas frame (siling, lampu) cukup berkontras bila ada bayang lembut. Logo hijau dipakai penuh pada kad logo dan kad penutup atas latar plaster cerah, sama tona dengan rumah siap.</p></div>
           <div class="note"><h3>Warna: clean sahaja, tiada grade</h3>
             <p>Tiada LUT, tiada ubah saturasi atau kontras. Setiap gambar cuma dineutralkan cast warna (maksimum 6%, diukur pada dinding putih) dan levels hitam/putih diregang sedikit. Gambar selepas dan render 3D disentuh separuh sahaja supaya cahaya warm yang memang dirancang kekal.</p></div>
-          <div class="note"><h3>Voiceover</h3>
-            <p>Suara pengasas dari CFik016.MOV. Take yang berulang dibuang, tinggal 8 ayat terbaik (±32 s). Suara dibersihkan: buang dengung bawah 80 Hz, kurangkan hingar, compressor ringan, loudness −16 LUFS.</p></div>
+          <div class="note"><h3>Tanpa voiceover</h3>
+            <p>CFik016.MOV tidak dipakai langsung. Cerita dibawa oleh teks atas skrin (4 ayat pendek), label pada gambar dan muzik. Video jadi lebih pendek: 49.5 s.</p></div>
           <div class="note"><h3>3D Design</h3>
             <p>Render 360° dari pautan aihouse (S50330334) diambil sebagai cube map, kemudian kamera maya pusing perlahan dalam ruang tamu. Babak seterusnya lebur dari render 3D ke gambar sebenar rumah siap.</p></div>
           <div class="note"><h3>Muzik &amp; SFX</h3>
-            <p>Muzik lo-fi house 96 BPM dan semua sound effect (whoosh, swipe, shimmer, shutter, pop, ding, impact) dijana sendiri, jadi bebas hak cipta dan selamat untuk iklan berbayar. Muzik turun automatik bila pengasas bercakap.</p></div>
+            <p>Muzik lo-fi house 96 BPM dan semua sound effect (whoosh, swipe, shimmer, shutter, pop, ding, impact) dijana sendiri, jadi bebas hak cipta dan selamat untuk iklan berbayar.</p></div>
           <div class="note"><h3>B-roll</h3>
             <p>Video klien berjalan dalam rumah dijadikan b-roll "reaksi klien" dalam bingkai telefon, sebab resolusinya rendah (352×640). Gambar serah kunci masuk sebagai polaroid. Gambar sebelum dimontaj dengan kesan shutter kamera.</p></div>
         </div>
@@ -230,8 +226,7 @@ tr.cur td{background:var(--brand-soft)}
         <ol>
           <li>Label pada gambar selepas (contoh "Chandelier moden", "Island top marble") ikut tekaan aku dari gambar. Betulkan kalau ada istilah material yang lebih tepat.</li>
           <li>Kad penutup tulis "DM kami untuk konsultasi". Nak letak handle Instagram/TikTok atau nombor WhatsApp?</li>
-          <li>Babak 120–148 s dalam CFik016 tak jelas audionya, jadi tak dipakai. Kalau ada ayat penting di situ, beritahu.</li>
-          <li>Tempoh 66 s sesuai untuk Reels. Nak versi pendek 30 s juga?</li>
+          <li>Tempoh 49.5 s sesuai untuk Reels. Nak versi pendek 30 s juga?</li>
         </ol>
       </section>
     </div>
@@ -244,7 +239,7 @@ tr.cur td{background:var(--brand-soft)}
 (async()=>{
 const P = await (await fetch("plan.json")).json();
 const DUR = P.dur, $ = id=>document.getElementById(id);
-const audio=$("mix"), vF=$("vFounder"), vC=$("vClient");
+const audio=$("mix"), vC=$("vClient");
 const clamp=(x,a=0,b=1)=>Math.min(b,Math.max(a,x));
 const ease=x=>{x=clamp(x);return x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2};
 const out=x=>1-Math.pow(1-clamp(x),3);
@@ -308,23 +303,23 @@ function drawPano(yaw,pitch,fov){ if(!r3)return; const c=r3.cam; c.fov=fov;c.upd
   c.rotation.order="YXZ"; c.rotation.y=THREE.MathUtils.degToRad(-(yaw+r3.userYaw)); c.rotation.x=THREE.MathUtils.degToRad(-(pitch+r3.userPitch)); r3.ren.render(r3.sc,c)}
 
 /* ---------- chapters, track, shot list ---------- */
-const chapCol={"ba":"var(--brand)","founder":"var(--oak)","photos":"#8b8f8c","logo":"var(--brand)","pano":"var(--c-mg)","morph":"var(--c-mg)","client":"var(--oak)","end":"var(--brand)"};
+const chapCol={"ba":"var(--brand)","photos":"#8b8f8c","logo":"var(--brand)","pano":"var(--c-mg)","morph":"var(--c-mg)","client":"var(--oak)","end":"var(--brand)"};
 const fmt=t=>`${Math.floor(t/60)}:${(t%60).toFixed(1).padStart(4,"0")}`;
 P.scenes.forEach((s,i)=>{
   const w=(s.t1-s.t0)/DUR*100; const seg=document.createElement("i");seg.style.width=w+"%";seg.style.background=chapCol[s.type];seg.style.opacity=i%2?.75:1;$("bar").appendChild(seg);
   const b=document.createElement("button");b.className="chap";b.innerHTML=`<small>${fmt(s.t0)}</small><b>${s.chapter}</b>`;b.onclick=()=>seek(s.t0+.05);b.dataset.i=i;$("chaps").appendChild(b);
 });
-const DESC={hook:"Living lama → wipe → living siap. Teks pembuka.",f1:"Pengasas bercakap ke kamera, lower third nama studio.",before:"Montaj 5 gambar sebelum, kesan shutter + cop SEBELUM.",f2:"Pengasas: masalah klien susah terangkan pada kontraktor.",logo:"Kad logo hijau atas latar plaster, garisan dilukis.",pano:"Kamera maya pusing dalam render 3D 360°, grid pelan pudar, cip Layout · 3D · Drawing.",morph:"Render 3D lebur ke gambar sebenar.",dining:"Slider sebelum/selepas, label, 2 sudut tambahan.",toilet:"Slider sebelum/selepas + label.",kitchen:"Slider sebelum/selepas + label.",family:"Slider sebelum/selepas + 1 sudut tambahan.",client:"Video klien dalam bingkai telefon, kemudian polaroid serah kunci.",f3:"Pengasas: ajakan DM.",end:"Kad penutup logo hijau, servis, butang DM."};
+const DESC={hook:"Living lama → wipe → living siap. Teks pembuka.",before:"Montaj 5 gambar sebelum, kesan shutter + cop SEBELUM.",logo:"Kad logo hijau atas latar plaster, garisan dilukis, servis + kod projek.",pano:"Kamera maya pusing dalam render 3D 360°, grid pelan pudar, cip Layout · 3D · Drawing.",morph:"Render 3D lebur ke gambar sebenar.",dining:"Slider sebelum/selepas, label, 2 sudut tambahan.",toilet:"Slider sebelum/selepas + label.",kitchen:"Slider sebelum/selepas + label.",family:"Slider sebelum/selepas + 1 sudut tambahan.",client:"Video klien dalam bingkai telefon, kemudian polaroid serah kunci.",end:"Kad penutup logo hijau, servis, butang DM."};
 P.scenes.forEach(s=>{
   const vo=P.captions.filter(c=>c.s>=s.t0&&c.s<s.t1).map(c=>c.words.map(w=>w.w).join(" ")).join(" ");
   const fx=[...new Set(P.sfx.filter(x=>x.t>=s.t0&&x.t<s.t1).map(x=>x.n))].join(", ");
   const tr=document.createElement("tr");tr.dataset.id=s.id;
-  tr.innerHTML=`<td class="t">${fmt(s.t0)}–${fmt(s.t1)}</td><td><b>${s.chapter}</b><br>${DESC[s.id]||""}</td><td>${vo?`<span class="k vo">VO</span>“${vo}”<br>`:'<span class="k mg">Muzik</span><br>'}${fx?`<span class="k sfx">SFX</span>${fx}`:""}</td>`;
+  tr.innerHTML=`<td class="t">${fmt(s.t0)}–${fmt(s.t1)}</td><td><b>${s.chapter}</b><br>${DESC[s.id]||""}</td><td><span class="k mg">Muzik</span>${vo?`<span class="k vo">Teks</span>“${vo}”`:""}<br>${fx?`<span class="k sfx">SFX</span>${fx}`:""}</td>`;
   $("shots").appendChild(tr);
 });
 
 /* ---------- render(t) ---------- */
-const layers=["L-hook","L-before","L-founder","L-logo","L-pano","L-ba","L-client","L-end"].map($);
+const layers=["L-hook","L-before","L-logo","L-pano","L-ba","L-client","L-end"].map($);
 let lastShow=null;
 function show(id){layers.forEach(l=>l.classList.toggle("on",l.id===id))}
 function inScene(t){return P.scenes.find(s=>t>=s.t0&&t<s.t1)||P.scenes[P.scenes.length-1]}
@@ -334,7 +329,7 @@ function sync(v,t,active){ if(!active){if(!v.paused)v.pause();return}
 function render(t){
   cur=t; const s=inScene(t), lt=t-s.t0, D=s.t1-s.t0;
   const intro=out(lt/.28); // whip-in for every cut
-  const L={ba:"L-ba",founder:"L-founder",photos:"L-before",logo:"L-logo",pano:"L-pano",morph:"L-pano",client:"L-client",end:"L-end"}[s.type];
+  const L={ba:"L-ba",photos:"L-before",logo:"L-logo",pano:"L-pano",morph:"L-pano",client:"L-client",end:"L-end"}[s.type];
   show(s.id==="hook"?"L-hook":L);
   const lay=$(s.id==="hook"?"L-hook":L); lay.style.transform=`scale(${1.06-.06*intro})`; lay.style.filter=intro<1?`blur(${(1-intro)*6}px)`:"";
   let hint="";
@@ -359,17 +354,10 @@ function render(t){
     stamp.style.transform=`translateX(-50%) rotate(-6deg) scale(${1.6-.6*out(lt/.25)})`;stamp.style.opacity=clamp(lt/.15);
     count.textContent=`${k+1} / ${n}`;
   } else $("flash").style.opacity=0;
-  if(s.type==="founder"){
-    const f=P.founder.find(f=>Math.abs(f[0]-s.t0)<.3)||P.founder.find(f=>f[0]>=s.t0-.3);
-    const lo=$("lower"); if(s.lower){lo.hidden=false;lo.children[0].textContent=s.lower[0];lo.children[1].textContent=s.lower[1];
-      const k=out((lt-.3)/.4), o=clamp((D-lt-.6)/.3);lo.style.opacity=Math.min(k,o);lo.style.transform=`translateX(${(1-k)*-20}%)`} else lo.hidden=true;
-    vF.style.transform=`scale(${1+.04*lt/D})`;
-  }
-  sync(vF,t,s.type==="founder");
   if(s.type==="logo"){
     const k=out((lt-.2)/.7); $("logoMark").style.opacity=k; $("logoMark").style.transform=`translate(-50%,-50%) scale(${.9+.1*k})`;
     $("logoMark").style.clipPath=`inset(${(1-k)*100}% 0 0 0)`;
-    $("logoRule").style.width=ease((lt-.6)/.8)*46+"cqw"; $("logoTag").style.opacity=out((lt-1.1)/.5); $("logoTag").style.letterSpacing=(.6-.28*out((lt-1.1)/.8))+"em";
+    $("logoRule").style.width=ease((lt-.6)/.8)*46+"cqw"; $("logoTag").style.opacity=out((lt-1.1)/.5); $("logoTag").style.letterSpacing=(.5-.24*out((lt-1.1)/.8))+"em"; $("logoProj").style.opacity=out((lt-1.7)/.5);
   }
   if(s.type==="pano"||s.type==="morph"){
     const ps=scene("pano"); const q=s.type==="pano"?ease(lt/D):1;
@@ -399,12 +387,13 @@ function render(t){
   const cap=capsOn&&!["end"].includes(s.type)?P.captions.find(c=>t>=c.s-.05&&t<c.e+.25):null;
   const ce=$("caps"); const key=cap?cap.s:null;
   if(ce.dataset.k!=String(key)){ce.dataset.k=String(key);ce.innerHTML=cap?cap.words.map(w=>`<span>${w.w}</span>`).join(""):""}
-  if(cap) [...ce.children].forEach((sp,i)=>{const w=cap.words[i];sp.className=t>=w.s&&t<w.e+.08?"now":(t<w.s?"wait":"")});
-  ce.style.bottom=s.type==="founder"?"18cqh":"13cqh";
+  if(cap) [...ce.children].forEach((sp,i)=>{const w=cap.words[i];const k=out((t-w.s)/.18);sp.style.opacity=k;sp.style.transform=`translateY(${(1-k)*40}%)`;sp.className=i===cap.words.length-1&&t>=w.s?"now":""});
+  ce.style.opacity=cap?clamp((cap.e+.25-t)/.25):0;
+  
   const h=$("hint"); h.hidden=!hint; h.textContent=hint;
   // UI
   $("head").style.left=(t/DUR*100)+"%"; $("track").setAttribute("aria-valuenow",t.toFixed(1));
-  $("time").textContent=`${fmt(t)} / 1:06`;
+  $("time").textContent=`${fmt(t)} / 0:49.5`;
   document.querySelectorAll(".chap").forEach(b=>b.classList.toggle("on",P.scenes[b.dataset.i]===s));
   if(lastShow!==s.id){lastShow=s.id;document.querySelectorAll("#shots tr").forEach(r=>r.classList.toggle("cur",r.dataset.id===s.id))}
 }
