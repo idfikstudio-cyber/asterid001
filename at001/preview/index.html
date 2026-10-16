@@ -243,7 +243,7 @@ code{font-size:.92em;background:var(--chip);padding:1px 5px;border-radius:4px}
 .follow .lgbig img{width:44cqw;height:44cqw;border-radius:50%;border:1.2cqw solid var(--v-gold);box-shadow:0 2cqw 6cqw rgba(0,0,0,.5);display:block}
 .follow .lgbig b{font-weight:900;font-size:6.4cqw;font-stretch:85%;text-shadow:0 .5cqw 1.6cqw rgba(0,0,0,.8);white-space:nowrap}
 @keyframes lgbig{0%{transform:scale(0);opacity:0}25%{transform:scale(1.08);opacity:1}55%{transform:none;opacity:1}100%{transform:translate(-26cqw,-4cqh) scale(.3);opacity:0}}
-.follow .fcard{position:absolute;left:6cqw;right:6cqw;top:9cqh;display:flex;align-items:center;gap:3cqw;background:rgba(255,255,255,.97);color:var(--v-navy);border-radius:4cqw;padding:3cqw;box-shadow:0 1.5cqw 5cqw rgba(0,0,0,.4);animation:show .2s calc(.85s - var(--late)) both;opacity:0}
+.follow .fcard{position:absolute;left:6cqw;right:6cqw;top:9cqh;display:flex;align-items:center;gap:3cqw;background:rgba(255,255,255,.97);color:var(--v-navy);border-radius:4cqw;padding:3cqw;box-shadow:0 1.5cqw 5cqw rgba(0,0,0,.4);animation:show .2s calc(.7s - var(--late)) both;opacity:0}
 .follow .av{width:14cqw;height:14cqw;border-radius:50%;border:.7cqw solid var(--v-gold);flex:none;object-fit:cover}
 .follow .nm{flex:1;min-width:0}
 .follow .nm b{display:block;font-weight:900;font-size:5.4cqw;font-stretch:85%;line-height:1}
@@ -265,6 +265,11 @@ code{font-size:.92em;background:var(--chip);padding:1px 5px;border-radius:4px}
 .endcard b{font-weight:900;font-stretch:80%;font-size:13cqw;letter-spacing:.04em;line-height:1;animation:rise .35s calc(.2s - var(--late)) both}
 .endcard small{font:700 4cqw var(--f-body);opacity:.9;padding-inline:8cqw;animation:rise .35s calc(.35s - var(--late)) both}
 .endcard .fl{font:900 4.6cqw var(--f-display);background:var(--v-gold);color:var(--v-navy);border-radius:99px;padding:1.6cqw 5cqw;animation:rise .35s calc(.5s - var(--late)) both}
+/* render mode (index.html#render): only the overlay layer, 1080x1920, transparent, time set by window.renderAt(t) */
+.rendermode,.rendermode body{background:transparent!important}
+.rendermode header,.rendermode .controls,.rendermode .toggles,.rendermode .hint,.rendermode .panel,.rendermode .stage,.rendermode .bigplay,.rendermode audio{display:none!important}
+.rendermode .phone{position:fixed;left:0;top:0;width:1080px;height:1920px;max-width:none;aspect-ratio:auto;border-radius:0;box-shadow:none;background:transparent}
+.rendermode .cap{animation-play-state:paused}.rendermode .cap span{transition:none}
 @media (prefers-reduced-motion:reduce){.g,.g *,.g *::before,.g *::after{animation-duration:.01s!important;animation-iteration-count:1!important}}
 </style>
 
@@ -482,7 +487,7 @@ function sfxTick(t){
 
 /* ---- loop ---- */
 function sync(el,t){if(!vg.paused&&el.paused)el.play().catch(()=>{});if(Math.abs(el.currentTime-t)>.12)el.currentTime=t}
-function loop(){const t=vg.currentTime;sfxTick(t);
+function loop(){if(location.hash==="#render")return;const t=vg.currentTime;sfxTick(t);
   if(st.wipe)sync(vo,t);
   if(st.aorig){if(t<plan.duration)sync(ao,t);else ao.pause()}
   render(t);requestAnimationFrame(loop)}
@@ -551,5 +556,11 @@ lines.forEach((l,i)=>{const nextS=lines[i+1]?lines[i+1].s:1e9;
 $("#cuttable").innerHTML=plan.cuts.map((c,i)=>`<tr><td>Bahagian ${i+1}</td><td class="num">${fmt(c.src_in)} – ${fmt(c.src_out)}</td><td class="num">${fmt(c.out)} – ${fmt(c.out+c.src_out-c.src_in)}</td></tr>`).join("")+`<tr><td>Kad penutup</td><td class="num">baru</td><td class="num">${fmt(plan.duration)} – ${fmt(plan.total)}</td></tr>`;
 
 render(0);
+if(location.hash==="#render"){
+  document.documentElement.classList.add("rendermode");st.zoom=false;
+  window.renderAt=t=>{for(const o of GS){o.on=false;o.el.classList.remove("on")}capIdx=-1;render(t);
+    const c=plan.captions[capIdx];cap.style.animationDelay=c?`${-(t-c.s)}s`:"0s";return true};
+  window.renderReady=document.fonts.ready.then(()=>true);
+}
 })();
 </script>

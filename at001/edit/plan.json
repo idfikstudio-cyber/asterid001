@@ -631,7 +631,7 @@
    "handle": "@aster.edu_tpg",
    "logo": "brand/logo.png",
    "sub": "Tuisyen online bersama guru pakar & guru pemeriksa kertas",
-   "tap": 26.3,
+   "tap": 26.95,
    "note": "'Follow saya': logo/gambar profil muncul besar, kemudian mengecil ke kad profil TikTok + butang Follow ditekan"
   },
   {
@@ -820,7 +820,7 @@
    "gain": 0.5
   },
   {
-   "t": 26.3,
+   "t": 26.95,
    "name": "click",
    "gain": 0.8
   },
