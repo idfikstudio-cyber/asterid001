@@ -17,13 +17,13 @@ subprocess.run(["ffmpeg","-v","error","-y","-i",look,"-i",src,"-loop","1","-fram
   "-map","[v]","-c:v","libx264","-preset","fast","-crf","12","-pix_fmt","yuv420p",f"{tmp}/base.mp4"],check=True)
 # 2) audio: voice (delayed by the cover) + every SFX at its time and gain
 ins=["-i",src]
-af=a.replace("[1:a]","[0:a]")+"".join(f"[a{i}]" for i in range(len(C)))+f"concat=n={len(C)}:v=0:a=1[ac];[ac]{VOICE},adelay={int(TH*1000)}:all=1,apad=whole_dur={P['total']}[vo];"
+af=a.replace("[1:a]","[0:a]")+"".join(f"[a{i}]" for i in range(len(C)))+f"concat=n={len(C)}:v=0:a=1[ac];[ac]{VOICE},adelay={int(TH*1000)}:all=1[vo];"
 mix=["[vo]"]
 for k,s in enumerate(P["sfx"]):
     ins+=["-i",os.path.join(sfxd,s["name"]+".wav")]
     af+=f"[{k+1}:a]aresample=48000,volume={s['gain']*0.9:.3f},adelay={int(round(s['t']*1000))}:all=1[s{k}];";mix.append(f"[s{k}]")
-af+="".join(mix)+f"amix=inputs={len(mix)}:normalize=0:duration=first,atrim=0:{P['total']},loudnorm=I=-14:TP=-1.0:LRA=9,aresample=48000[mx]"
-subprocess.run(["ffmpeg","-v","error","-y",*ins,"-filter_complex",af,"-map","[mx]","-c:a","pcm_s16le",f"{tmp}/mix.wav"],check=True)
+af+="".join(mix)+f"amix=inputs={len(mix)}:normalize=0:duration=longest,loudnorm=I=-14:TP=-1.0:LRA=9,aresample=48000[mx]"
+subprocess.run(["ffmpeg","-v","error","-y",*ins,"-filter_complex",af,"-map","[mx]","-t",str(P["total"]),"-c:a","pcm_s16le",f"{tmp}/mix.wav"],check=True)
 # 3) composite: zoom (same easing as the preview) + overlay
 Z=P["zoom"]
 def ease(x): return 2*x*x if x<.5 else 1-(-2*x+2)**2/2
