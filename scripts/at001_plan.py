@@ -45,10 +45,10 @@ G=[
  {"s":18.54,"e":20.88,"kind":"checklist","items":[["Teknik betul",19.82],["Konsisten",20.30]],"note":"Senarai semak, tanda ✓ dilukis ikut sebutan"},
  {"s":20.90,"e":22.70,"kind":"full-solve","text":"7 × 8 = 56","sub":"Tanpa kira jari","note":"B-roll penuh: jawapan soalan hook ditulis laju + ✓ + bintang (callback hook)"},
  {"s":22.72,"e":24.64,"kind":"path","text":"KUASAI MATEMATIK","goal":23.72,"note":"Jalan berliku dilukis naik ke trofi"},
- {"s":24.68,"e":28.14,"kind":"follow","name":"Aster.edu_tpg","handle":"@aster.edu_tpg","logo":"brand/avatar.png","sub":"Tuisyen online bersama guru pakar & guru pemeriksa kertas","tap":25.30,
+ {"s":24.68,"e":28.14,"kind":"follow","name":"Aster.edu_tpg","handle":"@aster.edu_tpg","logo":"brand/logo.png","sub":"Tuisyen online bersama guru pakar & guru pemeriksa kertas","tap":25.30,
   "note":"'Follow saya': logo/gambar profil muncul besar, kemudian mengecil ke kad profil TikTok + butang Follow ditekan"},
  {"s":25.90,"e":28.14,"kind":"comment","text":"Anak kira guna jari juga?","ask":"Komen “YA” 👇","note":"Ajak komen (interaktif, naikkan engagement)"},
- {"s":DUR,"e":DUR+END_CARD,"kind":"endcard","text":"ASTER EDU","handle":"@aster.edu_tpg","logo":"brand/avatar.png","sub":"Tuisyen Online · Darjah 4 – Tingkatan 5","note":"Kad penutup jenama (1.5s, video dibekukan)"},
+ {"s":DUR,"e":DUR+END_CARD,"kind":"endcard","text":"ASTER EDU","handle":"@aster.edu_tpg","logo":"brand/logo.png","sub":"Tuisyen Online · Darjah 4 – Tingkatan 5","note":"Kad penutup jenama (1.5s, video dibekukan)"},
 ]
 for g in G:
     for k in ("s","e","dock","score","stamp_at","write","goal","tap"):

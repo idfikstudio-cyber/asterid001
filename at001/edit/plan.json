@@ -622,7 +622,7 @@
    "kind": "follow",
    "name": "Aster.edu_tpg",
    "handle": "@aster.edu_tpg",
-   "logo": "brand/avatar.png",
+   "logo": "brand/logo.png",
    "sub": "Tuisyen online bersama guru pakar & guru pemeriksa kertas",
    "tap": 25.3,
    "note": "'Follow saya': logo/gambar profil muncul besar, kemudian mengecil ke kad profil TikTok + butang Follow ditekan"
@@ -641,7 +641,7 @@
    "kind": "endcard",
    "text": "ASTER EDU",
    "handle": "@aster.edu_tpg",
-   "logo": "brand/avatar.png",
+   "logo": "brand/logo.png",
    "sub": "Tuisyen Online · Darjah 4 – Tingkatan 5",
    "note": "Kad penutup jenama (1.5s, video dibekukan)"
   }
