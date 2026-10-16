@@ -20,4 +20,5 @@ Status: **preview sahaja, belum render final.**
 - `at001/edit/sfx/`: sound effect dijana sendiri (`scripts/sfx.py` + `scripts/sfx_extra.py`), bebas hak cipta.
 - `scripts/look.py`: bokeh f/2.8 (segmentasi badan MediaPipe setiap frame) + colour grade yang melindungi warna kulit.
 - `scripts/at001_proxy.sh`: potong + bersihkan audio (−14 LUFS) + proxy 540p untuk preview.
+- `at001/thumbnail/thumb.html` → `AT001_cover.png`: thumbnail 1 saat di awal video + cover TikTok (teks dalam crop grid 3:4).
 - `at001/preview/index.html`: halaman preview interaktif (perlu `graded.mp4`, `orig.mp4`, `audio_orig.mp3`, `plan.json`, `sfx/` di folder sama).

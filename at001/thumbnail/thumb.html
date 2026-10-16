@@ -1,0 +1,40 @@
+<!doctype html>
+<meta charset="utf-8">
+<!-- AT001 cover/thumbnail, 1080x1920. Text kept inside the 3:4 profile-grid crop (y 240–1680). Rendered with Playwright. -->
+<link rel="stylesheet" href="fonts/local.css">
+<style>
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#0f1d44}
+.f{position:absolute;inset:0;overflow:hidden}
+.f img{position:absolute;left:0;top:0;width:1080px;height:2300px;object-fit:cover;object-position:50% 100%}
+.top{position:absolute;left:0;right:0;top:0;height:1000px;background:linear-gradient(rgba(8,14,36,.94) 0,rgba(8,14,36,.86) 55%,rgba(8,14,36,0))}
+.bot{position:absolute;left:0;right:0;bottom:0;height:520px;background:linear-gradient(rgba(8,14,36,0),rgba(8,14,36,.55))}
+.hl{position:absolute;left:60px;right:60px;top:250px;display:flex;flex-direction:column;align-items:center;text-align:center;font-family:Archivo,sans-serif;color:#fff}
+.kick{font:800 46px Figtree,sans-serif;letter-spacing:.06em;background:#e8392f;color:#fff;padding:10px 30px;border-radius:999px;margin-bottom:26px}
+.l{font-weight:900;font-stretch:72%;font-size:140px;line-height:.92;letter-spacing:-.01em;text-shadow:0 8px 0 rgba(0,0,0,.35)}
+.big{margin-top:14px;font-weight:900;font-stretch:72%;font-size:220px;line-height:.9;background:#ffc83d;color:#0f1d44;padding:6px 40px 0;border-radius:24px;transform:rotate(-3deg);box-shadow:0 14px 0 #b88400,0 24px 50px rgba(0,0,0,.45)}
+.note{position:absolute;right:26px;top:1130px;width:300px;padding:22px 26px 26px;background:#fbf8ef;border-radius:18px;transform:rotate(6deg);box-shadow:0 18px 40px rgba(0,0,0,.45);
+  background-image:repeating-linear-gradient(transparent 0 57px,#b9cbe8 57px 59px);font-family:"Gochi Hand",cursive;color:#1f3f9e}
+.note .q{font-size:88px;line-height:1.1;white-space:nowrap}
+.note .q b{color:#e8392f;font-weight:400}
+.note .c{display:flex;gap:10px;margin-top:6px}
+.note .c i{font-style:normal;width:46px;height:46px;border-radius:50%;background:#ffc83d;color:#0f1d44;display:grid;place-items:center;font:900 28px Archivo,sans-serif}
+.note .c i.x{background:#e8392f;color:#fff}
+.ring{position:absolute;left:200px;top:1660px;width:720px;height:330px;overflow:visible}
+.ring path{fill:none;stroke:#e8392f;stroke-width:14;stroke-linecap:round}
+.cta{position:absolute;left:0;right:0;top:1530px;display:flex;justify-content:center}
+.cta span{font:900 74px Archivo,sans-serif;font-stretch:80%;color:#fff;background:rgba(15,29,68,.92);border:6px solid #ffc83d;border-radius:999px;padding:12px 46px 14px;box-shadow:0 16px 40px rgba(0,0,0,.45)}
+.cta span b{color:#ffc83d;font-weight:900}
+</style>
+<div class="f">
+  <img src="frame.png" alt="">
+  <div class="top"></div><div class="bot"></div>
+  <svg class="ring" viewBox="0 0 720 330"><path d="M380 18 C610 10 712 90 700 170 C688 270 470 320 300 312 C110 304 10 240 18 150 C26 60 170 22 420 26"/></svg>
+  <div class="hl">
+    <div class="kick">ANAK TAHUN 4 &amp; 5</div>
+    <div class="l">MASIH KIRA</div>
+    <div class="l">GUNA</div>
+    <div class="big">JARI?</div>
+  </div>
+  <div class="note"><div class="q">7×8 = <b>?</b></div><div class="c"><i>1</i><i>2</i><i>3</i><i>4</i><i class="x">…</i></div></div>
+  <div class="cta"><span>Bukan salah anak <b>👇</b></span></div>
+</div>

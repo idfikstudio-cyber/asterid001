@@ -109,6 +109,13 @@ td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
 .hook q{font-family:var(--f-display);font-weight:800;font-stretch:90%;font-size:18px;quotes:"\201C" "\201D"}
 .hook p{margin:0;color:var(--muted);font-size:13.5px}
 .qs{margin:0;padding-left:20px;display:grid;gap:8px}
+.thumbs{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;max-width:560px}
+.thumbs figure{margin:0;display:grid;gap:6px;min-width:0}
+.thumbs img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--line)}
+.thumbs .gridcrop{aspect-ratio:3/4;max-width:100%;overflow:hidden;border-radius:12px;border:1px solid var(--line);position:relative}
+.thumbs .gridcrop img{position:absolute;left:0;top:-16.667%;border:0;border-radius:0}
+.thumbs figcaption{font-size:12.5px;color:var(--muted)}
+code{font-size:.92em;background:var(--chip);padding:1px 5px;border-radius:4px}
 
 /* ---------- on-video graphics (container units of the phone) ----------
    every timed animation uses calc(<offset>s - var(--late)) so seeking into the middle of a graphic fast-forwards it */
@@ -265,7 +272,7 @@ td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
   <header class="top">
     <div>
       <h1>Preview AT001: Anak Lemah Sifir</h1>
-      <div class="status"><b>Preview v2</b> Belum render final · 540p · 0:29.6 (asal 0:28.4) · video TOFU 1 daripada 2</div>
+      <div class="status"><b>Preview v3</b> Belum render final · 540p · 0:30.7 (thumbnail 1s + video 28.1s + kad penutup 1.5s) · video TOFU 1 daripada 2</div>
     </div>
   </header>
 
@@ -304,6 +311,7 @@ td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
     <section class="panel">
       <div class="tabs" role="tablist">
         <button class="tab" role="tab" aria-selected="true" data-p="p-plan">Pelan edit</button>
+        <button class="tab" role="tab" aria-selected="false" data-p="p-thumb">Thumbnail</button>
         <button class="tab" role="tab" aria-selected="false" data-p="p-hook">Hook</button>
         <button class="tab" role="tab" aria-selected="false" data-p="p-tx">Transkrip &amp; potongan</button>
         <button class="tab" role="tab" aria-selected="false" data-p="p-grade">Bokeh, warna &amp; audio</button>
@@ -317,15 +325,30 @@ td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
         <div class="evlist" id="evlist"></div>
       </div>
 
+      <div class="pane" id="p-thumb" role="tabpanel" hidden>
+        <h2>Thumbnail 1 saat + cover TikTok</h2>
+        <p>Thumbnail ni jadi 1 saat pertama video, sebelum kau mula bercakap, dan juga cover untuk grid profil. Hook thumbnail sengaja lain daripada hook video, supaya penonton tak baca ayat yang sama dua kali:</p>
+        <div class="thumbs">
+          <figure><img src="thumbnail/AT001_cover.png" alt="Thumbnail AT001: Anak Tahun 4 dan 5 masih kira guna jari?" width="1080" height="1920"><figcaption>Penuh 9:16 (dalam video, 0:00–0:01)</figcaption></figure>
+          <figure><div class="gridcrop"><img src="thumbnail/AT001_cover.png" alt="" width="1080" height="1920"></div><figcaption>Macam mana nampak dalam grid profil TikTok (3:4)</figcaption></figure>
+        </div>
+        <div class="hooks" style="margin-top:12px">
+          <div class="hook pick"><span class="tag">Dipilih · dalam preview</span><q>ANAK TAHUN 4 &amp; 5 MASIH KIRA GUNA JARI?</q><p>Ibu bapa terus nampak masalah anak dia orang sendiri (umur + tabiat yang dia orang kenal). Kad tulisan "7×8 = ?" dan bulatan merah pada tangan kau yang sedang mengira menguatkan maksudnya. "Bukan salah anak 👇" buat orang nak tahu punca sebenar, jadi dia tekan video. Lepas tu video terus jawab dengan hook "Anak lemah sifir? Bukan sebab dia tak pandai".</p></div>
+          <div class="hook"><span class="tag">Pilihan B</span><q>JANGAN MARAH ANAK LEMAH SIFIR</q><p>Sudut emosi, kuat untuk ibu bapa yang rasa bersalah. Kurang spesifik pada umur.</p></div>
+          <div class="hook"><span class="tag">Pilihan C</span><q>7 × 8 = ? ANAK AMBIL MASA LAMA?</q><p>Soalan terus. Ibu bapa uji diri sendiri dalam kepala. Sesuai kalau nak siri thumbnail "soalan sifir" yang konsisten untuk setiap video.</p></div>
+        </div>
+        <p style="margin-top:12px">Cara guna dalam TikTok: masa upload, pilih <b>Edit cover → frame pertama</b> (0:00). Atau upload fail <b>AT001_cover.png</b> terus sebagai cover. Fail tu ada dalam repo (<code>at001/thumbnail/</code>).</p>
+      </div>
+
       <div class="pane" id="p-hook" role="tabpanel" hidden>
         <h2>Hook: tajuk utama 7 saat pertama</h2>
         <p>Ayat pembuka asal kau dah sangat kuat, jadi aku tak pindahkan ayat lain ke depan. Aku jadikan ayat tu tajuk besar:</p>
         <div class="hooks">
-          <div class="hook pick"><span class="tag">Dipilih · dalam preview</span><q>Anak lemah SIFIR? Bukan sebab dia tak pandai.</q><p>0–2s: tajuk penuh skrin, "SIFIR?" dihentak dengan kotak kuning dan "TAK PANDAI" digaris merah. 2–7s: tajuk mengecil dan melekat di atas sebagai tajuk utama, sementara kad tulisan tangan "7 × 8 = ?" dan jari mengira 1–5 muncul ikut ayat "masih kira gunakan jari". Ibu bapa anak Tahun 4–5 terus nampak masalah anak dia orang sendiri.</p></div>
+          <div class="hook pick"><span class="tag">Dipilih · dalam preview</span><q>Anak lemah SIFIR? Bukan sebab dia tak pandai.</q><p>Selepas thumbnail 1 saat. 1–3s: tajuk penuh skrin, "SIFIR?" dihentak dengan kotak kuning dan "TAK PANDAI" digaris merah. 3–8s: tajuk mengecil dan melekat di atas sebagai tajuk utama, sementara kad tulisan tangan "7 × 8 = ?" dan jari mengira 1–5 muncul ikut ayat "masih kira gunakan jari". Ibu bapa anak Tahun 4–5 terus nampak masalah anak dia orang sendiri.</p></div>
           <div class="hook"><span class="tag">Pilihan B</span><q>Tahun 4 &amp; 5 masih kira guna jari?</q><p>Lebih spesifik pada umur anak. Tajuk ni boleh ganti tajuk utama tanpa ubah potongan video.</p></div>
           <div class="hook"><span class="tag">Pilihan C</span><q>Jangan marah anak kalau dia lemah sifir</q><p>Sudut emosi untuk ibu bapa yang selalu marah. Kuat untuk komen dan share, tapi kurang terus pada masalah sifir.</p></div>
         </div>
-        <p style="margin-top:12px">Jawapan kepada soalan hook ("7 × 8 = 56") muncul semula pada 0:20.9 sebagai B-roll. Jadi penonton yang tengok sampai situ rasa puas, dan itu bantu watch time.</p>
+        <p style="margin-top:12px">Jawapan kepada soalan hook ("7 × 8 = 56") muncul semula pada 0:21.9 sebagai B-roll. Jadi penonton yang tengok sampai situ rasa puas, dan itu bantu watch time.</p>
       </div>
 
       <div class="pane" id="p-tx" role="tabpanel" hidden>
@@ -353,15 +376,14 @@ td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
       </div>
 
       <div class="pane" id="p-q" role="tabpanel" hidden>
-        <h2>Sebelum aku render final</h2>
+        <h2>Keputusan kau &amp; langkah seterusnya</h2>
         <ol class="qs">
-          <li><b>Video kedua:</b> kau kata "kedua-dua video", tapi link Google Drive cuma ada satu fail (AT001.mp4). Hantar link video kedua, dan aku edit sebagai video berasingan dengan gaya yang sama.</li>
-          <li><b>Ayat 0:12:</b> AI dengar "dia <i>block mic</i>". Aku rasa sebenarnya <b>"blok minda"</b>, jadi caption dan grafik guna "BLOK MINDA". Betul ke?</li>
-          <li><b>Hook:</b> setuju dengan tajuk dalam preview, atau nak Pilihan B / C? (Tengok tab Hook)</li>
-          <li><b>Logo:</b> logo kau muncul besar bila kau sebut "Follow saya" (0:24.7), kemudian mengecil masuk ke kad profil TikTok <b>@aster.edu_tpg</b> dengan butang Follow ditekan. Logo yang sama ada pada kad penutup. Setuju dengan susunan ni?</li>
-          <li><b>"Komen YA":</b> nak kekalkan ajakan komen di hujung? Ia naikkan engagement, tapi kena ada orang yang balas komen.</li>
-          <li><b>Muzik latar:</b> aku tak letak muzik sebab aku tiada muzik berlesen. Cadangan aku: guna lagu trending terus dalam app TikTok/Reels masa upload (volume 10–15%). Atau hantar fail muzik kau sendiri.</li>
-          <li><b>Lain-lain:</b> ada grafik atau bunyi yang terlalu banyak atau kurang? Beritahu saat dia (contoh "0:08 kertas ujian terlalu lama").</li>
+          <li><b>Bokeh:</b> kekalkan bokeh versi terbaru. ✓</li>
+          <li><b>Ayat 0:13:</b> "blok minda" disahkan. ✓</li>
+          <li><b>"Komen YA":</b> dikekalkan. ✓</li>
+          <li><b>Hook, kad penutup, logo:</b> setuju. ✓</li>
+          <li><b>Thumbnail (baru):</b> setuju dengan thumbnail dalam tab Thumbnail, atau nak Pilihan B / C?</li>
+          <li><b>Video kedua:</b> hantar link video kedua bila dah sedia, dan aku edit sebagai video berasingan dengan gaya yang sama.</li>
         </ol>
         <p style="margin-top:12px">Lepas kau setuju, aku render versi final 1080×1920 dengan semua kesan ni dibakar ke dalam video, sedia untuk upload ke TikTok dan Reels.</p>
       </div>
@@ -412,6 +434,7 @@ function build(g){
     case"follow":el.className+=" follow";
       h=`<div class="lgbig"><img src="${esc(g.logo)}" alt=""><b>${esc(g.handle)}</b></div><div class="fcard"><img class="av" src="${esc(g.logo)}" alt=""><span class="nm"><b>${esc(g.name)}</b><i>${esc(g.handle)}</i><small>${esc(g.sub)}</small></span><span class="fb"><span class="a">+ Follow</span><span class="b" style="${D(g,g.tap)}">✓ Followed</span></span><span class="rp" style="${D(g,g.tap)}"></span><span class="tapper" style="${D(g,g.tap)}">👆</span></div>`;break;
     case"comment":el.className+=" comment";h=`${esc(g.text)}<b>${esc(g.ask)}</b>`;break;
+    case"thumb":el.className+=" thumbslot";break;
     case"endcard":el.className+=" endcard";h=`<img class="lg" src="${esc(g.logo)}" alt=""><b>${esc(g.text)}</b><span class="hd">${esc(g.handle)}</span><small>${esc(g.sub)}</small><span class="fl">Follow untuk tips matematik</span>`;break;
   }
   el.innerHTML=h;ov.appendChild(el);return {g,el,on:false};
@@ -500,7 +523,7 @@ document.querySelectorAll(".tab").forEach(b=>b.onclick=()=>{document.querySelect
 /* ---- event list + markers ---- */
 const SFXNAME={whoosh:"Whoosh (peralihan)",pop:"Pop",ding:"Ding",riser:"Riser (bina debar)",impact:"Impact / dentuman",click:"Klik butang",bonk:"Bonk (salah)",swoosh_down:"Swoosh turun",scribble:"Bunyi pen menulis",lock:"Mangga dikunci",check:"Chime tanda betul",sparkle:"Kilauan (berjaya)"};
 const ZNOTE=[];for(let i=1;i<plan.zoom.length;i++){const a=plan.zoom[i-1],b=plan.zoom[i];if(b.scale>a.scale+.02&&b.t-a.t<.2)ZNOTE.push({t:a.t,d:`Punch-in ${Math.round((b.scale-1)*100)}%`})}
-const GNAME={hook:"Tajuk hook besar → melekat di atas",fingers:"Kad tulisan '7 × 8 = ?' + jari mengira","full-exam":"B-roll: kertas ujian dipangkah","full-solve":"B-roll: '7 × 8 = 56' ditulis",path:"Jalan ke trofi",follow:"Butang Follow ditekan",endcard:"Kad penutup Aster Edu",brain:"Blok minda + cop SUSAH!",insight:"Tulisan tangan: salah teknik belajar",checklist:"Senarai semak ✓ ✓"};
+const GNAME={thumb:"Thumbnail / cover 1 saat",hook:"Tajuk hook besar → melekat di atas",fingers:"Kad tulisan '7 × 8 = ?' + jari mengira","full-exam":"B-roll: kertas ujian dipangkah","full-solve":"B-roll: '7 × 8 = 56' ditulis",path:"Jalan ke trofi",follow:"Butang Follow ditekan",endcard:"Kad penutup Aster Edu",brain:"Blok minda + cop SUSAH!",insight:"Tulisan tangan: salah teknik belajar",checklist:"Senarai semak ✓ ✓"};
 const EV=[
  ...plan.cuts.slice(1).map(c=>({t:c.out,k:"cut",d:"Sambung (pause dibuang)",s:`Dari asal ${fmt(c.src_in)}`})),
  ...plan.graphics.map(g=>({t:g.s,k:g.kind.startsWith("full")?"broll":"mg",d:GNAME[g.kind]||g.text,s:g.note})),
@@ -523,7 +546,7 @@ plan.captions.forEach(c=>{const txt=c.words.map(w=>w.w).join(" ");if(!curL||/[.?
   curL.txt+=(curL.txt?" ":"")+txt;curL.n++;curL.html+=(curL.html?" ":"")+c.words.map(w=>FIXED.has(w.w.replace(/\W/g,""))?`<span class="fix">${esc(w.w)}</span>`:esc(w.w)).join(" ")});
 const cutsAt=plan.cuts.slice(1).map(c=>c.out);
 lines.forEach((l,i)=>{const nextS=lines[i+1]?lines[i+1].s:1e9;
-  const d=document.createElement("button");d.className="line"+(l.s<2.08?" hookline":"");d.innerHTML=`<span class="t">${fmt(l.s)}</span><span>${l.html}</span>`;d.onclick=()=>{seek(l.s);play()};ts.appendChild(d);
+  const d=document.createElement("button");d.className="line"+(l.s<plan.thumb+2.08?" hookline":"");d.innerHTML=`<span class="t">${fmt(l.s)}</span><span>${l.html}</span>`;d.onclick=()=>{seek(l.s);play()};ts.appendChild(d);
   cutsAt.filter(c=>c>l.s&&c<=nextS).forEach(c=>{const r=document.createElement("div");r.className="cutrow";r.textContent=`✂ ${fmt(c)} pause dibuang`;ts.appendChild(r)})});
 $("#cuttable").innerHTML=plan.cuts.map((c,i)=>`<tr><td>Bahagian ${i+1}</td><td class="num">${fmt(c.src_in)} – ${fmt(c.src_out)}</td><td class="num">${fmt(c.out)} – ${fmt(c.out+c.src_out-c.src_in)}</td></tr>`).join("")+`<tr><td>Kad penutup</td><td class="num">baru</td><td class="num">${fmt(plan.duration)} – ${fmt(plan.total)}</td></tr>`;
 

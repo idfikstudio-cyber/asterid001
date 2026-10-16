@@ -4,6 +4,7 @@ import json,re,sys
 # only 2 pauses long enough to remove (energy < -44 dB for >0.2s); the rest is already jump-cut tight
 SEG=[("A",0.00,14.90),("B",15.04,23.68),("C",23.82,28.421)]
 END_CARD=1.5
+THUMB=1.0   # 1s thumbnail/cover (at001/thumbnail) before the talking starts; everything below shifts by it
 def off(i): return sum(e-s for _,s,e in SEG[:i])
 def to_out(t):
     for i,(_,s,e) in enumerate(SEG):
@@ -53,7 +54,7 @@ G=[
 for g in G:
     for k in ("s","e","dock","score","stamp_at","write","goal","tap"):
         if k in g: g[k]=round(g[k],3)
-SFX=[(0.00,"impact",.85),(0.60,"pop",.7),(0.78,"whoosh",.55),(2.08,"swoosh_down",.45),(4.00,"scribble",.55),
+SFX=[(-1.00,"impact",.8),(-0.15,"whoosh",.6),(0.60,"pop",.7),(0.78,"whoosh",.55),(2.08,"swoosh_down",.45),(4.00,"scribble",.55),
  (5.94,"pop",.45),(6.10,"pop",.45),(6.26,"pop",.45),(6.42,"pop",.45),(6.58,"pop",.5),
  (7.20,"bonk",.7),(8.55,"whoosh",.7),(8.95,"scribble",.45),(9.35,"scribble",.45),(9.75,"scribble",.45),(10.45,"bonk",.6),
  (11.15,"whoosh",.6),(12.40,"lock",.7),(14.38,"impact",.7),(14.94,"whoosh",.55),(16.30,"scribble",.6),(18.54,"pop",.5),
@@ -65,7 +66,20 @@ Z=[(0,1.08,40),(2.04,1.14,40),(2.08,1.0,42),(7.14,1.0,42),(7.18,1.10,36),(8.50,1
    (14.86,1.06,38),(14.94,1.0,42),(16.26,1.0,42),(16.32,1.14,37),(18.46,1.14,37),(18.54,1.0,42),(22.66,1.0,42),(22.72,1.06,40),
    (24.64,1.06,40),(24.68,1.0,42),(DUR,1.05,40)]
 Z=[{"t":round(t,3),"scale":s,"oy":o} for t,s,o in Z]
-json.dump({"duration":DUR,"total":round(DUR+END_CARD,3),"cuts":[{"id":n,"src_in":s,"src_out":e,"out":round(off(i),3)} for i,(n,s,e) in enumerate(SEG)],
-  "captions":chunks,"fixed":FIXED,"no_caption":[[0,2.08]],"graphics":G,"sfx":SFX,"zoom":Z},open(sys.argv[2],"w"),ensure_ascii=False,indent=1)
+def sh(x): return round(x+THUMB,3)
+for c in chunks:
+    c["s"],c["e"]=sh(c["s"]),sh(c["e"])
+    for x in c["words"]: x["s"]=sh(x["s"])
+for g in G:
+    for k in ("s","e","dock","score","stamp_at","write","goal","tap"):
+        if k in g: g[k]=sh(g[k])
+    for k in ("count","marks"):
+        if k in g: g[k]=[sh(x) for x in g[k]]
+    if "items" in g: g["items"]=[[n,sh(t)] for n,t in g["items"]]
+G.insert(0,{"s":0,"e":THUMB,"kind":"thumb","note":"Thumbnail 1 saat (juga cover TikTok): 'Anak Tahun 4 & 5 masih kira guna jari?'"})
+for x in SFX: x["t"]=sh(x["t"])
+Z=[{"t":0,"scale":1.0,"oy":42},{"t":THUMB-0.001,"scale":1.0,"oy":42}]+[dict(z,t=sh(z["t"])) for z in Z]
+json.dump({"duration":sh(DUR),"total":round(sh(DUR)+END_CARD,3),"thumb":THUMB,"cuts":[{"id":n,"src_in":s,"src_out":e,"out":sh(off(i))} for i,(n,s,e) in enumerate(SEG)],
+  "captions":chunks,"fixed":FIXED,"no_caption":[[0,sh(2.08)]],"graphics":G,"sfx":SFX,"zoom":Z},open(sys.argv[2],"w"),ensure_ascii=False,indent=1)
 print("dur",DUR,"chunks",len(chunks))
 for c in chunks: print(f'{c["s"]:6.2f}-{c["e"]:6.2f}',' '.join(x["w"] for x in c["words"]))

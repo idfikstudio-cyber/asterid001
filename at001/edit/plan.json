@@ -1,510 +1,511 @@
 {
- "duration": 28.141,
- "total": 29.641,
+ "duration": 29.141,
+ "total": 30.641,
+ "thumb": 1.0,
  "cuts": [
   {
    "id": "A",
    "src_in": 0.0,
    "src_out": 14.9,
-   "out": 0
+   "out": 1.0
   },
   {
    "id": "B",
    "src_in": 15.04,
    "src_out": 23.68,
-   "out": 14.9
+   "out": 15.9
   },
   {
    "id": "C",
    "src_in": 23.82,
    "src_out": 28.421,
-   "out": 23.54
+   "out": 24.54
   }
  ],
  "captions": [
   {
-   "s": 0,
-   "e": 0.76,
+   "s": 1.0,
+   "e": 1.76,
    "words": [
     {
      "w": "Anak",
-     "s": 0
+     "s": 1.0
     },
     {
      "w": "lemah",
-     "s": 0.42
+     "s": 1.42
     },
     {
      "w": "sifir",
-     "s": 0.6,
+     "s": 1.6,
      "hot": 1
     }
    ]
   },
   {
-   "s": 0.76,
-   "e": 1.54,
+   "s": 1.76,
+   "e": 2.54,
    "words": [
     {
      "w": "bukan",
-     "s": 0.76
+     "s": 1.76
     },
     {
      "w": "sebab",
-     "s": 1.02
+     "s": 2.02
     },
     {
      "w": "dia",
-     "s": 1.42
+     "s": 2.42
     }
    ]
   },
   {
-   "s": 1.54,
-   "e": 2.08,
+   "s": 2.54,
+   "e": 3.08,
    "words": [
     {
      "w": "tak",
-     "s": 1.54
+     "s": 2.54
     },
     {
      "w": "pandai",
-     "s": 1.66,
+     "s": 2.66,
      "hot": 1
     }
    ]
   },
   {
-   "s": 2.08,
-   "e": 3.7,
+   "s": 3.08,
+   "e": 4.7,
    "words": [
     {
      "w": "Ramai",
-     "s": 2.08
+     "s": 3.08
     },
     {
      "w": "parents",
-     "s": 2.68
+     "s": 3.68
     },
     {
      "w": "takut",
-     "s": 3.06,
+     "s": 4.06,
      "hot": 1
     }
    ]
   },
   {
-   "s": 3.7,
-   "e": 4.56,
+   "s": 4.7,
+   "e": 5.56,
    "words": [
     {
      "w": "anak",
-     "s": 3.7
+     "s": 4.7
     },
     {
      "w": "tahun",
-     "s": 3.98
+     "s": 4.98
     },
     {
      "w": "4",
-     "s": 4.22,
+     "s": 5.22,
      "hot": 1
     }
    ]
   },
   {
-   "s": 4.56,
-   "e": 5.44,
+   "s": 5.56,
+   "e": 6.44,
    "words": [
     {
      "w": "dengan",
-     "s": 4.56
+     "s": 5.56
     },
     {
      "w": "5",
-     "s": 4.76,
+     "s": 5.76,
      "hot": 1
     },
     {
      "w": "ni",
-     "s": 5.04
+     "s": 6.04
     }
    ]
   },
   {
-   "s": 5.44,
-   "e": 6.7,
+   "s": 6.44,
+   "e": 7.7,
    "words": [
     {
      "w": "masih",
-     "s": 5.44
+     "s": 6.44
     },
     {
      "w": "kira",
-     "s": 5.94
+     "s": 6.94
     },
     {
      "w": "gunakan",
-     "s": 6.4
+     "s": 7.4
     }
    ]
   },
   {
-   "s": 6.7,
-   "e": 7.18,
+   "s": 7.7,
+   "e": 8.18,
    "words": [
     {
      "w": "jari",
-     "s": 6.7,
+     "s": 7.7,
      "hot": 1
     }
    ]
   },
   {
-   "s": 7.18,
-   "e": 8.14,
+   "s": 8.18,
+   "e": 9.14,
    "words": [
     {
      "w": "Kita",
-     "s": 7.18
+     "s": 8.18
     },
     {
      "w": "marah",
-     "s": 7.44,
+     "s": 8.44,
      "hot": 1
     },
     {
      "w": "anak",
-     "s": 8.0
+     "s": 9.0
     }
    ]
   },
   {
-   "s": 8.14,
-   "e": 8.62,
+   "s": 9.14,
+   "e": 9.62,
    "words": [
     {
      "w": "kita",
-     "s": 8.14
+     "s": 9.14
     }
    ]
   },
   {
-   "s": 8.62,
-   "e": 10.22,
+   "s": 9.62,
+   "e": 11.22,
    "words": [
     {
      "w": "anak",
-     "s": 8.62
+     "s": 9.62
     },
     {
      "w": "makin",
-     "s": 9.16
+     "s": 10.16
     },
     {
      "w": "takut",
-     "s": 9.7,
+     "s": 10.7,
      "hot": 1
     }
    ]
   },
   {
-   "s": 10.22,
-   "e": 11.76,
+   "s": 11.22,
+   "e": 12.76,
    "words": [
     {
      "w": "dan",
-     "s": 10.22
+     "s": 11.22
     },
     {
      "w": "bencikan",
-     "s": 10.5,
+     "s": 11.5,
      "hot": 1
     },
     {
      "w": "matematik",
-     "s": 11.22
-    }
-   ]
-  },
-  {
-   "s": 11.76,
-   "e": 12.38,
-   "words": [
-    {
-     "w": "Sebab",
-     "s": 11.76
-    },
-    {
-     "w": "tu",
-     "s": 12.08
-    },
-    {
-     "w": "dia",
      "s": 12.22
     }
    ]
   },
   {
-   "s": 12.38,
-   "e": 13.32,
+   "s": 12.76,
+   "e": 13.38,
+   "words": [
+    {
+     "w": "Sebab",
+     "s": 12.76
+    },
+    {
+     "w": "tu",
+     "s": 13.08
+    },
+    {
+     "w": "dia",
+     "s": 13.22
+    }
+   ]
+  },
+  {
+   "s": 13.38,
+   "e": 14.32,
    "words": [
     {
      "w": "blok",
-     "s": 12.38,
+     "s": 13.38,
      "hot": 1
     },
     {
      "w": "minda",
-     "s": 12.66,
+     "s": 13.66,
      "hot": 1
     },
     {
      "w": "untuk",
-     "s": 12.88
+     "s": 13.88
     }
    ]
   },
   {
-   "s": 13.32,
-   "e": 14.4,
+   "s": 14.32,
+   "e": 15.4,
    "words": [
     {
      "w": "katakan",
-     "s": 13.32
+     "s": 14.32
     },
     {
      "w": "matematik",
-     "s": 13.82
+     "s": 14.82
     },
     {
      "w": "ni",
-     "s": 14.38
+     "s": 15.38
     }
    ]
   },
   {
-   "s": 14.4,
-   "e": 14.94,
+   "s": 15.4,
+   "e": 15.94,
    "words": [
     {
      "w": "susah",
-     "s": 14.4,
+     "s": 15.4,
      "hot": 1
     }
    ]
   },
   {
-   "s": 14.94,
-   "e": 16.08,
+   "s": 15.94,
+   "e": 17.08,
    "words": [
     {
      "w": "Selalunya",
-     "s": 14.94
+     "s": 15.94
     },
     {
      "w": "masalah",
-     "s": 15.32
+     "s": 16.32
     },
     {
      "w": "ni",
-     "s": 15.84
+     "s": 16.84
     }
    ]
   },
   {
-   "s": 16.08,
-   "e": 17.58,
+   "s": 17.08,
+   "e": 18.58,
    "words": [
     {
      "w": "cuma",
-     "s": 16.08
+     "s": 17.08
     },
     {
      "w": "salah",
-     "s": 16.34,
+     "s": 17.34,
      "hot": 1
     },
     {
      "w": "teknik",
-     "s": 16.9,
+     "s": 17.9,
      "hot": 1
     }
    ]
   },
   {
-   "s": 17.58,
-   "e": 18.54,
+   "s": 18.58,
+   "e": 19.54,
    "words": [
     {
      "w": "belajar",
-     "s": 17.58
+     "s": 18.58
     },
     {
      "w": "sahaja",
-     "s": 18.04
+     "s": 19.04
     }
    ]
   },
   {
-   "s": 18.54,
-   "e": 19.24,
+   "s": 19.54,
+   "e": 20.24,
    "words": [
     {
      "w": "Bila",
-     "s": 18.54
+     "s": 19.54
     },
     {
      "w": "belajar",
-     "s": 18.72
-    },
-    {
-     "w": "dengan",
-     "s": 19.08
-    }
-   ]
-  },
-  {
-   "s": 19.24,
-   "e": 20.18,
-   "words": [
-    {
-     "w": "teknik",
-     "s": 19.24,
-     "hot": 1
-    },
-    {
-     "w": "yang",
      "s": 19.72
     },
     {
-     "w": "betul",
-     "s": 19.82,
+     "w": "dengan",
+     "s": 20.08
+    }
+   ]
+  },
+  {
+   "s": 20.24,
+   "e": 21.18,
+   "words": [
+    {
+     "w": "teknik",
+     "s": 20.24,
      "hot": 1
-    }
-   ]
-  },
-  {
-   "s": 20.18,
-   "e": 20.94,
-   "words": [
-    {
-     "w": "dan",
-     "s": 20.18
-    },
-    {
-     "w": "konsisten",
-     "s": 20.3,
-     "hot": 1
-    }
-   ]
-  },
-  {
-   "s": 20.94,
-   "e": 22.26,
-   "words": [
-    {
-     "w": "anak",
-     "s": 20.94
-    },
-    {
-     "w": "mula",
-     "s": 21.3
-    },
-    {
-     "w": "nampak",
-     "s": 21.78
-    }
-   ]
-  },
-  {
-   "s": 22.26,
-   "e": 23.6,
-   "words": [
-    {
-     "w": "jalan",
-     "s": 22.26
     },
     {
      "w": "yang",
-     "s": 22.74
+     "s": 20.72
     },
     {
      "w": "betul",
-     "s": 22.88,
+     "s": 20.82,
      "hot": 1
     }
    ]
   },
   {
-   "s": 23.6,
-   "e": 24.68,
+   "s": 21.18,
+   "e": 21.94,
+   "words": [
+    {
+     "w": "dan",
+     "s": 21.18
+    },
+    {
+     "w": "konsisten",
+     "s": 21.3,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 21.94,
+   "e": 23.26,
+   "words": [
+    {
+     "w": "anak",
+     "s": 21.94
+    },
+    {
+     "w": "mula",
+     "s": 22.3
+    },
+    {
+     "w": "nampak",
+     "s": 22.78
+    }
+   ]
+  },
+  {
+   "s": 23.26,
+   "e": 24.6,
+   "words": [
+    {
+     "w": "jalan",
+     "s": 23.26
+    },
+    {
+     "w": "yang",
+     "s": 23.74
+    },
+    {
+     "w": "betul",
+     "s": 23.88,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 24.6,
+   "e": 25.68,
    "words": [
     {
      "w": "untuk",
-     "s": 23.6
+     "s": 24.6
     },
     {
      "w": "kuasai",
-     "s": 23.72,
+     "s": 24.72,
      "hot": 1
     },
     {
      "w": "matematik",
-     "s": 24.1
+     "s": 25.1
     }
    ]
   },
   {
-   "s": 24.68,
-   "e": 25.76,
+   "s": 25.68,
+   "e": 26.76,
    "words": [
     {
      "w": "Follow",
-     "s": 24.68,
+     "s": 25.68,
      "hot": 1
     },
     {
      "w": "saya",
-     "s": 24.94
+     "s": 25.94
     },
     {
      "w": "untuk",
-     "s": 25.18
+     "s": 26.18
     }
    ]
   },
   {
-   "s": 25.76,
-   "e": 26.96,
+   "s": 26.76,
+   "e": 27.96,
    "words": [
     {
      "w": "tips",
-     "s": 25.76,
+     "s": 26.76,
      "hot": 1
     },
     {
      "w": "bantu",
-     "s": 26.16
+     "s": 27.16
     },
     {
      "w": "anak",
-     "s": 26.78
+     "s": 27.78
     }
    ]
   },
   {
-   "s": 26.96,
-   "e": 28.16,
+   "s": 27.96,
+   "e": 29.16,
    "words": [
     {
      "w": "kuasai",
-     "s": 26.96,
+     "s": 27.96,
      "hot": 1
     },
     {
      "w": "matematik",
-     "s": 27.52
+     "s": 28.52
     }
    ]
   }
@@ -517,127 +518,133 @@
  "no_caption": [
   [
    0,
-   2.08
+   3.08
   ]
  ],
  "graphics": [
   {
-   "s": 0.0,
-   "e": 7.06,
+   "s": 0,
+   "e": 1.0,
+   "kind": "thumb",
+   "note": "Thumbnail 1 saat (juga cover TikTok): 'Anak Tahun 4 & 5 masih kira guna jari?'"
+  },
+  {
+   "s": 1.0,
+   "e": 8.06,
    "kind": "hook",
    "l1": "ANAK LEMAH",
    "hl": "SIFIR?",
    "l2": "BUKAN SEBAB DIA",
    "l3": "TAK PANDAI",
-   "dock": 2.08,
+   "dock": 3.08,
    "note": "Tajuk utama 7 saat: besar 0–2s, kemudian melekat di atas sampai 0:07"
   },
   {
-   "s": 3.98,
-   "e": 7.06,
+   "s": 4.98,
+   "e": 8.06,
    "kind": "fingers",
    "text": "7 × 8 = ?",
    "tag": "Tahun 4 & 5",
    "count": [
-    5.94,
-    6.1,
-    6.26,
-    6.42,
-    6.58
+    6.94,
+    7.1,
+    7.26,
+    7.42,
+    7.58
    ],
    "note": "B-roll tulisan tangan '7 × 8 = ?' + jari mengira 1–5 ikut 'kira gunakan jari'"
   },
   {
-   "s": 7.18,
-   "e": 8.52,
+   "s": 8.18,
+   "e": 9.52,
    "kind": "angry",
    "text": "KENAPA TAK BOLEH LAGI?!",
    "note": "Belon marah bergegar (watak ibu bapa)"
   },
   {
-   "s": 8.55,
-   "e": 11.18,
+   "s": 9.55,
+   "e": 12.18,
    "kind": "full-exam",
    "marks": [
-    8.95,
-    9.35,
-    9.75
+    9.95,
+    10.35,
+    10.75
    ],
-   "score": 10.45,
+   "score": 11.45,
    "note": "B-roll penuh: kertas ujian, pen merah tulis ✗ ✗ ✗ dan bulatkan markah 32"
   },
   {
-   "s": 12.3,
-   "e": 14.86,
+   "s": 13.3,
+   "e": 15.86,
    "kind": "brain",
    "text": "BLOK MINDA",
    "stamp": "SUSAH!",
-   "stamp_at": 14.38,
+   "stamp_at": 15.38,
    "note": "Otak + mangga kunci jatuh, cop 'SUSAH!'"
   },
   {
-   "s": 14.94,
-   "e": 18.46,
+   "s": 15.94,
+   "e": 19.46,
    "kind": "insight",
    "head": "MASALAH SEBENAR",
    "text": "salah teknik belajar",
-   "write": 16.3,
+   "write": 17.3,
    "note": "Animasi menulis: punca sebenar (bukan anak tak pandai)"
   },
   {
-   "s": 18.54,
-   "e": 20.88,
+   "s": 19.54,
+   "e": 21.88,
    "kind": "checklist",
    "items": [
     [
      "Teknik betul",
-     19.82
+     20.82
     ],
     [
      "Konsisten",
-     20.3
+     21.3
     ]
    ],
    "note": "Senarai semak, tanda ✓ dilukis ikut sebutan"
   },
   {
-   "s": 20.9,
-   "e": 22.7,
+   "s": 21.9,
+   "e": 23.7,
    "kind": "full-solve",
    "text": "7 × 8 = 56",
    "sub": "Tanpa kira jari",
    "note": "B-roll penuh: jawapan soalan hook ditulis laju + ✓ + bintang (callback hook)"
   },
   {
-   "s": 22.72,
-   "e": 24.64,
+   "s": 23.72,
+   "e": 25.64,
    "kind": "path",
    "text": "KUASAI MATEMATIK",
-   "goal": 23.72,
+   "goal": 24.72,
    "note": "Jalan berliku dilukis naik ke trofi"
   },
   {
-   "s": 24.68,
-   "e": 28.14,
+   "s": 25.68,
+   "e": 29.14,
    "kind": "follow",
    "name": "Aster.edu_tpg",
    "handle": "@aster.edu_tpg",
    "logo": "brand/logo.png",
    "sub": "Tuisyen online bersama guru pakar & guru pemeriksa kertas",
-   "tap": 25.3,
+   "tap": 26.3,
    "note": "'Follow saya': logo/gambar profil muncul besar, kemudian mengecil ke kad profil TikTok + butang Follow ditekan"
   },
   {
-   "s": 25.9,
-   "e": 28.14,
+   "s": 26.9,
+   "e": 29.14,
    "kind": "comment",
    "text": "Anak kira guna jari juga?",
    "ask": "Komen “YA” 👇",
    "note": "Ajak komen (interaktif, naikkan engagement)"
   },
   {
-   "s": 28.141,
-   "e": 29.641,
+   "s": 29.141,
+   "e": 30.641,
    "kind": "endcard",
    "text": "ASTER EDU",
    "handle": "@aster.edu_tpg",
@@ -650,180 +657,185 @@
   {
    "t": 0.0,
    "name": "impact",
-   "gain": 0.85
+   "gain": 0.8
   },
   {
-   "t": 0.6,
+   "t": 0.85,
+   "name": "whoosh",
+   "gain": 0.6
+  },
+  {
+   "t": 1.6,
    "name": "pop",
    "gain": 0.7
   },
   {
-   "t": 0.78,
+   "t": 1.78,
    "name": "whoosh",
    "gain": 0.55
   },
   {
-   "t": 2.08,
+   "t": 3.08,
    "name": "swoosh_down",
    "gain": 0.45
   },
   {
-   "t": 4.0,
+   "t": 5.0,
    "name": "scribble",
    "gain": 0.55
   },
   {
-   "t": 5.94,
+   "t": 6.94,
    "name": "pop",
    "gain": 0.45
   },
   {
-   "t": 6.1,
+   "t": 7.1,
    "name": "pop",
    "gain": 0.45
   },
   {
-   "t": 6.26,
+   "t": 7.26,
    "name": "pop",
    "gain": 0.45
   },
   {
-   "t": 6.42,
+   "t": 7.42,
    "name": "pop",
    "gain": 0.45
   },
   {
-   "t": 6.58,
+   "t": 7.58,
    "name": "pop",
    "gain": 0.5
   },
   {
-   "t": 7.2,
+   "t": 8.2,
    "name": "bonk",
    "gain": 0.7
   },
   {
-   "t": 8.55,
+   "t": 9.55,
    "name": "whoosh",
    "gain": 0.7
   },
   {
-   "t": 8.95,
+   "t": 9.95,
    "name": "scribble",
    "gain": 0.45
   },
   {
-   "t": 9.35,
+   "t": 10.35,
    "name": "scribble",
    "gain": 0.45
   },
   {
-   "t": 9.75,
+   "t": 10.75,
    "name": "scribble",
    "gain": 0.45
   },
   {
-   "t": 10.45,
+   "t": 11.45,
    "name": "bonk",
    "gain": 0.6
   },
   {
-   "t": 11.15,
+   "t": 12.15,
    "name": "whoosh",
    "gain": 0.6
   },
   {
-   "t": 12.4,
+   "t": 13.4,
    "name": "lock",
    "gain": 0.7
   },
   {
-   "t": 14.38,
+   "t": 15.38,
    "name": "impact",
    "gain": 0.7
   },
   {
-   "t": 14.94,
+   "t": 15.94,
    "name": "whoosh",
    "gain": 0.55
   },
   {
-   "t": 16.3,
+   "t": 17.3,
    "name": "scribble",
    "gain": 0.6
   },
   {
-   "t": 18.54,
+   "t": 19.54,
    "name": "pop",
    "gain": 0.5
   },
   {
-   "t": 19.82,
+   "t": 20.82,
    "name": "check",
    "gain": 0.6
   },
   {
-   "t": 20.3,
+   "t": 21.3,
    "name": "check",
    "gain": 0.65
   },
   {
-   "t": 20.9,
+   "t": 21.9,
    "name": "whoosh",
    "gain": 0.6
   },
   {
-   "t": 21.0,
+   "t": 22.0,
    "name": "scribble",
    "gain": 0.55
   },
   {
-   "t": 21.95,
+   "t": 22.95,
    "name": "ding",
    "gain": 0.6
   },
   {
-   "t": 22.7,
+   "t": 23.7,
    "name": "whoosh",
    "gain": 0.5
   },
   {
-   "t": 22.8,
+   "t": 23.8,
    "name": "riser",
    "gain": 0.35
   },
   {
-   "t": 23.72,
+   "t": 24.72,
    "name": "sparkle",
    "gain": 0.6
   },
   {
-   "t": 24.68,
+   "t": 25.68,
    "name": "pop",
    "gain": 0.6
   },
   {
-   "t": 24.7,
+   "t": 25.7,
    "name": "whoosh",
    "gain": 0.5
   },
   {
-   "t": 25.3,
+   "t": 26.3,
    "name": "click",
    "gain": 0.8
   },
   {
-   "t": 25.92,
+   "t": 26.92,
    "name": "pop",
    "gain": 0.5
   },
   {
-   "t": 28.141,
+   "t": 29.141,
    "name": "whoosh",
    "gain": 0.7
   },
   {
-   "t": 28.391,
+   "t": 29.391,
    "name": "ding",
    "gain": 0.55
   }
@@ -831,101 +843,111 @@
  "zoom": [
   {
    "t": 0,
+   "scale": 1.0,
+   "oy": 42
+  },
+  {
+   "t": 0.999,
+   "scale": 1.0,
+   "oy": 42
+  },
+  {
+   "t": 1.0,
    "scale": 1.08,
    "oy": 40
   },
   {
-   "t": 2.04,
+   "t": 3.04,
    "scale": 1.14,
    "oy": 40
   },
   {
-   "t": 2.08,
+   "t": 3.08,
    "scale": 1.0,
    "oy": 42
   },
   {
-   "t": 7.14,
+   "t": 8.14,
    "scale": 1.0,
    "oy": 42
   },
   {
-   "t": 7.18,
+   "t": 8.18,
    "scale": 1.1,
    "oy": 36
   },
   {
-   "t": 8.5,
+   "t": 9.5,
    "scale": 1.1,
    "oy": 36
   },
   {
-   "t": 8.55,
+   "t": 9.55,
    "scale": 1.0,
    "oy": 42
   },
   {
-   "t": 11.7,
+   "t": 12.7,
    "scale": 1.0,
    "oy": 42
   },
   {
-   "t": 11.76,
+   "t": 12.76,
    "scale": 1.06,
    "oy": 38
   },
   {
-   "t": 14.86,
+   "t": 15.86,
    "scale": 1.06,
    "oy": 38
   },
   {
-   "t": 14.94,
+   "t": 15.94,
    "scale": 1.0,
    "oy": 42
   },
   {
-   "t": 16.26,
+   "t": 17.26,
    "scale": 1.0,
    "oy": 42
   },
   {
-   "t": 16.32,
+   "t": 17.32,
    "scale": 1.14,
    "oy": 37
   },
   {
-   "t": 18.46,
+   "t": 19.46,
    "scale": 1.14,
    "oy": 37
   },
   {
-   "t": 18.54,
+   "t": 19.54,
    "scale": 1.0,
    "oy": 42
   },
   {
-   "t": 22.66,
+   "t": 23.66,
    "scale": 1.0,
    "oy": 42
   },
   {
-   "t": 22.72,
+   "t": 23.72,
    "scale": 1.06,
    "oy": 40
   },
   {
-   "t": 24.64,
+   "t": 25.64,
    "scale": 1.06,
    "oy": 40
   },
   {
-   "t": 24.68,
+   "t": 25.68,
    "scale": 1.0,
    "oy": 42
   },
   {
-   "t": 28.141,
+   "t": 29.141,
    "scale": 1.05,
    "oy": 40
   }
