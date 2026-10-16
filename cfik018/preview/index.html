@@ -127,7 +127,7 @@ a{color:var(--accent)}
 .g.on{opacity:1;visibility:visible}
 .off-mg .g{display:none}
 .wm{position:absolute;left:5cqw;top:56cqh;width:10cqw;opacity:.85;filter:drop-shadow(0 .3cqw .8cqw rgba(0,0,0,.45))}
-.off-mg .wm,.on-end .wm{display:none}
+.off-mg .wm,.on-end .wm,.on-intro .wm{display:none}
 .cap{position:absolute;left:6cqw;right:6cqw;top:67cqh;text-align:center;font-weight:700;font-size:7cqw;line-height:1.08;text-transform:uppercase;letter-spacing:.01em;
   text-shadow:0 .5cqw 0 rgba(0,0,0,.5),0 0 2.6cqw rgba(0,0,0,.55);-webkit-text-stroke:.3cqw rgba(0,0,0,.6);paint-order:stroke fill}
 .cap span{display:inline-block;margin:0 1.1cqw;transition:transform .12s ease,color .12s}
@@ -239,7 +239,7 @@ a{color:var(--accent)}
   <header class="top">
     <div class="eyebrow">Fi-K Studio · CFik018</div>
     <h1>Pinterest vs rumah sebenar</h1>
-    <div class="status"><b>Preview</b><span>Belum render final</span><span>·</span><span>540p</span><span>·</span><span>Versi 3 · 0:44 (bawah 1:00)</span><span>·</span><span>TOFU interior design</span></div>
+    <div class="status"><b>Preview</b><span>Belum render final</span><span>·</span><span>540p</span><span>·</span><span>Versi 4 · 0:45 (bawah 1:00)</span><span>·</span><span>TOFU interior design</span></div>
   </header>
 
   <div class="grid">
@@ -274,7 +274,7 @@ a{color:var(--accent)}
 
     <section class="panel">
       <div class="summary">
-        <div><b>1:53 → 0:44</b><span>Retake dan pause dibuang (v3)</span></div>
+        <div><b>1:53 → 0:45</b><span>Termasuk cover 1 saat (v4)</span></div>
         <div><b>8 B-roll</b><span>7 video Mixkit + 1 foto projek Fi-K</span></div>
         <div><b>9 motion</b><span>Termasuk pelan dapur 9 kaki</span></div>
         <div><b>Logo putih</b><span>Watermark + end card</span></div>
@@ -289,7 +289,7 @@ a{color:var(--accent)}
       </div>
 
       <div class="pane" id="p-plan" role="tabpanel">
-        <h2>Versi 2 &amp; 3: potongan yang kau minta</h2>
+        <h2>Versi 2 hingga 4: perubahan yang kau minta</h2>
         <div class="tablewrap"><table><thead><tr><th>Masa (versi 1)</th><th>Apa aku buat</th></tr></thead><tbody>
           <tr><td>0:00 – 0:01</td><td>Buang bahagian kau belum pandang kamera. Video terus mula dengan "Ramai…". Kalau potong penuh sampai 0:01, perkataan "Ramai" akan terpotong, jadi aku potong sampai 0:00.7, iaitu betul-betul sebelum "Ramai". Dari frame pertama kau dah pandang kamera.</td></tr>
           <tr><td>0:11.5</td><td>Buang sisa take lama sebelum "Masalahnya". Sekarang terus masuk "Masalahnya, dapur dekat gambar Pinterest…".</td></tr>
@@ -297,8 +297,9 @@ a{color:var(--accent)}
           <tr><td>0:34.4 – 0:35.4</td><td>Buang pause selepas "dekat dinding". Terus "Ubah 3D tak susah, tak mahal".</td></tr>
           <tr><td>0:37.8 – 0:38.2</td><td>Buang pause antara "tak mahal" dan "Nak ubah time renovation".</td></tr>
           <tr><td>0:27.0 – 0:27.4 (versi 2)</td><td><b>Versi 3:</b> buang senyap antara "rumah korang," dan "Masalah ni akan…". Sekarang terus bersambung.</td></tr>
+          <tr><td>0:00 – 0:01 (baru)</td><td><b>Versi 4:</b> thumbnail A dipapar 1 saat di awal video, dengan bunyi "pop" dan whoosh masuk ke hook. Selepas tu terus "Ramai hampir rugi…". Semua yang lain beranjak 1 saat.</td></tr>
         </tbody></table></div>
-        <p style="margin-top:10px">Semua B-roll, grafik, bunyi dan zoom aku alihkan ikut masa baru, supaya masih jatuh pada perkataan yang sama. Durasi sekarang 0:44.</p>
+        <p style="margin-top:10px">Semua B-roll, grafik, bunyi dan zoom aku alihkan ikut masa baru, supaya masih jatuh pada perkataan yang sama. Durasi sekarang 0:45.</p>
         <h2>Semua yang aku tambah, ikut masa</h2>
         <p>Tekan mana-mana baris untuk lompat ke saat tu dalam preview.</p>
         <div class="legend"><span><i style="background:var(--c-cut)"></i>Potong / susun</span><span><i style="background:var(--c-br)"></i>B-roll</span><span><i style="background:var(--c-mg)"></i>Motion graphic</span><span><i style="background:var(--c-sfx)"></i>Sound effect</span><span><i style="background:var(--c-zoom)"></i>Zoom kamera</span></div>
@@ -416,10 +417,12 @@ let capIdx=-1;
 
 const ease=x=>x<.5?2*x*x:1-Math.pow(-2*x+2,2)/2;
 const inBroll=t=>plan.broll.some(b=>t>=b.s&&t<b.e);
+const inIntro=t=>!!plan.intro&&t>=plan.intro.s&&t<plan.intro.e;
 function zoomAt(t){const Z=plan.zoom;if(t<=Z[0].t)return Z[0];for(let i=1;i<Z.length;i++){if(t<=Z[i].t){const a=Z[i-1],b=Z[i],k=ease((t-a.t)/Math.max(1e-3,b.t-a.t));return{scale:a.scale+(b.scale-a.scale)*k,oy:a.oy+(b.oy-a.oy)*k}}}return Z[Z.length-1]}
 
 function render(t){
-  const z=st.zoom&&!inBroll(t)?zoomAt(t):{scale:1,oy:40};
+  const z=st.zoom&&!inBroll(t)&&!inIntro(t)?zoomAt(t):{scale:1,oy:40};
+  phone.classList.toggle("on-intro",inIntro(t));
   stage.style.transform=`scale(${z.scale.toFixed(4)})`;stage.style.transformOrigin=`50% ${z.oy}%`;
   let endOn=false;
   for(const o of GS){const on=t>=o.g.s&&t<o.g.e;if(on!==o.on){o.on=on;o.el.classList.toggle("on",on)}if(on&&o.g.kind==="endcard")endOn=true;
@@ -492,7 +495,8 @@ const EV=[
  ...plan.broll.map(b=>({t:b.s,k:"br",d:b.d,s:`${b.why} · ${b.src==="fik"?"Foto projek Fi-K":"Mixkit #"+b.id}`})),
  ...plan.graphics.map(g=>({t:g.s,k:"mg",d:GN[g.kind]||("Garis ukuran "+g.text),s:g.note})),
  ...plan.sfx.map(s=>({t:s.t,k:"sfx",d:SFXNAME[s.name]||s.name})),
- ...ZNOTE.map(z=>({t:z.t,k:"zoom",d:z.d}))
+ ...ZNOTE.map(z=>({t:z.t,k:"zoom",d:z.d})),
+ ...(plan.intro?[{t:plan.intro.s,k:"cut",d:"Thumbnail A sebagai cover (1 saat)",s:"Dibakar ke dalam video, sebelum hook"}]:[])
 ].sort((a,b)=>a.t-b.t||(["cut","br","mg","sfx","zoom"].indexOf(a.k)-["cut","br","mg","sfx","zoom"].indexOf(b.k)));
 const KL={cut:"Potong",br:"B-roll",mg:"Motion",sfx:"SFX",zoom:"Zoom"},KC={cut:"k-cut",br:"k-br",mg:"k-mg",sfx:"k-sfx",zoom:"k-zoom"};
 const list=$("#evlist");

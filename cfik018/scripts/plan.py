@@ -1,5 +1,6 @@
 # Build the edit plan (output timeline) for CFik018: captions, B-roll, motion graphics, SFX, zoom, music, end card.
 # usage: plan.py cut.json edl.json out.json [edl_v1.json]
+# INTRO: the cover (thumbnail A) is held for INTRO seconds before the talking head; every time is shifted by it at the end.
 # Hand-placed times below are written on the v1 timeline (preview 1); with edl_v1.json they are remapped through
 # source time onto the current EDL, so they follow later trims. A time inside removed footage snaps to the next kept moment.
 import json,re,sys
@@ -84,6 +85,21 @@ for g in G:
 SFX=[dict(x,t=R(x["t"])) for x in SFX]
 Z=[dict(z,t=R(z["t"])) for z in Z]
 DUR,END=R(DUR),round(SPEECH,2)
-json.dump({"duration":DUR,"speech_end":END,"parts":edl["parts"],"segments":edl["segments"],"captions":chunks,"broll":B,"graphics":G,"sfx":SFX,"zoom":Z,
+INTRO=1.0
+SH=lambda t:round(t+INTRO,2)
+for c in chunks:
+    c["s"],c["e"]=SH(c["s"]),SH(c["e"])
+    for x in c["words"]: x["s"]=SH(x["s"])
+for b in B: b["s"],b["e"]=SH(b["s"]),SH(b["e"])
+for g in G:
+    g["s"],g["e"]=SH(g["s"]),SH(g["e"])
+    if "items" in g: g["items"]=[[x,SH(t)] for x,t in g["items"]]
+    if "tb" in g: g["tb"]=SH(g["tb"])
+    if "times" in g: g["times"]=[SH(t) for t in g["times"]]
+SFX=[dict(x,t=SH(x["t"])) for x in SFX]+[{"t":0.0,"name":"pop","gain":0.6},{"t":0.72,"name":"whoosh","gain":0.55}]
+SFX.sort(key=lambda x:x["t"])
+Z=[{"t":0.0,"scale":1.12,"oy":40}]+[dict(z,t=SH(z["t"])) for z in Z]
+DUR,END=SH(DUR),SH(END)
+json.dump({"duration":DUR,"speech_end":END,"intro":{"s":0.0,"e":INTRO,"file":"cover.png"},"parts":edl["parts"],"segments":edl["segments"],"captions":chunks,"broll":B,"graphics":G,"sfx":SFX,"zoom":Z,
   "logo":"logo-white.png","music":{"file":"music.mp3","id":282,"offset":9,"note":"Lo-fi beat santai, Mixkit Stock Music Free License"}},open(sys.argv[3],"w"),ensure_ascii=False,indent=1)
 print(len(chunks),"caption chunks; duration",DUR)

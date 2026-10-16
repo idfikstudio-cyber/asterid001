@@ -3,7 +3,9 @@
 Status: **preview sahaja, belum render final.**
 
 Sumber: `Konten Fi-k/CFik018/IMG_1472.MOV` (1:53, 720×1280) dari Google Drive. Tidak disimpan dalam repo.
-Hasil: satu video 9:16, **0:44** (versi 2, sasaran tidak lebih 1:00).
+Hasil: satu video 9:16, **0:45** (versi 4: cover thumbnail A 1 saat + 0:44 kandungan; sasaran tidak lebih 1:00).
+
+Thumbnail: `thumbnail/CFik018_cover_A.png` (dipilih), `CFik018_cover_B.png` (alternatif), sumber `thumbnail/cover.html`.
 
 - `edit/transcript_IMG_1472.json`: transkrip Whisper large-v3, masa setiap perkataan.
 - `edit/edl.json`: take terbaik setiap ayat, pause > 0.3s dipendekkan. Hook "Ramai hampir rugi berbelas ribu…" (take kedua). Versi 2 ikut potongan yang diminta selepas preview 1; `edit/edl_v1.json` ialah versi 1 (masa grafik ditulis atas timeline v1 dan dipetakan ke v2 oleh `plan.py`).

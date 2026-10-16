@@ -1,5 +1,6 @@
 # Overlay B-roll (landscape/portrait video or still photo) on the talking-head base and finish the voice.
-# usage: build_proxy.py plan.json base.mov mixkit_dir fik_photo_dir out.mp4 graded|orig WIDTH
+# usage: build_proxy.py plan.json base.mov mixkit_dir fik_photo_dir out.mp4 graded|orig WIDTH [cover.png]
+# With plan["intro"] and a cover image, the cover is held for the intro before the talking head (voice delayed to match).
 import json,subprocess,sys
 P=json.load(open(sys.argv[1]));base,md,fd,out,mode,W=sys.argv[2],sys.argv[3],sys.argv[4],sys.argv[5],sys.argv[6],int(sys.argv[7]);H=W*16//9
 DUR,END=P["duration"],P["speech_end"]
@@ -8,7 +9,8 @@ LOOK="curves=all='0/0.02 0.2/0.17 0.5/0.52 0.8/0.84 1/0.97',eq=contrast=1.03:sat
 def size(path):
     w,h=subprocess.check_output(["ffprobe","-v","error","-select_streams","v:0","-show_entries","stream=width,height","-of","csv=p=0",path]).decode().strip().split(",")[:2]
     return int(w),int(h)
-inp=["-i",base];fc=[f"[0:v]tpad=stop_mode=clone:stop_duration={DUR-END+0.5:.2f},trim=0:{DUR},setpts=PTS-STARTPTS[v0]"];last="v0"
+IN=P.get("intro",{}).get("e",0) if len(sys.argv)>8 else 0
+inp=["-i",base];fc=[f"[0:v]tpad=stop_mode=clone:stop_duration={DUR-END+0.5:.2f},trim=0:{DUR-IN},setpts=PTS-STARTPTS[v0]"];last="v0"
 for k,b in enumerate(P["broll"],1):
     d=b["e"]-b["s"]
     if b["src"]=="fik":
@@ -23,7 +25,11 @@ for k,b in enumerate(P["broll"],1):
     g=LOOK+"," if mode=="graded" else ""
     fc.append(f"[{k}:v]setpts=PTS-STARTPTS,fps=30000/1001,format=yuv420p,{push},{g}setsar=1,setpts=PTS+{b['s']}/TB[b{k}]")
     fc.append(f"[{last}][b{k}]overlay=enable='between(t,{b['s']},{b['e']-0.001})':eof_action=pass[v{k}]");last=f"v{k}"
+if IN:
+    k=len(P["broll"])+1;inp+=["-loop","1","-framerate","30000/1001","-t",f"{IN}","-i",sys.argv[8]]
+    fc.insert(0,f"[{k}:v]scale={W}:{H}:flags=lanczos,setsar=1,format=yuv420p,trim=0:{IN},setpts=PTS-STARTPTS[iv]")
+    fc[1]=fc[1].replace("[v0]","[th]");fc.insert(2,"[iv][th]concat=n=2:v=1:a=0[v0]")
 fc.append(f"[{last}]format=yuv420p[vout]")
 A="highpass=f=80,afftdn=nr=8:nf=-42,acompressor=threshold=-20dB:ratio=2.5:attack=8:release=120:makeup=2,loudnorm=I=-14:TP=-1.5:LRA=7" if mode=="graded" else "anull"
-fc.append(f"[0:a]{A},apad,atrim=0:{DUR}[aout]")
+fc.append(f"[0:a]adelay={int(IN*1000)}:all=1,{A},apad,atrim=0:{DUR}[aout]")  # delay before loudnorm (it resamples)
 subprocess.run(["ffmpeg","-v","error","-y",*inp,"-filter_complex",";".join(fc),"-map","[vout]","-map","[aout]","-c:v","libx264","-preset","slow","-crf","26","-profile:v","high","-pix_fmt","yuv420p","-movflags","+faststart","-c:a","aac","-b:a","128k","-ar","48000",out],check=True)
