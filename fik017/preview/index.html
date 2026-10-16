@@ -130,6 +130,36 @@ tr.cur td{background:var(--brand-soft)}
 .logos figcaption{font-size:12px;color:var(--muted);margin-top:4px}
 .ask{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
 .ask ol{margin:6px 0 0;padding-left:20px;display:flex;flex-direction:column;gap:6px}
+
+/* thumbnail frame (first 1 s) */
+.th{position:absolute;inset:0;overflow:hidden}
+.th .half{position:absolute;left:0;right:0;overflow:hidden}
+.th .half img{width:100%;height:100%;object-fit:cover;display:block}
+.th .lbl{position:absolute;font:600 3.4cqw var(--f-display);letter-spacing:.24em;color:var(--v-white);background:rgba(20,28,26,.66);padding:1cqw 2.8cqw;border-radius:99px}
+.th .lbl.g{background:var(--v-green)}
+.th .hook{font:600 10.4cqw/1 var(--f-display);color:var(--v-white);letter-spacing:-.005em;text-wrap:balance}
+.th .hook span{display:block}
+.th .logoW{position:absolute;right:5cqw;top:4cqh;width:15cqw;filter:drop-shadow(0 .4cqw 1.6cqw rgba(0,0,0,.4))}
+.thA .band{position:absolute;left:0;right:0;top:41cqh;padding:3cqh 6cqw;background:var(--v-green);box-shadow:0 0 0 .8cqw var(--v-white)}
+.thB .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,22,20,.78) 0%,rgba(15,22,20,.15) 38%,rgba(15,22,20,0) 60%,rgba(15,22,20,.35) 100%)}
+.thB .hook{position:absolute;left:6cqw;right:22cqw;top:12cqh;font-size:11.5cqw}
+.thB .inset{position:absolute;left:6cqw;bottom:9cqh;width:44cqw;background:var(--v-paper);padding:1.6cqw 1.6cqw 7cqw;transform:rotate(-5deg);box-shadow:0 2cqw 6cqw rgba(0,0,0,.5)}
+.thB .inset img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block}
+.thB .inset p{position:absolute;left:0;right:0;bottom:1.4cqw;margin:0;text-align:center;font:600 4.2cqw var(--f-display);color:var(--v-green);letter-spacing:.18em}
+.thB .now{position:absolute;right:6cqw;bottom:13cqh}
+.thC .col{position:absolute;top:0;bottom:30cqh;width:50%;overflow:hidden}
+.thC .col img{width:100%;height:100%;object-fit:cover;display:block}
+.thC .split{position:absolute;top:0;bottom:30cqh;left:50%;width:.8cqw;transform:translateX(-50%);background:var(--v-white)}
+.thC .foot{position:absolute;left:0;right:0;bottom:0;height:30cqh;background:var(--v-paper);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2.2cqh;border-top:.8cqw solid var(--v-white)}
+.thC .hook{color:var(--v-green);text-align:center;font-size:10cqw}
+.thC .ask{font:600 5cqw var(--f-display);color:var(--v-white);background:var(--v-oak);padding:1.2cqw 5cqw;border-radius:99px;color:#3b2a14}
+.thumbs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.tcard{display:flex;flex-direction:column;gap:6px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:12px;padding:8px;cursor:pointer;font:inherit;text-align:left}
+.tcard img{width:100%;max-width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:8px;display:block}
+.tcard b{font-size:13.5px}.tcard small{color:var(--muted);font-size:12px;line-height:1.35}
+.tcard[aria-pressed="true"]{border-color:var(--brand);box-shadow:0 0 0 2px var(--brand)}
+.tcard:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+@media (max-width:480px){.thumbs{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.tcard small{display:none}}
 @media (prefers-reduced-motion:reduce){.caps span{transition:none}}
 </style>
 
@@ -139,12 +169,13 @@ tr.cur td{background:var(--brand-soft)}
       <div class="eyebrow">Fi-K Studio · Projek CFik017 · Reels / TikTok 9:16</div>
       <h1>Video handover <b>CFik017</b></h1>
     </div>
-    <div class="status"><b>Preview v2</b> belum render final · 49.5 s · 1080×1920 bila render</div>
+    <div class="status"><b>Preview v3</b> belum render final · 50.5 s · 1080×1920 bila render</div>
   </header>
 
   <div class="grid">
     <section class="player" aria-label="Pemain preview">
       <div class="phone" id="phone">
+        <div class="layer" id="L-thumb"></div>
         <div class="layer" id="L-hook"></div>
         <div class="layer" id="L-before"></div>
                 <div class="layer" id="L-logo"><div class="paper"></div><div class="rule" id="logoRule"></div><img class="logoMark" id="logoMark" src="img/logo_green.png" alt="Logo Fi-K Studio"><div class="logoTag" id="logoTag">Interior Design · 3D · Renovation</div><div class="endSvc" id="logoProj" style="top:70cqh">Projek CFik017</div></div>
@@ -164,23 +195,31 @@ tr.cur td{background:var(--brand-soft)}
         <div class="hint" id="hint" hidden></div>
         <button class="bigplay" id="bigplay" aria-label="Main preview dengan bunyi"><span>▶ Main dengan bunyi</span></button>
       </div>
-      <div class="track" id="track" role="slider" tabindex="0" aria-label="Kedudukan masa" aria-valuemin="0" aria-valuemax="49.5" aria-valuenow="0"><div class="bar" id="bar"></div><div class="head" id="head"></div></div>
+      <div class="track" id="track" role="slider" tabindex="0" aria-label="Kedudukan masa" aria-valuemin="0" aria-valuemax="50.5" aria-valuenow="0"><div class="bar" id="bar"></div><div class="head" id="head"></div></div>
       <div class="controls">
         <button class="btn primary" id="play">Main</button>
         <button class="btn" id="back" aria-label="Undur 5 saat">−5 s</button>
-        <span class="time" id="time">0:00.0 / 0:49.5</span>
+        <span class="time" id="time">0:00.0 / 0:50.5</span>
       </div>
       <div class="opts">
         <span>Warna gambar</span>
         <div class="seg" role="group" aria-label="Warna gambar">
           <button id="cClean" aria-pressed="true">Clean</button><button id="cOrig" aria-pressed="false">Asal</button>
         </div>
+        <span>Thumbnail</span>
+        <div class="seg" role="group" aria-label="Thumbnail"><button id="thA" aria-pressed="true">A</button><button id="thB" aria-pressed="false">B</button><button id="thC" aria-pressed="false">C</button></div>
         <span>Caption</span>
         <div class="seg" role="group" aria-label="Caption"><button id="capOn" aria-pressed="true">On</button><button id="capOff" aria-pressed="false">Off</button></div>
       </div>
     </section>
 
     <div class="sheet">
+      <section>
+        <h2>Pilih thumbnail</h2>
+        <p style="margin-bottom:12px">Frame ini muncul pada saat pertama video (0:00–0:01) dan jadi cover Reels/TikTok. Klik satu untuk tengok dalam preview, kemudian beritahu aku pilihan kau.</p>
+        <div class="thumbs" id="thumbs"></div>
+      </section>
+
       <section>
         <h2>Babak</h2>
         <div class="chaps" id="chaps"></div>
@@ -226,7 +265,7 @@ tr.cur td{background:var(--brand-soft)}
         <ol>
           <li>Label pada gambar selepas (contoh "Chandelier moden", "Island top marble") ikut tekaan aku dari gambar. Betulkan kalau ada istilah material yang lebih tepat.</li>
           <li>Kad penutup tulis "DM kami untuk keterangan lanjut". Nak letak handle Instagram/TikTok atau nombor WhatsApp?</li>
-          <li>Tempoh 49.5 s sesuai untuk Reels. Nak versi pendek 30 s juga?</li>
+          <li>Tempoh 50.5 s sesuai untuk Reels. Nak versi pendek 30 s juga?</li>
         </ol>
       </section>
     </div>
@@ -281,6 +320,24 @@ const refreshImgs=()=>imgs.forEach(i=>i.src=src(i.dataset.src));refreshImgs();
 /* chips */
 const chipEls=scene("pano").chips.map(c=>{const e=document.createElement("div");e.className="chip";e.innerHTML=`<i>✓</i>${c.txt}`;$("chips").appendChild(e);return e});
 
+/* ---------- thumbnails ---------- */
+let thumbSel="A";
+const W=`<img class="logoW" src="img/logo_white.png" alt="">`, H=h=>`<div class="hook">${h.map(x=>`<span>${x}</span>`).join("")}</div>`;
+const thEls=P.thumbs.map(T=>{const d=document.createElement("div");d.className="th th"+T.id;d.dataset.id=T.id;
+  if(T.id==="A") d.innerHTML=`<div class="half" style="top:0;height:45cqh"><img data-src="${T.top}" alt=""></div><div class="half" style="bottom:0;height:55cqh"><img data-src="${T.bottom}" alt=""></div>
+    <span class="lbl" style="left:5cqw;top:33cqh">SEBELUM</span><span class="lbl g" style="right:5cqw;bottom:6cqh">SELEPAS</span><div class="band">${H(T.hook)}</div>${W}`;
+  if(T.id==="B") d.innerHTML=`<img class="fill" data-src="${T.main}" alt=""><div class="shade"></div>${H(T.hook)}
+    <div class="inset"><img data-src="${T.inset}" alt=""><p>DULU</p></div><span class="lbl g now">SEKARANG</span>${W}`;
+  if(T.id==="C") d.innerHTML=`<div class="col" style="left:0"><img data-src="${T.left}" alt=""></div><div class="col" style="right:0"><img data-src="${T.right}" alt=""></div><div class="split"></div>
+    <span class="lbl" style="left:4cqw;top:58cqh">3D DESIGN</span><span class="lbl g" style="right:4cqw;top:58cqh">SEBENAR</span>
+    <div class="foot">${H(T.hook)}<span class="ask">${T.sub}</span></div>${W}`;
+  d.querySelectorAll("img[data-src]").forEach(i=>{if(i.dataset.src.startsWith("img/pano"))i.src=i.dataset.src;else imgs.push(i)});
+  d.hidden=T.id!=="A"; $("L-thumb").appendChild(d);
+  const c=document.createElement("button");c.className="tcard";c.id="tc"+T.id;c.setAttribute("aria-pressed",T.id==="A");
+  c.innerHTML=`<img src="img/thumb_${T.id}.jpg" alt="Thumbnail ${T.id}"><b>${T.id} · ${T.name}</b><small>“${T.hook.join(" ")}${T.sub?" "+T.sub:""}”</small>`;$("thumbs").appendChild(c);
+  return d});
+refreshImgs();
+
 /* ---------- 3D panorama ---------- */
 let r3=null;
 if(window.THREE){
@@ -303,13 +360,13 @@ function drawPano(yaw,pitch,fov){ if(!r3)return; const c=r3.cam; c.fov=fov;c.upd
   c.rotation.order="YXZ"; c.rotation.y=THREE.MathUtils.degToRad(-(yaw+r3.userYaw)); c.rotation.x=THREE.MathUtils.degToRad(-(pitch+r3.userPitch)); r3.ren.render(r3.sc,c)}
 
 /* ---------- chapters, track, shot list ---------- */
-const chapCol={"ba":"var(--brand)","photos":"#8b8f8c","logo":"var(--brand)","pano":"var(--c-mg)","morph":"var(--c-mg)","client":"var(--oak)","end":"var(--brand)"};
+const chapCol={"thumb":"var(--oak)","ba":"var(--brand)","photos":"#8b8f8c","logo":"var(--brand)","pano":"var(--c-mg)","morph":"var(--c-mg)","client":"var(--oak)","end":"var(--brand)"};
 const fmt=t=>`${Math.floor(t/60)}:${(t%60).toFixed(1).padStart(4,"0")}`;
 P.scenes.forEach((s,i)=>{
   const w=(s.t1-s.t0)/DUR*100; const seg=document.createElement("i");seg.style.width=w+"%";seg.style.background=chapCol[s.type];seg.style.opacity=i%2?.75:1;$("bar").appendChild(seg);
   const b=document.createElement("button");b.className="chap";b.innerHTML=`<small>${fmt(s.t0)}</small><b>${s.chapter}</b>`;b.onclick=()=>seek(s.t0+.05);b.dataset.i=i;$("chaps").appendChild(b);
 });
-const DESC={hook:"Living lama → wipe → living siap. Teks pembuka.",before:"Montaj 5 gambar sebelum, kesan shutter + cop SEBELUM.",logo:"Kad logo hijau atas latar plaster, garisan dilukis, servis + kod projek.",pano:"Kamera maya pusing dalam render 3D 360°, grid pelan pudar, cip Layout · 3D · Drawing.",morph:"Render 3D lebur ke gambar sebenar.",dining:"Slider sebelum/selepas, label, 2 sudut tambahan.",toilet:"Slider sebelum/selepas + label.",kitchen:"Slider sebelum/selepas + label.",family:"Slider sebelum/selepas + 1 sudut tambahan.",client:"Video klien dalam bingkai telefon, kemudian polaroid serah kunci.",end:"Kad penutup logo hijau, servis, butang DM."};
+const DESC={thumb:"Frame cover + hook (pilihan A/B/C). Lengkap sejak frame pertama.",hook:"Living lama → wipe → living siap. Teks pembuka.",before:"Montaj 5 gambar sebelum, kesan shutter + cop SEBELUM.",logo:"Kad logo hijau atas latar plaster, garisan dilukis, servis + kod projek.",pano:"Kamera maya pusing dalam render 3D 360°, grid pelan pudar, cip Layout · 3D · Drawing.",morph:"Render 3D lebur ke gambar sebenar.",dining:"Slider sebelum/selepas, label, 2 sudut tambahan.",toilet:"Slider sebelum/selepas + label.",kitchen:"Slider sebelum/selepas + label.",family:"Slider sebelum/selepas + 1 sudut tambahan.",client:"Video klien dalam bingkai telefon, kemudian polaroid serah kunci.",end:"Kad penutup logo hijau, servis, butang DM."};
 P.scenes.forEach(s=>{
   const vo=P.captions.filter(c=>c.s>=s.t0&&c.s<s.t1).map(c=>c.words.map(w=>w.w).join(" ")).join(" ");
   const fx=[...new Set(P.sfx.filter(x=>x.t>=s.t0&&x.t<s.t1).map(x=>x.n))].join(", ");
@@ -319,7 +376,7 @@ P.scenes.forEach(s=>{
 });
 
 /* ---------- render(t) ---------- */
-const layers=["L-hook","L-before","L-logo","L-pano","L-ba","L-client","L-end"].map($);
+const layers=["L-thumb","L-hook","L-before","L-logo","L-pano","L-ba","L-client","L-end"].map($);
 let lastShow=null;
 function show(id){layers.forEach(l=>l.classList.toggle("on",l.id===id))}
 function inScene(t){return P.scenes.find(s=>t>=s.t0&&t<s.t1)||P.scenes[P.scenes.length-1]}
@@ -329,7 +386,7 @@ function sync(v,t,active){ if(!active){if(!v.paused)v.pause();return}
 function render(t){
   cur=t; const s=inScene(t), lt=t-s.t0, D=s.t1-s.t0;
   const intro=out(lt/.28); // whip-in for every cut
-  const L={ba:"L-ba",photos:"L-before",logo:"L-logo",pano:"L-pano",morph:"L-pano",client:"L-client",end:"L-end"}[s.type];
+  const L={thumb:"L-thumb",ba:"L-ba",photos:"L-before",logo:"L-logo",pano:"L-pano",morph:"L-pano",client:"L-client",end:"L-end"}[s.type];
   show(s.id==="hook"?"L-hook":L);
   const lay=$(s.id==="hook"?"L-hook":L); lay.style.transform=`scale(${1.06-.06*intro})`; lay.style.filter=intro<1?`blur(${(1-intro)*6}px)`:"";
   let hint="";
@@ -347,13 +404,14 @@ function render(t){
     (s.callouts||[]).forEach((c,i)=>{const k=back((lt-c.t)/.35);e.cos[i].style.transform=`scale(${k})`;e.cos[i].style.opacity=ex?0:clamp((lt-c.t)/.12)});
     if(!playing) hint="Seret garisan untuk banding";
   }
+  if(s.type==="thumb"){ const e=thEls.find(e=>e.dataset.id===thumbSel); e.style.transform=`scale(${1+.03*lt})`; lay.style.transform="";lay.style.filter=""; $("flash").style.opacity=clamp((lt-.8)/.2)*.6 }
   if(s.type==="photos"){
     const n=bImgs.length, per=D/n, k=Math.min(n-1,Math.floor(lt/per));
     bImgs.forEach((im,i)=>{im.style.opacity=i===k?1:0; const q=(lt-i*per)/per; im.style.transform=`scale(${i%2?1.12-.08*q:1.04+.08*q}) translateX(${(i%2?-1:1)*q*2}%)`});
     $("flash").style.opacity=.7*clamp(1-((lt-k*per)-.2)/.18)*(lt-k*per>.2?1:0);
     stamp.style.transform=`translateX(-50%) rotate(-6deg) scale(${1.6-.6*out(lt/.25)})`;stamp.style.opacity=clamp(lt/.15);
     count.textContent=`${k+1} / ${n}`;
-  } else $("flash").style.opacity=0;
+  } else if(s.type!=="thumb") $("flash").style.opacity=0;
   if(s.type==="logo"){
     const k=out((lt-.2)/.7); $("logoMark").style.opacity=k; $("logoMark").style.transform=`translate(-50%,-50%) scale(${.9+.1*k})`;
     $("logoMark").style.clipPath=`inset(${(1-k)*100}% 0 0 0)`;
@@ -382,7 +440,7 @@ function render(t){
     const k=out((lt-.1)/.6); $("endMark").style.opacity=k; $("endMark").style.top=(38-4*k)+"%"; $("endMark").style.transform=`translate(-50%,-50%) scale(${.92+.08*k})`;
     $("endSvc").style.opacity=out((lt-1.0)/.5); const c=back((lt-1.8)/.45); $("endCta").style.transform=`translateX(-50%) scale(${c*(1+.03*Math.sin(Math.max(0,lt-2.4)*5))})`;
   }
-  $("wm").style.opacity=["logo","end"].includes(s.type)?0:.92;
+  $("wm").style.opacity=["logo","end","thumb"].includes(s.type)?0:.92;
   // captions
   const cap=capsOn&&!["end"].includes(s.type)?P.captions.find(c=>t>=c.s-.05&&t<c.e+.25):null;
   const ce=$("caps"); const key=cap?cap.s:null;
@@ -393,7 +451,7 @@ function render(t){
   const h=$("hint"); h.hidden=!hint; h.textContent=hint;
   // UI
   $("head").style.left=(t/DUR*100)+"%"; $("track").setAttribute("aria-valuenow",t.toFixed(1));
-  $("time").textContent=`${fmt(t)} / 0:49.5`;
+  $("time").textContent=`${fmt(t)} / 0:50.5`;
   document.querySelectorAll(".chap").forEach(b=>b.classList.toggle("on",P.scenes[b.dataset.i]===s));
   if(lastShow!==s.id){lastShow=s.id;document.querySelectorAll("#shots tr").forEach(r=>r.classList.toggle("cur",r.dataset.id===s.id))}
 }
@@ -409,10 +467,14 @@ tk.addEventListener("keydown",e=>{if(e.key==="ArrowRight")seek(cur+1);if(e.key==
 const setSeg=(on,off,fn)=>{$(on).setAttribute("aria-pressed","true");$(off).setAttribute("aria-pressed","false");fn();render(cur)};
 $("cClean").onclick=()=>setSeg("cClean","cOrig",()=>{colorMode="clean";refreshImgs()});
 $("cOrig").onclick=()=>setSeg("cOrig","cClean",()=>{colorMode="orig";refreshImgs()});
+function setThumb(id){thumbSel=id;["A","B","C"].forEach(k=>{$("th"+k).setAttribute("aria-pressed",k===id);$("tc"+k).setAttribute("aria-pressed",k===id)});
+  thEls.forEach(e=>e.hidden=e.dataset.id!==id);try{localStorage.setItem("fik-thumb",id)}catch(e){};render(cur)}
+["A","B","C"].forEach(k=>{$("th"+k).onclick=()=>setThumb(k);$("tc"+k).onclick=()=>{setThumb(k);seek(0)}});
+try{const v=localStorage.getItem("fik-thumb");if(v&&"ABC".includes(v))setThumb(v)}catch(e){}
 $("capOn").onclick=()=>setSeg("capOn","capOff",()=>capsOn=true);
 $("capOff").onclick=()=>setSeg("capOff","capOn",()=>capsOn=false);
 const start=parseFloat((location.hash.match(/^#t(\d+(?:\.\d+)?)$/)||[])[1]);
 seek(isNaN(start)?1.4:start);
-window.__seek=seek; window.__pano=(y,p)=>{drawPano(y,p||0,80)};
+window.__seek=seek; window.__thumb=id=>{setThumb(id)}; window.__pano=(y,p)=>{drawPano(y,p||0,80)};
 })();
 </script>

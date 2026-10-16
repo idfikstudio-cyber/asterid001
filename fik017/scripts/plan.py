@@ -40,6 +40,24 @@ for sc in scenes:
         sfx+= [S(sc["t0"]+c["t"],"pop",.8) for c in sc["callouts"]]
         if sc.get("extra"): sfx+=[S(sc["t0"]+3.0+i*0.9,"click",.5) for i in range(len(sc["extra"]))]
 sfx+=[S(39.7,"whoosh",.6),S(40.1,"pop",.7),S(43.4,"ding",.6),S(45.1,"impact",.7),S(46.1,"shimmer",.6),S(46.9,"pop",.7)]
-json.dump({"dur":DUR,"vo":VO,"founder":FOUNDER,"client":CLIENT,"captions":caps,"scenes":scenes,"sfx":sorted(sfx,key=lambda x:x["t"])},open(out,"w"),ensure_ascii=False,indent=1)
+# 1 s thumbnail + hook frame in front of everything: shift the whole edit by TH
+TH=1.0
+for sc in scenes:
+    sc["t0"]=round(sc["t0"]+TH,2); sc["t1"]=round(sc["t1"]+TH,2)
+    for c in sc.get("chips",[]): c["t"]=round(c["t"]+TH,2)
+for c in caps:
+    c["s"]+=TH; c["e"]+=TH
+    for w in c["words"]: w["s"]=round(w["s"]+TH,2); w["e"]=round(w["e"]+TH,2)
+for x in sfx: x["t"]=round(x["t"]+TH,2)
+CLIENT=[(t0+TH,a,d) for t0,a,d in CLIENT]
+DUR=round(DUR+TH,2)
+THUMBS=[
+ {"id":"A","name":"Sebelum vs Selepas","top":I("b_dining2"),"bottom":I("a_dining2"),"hook":["Rumah lama","jadi macam ni?"]},
+ {"id":"B","name":"Hasil dulu, lama kemudian","main":I("a_dining1"),"inset":I("b_dining"),"hook":["Ruang makan ni","dulu macam ni"]},
+ {"id":"C","name":"3D vs Hasil sebenar","left":"img/pano_still.jpg","right":I("a_family1"),"hook":["Design 3D vs","hasil sebenar"],"sub":"Sama tak?"},
+]
+scenes.insert(0,{"id":"thumb","t0":0,"t1":TH,"type":"thumb","chapter":"Thumbnail"})
+sfx=[S(0.0,"impact",.8),S(0.05,"shimmer",.5),S(0.82,"whoosh",.6)]+sfx
+json.dump({"dur":DUR,"vo":VO,"founder":FOUNDER,"client":CLIENT,"captions":caps,"thumbs":THUMBS,"scenes":scenes,"sfx":sorted(sfx,key=lambda x:x["t"])},open(out,"w"),ensure_ascii=False,indent=1)
 print(len(caps),"captions;",len(sfx),"sfx")
 
