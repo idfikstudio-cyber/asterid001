@@ -207,7 +207,7 @@ tr.cur td{background:var(--brand-soft)}
           <button id="cClean" aria-pressed="true">Clean</button><button id="cOrig" aria-pressed="false">Asal</button>
         </div>
         <span>Thumbnail</span>
-        <div class="seg" role="group" aria-label="Thumbnail"><button id="thA" aria-pressed="true">A</button><button id="thB" aria-pressed="false">B</button><button id="thC" aria-pressed="false">C</button></div>
+        <div class="seg" role="group" aria-label="Thumbnail"><button id="thA" aria-pressed="false">A</button><button id="thB" aria-pressed="true">B</button><button id="thC" aria-pressed="false">C</button></div>
         <span>Caption</span>
         <div class="seg" role="group" aria-label="Caption"><button id="capOn" aria-pressed="true">On</button><button id="capOff" aria-pressed="false">Off</button></div>
       </div>
@@ -215,8 +215,8 @@ tr.cur td{background:var(--brand-soft)}
 
     <div class="sheet">
       <section>
-        <h2>Pilih thumbnail</h2>
-        <p style="margin-bottom:12px">Frame ini muncul pada saat pertama video (0:00–0:01) dan jadi cover Reels/TikTok. Klik satu untuk tengok dalam preview, kemudian beritahu aku pilihan kau.</p>
+        <h2>Thumbnail: B dipilih</h2>
+        <p style="margin-bottom:12px">Thumbnail B “Ruang makan ni dulu macam ni” kini jadi frame pertama video (0:00–0:01) dan cover Reels/TikTok. A dan C disimpan sebagai rujukan sahaja; klik untuk banding.</p>
         <div class="thumbs" id="thumbs"></div>
       </section>
 
@@ -321,7 +321,7 @@ const refreshImgs=()=>imgs.forEach(i=>i.src=src(i.dataset.src));refreshImgs();
 const chipEls=scene("pano").chips.map(c=>{const e=document.createElement("div");e.className="chip";e.innerHTML=`<i>✓</i>${c.txt}`;$("chips").appendChild(e);return e});
 
 /* ---------- thumbnails ---------- */
-let thumbSel="A";
+let thumbSel="B"; // chosen by the client
 const W=`<img class="logoW" src="img/logo_white.png" alt="">`, H=h=>`<div class="hook">${h.map(x=>`<span>${x}</span>`).join("")}</div>`;
 const thEls=P.thumbs.map(T=>{const d=document.createElement("div");d.className="th th"+T.id;d.dataset.id=T.id;
   if(T.id==="A") d.innerHTML=`<div class="half" style="top:0;height:45cqh"><img data-src="${T.top}" alt=""></div><div class="half" style="bottom:0;height:55cqh"><img data-src="${T.bottom}" alt=""></div>
@@ -332,9 +332,9 @@ const thEls=P.thumbs.map(T=>{const d=document.createElement("div");d.className="
     <span class="lbl" style="left:4cqw;top:58cqh">3D DESIGN</span><span class="lbl g" style="right:4cqw;top:58cqh">SEBENAR</span>
     <div class="foot">${H(T.hook)}<span class="ask">${T.sub}</span></div>${W}`;
   d.querySelectorAll("img[data-src]").forEach(i=>{if(i.dataset.src.startsWith("img/pano"))i.src=i.dataset.src;else imgs.push(i)});
-  d.hidden=T.id!=="A"; $("L-thumb").appendChild(d);
-  const c=document.createElement("button");c.className="tcard";c.id="tc"+T.id;c.setAttribute("aria-pressed",T.id==="A");
-  c.innerHTML=`<img src="img/thumb_${T.id}.jpg" alt="Thumbnail ${T.id}"><b>${T.id} · ${T.name}</b><small>“${T.hook.join(" ")}${T.sub?" "+T.sub:""}”</small>`;$("thumbs").appendChild(c);
+  d.hidden=T.id!=="B"; $("L-thumb").appendChild(d);
+  const c=document.createElement("button");c.className="tcard";c.id="tc"+T.id;c.setAttribute("aria-pressed",T.id==="B");
+  c.innerHTML=`<img src="img/thumb_${T.id}.jpg" alt="Thumbnail ${T.id}"><b>${T.id} · ${T.name}${T.id==="B"?" · dipilih":""}</b><small>“${T.hook.join(" ")}${T.sub?" "+T.sub:""}”</small>`;$("thumbs").appendChild(c);
   return d});
 refreshImgs();
 
@@ -470,7 +470,7 @@ $("cOrig").onclick=()=>setSeg("cOrig","cClean",()=>{colorMode="orig";refreshImgs
 function setThumb(id){thumbSel=id;["A","B","C"].forEach(k=>{$("th"+k).setAttribute("aria-pressed",k===id);$("tc"+k).setAttribute("aria-pressed",k===id)});
   thEls.forEach(e=>e.hidden=e.dataset.id!==id);try{localStorage.setItem("fik-thumb",id)}catch(e){};render(cur)}
 ["A","B","C"].forEach(k=>{$("th"+k).onclick=()=>setThumb(k);$("tc"+k).onclick=()=>{setThumb(k);seek(0)}});
-try{const v=localStorage.getItem("fik-thumb");if(v&&"ABC".includes(v))setThumb(v)}catch(e){}
+
 $("capOn").onclick=()=>setSeg("capOn","capOff",()=>capsOn=true);
 $("capOff").onclick=()=>setSeg("capOff","capOn",()=>capsOn=false);
 const start=parseFloat((location.hash.match(/^#t(\d+(?:\.\d+)?)$/)||[])[1]);

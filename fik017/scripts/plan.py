@@ -58,6 +58,6 @@ THUMBS=[
 ]
 scenes.insert(0,{"id":"thumb","t0":0,"t1":TH,"type":"thumb","chapter":"Thumbnail"})
 sfx=[S(0.0,"impact",.8),S(0.05,"shimmer",.5),S(0.82,"whoosh",.6)]+sfx
-json.dump({"dur":DUR,"vo":VO,"founder":FOUNDER,"client":CLIENT,"captions":caps,"thumbs":THUMBS,"scenes":scenes,"sfx":sorted(sfx,key=lambda x:x["t"])},open(out,"w"),ensure_ascii=False,indent=1)
+json.dump({"dur":DUR,"vo":VO,"founder":FOUNDER,"client":CLIENT,"captions":caps,"thumbs":THUMBS,"thumb":"B","scenes":scenes,"sfx":sorted(sfx,key=lambda x:x["t"])},open(out,"w"),ensure_ascii=False,indent=1)
 print(len(caps),"captions;",len(sfx),"sfx")
 
