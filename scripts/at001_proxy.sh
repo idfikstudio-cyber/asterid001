@@ -24,5 +24,5 @@ ffmpeg -v error -y -i "$LOOK" -i "$SRC" -filter_complex "$FC;[vc]tpad=stop_mode=
 ffmpeg -v error -y -i "$SRC" -i "$SRC" -filter_complex "$FC;[vc]tpad=stop_mode=clone:stop_duration=$END_CARD,scale=540:960:flags=lanczos,fps=30[v];[ac]anullsink" \
   -map "[v]" -an -c:v libx264 -preset slow -crf 25 -g 15 -pix_fmt yuv420p -movflags +faststart "$OUT/orig.mp4"
 # A/B of audio only (original vs cleaned), for the "Audio" tab
-ffmpeg -v error -y -i "$SRC" -i "$SRC" -filter_complex "$FC;[vc]nullsink" -map "[ac]" -c:a aac -b:a 128k "$OUT/audio_orig.m4a"
+ffmpeg -v error -y -i "$SRC" -i "$SRC" -filter_complex "$FC;[vc]nullsink" -map "[ac]" -c:a libmp3lame -b:a 128k "$OUT/audio_orig.mp3"
 ls -la "$OUT"

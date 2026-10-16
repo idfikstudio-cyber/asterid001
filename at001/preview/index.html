@@ -1,3 +1,4 @@
+<meta charset="utf-8">
 <title>Preview AT001 Sifir</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,6 +24,7 @@
   --accent:#8fb0ff; --gold:#ffc83d; --gold-ink:#ffd97a; --chip:#1c2538;
   --c-cut:#ff8a5c; --c-sfx:#53d1a6; --c-mg:#8fb0ff; --c-zoom:#c79bf2; --c-broll:#ff7fb0; color-scheme:dark}
 *{box-sizing:border-box}
+[hidden]{display:none!important}
 body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.55}
 .wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px 48px}
 header.top{display:flex;flex-wrap:wrap;gap:8px 24px;align-items:end;justify-content:space-between;margin-bottom:18px}
@@ -182,11 +184,11 @@ td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
 .exam li .q{color:#2a2f40}
 .exam li svg{position:absolute;right:2cqw;top:-1cqw;width:11cqw;height:11cqw;overflow:visible}
 .exam li path,.exam .score path{fill:none;stroke:var(--v-red);stroke-width:7;stroke-linecap:round;stroke-dasharray:100;stroke-dashoffset:100;animation:draw .28s calc(var(--d) - var(--late)) ease-out forwards}
-.exam .score{position:absolute;right:0;top:-1cqh;width:26cqw;height:22cqw;display:grid;place-items:center;transform:rotate(-8deg)}
+.exam .score{position:absolute;right:0;top:7cqh;width:26cqw;height:22cqw;display:grid;place-items:center;transform:rotate(-8deg)}
 .exam .score span{font:400 14cqw var(--f-hand);color:var(--v-red);opacity:0;animation:popin .3s calc(var(--d) - var(--late)) both}
 .exam .score svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
 .exam .face{position:absolute;left:9cqw;bottom:-1cqh;font:400 9cqw var(--f-hand);color:var(--v-red);opacity:0;animation:popin .3s calc(var(--d) - var(--late)) both}
-.solve .big{position:absolute;left:4cqw;right:0;top:20cqh;font-size:20cqw;line-height:1;white-space:nowrap;color:var(--v-pen)}
+.solve .big{position:absolute;left:2cqw;right:0;top:20cqh;font-size:15.5cqw;line-height:1;white-space:nowrap;color:var(--v-pen)}
 .solve .big .ans{color:var(--v-green)}
 .solve .tick{position:absolute;right:2cqw;top:31cqh;width:20cqw;height:20cqw;overflow:visible}
 .solve .tick path{fill:none;stroke:var(--v-green);stroke-width:9;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:100;stroke-dashoffset:100;animation:draw .3s calc(var(--d) - var(--late)) ease-out forwards}
@@ -223,7 +225,7 @@ td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
 .path svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
 .path .road{fill:none;stroke:var(--v-gold);stroke-width:2.6;stroke-linecap:round;stroke-dasharray:4 3.2;filter:drop-shadow(0 .6px 1.2px rgba(0,0,0,.6))}
 .path .mask{fill:none;stroke:#fff;stroke-width:6;stroke-dasharray:200;stroke-dashoffset:200;animation:draw 1s calc(.1s - var(--late)) ease-in-out forwards}
-.path .cup{position:absolute;right:0;top:0;width:24cqw;display:flex;flex-direction:column;align-items:center;opacity:0;animation:popin .4s calc(var(--d) - var(--late)) both}
+.path .cup{position:absolute;right:1cqw;top:-2cqh;max-width:32cqw;display:flex;flex-direction:column;align-items:center;opacity:0;animation:popin .4s calc(var(--d) - var(--late)) both}
 .path .cup span{font-size:15cqw;line-height:1;filter:drop-shadow(0 1cqw 2cqw rgba(0,0,0,.5))}
 .path .cup b{font-weight:900;font-stretch:78%;font-size:5.2cqw;line-height:1;text-align:center;background:var(--v-navy);border:.5cqw solid var(--v-gold);border-radius:2cqw;padding:1cqw 2cqw;margin-top:1cqw}
 .path .start{position:absolute;left:0;bottom:0;font:800 3.6cqw var(--f-body);background:rgba(0,0,0,.55);border-radius:99px;padding:.6cqw 2.4cqw}
@@ -234,7 +236,7 @@ td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
 .follow .nm{flex:1;min-width:0}
 .follow .nm b{display:block;font-weight:900;font-size:6cqw;font-stretch:85%;line-height:1}
 .follow .nm small{display:block;font:600 3.2cqw var(--f-body);color:#4a5370;margin-top:.8cqw;line-height:1.2}
-.follow .fb{position:relative;font:900 4.6cqw var(--f-display);font-stretch:85%;border-radius:2cqw;padding:2cqw 3.4cqw;background:#fe2c55;color:#fff;white-space:nowrap}
+.follow .fb{position:relative;min-width:25cqw;text-align:center;font:900 4.6cqw var(--f-display);font-stretch:85%;border-radius:2cqw;padding:2cqw 3.4cqw;background:#fe2c55;color:#fff;white-space:nowrap}
 .follow .fb .a,.follow .fb .b{display:block}
 .follow .fb .b{position:absolute;inset:0;display:grid;place-items:center;background:#e6e9f2;color:var(--v-navy);border-radius:2cqw;opacity:0;animation:show .01s calc(var(--d) - var(--late)) forwards}
 .follow .tapper{position:absolute;right:2cqw;top:9cqw;font-size:10cqw;animation:tap 1s calc(var(--d) - .5s - var(--late)) both}
@@ -267,7 +269,7 @@ td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
           <video id="vg" src="graded.mp4" playsinline preload="auto"></video>
           <video id="vo" src="orig.mp4" playsinline muted preload="auto"></video>
         </div>
-        <audio id="ao" src="audio_orig.m4a" preload="auto"></audio>
+        <audio id="ao" src="audio_orig.mp3" preload="auto"></audio>
         <div class="ov" id="ov"></div>
         <div class="safe" id="safe" hidden><i style="left:0;right:0;top:0;height:9%"></i><i style="right:0;width:15%;top:36%;bottom:16%"></i><i style="left:0;right:0;bottom:0;height:16%"></i></div>
         <div class="wipe" id="wipe" hidden><span class="lab l">Asal</span><span class="lab r">Bokeh + grade</span><span class="knob" id="knob">⟷</span></div>
@@ -458,7 +460,7 @@ requestAnimationFrame(loop);
 /* ---- transport ---- */
 async function play(){$("#bigplay").hidden=true;await initAudio();if(actx&&actx.state==="suspended")actx.resume();lastT=vg.currentTime;if(vg.ended||vg.currentTime>=DUR-.05)vg.currentTime=0;try{await vg.play()}catch(e){}}
 function pause(){vg.pause();vo.pause();ao.pause()}
-function seek(t){vg.currentTime=t;vo.currentTime=t;if(t<plan.duration)ao.currentTime=t;lastT=t;render(t)}
+function seek(t){for(const o of GS){o.on=false;o.el.classList.remove("on")}vg.currentTime=t;vo.currentTime=t;if(t<plan.duration)ao.currentTime=t;lastT=t;render(t)}
 vg.addEventListener("play",()=>{$("#play").textContent="❚❚";$("#play").setAttribute("aria-label","Jeda");phone.classList.remove("paused")});
 vg.addEventListener("pause",()=>{$("#play").textContent="▶";$("#play").setAttribute("aria-label","Main");vo.pause();ao.pause();phone.classList.add("paused")});
 vg.addEventListener("ended",()=>{$("#play").textContent="↺"});
