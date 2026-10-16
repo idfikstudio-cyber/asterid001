@@ -1,0 +1,1261 @@
+{
+ "duration": 47.4,
+ "speech_end": 43.4,
+ "parts": [
+  {
+   "seg": "hook",
+   "clip": "A",
+   "in": 8.52,
+   "out": 13.45,
+   "t": 0
+  },
+  {
+   "seg": "situasi",
+   "clip": "A",
+   "in": 20.6,
+   "out": 26.78,
+   "t": 4.93
+  },
+  {
+   "seg": "masalah",
+   "clip": "A",
+   "in": 36.95,
+   "out": 37.406,
+   "t": 11.11
+  },
+  {
+   "seg": "masalah",
+   "clip": "A",
+   "in": 37.918,
+   "out": 38.967,
+   "t": 11.566
+  },
+  {
+   "seg": "masalah",
+   "clip": "A",
+   "in": 39.178,
+   "out": 44.2,
+   "t": 12.615
+  },
+  {
+   "seg": "muat",
+   "clip": "A",
+   "in": 55.62,
+   "out": 58.611,
+   "t": 17.637
+  },
+  {
+   "seg": "muat",
+   "clip": "A",
+   "in": 58.896,
+   "out": 59.008,
+   "t": 20.627
+  },
+  {
+   "seg": "muat",
+   "clip": "A",
+   "in": 60.267,
+   "out": 63.92,
+   "t": 20.739
+  },
+  {
+   "seg": "lukis",
+   "clip": "A",
+   "in": 73.38,
+   "out": 77.292,
+   "t": 24.391
+  },
+  {
+   "seg": "lukis",
+   "clip": "A",
+   "in": 78.566,
+   "out": 79.465,
+   "t": 28.303
+  },
+  {
+   "seg": "lukis",
+   "clip": "A",
+   "in": 79.709,
+   "out": 79.842,
+   "t": 29.202
+  },
+  {
+   "seg": "lukis",
+   "clip": "A",
+   "in": 80.119,
+   "out": 85.85,
+   "t": 29.335
+  },
+  {
+   "seg": "murah",
+   "clip": "A",
+   "in": 91.2,
+   "out": 91.526,
+   "t": 35.066
+  },
+  {
+   "seg": "murah",
+   "clip": "A",
+   "in": 91.889,
+   "out": 93.555,
+   "t": 35.392
+  },
+  {
+   "seg": "murah",
+   "clip": "A",
+   "in": 93.844,
+   "out": 94.62,
+   "t": 37.058
+  },
+  {
+   "seg": "mahal",
+   "clip": "A",
+   "in": 96.15,
+   "out": 96.47,
+   "t": 37.834
+  },
+  {
+   "seg": "mahal2",
+   "clip": "A",
+   "in": 97.95,
+   "out": 101.3,
+   "t": 38.154
+  },
+  {
+   "seg": "follow",
+   "clip": "A",
+   "in": 108.85,
+   "out": 110.75,
+   "t": 41.504
+  }
+ ],
+ "segments": [
+  {
+   "id": "hook",
+   "clip": "A",
+   "in": 8.52,
+   "out": 13.45,
+   "text": "Ramai hampir rugi berbelas ribu sebabkan satu gambar dekat Pinterest."
+  },
+  {
+   "id": "situasi",
+   "clip": "A",
+   "in": 20.6,
+   "out": 26.78,
+   "text": "Situasi yang biasa kita jumpa adalah klien datang kat kita. Dia nak buat macam dia jumpa dekat Pinterest."
+  },
+  {
+   "id": "masalah",
+   "clip": "A",
+   "in": 36.95,
+   "out": 44.2,
+   "text": "Masalahnya, dapur dekat gambar Pinterest tu 15 kaki. Tapi rumah korang tu 9 kaki je."
+  },
+  {
+   "id": "muat",
+   "clip": "A",
+   "in": 55.62,
+   "out": 63.92,
+   "text": "Peti ais tak muat, laluan jadi sempit, pintu kabinet berlaga-laga."
+  },
+  {
+   "id": "lukis",
+   "clip": "A",
+   "in": 73.38,
+   "out": 85.85,
+   "text": "Bila kami lukis ikut 3D dan ukuran sebenar rumah korang, masalah ni akan dapat kita detect sebelum papan tu mula melekat dekat dinding."
+  },
+  {
+   "id": "murah",
+   "clip": "A",
+   "in": 91.2,
+   "out": 94.62,
+   "text": "Nak ubah 3D ni tak susah, tak mahal."
+  },
+  {
+   "id": "mahal",
+   "clip": "A",
+   "in": 96.15,
+   "out": 96.47,
+   "text": "Nak"
+  },
+  {
+   "id": "mahal2",
+   "clip": "A",
+   "in": 97.95,
+   "out": 101.3,
+   "text": "ubah time renovation, beribu hilang."
+  },
+  {
+   "id": "follow",
+   "clip": "A",
+   "in": 108.85,
+   "out": 110.75,
+   "text": "Follow dan share."
+  }
+ ],
+ "captions": [
+  {
+   "s": 0.59,
+   "e": 1.75,
+   "words": [
+    {
+     "w": "Ramai",
+     "s": 0.59
+    },
+    {
+     "w": "hampir",
+     "s": 1.11
+    },
+    {
+     "w": "rugi",
+     "s": 1.41,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 1.75,
+   "e": 3.15,
+   "words": [
+    {
+     "w": "berbelas",
+     "s": 1.75,
+     "hot": 1
+    },
+    {
+     "w": "ribu",
+     "s": 2.21,
+     "hot": 1
+    },
+    {
+     "w": "sebabkan",
+     "s": 2.67
+    }
+   ]
+  },
+  {
+   "s": 3.15,
+   "e": 4.03,
+   "words": [
+    {
+     "w": "satu",
+     "s": 3.15
+    },
+    {
+     "w": "gambar",
+     "s": 3.35
+    },
+    {
+     "w": "dekat",
+     "s": 3.85
+    }
+   ]
+  },
+  {
+   "s": 4.03,
+   "e": 4.46,
+   "words": [
+    {
+     "w": "Pinterest",
+     "s": 4.03,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 4.73,
+   "e": 5.87,
+   "words": [
+    {
+     "w": "Situasi",
+     "s": 4.73
+    },
+    {
+     "w": "yang",
+     "s": 5.37
+    },
+    {
+     "w": "biasa",
+     "s": 5.55
+    }
+   ]
+  },
+  {
+   "s": 5.87,
+   "e": 6.61,
+   "words": [
+    {
+     "w": "kita",
+     "s": 5.87
+    },
+    {
+     "w": "jumpa",
+     "s": 6.05
+    },
+    {
+     "w": "adalah",
+     "s": 6.45
+    }
+   ]
+  },
+  {
+   "s": 6.61,
+   "e": 7.47,
+   "words": [
+    {
+     "w": "klien",
+     "s": 6.61
+    },
+    {
+     "w": "datang",
+     "s": 7.07
+    },
+    {
+     "w": "kat",
+     "s": 7.35
+    }
+   ]
+  },
+  {
+   "s": 7.47,
+   "e": 7.87,
+   "words": [
+    {
+     "w": "kita",
+     "s": 7.47
+    }
+   ]
+  },
+  {
+   "s": 7.87,
+   "e": 8.73,
+   "words": [
+    {
+     "w": "dia",
+     "s": 7.87
+    },
+    {
+     "w": "nak",
+     "s": 8.25
+    },
+    {
+     "w": "buat",
+     "s": 8.51
+    }
+   ]
+  },
+  {
+   "s": 8.73,
+   "e": 9.53,
+   "words": [
+    {
+     "w": "gambar",
+     "s": 8.73
+    },
+    {
+     "w": "macam",
+     "s": 9.15
+    },
+    {
+     "w": "dia",
+     "s": 9.35
+    }
+   ]
+  },
+  {
+   "s": 9.53,
+   "e": 10.7,
+   "words": [
+    {
+     "w": "jumpa",
+     "s": 9.53
+    },
+    {
+     "w": "dekat",
+     "s": 9.99
+    },
+    {
+     "w": "Pinterest",
+     "s": 10.19,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 11.09,
+   "e": 12.35,
+   "words": [
+    {
+     "w": "Masalahnya",
+     "s": 11.09
+    }
+   ]
+  },
+  {
+   "s": 12.35,
+   "e": 13.73,
+   "words": [
+    {
+     "w": "dapur",
+     "s": 12.35
+    },
+    {
+     "w": "dekat",
+     "s": 13.01
+    },
+    {
+     "w": "gambar",
+     "s": 13.31
+    }
+   ]
+  },
+  {
+   "s": 13.73,
+   "e": 14.55,
+   "words": [
+    {
+     "w": "Pinterest",
+     "s": 13.73,
+     "hot": 1
+    },
+    {
+     "w": "tu",
+     "s": 13.97
+    },
+    {
+     "w": "15",
+     "s": 14.33,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 14.55,
+   "e": 15.71,
+   "words": [
+    {
+     "w": "kaki",
+     "s": 14.55,
+     "hot": 1
+    },
+    {
+     "w": "tapi",
+     "s": 15.13
+    },
+    {
+     "w": "rumah",
+     "s": 15.29
+    }
+   ]
+  },
+  {
+   "s": 15.71,
+   "e": 16.45,
+   "words": [
+    {
+     "w": "korang",
+     "s": 15.71
+    },
+    {
+     "w": "tu",
+     "s": 16.11
+    },
+    {
+     "w": "9",
+     "s": 16.27,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 16.45,
+   "e": 17.18,
+   "words": [
+    {
+     "w": "kaki",
+     "s": 16.45,
+     "hot": 1
+    },
+    {
+     "w": "je",
+     "s": 16.91,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 17.45,
+   "e": 18.37,
+   "words": [
+    {
+     "w": "Peti",
+     "s": 17.45
+    },
+    {
+     "w": "ais",
+     "s": 17.85
+    },
+    {
+     "w": "tak",
+     "s": 18.17
+    }
+   ]
+  },
+  {
+   "s": 18.37,
+   "e": 19.09,
+   "words": [
+    {
+     "w": "muat",
+     "s": 18.37,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 19.09,
+   "e": 20.55,
+   "words": [
+    {
+     "w": "laluan",
+     "s": 19.09
+    },
+    {
+     "w": "jadi",
+     "s": 19.53
+    },
+    {
+     "w": "sempit",
+     "s": 19.69,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 20.55,
+   "e": 22.41,
+   "words": [
+    {
+     "w": "pintu",
+     "s": 20.55
+    },
+    {
+     "w": "kabinet",
+     "s": 21.15
+    },
+    {
+     "w": "berlaga-laga",
+     "s": 21.55,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 22.41,
+   "e": 23.9,
+   "words": [
+    {
+     "w": "bila",
+     "s": 22.41
+    }
+   ]
+  },
+  {
+   "s": 24.49,
+   "e": 25.71,
+   "words": [
+    {
+     "w": "kami",
+     "s": 24.49
+    },
+    {
+     "w": "lukis",
+     "s": 24.77
+    },
+    {
+     "w": "ikut",
+     "s": 25.37
+    }
+   ]
+  },
+  {
+   "s": 25.71,
+   "e": 26.83,
+   "words": [
+    {
+     "w": "3D",
+     "s": 25.71,
+     "hot": 1
+    },
+    {
+     "w": "dan",
+     "s": 26.01
+    },
+    {
+     "w": "ukuran",
+     "s": 26.25,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 26.83,
+   "e": 28.16,
+   "words": [
+    {
+     "w": "sebenar",
+     "s": 26.83,
+     "hot": 1
+    },
+    {
+     "w": "rumah",
+     "s": 27.33
+    },
+    {
+     "w": "korang",
+     "s": 27.49
+    }
+   ]
+  },
+  {
+   "s": 28.83,
+   "e": 30.21,
+   "words": [
+    {
+     "w": "masalah",
+     "s": 28.83
+    },
+    {
+     "w": "ni",
+     "s": 29.79
+    },
+    {
+     "w": "akan",
+     "s": 30.03
+    }
+   ]
+  },
+  {
+   "s": 30.21,
+   "e": 31.17,
+   "words": [
+    {
+     "w": "dapat",
+     "s": 30.21
+    },
+    {
+     "w": "kita",
+     "s": 30.57
+    },
+    {
+     "w": "detect",
+     "s": 30.79,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 31.17,
+   "e": 32.71,
+   "words": [
+    {
+     "w": "sebelum",
+     "s": 31.17
+    },
+    {
+     "w": "papan",
+     "s": 31.89
+    },
+    {
+     "w": "tu",
+     "s": 32.45
+    }
+   ]
+  },
+  {
+   "s": 32.71,
+   "e": 33.99,
+   "words": [
+    {
+     "w": "mula",
+     "s": 32.71
+    },
+    {
+     "w": "melekat",
+     "s": 33.31
+    },
+    {
+     "w": "dekat",
+     "s": 33.71
+    }
+   ]
+  },
+  {
+   "s": 33.99,
+   "e": 34.43,
+   "words": [
+    {
+     "w": "dinding",
+     "s": 33.99,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 34.43,
+   "e": 36.23,
+   "words": [
+    {
+     "w": "nak",
+     "s": 34.43
+    },
+    {
+     "w": "ubah",
+     "s": 35.45
+    },
+    {
+     "w": "3D",
+     "s": 35.93,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 36.23,
+   "e": 36.93,
+   "words": [
+    {
+     "w": "tak",
+     "s": 36.23
+    },
+    {
+     "w": "susah",
+     "s": 36.43,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 36.93,
+   "e": 38.29,
+   "words": [
+    {
+     "w": "tak",
+     "s": 36.93
+    },
+    {
+     "w": "mahal",
+     "s": 37.13,
+     "hot": 1
+    },
+    {
+     "w": "nak",
+     "s": 37.57
+    }
+   ]
+  },
+  {
+   "s": 38.29,
+   "e": 39.53,
+   "words": [
+    {
+     "w": "ubah",
+     "s": 38.29
+    },
+    {
+     "w": "time",
+     "s": 38.91
+    },
+    {
+     "w": "renovation",
+     "s": 39.11
+    }
+   ]
+  },
+  {
+   "s": 39.53,
+   "e": 41.52,
+   "words": [
+    {
+     "w": "beribu",
+     "s": 39.53,
+     "hot": 1
+    },
+    {
+     "w": "hilang",
+     "s": 40.59,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 41.52,
+   "e": 43.13,
+   "words": [
+    {
+     "w": "follow",
+     "s": 41.52,
+     "hot": 1
+    },
+    {
+     "w": "dan",
+     "s": 41.88
+    },
+    {
+     "w": "share",
+     "s": 42.48,
+     "hot": 1
+    }
+   ]
+  }
+ ],
+ "broll": [
+  {
+   "s": 2.67,
+   "e": 4.55,
+   "id": "41178",
+   "src": "mixkit",
+   "t": 5,
+   "x": 0.55,
+   "d": "Scroll gambar inspirasi rumah di tablet",
+   "why": "'satu gambar dekat Pinterest'",
+   "url": "https://mixkit.co/free-stock-video/interior-designer-looking-for-inspiration-41178/"
+  },
+  {
+   "s": 7.8,
+   "e": 10.7,
+   "id": "41184",
+   "src": "mixkit",
+   "t": 3,
+   "x": 0.5,
+   "d": "Klien simpan gambar dapur idaman",
+   "why": "'nak buat macam dia jumpa dekat Pinterest'",
+   "url": "https://mixkit.co/free-stock-video/looking-for-interior-design-ideas-41184/"
+  },
+  {
+   "s": 12.3,
+   "e": 15.1,
+   "id": "43033",
+   "src": "mixkit",
+   "t": 2,
+   "x": 0.5,
+   "d": "Dapur moden yang luas",
+   "why": "'dapur dekat gambar Pinterest tu 15 kaki'",
+   "url": "https://mixkit.co/free-stock-video/interior-view-of-a-spacious-modern-kitchen-43033/"
+  },
+  {
+   "s": 15.1,
+   "e": 17.3,
+   "id": "wetkitchen",
+   "src": "fik",
+   "file": "[Before] Wet Kitchen Before.jpg",
+   "x": 0.42,
+   "d": "Dapur sebenar rumah klien (sebelum reno)",
+   "why": "'rumah korang tu 9 kaki je'",
+   "url": null
+  },
+  {
+   "s": 24.45,
+   "e": 26.25,
+   "id": "29982",
+   "src": "mixkit",
+   "t": 3,
+   "x": 0.58,
+   "d": "Pereka bekerja dengan model 3D",
+   "why": "'bila kami lukis ikut 3D'",
+   "url": "https://mixkit.co/free-stock-video/male-designer-working-in-his-studio-29982/"
+  },
+  {
+   "s": 26.25,
+   "e": 28.05,
+   "id": "23392",
+   "src": "mixkit",
+   "t": 3,
+   "x": 0.45,
+   "d": "Ukur ruang sebenar",
+   "why": "'ukuran sebenar rumah korang'",
+   "url": "https://mixkit.co/free-stock-video/man-taking-measurements-in-a-building-23392/"
+  },
+  {
+   "s": 31.15,
+   "e": 32.7,
+   "id": "39692",
+   "src": "mixkit",
+   "t": 2,
+   "x": 0.5,
+   "d": "Gerudi papan kabinet",
+   "why": "'sebelum papan tu mula melekat…'",
+   "url": "https://mixkit.co/free-stock-video/screwing-a-board-in-a-carpentry-39692/"
+  },
+  {
+   "s": 32.7,
+   "e": 34.3,
+   "id": "39684",
+   "src": "mixkit",
+   "t": 2,
+   "x": 0.45,
+   "d": "Tukang pasang papan",
+   "why": "'…dekat dinding'",
+   "url": "https://mixkit.co/free-stock-video/hand-of-a-carpenter-leveling-a-wooden-board-39684/"
+  }
+ ],
+ "graphics": [
+  {
+   "s": 0.0,
+   "e": 4.55,
+   "kind": "hook",
+   "text": [
+    "RUGI BERIBU",
+    "SEBAB 1 GAMBAR"
+   ],
+   "sub": "dari Pinterest",
+   "note": "Tajuk hook: kerugian + Pinterest, terus di saat pertama"
+  },
+  {
+   "s": 1.75,
+   "e": 4.55,
+   "kind": "loss",
+   "text": "−RM10,000+",
+   "note": "Angka rugi 'berbelas ribu' dicop merah"
+  },
+  {
+   "s": 8.7,
+   "e": 10.7,
+   "kind": "pin",
+   "text": "Dapur idaman",
+   "sub": "Disimpan dari Pinterest",
+   "note": "Kad 'gambar disimpan' (reka sendiri, tiada logo Pinterest)"
+  },
+  {
+   "s": 12.35,
+   "e": 15.1,
+   "kind": "dim",
+   "text": "15 kaki",
+   "tone": "ok",
+   "note": "Garis ukuran 15 kaki di atas dapur dalam gambar"
+  },
+  {
+   "s": 15.13,
+   "e": 17.3,
+   "kind": "dim",
+   "text": "9 kaki je",
+   "tone": "bad",
+   "note": "Garis ukuran 9 kaki (merah) di atas dapur sebenar"
+  },
+  {
+   "s": 17.45,
+   "e": 22.45,
+   "kind": "plan",
+   "items": [
+    [
+     "Peti ais tak muat",
+     18.17
+    ],
+    [
+     "Laluan sempit",
+     19.53
+    ],
+    [
+     "Pintu kabinet berlaga",
+     21.55
+    ]
+   ],
+   "note": "Pelan atas dapur 9 kaki: peti ais terkeluar, laluan mengecil, pintu bertembung"
+  },
+  {
+   "s": 28.1,
+   "e": 31.1,
+   "kind": "detect",
+   "text": "Masalah dikesan awal",
+   "sub": "sebelum mula renovate",
+   "note": "Lencana: masalah dijumpa dalam 3D"
+  },
+  {
+   "s": 34.43,
+   "e": 41.3,
+   "kind": "compare",
+   "a": [
+    "Ubah dalam 3D",
+    "Tak susah, tak mahal"
+   ],
+   "b": [
+    "Ubah masa renovasi",
+    "Beribu hilang"
+   ],
+   "tb": 37.57,
+   "note": "Banding kos: ubah dalam 3D vs ubah masa renovasi"
+  },
+  {
+   "s": 41.45,
+   "e": 43.4,
+   "kind": "follow",
+   "note": "Butang Follow + Share muncul ikut suara"
+  },
+  {
+   "s": 43.4,
+   "e": 47.4,
+   "kind": "endcard",
+   "note": "End card Fi-K Studio (logo putih atas hijau jenama)",
+   "line1": "Rancang dalam 3D dulu.",
+   "line2": "Baru renovate.",
+   "cta": "Follow Fi-K Studio untuk tips reno"
+  }
+ ],
+ "sfx": [
+  {
+   "t": 0.0,
+   "name": "impact",
+   "gain": 0.75
+  },
+  {
+   "t": 0.02,
+   "name": "whoosh",
+   "gain": 0.5
+  },
+  {
+   "t": 1.75,
+   "name": "swoosh_down",
+   "gain": 0.6
+  },
+  {
+   "t": 2.21,
+   "name": "bonk",
+   "gain": 0.45
+  },
+  {
+   "t": 2.67,
+   "name": "whoosh",
+   "gain": 0.4
+  },
+  {
+   "t": 4.55,
+   "name": "whoosh",
+   "gain": 0.35
+  },
+  {
+   "t": 7.8,
+   "name": "whoosh",
+   "gain": 0.4
+  },
+  {
+   "t": 8.72,
+   "name": "pop",
+   "gain": 0.55
+  },
+  {
+   "t": 12.3,
+   "name": "whoosh",
+   "gain": 0.45
+  },
+  {
+   "t": 12.4,
+   "name": "riser",
+   "gain": 0.3
+  },
+  {
+   "t": 14.4,
+   "name": "ding",
+   "gain": 0.5
+  },
+  {
+   "t": 15.1,
+   "name": "impact",
+   "gain": 0.55
+  },
+  {
+   "t": 16.3,
+   "name": "bonk",
+   "gain": 0.5
+  },
+  {
+   "t": 17.47,
+   "name": "pop",
+   "gain": 0.5
+  },
+  {
+   "t": 18.17,
+   "name": "tick",
+   "gain": 0.6
+  },
+  {
+   "t": 19.53,
+   "name": "tick",
+   "gain": 0.6
+  },
+  {
+   "t": 21.55,
+   "name": "bonk",
+   "gain": 0.55
+  },
+  {
+   "t": 24.45,
+   "name": "whoosh",
+   "gain": 0.4
+  },
+  {
+   "t": 26.25,
+   "name": "whoosh",
+   "gain": 0.35
+  },
+  {
+   "t": 28.12,
+   "name": "ding",
+   "gain": 0.6
+  },
+  {
+   "t": 31.15,
+   "name": "whoosh",
+   "gain": 0.35
+  },
+  {
+   "t": 34.45,
+   "name": "pop",
+   "gain": 0.55
+  },
+  {
+   "t": 36.4,
+   "name": "ding",
+   "gain": 0.5
+  },
+  {
+   "t": 37.6,
+   "name": "whoosh",
+   "gain": 0.45
+  },
+  {
+   "t": 39.55,
+   "name": "swoosh_down",
+   "gain": 0.6
+  },
+  {
+   "t": 40.1,
+   "name": "bonk",
+   "gain": 0.45
+  },
+  {
+   "t": 41.5,
+   "name": "click",
+   "gain": 0.7
+  },
+  {
+   "t": 42.48,
+   "name": "pop",
+   "gain": 0.6
+  },
+  {
+   "t": 43.4,
+   "name": "whoosh",
+   "gain": 0.6
+  },
+  {
+   "t": 44.0,
+   "name": "ding",
+   "gain": 0.45
+  }
+ ],
+ "zoom": [
+  {
+   "t": 0,
+   "scale": 1.12,
+   "oy": 40
+  },
+  {
+   "t": 2.6,
+   "scale": 1.12,
+   "oy": 40
+  },
+  {
+   "t": 4.7,
+   "scale": 1.0,
+   "oy": 40
+  },
+  {
+   "t": 10.85,
+   "scale": 1.0,
+   "oy": 40
+  },
+  {
+   "t": 10.9,
+   "scale": 1.08,
+   "oy": 38
+  },
+  {
+   "t": 12.3,
+   "scale": 1.08,
+   "oy": 38
+  },
+  {
+   "t": 17.45,
+   "scale": 1.0,
+   "oy": 40
+  },
+  {
+   "t": 22.41,
+   "scale": 1.0,
+   "oy": 40
+  },
+  {
+   "t": 22.45,
+   "scale": 1.06,
+   "oy": 38
+  },
+  {
+   "t": 24.45,
+   "scale": 1.06,
+   "oy": 38
+  },
+  {
+   "t": 28.05,
+   "scale": 1.0,
+   "oy": 40
+  },
+  {
+   "t": 28.1,
+   "scale": 1.1,
+   "oy": 38
+  },
+  {
+   "t": 31.15,
+   "scale": 1.1,
+   "oy": 38
+  },
+  {
+   "t": 34.43,
+   "scale": 1.0,
+   "oy": 40
+  },
+  {
+   "t": 39.5,
+   "scale": 1.0,
+   "oy": 40
+  },
+  {
+   "t": 39.55,
+   "scale": 1.16,
+   "oy": 38
+  },
+  {
+   "t": 41.3,
+   "scale": 1.16,
+   "oy": 38
+  },
+  {
+   "t": 41.45,
+   "scale": 1.04,
+   "oy": 40
+  },
+  {
+   "t": 43.4,
+   "scale": 1.04,
+   "oy": 40
+  }
+ ],
+ "logo": "logo-white.png",
+ "music": {
+  "file": "music.mp3",
+  "id": 282,
+  "offset": 9,
+  "note": "Lo-fi beat santai, Mixkit Stock Music Free License"
+ }
+}

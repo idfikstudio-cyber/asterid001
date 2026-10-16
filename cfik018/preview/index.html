@@ -1,0 +1,511 @@
+<meta charset="utf-8">
+<title>Preview CFik018 Pinterest vs Rumah Sebenar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+/* Layout: phone-frame player (sticky) left, edit-plan tabs right; stacks on phones. Palette from the Fi-K Studio logo: deep green ink, warm stone, oak accent. */
+:root{
+  --bg:#f3f1ec; --surface:#ffffff; --ink:#1d2725; --muted:#5f6764; --line:#dcd8cf; --chip:#ebe7de;
+  --accent:#304945; --accent-ink:#ffffff; --oak:#b8874a; --oak-ink:#6b4a1d;
+  --c-cut:#b8541c; --c-sfx:#2f6a5e; --c-mg:#3b5aa8; --c-zoom:#8a4fc4; --c-br:#9a6b16;
+  /* on-video graphics: fixed, the video looks the same in every theme */
+  --v-green:#304945; --v-mint:#9fd8c3; --v-stone:#f4efe6; --v-oak:#e0b46f; --v-red:#ff5e4f; --v-white:#ffffff;
+  --f-display:"Jost","Futura","Century Gothic",system-ui,sans-serif;
+  --f-body:"Source Sans 3",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#111715; --surface:#18201e; --ink:#e8ece9; --muted:#9ca8a3; --line:#28332f; --chip:#1f2926;
+  --accent:#8fc9b6; --accent-ink:#111715; --oak:#e0b46f; --oak-ink:#f0cf98;
+  --c-cut:#ff9a6a; --c-sfx:#7fd3b8; --c-mg:#9db8ff; --c-zoom:#c79bf2; --c-br:#f0c24a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#111715; --surface:#18201e; --ink:#e8ece9; --muted:#9ca8a3; --line:#28332f; --chip:#1f2926;
+  --accent:#8fc9b6; --accent-ink:#111715; --oak:#e0b46f; --oak-ink:#f0cf98;
+  --c-cut:#ff9a6a; --c-sfx:#7fd3b8; --c-mg:#9db8ff; --c-zoom:#c79bf2; --c-br:#f0c24a; color-scheme:dark}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.55}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:16px;padding-block:20px 48px}
+header.top{margin-bottom:18px}
+.eyebrow{font:600 12px var(--f-display);letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+h1{font-family:var(--f-display);font-weight:500;font-size:clamp(26px,4vw,38px);line-height:1.08;margin:4px 0 0;text-wrap:balance;letter-spacing:-.01em}
+.status{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;font-size:13px;color:var(--muted);margin-top:8px}
+.status b{background:var(--oak);color:#2a1b05;font-weight:700;padding:2px 9px;border-radius:999px;font-size:12px;letter-spacing:.05em;text-transform:uppercase}
+.grid{display:grid;grid-template-columns:minmax(0,380px) minmax(0,1fr);gap:28px;align-items:start}
+@media (max-width:820px){.grid{grid-template-columns:minmax(0,1fr)}}
+
+.player{position:sticky;top:calc(env(safe-area-inset-top,0px) + 12px);display:flex;flex-direction:column;gap:10px;max-width:380px;width:100%;margin-inline:auto}
+@media (max-width:820px){.player{position:static}}
+.phone{position:relative;width:100%;max-width:100%;aspect-ratio:9/16;border-radius:22px;overflow:hidden;background:#000;box-shadow:0 18px 50px -20px rgba(20,30,25,.55);container-type:size;user-select:none}
+.stage{position:absolute;inset:0;transform-origin:50% 40%;will-change:transform}
+.stage video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+#vo{clip-path:inset(0 100% 0 0)}
+.ov{position:absolute;inset:0;pointer-events:none;font-family:var(--f-display);color:var(--v-white)}
+.wipe{position:absolute;top:0;bottom:0;width:0;left:50%;pointer-events:none}
+.wipe::before{content:"";position:absolute;inset:0 -1px;background:#fff;box-shadow:0 0 8px rgba(0,0,0,.5)}
+.wipe .knob{position:absolute;top:50%;left:0;transform:translate(-50%,-50%);width:9cqw;height:9cqw;border-radius:50%;background:#fff;color:#111;display:grid;place-items:center;font:700 3.2cqw var(--f-body);pointer-events:auto;cursor:ew-resize;box-shadow:0 2px 10px rgba(0,0,0,.4);touch-action:none}
+.wipe .lab{position:absolute;top:3cqh;font:700 3cqw var(--f-body);color:#fff;background:rgba(0,0,0,.55);padding:.6cqw 2cqw;border-radius:99px;white-space:nowrap}
+.wipe .lab.l{right:2cqw}.wipe .lab.r{left:2cqw}
+.bigplay{position:absolute;inset:0;display:grid;place-items:center;background:rgba(10,20,16,.4);border:0;color:#fff;cursor:pointer;font:600 4.2cqw var(--f-body);gap:2cqh;align-content:center}
+.bigplay span{width:20cqw;height:20cqw;border-radius:50%;background:var(--v-stone);display:grid;place-items:center;color:var(--v-green);font-size:8cqw;padding-left:1.2cqw}
+.safe{position:absolute;inset:0;pointer-events:none}
+.safe i{position:absolute;background:repeating-linear-gradient(45deg,rgba(255,60,60,.28) 0 6px,rgba(255,60,60,.12) 6px 12px);outline:1px dashed rgba(255,120,120,.9)}
+
+.controls{display:flex;gap:10px;align-items:center}
+.btn{font:700 14px var(--f-body);border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:10px;padding:8px 12px;cursor:pointer;min-height:40px}
+.btn:focus-visible,.tog:focus-visible,.tab:focus-visible,.ev:focus-visible,.line:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);min-width:48px}
+.time{font-variant-numeric:tabular-nums;font-size:13px;color:var(--muted);white-space:nowrap}
+.scrub{position:relative;flex:1;min-width:0;height:40px;display:flex;align-items:center}
+.scrub input{width:100%;margin:0;accent-color:var(--accent);position:relative;z-index:1}
+.marks{position:absolute;left:0;right:0;top:4px;height:6px;pointer-events:none}
+.marks i{position:absolute;width:3px;height:6px;border-radius:2px;transform:translateX(-1px)}
+.toggles{display:flex;flex-wrap:wrap;gap:6px}
+.tog{font:600 13px var(--f-body);border:1px solid var(--line);background:var(--surface);color:var(--muted);border-radius:999px;padding:6px 12px;cursor:pointer;display:inline-flex;gap:6px;align-items:center}
+.tog::before{content:"";width:8px;height:8px;border-radius:50%;border:1.5px solid currentColor}
+.tog[aria-pressed="true"]{color:var(--ink);border-color:var(--ink)}
+.tog[aria-pressed="true"]::before{background:var(--oak);border-color:var(--oak)}
+.hint{font-size:12.5px;color:var(--muted);margin:0}
+
+.panel{min-width:0;display:flex;flex-direction:column;gap:14px}
+.summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}
+.summary div{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+.summary b{display:block;font-family:var(--f-display);font-weight:600;font-size:22px;line-height:1.15;font-variant-numeric:tabular-nums}
+.summary span{font-size:12.5px;color:var(--muted)}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;border-bottom:1px solid var(--line)}
+.tab{font:600 14px var(--f-body);background:none;border:0;border-bottom:2.5px solid transparent;color:var(--muted);padding:10px 10px 9px;cursor:pointer}
+.tab[aria-selected="true"]{color:var(--ink);border-color:var(--oak)}
+.pane{min-width:0}
+.pane h2{font-family:var(--f-display);font-weight:600;font-size:21px;margin:6px 0 6px;text-wrap:balance}
+.pane h3{font-size:15px;margin:18px 0 6px}
+.pane p{margin:0 0 10px;max-width:68ch}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:12.5px;color:var(--muted);margin-bottom:8px}
+.legend span{display:inline-flex;gap:6px;align-items:center}
+.legend i{width:10px;height:10px;border-radius:3px}
+.evlist{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.ev{display:grid;grid-template-columns:62px 92px minmax(0,1fr);gap:10px;align-items:baseline;padding:9px 6px;border:0;border-bottom:1px solid var(--line);background:none;color:inherit;font:inherit;text-align:left;cursor:pointer;border-radius:0}
+.ev:hover{background:var(--chip)}
+.ev.now{background:var(--chip);box-shadow:inset 3px 0 0 var(--oak)}
+.ev .t{font-variant-numeric:tabular-nums;font-weight:700;font-size:13px}
+.ev .k{font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.ev .d{font-size:14px;min-width:0}
+.ev .d small{display:block;color:var(--muted);font-size:12.5px}
+@media (max-width:460px){.ev{grid-template-columns:54px minmax(0,1fr)}.ev .k{grid-column:2}.ev .d{grid-column:1/-1;padding-left:64px;margin-top:-4px}}
+.k-cut{color:var(--c-cut)}.k-sfx{color:var(--c-sfx)}.k-mg{color:var(--c-mg)}.k-zoom{color:var(--c-zoom)}.k-br{color:var(--c-br)}
+.tscript{display:flex;flex-direction:column;gap:2px}
+.line{display:grid;grid-template-columns:58px minmax(0,1fr);gap:10px;padding:6px;border-radius:6px;cursor:pointer;border:0;background:none;color:inherit;font:inherit;text-align:left}
+.line:hover{background:var(--chip)}
+.line .t{font-variant-numeric:tabular-nums;color:var(--muted);font-size:13px;padding-top:1px}
+.line small{display:block;color:var(--muted);font-size:12px}
+.line.hookline{background:color-mix(in srgb,var(--oak) 18%,transparent)}
+.fix{background:color-mix(in srgb,var(--oak) 32%,transparent);border-radius:3px;padding:0 2px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+.tablewrap{overflow-x:auto}
+th,td{text-align:left;padding:8px 10px 8px 0;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.raw{color:var(--muted);font-size:13.5px}
+.hooks{display:grid;gap:10px}
+.hook{border:1px solid var(--line);background:var(--surface);border-radius:12px;padding:12px 14px;display:grid;gap:4px}
+.hook.pick{border-color:var(--oak);box-shadow:0 0 0 1px var(--oak)}
+.hook .tag{font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--oak-ink)}
+.hook q{font-family:var(--f-display);font-weight:600;font-size:18px;quotes:"\201C" "\201D"}
+.hook p{margin:0;color:var(--muted);font-size:13.5px}
+.qs{margin:0;padding-left:20px;display:grid;gap:8px;max-width:70ch}
+.logos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;max-width:440px}
+.logos figure{margin:0;border-radius:12px;padding:16px;display:grid;place-items:center;gap:8px;font-size:13px}
+.logos img{width:110px;height:110px;object-fit:contain}
+.logos .w{background:#304945;color:#fff}
+.logos .g{background:#f4efe6;color:#304945;border:1px solid var(--line)}
+.brgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}
+.br{display:grid;gap:4px;font-size:13px;min-width:0}
+.br img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;background:var(--chip)}
+.br b{font-size:13.5px}
+.br span{color:var(--muted)}
+a{color:var(--accent)}
+
+/* ---------- on-video graphics (container units of the phone) ---------- */
+.g{position:absolute;opacity:0;visibility:hidden}
+.g.on{opacity:1;visibility:visible}
+.off-mg .g{display:none}
+.wm{position:absolute;left:5cqw;top:56cqh;width:10cqw;opacity:.85;filter:drop-shadow(0 .3cqw .8cqw rgba(0,0,0,.45))}
+.off-mg .wm,.on-end .wm{display:none}
+.cap{position:absolute;left:6cqw;right:6cqw;top:67cqh;text-align:center;font-weight:700;font-size:7cqw;line-height:1.08;text-transform:uppercase;letter-spacing:.01em;
+  text-shadow:0 .5cqw 0 rgba(0,0,0,.5),0 0 2.6cqw rgba(0,0,0,.55);-webkit-text-stroke:.3cqw rgba(0,0,0,.6);paint-order:stroke fill}
+.cap span{display:inline-block;margin:0 1.1cqw;transition:transform .12s ease,color .12s}
+.cap span.hot{color:var(--v-oak)}
+.cap span.act{transform:scale(1.12) translateY(-.4cqw);color:var(--v-mint)}
+.cap span.hot.act{color:var(--v-oak)}
+.cap.pop{animation:cappop .16s ease-out}
+.off-cap .cap,.on-end .cap{display:none}
+@keyframes cappop{from{transform:scale(.86);opacity:.2}to{transform:none;opacity:1}}
+@keyframes rise{to{opacity:1;transform:none}}
+@keyframes slam{from{transform:scale(2.4) rotate(-6deg);opacity:0}to{transform:rotate(-6deg);opacity:1}}
+@keyframes dropin{from{transform:translateY(-6cqh) scale(.92);opacity:0}to{transform:none;opacity:1}}
+
+.hk{inset:0}
+.hk .scrim{position:absolute;left:0;right:0;top:0;height:44cqh;background:linear-gradient(rgba(14,24,21,.82),rgba(14,24,21,0))}
+.hk .box{position:absolute;left:7cqw;right:7cqw;top:8cqh;display:flex;flex-direction:column;align-items:flex-start;gap:.6cqh}
+.hk b{display:block;font-weight:700;font-size:10.4cqw;line-height:.98;letter-spacing:-.01em;opacity:0;transform:translateY(3cqh)}
+.hk b+b{background:var(--v-stone);color:var(--v-green);padding:.4cqw 2.4cqw 1cqw}
+.hk small{font:500 5cqw var(--f-display);letter-spacing:.06em;opacity:0;margin-top:.6cqh;display:flex;gap:2cqw;align-items:center;text-shadow:0 .3cqw 1.4cqw rgba(0,0,0,.7)}
+.hk small i{width:5cqw;height:5cqw;border-radius:50%;background:#e60023;display:inline-grid;place-items:center;font:700 3.4cqw var(--f-body);font-style:normal;color:#fff}
+.g.on.hk b,.g.on.hk small{animation:rise .34s cubic-bezier(.2,1.4,.4,1) forwards}
+.g.on.hk b+b{animation-delay:.22s}.g.on.hk small{animation-delay:.55s}
+
+.loss{right:6cqw;top:33cqh;transform:rotate(-6deg)}
+.loss div{font-weight:700;font-size:9.5cqw;color:#fff;background:var(--v-red);padding:1cqw 3.4cqw;border-radius:1.6cqw;box-shadow:0 1.2cqw 4cqw rgba(0,0,0,.4);font-variant-numeric:tabular-nums}
+.g.on.loss{animation:slam .32s cubic-bezier(.2,1.6,.4,1) forwards}
+
+.pin{left:7cqw;top:9cqh;width:50cqw;background:#fff;color:#1d2725;border-radius:4cqw;overflow:hidden;box-shadow:0 2cqw 6cqw rgba(0,0,0,.45);transform:rotate(-3deg)}
+.pin .ph{height:30cqw;background:linear-gradient(160deg,#e9e3d8,#c8bba5);position:relative;overflow:hidden}
+.pin .ph::before{content:"";position:absolute;left:8%;right:8%;bottom:14%;height:22%;background:#fff;border-radius:1cqw;box-shadow:0 -10cqw 0 -4cqw #d6ccbb}
+.pin .ph::after{content:"";position:absolute;left:30%;top:10%;width:16%;height:22%;border-radius:0 0 50% 50%;background:#e0b46f}
+.pin .sv{position:absolute;right:2.4cqw;top:2.4cqw;background:#e60023;color:#fff;font:700 3.2cqw var(--f-body);padding:1.2cqw 3cqw;border-radius:99px}
+.pin .tx{padding:2.4cqw 3cqw 3cqw;font-weight:600;font-size:5cqw;line-height:1.05}
+.pin .tx small{display:block;font:400 3.2cqw var(--f-body);color:#5f6764;margin-top:.6cqw}
+.g.on.pin{animation:dropin .4s cubic-bezier(.2,1.3,.4,1)}
+
+.dim{left:6cqw;right:6cqw;top:16cqh;height:12cqh}
+.dim .ln{position:absolute;left:0;right:0;top:50%;height:.7cqw;background:currentColor;transform:scaleX(0);transform-origin:left;box-shadow:0 0 1.2cqw rgba(0,0,0,.6)}
+.dim .ln::before,.dim .ln::after{content:"";position:absolute;top:-2.6cqw;width:.7cqw;height:6cqw;background:currentColor}
+.dim .ln::before{left:0}.dim .ln::after{right:0}
+.dim .lb{position:absolute;left:50%;top:50%;transform:translate(-50%,-140%);font-weight:700;font-size:9cqw;padding:.4cqw 3.6cqw;border-radius:2cqw;opacity:0;white-space:nowrap}
+.dim.ok{color:var(--v-stone)}.dim.ok .lb{background:var(--v-stone);color:var(--v-green)}
+.dim.bad{color:var(--v-red)}.dim.bad .lb{background:var(--v-red);color:#fff}
+.dim.bad .dm{width:60%;left:20%;right:auto}
+.g.on.dim .ln{animation:grow .6s cubic-bezier(.3,1,.4,1) forwards}
+.g.on.dim .lb{animation:rise .3s .45s cubic-bezier(.2,1.5,.4,1) forwards;transform:translate(-50%,-140%)}
+@keyframes grow{to{transform:scaleX(1)}}
+.dim.bad .ln{left:18%;right:18%}
+
+.plan{left:6cqw;right:6cqw;top:7cqh;background:rgba(244,239,230,.97);color:#1d2725;border-radius:4cqw;padding:3cqw 3.6cqw;box-shadow:0 1.5cqw 5cqw rgba(0,0,0,.4);display:grid;grid-template-columns:44cqw 1fr;gap:3cqw;align-items:center}
+.plan svg{width:100%;height:auto;display:block}
+.plan .room{fill:#fff;stroke:#304945;stroke-width:1.6}
+.plan .cab{fill:#d8c7a6;stroke:#8a6c3e;stroke-width:.6}
+.plan .fridge{fill:#cfd8d5;stroke:#304945;stroke-width:.8;transition:all .3s}
+.plan .walk{fill:none;stroke:#2f6a5e;stroke-width:1.2;stroke-dasharray:3 2;transition:all .4s}
+.plan .door{fill:none;stroke:#8a6c3e;stroke-width:1;opacity:0;transition:opacity .3s}
+.plan .hit{fill:#ff5e4f;opacity:0;transition:opacity .2s}
+.plan .dimt{font:600 5px var(--f-display);fill:#304945}
+.plan.s1 .fridge{fill:#ffd6d1;stroke:#ff5e4f;transform:translateX(9px)}
+.plan.s2 .walk{stroke:#ff5e4f;stroke-dasharray:none;stroke-width:2.4}
+.plan .isl{fill:#d8c7a6;stroke:#8a6c3e;stroke-width:.6;transform:translateY(-14px);opacity:0;transition:all .4s}
+.plan.s2 .isl{transform:none;opacity:1}
+.plan.s3 .door{opacity:1}.plan.s3 .hit{opacity:.9}
+.plan ul{list-style:none;margin:0;padding:0;display:grid;gap:1.6cqw}
+.plan .h{font:600 3cqw var(--f-display);letter-spacing:.14em;text-transform:uppercase;color:#5f6764;margin-bottom:.6cqw}
+.plan li{display:flex;gap:1.6cqw;align-items:center;font-weight:600;font-size:4.2cqw;line-height:1.05;opacity:.3;transition:opacity .2s}
+.plan li i{width:5.4cqw;height:5.4cqw;flex:none;border-radius:50%;background:#ff5e4f;color:#fff;display:grid;place-items:center;font:700 3.2cqw var(--f-body);font-style:normal}
+.plan li.at{opacity:1}
+.g.on.plan{animation:dropin .4s cubic-bezier(.2,1.3,.4,1)}
+
+.detect{left:6cqw;top:9cqh;display:flex;gap:2.4cqw;align-items:center;background:rgba(48,73,69,.94);border:.4cqw solid var(--v-mint);border-radius:99px;padding:1.6cqw 4.4cqw 1.6cqw 1.6cqw}
+.detect i{width:9cqw;height:9cqw;border-radius:50%;background:var(--v-mint);color:var(--v-green);display:grid;place-items:center;font:700 5cqw var(--f-body);font-style:normal}
+.detect b{display:block;font-weight:600;font-size:5.4cqw;line-height:1.05}
+.detect small{display:block;font:400 3.4cqw var(--f-body);opacity:.9}
+.g.on.detect{animation:dropin .4s cubic-bezier(.2,1.3,.4,1)}
+
+.compare{left:6cqw;right:6cqw;top:7cqh;display:grid;gap:2cqw}
+.compare .c{border-radius:3.6cqw;padding:2.6cqw 3.6cqw;display:grid;grid-template-columns:auto 1fr;gap:.4cqw 3cqw;align-items:center;box-shadow:0 1.2cqw 4cqw rgba(0,0,0,.35)}
+.compare .c i{grid-row:span 2;width:9cqw;height:9cqw;border-radius:50%;display:grid;place-items:center;font:700 5cqw var(--f-body);font-style:normal}
+.compare .c b{font-weight:600;font-size:5.4cqw;line-height:1.05}
+.compare .c span{font:600 4cqw var(--f-body)}
+.compare .a{background:rgba(244,239,230,.97);color:var(--v-green)}
+.compare .a i{background:var(--v-green);color:#fff}
+.compare .b{background:var(--v-red);color:#fff;opacity:0;transform:translateY(-3cqh) scale(.95);transition:all .35s cubic-bezier(.2,1.4,.4,1)}
+.compare .b i{background:#fff;color:var(--v-red)}
+.compare.at .b{opacity:1;transform:none}
+.g.on.compare .a{animation:dropin .4s cubic-bezier(.2,1.3,.4,1)}
+
+.follow{left:0;right:0;top:12cqh;display:flex;justify-content:center;gap:3cqw}
+.follow span{display:flex;gap:2cqw;align-items:center;font-weight:600;font-size:6cqw;padding:2cqw 5cqw;border-radius:99px;opacity:0;transform:scale(.5);box-shadow:0 1.2cqw 4cqw rgba(0,0,0,.4)}
+.follow span:first-child{background:#fe2c55;color:#fff}
+.follow span:last-child{background:var(--v-stone);color:var(--v-green)}
+.follow span.at{opacity:1;transform:none;transition:all .3s cubic-bezier(.2,1.7,.4,1)}
+
+.end{inset:0;background:var(--v-green);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2.6cqh;padding:0 9cqw;text-align:center}
+.end img.lg{width:40cqw;height:auto}
+.end h3{margin:0;font-weight:500;font-size:7.2cqw;line-height:1.1}
+.end h3 em{font-style:normal;color:var(--v-oak)}
+.end .ph{display:grid;grid-template-columns:repeat(3,1fr);gap:2cqw;width:100%}
+.end .ph img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:2cqw}
+.end .ph small{grid-column:1/-1;font:400 3.2cqw var(--f-body);letter-spacing:.12em;text-transform:uppercase;opacity:.8}
+.end .cta{font:600 4.6cqw var(--f-display);background:var(--v-stone);color:var(--v-green);padding:2cqw 5cqw;border-radius:99px}
+.g.on.end>*{opacity:0;transform:translateY(2cqh);animation:rise .45s cubic-bezier(.2,1.3,.4,1) forwards}
+.g.on.end>*:nth-child(2){animation-delay:.25s}.g.on.end>*:nth-child(3){animation-delay:.6s}.g.on.end>*:nth-child(4){animation-delay:1.2s}
+@media (prefers-reduced-motion:reduce){.g.on,.g.on *,.g.on::after,.g.on *::after,.g.on *::before{animation-duration:.01s!important;animation-iteration-count:1!important;animation-delay:0s!important}}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div class="eyebrow">Fi-K Studio · CFik018</div>
+    <h1>Pinterest vs rumah sebenar</h1>
+    <div class="status"><b>Preview</b><span>Belum render final</span><span>·</span><span>540p</span><span>·</span><span>0:47 (bawah 1:00)</span><span>·</span><span>TOFU interior design</span></div>
+  </header>
+
+  <div class="grid">
+    <section class="player" aria-label="Pemain video preview">
+      <div class="phone" id="phone">
+        <div class="stage" id="stage">
+          <video id="vg" src="graded.mp4" playsinline preload="auto"></video>
+          <video id="vo" src="orig.mp4" playsinline muted preload="auto"></video>
+        </div>
+        <div class="ov" id="ov"><img class="wm" src="logo-white.png" alt=""></div>
+        <div class="safe" id="safe" hidden><i style="left:0;right:0;top:0;height:9%"></i><i style="right:0;width:15%;top:36%;bottom:16%"></i><i style="left:0;right:0;bottom:0;height:16%"></i></div>
+        <div class="wipe" id="wipe" hidden><span class="lab l">Asal</span><span class="lab r">Grade baru</span><span class="knob" id="knob">⟷</span></div>
+        <button class="bigplay" id="bigplay" aria-label="Main preview"><span>▶</span>Tekan untuk main (dengan bunyi)</button>
+      </div>
+      <audio id="mus" src="music.mp3" preload="auto"></audio>
+      <div class="controls">
+        <button class="btn primary" id="play" aria-label="Main">▶</button>
+        <div class="scrub"><div class="marks" id="marks"></div><input type="range" id="seek" min="0" max="48" step="0.01" value="0" aria-label="Kedudukan video"></div>
+        <span class="time" id="time">0:00.0</span>
+      </div>
+      <div class="toggles" role="group" aria-label="Lapisan preview">
+        <button class="tog" id="t-cap" aria-pressed="true">Caption</button>
+        <button class="tog" id="t-mg" aria-pressed="true">Motion &amp; logo</button>
+        <button class="tog" id="t-sfx" aria-pressed="true">Sound effect</button>
+        <button class="tog" id="t-mus" aria-pressed="true">Muzik latar</button>
+        <button class="tog" id="t-zoom" aria-pressed="true">Zoom</button>
+        <button class="tog" id="t-wipe" aria-pressed="false">Banding warna</button>
+        <button class="tog" id="t-safe" aria-pressed="false">Zon UI TikTok</button>
+      </div>
+      <p class="hint">Hidup atau matikan setiap lapisan untuk bandingkan. "Banding warna" papar garis: kiri video asal, kanan selepas colour grade. Seret bulatan putih untuk gerakkan garis.</p>
+    </section>
+
+    <section class="panel">
+      <div class="summary">
+        <div><b>1:53 → 0:47</b><span>Retake dan pause dibuang</span></div>
+        <div><b>8 B-roll</b><span>7 video Mixkit + 1 foto projek Fi-K</span></div>
+        <div><b>9 motion</b><span>Termasuk pelan dapur 9 kaki</span></div>
+        <div><b>Logo putih</b><span>Watermark + end card</span></div>
+      </div>
+      <div class="tabs" role="tablist">
+        <button class="tab" role="tab" aria-selected="true" data-p="p-plan">Pelan edit</button>
+        <button class="tab" role="tab" aria-selected="false" data-p="p-hook">Hook</button>
+        <button class="tab" role="tab" aria-selected="false" data-p="p-tx">Transkrip</button>
+        <button class="tab" role="tab" aria-selected="false" data-p="p-grade">Warna &amp; audio</button>
+        <button class="tab" role="tab" aria-selected="false" data-p="p-br">B-roll, Pinterest &amp; logo</button>
+        <button class="tab" role="tab" aria-selected="false" data-p="p-q">Perlu jawapan kau</button>
+      </div>
+
+      <div class="pane" id="p-plan" role="tabpanel">
+        <h2>Semua yang aku tambah, ikut masa</h2>
+        <p>Tekan mana-mana baris untuk lompat ke saat tu dalam preview.</p>
+        <div class="legend"><span><i style="background:var(--c-cut)"></i>Potong / susun</span><span><i style="background:var(--c-br)"></i>B-roll</span><span><i style="background:var(--c-mg)"></i>Motion graphic</span><span><i style="background:var(--c-sfx)"></i>Sound effect</span><span><i style="background:var(--c-zoom)"></i>Zoom kamera</span></div>
+        <div class="evlist" id="evlist"></div>
+      </div>
+
+      <div class="pane" id="p-hook" role="tabpanel" hidden>
+        <h2>Hook paling kuat di depan</h2>
+        <p>Ayat pembuka kau memang dah hook yang kuat. Kau rakam dua kali, dan aku pilih take kedua sebab ada angka: <b>"berbelas ribu"</b>. Angka buat kerugian rasa nyata. Atas skrin, aku letak tajuk "RUGI BERIBU SEBAB 1 GAMBAR dari Pinterest" dan cop merah −RM10,000+.</p>
+        <div class="hooks">
+          <div class="hook pick"><span class="tag">Dipilih · dalam preview</span><q>Ramai hampir rugi berbelas ribu sebabkan satu gambar dekat Pinterest.</q><p>Gabungan duit + benda yang semua orang buat (save gambar Pinterest). Orang yang tengah rancang reno akan berhenti scroll.</p></div>
+          <div class="hook"><span class="tag">Pilihan B</span><q>Dapur dekat gambar Pinterest tu 15 kaki. Tapi rumah korang tu 9 kaki je.</q><p>Lebih spesifik dan visual, sesuai kalau sasaran khusus orang yang nak buat dapur. (0:39 dalam video asal)</p></div>
+          <div class="hook"><span class="tag">Pilihan C</span><q>Nak ubah time renovation, beribu hilang.</q><p>Pendek dan menakutkan, tapi kurang konteks untuk saat pertama. (1:36)</p></div>
+        </div>
+      </div>
+
+      <div class="pane" id="p-tx" role="tabpanel" hidden>
+        <h2>Transkrip selepas edit</h2>
+        <p>Masa ikut video baru, dan setiap baris tunjuk saat asal. Perkataan bertanda kuning ialah pembetulan caption (AI dengar "Pita ais", sepatutnya "Peti ais").</p>
+        <div class="tscript" id="tscript"></div>
+        <h3>Apa yang aku buang dari rakaman asal (1:53)</h3>
+        <p class="raw">Take pertama hook (tanpa "berbelas ribu"), take pertama "Situasi yang biasa kita jumpa", take "Masalahnya" yang terputus, dua take "Peti ais tak muat…", take "Bila kami lukis ikut 3D yang…", take "Ubah 3D ni tak…" yang tak habis, satu "Nak ubah" yang terulang, dan semua pause panjang. Pause dalam ayat yang lebih daripada 0.3 saat aku pendekkan.</p>
+      </div>
+
+      <div class="pane" id="p-grade" role="tabpanel" hidden>
+        <h2>Colour grade, lighting &amp; audio</h2>
+        <p>Tekan <b>Banding warna</b> bawah video. Rakaman asal kena lampu kuning (tungsten), jadi semua nampak oren, sampai baju biru kau nampak pink. Arah grade: <b>bersih, hangat dan mahal</b>, macam studio interior.</p>
+        <div class="tablewrap"><table><thead><tr><th>Langkah</th><th>Apa aku buat</th><th>Hasil (diukur)</th></tr></thead><tbody>
+          <tr><td>Imbangan putih</td><td>Kurangkan merah 13%, tambah biru 11%.</td><td>Baju dari pink (185/157/151) kembali biru muda (167/158/165). Dinding jadi beige hangat, bukan oren.</td></tr>
+          <tr><td>Kontras</td><td>Lengkung S lembut, hitam lebih dalam.</td><td>Rak buku dan kerusi hitam nampak lebih kaya.</td></tr>
+          <tr><td>Lampu muka</td><td>Key light lembut di kawasan muka sahaja.</td><td>Muka kekal natural. Kawasan "terbakar" maksimum 0.05%, sama atau lebih rendah daripada asal.</td></tr>
+          <tr><td>Kemasan</td><td>Vignette halus, sharpen ringan (video asal 720p).</td><td>Fokus ke muka, nampak lebih tajam di telefon.</td></tr>
+          <tr><td>B-roll</td><td>Lengkung yang sama, saturasi sedikit turun, push-in perlahan 7%.</td><td>Semua klip nampak satu "look".</td></tr>
+          <tr><td>Suara</td><td>Buang dengung bawah 80 Hz, kurangkan bunyi bilik, compressor, −14 LUFS.</td><td>Standard TikTok/Reels.</td></tr>
+          <tr><td>Muzik</td><td>Lo-fi santai pada −30 LUFS, turun automatik bila kau bercakap.</td><td>Rasa moden tanpa kacau suara. Boleh dimatikan dalam preview.</td></tr>
+        </tbody></table></div>
+      </div>
+
+      <div class="pane" id="p-br" role="tabpanel" hidden>
+        <h2>B-roll, Pinterest &amp; logo</h2>
+        <h3>Boleh ke guna B-roll Pinterest?</h3>
+        <p>Rakaman skrin Pinterest yang sebenar <b>tak sesuai untuk iklan</b>. Setiap gambar (pin) di situ milik orang lain, dan garis panduan jenama Pinterest tak benarkan UI atau logo mereka digunakan dalam iklan tanpa kebenaran. Jadi aku buat dua benda:</p>
+        <ol class="qs">
+          <li>Guna klip Mixkit yang menunjukkan orang scroll gambar inspirasi rumah di tablet. Klip ni berlesen untuk iklan. Gambar-gambar dalam klip tu sebahagian daripada video Mixkit, bukan pin orang lain.</li>
+          <li>Kad "Dapur idaman · Disimpan dari Pinterest" aku reka sendiri: ada butang merah "Simpan" tapi tiada logo atau gambar Pinterest. Nama "Pinterest" hanya disebut dalam teks, dan itu dibenarkan.</li>
+        </ol>
+        <h3>B-roll yang digunakan</h3>
+        <p>7 klip video sebenar (bukan AI) dari Mixkit, bawah <b>Mixkit Stock Video Free License</b>: percuma, boleh untuk iklan, tak perlu kredit. Sila baca lesen di mixkit.co/license sekali sebelum iklan berbayar. Dapur "9 kaki" pula ialah <b>foto projek Fi-K sendiri</b> (folder CFik017, dapur basah sebelum reno). Ini paling kuat sebab real. Pastikan klien setuju gambar rumah dia digunakan.</p>
+        <div class="brgrid" id="brgrid"></div>
+        <h3>Logo: aku pilih Logo White</h3>
+        <div class="logos"><figure class="w"><img src="logo-white.png" alt="Logo putih Fi-K Studio">Logo White · dipilih</figure><figure class="g"><img src="fik/logo-green-preview.png" alt="Logo hijau Fi-K Studio">Logo Green</figure></div>
+        <p style="margin-top:10px">Video ni gelap dan hangat (rak buku, kerusi hitam), jadi logo hijau gelap akan tenggelam. Logo putih jelas sebagai watermark kecil di atas kanan, dan sangat cantik atas latar hijau jenama di end card. Logo hijau sesuai untuk latar cerah (contoh thumbnail putih).</p>
+      </div>
+
+      <div class="pane" id="p-q" role="tabpanel" hidden>
+        <h2>Sebelum aku render final</h2>
+        <ol class="qs">
+          <li><b>Hook:</b> setuju dengan hook "rugi berbelas ribu" + cop −RM10,000+? Atau nak Pilihan B?</li>
+          <li><b>Foto klien:</b> boleh guna foto dapur sebelum reno (dan 3 foto selepas reno di end card) dalam iklan? Kalau tak boleh, aku tukar ke klip Mixkit.</li>
+          <li><b>Angka −RM10,000+:</b> kau sebut "berbelas ribu". Nak kekal angka ni, atau tukar (contoh −RM15,000)?</li>
+          <li><b>Muzik:</b> kekal lo-fi santai, tukar, atau buang?</li>
+          <li><b>End card:</b> "Rancang dalam 3D dulu. Baru renovate." + "Follow Fi-K Studio untuk tips reno". Nak tambah nombor WhatsApp atau handle TikTok/IG?</li>
+          <li><b>Lain-lain:</b> ada grafik atau bunyi yang terlalu banyak atau kurang? Beritahu saatnya.</li>
+        </ol>
+        <p style="margin-top:12px">Lepas kau setuju, aku render final 1080×1920 dengan semua kesan dibakar ke dalam video.</p>
+      </div>
+    </section>
+  </div>
+</div>
+
+<script>
+(async function(){
+const $=s=>document.querySelector(s);
+const vg=$("#vg"),vo=$("#vo"),stage=$("#stage"),ov=$("#ov"),phone=$("#phone"),mus=$("#mus");
+let plan;
+try{plan=await (await fetch("plan.json")).json();}catch(e){$("#evlist").textContent="Data pelan tak dapat dimuat. Muat semula halaman.";return;}
+const DUR=plan.duration,END=plan.speech_end;$("#seek").max=DUR;
+const fmt=t=>{t=Math.max(0,t);const m=Math.floor(t/60),s=t-m*60;return m+":"+(s<10?"0":"")+s.toFixed(1)};
+const st={cap:true,mg:true,sfx:true,mus:true,zoom:true,wipe:false,wipeX:.5};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+const PLAN_SVG=`<svg viewBox="0 0 64 70" aria-hidden="true">
+ <rect class="room" x="4" y="4" width="56" height="62" rx="1"/>
+ <rect class="cab" x="5" y="5" width="54" height="11"/>
+ <rect class="cab" x="5" y="16" width="10" height="38"/>
+ <rect class="fridge" x="47" y="18" width="12" height="13"/>
+ <rect class="isl" x="22" y="47" width="30" height="9"/>
+ <path class="walk" d="M20 44 L44 44"/>
+ <path class="door" d="M15 30 A10 10 0 0 1 25 40 M15 30 L25 30"/>
+ <path class="door" d="M35 16 A10 10 0 0 0 25 26 M35 16 L35 26"/>
+ <circle class="hit" cx="25" cy="29" r="3"/>
+ <text class="dimt" x="32" y="63" text-anchor="middle">9 kaki</text>
+</svg>`;
+function build(g){
+  const el=document.createElement("div");el.className="g";let h="";
+  switch(g.kind){
+    case"hook":el.className+=" hk";h=`<div class="scrim"></div><div class="box">${g.text.map(x=>`<b>${esc(x)}</b>`).join("")}<small><i>P</i>${esc(g.sub)}</small></div>`;break;
+    case"loss":el.className+=" loss";h=`<div>${esc(g.text)}</div>`;break;
+    case"pin":el.className+=" pin";h=`<div class="ph"><span class="sv">Simpan</span></div><div class="tx">${esc(g.text)}<small>${esc(g.sub)}</small></div>`;break;
+    case"dim":el.className+=" dim "+g.tone;h=`<span class="ln"></span><span class="lb">${esc(g.text)}</span>`;break;
+    case"plan":el.className+=" plan";h=PLAN_SVG+`<div><div class="h">Dapur 9 kaki</div><ul>${g.items.map(([x,t],i)=>`<li data-at="${t}" data-s="s${i+1}"><i>✕</i>${esc(x)}</li>`).join("")}</ul></div>`;break;
+    case"detect":el.className+=" detect";h=`<i>✓</i><span><b>${esc(g.text)}</b><small>${esc(g.sub)}</small></span>`;break;
+    case"compare":el.className+=" compare";el.dataset.at=g.tb;h=`<div class="c a"><i>✓</i><b>${esc(g.a[0])}</b><span>${esc(g.a[1])}</span></div><div class="c b"><i>✕</i><b>${esc(g.b[0])}</b><span>${esc(g.b[1])}</span></div>`;break;
+    case"follow":el.className+=" follow";h=`<span data-at="41.52">+ Follow</span><span data-at="42.48">↗ Share</span>`;break;
+    case"endcard":el.className+=" end";h=`<img class="lg" src="${esc(plan.logo)}" alt="Fi-K Studio"><h3>${esc(g.line1)}<br><em>${esc(g.line2)}</em></h3><div class="ph"><img src="fik/dry-kitchen.jpg" alt=""><img src="fik/after1-dinning-area.jpg" alt=""><img src="fik/after-1-family-area.jpg" alt=""><small>Projek Fi-K Studio</small></div><div class="cta">${esc(g.cta)}</div>`;break;
+  }
+  el.innerHTML=h;ov.appendChild(el);
+  const ats=[...el.querySelectorAll("[data-at]")].map(n=>({n,t:+n.dataset.at,s:n.dataset.s}));
+  if(el.dataset.at)ats.push({n:el,t:+el.dataset.at});
+  return {g,el,on:false,ats};
+}
+const GS=plan.graphics.map(build);
+const cap=document.createElement("div");cap.className="cap";ov.appendChild(cap);
+let capIdx=-1;
+
+const ease=x=>x<.5?2*x*x:1-Math.pow(-2*x+2,2)/2;
+const inBroll=t=>plan.broll.some(b=>t>=b.s&&t<b.e);
+function zoomAt(t){const Z=plan.zoom;if(t<=Z[0].t)return Z[0];for(let i=1;i<Z.length;i++){if(t<=Z[i].t){const a=Z[i-1],b=Z[i],k=ease((t-a.t)/Math.max(1e-3,b.t-a.t));return{scale:a.scale+(b.scale-a.scale)*k,oy:a.oy+(b.oy-a.oy)*k}}}return Z[Z.length-1]}
+
+function render(t){
+  const z=st.zoom&&!inBroll(t)?zoomAt(t):{scale:1,oy:40};
+  stage.style.transform=`scale(${z.scale.toFixed(4)})`;stage.style.transformOrigin=`50% ${z.oy}%`;
+  let endOn=false;
+  for(const o of GS){const on=t>=o.g.s&&t<o.g.e;if(on!==o.on){o.on=on;o.el.classList.toggle("on",on)}if(on&&o.g.kind==="endcard")endOn=true;
+    for(const a of o.ats){const hit=on&&t>=a.t;a.n.classList.toggle("at",hit);if(a.s)o.el.classList.toggle(a.s,hit)}}
+  phone.classList.toggle("on-end",endOn);
+  let i=-1;for(let k=0;k<plan.captions.length;k++){const c=plan.captions[k];if(t>=c.s&&t<c.e){i=k;break}}
+  if(i!==capIdx){capIdx=i;if(i<0){cap.innerHTML=""}else{cap.innerHTML=plan.captions[i].words.map(w=>`<span class="${w.hot?"hot":""}">${esc(w.w)}</span>`).join(" ");cap.classList.remove("pop");void cap.offsetWidth;cap.classList.add("pop")}}
+  if(i>=0){const ws=plan.captions[i].words,sp=cap.children;let a=-1;ws.forEach((w,k)=>{if(t>=w.s)a=k});for(let k=0;k<sp.length;k++)sp[k].classList.toggle("act",k===a)}
+  $("#time").textContent=fmt(t);$("#seek").value=t;
+  highlightEv(t);
+}
+
+let actx=null,bufs={},lastT=0;
+async function initAudio(){
+  if(actx)return;try{actx=new (window.AudioContext||window.webkitAudioContext)()}catch(e){return}
+  const names=[...new Set(plan.sfx.map(s=>s.name))];
+  await Promise.all(names.map(async n=>{try{const r=await fetch(`sfx/${n}.wav`);bufs[n]=await actx.decodeAudioData(await r.arrayBuffer())}catch(e){}}));
+}
+function fire(s,offset){
+  if(!actx||!bufs[s.name])return;const src=actx.createBufferSource(),g=actx.createGain();
+  src.buffer=bufs[s.name];g.gain.value=s.gain*.75;src.connect(g).connect(actx.destination);src.start(0,Math.max(0,offset||0));
+}
+function sfxTick(t){
+  if(st.sfx&&!vg.paused&&t>lastT&&t-lastT<.4){for(const s of plan.sfx){if(s.t>lastT&&s.t<=t)fire(s,t-s.t)}}
+  lastT=t;
+}
+function syncMusic(t){
+  if(!st.mus||vg.paused){if(!mus.paused)mus.pause();return}
+  if(mus.paused)mus.play().catch(()=>{});
+  if(Math.abs(mus.currentTime-t)>.15)mus.currentTime=t;
+}
+function loop(){const t=vg.currentTime;sfxTick(t);syncMusic(t);
+  if(st.wipe&&!vg.paused){if(vo.paused)vo.play().catch(()=>{});if(Math.abs(vo.currentTime-t)>.12)vo.currentTime=t}
+  render(t);requestAnimationFrame(loop)}
+requestAnimationFrame(loop);
+
+async function play(){$("#bigplay").hidden=true;await initAudio();if(actx&&actx.state==="suspended")actx.resume();lastT=vg.currentTime;try{await vg.play()}catch(e){} if(st.wipe)vo.play().catch(()=>{})}
+function pause(){vg.pause();vo.pause();mus.pause()}
+function seek(t){vg.currentTime=t;vo.currentTime=t;mus.currentTime=t;lastT=t;render(t)}
+vg.addEventListener("play",()=>{$("#play").textContent="❚❚";$("#play").setAttribute("aria-label","Jeda")});
+vg.addEventListener("pause",()=>{$("#play").textContent="▶";$("#play").setAttribute("aria-label","Main");vo.pause();mus.pause()});
+vg.addEventListener("ended",()=>{$("#play").textContent="↺"});
+$("#bigplay").onclick=play;
+$("#play").onclick=()=>vg.paused?play():pause();
+$("#seek").addEventListener("input",e=>seek(+e.target.value));
+document.addEventListener("keydown",e=>{if(e.code==="Space"&&!/INPUT|BUTTON/.test(document.activeElement.tagName)){e.preventDefault();vg.paused?play():pause()}});
+phone.addEventListener("click",e=>{if(e.target.closest(".knob,.bigplay"))return;vg.paused?play():pause()});
+
+function tog(id,key,fn){const b=$(id);b.onclick=()=>{st[key]=!st[key];b.setAttribute("aria-pressed",st[key]);fn&&fn()}}
+tog("#t-cap","cap",()=>phone.classList.toggle("off-cap",!st.cap));
+tog("#t-mg","mg",()=>phone.classList.toggle("off-mg",!st.mg));
+tog("#t-sfx","sfx");tog("#t-zoom","zoom");tog("#t-mus","mus");
+tog("#t-wipe","wipe",()=>{$("#wipe").hidden=!st.wipe;setWipe(st.wipeX);if(st.wipe){vo.currentTime=vg.currentTime;if(!vg.paused)vo.play().catch(()=>{})}else{vo.pause();vo.style.clipPath="inset(0 100% 0 0)"}});
+$("#t-safe").onclick=function(){const on=this.getAttribute("aria-pressed")!=="true";this.setAttribute("aria-pressed",on);$("#safe").hidden=!on};
+function setWipe(x){st.wipeX=Math.min(.95,Math.max(.05,x));$("#wipe").style.left=(st.wipeX*100)+"%";vo.style.clipPath=`inset(0 ${(100-st.wipeX*100).toFixed(2)}% 0 0)`}
+const knob=$("#knob");knob.addEventListener("pointerdown",e=>{e.preventDefault();e.stopPropagation();knob.setPointerCapture(e.pointerId);
+  const mv=ev=>{const r=phone.getBoundingClientRect();setWipe((ev.clientX-r.left)/r.width)};
+  knob.addEventListener("pointermove",mv);knob.addEventListener("pointerup",()=>knob.removeEventListener("pointermove",mv),{once:true})});
+knob.addEventListener("click",e=>e.stopPropagation());
+
+document.querySelectorAll(".tab").forEach(b=>b.onclick=()=>{document.querySelectorAll(".tab").forEach(x=>x.setAttribute("aria-selected",x===b));document.querySelectorAll(".pane").forEach(p=>p.hidden=p.id!==b.dataset.p)});
+
+const SFXNAME={whoosh:"Whoosh (peralihan)",pop:"Pop",ding:"Ding",chaching:"Cha-ching",riser:"Riser (bina debar)",impact:"Impact / dentuman",click:"Klik butang",tick:"Tanda (tick)",bonk:"Bonk (salah)",swoosh_down:"Swoosh turun (rugi)"};
+const SEGNOTE={hook:"Hook: take kedua (ada 'berbelas ribu')",mahal:"Sambung 'Nak ubah…' (ulangan dibuang)",mahal2:null};
+const ZNOTE=[];for(let i=1;i<plan.zoom.length;i++){const a=plan.zoom[i-1],b=plan.zoom[i];if(b.scale>a.scale+.02&&b.t-a.t<.3)ZNOTE.push({t:a.t,d:`Punch-in ${Math.round((b.scale-1)*100)}%`})}
+const segStart={};plan.parts.forEach(p=>{if(!(p.seg in segStart))segStart[p.seg]=p.t});
+const GN={hook:"Tajuk hook",loss:"Cop −RM10,000+",pin:"Kad 'Dapur idaman'",dim:null,plan:"Pelan dapur 9 kaki",detect:"Masalah dikesan awal",compare:"Banding: 3D vs masa renovasi",follow:"Butang Follow + Share",endcard:"End card Fi-K Studio"};
+const EV=[
+ ...plan.segments.filter(s=>SEGNOTE[s.id]!==null).map(s=>({t:segStart[s.id],k:"cut",d:SEGNOTE[s.id]||`Take terbaik: "${s.text.split(" ").slice(0,5).join(" ")}…"`,s:`IMG_1472 ${fmt(s.in)} – ${fmt(s.out)}`})),
+ ...plan.broll.map(b=>({t:b.s,k:"br",d:b.d,s:`${b.why} · ${b.src==="fik"?"Foto projek Fi-K":"Mixkit #"+b.id}`})),
+ ...plan.graphics.map(g=>({t:g.s,k:"mg",d:GN[g.kind]||("Garis ukuran "+g.text),s:g.note})),
+ ...plan.sfx.map(s=>({t:s.t,k:"sfx",d:SFXNAME[s.name]||s.name})),
+ ...ZNOTE.map(z=>({t:z.t,k:"zoom",d:z.d}))
+].sort((a,b)=>a.t-b.t||(["cut","br","mg","sfx","zoom"].indexOf(a.k)-["cut","br","mg","sfx","zoom"].indexOf(b.k)));
+const KL={cut:"Potong",br:"B-roll",mg:"Motion",sfx:"SFX",zoom:"Zoom"},KC={cut:"k-cut",br:"k-br",mg:"k-mg",sfx:"k-sfx",zoom:"k-zoom"};
+const list=$("#evlist");
+EV.forEach(e=>{const b=document.createElement("button");b.className="ev";b.innerHTML=`<span class="t">${fmt(e.t)}</span><span class="k ${KC[e.k]}">${KL[e.k]}</span><span class="d">${esc(e.d)}${e.s?`<small>${esc(e.s)}</small>`:""}</span>`;
+  b.onclick=()=>{seek(Math.max(0,e.t-.6));play()};list.appendChild(b)});
+const evEls=[...list.children];let lastHi=-1;
+function highlightEv(t){let k=-1;for(let i=0;i<EV.length;i++){if(EV[i].t<=t+.02)k=i}if(k!==lastHi){if(evEls[lastHi])evEls[lastHi].classList.remove("now");if(evEls[k])evEls[k].classList.add("now");lastHi=k}}
+const marks=$("#marks"),MC={cut:"var(--c-cut)",br:"var(--c-br)",mg:"var(--c-mg)",sfx:"var(--c-sfx)",zoom:"var(--c-zoom)"};
+EV.forEach(e=>{const i=document.createElement("i");i.style.left=(e.t/DUR*100)+"%";i.style.background=MC[e.k];marks.appendChild(i)});
+
+const FIXED=new Set(["Peti"]);
+const ts=$("#tscript");
+const segs=plan.segments.filter(s=>s.id!=="mahal2");
+segs.forEach((s,ix)=>{const t0=segStart[s.id];const t1=ix+1<segs.length?segStart[segs[ix+1].id]:END;
+  const words=plan.captions.flatMap(c=>c.words).filter(w=>w.s>=t0-.05&&w.s<t1-.02);
+  const html=words.map(w=>FIXED.has(w.w.replace(/[^\w]/g,""))?`<span class="fix">${esc(w.w)}</span>`:esc(w.w)).join(" ");
+  const b=document.createElement("button");b.className="line"+(s.id==="hook"?" hookline":"");
+  b.innerHTML=`<span class="t">${fmt(t0)}</span><span>${html}<small>asal ${fmt(s.in)}</small></span>`;
+  b.onclick=()=>{seek(t0);play()};ts.appendChild(b)});
+const e=document.createElement("button");e.className="line";e.innerHTML=`<span class="t">${fmt(END)}</span><span>(End card Fi-K Studio + muzik, 4 saat)</span>`;e.onclick=()=>{seek(END);play()};ts.appendChild(e);
+
+$("#brgrid").innerHTML=plan.broll.map(b=>`<div class="br"><img src="br/${esc(b.id)}.jpg" alt="${esc(b.d)}" loading="lazy"><b>${esc(b.d)}</b><span>${fmt(b.s)} · ${b.url?`<a href="${esc(b.url)}" target="_blank" rel="noopener">Mixkit #${esc(b.id)}</a>`:"Foto projek Fi-K (CFik017)"}</span></div>`).join("");
+
+render(0);
+})();
+</script>
