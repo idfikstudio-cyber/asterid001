@@ -10,3 +10,14 @@ Status: **preview sahaja, belum render final.**
 - `preview/index.html`: halaman preview interaktif (perlu `graded.mp4`/`orig.mp4` proxy di folder sama; tidak disimpan dalam git).
 
 Video sumber: folder Google Drive "Aster" (tidak disimpan dalam repo kerana saiz).
+
+# AT001: "Anak lemah sifir" (video TOFU, berasingan)
+
+Status: **preview sahaja, belum render final.**
+
+- `at001/edit/transcript.json`: transkrip Whisper large-v3 (28.4s, 1080×1920). "CP" → "sifir" dan "block mic" → "blok minda" disahkan dengan pass kedua.
+- `at001/edit/plan.json`: 2 pause dibuang (28.1s) + kad penutup 1.5s. Caption, motion graphic, B-roll tulisan tangan, sound effect dan zoom ikut masa video baru (`scripts/at001_plan.py`).
+- `at001/edit/sfx/`: sound effect dijana sendiri (`scripts/sfx.py` + `scripts/sfx_extra.py`), bebas hak cipta.
+- `scripts/look.py`: bokeh f/2.8 (segmentasi badan MediaPipe setiap frame) + colour grade yang melindungi warna kulit.
+- `scripts/at001_proxy.sh`: potong + bersihkan audio (−14 LUFS) + proxy 540p untuk preview.
+- `at001/preview/index.html`: halaman preview interaktif (perlu `graded.mp4`, `orig.mp4`, `audio_orig.m4a`, `plan.json`, `sfx/` di folder sama).
