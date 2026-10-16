@@ -1,0 +1,429 @@
+<title>Handover CFik017</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Instrument+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: 9:16 player pinned left like a monitor, edit sheet on the right (stacks on phones). Studio green from the logo + warm plaster neutrals from the finished rooms. */
+:root{
+  --bg:#f1f0ec; --surface:#fbfaf7; --ink:#1d2624; --muted:#5d6764; --line:#dcdbd4;
+  --brand:#2f4a45; --brand-soft:#e3ebe7; --oak:#a7794a; --oak-ink:#7b5530;
+  --c-vo:#2f4a45; --c-sfx:#a7794a; --c-mg:#5c6fa8;
+  /* on-video graphics: fixed, the video looks the same in every theme */
+  --v-green:#2f4a45; --v-paper:#efece6; --v-white:#ffffff; --v-sage:#cfe0d6; --v-oak:#d9b382;
+  --f-display:"Jost","Futura","Century Gothic",system-ui,sans-serif;
+  --f-body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#121615; --surface:#1a201e; --ink:#e7ebe8; --muted:#9aa6a1; --line:#2b3431;
+  --brand:#8fc0b2; --brand-soft:#21302c; --oak:#d9a76f; --oak-ink:#e8c08f;
+  --c-vo:#8fc0b2; --c-sfx:#d9a76f; --c-mg:#9fb0e6; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#121615; --surface:#1a201e; --ink:#e7ebe8; --muted:#9aa6a1; --line:#2b3431;
+  --brand:#8fc0b2; --brand-soft:#21302c; --oak:#d9a76f; --oak-ink:#e8c08f;
+  --c-vo:#8fc0b2; --c-sfx:#d9a76f; --c-mg:#9fb0e6; color-scheme:dark}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.55}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:22px 56px}
+header.top{display:flex;flex-wrap:wrap;gap:6px 24px;align-items:end;justify-content:space-between;margin-bottom:20px}
+.eyebrow{font:500 12px var(--f-body);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+h1{font-family:var(--f-display);font-weight:400;font-size:clamp(28px,4.2vw,42px);line-height:1.05;margin:2px 0 0;letter-spacing:.01em;text-wrap:balance}
+h1 b{font-weight:600;color:var(--brand)}
+.status{display:inline-flex;gap:8px;align-items:center;font-size:13px;color:var(--muted)}
+.status b{background:var(--brand);color:var(--surface);font-weight:600;padding:2px 10px;border-radius:999px;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase}
+.grid{display:grid;grid-template-columns:minmax(0,380px) minmax(0,1fr);gap:32px;align-items:start}
+@media (max-width:840px){.grid{grid-template-columns:minmax(0,1fr)}}
+
+/* ---------- player ---------- */
+.player{position:sticky;top:calc(env(safe-area-inset-top,0px) + 12px);display:flex;flex-direction:column;gap:10px;max-width:380px;width:100%;margin-inline:auto}
+@media (max-width:840px){.player{position:static}}
+.phone{position:relative;width:100%;max-width:100%;aspect-ratio:9/16;border-radius:20px;overflow:hidden;background:#000;box-shadow:0 22px 50px -24px rgba(20,35,30,.6);container-type:size;user-select:none;-webkit-user-select:none;touch-action:none}
+.layer{position:absolute;inset:0;overflow:hidden;visibility:hidden}
+.layer.on{visibility:visible}
+.fill{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transform-origin:50% 50%;will-change:transform}
+.after{clip-path:inset(0 100% 0 0)}
+.divider{position:absolute;top:0;bottom:0;width:0;left:0}
+.divider::before{content:"";position:absolute;inset:0 -.35cqw;background:var(--v-white);box-shadow:0 0 2cqw rgba(0,0,0,.35)}
+.divider .knob{position:absolute;top:50%;left:0;transform:translate(-50%,-50%);width:10cqw;height:10cqw;border-radius:50%;background:var(--v-white);color:var(--v-green);display:grid;place-items:center;font:600 3.6cqw var(--f-display);box-shadow:0 1cqw 3cqw rgba(0,0,0,.3);cursor:ew-resize}
+.tag{position:absolute;top:19cqh;font:500 3.1cqw var(--f-display);letter-spacing:.22em;padding:1.1cqw 2.6cqw;border-radius:99px;color:var(--v-white);background:rgba(20,28,26,.62);backdrop-filter:blur(4px)}
+.tag.b{right:3.5cqw}.tag.a{left:3.5cqw;background:var(--v-green)}
+.room{position:absolute;left:5cqw;right:20cqw;top:5.5cqh;display:flex;flex-direction:column;gap:.4cqh;color:var(--v-white);text-shadow:0 .4cqw 2cqw rgba(0,0,0,.45)}
+.room small{font:500 2.6cqw var(--f-display);letter-spacing:.3em;text-transform:uppercase;opacity:.9}
+.room span{font:400 7.4cqw/1.05 var(--f-display);text-wrap:balance;letter-spacing:.01em}
+.callout{position:absolute;display:flex;align-items:center;gap:1.6cqw;transform-origin:0 50%}
+.callout i{width:3.2cqw;height:3.2cqw;border-radius:50%;background:var(--v-white);box-shadow:0 0 0 1.2cqw rgba(255,255,255,.35);flex:none}
+.callout em{font:500 3.3cqw var(--f-display);font-style:normal;color:var(--v-green);background:var(--v-paper);padding:1cqw 2.4cqw;border-radius:1.2cqw;white-space:nowrap;box-shadow:0 1cqw 3cqw rgba(0,0,0,.25)}
+.stamp{position:absolute;left:50%;top:13cqh;transform:translateX(-50%) rotate(-6deg);font:600 8cqw var(--f-display);letter-spacing:.24em;color:var(--v-white);border:.9cqw solid var(--v-white);padding:.6cqw 3cqw .6cqw 4.4cqw;border-radius:1cqw;text-shadow:0 .5cqw 2cqw rgba(0,0,0,.4);box-shadow:0 .5cqw 2cqw rgba(0,0,0,.25)}
+.count{position:absolute;right:5cqw;bottom:22cqh;font:500 3cqw var(--f-display);color:var(--v-white);letter-spacing:.15em;background:rgba(0,0,0,.45);padding:.8cqw 2cqw;border-radius:99px}
+.flash{position:absolute;inset:0;background:var(--v-white);opacity:0;pointer-events:none}
+.lower{position:absolute;left:5cqw;bottom:30cqh;display:flex;flex-direction:column;gap:.6cqh}
+.lower b{font:500 6cqw var(--f-display);color:var(--v-white);background:var(--v-green);padding:1cqw 3.2cqw;align-self:flex-start;border-radius:1cqw}
+.lower span{font:400 3.4cqw var(--f-display);color:var(--v-green);background:var(--v-paper);padding:.8cqw 3.2cqw;align-self:flex-start;border-radius:1cqw;letter-spacing:.04em}
+.paper{position:absolute;inset:0;background:var(--v-paper)}
+.logoMark{position:absolute;left:50%;top:40%;width:54cqw;transform:translate(-50%,-50%)}
+.logoTag{position:absolute;left:0;right:0;top:63cqh;text-align:center;font:400 4.6cqw var(--f-display);letter-spacing:.32em;color:var(--v-green);text-transform:uppercase}
+.rule{position:absolute;left:50%;top:60cqh;height:.35cqw;background:var(--v-green);transform:translateX(-50%)}
+#pano canvas{position:absolute;inset:0;width:100%!important;height:100%!important;cursor:grab}
+.grid3d{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.55) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.55) 1px,transparent 1px);background-size:9cqw 9cqw;mix-blend-mode:overlay;pointer-events:none}
+.badge3d{position:absolute;left:5cqw;right:20cqw;top:5.5cqh;color:var(--v-white);text-shadow:0 .4cqw 2cqw rgba(0,0,0,.4)}
+.badge3d small{display:block;font:500 2.6cqw var(--f-display);letter-spacing:.3em}
+.badge3d span{font:400 7.4cqw/1.05 var(--f-display)}
+.chips{position:absolute;left:5cqw;top:19cqh;display:flex;flex-direction:column;gap:1.6cqh}
+.chip{display:flex;gap:2cqw;align-items:center;font:500 4.6cqw var(--f-display);color:var(--v-green);background:var(--v-paper);padding:1.2cqw 3.4cqw 1.2cqw 1.6cqw;border-radius:99px;transform-origin:0 50%;align-self:flex-start;box-shadow:0 1cqw 3cqw rgba(0,0,0,.25)}
+.chip i{width:5.6cqw;height:5.6cqw;border-radius:50%;background:var(--v-green);color:var(--v-white);display:grid;place-items:center;font:600 3cqw var(--f-body);font-style:normal}
+.vs{position:absolute;left:0;right:0;bottom:24cqh;display:flex;justify-content:center;gap:3cqw;align-items:center;font:500 5.6cqw var(--f-display);color:var(--v-white);letter-spacing:.18em;text-shadow:0 .5cqw 2cqw rgba(0,0,0,.5)}
+.blurbg{filter:blur(14px) brightness(.72);transform:scale(1.15)}
+.mock{position:absolute;left:50%;top:44%;width:52cqw;aspect-ratio:9/16;transform:translate(-50%,-50%);border-radius:5cqw;border:1.6cqw solid #111;overflow:hidden;background:#000;box-shadow:0 3cqw 8cqw rgba(0,0,0,.5)}
+.mock video{width:100%;height:100%;object-fit:cover;display:block}
+.qtxt{position:absolute;left:6cqw;right:6cqw;top:14cqh;text-align:center;font:400 5.4cqw/1.2 var(--f-display);color:var(--v-white);text-shadow:0 .5cqw 2cqw rgba(0,0,0,.5);text-wrap:balance}
+.polaroid{position:absolute;left:50%;top:48%;width:70cqw;background:var(--v-paper);padding:2.4cqw 2.4cqw 9cqw;box-shadow:0 3cqw 8cqw rgba(0,0,0,.45);transform-origin:50% 50%}
+.polaroid img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+.polaroid p{position:absolute;left:0;right:0;bottom:2cqw;margin:0;text-align:center;font:400 4cqw var(--f-display);color:var(--v-green);letter-spacing:.06em}
+.endSvc{position:absolute;left:0;right:0;top:61cqh;text-align:center;font:400 3.6cqw var(--f-display);letter-spacing:.24em;color:var(--v-green);text-transform:uppercase}
+.endCta{position:absolute;left:50%;top:70cqh;transform:translateX(-50%);font:500 5cqw var(--f-display);color:var(--v-white);background:var(--v-green);padding:2cqw 7cqw;border-radius:99px;white-space:nowrap}
+.wm{position:absolute;right:4.5cqw;top:4.5cqh;width:11cqw;opacity:.92;filter:drop-shadow(0 .3cqw 1.2cqw rgba(0,0,0,.35));pointer-events:none}
+.caps{position:absolute;left:5cqw;right:5cqw;bottom:13cqh;display:flex;flex-wrap:wrap;justify-content:center;gap:.4cqh 1.6cqw;pointer-events:none}
+.caps span{font:500 6.2cqw/1.15 var(--f-display);color:var(--v-white);text-shadow:0 0 .6cqw rgba(0,0,0,.85),0 .5cqw 2cqw rgba(0,0,0,.6);padding:0 1cqw;border-radius:1cqw;transition:background .08s}
+.caps span.now{background:var(--v-green);text-shadow:none}
+.caps span.wait{opacity:.45}
+.bigplay{position:absolute;inset:0;display:grid;place-items:center;background:rgba(15,22,20,.35);border:0;color:#fff;cursor:pointer;font:500 4.4cqw var(--f-display);letter-spacing:.1em}
+.bigplay span{display:flex;gap:2cqw;align-items:center;background:rgba(20,30,28,.75);padding:3cqw 6cqw;border-radius:99px}
+.bigplay:focus-visible{outline:3px solid var(--v-sage);outline-offset:-6px}
+.hint{position:absolute;left:50%;bottom:4cqh;transform:translateX(-50%);font:500 2.8cqw var(--f-body);color:#fff;background:rgba(0,0,0,.55);padding:.8cqw 2.4cqw;border-radius:99px;white-space:nowrap;pointer-events:none}
+
+.controls{display:flex;gap:10px;align-items:center}
+.btn{font:600 13px var(--f-body);border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:7px 14px;cursor:pointer}
+.btn:focus-visible,.seg button:focus-visible,.chap:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+.btn.primary{background:var(--brand);color:var(--surface);border-color:var(--brand)}
+.time{font:500 13px var(--f-body);font-variant-numeric:tabular-nums;color:var(--muted);margin-left:auto}
+.track{position:relative;height:30px;cursor:pointer}
+.track .bar{position:absolute;left:0;right:0;top:11px;height:8px;border-radius:99px;background:var(--line);overflow:hidden;display:flex}
+.track .bar i{height:100%;border-right:2px solid var(--surface)}
+.track .head{position:absolute;top:4px;width:3px;height:22px;background:var(--ink);border-radius:2px;transform:translateX(-1px)}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.seg button{font:600 12px var(--f-body);background:var(--surface);color:var(--muted);border:0;padding:6px 12px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--brand);color:var(--surface)}
+.opts{display:flex;flex-wrap:wrap;gap:10px;align-items:center;font-size:13px;color:var(--muted)}
+
+/* ---------- edit sheet ---------- */
+.sheet{display:flex;flex-direction:column;gap:30px;min-width:0}
+.sheet h2{font:500 21px/1.2 var(--f-display);margin:0 0 10px;letter-spacing:.01em}
+.sheet p{margin:0;max-width:68ch}
+.chaps{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+.chap{display:flex;flex-direction:column;align-items:flex-start;gap:2px;text-align:left;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:10px;padding:8px 11px;cursor:pointer;font:inherit}
+.chap small{font-variant-numeric:tabular-nums;color:var(--muted);font-size:12px}
+.chap b{font-weight:600;font-size:14px}
+.chap.on{border-color:var(--brand);background:var(--brand-soft)}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:13.5px}
+th,td{text-align:left;vertical-align:top;padding:9px 12px;border-bottom:1px solid var(--line)}
+th{font:600 11.5px var(--f-body);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:var(--bg)}
+tr:last-child td{border-bottom:0}
+td.t{font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--muted)}
+tr.cur td{background:var(--brand-soft)}
+.k{display:inline-block;font:600 11px var(--f-body);letter-spacing:.04em;padding:1px 7px;border-radius:99px;margin:0 4px 3px 0;border:1px solid currentColor}
+.k.vo{color:var(--c-vo)}.k.sfx{color:var(--c-sfx)}.k.mg{color:var(--c-mg)}
+.notes{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.note{border-top:2px solid var(--brand);padding-top:10px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.note h3{margin:0;font:600 14.5px var(--f-body)}
+.note p{font-size:14px;color:var(--muted)}
+.logos{display:flex;gap:10px}
+.logos figure{margin:0;flex:1;border-radius:10px;padding:14px;display:grid;place-items:center;aspect-ratio:1.4}
+.logos img{max-height:64px}
+.logos figcaption{font-size:12px;color:var(--muted);margin-top:4px}
+.ask{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.ask ol{margin:6px 0 0;padding-left:20px;display:flex;flex-direction:column;gap:6px}
+@media (prefers-reduced-motion:reduce){.caps span{transition:none}}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div>
+      <div class="eyebrow">Fi-K Studio · Projek CFik017 · Reels / TikTok 9:16</div>
+      <h1>Video handover <b>CFik017</b></h1>
+    </div>
+    <div class="status"><b>Preview</b> belum render final · 66 s · 1080×1920 bila render</div>
+  </header>
+
+  <div class="grid">
+    <section class="player" aria-label="Pemain preview">
+      <div class="phone" id="phone">
+        <div class="layer" id="L-hook"></div>
+        <div class="layer" id="L-before"></div>
+        <div class="layer" id="L-founder"><video id="vFounder" class="fill" muted playsinline preload="auto"><source src="vid/founder.mp4" type="video/mp4"><source src="vid/founder.webm" type="video/webm"></video><div class="lower" id="lower"><b></b><span></span></div></div>
+        <div class="layer" id="L-logo"><div class="paper"></div><div class="rule" id="logoRule"></div><img class="logoMark" id="logoMark" src="img/logo_green.png" alt="Logo Fi-K Studio"><div class="logoTag" id="logoTag">Inilah fungsi kami</div></div>
+        <div class="layer" id="L-pano"><div id="pano"></div><div class="grid3d" id="grid3d"></div>
+          <div class="badge3d" id="badge3d"><small>LANGKAH 1</small><span>Rekaan 3D</span></div>
+          <div class="chips" id="chips"></div>
+          <img class="fill" id="morphImg" alt="" style="opacity:0">
+          <div class="vs" id="vs"><span>3D</span><span>→</span><span>REALITI</span></div>
+        </div>
+        <div class="layer" id="L-ba"></div>
+        <div class="layer" id="L-client"><img class="fill blurbg" id="cBg" alt=""><div class="qtxt" id="qtxt">Reaksi pemilik rumah masa first look</div><div class="mock" id="mock"><video id="vClient" muted playsinline preload="auto"><source src="vid/client.mp4" type="video/mp4"><source src="vid/client.webm" type="video/webm"></video></div>
+          <div class="polaroid" id="polaroid"><img id="polImg" alt=""><p>Serah kunci · CFik017</p></div></div>
+        <div class="layer" id="L-end"><div class="paper"></div><img class="logoMark" id="endMark" src="img/logo_green.png" alt="Logo Fi-K Studio"><div class="endSvc" id="endSvc">Interior Design · 3D · Renovation</div><div class="endCta" id="endCta">DM kami untuk konsultasi</div></div>
+        <img class="wm" id="wm" src="img/logo_white.png" alt="">
+        <div class="caps" id="caps"></div>
+        <div class="flash" id="flash"></div>
+        <div class="hint" id="hint" hidden></div>
+        <button class="bigplay" id="bigplay" aria-label="Main preview dengan bunyi"><span>▶ Main dengan bunyi</span></button>
+      </div>
+      <div class="track" id="track" role="slider" tabindex="0" aria-label="Kedudukan masa" aria-valuemin="0" aria-valuemax="66" aria-valuenow="0"><div class="bar" id="bar"></div><div class="head" id="head"></div></div>
+      <div class="controls">
+        <button class="btn primary" id="play">Main</button>
+        <button class="btn" id="back" aria-label="Undur 5 saat">−5 s</button>
+        <span class="time" id="time">0:00.0 / 1:06</span>
+      </div>
+      <div class="opts">
+        <span>Warna gambar</span>
+        <div class="seg" role="group" aria-label="Warna gambar">
+          <button id="cClean" aria-pressed="true">Clean</button><button id="cOrig" aria-pressed="false">Asal</button>
+        </div>
+        <span>Caption</span>
+        <div class="seg" role="group" aria-label="Caption"><button id="capOn" aria-pressed="true">On</button><button id="capOff" aria-pressed="false">Off</button></div>
+      </div>
+    </section>
+
+    <div class="sheet">
+      <section>
+        <h2>Babak</h2>
+        <div class="chaps" id="chaps"></div>
+      </section>
+
+      <section>
+        <h2>Cara guna preview ini</h2>
+        <p>Tekan main untuk tengok suntingan penuh dengan voiceover, muzik dan sound effect. Bila dijeda di babak sebelum/selepas, seret garisan putih untuk banding sendiri. Bila dijeda di babak 3D, seret skrin untuk pusing pandangan 360°. Tukar <b>Clean / Asal</b> untuk bandingkan pembersihan warna dengan gambar asal.</p>
+      </section>
+
+      <section>
+        <h2>Senarai shot</h2>
+        <div class="tbl"><table>
+          <thead><tr><th>Masa</th><th>Visual</th><th>Audio &amp; teks</th></tr></thead>
+          <tbody id="shots"></tbody>
+        </table></div>
+      </section>
+
+      <section>
+        <h2>Keputusan suntingan</h2>
+        <div class="notes">
+          <div class="note"><h3>Logo</h3>
+            <div class="logos">
+              <figure style="background:#5f6f6a"><img src="img/logo_white.png" alt="Logo putih"></figure>
+              <figure style="background:#efece6"><img src="img/logo_green.png" alt="Logo hijau"></figure>
+            </div>
+            <p>Logo putih jadi watermark kecil atas footage, sebab dinding rumah ini kebanyakannya cerah tetapi bahagian atas frame (siling, lampu) cukup berkontras bila ada bayang lembut. Logo hijau dipakai penuh pada kad logo dan kad penutup atas latar plaster cerah, sama tona dengan rumah siap.</p></div>
+          <div class="note"><h3>Warna: clean sahaja, tiada grade</h3>
+            <p>Tiada LUT, tiada ubah saturasi atau kontras. Setiap gambar cuma dineutralkan cast warna (maksimum 6%, diukur pada dinding putih) dan levels hitam/putih diregang sedikit. Gambar selepas dan render 3D disentuh separuh sahaja supaya cahaya warm yang memang dirancang kekal.</p></div>
+          <div class="note"><h3>Voiceover</h3>
+            <p>Suara pengasas dari CFik016.MOV. Take yang berulang dibuang, tinggal 8 ayat terbaik (±32 s). Suara dibersihkan: buang dengung bawah 80 Hz, kurangkan hingar, compressor ringan, loudness −16 LUFS.</p></div>
+          <div class="note"><h3>3D Design</h3>
+            <p>Render 360° dari pautan aihouse (S50330334) diambil sebagai cube map, kemudian kamera maya pusing perlahan dalam ruang tamu. Babak seterusnya lebur dari render 3D ke gambar sebenar rumah siap.</p></div>
+          <div class="note"><h3>Muzik &amp; SFX</h3>
+            <p>Muzik lo-fi house 96 BPM dan semua sound effect (whoosh, swipe, shimmer, shutter, pop, ding, impact) dijana sendiri, jadi bebas hak cipta dan selamat untuk iklan berbayar. Muzik turun automatik bila pengasas bercakap.</p></div>
+          <div class="note"><h3>B-roll</h3>
+            <p>Video klien berjalan dalam rumah dijadikan b-roll "reaksi klien" dalam bingkai telefon, sebab resolusinya rendah (352×640). Gambar serah kunci masuk sebagai polaroid. Gambar sebelum dimontaj dengan kesan shutter kamera.</p></div>
+        </div>
+      </section>
+
+      <section class="ask">
+        <h2>Perlu kau sahkan sebelum aku render</h2>
+        <ol>
+          <li>Label pada gambar selepas (contoh "Chandelier moden", "Island top marble") ikut tekaan aku dari gambar. Betulkan kalau ada istilah material yang lebih tepat.</li>
+          <li>Kad penutup tulis "DM kami untuk konsultasi". Nak letak handle Instagram/TikTok atau nombor WhatsApp?</li>
+          <li>Babak 120–148 s dalam CFik016 tak jelas audionya, jadi tak dipakai. Kalau ada ayat penting di situ, beritahu.</li>
+          <li>Tempoh 66 s sesuai untuk Reels. Nak versi pendek 30 s juga?</li>
+        </ol>
+      </section>
+    </div>
+  </div>
+</div>
+
+<audio id="mix" src="mix.mp3" preload="auto"></audio>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(async()=>{
+const P = await (await fetch("plan.json")).json();
+const DUR = P.dur, $ = id=>document.getElementById(id);
+const audio=$("mix"), vF=$("vFounder"), vC=$("vClient");
+const clamp=(x,a=0,b=1)=>Math.min(b,Math.max(a,x));
+const ease=x=>{x=clamp(x);return x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2};
+const out=x=>1-Math.pow(1-clamp(x),3);
+const back=x=>{x=clamp(x);const c=1.7;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2)};
+let colorMode="clean", capsOn=true;
+const src=p=>colorMode==="clean"?p:p.replace(".jpg","_orig.jpg");
+const scene=id=>P.scenes.find(s=>s.id===id);
+const imgs=[]; // every <img data-src> that follows the colour toggle
+function mkImg(p,cls="fill"){const i=document.createElement("img");i.className=cls;i.alt="";i.dataset.src=p;i.src=src(p);imgs.push(i);return i}
+
+/* ---------- build: before/after scenes ---------- */
+const baEls={};
+for(const s of P.scenes.filter(s=>s.type==="ba")){
+  const host = s.id==="hook" ? $("L-hook") : $("L-ba");
+  const g=document.createElement("div");g.className="layer";g.style.visibility="inherit";g.hidden=true;host.appendChild(g);
+  const b=mkImg(s.before), a=mkImg(s.after,"fill after");
+  const extras=(s.extra||[]).map(p=>{const e=mkImg(p);e.style.opacity=0;return e});
+  const tb=document.createElement("div");tb.className="tag b";tb.textContent="SEBELUM";
+  const ta=document.createElement("div");ta.className="tag a";ta.textContent="SELEPAS";
+  const d=document.createElement("div");d.className="divider";d.innerHTML='<div class="knob">‹ ›</div>';
+  g.append(b,a,...extras,tb,ta,d);
+  let room=null;
+  if(s.room){room=document.createElement("div");room.className="room";room.innerHTML=`<small>Sebelum · Selepas</small><span>${s.room}</span>`;g.appendChild(room)}
+  else{room=document.createElement("div");room.className="room";room.innerHTML=`<small>Fi-K Studio</small><span>${s.title}</span>`;g.appendChild(room)}
+  const cos=(s.callouts||[]).map(c=>{const e=document.createElement("div");e.className="callout";e.style.left=c.x+"%";e.style.top=c.y+"%";e.innerHTML=`<i></i><em>${c.txt}</em>`;g.appendChild(e);return e});
+  baEls[s.id]={g,b,a,extras,tb,ta,d,room,cos,manual:null};
+  // drag the divider while paused
+  g.addEventListener("pointerdown",ev=>{if(playing)return;const r=g.getBoundingClientRect();const mv=e=>{baEls[s.id].manual=clamp((e.clientX-r.left)/r.width);render(cur)};mv(ev);g.setPointerCapture(ev.pointerId);g.onpointermove=mv;g.onpointerup=()=>{g.onpointermove=null}});
+}
+/* before montage */
+const bs=scene("before"); const bImgs=bs.imgs.map(p=>{const i=mkImg(p);$("L-before").appendChild(i);return i});
+const stamp=document.createElement("div");stamp.className="stamp";stamp.textContent="SEBELUM";
+const count=document.createElement("div");count.className="count";
+$("L-before").append(stamp,count);
+/* client */
+$("cBg").dataset.src=scene("client").bg;imgs.push($("cBg"));$("polImg").dataset.src=scene("client").handover;imgs.push($("polImg"));
+$("morphImg").dataset.src=scene("morph").after;imgs.push($("morphImg"));
+const refreshImgs=()=>imgs.forEach(i=>i.src=src(i.dataset.src));refreshImgs();
+/* chips */
+const chipEls=scene("pano").chips.map(c=>{const e=document.createElement("div");e.className="chip";e.innerHTML=`<i>✓</i>${c.txt}`;$("chips").appendChild(e);return e});
+
+/* ---------- 3D panorama ---------- */
+let r3=null;
+if(window.THREE){
+  const host=$("pano"); const ren=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:true});
+  ren.setPixelRatio(Math.min(2,devicePixelRatio)); host.appendChild(ren.domElement);
+  const sc=new THREE.Scene(); const cam=new THREE.PerspectiveCamera(78,9/16,.1,10);
+  // krpano cube faces seen from inside: f at -z, r at +x, b at +z, l at -x, u/d share an edge with f
+  const ld=new THREE.TextureLoader(); let left=6;
+  [["f",[0,0,-1],[0,0,0]],["b",[0,0,1],[0,Math.PI,0]],["l",[-1,0,0],[0,Math.PI/2,0]],["r",[1,0,0],[0,-Math.PI/2,0]],["u",[0,1,0],[Math.PI/2,0,0]],["d",[0,-1,0],[-Math.PI/2,0,0]]]
+  .forEach(([n,pos,rot])=>{const tx=ld.load("pano/"+n+".jpg",()=>{if(--left===0)render(cur)});tx.encoding=THREE.sRGBEncoding;
+    const m=new THREE.Mesh(new THREE.PlaneGeometry(2.002,2.002),new THREE.MeshBasicMaterial({map:tx}));m.position.set(...pos);m.rotation.set(...rot);sc.add(m)});
+  ren.outputEncoding=THREE.sRGBEncoding;
+  r3={ren,sc,cam,dirty:true,userYaw:0,userPitch:0};
+  const size=()=>{const r=$("phone").getBoundingClientRect();ren.setSize(r.width,r.height,false)};size();addEventListener("resize",size);
+  host.addEventListener("pointerdown",ev=>{if(playing)return;let x=ev.clientX,y=ev.clientY;host.setPointerCapture(ev.pointerId);
+    host.onpointermove=e=>{r3.userYaw+=(e.clientX-x)*.25;r3.userPitch=clamp(r3.userPitch+(e.clientY-y)*.2,-60,60);x=e.clientX;y=e.clientY;render(cur)};
+    host.onpointerup=()=>host.onpointermove=null});
+}
+function drawPano(yaw,pitch,fov){ if(!r3)return; const c=r3.cam; c.fov=fov;c.updateProjectionMatrix();
+  c.rotation.order="YXZ"; c.rotation.y=THREE.MathUtils.degToRad(-(yaw+r3.userYaw)); c.rotation.x=THREE.MathUtils.degToRad(-(pitch+r3.userPitch)); r3.ren.render(r3.sc,c)}
+
+/* ---------- chapters, track, shot list ---------- */
+const chapCol={"ba":"var(--brand)","founder":"var(--oak)","photos":"#8b8f8c","logo":"var(--brand)","pano":"var(--c-mg)","morph":"var(--c-mg)","client":"var(--oak)","end":"var(--brand)"};
+const fmt=t=>`${Math.floor(t/60)}:${(t%60).toFixed(1).padStart(4,"0")}`;
+P.scenes.forEach((s,i)=>{
+  const w=(s.t1-s.t0)/DUR*100; const seg=document.createElement("i");seg.style.width=w+"%";seg.style.background=chapCol[s.type];seg.style.opacity=i%2?.75:1;$("bar").appendChild(seg);
+  const b=document.createElement("button");b.className="chap";b.innerHTML=`<small>${fmt(s.t0)}</small><b>${s.chapter}</b>`;b.onclick=()=>seek(s.t0+.05);b.dataset.i=i;$("chaps").appendChild(b);
+});
+const DESC={hook:"Living lama → wipe → living siap. Teks pembuka.",f1:"Pengasas bercakap ke kamera, lower third nama studio.",before:"Montaj 5 gambar sebelum, kesan shutter + cop SEBELUM.",f2:"Pengasas: masalah klien susah terangkan pada kontraktor.",logo:"Kad logo hijau atas latar plaster, garisan dilukis.",pano:"Kamera maya pusing dalam render 3D 360°, grid pelan pudar, cip Layout · 3D · Drawing.",morph:"Render 3D lebur ke gambar sebenar.",dining:"Slider sebelum/selepas, label, 2 sudut tambahan.",toilet:"Slider sebelum/selepas + label.",kitchen:"Slider sebelum/selepas + label.",family:"Slider sebelum/selepas + 1 sudut tambahan.",client:"Video klien dalam bingkai telefon, kemudian polaroid serah kunci.",f3:"Pengasas: ajakan DM.",end:"Kad penutup logo hijau, servis, butang DM."};
+P.scenes.forEach(s=>{
+  const vo=P.captions.filter(c=>c.s>=s.t0&&c.s<s.t1).map(c=>c.words.map(w=>w.w).join(" ")).join(" ");
+  const fx=[...new Set(P.sfx.filter(x=>x.t>=s.t0&&x.t<s.t1).map(x=>x.n))].join(", ");
+  const tr=document.createElement("tr");tr.dataset.id=s.id;
+  tr.innerHTML=`<td class="t">${fmt(s.t0)}–${fmt(s.t1)}</td><td><b>${s.chapter}</b><br>${DESC[s.id]||""}</td><td>${vo?`<span class="k vo">VO</span>“${vo}”<br>`:'<span class="k mg">Muzik</span><br>'}${fx?`<span class="k sfx">SFX</span>${fx}`:""}</td>`;
+  $("shots").appendChild(tr);
+});
+
+/* ---------- render(t) ---------- */
+const layers=["L-hook","L-before","L-founder","L-logo","L-pano","L-ba","L-client","L-end"].map($);
+let lastShow=null;
+function show(id){layers.forEach(l=>l.classList.toggle("on",l.id===id))}
+function inScene(t){return P.scenes.find(s=>t>=s.t0&&t<s.t1)||P.scenes[P.scenes.length-1]}
+function sync(v,t,active){ if(!active){if(!v.paused)v.pause();return}
+  if(Math.abs(v.currentTime-t)>(playing?.25:.04)) v.currentTime=t;
+  if(playing&&v.paused) v.play().catch(()=>{}); if(!playing&&!v.paused) v.pause(); }
+function render(t){
+  cur=t; const s=inScene(t), lt=t-s.t0, D=s.t1-s.t0;
+  const intro=out(lt/.28); // whip-in for every cut
+  const L={ba:"L-ba",founder:"L-founder",photos:"L-before",logo:"L-logo",pano:"L-pano",morph:"L-pano",client:"L-client",end:"L-end"}[s.type];
+  show(s.id==="hook"?"L-hook":L);
+  const lay=$(s.id==="hook"?"L-hook":L); lay.style.transform=`scale(${1.06-.06*intro})`; lay.style.filter=intro<1?`blur(${(1-intro)*6}px)`:"";
+  let hint="";
+  if(s.type==="ba"){
+    for(const k in baEls) baEls[k].g.hidden=k!==s.id;
+    const e=baEls[s.id]; let p=e.manual!=null&&!playing?e.manual:ease((lt-s.wipe[0])/(s.wipe[1]-s.wipe[0]));
+    if(playing) e.manual=null;
+    e.a.style.clipPath=`inset(0 ${(1-p)*100}% 0 0)`; e.d.style.left=p*100+"%"; e.d.style.opacity=p>0&&p<1?1:(lt<s.wipe[0]?0:clamp(1-(lt-s.wipe[1])/.3));
+    if(!playing&&e.manual!=null) e.d.style.opacity=1;
+    const kb=1+.05*clamp(lt/D); e.b.style.transform=`scale(${kb})`; e.a.style.transform=`scale(${1+.07*clamp((lt-s.wipe[0])/D)})`;
+    e.tb.style.opacity=p<.98?1:0; e.ta.style.opacity=p>.02?1:0;
+    e.extras.forEach((x,i)=>{const t0=3.0+i*.9;const k=clamp((lt-t0)/.25);x.style.opacity=k;x.style.transform=`translateX(${(1-out(k))*12}%) scale(${1+.04*clamp((lt-t0)/1.5)})`});
+    const ex=e.extras.some((x,i)=>lt>3.0+i*.9);
+    e.room.style.opacity=out((lt-.15)/.35); e.room.style.transform=`translateY(${(1-out((lt-.15)/.35))*30}%)`;
+    (s.callouts||[]).forEach((c,i)=>{const k=back((lt-c.t)/.35);e.cos[i].style.transform=`scale(${k})`;e.cos[i].style.opacity=ex?0:clamp((lt-c.t)/.12)});
+    if(!playing) hint="Seret garisan untuk banding";
+  }
+  if(s.type==="photos"){
+    const n=bImgs.length, per=D/n, k=Math.min(n-1,Math.floor(lt/per));
+    bImgs.forEach((im,i)=>{im.style.opacity=i===k?1:0; const q=(lt-i*per)/per; im.style.transform=`scale(${i%2?1.12-.08*q:1.04+.08*q}) translateX(${(i%2?-1:1)*q*2}%)`});
+    $("flash").style.opacity=.7*clamp(1-((lt-k*per)-.2)/.18)*(lt-k*per>.2?1:0);
+    stamp.style.transform=`translateX(-50%) rotate(-6deg) scale(${1.6-.6*out(lt/.25)})`;stamp.style.opacity=clamp(lt/.15);
+    count.textContent=`${k+1} / ${n}`;
+  } else $("flash").style.opacity=0;
+  if(s.type==="founder"){
+    const f=P.founder.find(f=>Math.abs(f[0]-s.t0)<.3)||P.founder.find(f=>f[0]>=s.t0-.3);
+    const lo=$("lower"); if(s.lower){lo.hidden=false;lo.children[0].textContent=s.lower[0];lo.children[1].textContent=s.lower[1];
+      const k=out((lt-.3)/.4), o=clamp((D-lt-.6)/.3);lo.style.opacity=Math.min(k,o);lo.style.transform=`translateX(${(1-k)*-20}%)`} else lo.hidden=true;
+    vF.style.transform=`scale(${1+.04*lt/D})`;
+  }
+  sync(vF,t,s.type==="founder");
+  if(s.type==="logo"){
+    const k=out((lt-.2)/.7); $("logoMark").style.opacity=k; $("logoMark").style.transform=`translate(-50%,-50%) scale(${.9+.1*k})`;
+    $("logoMark").style.clipPath=`inset(${(1-k)*100}% 0 0 0)`;
+    $("logoRule").style.width=ease((lt-.6)/.8)*46+"cqw"; $("logoTag").style.opacity=out((lt-1.1)/.5); $("logoTag").style.letterSpacing=(.6-.28*out((lt-1.1)/.8))+"em";
+  }
+  if(s.type==="pano"||s.type==="morph"){
+    const ps=scene("pano"); const q=s.type==="pano"?ease(lt/D):1;
+    const yaw=ps.yaw[0]+(ps.yaw[1]-ps.yaw[0])*q;
+    drawPano(yaw,-7+4*Math.sin(q*Math.PI),82-10*q);
+    $("grid3d").style.opacity=s.type==="pano"?.9*clamp(1-(lt-.3)/1.4):0;
+    $("badge3d").style.opacity=s.type==="pano"?out(lt/.4):0;
+    chipEls.forEach((e,i)=>{const c=ps.chips[i];const k=s.type==="pano"?back((t-c.t)/.35):0;e.style.transform=`scale(${k})`;e.style.opacity=s.type==="pano"?clamp((t-c.t)/.1)*clamp((ps.t1-t-.3)/.3):0});
+    const m=s.type==="morph"?ease((lt-.5)/1.2):0; $("morphImg").style.opacity=m; $("morphImg").style.transform=`scale(${1.08-.08*m})`;
+    $("vs").style.opacity=s.type==="morph"?clamp(lt/.25)*clamp((D-lt-.2)/.3):0;
+    $("vs").children[2].style.color=m>.5?"var(--v-sage)":"var(--v-white)";
+    if(!playing&&s.type==="pano") hint="Seret untuk pusing 360°";
+  }
+  if(s.type==="client"){
+    const ho=s.handoverAt; const k=out((lt-.1)/.5);
+    $("mock").style.transform=`translate(-50%,-50%) translateY(${(1-k)*40}%) rotate(${(1-k)*-4}deg)`; $("mock").style.opacity=k;
+    $("qtxt").style.opacity=out((lt-.4)/.4)*clamp((ho-lt)/.3);
+    const h=back((lt-ho)/.5); $("polaroid").style.opacity=clamp((lt-ho)/.15); $("polaroid").style.transform=`translate(-50%,-50%) rotate(${-3+3*(1-h)}deg) scale(${.6+.4*h})`;
+  }
+  sync(vC,t,s.type==="client");
+  if(s.type==="end"){
+    const k=out((lt-.1)/.6); $("endMark").style.opacity=k; $("endMark").style.top=(38-4*k)+"%"; $("endMark").style.transform=`translate(-50%,-50%) scale(${.92+.08*k})`;
+    $("endSvc").style.opacity=out((lt-1.0)/.5); const c=back((lt-1.8)/.45); $("endCta").style.transform=`translateX(-50%) scale(${c*(1+.03*Math.sin(Math.max(0,lt-2.4)*5))})`;
+  }
+  $("wm").style.opacity=["logo","end"].includes(s.type)?0:.92;
+  // captions
+  const cap=capsOn&&!["end"].includes(s.type)?P.captions.find(c=>t>=c.s-.05&&t<c.e+.25):null;
+  const ce=$("caps"); const key=cap?cap.s:null;
+  if(ce.dataset.k!=String(key)){ce.dataset.k=String(key);ce.innerHTML=cap?cap.words.map(w=>`<span>${w.w}</span>`).join(""):""}
+  if(cap) [...ce.children].forEach((sp,i)=>{const w=cap.words[i];sp.className=t>=w.s&&t<w.e+.08?"now":(t<w.s?"wait":"")});
+  ce.style.bottom=s.type==="founder"?"18cqh":"13cqh";
+  const h=$("hint"); h.hidden=!hint; h.textContent=hint;
+  // UI
+  $("head").style.left=(t/DUR*100)+"%"; $("track").setAttribute("aria-valuenow",t.toFixed(1));
+  $("time").textContent=`${fmt(t)} / 1:06`;
+  document.querySelectorAll(".chap").forEach(b=>b.classList.toggle("on",P.scenes[b.dataset.i]===s));
+  if(lastShow!==s.id){lastShow=s.id;document.querySelectorAll("#shots tr").forEach(r=>r.classList.toggle("cur",r.dataset.id===s.id))}
+}
+/* ---------- transport ---------- */
+let playing=false, cur=0;
+function loop(){ if(!playing)return; render(audio.currentTime); if(audio.ended){pause();seek(DUR-.01)} requestAnimationFrame(loop) }
+function play(){ if(cur>=DUR-.05) audio.currentTime=0; playing=true; $("bigplay").hidden=true; $("play").textContent="Jeda"; audio.play().catch(()=>{}); requestAnimationFrame(loop) }
+function pause(){ playing=false; audio.pause(); $("play").textContent="Main"; render(audio.currentTime) }
+function seek(t){ t=clamp(t,0,DUR-.01); audio.currentTime=t; render(t) }
+$("play").onclick=()=>playing?pause():play(); $("bigplay").onclick=play; $("back").onclick=()=>seek(cur-5);
+const tk=$("track"); tk.addEventListener("pointerdown",e=>{const r=tk.getBoundingClientRect();const mv=ev=>seek((ev.clientX-r.left)/r.width*DUR);mv(e);tk.setPointerCapture(e.pointerId);tk.onpointermove=mv;tk.onpointerup=()=>tk.onpointermove=null});
+tk.addEventListener("keydown",e=>{if(e.key==="ArrowRight")seek(cur+1);if(e.key==="ArrowLeft")seek(cur-1);if(e.key===" "){e.preventDefault();playing?pause():play()}});
+const setSeg=(on,off,fn)=>{$(on).setAttribute("aria-pressed","true");$(off).setAttribute("aria-pressed","false");fn();render(cur)};
+$("cClean").onclick=()=>setSeg("cClean","cOrig",()=>{colorMode="clean";refreshImgs()});
+$("cOrig").onclick=()=>setSeg("cOrig","cClean",()=>{colorMode="orig";refreshImgs()});
+$("capOn").onclick=()=>setSeg("capOn","capOff",()=>capsOn=true);
+$("capOff").onclick=()=>setSeg("capOff","capOn",()=>capsOn=false);
+const start=parseFloat((location.hash.match(/^#t(\d+(?:\.\d+)?)$/)||[])[1]);
+seek(isNaN(start)?1.4:start);
+window.__seek=seek; window.__pano=(y,p)=>{drawPano(y,p||0,80)};
+})();
+</script>

@@ -1,0 +1,258 @@
+{
+ "client": {
+  "src": "Client.jpg",
+  "size": [
+   1280,
+   960
+  ],
+  "wb_gain": [
+   0.989,
+   0.997,
+   1.015
+  ],
+  "levels": [
+   0.0,
+   0.97
+  ]
+ },
+ "a_drykitchen": {
+  "src": "Dry Kitchen.jpg",
+  "size": [
+   960,
+   1280
+  ],
+  "wb_gain": [
+   0.994,
+   0.998,
+   1.008
+  ],
+  "levels": [
+   0.0,
+   0.912
+  ]
+ },
+ "a_toilet": {
+  "src": "Toilet.jpg",
+  "size": [
+   960,
+   1280
+  ],
+  "wb_gain": [
+   0.989,
+   0.998,
+   1.014
+  ],
+  "levels": [
+   0.0,
+   0.932
+  ]
+ },
+ "a_family1": {
+  "src": "[After 1] Family Area.jpg",
+  "size": [
+   960,
+   1280
+  ],
+  "wb_gain": [
+   0.99,
+   0.99,
+   1.022
+  ],
+  "levels": [
+   0.0,
+   0.932
+  ]
+ },
+ "a_family2": {
+  "src": "[After 2] Family Area.jpg",
+  "size": [
+   960,
+   1280
+  ],
+  "wb_gain": [
+   0.987,
+   0.998,
+   1.016
+  ],
+  "levels": [
+   0.0,
+   1.0
+  ]
+ },
+ "a_dining1": {
+  "src": "[After1] Dinning Area.jpg",
+  "size": [
+   960,
+   1280
+  ],
+  "wb_gain": [
+   0.987,
+   0.999,
+   1.015
+  ],
+  "levels": [
+   0.0,
+   0.963
+  ]
+ },
+ "a_dining2": {
+  "src": "[After2] Dinning Area.jpg",
+  "size": [
+   960,
+   1280
+  ],
+  "wb_gain": [
+   0.985,
+   0.999,
+   1.017
+  ],
+  "levels": [
+   0.0,
+   0.956
+  ]
+ },
+ "a_dining3": {
+  "src": "[After3] Dinning Area Another Angle.jpg",
+  "size": [
+   960,
+   1280
+  ],
+  "wb_gain": [
+   0.992,
+   0.997,
+   1.012
+  ],
+  "levels": [
+   0.039,
+   0.941
+  ]
+ },
+ "b_dining2": {
+  "src": "[Before 2] Dinning Area.jpg",
+  "size": [
+   960,
+   1280
+  ],
+  "wb_gain": [
+   0.989,
+   1.001,
+   1.01
+  ],
+  "levels": [
+   0.0,
+   0.97
+  ]
+ },
+ "b_toilet2": {
+  "src": "[Before 2] Toilet.jpg",
+  "size": [
+   960,
+   1280
+  ],
+  "wb_gain": [
+   0.98,
+   0.995,
+   1.027
+  ],
+  "levels": [
+   0.004,
+   0.901
+  ]
+ },
+ "b_dining": {
+  "src": "[Before] Dinning Area.jpg",
+  "size": [
+   960,
+   1280
+  ],
+  "wb_gain": [
+   0.992,
+   0.997,
+   1.012
+  ],
+  "levels": [
+   0.0,
+   0.997
+  ]
+ },
+ "b_drykitchen": {
+  "src": "[Before] Dry Kitchen Before.jpg",
+  "size": [
+   1280,
+   960
+  ],
+  "wb_gain": [
+   0.983,
+   0.995,
+   1.024
+  ],
+  "levels": [
+   0.0,
+   0.967
+  ]
+ },
+ "b_living": {
+  "src": "[Before] Living Area.jpg",
+  "size": [
+   960,
+   1280
+  ],
+  "wb_gain": [
+   0.98,
+   0.996,
+   1.026
+  ],
+  "levels": [
+   0.0,
+   1.018
+  ]
+ },
+ "b_rest": {
+  "src": "[Before] Rest Area.jpg",
+  "size": [
+   960,
+   1280
+  ],
+  "wb_gain": [
+   0.984,
+   0.995,
+   1.022
+  ],
+  "levels": [
+   0.0,
+   0.964
+  ]
+ },
+ "b_toilet": {
+  "src": "[Before] Toilet.jpg",
+  "size": [
+   960,
+   1280
+  ],
+  "wb_gain": [
+   0.986,
+   0.996,
+   1.019
+  ],
+  "levels": [
+   0.008,
+   0.911
+  ]
+ },
+ "b_wetkitchen": {
+  "src": "[Before] Wet Kitchen Before.jpg",
+  "size": [
+   1280,
+   960
+  ],
+  "wb_gain": [
+   0.987,
+   0.997,
+   1.017
+  ],
+  "levels": [
+   0.0,
+   0.981
+  ]
+ }
+}
