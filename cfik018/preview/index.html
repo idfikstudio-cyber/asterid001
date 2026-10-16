@@ -232,6 +232,12 @@ a{color:var(--accent)}
 .end .cta{font:600 4.6cqw var(--f-display);background:var(--v-stone);color:var(--v-green);padding:2cqw 5cqw;border-radius:99px}
 .g.on.end>*{opacity:0;transform:translateY(2cqh);animation:rise .45s cubic-bezier(.2,1.3,.4,1) forwards}
 .g.on.end>*:nth-child(2){animation-delay:.25s}.g.on.end>*:nth-child(3){animation-delay:.6s}.g.on.end>*:nth-child(4){animation-delay:1.2s}
+html.render,html.render body{background:transparent!important}
+html.render .wrap{padding:0;max-width:none}
+html.render header.top,html.render .panel,html.render .controls,html.render .toggles,html.render .hint,html.render .stage,html.render .bigplay,html.render .safe,html.render .wipe{display:none!important}
+html.render .grid{display:block}
+html.render .player{position:static;max-width:none;width:1080px}
+html.render .phone{width:1080px;height:1920px;max-width:none;border-radius:0;box-shadow:none;background:transparent}
 @media (prefers-reduced-motion:reduce){.g.on,.g.on *,.g.on::after,.g.on *::after,.g.on *::before{animation-duration:.01s!important;animation-iteration-count:1!important;animation-delay:0s!important}}
 </style>
 
@@ -373,6 +379,9 @@ a{color:var(--accent)}
 <script>
 (async function(){
 const $=s=>document.querySelector(s);
+/* Render mode (#render): local frame-stepping export of the overlay layer for the final video. Not used by viewers. */
+const RENDER=location.hash==="#render";
+if(RENDER)document.documentElement.classList.add("render");
 const vg=$("#vg"),vo=$("#vo"),stage=$("#stage"),ov=$("#ov"),phone=$("#phone"),mus=$("#mus");
 let plan;
 try{plan=await (await fetch("plan.json")).json();}catch(e){$("#evlist").textContent="Data pelan tak dapat dimuat. Muat semula halaman.";return;}
@@ -425,12 +434,12 @@ function render(t){
   phone.classList.toggle("on-intro",inIntro(t));
   stage.style.transform=`scale(${z.scale.toFixed(4)})`;stage.style.transformOrigin=`50% ${z.oy}%`;
   let endOn=false;
-  for(const o of GS){const on=t>=o.g.s&&t<o.g.e;if(on!==o.on){o.on=on;o.el.classList.toggle("on",on)}if(on&&o.g.kind==="endcard")endOn=true;
-    for(const a of o.ats){const hit=on&&t>=a.t;a.n.classList.toggle("at",hit);if(a.s)o.el.classList.toggle(a.s,hit)}}
+  for(const o of GS){const on=t>=o.g.s&&t<o.g.e;if(on!==o.on){o.on=on;o.el.classList.toggle("on",on);if(on)o.el.dataset.t0=o.g.s}if(on&&o.g.kind==="endcard")endOn=true;
+    for(const a of o.ats){const hit=on&&t>=a.t;if(a.n.classList.contains("at")!==hit){a.n.classList.toggle("at",hit);a.n.dataset.tc=a.t}if(a.s&&o.el.classList.contains(a.s)!==hit){o.el.classList.toggle(a.s,hit);o.el.dataset.tc=a.t}}}
   phone.classList.toggle("on-end",endOn);
   let i=-1;for(let k=0;k<plan.captions.length;k++){const c=plan.captions[k];if(t>=c.s&&t<c.e){i=k;break}}
-  if(i!==capIdx){capIdx=i;if(i<0){cap.innerHTML=""}else{cap.innerHTML=plan.captions[i].words.map(w=>`<span class="${w.hot?"hot":""}">${esc(w.w)}</span>`).join(" ");cap.classList.remove("pop");void cap.offsetWidth;cap.classList.add("pop")}}
-  if(i>=0){const ws=plan.captions[i].words,sp=cap.children;let a=-1;ws.forEach((w,k)=>{if(t>=w.s)a=k});for(let k=0;k<sp.length;k++)sp[k].classList.toggle("act",k===a)}
+  if(i!==capIdx){capIdx=i;if(i<0){cap.innerHTML=""}else{cap.dataset.t0=plan.captions[i].s;cap.innerHTML=plan.captions[i].words.map(w=>`<span class="${w.hot?"hot":""}">${esc(w.w)}</span>`).join(" ");cap.classList.remove("pop");void cap.offsetWidth;cap.classList.add("pop")}}
+  if(i>=0){const ws=plan.captions[i].words,sp=cap.children;let a=-1;ws.forEach((w,k)=>{if(t>=w.s)a=k});for(let k=0;k<sp.length;k++){if(sp[k].classList.contains("act")!==(k===a)){sp[k].classList.toggle("act",k===a);sp[k].dataset.tc=a>=0?ws[a].s:t}}}
   $("#time").textContent=fmt(t);$("#seek").value=t;
   highlightEv(t);
 }
@@ -457,7 +466,7 @@ function syncMusic(t){
 function loop(){const t=vg.currentTime;sfxTick(t);syncMusic(t);
   if(st.wipe&&!vg.paused){if(vo.paused)vo.play().catch(()=>{});if(Math.abs(vo.currentTime-t)>.12)vo.currentTime=t}
   render(t);requestAnimationFrame(loop)}
-requestAnimationFrame(loop);
+if(!RENDER)requestAnimationFrame(loop);
 
 async function play(){$("#bigplay").hidden=true;await initAudio();if(actx&&actx.state==="suspended")actx.resume();lastT=vg.currentTime;try{await vg.play()}catch(e){} if(st.wipe)vo.play().catch(()=>{})}
 function pause(){vg.pause();vo.pause();mus.pause()}
@@ -521,5 +530,14 @@ const e=document.createElement("button");e.className="line";e.innerHTML=`<span c
 $("#brgrid").innerHTML=plan.broll.map(b=>`<div class="br"><img src="br/${esc(b.id)}.jpg" alt="${esc(b.d)}" loading="lazy"><b>${esc(b.d)}</b><span>${fmt(b.s)} · ${b.url?`<a href="${esc(b.url)}" target="_blank" rel="noopener">Mixkit #${esc(b.id)}</a>`:"Foto projek Fi-K (CFik017)"}</span></div>`).join("");
 
 render(0);
+if(RENDER){
+  window.__frame=t=>{render(t);
+    for(const an of document.getAnimations()){const el=an.effect&&an.effect.target;if(!el)continue;let tt=null;
+      if(an instanceof CSSTransition){let n=el;while(n&&!(n.dataset&&n.dataset.tc!==undefined))n=n.parentElement;if(n)tt=+n.dataset.tc}
+      else{const n=el.closest("[data-t0]");if(n)tt=+n.dataset.t0}
+      if(tt!==null){an.pause();an.currentTime=Math.max(0,(t-tt)*1000)}}
+    return true};
+  window.__ready=true;
+}
 })();
 </script>

@@ -16,3 +16,11 @@ Thumbnail: `thumbnail/CFik018_cover_A.png` (dipilih), `CFik018_cover_B.png` (alt
 
 Logo: Logo White (watermark + end card atas hijau jenama #304945).
 B-roll: Mixkit (Stock Video Free License) + foto projek Fi-K sendiri dari folder CFik017. Muzik: Mixkit #282 (Stock Music Free License). SFX: dijana sendiri.
+
+## Render final
+
+`final/CFik018_final_1080x1920.mp4` (tidak disimpan dalam git): 1080×1920, 29.97 fps, H.264 CRF 18, AAC 192k, 0:45, −14 LUFS.
+
+1. `render_base.py … graded 1080` → base bergred, kemudian pad 5s (klon frame akhir) untuk end card.
+2. `capture_overlay.js` → PNG lutsinar dari `preview/index.html#render` (caption, motion, logo, end card); tukar semua ke RGBA.
+3. `build_final.py` → cover 1s + zoom + B-roll 1080p + overlay (pass 1, video), kemudian suara + muzik + SFX (pass 2).
