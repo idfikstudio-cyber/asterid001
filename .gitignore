@@ -2,3 +2,5 @@
 *.mov
 *.wav.tmp
 __pycache__/
+cfik019/output/
+cfik019/preview/hd

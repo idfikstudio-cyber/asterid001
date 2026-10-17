@@ -1,3 +1,4 @@
+<meta charset="utf-8">
 <title>Preview CFik019 Fi-K Studio</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -263,6 +264,14 @@ td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
 .g.on.outro img{animation:rise .9s .1s cubic-bezier(.2,.8,.2,1) forwards}
 .g.on.outro p{animation:rise .7s .6s ease-out forwards}
 @media (prefers-reduced-motion:reduce){.cta .pill{animation:none!important}.ev,.tog,.tab{transition:none}}
+/* render mode (#render): only the phone, full frame, used to draw the final video frame by frame */
+.rendering body,.rendering{background:#000}
+.rendering .wrap{padding:0;max-width:none}
+.rendering header.top,.rendering .controls,.rendering .toggles,.rendering .hint,.rendering .panel,.rendering .bigplay,.rendering #vg,.rendering #vo{display:none!important}
+.rendering .grid{display:block}
+.rendering .player{position:static;max-width:none;margin:0}
+.rendering .phone{position:fixed;inset:0;width:100vw;height:100vh;max-width:none;aspect-ratio:auto;border-radius:0;box-shadow:none}
+.rendering .stage img.mf{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
 </style>
 
 <div class="wrap">
@@ -371,6 +380,7 @@ td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
 <script>
 (async function(){
 const $=s=>document.querySelector(s);
+const RENDER=location.hash==="#render",HD=RENDER?"hd/":"";if(RENDER)document.documentElement.classList.add("rendering");
 const vg=$("#vg"),vo=$("#vo"),stage=$("#stage"),ov=$("#ov"),phone=$("#phone"),brl=$("#broll"),wm=$("#wm");
 let plan;
 try{plan=await (await fetch("plan-v5.json")).json();}catch(e){$("#evlist").textContent="Data pelan tak dapat dimuat. Muat semula halaman.";return;}
@@ -386,8 +396,8 @@ const FOCUS={render_living:[50,55,1.02,1.1],family:[30,62,1.0,1.18]};
 const BR=plan.broll.map((g,i,arr)=>{
   const el=document.createElement("div");el.className="br";const f=FOCUS[g.img]||[50,50,1,1];
   let h=`<div class="kb" style="transform-origin:${f[0]}% ${f[1]}%">`;
-  if(g.kind==="pan")h+=`<video src="pans/${g.clip}.mp4" poster="pans/${g.clip}.jpg" muted playsinline preload="auto"></video>`;
-  else{h+=`<img src="${g.img==="family"?"broll":"pans"}/${g.img}.jpg" alt="">`;if(g.sketch)h+=`<img class="sk" src="pans/${g.sketch}.jpg" alt="">`}
+  if(g.kind==="pan")h+=RENDER?`<img class="pf" alt="">`:`<video src="pans/${g.clip}.mp4" poster="pans/${g.clip}.jpg" muted playsinline preload="auto"></video>`;
+  else{h+=`<img src="${HD}${g.img==="family"?"broll":"pans"}/${g.img}.jpg" alt="">`;if(g.sketch)h+=`<img class="sk" src="${HD}pans/${g.sketch}.jpg" alt="">`}
   h+=`</div>`;
   if(g.sketch)h+=`<span class="edge"></span>`;
   h+=`<div class="shade"></div>`;
@@ -396,7 +406,7 @@ const BR=plan.broll.map((g,i,arr)=>{
   if(g.label)h+=`<div class="lbl"><small>${esc(g.eyebrow)}</small><b>${esc(g.label)}</b></div>`;
   el.innerHTML=h;brl.appendChild(el);
   const prev=arr[i-1],next=arr[i+1];
-  return {g,el,kb:el.querySelector(".kb"),vid:el.querySelector("video"),sk:el.querySelector(".sk"),edge:el.querySelector(".edge"),lines:[...el.querySelectorAll(".dims line")],rows:[...el.querySelectorAll(".quote .r")],f,
+  return {g,el,kb:el.querySelector(".kb"),vid:el.querySelector("video"),pf:el.querySelector("img.pf"),sk:el.querySelector(".sk"),edge:el.querySelector(".edge"),lines:[...el.querySelectorAll(".dims line")],rows:[...el.querySelectorAll(".quote .r")],f,
     fin:!(prev&&Math.abs(prev.e-g.s)<.05)&&g.s>0,fout:!(next&&Math.abs(next.s-g.e)<.05)};
 });
 function renderBroll(t){
@@ -433,7 +443,7 @@ function build(g){
     case"tear":{el.className+=" tr";let r=7;const rnd=()=>(r=(r*16807)%2147483647)/2147483647;const n=36,pts=[];
       for(let k=0;k<=n;k++){const x=k/n*100,y=60-x*.2+(rnd()-.5)*(k%3?2.2:4.6);pts.push(`${x.toFixed(1)}% ${y.toFixed(1)}%`)}
       const top=`polygon(0 0,100% 0,${[...pts].reverse().join(",")})`,bot=`polygon(${pts.join(",")},100% 100%,0 100%)`;
-      h=`<div class="msg"><span class="a">${esc(g.a)}</span><span class="b">${esc(g.b)}</span></div><div class="hv top" style="background-image:url(pans/${g.img}.jpg);clip-path:${top}"></div><div class="hv bot" style="background-image:url(pans/${g.img}.jpg);clip-path:${bot}"></div>`;break}
+      h=`<div class="msg"><span class="a">${esc(g.a)}</span><span class="b">${esc(g.b)}</span></div><div class="hv top" style="background-image:url(${HD}pans/${g.img}.jpg);clip-path:${top}"></div><div class="hv bot" style="background-image:url(${HD}pans/${g.img}.jpg);clip-path:${bot}"></div>`;break}
     case"kinetic":el.className+=" kn";h=`<div class="dim"></div>`+g.phrases.map(p=>`<div class="ph ${p.fx}"><span class="a">${esc(p.a)}</span><span class="b">${p.fx==="drift"?`<em>${esc(p.b)}</em>`:esc(p.b)}</span></div>`).join("");break;
     case"brand":el.className+=" brand";h=`<div class="card2"><img src="logo-green.png" alt="Fi-K Studio"></div>`;break;
     case"az":el.className+=" azw";el.style.inset="0";h=`<div class="az-scrim"></div><div class="g-in az" style="position:absolute"><div class="ends"><span>A</span><span>Z</span></div><div class="track"><i></i></div><div class="steps">${g.steps.map(s=>`<span>${esc(s)}</span>`).join("")}</div></div>`;break;
@@ -494,7 +504,22 @@ function sfxTick(t){if(st.sfx&&!vg.paused&&t>lastT&&t-lastT<.4){for(const s of p
 function loop(){const t=vg.currentTime;sfxTick(t);
   if(st.wipe&&!vg.paused){if(vo.paused)vo.play().catch(()=>{});if(Math.abs(vo.currentTime-t)>.12)vo.currentTime=t}
   render(t);requestAnimationFrame(loop)}
-requestAnimationFrame(loop);
+if(!RENDER)requestAnimationFrame(loop);
+/* render mode: draw one exact frame at time t (seconds). Video frames come in as images; every CSS
+   animation/transition is paused and set to its own elapsed time, so the output is frame-accurate. */
+if(RENDER){
+  const mf=document.createElement("img");mf.className="mf";stage.appendChild(mf);
+  const load=(img,src)=>{if(img.getAttribute("src")===src)return null;img.src=src;return img.decode().catch(()=>{})};
+  window.__renderFrame=async(t,fps,panFrames)=>{
+    const waits=[load(mf,`hd/main/${String(Math.min(Math.floor(t*fps+1e-6)+1,window.__mainFrames)).padStart(5,"0")}.jpg`)];
+    for(const b of BR){if(!b.pf)continue;const g=b.g;if(t<g.s-.2||t>=g.e+.2)continue;
+      const n=panFrames[g.clip],k=Math.max(0,Math.min(n-1,Math.floor((t-g.s)*fps+1e-6)));waits.push(load(b.pf,`hd/pans/${g.clip}/${String(k+1).padStart(4,"0")}.jpg`))}
+    await Promise.all(waits.filter(Boolean));
+    render(t);
+    for(const a of document.getAnimations()){if(a.__t0===undefined){a.__t0=t;a.pause()}a.currentTime=Math.max(0,(t-a.__t0)*1000)}
+    await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));
+  };
+}
 
 async function play(){$("#bigplay").hidden=true;await initAudio();if(actx&&actx.state==="suspended")await actx.resume();if(vg.ended||vg.currentTime>=END-.05)vg.currentTime=0;lastT=vg.currentTime;try{await vg.play()}catch(e){}musStart(vg.currentTime);if(st.wipe)vo.play().catch(()=>{})}
 function pause(){vg.pause();vo.pause();musStop()}

@@ -1,6 +1,6 @@
 # CFik019: edit Fi-K Studio (Reels/TikTok 9:16)
 
-Status: **preview sahaja, belum render final.**
+Status: **sudah dirender** (`output/CFik019_FiK-Studio_1080x1920.mp4`, 34.2s, 1080×1920, 30fps, −14 LUFS; tidak disimpan dalam git).
 Preview: https://claude.ai/artifact/WPTVJ9gTpVbvEMaKV5o7Kd
 
 - `edit/transcript.json`: transkrip Whisper large-v3 dengan masa setiap perkataan (video asal `CFik019`, 31.1s, 1080×1920, HEVC).
@@ -14,3 +14,8 @@ Preview: https://claude.ai/artifact/WPTVJ9gTpVbvEMaKV5o7Kd
 - `preview/index.html`: halaman preview interaktif. Proxy `graded-v5.mp4` / `orig-v5.mp4` tidak disimpan dalam git.
 
 Sumber: folder Google Drive "Konten Fi-k" (tidak disimpan dalam repo kerana saiz).
+
+## Render final
+`scripts/render_final.py` dengan langkah `assets` → `audio` → `frames` → `mux`.
+Setiap frame dilukis oleh `preview/index.html#render` (kod yang sama dengan preview yang diluluskan): frame video
+dimasukkan sebagai imej dan setiap animasi CSS dikunci pada masa frame itu, jadi hasilnya tepat sama dengan preview.

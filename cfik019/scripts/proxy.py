@@ -1,12 +1,11 @@
 # Builds the preview proxies from edit/plan.json: graded.mp4 (cut + grade + cleaned voice) and orig.mp4 (cut only, silent).
 # These are low-res previews for the review page, not the final render.
 import json,subprocess,sys
-src,plan,outdir=sys.argv[1:4]
-P=json.load(open(plan))
 GRADE=("colorchannelmixer=rr=0.93:gg=0.985:bb=1.09,curves=all='0/0.035 0.25/0.24 0.5/0.535 0.8/0.855 1/0.97',"
        "eq=contrast=1.03:saturation=0.9:gamma=1.09,huesaturation=saturation=-0.3:colors=y:strength=1,"
        "huesaturation=saturation=-0.12:intensity=0.02:colors=r:strength=1")
 def build(graded):
+    P=json.load(open(plan))
     fc=[];n=len(P["cuts"])
     for i,c in enumerate(P["cuts"]):
         fc.append(f"[0:v]trim={c['src_in']}:{c['src_out']},setpts=PTS-STARTPTS[v{i}]")
@@ -31,4 +30,6 @@ def build(graded):
     cmd+=(["-map","[ao]","-c:a","aac","-b:a","128k","-ar","48000"] if graded else ["-an"])
     cmd+=["-c:v","libx264","-preset","slow","-crf","25" if graded else "27","-g","15","-movflags","+faststart","-t",str(P["duration"]+P["outro"]),out]
     subprocess.run(cmd,check=True);print("wrote",out)
-for g in sys.argv[4:] or ['graded','orig']: build(g=='graded')
+if __name__=="__main__":
+    src,plan,outdir=sys.argv[1:4]
+    for g in sys.argv[4:] or ['graded','orig']: build(g=='graded')
