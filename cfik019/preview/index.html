@@ -134,6 +134,7 @@ td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
 .g{position:absolute;opacity:0;visibility:hidden;transition:opacity .22s ease,visibility 0s .22s}
 .g.on{opacity:1;visibility:visible;transition:opacity .22s ease}
 .off-mg .g:not(.outro){display:none}
+@media (prefers-reduced-motion:reduce){.pc .w,.pc .ly{transition:none}.kn .ph.on .a,.kn .ph.on .b{animation:none!important}}
 .wm{position:absolute;left:7cqw;top:11cqh;width:10cqw;opacity:.9;z-index:3;transition:opacity .25s;pointer-events:none}
 .wm.hide{opacity:0}
 
@@ -165,16 +166,56 @@ td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
 .chipk path,.chipk circle{fill:none;stroke:var(--v-sand);stroke-width:1.6;stroke-linecap:round;stroke-dasharray:60;stroke-dashoffset:60}
 .chipk.drawn path,.chipk.drawn circle{transition:stroke-dashoffset .9s ease-out;stroke-dashoffset:0}
 
-.plist{position:absolute;left:7cqw;right:16cqw;top:12cqh;display:flex;flex-direction:column;gap:1.4cqh;color:var(--v-white)}
-.plist .e{font:500 2.7cqw var(--f-display);letter-spacing:.3em;text-transform:uppercase;color:var(--v-sand);text-shadow:0 .3cqw 1.2cqw rgba(0,0,0,.5)}
-.plist .it{display:flex;gap:2.4cqw;align-items:baseline;font:400 5.2cqw/1.2 var(--f-display);text-shadow:0 .3cqw 1.6cqw rgba(0,0,0,.5);opacity:0;transform:translateX(-3cqw);transition:opacity .3s,transform .4s cubic-bezier(.2,.8,.2,1)}
-.plist .it.in{opacity:1;transform:none}
-.plist .it::before{content:"";flex:none;width:4cqw;height:.35cqw;background:var(--v-sand);transform:translateY(-1.3cqw)}
-.plist .it s{text-decoration:none;position:relative}
-.plist .it s::after{content:"";position:absolute;left:0;right:0;top:55%;height:.4cqw;background:var(--v-sand);transform:scaleX(0);transform-origin:left;transition:transform .45s .15s ease-out}
-.plist .it.in s::after{transform:scaleX(1)}
-.plist-scrim{position:absolute;inset:0 0 auto;height:44cqh;background:linear-gradient(rgba(18,24,22,.55),rgba(18,24,22,0))}
+/* problem cards: full screen, words only; a slash cuts the sentence in two */
+.pc{inset:0;z-index:2;background:radial-gradient(120% 80% at 50% 38%,#24302d 0%,#141b19 70%,#0e1312 100%)}
+.pc::before{content:"";position:absolute;inset:0;opacity:.16;mix-blend-mode:overlay;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>")}
+.pc .no{position:absolute;left:8cqw;top:22cqh;font:500 2.9cqw var(--f-display);letter-spacing:.34em;text-transform:uppercase;color:var(--v-sand)}
+.pc .no::after{content:"";display:block;width:9cqw;height:.3cqw;background:var(--v-sand);margin-top:1.6cqh;opacity:.7}
+.pc .txt{position:absolute;left:8cqw;right:6cqw;top:30cqh;height:30cqh}
+.pc .ly{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;gap:.6cqh;transition:transform .5s cubic-bezier(.15,.9,.2,1),opacity .5s,filter .5s}
+.pc .ly.a{clip-path:polygon(0 0,100% 0,100% 40%,0 64%)}
+.pc .ly.b{clip-path:polygon(0 64%,100% 40%,100% 100%,0 100%)}
+.pc .ln{display:flex;flex-wrap:wrap;gap:0 3cqw;align-items:baseline}
+.pc .w{font:500 11cqw/1 var(--f-display);color:var(--v-cream);letter-spacing:-.01em;opacity:0;transform:translateY(2.4cqh);filter:blur(1.2cqw);transition:opacity .28s ease-out,transform .38s cubic-bezier(.2,.9,.2,1),filter .3s}
+.pc .w.it{font:italic 600 14.5cqw/.9 var(--f-accent);color:var(--v-sand)}
+.pc .w.in{opacity:1;transform:none;filter:none}
+.pc .cut{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}
+.pc .cut line{stroke:var(--v-cream);stroke-width:.5;stroke-linecap:round;stroke-dasharray:130;stroke-dashoffset:130;filter:drop-shadow(0 0 1.2px rgba(255,248,235,.9))}
+.pc .flash{position:absolute;inset:0;background:var(--v-cream);opacity:0;pointer-events:none}
+.pc.slashed .cut line{stroke-dashoffset:0;transition:stroke-dashoffset .16s cubic-bezier(.6,0,.4,1)}
+.pc.slashed .ly.a{transform:translate(-3.4cqw,-1.6cqh) rotate(-1.4deg);opacity:.5;filter:blur(.15cqw)}
+.pc.slashed .ly.b{transform:translate(3.4cqw,1.6cqh) rotate(1.4deg);opacity:.5;filter:blur(.15cqw)}
+.pc.slashed .flash{animation:flash .32s ease-out}
+.pc.slashed .no{color:var(--v-cream);opacity:.6}
+@keyframes flash{0%{opacity:.22}100%{opacity:0}}
 
+/* tear: the dream-house frame rips in two and falls away, revealing the cost */
+.tr{inset:0;z-index:2;background:radial-gradient(120% 80% at 50% 45%,#2a2421 0%,#151a19 70%,#0e1312 100%);overflow:hidden}
+.tr .hv{position:absolute;inset:-1%;background-size:cover;background-position:center;will-change:transform}
+.tr .hv.top{filter:drop-shadow(0 1.4cqw 1.6cqw rgba(0,0,0,.55))}
+.tr .hv.bot{filter:drop-shadow(0 -1.4cqw 1.6cqw rgba(0,0,0,.55))}
+.tr .msg{position:absolute;left:8cqw;right:8cqw;top:36cqh;display:flex;flex-direction:column;gap:.4cqh;opacity:0}
+.tr .msg .a{font:500 9cqw/1 var(--f-display);color:var(--v-cream);opacity:.85}
+.tr .msg .b{font:500 17cqw/1 var(--f-display);color:var(--v-cream);letter-spacing:-.015em}
+.tr.ripped .msg{opacity:1;transition:opacity .15s}
+.tr.ripped .msg .b{animation:burst .6s cubic-bezier(.15,1.3,.3,1)}
+
+/* consequences: face blurred + darkened, one big phrase at a time */
+.kn{inset:0;z-index:2}
+.kn .dim{position:absolute;inset:0;background:rgba(14,19,18,.62);-webkit-backdrop-filter:blur(2.2cqw) saturate(.7);backdrop-filter:blur(2.2cqw) saturate(.7)}
+.kn .ph{position:absolute;left:8cqw;right:8cqw;top:30cqh;display:flex;flex-direction:column;gap:.4cqh;opacity:0;visibility:hidden}
+.kn .ph.on{opacity:1;visibility:visible}
+.kn .ph .a{font:500 9cqw/1 var(--f-display);color:var(--v-cream);opacity:.85}
+.kn .ph .b{font:500 15cqw/1 var(--f-display);color:var(--v-cream);letter-spacing:-.015em}
+.kn .ph .b em{font:italic 600 19cqw/.9 var(--f-accent);color:var(--v-sand)}
+.kn .ph.burst.on .b{animation:burst .55s cubic-bezier(.15,1.3,.3,1)}
+.kn .ph.burst.on .a{animation:rise .35s ease-out both}
+.kn .ph.shuttle.on .b{animation:shuttle .9s cubic-bezier(.4,0,.2,1)}
+.kn .ph.shuttle.on .a{animation:rise .35s ease-out both}
+.kn .ph.drift.on .a,.kn .ph.drift.on .b{animation:rise .7s cubic-bezier(.2,.8,.2,1) both}
+.kn .ph.drift.on .b{animation-delay:.25s}
+@keyframes burst{0%{transform:scale(1.5);opacity:0;letter-spacing:.1em;filter:blur(1cqw)}60%{opacity:1;filter:none}100%{transform:none;letter-spacing:-.015em}}
+@keyframes shuttle{0%{transform:translateX(-14cqw);opacity:0}30%{transform:translateX(7cqw);opacity:1}55%{transform:translateX(-4cqw)}78%{transform:translateX(1.5cqw)}100%{transform:none}}
 .brand{left:0;right:0;top:12cqh;display:grid;justify-items:center;gap:1.2cqh}
 .brand .card2{background:rgba(244,239,231,.95);border-radius:2cqw;padding:3.6cqw 7cqw;box-shadow:0 2cqw 6cqw rgba(0,0,0,.25);display:flex;gap:3.4cqw;align-items:center}
 .brand img{width:24cqw;height:auto}
@@ -365,7 +406,13 @@ function build(g){
     case"hook":el.className+=" hk";h=`<div class="scrim"></div><div class="t"><b class="hk-in">${esc(g.lines[0])}</b><b class="hk-in it">${esc(g.lines[1])}</b></div>${g.punch?`<div class="punch"><svg viewBox="0 0 32 20"><path d="M2 17 L11 13 L17 14 L30 2 M23 2 H30 V9"/></svg>${esc(g.punch)}</div>`:""}`;break;
     case"pill":el.className+=" pl";h=esc(g.text);break;
     case"key":el.className+=" chipk";h=`<svg viewBox="0 0 24 24"><circle cx="7.5" cy="12" r="4.5"/><path d="M12 12 H22 M18.5 12 V15.5 M21 12 V14.5"/></svg>${esc(g.text)}`;break;
-    case"list":case"strike":el.className+=" lst";el.style.inset="0";h=`<div class="plist-scrim"></div><div class="g-in plist"><span class="e">${esc(g.eyebrow)}</span>${g.items.map(x=>`<span class="it">${g.kind==="strike"?`<s>${esc(x[0])}</s>`:esc(x[0])}</span>`).join("")}</div>`;break;
+    case"problem":{el.className+=" pc";const ly=c=>`<div class="ly ${c}">${g.lines.map(l=>`<div class="ln">${l.map(w=>`<span class="w${w[2]?" it":""}">${esc(w[0])}</span>`).join("")}</div>`).join("")}</div>`;
+      h=`<div class="no">${esc(g.n)}</div><div class="txt">${ly("a")}${ly("b")}<svg class="cut" viewBox="0 0 100 100" preserveAspectRatio="none"><line x1="-6" y1="67" x2="106" y2="37"/></svg></div><div class="flash"></div>`;break}
+    case"tear":{el.className+=" tr";let r=7;const rnd=()=>(r=(r*16807)%2147483647)/2147483647;const n=36,pts=[];
+      for(let k=0;k<=n;k++){const x=k/n*100,y=60-x*.2+(rnd()-.5)*(k%3?2.2:4.6);pts.push(`${x.toFixed(1)}% ${y.toFixed(1)}%`)}
+      const top=`polygon(0 0,100% 0,${[...pts].reverse().join(",")})`,bot=`polygon(${pts.join(",")},100% 100%,0 100%)`;
+      h=`<div class="msg"><span class="a">${esc(g.a)}</span><span class="b">${esc(g.b)}</span></div><div class="hv top" style="background-image:url(pans/${g.img}.jpg);clip-path:${top}"></div><div class="hv bot" style="background-image:url(pans/${g.img}.jpg);clip-path:${bot}"></div>`;break}
+    case"kinetic":el.className+=" kn";h=`<div class="dim"></div>`+g.phrases.map(p=>`<div class="ph ${p.fx}"><span class="a">${esc(p.a)}</span><span class="b">${p.fx==="drift"?`<em>${esc(p.b)}</em>`:esc(p.b)}</span></div>`).join("");break;
     case"brand":el.className+=" brand";h=`<div class="card2"><img src="logo-green.png" alt="Fi-K Studio"></div>`;break;
     case"az":el.className+=" azw";el.style.inset="0";h=`<div class="az-scrim"></div><div class="g-in az" style="position:absolute"><div class="ends"><span>A</span><span>Z</span></div><div class="track"><i></i></div><div class="steps">${g.steps.map(s=>`<span>${esc(s)}</span>`).join("")}</div></div>`;break;
     case"cta":el.className+=" cta";h=`<div class="pill"><svg viewBox="0 0 24 24"><path d="M21 3 L10 14 M21 3 L14.5 21 L10 14 L3 9.5 Z"/></svg>${esc(g.text)}</div><small>${esc(g.sub)}</small>`;break;
@@ -373,7 +420,7 @@ function build(g){
     default:return null;
   }
   el.innerHTML=h;ov.appendChild(el);
-  return {g,el,on:false,items:[...el.querySelectorAll(".it")],punch:el.querySelector(".punch"),fill:el.querySelector(".track i"),steps:[...el.querySelectorAll(".steps span")]};
+  return {g,el,on:false,top:el.querySelector(".hv.top"),bot:el.querySelector(".hv.bot"),words:g.kind==="problem"?g.lines.flat():null,wEls:[...el.querySelectorAll(".ly.a .w")],wElsB:[...el.querySelectorAll(".ly.b .w")],phs:[...el.querySelectorAll(".ph")],items:[...el.querySelectorAll(".it")],punch:el.querySelector(".punch"),fill:el.querySelector(".track i"),steps:[...el.querySelectorAll(".steps span")]};
 }
 const GS=plan.graphics.map(build).filter(Boolean);
 const cap=document.createElement("div");cap.className="cap";phone.appendChild(cap);let capIdx=-1;
@@ -389,13 +436,20 @@ function render(t){
     if(on!==o.on){o.on=on;o.el.classList.toggle("on",on);if(o.el.classList.contains("chipk"))o.el.classList.remove("drawn")}
     if(!on)continue;
     if(g.kind!=="cta")hide=true;
-    if(g.items)o.items.forEach((it,k)=>it.classList.toggle("in",t>=g.items[k][1]));
+    if(o.words){o.words.forEach((w,k)=>{const v=t>=w[1];o.wEls[k].classList.toggle("in",v);o.wElsB[k].classList.toggle("in",v)});o.el.classList.toggle("slashed",t>=g.slash)}
+    if(o.top){const q=t-g.s,shake=q<.1?Math.sin(q*190)*.5:0,p=clamp((q-.1)/.75),e=p*p*(3-2*p),sat=clamp(1-q/.12);
+      o.top.style.transform=`translate(${(-7*e+shake).toFixed(2)}cqw,${(-34*e*e-2*e).toFixed(2)}cqh) rotate(${(-7*e).toFixed(2)}deg)`;
+      o.bot.style.transform=`translate(${(6*e-shake).toFixed(2)}cqw,${(40*e*e+2*e).toFixed(2)}cqh) rotate(${(6*e).toFixed(2)}deg)`;
+      o.top.style.opacity=o.bot.style.opacity=(1-clamp((q-.55)/.35)).toFixed(3);
+      const f=`grayscale(${(1-sat).toFixed(2)}) brightness(${(1-.25*(1-sat)).toFixed(2)})`;o.top.style.filter=f+" drop-shadow(0 1.4cqw 1.6cqw rgba(0,0,0,.55))";o.bot.style.filter=f+" drop-shadow(0 -1.4cqw 1.6cqw rgba(0,0,0,.55))";
+      o.el.classList.toggle("ripped",q>=.14)}
+    if(g.phrases){let a=-1;g.phrases.forEach((p,k)=>{if(t>=p.t)a=k});o.phs.forEach((p,k)=>p.classList.toggle("on",k===a))}
     if(o.punch)o.punch.classList.toggle("in",t>=g.punch_at);
     if(g.draw_at!=null&&t>=g.draw_at)o.el.classList.add("drawn");
     if(o.fill){const p=clamp((t-g.s)/((g.e-g.s)*.85));o.fill.style.width=(ease(p)*100)+"%";o.steps.forEach((s,k)=>s.classList.toggle("in",p>=k/(o.steps.length-1)-.02))}
   }
   wm.classList.toggle("hide",hide||t>=DUR||brOn);
-  const noCap=t>=DUR||GS.some(o=>o.on&&o.g.kind==="hook");
+  const noCap=t>=DUR||GS.some(o=>o.on&&/^(hook|problem|kinetic|tear)$/.test(o.g.kind));
   let i=-1;if(!noCap)for(let k=0;k<plan.captions.length;k++){const c=plan.captions[k];if(t>=c.s&&t<c.e){i=k;break}}
   if(i!==capIdx){capIdx=i;if(i<0)cap.innerHTML="";else{cap.innerHTML=plan.captions[i].words.map(w=>`<span class="${w.hot?"hot":""}">${esc(w.w)}</span>`).join(" ");cap.classList.remove("pop");void cap.offsetWidth;cap.classList.add("pop")}}
   if(i>=0){const ws=plan.captions[i].words,sp=cap.children;let a=-1;ws.forEach((w,k)=>{if(t>=w.s)a=k});for(let k=0;k<sp.length;k++)sp[k].classList.toggle("act",k===a)}
@@ -448,11 +502,11 @@ knob.addEventListener("keydown",e=>{if(e.key==="ArrowLeft"||e.key==="ArrowRight"
 document.querySelectorAll(".tab").forEach(b=>b.onclick=()=>{document.querySelectorAll(".tab").forEach(x=>x.setAttribute("aria-selected",x===b));document.querySelectorAll(".pane").forEach(p=>p.hidden=p.id!==b.dataset.p)});
 
 /* ---- event list ---- */
-const SFXN={whoosh:"Whoosh lembut",air:"Hembusan udara (buka)",thud:"Hentakan lembut",tick:"Ketukan kayu",pen:"Pensel atas kertas",chime:"Chime kaca",shimmer:"Kilauan (3D jadi nyata)",swipe:"Sapuan gambar"};
+const SFXN={whoosh:"Whoosh lembut",air:"Hembusan udara (buka)",thud:"Hentakan lembut",tick:"Ketukan kayu",pen:"Pensel atas kertas",chime:"Chime kaca",shimmer:"Kilauan (3D jadi nyata)",swipe:"Sapuan gambar",slash:"Slash (potong ayat)",rip:"Bunyi koyak",boom:"Dentuman lembut"};
 const ZN=[];for(let i=1;i<plan.zoom.length;i++){const a=plan.zoom[i-1],b=plan.zoom[i];if(b.scale>a.scale+.02)ZN.push({t:a.t,d:`Punch-in ${Math.round((b.scale-1)*100)}%`,s:b.t-a.t<.05?"Punch-in serta-merta pada awal ayat":"Tolak perlahan untuk penekanan"})}
 const EV=[
  ...plan.broll.map(g=>({t:g.s,k:"broll",d:g.label||(g.kind==="pan"?"Pan kamera (rekaan 3D)":"B-roll"),s:g.note})),
- ...plan.graphics.map(g=>({t:g.s,k:"mg",d:g.kind==="hook"?"Teks hook":g.kind==="outro"?"Kad penutup":g.text||g.eyebrow||(g.kind==="brand"?"Kad jenama Fi-K":g.kind==="az"?"Proses A ke Z":"Grafik"),s:g.note})),
+ ...plan.graphics.map(g=>({t:g.s,k:"mg",d:g.kind==="problem"?g.n+": "+g.lines.map(l=>l.map(w=>w[0]).join(" ")).join(" "):g.kind==="tear"?"Koyak: rumah impian, “Kos meletup.”":g.kind==="kinetic"?"Akibat: "+g.phrases.map(p=>p.a+" "+p.b).join(" / "):g.kind==="hook"?"Teks hook":g.kind==="outro"?"Kad penutup":g.text||g.eyebrow||(g.kind==="brand"?"Kad jenama Fi-K":g.kind==="az"?"Proses A ke Z":"Grafik"),s:g.note})),
  ...plan.sfx.map(s=>({t:s.t,k:"sfx",d:SFXN[s.name]||s.name})),
  ...ZN.map(z=>({t:z.t,k:"zoom",d:z.d,s:z.s}))
 ].sort((a,b)=>a.t-b.t||"broll mg zoom sfx".indexOf(a.k)-"broll mg zoom sfx".indexOf(b.k));

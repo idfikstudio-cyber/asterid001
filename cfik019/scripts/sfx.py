@@ -36,6 +36,22 @@ save("shimmer",x+0.3*hp(rng.standard_normal(len(tt)),6000)*np.sin(np.pi*tt/d)**3
 # swipe: quick page/photo slide
 d=0.32;tt=t(d);sw=5000*np.exp(-tt*8)+800
 save("swipe",hp(lp(rng.standard_normal(len(tt)),sw),400)*np.sin(np.pi*tt/d)**1.2,0.5)
+# slash: blade-fast air cut with a bright edge, for the problem cards
+d=0.42;tt=t(d);sw=9000*np.exp(-tt*14)+600
+x=hp(lp(rng.standard_normal(len(tt)),sw),1200)*np.exp(-tt*9)*(1-np.exp(-tt*900))
+x+=0.25*np.sin(2*np.pi*(5200-4000*tt/d)*tt)*np.exp(-tt*30)
+save("slash",x,0.7)
+# boom: deep soft sub-drop with a breath tail, for "kos meletup"
+d=1.4;tt=t(d);f=58*np.exp(-tt*2.2)+30
+x=np.sin(2*np.pi*np.cumsum(f)/SR)*np.exp(-tt*2.6)*(1-np.exp(-tt*300))+0.18*lp(rng.standard_normal(len(tt)),900)*np.exp(-tt*5)
+save("boom",x,0.85)
+# rip: paper/photo tearing, crackling bursts that speed up then release
+d=0.75;tt=t(d);x=np.zeros(len(tt))
+for k in range(55):
+    c=int(SR*d*(k/55)**0.7);m=int(SR*0.012)
+    if c+m<len(tt): x[c:c+m]+=hp(rng.standard_normal(m),1800)*np.exp(-np.arange(m)/(SR*.003))*(0.5+rng.random())
+x=lp(x,6500)+0.25*hp(lp(rng.standard_normal(len(tt)),2500),500)*np.sin(np.pi*tt/d)
+save("rip",x*np.minimum(1,(d-tt)/.15),0.75)
 # music bed: warm ambient pad, Fmaj9 - Am7 - Dm9 - Bbmaj7, 78 bpm feel, gentle plucks
 dur=float(sys.argv[2]) if len(sys.argv)>2 else 32.3
 N=int(SR*dur);tt=np.arange(N)/SR;L=np.zeros(N);R=np.zeros(N)

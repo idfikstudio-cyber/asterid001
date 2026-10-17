@@ -1101,6 +1101,15 @@
    "note": "Hook visual: pan ruang tamu rekaan Fi-K, terus nampak hasil"
   },
   {
+   "s": 11.5,
+   "e": 13.32,
+   "kind": "pan",
+   "clip": "dream_teres",
+   "eyebrow": "",
+   "label": "",
+   "note": "Rumah impian dulu: pan ruang tamu, sebelum dikoyak pada 'kos meletup'"
+  },
+  {
    "s": 16.76,
    "e": 18.74,
    "kind": "pan",
@@ -1200,41 +1209,120 @@
   },
   {
    "s": 4.98,
-   "e": 11.4,
-   "kind": "list",
-   "eyebrow": "Masalah biasa",
-   "items": [
+   "e": 6.96,
+   "kind": "pill",
+   "text": "2 masalah paling biasa",
+   "note": "Set-up untuk kad masalah"
+  },
+  {
+   "s": 6.96,
+   "e": 9.04,
+   "kind": "problem",
+   "n": "Masalah 01",
+   "lines": [
     [
-     "Tak tahu nak mula dari mana",
-     6.96
+     [
+      "Tak",
+      6.96
+     ],
+     [
+      "tahu",
+      7.48
+     ],
+     [
+      "nak",
+      7.76
+     ]
     ],
     [
-     "Takut kena tipu harga kontraktor",
-     9.04
+     [
+      "mula",
+      7.9,
+      "it"
+     ],
+     [
+      "dari",
+      8.12
+     ],
+     [
+      "mana",
+      8.42
+     ]
     ]
    ],
-   "note": "Senarai masalah muncul ikut ayat"
+   "slash": 8.72,
+   "note": "Kad penuh skrin tanpa wajah: perkataan ikut suara, kemudian slash"
+  },
+  {
+   "s": 9.04,
+   "e": 11.5,
+   "kind": "problem",
+   "n": "Masalah 02",
+   "lines": [
+    [
+     [
+      "Takut",
+      9.04
+     ],
+     [
+      "kena",
+      9.86
+     ],
+     [
+      "tipu",
+      9.98,
+      "it"
+     ]
+    ],
+    [
+     [
+      "harga",
+      10.46
+     ],
+     [
+      "kontraktor",
+      11.0
+     ]
+    ]
+   ],
+   "slash": 11.32,
+   "note": "Kad penuh skrin tanpa wajah: perkataan ikut suara, kemudian slash"
   },
   {
    "s": 11.5,
+   "e": 13.32,
+   "kind": "pill",
+   "text": "Renovate ikut agak-agak?",
+   "note": "Soalan pembuka akibat"
+  },
+  {
+   "s": 13.32,
+   "e": 14.52,
+   "kind": "tear",
+   "img": "dream_teres_end",
+   "a": "Kos",
+   "b": "meletup.",
+   "note": "Gambar rumah impian koyak dua, teks 'Kos meletup' di belakang"
+  },
+  {
+   "s": 14.52,
    "e": 16.76,
-   "kind": "strike",
-   "eyebrow": "Renovate ikut agak-agak",
-   "items": [
-    [
-     "Kos meletup",
-     13.32
-    ],
-    [
-     "Kerja ulang-alik",
-     14.52
-    ],
-    [
-     "Hasil tak seperti impian",
-     15.92
-    ]
+   "kind": "kinetic",
+   "phrases": [
+    {
+     "t": 14.52,
+     "a": "Kerja",
+     "b": "ulang-alik.",
+     "fx": "shuttle"
+    },
+    {
+     "t": 15.92,
+     "a": "Hasil tak seperti",
+     "b": "impian.",
+     "fx": "drift"
+    }
    ],
-   "note": "Akibat dipangkah satu per satu"
+   "note": "Wajah dikabur + digelapkan, frasa besar dengan gerakan ikut maksud"
   },
   {
    "s": 18.74,
@@ -1293,37 +1381,87 @@
   },
   {
    "t": 4.98,
-   "name": "whoosh",
-   "gain": 0.3
+   "name": "tick",
+   "gain": 0.4
   },
   {
    "t": 6.96,
-   "name": "tick",
+   "name": "whoosh",
    "gain": 0.5
   },
   {
-   "t": 9.04,
+   "t": 6.98,
+   "name": "thud",
+   "gain": 0.45
+  },
+  {
+   "t": 7.48,
    "name": "tick",
-   "gain": 0.5
+   "gain": 0.3
+  },
+  {
+   "t": 7.9,
+   "name": "tick",
+   "gain": 0.3
+  },
+  {
+   "t": 8.72,
+   "name": "slash",
+   "gain": 0.85
+  },
+  {
+   "t": 9.04,
+   "name": "whoosh",
+   "gain": 0.45
+  },
+  {
+   "t": 9.06,
+   "name": "thud",
+   "gain": 0.45
+  },
+  {
+   "t": 9.98,
+   "name": "tick",
+   "gain": 0.3
+  },
+  {
+   "t": 11.0,
+   "name": "tick",
+   "gain": 0.3
+  },
+  {
+   "t": 11.32,
+   "name": "slash",
+   "gain": 0.85
   },
   {
    "t": 11.5,
    "name": "whoosh",
-   "gain": 0.3
+   "gain": 0.4
   },
   {
-   "t": 13.32,
-   "name": "tick",
-   "gain": 0.45
+   "t": 13.24,
+   "name": "rip",
+   "gain": 0.8
+  },
+  {
+   "t": 13.4,
+   "name": "boom",
+   "gain": 0.7
   },
   {
    "t": 14.52,
-   "name": "tick",
-   "gain": 0.45
+   "name": "swipe",
+   "gain": 0.5
+  },
+  {
+   "t": 14.8,
+   "name": "swipe",
+   "gain": 0.35
   },
   {
    "t": 15.92,
-   "name": "tick",
+   "name": "air",
    "gain": 0.45
   },
   {
@@ -1459,49 +1597,34 @@
    "oy": 40
   },
   {
-   "t": 9.03,
+   "t": 6.96,
    "scale": 1.0,
    "oy": 40
-  },
-  {
-   "t": 9.04,
-   "scale": 1.1,
-   "oy": 33
   },
   {
    "t": 11.49,
-   "scale": 1.1,
-   "oy": 33
+   "scale": 1.0,
+   "oy": 40
   },
   {
    "t": 11.5,
-   "scale": 1.0,
-   "oy": 40
+   "scale": 1.08,
+   "oy": 35
   },
   {
    "t": 13.31,
+   "scale": 1.08,
+   "oy": 35
+  },
+  {
+   "t": 13.32,
    "scale": 1.0,
    "oy": 40
   },
   {
-   "t": 13.32,
-   "scale": 1.12,
-   "oy": 32
-  },
-  {
-   "t": 14.51,
-   "scale": 1.12,
-   "oy": 32
-  },
-  {
-   "t": 14.52,
-   "scale": 1.06,
-   "oy": 36
-  },
-  {
    "t": 16.76,
-   "scale": 1.06,
-   "oy": 36
+   "scale": 1.16,
+   "oy": 32
   },
   {
    "t": 18.74,
