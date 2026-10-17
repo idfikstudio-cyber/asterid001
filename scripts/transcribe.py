@@ -3,7 +3,7 @@ from faster_whisper import WhisperModel
 m=WhisperModel("large-v3",device="cpu",compute_type="int8",cpu_threads=4)
 import numpy as np,wave
 wf=wave.open(sys.argv[1]);a=np.frombuffer(wf.readframes(wf.getnframes()),dtype=np.int16).astype(np.float32)/32768
-segs,info=m.transcribe(a,language="ms",word_timestamps=True,vad_filter=False,beam_size=5,initial_prompt="Tuisyen online, kelas, pelajar, SPM, ibu bapa.")
+segs,info=m.transcribe(a,language="ms",word_timestamps=True,vad_filter=False,beam_size=5,initial_prompt=sys.argv[3] if len(sys.argv)>3 else None)
 out=[]
 for s in segs:
     out.append({"start":s.start,"end":s.end,"text":s.text,"words":[{"w":w.word,"s":w.start,"e":w.end,"p":w.probability} for w in s.words]})
