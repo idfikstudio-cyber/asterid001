@@ -39,7 +39,7 @@ h1 em{font-family:var(--f-accent);font-weight:500;font-size:1.12em}
 @media (max-width:820px){.player{position:static}}
 .phone{position:relative;width:100%;max-width:100%;aspect-ratio:9/16;border-radius:20px;overflow:hidden;background:#000;box-shadow:0 20px 50px -24px rgba(20,35,30,.6);container-type:size;user-select:none}
 .stage{position:absolute;inset:0;transform-origin:50% 40%;will-change:transform}
-.stage video,.broll img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.stage video,.broll img,.broll video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
 #vo{clip-path:inset(0 100% 0 0)}
 .wipe{position:absolute;top:0;bottom:0;width:0;z-index:6;left:50%}
 .wipe::before{content:"";position:absolute;top:0;bottom:0;left:-1px;width:2px;background:var(--v-white);box-shadow:0 0 8px rgba(0,0,0,.5)}
@@ -152,6 +152,8 @@ td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
 .hk .t b.it{font:italic 600 14cqw/.95 var(--f-accent);color:var(--v-sand)}
 .g.on .hk-in{animation:rise .5s cubic-bezier(.2,.8,.2,1) forwards}
 .hk .t b:nth-child(2){animation-delay:.6s!important}
+.pl{left:7cqw;top:13cqh;display:flex;gap:2.4cqw;align-items:center;background:var(--v-cream);color:var(--v-green);border-radius:99px;padding:1.6cqw 5cqw;font:500 5.4cqw var(--f-display);box-shadow:0 1.6cqw 4cqw rgba(0,0,0,.25)}
+.g.on.pl{animation:settle .45s cubic-bezier(.2,.9,.2,1)}
 .hk .punch{position:absolute;left:7cqw;top:35cqh;display:flex;gap:2.4cqw;align-items:center;background:var(--v-cream);color:var(--v-green);border-radius:99px;padding:1.4cqw 4.4cqw 1.4cqw 2.4cqw;font:500 5.4cqw var(--f-display);opacity:0;transform:scale(.92);transition:opacity .25s,transform .35s cubic-bezier(.2,1.2,.3,1)}
 .hk .punch.in{opacity:1;transform:none}
 .hk .punch svg{width:8cqw;height:5cqw}
@@ -210,7 +212,7 @@ td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
       <p class="eyebrow">Fi-K Studio · Reels / TikTok 9:16</p>
       <h1>CFik019, <em>suntingan</em> sebelum render</h1>
     </div>
-    <div class="status"><b>Preview</b> Belum render final · 32.3s (asal 31.1s)</div>
+    <div class="status"><b>Preview</b> Belum render final · 31.1s tanpa potongan + 2.2s kad penutup</div>
   </header>
 
   <div class="grid">
@@ -256,29 +258,24 @@ td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
 
       <div class="pane" id="p-plan">
         <h2>Setiap suntingan, ikut masa</h2>
-        <p>Klik mana-mana baris untuk lompat ke situ. Masa ikut video baru.</p>
-        <div class="legend"><span><i style="background:var(--c-cut)"></i>Potong</span><span><i style="background:var(--c-broll)"></i>B-roll</span><span><i style="background:var(--c-mg)"></i>Motion</span><span><i style="background:var(--c-zoom)"></i>Punch-in</span><span><i style="background:var(--c-sfx)"></i>SFX</span></div>
+        <p>Klik mana-mana baris untuk lompat ke situ. Video asal tidak dipotong, jadi masa sama dengan fail asal.</p>
+        <div class="legend"><span><i style="background:var(--c-broll)"></i>B-roll</span><span><i style="background:var(--c-mg)"></i>Motion</span><span><i style="background:var(--c-zoom)"></i>Punch-in</span><span><i style="background:var(--c-sfx)"></i>SFX</span></div>
         <div class="evlist" id="evlist"></div>
       </div>
 
       <div class="pane" id="p-tx" hidden>
         <h2>Transkrip penuh</h2>
-        <p>Ditranskrip dengan Whisper large-v3, kemudian disemak semula pada audio yang sudah dipotong. <span class="fix">Kotak</span> = perkataan yang dibetulkan. <span class="unsure">Garis titik</span> = kurang pasti, sila sahkan.</p>
+        <p>Ditranskrip dengan Whisper large-v3 dan disemak dua kali. <span class="fix">Kotak</span> = perkataan yang dibetulkan. <span class="unsure">Garis titik</span> = kurang pasti, sila sahkan.</p>
         <div class="tscript" id="tscript"></div>
-        <h3>Potongan</h3>
-        <div class="tablewrap"><table><thead><tr><th>Bahagian</th><th>Masa asal</th><th>Masa baru</th></tr></thead><tbody id="cuttable"></tbody></table></div>
-        <p class="hint" style="margin-top:10px">Pause yang dibuang: 0.10–0.19s setiap satu, enam tempat. Penyampai memang laju, jadi tiada pause panjang. Saya kekalkan nafas pendek supaya tak bunyi tergesa-gesa.</p>
       </div>
 
       <div class="pane" id="p-hook" hidden>
-        <h2>Hook paling kuat</h2>
-        <p>Video asal buka dengan “Korang yang baru dapat kunci rumah…”. Itu panggilan sasaran yang bagus, tetapi ayat paling tajam dalam video ialah akibatnya. Jadi ayat itu dipindah ke 3 saat pertama, dan ayat asal terus menyusul sebagai sambungan.</p>
+        <h2>Hook: 0:00–0:01.7</h2>
+        <p>Ayat pembuka asal dikekalkan kerana ia terus panggil sasaran: orang yang baru dapat kunci rumah dan nak renovate. Yang berubah cuma visual dua saat pertama.</p>
         <div class="cards">
-          <div class="card pick"><span class="tag">Dipilih · 0:00–0:02.8</span><q>Kalau renovation ikut agak-agak, kos meletup.</q><p>Kesakitan dan akibat dalam satu nafas. Pemilik rumah baru terus nampak risiko wang. Asal pada 0:11.4, dipindah ke depan. Grafik: “agak-agak?” dalam italik serif, kemudian pil “Kos meletup.”</p></div>
-          <div class="card"><span class="tag">Alternatif 1</span><q>Korang yang baru dapat kunci rumah dan bercadang nak buat renovation, dengar ni betul-betul.</q><p>Menyasar penonton dengan tepat, tetapi 4.9s terlalu panjang untuk hook. Kini jadi ayat kedua.</p></div>
-          <div class="card"><span class="tag">Alternatif 2</span><q>Takut kena tipu dengan harga kontraktor?</q><p>Emosi kuat, tetapi tanpa konteks rumah baru penonton belum tahu ini untuk siapa.</p></div>
+          <div class="card pick"><span class="tag">Visual hook</span><q>Korang yang baru dapat kunci rumah…</q><p>Video dibuka dengan kamera bergerak perlahan dalam ruang tamu rekaan Fi-K, dengan teks “Baru dapat kunci rumah?”. Penonton nampak hasil dulu, dengar suara korang, kemudian muka korang masuk pada “dan bercadang nak buat renovation”.</p></div>
+          <div class="card"><span class="tag">Penegasan · 0:03.8</span><q>…dengar ni betul-betul.</q><p>Punch-in 12% ke muka dan pil “Dengar ni dulu” supaya penonton berhenti scroll.</p></div>
         </div>
-        <p class="hint" style="margin-top:10px">Supaya ayat hook tak didengar dua kali, ia dibuang dari tempat asal. Ayat masalah kini mengalir: “…harga kontraktor. Kerja ulang-alik, dan hasil dia tak sama…”, dan senarai di skrin mengulang “Kos meletup” sebagai baris pertama.</p>
       </div>
 
       <div class="pane" id="p-grade" hidden>
@@ -293,18 +290,18 @@ td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
           <tr><td>Audio suara</td><td>High-pass 80Hz, buang desis, de-esser, kompresor 3:1, sedikit kejelasan di 3.2kHz, loudness −15 LUFS.</td></tr>
           <tr><td>Muzik</td><td>Pad ambien lembut (dijana sendiri, bebas hak cipta). Dalam render final ia akan auto-duck di bawah suara.</td></tr>
         </tbody></table></div>
-        <p class="hint" style="margin-top:10px">Slow motion tidak digunakan: kamera statik dan tiada demonstrasi yang sesuai. B-roll gambar guna gerakan perlahan (push-in) sebagai ganti.</p>
+        <p class="hint" style="margin-top:10px">Slow motion tidak digunakan: kamera statik dan tiada demonstrasi yang sesuai. B-roll guna pergerakan kamera perlahan dari tur 360 rekaan Fi-K, dan push-in pada gambar.</p>
       </div>
 
       <div class="pane" id="p-q" hidden>
         <h2>Sahkan sebelum saya render</h2>
         <ol class="qs">
-          <li><b>B-roll dari folder CFik017.</b> Rakaman CFik019 cuma kepala bercakap, tiada ruang atau perabot. Untuk penuhi brief (hasil kerja sebenar, kemasan, material), saya guna 4 gambar “After” dari folder CFik017 (ruang makan, ruang keluarga, dapur kering, bilik air) pada 0:18.9–0:25.4. Boleh guna? Gambar klien (Client.jpg) sengaja tidak digunakan.</li>
-          <li><b>“Kos meletup” atau “kos meledak”?</b> Dua kali transkripsi beri jawapan berbeza pada hook. Kapsyen sekarang tulis “meletup”.</li>
-          <li><b>“seperti mana yang kita impikan”.</b> Whisper dengar “money”. Saya anggap “mana”. Betul?</li>
-          <li><b>Logo.</b> Putih untuk watermark atas video, hijau untuk kad jenama dan penutup. Nak tukar?</li>
-          <li><b>Muzik.</b> Nak kekalkan pad ambien ini, atau korang akan letak lagu trending terus di TikTok/IG? Kalau guna lagu dalam app, saya render tanpa muzik.</li>
-          <li><b>Nama akaun untuk CTA.</b> Kalau nak tunjuk @handle Instagram/TikTok pada CTA “DM kami”, beri nama akaunnya.</li>
+          <li><b>B-roll rekaan 3D.</b> Diambil dari 4 tur 360 aihouse yang korang beri: 7 klip kamera bergerak dan 1 render 3D, dari 4 rumah berbeza. Nama projek dan nama klien dalam tur <i>tidak</i> dipaparkan; label hanya nama ruang. Nak tukar mana-mana ruang?</li>
+          <li><b>Gambar projek siap CFik017.</b> Satu gambar ruang keluarga sebenar masih digunakan pada “rumah ikut ukuran yang tepat” (0:21.1–0:23.1), supaya ada bukti hasil siap selepas 3D. Boleh guna, atau nak semua 3D?</li>
+          <li><b>“seperti mana yang kita impikan”.</b> Whisper dengar “money”. Aku anggap “mana”. Betul?</li>
+          <li><b>“kos meletup”.</b> Transkripsi kedua dengar “meledak”. Kapsyen tulis “meletup”. Betul?</li>
+          <li><b>Muzik.</b> Kekalkan pad ambien ini, atau korang letak lagu trending terus dalam TikTok/IG?</li>
+          <li><b>@handle untuk CTA.</b> Kalau nak tunjuk nama akaun pada “DM kami”, beri nama akaunnya.</li>
         </ol>
       </div>
     </section>
@@ -324,33 +321,37 @@ const clamp=(x,a=0,b=1)=>Math.min(b,Math.max(a,x));
 const ease=x=>x<.5?2*x*x:1-Math.pow(-2*x+2,2)/2;
 const st={cap:true,mg:true,br:true,zoom:true,sfx:true,mus:true,wipe:false,wipeX:.5};
 
-/* ---- B-roll: per-still focal point (%), push-in scale, extras ---- */
-const FOCUS={dining:[55,45,1.04,1.13],family:[30,62,1.0,1.18],kitchen:[56,64,1.0,1.2],toilet:[28,80,1.02,1.26]};
-const BR=plan.graphics.filter(g=>g.kind==="broll").map((g,i,arr)=>{
-  const el=document.createElement("div");el.className="br";const f=FOCUS[g.img];
-  let h=`<div class="kb" style="transform-origin:${f[0]}% ${f[1]}%"><img src="broll/${g.img}.jpg" alt="">`;
-  if(g.sketch)h+=`<img class="sk" src="broll/${g.sketch}.jpg" alt="">`;
+/* ---- B-roll: camera pans (clips from Fi-K's 360 tours) and stills with a slow push-in ---- */
+const FOCUS={render_living:[50,55,1.02,1.1],family:[30,62,1.0,1.18]};
+const BR=plan.broll.map((g,i,arr)=>{
+  const el=document.createElement("div");el.className="br";const f=FOCUS[g.img]||[50,50,1,1];
+  let h=`<div class="kb" style="transform-origin:${f[0]}% ${f[1]}%">`;
+  if(g.kind==="pan")h+=`<video src="pans/${g.clip}.mp4" poster="pans/${g.clip}.jpg" muted playsinline preload="auto"></video>`;
+  else{h+=`<img src="${g.img==="family"?"broll":"pans"}/${g.img}.jpg" alt="">`;if(g.sketch)h+=`<img class="sk" src="pans/${g.sketch}.jpg" alt="">`}
   h+=`</div>`;
   if(g.sketch)h+=`<span class="edge"></span>`;
   h+=`<div class="shade"></div>`;
   if(g.dims)h+=`<svg class="dims" viewBox="0 0 100 100" preserveAspectRatio="none"><line x1="21" y1="30" x2="80" y2="30"/><line x1="21" y1="28.6" x2="21" y2="31.4"/><line x1="80" y1="28.6" x2="80" y2="31.4"/><line x1="92" y1="20" x2="92" y2="77"/><line x1="90" y1="20" x2="94" y2="20"/><line x1="90" y1="77" x2="94" y2="77"/></svg>`;
   if(g.quote)h+=`<div class="quote"><div class="h">Anggaran harga</div>${g.quote.map(q=>`<div class="r"><i>✓</i>${esc(q)}</div>`).join("")}</div>`;
-  h+=`<div class="lbl"><small>Projek Fi-K Studio</small><b>${esc(g.label)}</b></div>`;
+  if(g.label)h+=`<div class="lbl"><small>${esc(g.eyebrow)}</small><b>${esc(g.label)}</b></div>`;
   el.innerHTML=h;brl.appendChild(el);
   const prev=arr[i-1],next=arr[i+1];
-  return {g,el,kb:el.querySelector(".kb"),sk:el.querySelector(".sk"),edge:el.querySelector(".edge"),lines:[...el.querySelectorAll(".dims line")],rows:[...el.querySelectorAll(".quote .r")],f,
-    fin:!(prev&&Math.abs(prev.e-g.s)<.05),fout:!(next&&Math.abs(next.s-g.e)<.05)};
+  return {g,el,kb:el.querySelector(".kb"),vid:el.querySelector("video"),sk:el.querySelector(".sk"),edge:el.querySelector(".edge"),lines:[...el.querySelectorAll(".dims line")],rows:[...el.querySelectorAll(".quote .r")],f,
+    fin:!(prev&&Math.abs(prev.e-g.s)<.05)&&g.s>0,fout:!(next&&Math.abs(next.s-g.e)<.05)};
 });
 function renderBroll(t){
   let any=false;
   for(const b of BR){const {g}=b,on=st.br&&t>=g.s-.2&&t<g.e+.2;
-    if(!on){b.el.style.opacity=0;continue}
+    if(!on){b.el.style.opacity=0;if(b.vid&&!b.vid.paused)b.vid.pause();continue}
     any=t>=g.s&&t<g.e||any;
     const p=clamp((t-g.s)/(g.e-g.s));
     const op=(b.fin?clamp((t-g.s+.15)/.15):t>=g.s?1:0)*(b.fout?clamp((g.e+.15-t)/.15):t<g.e?1:0);
     b.el.style.opacity=op.toFixed(3);
-    const sc=b.f[2]+(b.f[3]-b.f[2])*ease(p);b.kb.style.transform=`scale(${sc.toFixed(4)})`;
-    if(b.sk){const r=clamp((p-.25)/.5);b.sk.style.clipPath=`inset(0 0 0 ${(ease(r)*100).toFixed(2)}%)`;b.edge.style.left=(ease(r)*100)+"%";b.edge.style.opacity=r>0&&r<1?1:0}
+    if(b.vid){const want=clamp(t-g.s,0,(b.vid.duration||9)-.04);
+      if(vg.paused){if(!b.vid.paused)b.vid.pause();if(Math.abs(b.vid.currentTime-want)>.04)b.vid.currentTime=want}
+      else{if(Math.abs(b.vid.currentTime-want)>.15)b.vid.currentTime=want;if(b.vid.paused&&t>=g.s-.2)b.vid.play().catch(()=>{})}}
+    else{const sc=b.f[2]+(b.f[3]-b.f[2])*ease(p);b.kb.style.transform=`scale(${sc.toFixed(4)})`}
+    if(b.sk){const r=clamp((p-.2)/.55);b.sk.style.clipPath=`inset(0 0 0 ${(ease(r)*100).toFixed(2)}%)`;b.edge.style.left=(ease(r)*100)+"%";b.edge.style.opacity=r>0&&r<1?1:0}
     b.lines.forEach((l,k)=>l.style.strokeDashoffset=(100-100*clamp((p-.1-(k>2?.25:0))/.35)).toFixed(1));
     b.rows.forEach((r,k)=>r.classList.toggle("in",p>.18+k*.16));
   }
@@ -361,7 +362,8 @@ function renderBroll(t){
 function build(g){
   const el=document.createElement("div");el.className="g";let h="";
   switch(g.kind){
-    case"hook":el.className+=" hk";h=`<div class="scrim"></div><div class="t"><b class="hk-in">${esc(g.lines[0])}</b><b class="hk-in it">${esc(g.lines[1])}</b></div><div class="punch"><svg viewBox="0 0 32 20"><path d="M2 17 L11 13 L17 14 L30 2 M23 2 H30 V9"/></svg>${esc(g.punch)}</div>`;break;
+    case"hook":el.className+=" hk";h=`<div class="scrim"></div><div class="t"><b class="hk-in">${esc(g.lines[0])}</b><b class="hk-in it">${esc(g.lines[1])}</b></div>${g.punch?`<div class="punch"><svg viewBox="0 0 32 20"><path d="M2 17 L11 13 L17 14 L30 2 M23 2 H30 V9"/></svg>${esc(g.punch)}</div>`:""}`;break;
+    case"pill":el.className+=" pl";h=esc(g.text);break;
     case"key":el.className+=" chipk";h=`<svg viewBox="0 0 24 24"><circle cx="7.5" cy="12" r="4.5"/><path d="M12 12 H22 M18.5 12 V15.5 M21 12 V14.5"/></svg>${esc(g.text)}`;break;
     case"list":case"strike":el.className+=" lst";el.style.inset="0";h=`<div class="plist-scrim"></div><div class="g-in plist"><span class="e">${esc(g.eyebrow)}</span>${g.items.map(x=>`<span class="it">${g.kind==="strike"?`<s>${esc(x[0])}</s>`:esc(x[0])}</span>`).join("")}</div>`;break;
     case"brand":el.className+=" brand";h=`<div class="card2"><img src="logo-green.png" alt="Fi-K Studio"></div>`;break;
@@ -447,14 +449,13 @@ document.querySelectorAll(".tab").forEach(b=>b.onclick=()=>{document.querySelect
 
 /* ---- event list ---- */
 const SFXN={whoosh:"Whoosh lembut",air:"Hembusan udara (buka)",thud:"Hentakan lembut",tick:"Ketukan kayu",pen:"Pensel atas kertas",chime:"Chime kaca",shimmer:"Kilauan (3D jadi nyata)",swipe:"Sapuan gambar"};
-const ZN=[];for(let i=1;i<plan.zoom.length;i++){const a=plan.zoom[i-1],b=plan.zoom[i];if(b.scale>a.scale+.02)ZN.push({t:a.t,d:`Punch-in ${Math.round((b.scale-1)*100)}%`,s:b.t-a.t<.05?"Serentak dengan potongan, sorok jump cut":"Tolak perlahan untuk penekanan"})}
-const CUTD={hook:["Hook: ayat dari 0:11.4 dipindah ke depan",""],A:["Ayat pembuka asal",""],B:["Potong pause","0.11s dibuang sebelum “Masalah”"],C:["Potong pause","0.13s dibuang dalam “tak … tahu”"],D:["Potong pause","0.13s dibuang sebelum “kena tipu”"],E:["Sambung selepas tempat asal hook",""],F:["Potong pause","0.19s dibuang sebelum “kalau korang berminat”"]};
+const ZN=[];for(let i=1;i<plan.zoom.length;i++){const a=plan.zoom[i-1],b=plan.zoom[i];if(b.scale>a.scale+.02)ZN.push({t:a.t,d:`Punch-in ${Math.round((b.scale-1)*100)}%`,s:b.t-a.t<.05?"Punch-in serta-merta pada awal ayat":"Tolak perlahan untuk penekanan"})}
 const EV=[
- ...plan.cuts.map(c=>({t:c.out,k:"cut",d:CUTD[c.id][0],s:(CUTD[c.id][1]?CUTD[c.id][1]+" · ":"")+`asal ${fmt(c.src_in)}–${fmt(c.src_out)}`})),
- ...plan.graphics.map(g=>({t:g.s,k:g.kind==="broll"?"broll":"mg",d:g.kind==="broll"?g.label:g.kind==="hook"?"Teks hook":g.kind==="outro"?"Kad penutup":g.text||g.eyebrow||(g.kind==="brand"?"Kad jenama Fi-K":g.kind==="az"?"Proses A ke Z":"Grafik"),s:g.note})),
+ ...plan.broll.map(g=>({t:g.s,k:"broll",d:g.label||(g.kind==="pan"?"Pan kamera (rekaan 3D)":"B-roll"),s:g.note})),
+ ...plan.graphics.map(g=>({t:g.s,k:"mg",d:g.kind==="hook"?"Teks hook":g.kind==="outro"?"Kad penutup":g.text||g.eyebrow||(g.kind==="brand"?"Kad jenama Fi-K":g.kind==="az"?"Proses A ke Z":"Grafik"),s:g.note})),
  ...plan.sfx.map(s=>({t:s.t,k:"sfx",d:SFXN[s.name]||s.name})),
  ...ZN.map(z=>({t:z.t,k:"zoom",d:z.d,s:z.s}))
-].sort((a,b)=>a.t-b.t||"cut broll mg zoom sfx".indexOf(a.k)-"cut broll mg zoom sfx".indexOf(b.k));
+].sort((a,b)=>a.t-b.t||"broll mg zoom sfx".indexOf(a.k)-"broll mg zoom sfx".indexOf(b.k));
 const KL={cut:"Potong",mg:"Motion",sfx:"SFX",zoom:"Zoom",broll:"B-roll"},MC={cut:"var(--c-cut)",mg:"var(--c-mg)",sfx:"var(--c-sfx)",zoom:"var(--c-zoom)",broll:"var(--c-broll)"};
 const list=$("#evlist");
 EV.forEach(e=>{const b=document.createElement("button");b.className="ev";b.innerHTML=`<span class="t">${fmt(e.t)}</span><span class="k k-${e.k}">${KL[e.k]}</span><span class="d">${esc(e.d)}${e.s?`<small>${esc(e.s)}</small>`:""}</span>`;b.onclick=()=>{seek(Math.max(0,e.t-.5));play()};list.appendChild(b)});
@@ -467,11 +468,7 @@ const ts=$("#tscript"),lines=[];let cur=null;
 plan.captions.forEach(c=>{if(!cur||/[.?!]$/.test(cur.last)||cur.n>=4){cur={s:c.s,html:"",n:0,last:""};lines.push(cur)}
   const raw=plan.words.filter(w=>w.s>=c.s-.001&&w.s<c.e);cur.last=raw.length?raw[raw.length-1].w:"";
   cur.html+=(cur.html?" ":"")+c.words.map((w,k)=>{const r=raw[k]?raw[k].w:w.w;const cls=w.unsure?"fix unsure":w.fix?"fix":"";return cls?`<span class="${cls}">${esc(r)}</span>`:esc(r)}).join(" ");cur.n++});
-const cutsAt=plan.cuts.slice(2).map(c=>({t:c.out,why:CUTD[c.id][1]||CUTD[c.id][0]}));
-lines.forEach((l,i)=>{const nx=lines[i+1]?lines[i+1].s:1e9;const d=document.createElement("button");d.className="line"+(l.s<2.7?" hookline":"");d.innerHTML=`<span class="t">${fmt(l.s)}</span><span>${l.html}</span>`;d.onclick=()=>{seek(l.s);play()};ts.appendChild(d);
-  cutsAt.filter(c=>c.t>l.s&&c.t<=nx).forEach(c=>{const r=document.createElement("div");r.className="cutrow";r.textContent=`✂ ${fmt(c.t)} ${c.why}`;ts.appendChild(r)})});
-const CN={hook:"Hook (dipindah)",A:"Pembuka",B:"Masalah",C:"Masalah (samb.)",D:"Kena tipu",E:"Akibat + penyelesaian",F:"CTA"};
-$("#cuttable").innerHTML=plan.cuts.map(c=>`<tr><td>${CN[c.id]}</td><td class="num">${fmt(c.src_in)} – ${fmt(c.src_out)}</td><td class="num">${fmt(c.out)} – ${fmt(c.out+c.src_out-c.src_in)}</td></tr>`).join("")+`<tr><td>Kad penutup</td><td class="num">baru</td><td class="num">${fmt(DUR)} – ${fmt(END)}</td></tr>`;
+lines.forEach((l,i)=>{const nx=lines[i+1]?lines[i+1].s:1e9;const d=document.createElement("button");d.className="line"+(l.s<4.9?" hookline":"");d.innerHTML=`<span class="t">${fmt(l.s)}</span><span>${l.html}</span>`;d.onclick=()=>{seek(l.s);play()};ts.appendChild(d)});
 
 render(0);
 })();

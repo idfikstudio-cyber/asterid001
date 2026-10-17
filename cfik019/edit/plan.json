@@ -1,1356 +1,1250 @@
 {
- "duration": 30.06,
+ "duration": 31.068,
  "outro": 2.2,
  "cuts": [
   {
-   "id": "hook",
-   "src_in": 11.42,
-   "src_out": 14.2,
+   "id": "full",
+   "src_in": 0,
+   "src_out": 31.068,
    "out": 0
-  },
-  {
-   "id": "A",
-   "src_in": 0.12,
-   "src_out": 4.97,
-   "out": 2.78
-  },
-  {
-   "id": "B",
-   "src_in": 5.08,
-   "src_out": 7.32,
-   "out": 7.63
-  },
-  {
-   "id": "C",
-   "src_in": 7.45,
-   "src_out": 9.7,
-   "out": 9.87
-  },
-  {
-   "id": "D",
-   "src_in": 9.83,
-   "src_out": 11.32,
-   "out": 12.12
-  },
-  {
-   "id": "E",
-   "src_in": 14.31,
-   "src_out": 28.14,
-   "out": 13.61
-  },
-  {
-   "id": "F",
-   "src_in": 28.33,
-   "src_out": 30.95,
-   "out": 27.44
-  }
- ],
- "removed": [
-  {
-   "src_in": 4.97,
-   "src_out": 5.08
-  },
-  {
-   "src_in": 7.32,
-   "src_out": 7.45
-  },
-  {
-   "src_in": 9.7,
-   "src_out": 9.83
-  },
-  {
-   "src_in": 11.32,
-   "src_out": 11.42
-  },
-  {
-   "src_in": 14.2,
-   "src_out": 14.31
-  },
-  {
-   "src_in": 28.14,
-   "src_out": 28.33
   }
  ],
  "captions": [
   {
-   "s": 0.08,
-   "e": 1.14,
-   "words": [
-    {
-     "w": "Kalau",
-     "s": 0.08
-    },
-    {
-     "w": "renovation",
-     "s": 0.22
-    },
-    {
-     "w": "ikut",
-     "s": 0.58
-    }
-   ]
-  },
-  {
-   "s": 1.14,
-   "e": 1.9,
-   "words": [
-    {
-     "w": "agak-agak?",
-     "s": 1.14,
-     "hot": 1
-    }
-   ]
-  },
-  {
-   "s": 1.9,
-   "e": 2.78,
-   "words": [
-    {
-     "w": "kos",
-     "s": 1.9
-    },
-    {
-     "w": "meletup",
-     "s": 2.2,
-     "hot": 1
-    }
-   ]
-  },
-  {
-   "s": 2.78,
-   "e": 3.62,
+   "s": 0.0,
+   "e": 0.96,
    "words": [
     {
      "w": "Korang",
-     "s": 2.78
+     "s": 0.0
     },
     {
      "w": "yang",
-     "s": 3.14
+     "s": 0.48
     },
     {
      "w": "baru",
-     "s": 3.38
+     "s": 0.72
     }
    ]
   },
   {
-   "s": 3.62,
-   "e": 4.38,
+   "s": 0.96,
+   "e": 1.72,
    "words": [
     {
      "w": "dapat",
-     "s": 3.62
+     "s": 0.96
     },
     {
      "w": "kunci",
-     "s": 3.8,
+     "s": 1.14,
      "hot": 1
     },
     {
      "w": "rumah",
-     "s": 4.22,
+     "s": 1.56,
      "hot": 1
     }
    ]
   },
   {
-   "s": 4.38,
-   "e": 5.6,
+   "s": 1.72,
+   "e": 2.94,
    "words": [
     {
      "w": "dan",
-     "s": 4.38
+     "s": 1.72
     },
     {
      "w": "bercadang",
-     "s": 4.94
+     "s": 2.28
     },
     {
      "w": "nak",
-     "s": 5.5
+     "s": 2.84
     }
    ]
   },
   {
-   "s": 5.6,
-   "e": 6.16,
+   "s": 2.94,
+   "e": 3.53,
    "words": [
     {
      "w": "buat",
-     "s": 5.6
+     "s": 2.94
     },
     {
      "w": "renovation",
-     "s": 5.78
+     "s": 3.12
     }
    ]
   },
   {
-   "s": 6.42,
-   "e": 7.63,
+   "s": 3.76,
+   "e": 4.98,
    "words": [
     {
      "w": "dengar",
-     "s": 6.42
+     "s": 3.76
     },
     {
      "w": "ni",
-     "s": 6.9
+     "s": 4.24
     },
     {
      "w": "betul-betul",
-     "s": 7.04,
+     "s": 4.38,
      "hot": 1
     }
    ]
   },
   {
-   "s": 7.63,
-   "e": 8.47,
+   "s": 4.98,
+   "e": 5.92,
    "words": [
     {
      "w": "Masalah",
-     "s": 7.63
+     "s": 4.98
     },
     {
      "w": "yang",
-     "s": 7.99
+     "s": 5.44
     },
     {
      "w": "biasa",
-     "s": 8.17
+     "s": 5.62
     }
    ]
   },
   {
-   "s": 8.47,
-   "e": 9.15,
+   "s": 5.92,
+   "e": 6.6,
    "words": [
     {
      "w": "kita",
-     "s": 8.47
+     "s": 5.92
     },
     {
      "w": "orang",
-     "s": 8.61
+     "s": 6.06
     },
     {
      "w": "dengar",
-     "s": 8.81
+     "s": 6.26
     }
    ]
   },
   {
-   "s": 9.15,
-   "e": 9.92,
+   "s": 6.6,
+   "e": 7.76,
    "words": [
     {
      "w": "adalah",
-     "s": 9.15
+     "s": 6.6
     },
     {
      "w": "tak",
-     "s": 9.51
+     "s": 6.96
+    },
+    {
+     "w": "tahu",
+     "s": 7.5
     }
    ]
   },
   {
-   "s": 9.92,
-   "e": 10.54,
+   "s": 7.76,
+   "e": 8.42,
    "words": [
     {
-     "w": "tahu",
-     "s": 9.92
-    },
-    {
      "w": "nak",
-     "s": 10.18
+     "s": 7.76
     },
     {
      "w": "mula",
-     "s": 10.32
+     "s": 7.9
+    },
+    {
+     "w": "daripada",
+     "s": 8.12
     }
    ]
   },
   {
-   "s": 10.54,
-   "e": 11.46,
+   "s": 8.42,
+   "e": 9.62,
    "words": [
     {
-     "w": "daripada",
-     "s": 10.54
-    },
-    {
      "w": "mana",
-     "s": 10.84,
+     "s": 8.42,
      "unsure": 1
     },
     {
      "w": "dan",
-     "s": 11.1
-    }
-   ]
-  },
-  {
-   "s": 11.46,
-   "e": 12.12,
-   "words": [
+     "s": 8.68
+    },
     {
      "w": "takut",
-     "s": 11.46
+     "s": 9.04
     }
    ]
   },
   {
-   "s": 12.12,
-   "e": 12.75,
+   "s": 9.62,
+   "e": 10.46,
    "words": [
     {
      "w": "kena",
-     "s": 12.12
+     "s": 9.62
     },
     {
      "w": "tipu",
-     "s": 12.23,
+     "s": 9.94,
      "hot": 1
     },
     {
      "w": "dengan",
-     "s": 12.59
+     "s": 10.3
     }
    ]
   },
   {
-   "s": 12.75,
-   "e": 13.82,
+   "s": 10.46,
+   "e": 11.5,
    "words": [
     {
      "w": "harga",
-     "s": 12.75,
+     "s": 10.46,
      "hot": 1
     },
     {
      "w": "kontraktor",
-     "s": 13.29,
+     "s": 11.0,
      "hot": 1,
      "fix": 1
     }
    ]
   },
   {
-   "s": 13.82,
-   "e": 15.22,
+   "s": 11.5,
+   "e": 12.56,
+   "words": [
+    {
+     "w": "Kalau",
+     "s": 11.5
+    },
+    {
+     "w": "renovation",
+     "s": 11.64
+    },
+    {
+     "w": "ikut",
+     "s": 12.0
+    }
+   ]
+  },
+  {
+   "s": 12.56,
+   "e": 13.32,
+   "words": [
+    {
+     "w": "agak-agak",
+     "s": 12.56,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 13.32,
+   "e": 14.52,
+   "words": [
+    {
+     "w": "kos",
+     "s": 13.32
+    },
+    {
+     "w": "meletup",
+     "s": 13.62,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 14.52,
+   "e": 15.92,
    "words": [
     {
      "w": "kerja",
-     "s": 13.82
+     "s": 14.52
     },
     {
      "w": "ulang-alik",
-     "s": 14.34,
+     "s": 15.04,
      "hot": 1
     },
     {
      "w": "dan",
-     "s": 15.1
+     "s": 15.8
     }
    ]
   },
   {
-   "s": 15.22,
-   "e": 16.06,
+   "s": 15.92,
+   "e": 16.76,
    "words": [
     {
      "w": "hasil",
-     "s": 15.22
+     "s": 15.92
     },
     {
      "w": "dia",
-     "s": 15.76
+     "s": 16.46
     },
     {
      "w": "tak",
-     "s": 15.9
+     "s": 16.6
     }
    ]
   },
   {
-   "s": 16.06,
-   "e": 17.1,
+   "s": 16.76,
+   "e": 17.8,
    "words": [
     {
      "w": "sama",
-     "s": 16.06
+     "s": 16.76
     },
     {
      "w": "seperti",
-     "s": 16.3
+     "s": 17.0
     },
     {
      "w": "mana",
-     "s": 16.74,
+     "s": 17.44,
      "fix": 1,
      "unsure": 1
     }
    ]
   },
   {
-   "s": 17.1,
-   "e": 18.12,
+   "s": 17.8,
+   "e": 18.82,
    "words": [
     {
      "w": "yang",
-     "s": 17.1
+     "s": 17.8
     },
     {
      "w": "kita",
-     "s": 17.36
+     "s": 18.06
     },
     {
      "w": "impikan",
-     "s": 17.52,
+     "s": 18.22,
      "hot": 1
     }
    ]
   },
   {
-   "s": 18.12,
-   "e": 19.06,
+   "s": 18.82,
+   "e": 19.76,
    "words": [
     {
      "w": "Dengan",
-     "s": 18.12
+     "s": 18.82
     },
     {
      "w": "Fi-K",
-     "s": 18.36,
+     "s": 19.06,
      "hot": 1,
      "fix": 1
     },
     {
      "w": "Studio",
-     "s": 18.58,
+     "s": 19.28,
      "hot": 1
     }
    ]
   },
   {
-   "s": 19.06,
-   "e": 19.8,
+   "s": 19.76,
+   "e": 20.5,
    "words": [
     {
      "w": "korang",
-     "s": 19.06
+     "s": 19.76
     },
     {
      "w": "dapat",
-     "s": 19.26
+     "s": 19.96
     },
     {
      "w": "3D",
-     "s": 19.4,
+     "s": 20.1,
      "hot": 1
     }
    ]
   },
   {
-   "s": 19.8,
-   "e": 20.48,
+   "s": 20.5,
+   "e": 21.18,
    "words": [
     {
      "w": "yang",
-     "s": 19.8
+     "s": 20.5
     },
     {
      "w": "tepat",
-     "s": 19.94
+     "s": 20.64
     }
    ]
   },
   {
-   "s": 20.48,
-   "e": 21.66,
+   "s": 21.18,
+   "e": 22.36,
    "words": [
     {
      "w": "rumah",
-     "s": 20.48,
+     "s": 21.18,
      "hot": 1
     },
     {
      "w": "ikut",
-     "s": 20.74
+     "s": 21.44
     },
     {
      "w": "ukuran",
-     "s": 21.26,
+     "s": 21.96,
      "hot": 1
     }
    ]
   },
   {
-   "s": 21.66,
-   "e": 22.46,
+   "s": 22.36,
+   "e": 23.16,
    "words": [
     {
      "w": "yang",
-     "s": 21.66
+     "s": 22.36
     },
     {
      "w": "tepat",
-     "s": 21.86
+     "s": 22.56
     }
    ]
   },
   {
-   "s": 22.46,
-   "e": 23.74,
+   "s": 23.16,
+   "e": 24.44,
    "words": [
     {
      "w": "dapat",
-     "s": 22.46
+     "s": 23.16
     },
     {
      "w": "anggaran",
-     "s": 22.68,
+     "s": 23.38,
      "hot": 1
     },
     {
      "w": "harga",
-     "s": 23.24,
+     "s": 23.94,
      "hot": 1
     }
    ]
   },
   {
-   "s": 23.74,
-   "e": 25.1,
+   "s": 24.44,
+   "e": 25.8,
    "words": [
     {
      "w": "untuk",
-     "s": 23.74
+     "s": 24.44
     },
     {
      "w": "renovation",
-     "s": 24.08
+     "s": 24.78
     },
     {
      "w": "dan",
-     "s": 24.5
+     "s": 25.2
     }
    ]
   },
   {
-   "s": 25.1,
-   "e": 26.02,
+   "s": 25.8,
+   "e": 26.72,
    "words": [
     {
      "w": "kami",
-     "s": 25.1
+     "s": 25.8
     },
     {
      "w": "boleh",
-     "s": 25.38
+     "s": 26.08
     },
     {
      "w": "bantu",
-     "s": 25.58
+     "s": 26.28
     }
    ]
   },
   {
-   "s": 26.02,
-   "e": 26.96,
+   "s": 26.72,
+   "e": 27.66,
    "words": [
     {
      "w": "daripada",
-     "s": 26.02
+     "s": 26.72
     },
     {
      "w": "A",
-     "s": 26.34,
+     "s": 27.04,
      "hot": 1
     },
     {
      "w": "sampai",
-     "s": 26.58
+     "s": 27.28
     }
    ]
   },
   {
-   "s": 26.96,
-   "e": 27.44,
+   "s": 27.66,
+   "e": 28.94,
    "words": [
     {
      "w": "Z",
-     "s": 26.96,
+     "s": 27.66,
      "hot": 1
-    }
-   ]
-  },
-  {
-   "s": 27.44,
-   "e": 28.37,
-   "words": [
+    },
     {
      "w": "kalau",
-     "s": 27.44
+     "s": 27.96
     },
     {
      "w": "korang",
-     "s": 27.59
-    },
-    {
-     "w": "berminat",
-     "s": 28.05
+     "s": 28.48
     }
    ]
   },
   {
-   "s": 28.37,
-   "e": 29.13,
+   "s": 28.94,
+   "e": 29.26,
+   "words": [
+    {
+     "w": "berminat",
+     "s": 28.94
+    }
+   ]
+  },
+  {
+   "s": 29.26,
+   "e": 30.02,
    "words": [
     {
      "w": "DM",
-     "s": 28.37,
+     "s": 29.26,
      "hot": 1
     },
     {
      "w": "kami",
-     "s": 28.59
+     "s": 29.48
     },
     {
      "w": "untuk",
-     "s": 28.79
+     "s": 29.68
     }
    ]
   },
   {
-   "s": 29.13,
-   "e": 30.07,
+   "s": 30.02,
+   "e": 30.99,
    "words": [
     {
      "w": "keterangan",
-     "s": 29.13
+     "s": 30.02
     },
     {
      "w": "lanjut",
-     "s": 29.57
+     "s": 30.46
     }
    ]
   }
  ],
  "words": [
   {
-   "w": "Kalau",
-   "s": 0.08,
-   "e": 0.22,
-   "src": 11.5,
-   "fix": false
-  },
-  {
-   "w": "renovation",
-   "s": 0.22,
-   "e": 0.58,
-   "src": 11.64,
-   "fix": false
-  },
-  {
-   "w": "ikut",
-   "s": 0.58,
-   "e": 1.14,
-   "src": 12.0,
-   "fix": false
-  },
-  {
-   "w": "agak-agak,",
-   "s": 1.14,
-   "e": 1.82,
-   "src": 12.56,
-   "fix": false
-  },
-  {
-   "w": "kos",
-   "s": 1.9,
-   "e": 2.2,
-   "src": 13.32,
-   "fix": false
-  },
-  {
-   "w": "meletup,",
-   "s": 2.2,
-   "e": 2.78,
-   "src": 13.62,
-   "fix": false
-  },
-  {
    "w": "Korang",
-   "s": 2.78,
-   "e": 3.14,
-   "src": 0.0,
+   "s": 0.0,
+   "e": 0.48,
    "fix": false
   },
   {
    "w": "yang",
-   "s": 3.14,
-   "e": 3.38,
-   "src": 0.48,
+   "s": 0.48,
+   "e": 0.72,
    "fix": false
   },
   {
    "w": "baru",
-   "s": 3.38,
-   "e": 3.62,
-   "src": 0.72,
+   "s": 0.72,
+   "e": 0.96,
    "fix": false
   },
   {
    "w": "dapat",
-   "s": 3.62,
-   "e": 3.8,
-   "src": 0.96,
+   "s": 0.96,
+   "e": 1.14,
    "fix": false
   },
   {
    "w": "kunci",
-   "s": 3.8,
-   "e": 4.22,
-   "src": 1.14,
+   "s": 1.14,
+   "e": 1.56,
    "fix": false
   },
   {
    "w": "rumah",
-   "s": 4.22,
-   "e": 4.38,
-   "src": 1.56,
+   "s": 1.56,
+   "e": 1.72,
    "fix": false
   },
   {
    "w": "dan",
-   "s": 4.38,
-   "e": 4.94,
-   "src": 1.72,
+   "s": 1.72,
+   "e": 2.28,
    "fix": false
   },
   {
    "w": "bercadang",
-   "s": 4.94,
-   "e": 5.5,
-   "src": 2.28,
+   "s": 2.28,
+   "e": 2.84,
    "fix": false
   },
   {
    "w": "nak",
-   "s": 5.5,
-   "e": 5.6,
-   "src": 2.84,
+   "s": 2.84,
+   "e": 2.94,
    "fix": false
   },
   {
    "w": "buat",
-   "s": 5.6,
-   "e": 5.78,
-   "src": 2.94,
+   "s": 2.94,
+   "e": 3.12,
    "fix": false
   },
   {
    "w": "renovation,",
-   "s": 5.78,
-   "e": 6.04,
-   "src": 3.12,
+   "s": 3.12,
+   "e": 3.38,
    "fix": false
   },
   {
    "w": "dengar",
-   "s": 6.42,
-   "e": 6.9,
-   "src": 3.76,
+   "s": 3.76,
+   "e": 4.24,
    "fix": false
   },
   {
    "w": "ni",
-   "s": 6.9,
-   "e": 7.04,
-   "src": 4.24,
+   "s": 4.24,
+   "e": 4.38,
    "fix": false
   },
   {
    "w": "betul-betul.",
-   "s": 7.04,
-   "e": 7.56,
-   "src": 4.38,
+   "s": 4.38,
+   "e": 4.9,
    "fix": false
   },
   {
    "w": "Masalah",
-   "s": 7.63,
-   "e": 7.99,
-   "src": 4.98,
+   "s": 4.98,
+   "e": 5.44,
    "fix": false
   },
   {
    "w": "yang",
-   "s": 7.99,
-   "e": 8.17,
-   "src": 5.44,
+   "s": 5.44,
+   "e": 5.62,
    "fix": false
   },
   {
    "w": "biasa",
-   "s": 8.17,
-   "e": 8.47,
-   "src": 5.62,
+   "s": 5.62,
+   "e": 5.92,
    "fix": false
   },
   {
    "w": "kita",
-   "s": 8.47,
-   "e": 8.61,
-   "src": 5.92,
+   "s": 5.92,
+   "e": 6.06,
    "fix": false
   },
   {
    "w": "orang",
-   "s": 8.61,
-   "e": 8.81,
-   "src": 6.06,
+   "s": 6.06,
+   "e": 6.26,
    "fix": false
   },
   {
    "w": "dengar",
-   "s": 8.81,
-   "e": 9.15,
-   "src": 6.26,
+   "s": 6.26,
+   "e": 6.6,
    "fix": false
   },
   {
    "w": "adalah",
-   "s": 9.15,
-   "e": 9.51,
-   "src": 6.6,
+   "s": 6.6,
+   "e": 6.96,
    "fix": false
   },
   {
    "w": "tak",
-   "s": 9.51,
-   "e": 9.87,
-   "src": 6.96,
+   "s": 6.96,
+   "e": 7.5,
    "fix": false
   },
   {
    "w": "tahu",
-   "s": 9.92,
-   "e": 10.18,
-   "src": 7.5,
+   "s": 7.5,
+   "e": 7.76,
    "fix": false
   },
   {
    "w": "nak",
-   "s": 10.18,
-   "e": 10.32,
-   "src": 7.76,
+   "s": 7.76,
+   "e": 7.9,
    "fix": false
   },
   {
    "w": "mula",
-   "s": 10.32,
-   "e": 10.54,
-   "src": 7.9,
+   "s": 7.9,
+   "e": 8.12,
    "fix": false
   },
   {
    "w": "daripada",
-   "s": 10.54,
-   "e": 10.84,
-   "src": 8.12,
+   "s": 8.12,
+   "e": 8.42,
    "fix": false
   },
   {
    "w": "mana",
-   "s": 10.84,
-   "e": 11.1,
-   "src": 8.42,
+   "s": 8.42,
+   "e": 8.68,
    "fix": false
   },
   {
    "w": "dan",
-   "s": 11.1,
-   "e": 11.46,
-   "src": 8.68,
+   "s": 8.68,
+   "e": 9.04,
    "fix": false
   },
   {
    "w": "takut",
-   "s": 11.46,
-   "e": 12.04,
-   "src": 9.04,
+   "s": 9.04,
+   "e": 9.62,
    "fix": false
   },
   {
    "w": "kena",
-   "s": 12.12,
-   "e": 12.23,
-   "src": 9.62,
+   "s": 9.62,
+   "e": 9.94,
    "fix": false
   },
   {
    "w": "tipu",
-   "s": 12.23,
-   "e": 12.59,
-   "src": 9.94,
+   "s": 9.94,
+   "e": 10.3,
    "fix": false
   },
   {
    "w": "dengan",
-   "s": 12.59,
-   "e": 12.75,
-   "src": 10.3,
+   "s": 10.3,
+   "e": 10.46,
    "fix": false
   },
   {
    "w": "harga",
-   "s": 12.75,
-   "e": 13.29,
-   "src": 10.46,
+   "s": 10.46,
+   "e": 11.0,
    "fix": false
   },
   {
    "w": "kontraktor.",
-   "s": 13.29,
-   "e": 13.57,
-   "src": 11.0,
+   "s": 11.0,
+   "e": 11.28,
    "fix": true
   },
   {
-   "w": "kerja",
-   "s": 13.82,
-   "e": 14.34,
-   "src": 14.52,
-   "fix": false
-  },
-  {
-   "w": "ulang-alik",
-   "s": 14.34,
-   "e": 15.1,
-   "src": 15.04,
-   "fix": false
-  },
-  {
-   "w": "dan",
-   "s": 15.1,
-   "e": 15.22,
-   "src": 15.8,
-   "fix": false
-  },
-  {
-   "w": "hasil",
-   "s": 15.22,
-   "e": 15.76,
-   "src": 15.92,
-   "fix": false
-  },
-  {
-   "w": "dia",
-   "s": 15.76,
-   "e": 15.9,
-   "src": 16.46,
-   "fix": false
-  },
-  {
-   "w": "tak",
-   "s": 15.9,
-   "e": 16.06,
-   "src": 16.6,
-   "fix": false
-  },
-  {
-   "w": "sama",
-   "s": 16.06,
-   "e": 16.3,
-   "src": 16.76,
-   "fix": false
-  },
-  {
-   "w": "seperti",
-   "s": 16.3,
-   "e": 16.74,
-   "src": 17.0,
-   "fix": false
-  },
-  {
-   "w": "mana",
-   "s": 16.74,
-   "e": 17.1,
-   "src": 17.44,
-   "fix": true
-  },
-  {
-   "w": "yang",
-   "s": 17.1,
-   "e": 17.36,
-   "src": 17.8,
-   "fix": false
-  },
-  {
-   "w": "kita",
-   "s": 17.36,
-   "e": 17.52,
-   "src": 18.06,
-   "fix": false
-  },
-  {
-   "w": "impikan.",
-   "s": 17.52,
-   "e": 17.92,
-   "src": 18.22,
-   "fix": false
-  },
-  {
-   "w": "Dengan",
-   "s": 18.12,
-   "e": 18.36,
-   "src": 18.82,
-   "fix": false
-  },
-  {
-   "w": "Fi-K",
-   "s": 18.36,
-   "e": 18.58,
-   "src": 19.06,
-   "fix": true
-  },
-  {
-   "w": "Studio,",
-   "s": 18.58,
-   "e": 18.86,
-   "src": 19.28,
-   "fix": false
-  },
-  {
-   "w": "korang",
-   "s": 19.06,
-   "e": 19.26,
-   "src": 19.76,
-   "fix": false
-  },
-  {
-   "w": "dapat",
-   "s": 19.26,
-   "e": 19.4,
-   "src": 19.96,
-   "fix": false
-  },
-  {
-   "w": "3D",
-   "s": 19.4,
-   "e": 19.8,
-   "src": 20.1,
-   "fix": false
-  },
-  {
-   "w": "yang",
-   "s": 19.8,
-   "e": 19.94,
-   "src": 20.5,
-   "fix": false
-  },
-  {
-   "w": "tepat,",
-   "s": 19.94,
-   "e": 20.38,
-   "src": 20.64,
-   "fix": false
-  },
-  {
-   "w": "rumah",
-   "s": 20.48,
-   "e": 20.74,
-   "src": 21.18,
-   "fix": false
-  },
-  {
-   "w": "ikut",
-   "s": 20.74,
-   "e": 21.26,
-   "src": 21.44,
-   "fix": false
-  },
-  {
-   "w": "ukuran",
-   "s": 21.26,
-   "e": 21.66,
-   "src": 21.96,
-   "fix": false
-  },
-  {
-   "w": "yang",
-   "s": 21.66,
-   "e": 21.86,
-   "src": 22.36,
-   "fix": false
-  },
-  {
-   "w": "tepat,",
-   "s": 21.86,
-   "e": 22.3,
-   "src": 22.56,
-   "fix": false
-  },
-  {
-   "w": "dapat",
-   "s": 22.46,
-   "e": 22.68,
-   "src": 23.16,
-   "fix": false
-  },
-  {
-   "w": "anggaran",
-   "s": 22.68,
-   "e": 23.24,
-   "src": 23.38,
-   "fix": false
-  },
-  {
-   "w": "harga",
-   "s": 23.24,
-   "e": 23.74,
-   "src": 23.94,
-   "fix": false
-  },
-  {
-   "w": "untuk",
-   "s": 23.74,
-   "e": 24.08,
-   "src": 24.44,
+   "w": "Kalau",
+   "s": 11.5,
+   "e": 11.64,
    "fix": false
   },
   {
    "w": "renovation",
-   "s": 24.08,
-   "e": 24.5,
-   "src": 24.78,
+   "s": 11.64,
+   "e": 12.0,
+   "fix": false
+  },
+  {
+   "w": "ikut",
+   "s": 12.0,
+   "e": 12.56,
+   "fix": false
+  },
+  {
+   "w": "agak-agak,",
+   "s": 12.56,
+   "e": 13.24,
+   "fix": false
+  },
+  {
+   "w": "kos",
+   "s": 13.32,
+   "e": 13.62,
+   "fix": false
+  },
+  {
+   "w": "meletup,",
+   "s": 13.62,
+   "e": 14.24,
+   "fix": false
+  },
+  {
+   "w": "kerja",
+   "s": 14.52,
+   "e": 15.04,
+   "fix": false
+  },
+  {
+   "w": "ulang-alik",
+   "s": 15.04,
+   "e": 15.8,
    "fix": false
   },
   {
    "w": "dan",
-   "s": 24.5,
-   "e": 25.1,
-   "src": 25.2,
+   "s": 15.8,
+   "e": 15.92,
    "fix": false
   },
   {
-   "w": "kami",
-   "s": 25.1,
-   "e": 25.38,
-   "src": 25.8,
+   "w": "hasil",
+   "s": 15.92,
+   "e": 16.46,
    "fix": false
   },
   {
-   "w": "boleh",
-   "s": 25.38,
-   "e": 25.58,
-   "src": 26.08,
+   "w": "dia",
+   "s": 16.46,
+   "e": 16.6,
    "fix": false
   },
   {
-   "w": "bantu",
-   "s": 25.58,
-   "e": 26.02,
-   "src": 26.28,
+   "w": "tak",
+   "s": 16.6,
+   "e": 16.76,
    "fix": false
   },
   {
-   "w": "daripada",
-   "s": 26.02,
-   "e": 26.34,
-   "src": 26.72,
+   "w": "sama",
+   "s": 16.76,
+   "e": 17.0,
    "fix": false
   },
   {
-   "w": "A",
-   "s": 26.34,
-   "e": 26.58,
-   "src": 27.04,
+   "w": "seperti",
+   "s": 17.0,
+   "e": 17.44,
    "fix": false
   },
   {
-   "w": "sampai",
-   "s": 26.58,
-   "e": 26.96,
-   "src": 27.28,
+   "w": "mana",
+   "s": 17.44,
+   "e": 17.8,
+   "fix": true
+  },
+  {
+   "w": "yang",
+   "s": 17.8,
+   "e": 18.06,
    "fix": false
   },
   {
-   "w": "Z",
-   "s": 26.96,
-   "e": 27.26,
-   "src": 27.66,
+   "w": "kita",
+   "s": 18.06,
+   "e": 18.22,
    "fix": false
   },
   {
-   "w": "kalau",
-   "s": 27.44,
-   "e": 27.59,
-   "src": 27.96,
+   "w": "impikan.",
+   "s": 18.22,
+   "e": 18.62,
+   "fix": false
+  },
+  {
+   "w": "Dengan",
+   "s": 18.82,
+   "e": 19.06,
+   "fix": false
+  },
+  {
+   "w": "Fi-K",
+   "s": 19.06,
+   "e": 19.28,
+   "fix": true
+  },
+  {
+   "w": "Studio,",
+   "s": 19.28,
+   "e": 19.56,
    "fix": false
   },
   {
    "w": "korang",
-   "s": 27.59,
-   "e": 28.05,
-   "src": 28.48,
+   "s": 19.76,
+   "e": 19.96,
    "fix": false
   },
   {
-   "w": "berminat.",
-   "s": 28.05,
-   "e": 28.37,
-   "src": 28.94,
+   "w": "dapat",
+   "s": 19.96,
+   "e": 20.1,
    "fix": false
   },
   {
-   "w": "DM",
-   "s": 28.37,
-   "e": 28.59,
-   "src": 29.26,
+   "w": "3D",
+   "s": 20.1,
+   "e": 20.5,
    "fix": false
   },
   {
-   "w": "kami",
-   "s": 28.59,
-   "e": 28.79,
-   "src": 29.48,
+   "w": "yang",
+   "s": 20.5,
+   "e": 20.64,
+   "fix": false
+  },
+  {
+   "w": "tepat,",
+   "s": 20.64,
+   "e": 21.08,
+   "fix": false
+  },
+  {
+   "w": "rumah",
+   "s": 21.18,
+   "e": 21.44,
+   "fix": false
+  },
+  {
+   "w": "ikut",
+   "s": 21.44,
+   "e": 21.96,
+   "fix": false
+  },
+  {
+   "w": "ukuran",
+   "s": 21.96,
+   "e": 22.36,
+   "fix": false
+  },
+  {
+   "w": "yang",
+   "s": 22.36,
+   "e": 22.56,
+   "fix": false
+  },
+  {
+   "w": "tepat,",
+   "s": 22.56,
+   "e": 23.0,
+   "fix": false
+  },
+  {
+   "w": "dapat",
+   "s": 23.16,
+   "e": 23.38,
+   "fix": false
+  },
+  {
+   "w": "anggaran",
+   "s": 23.38,
+   "e": 23.94,
+   "fix": false
+  },
+  {
+   "w": "harga",
+   "s": 23.94,
+   "e": 24.44,
    "fix": false
   },
   {
    "w": "untuk",
-   "s": 28.79,
-   "e": 29.13,
-   "src": 29.68,
+   "s": 24.44,
+   "e": 24.78,
+   "fix": false
+  },
+  {
+   "w": "renovation",
+   "s": 24.78,
+   "e": 25.2,
+   "fix": false
+  },
+  {
+   "w": "dan",
+   "s": 25.2,
+   "e": 25.8,
+   "fix": false
+  },
+  {
+   "w": "kami",
+   "s": 25.8,
+   "e": 26.08,
+   "fix": false
+  },
+  {
+   "w": "boleh",
+   "s": 26.08,
+   "e": 26.28,
+   "fix": false
+  },
+  {
+   "w": "bantu",
+   "s": 26.28,
+   "e": 26.72,
+   "fix": false
+  },
+  {
+   "w": "daripada",
+   "s": 26.72,
+   "e": 27.04,
+   "fix": false
+  },
+  {
+   "w": "A",
+   "s": 27.04,
+   "e": 27.28,
+   "fix": false
+  },
+  {
+   "w": "sampai",
+   "s": 27.28,
+   "e": 27.66,
+   "fix": false
+  },
+  {
+   "w": "Z",
+   "s": 27.66,
+   "e": 27.96,
+   "fix": false
+  },
+  {
+   "w": "kalau",
+   "s": 27.96,
+   "e": 28.48,
+   "fix": false
+  },
+  {
+   "w": "korang",
+   "s": 28.48,
+   "e": 28.94,
+   "fix": false
+  },
+  {
+   "w": "berminat.",
+   "s": 28.94,
+   "e": 29.26,
+   "fix": false
+  },
+  {
+   "w": "DM",
+   "s": 29.26,
+   "e": 29.48,
+   "fix": false
+  },
+  {
+   "w": "kami",
+   "s": 29.48,
+   "e": 29.68,
+   "fix": false
+  },
+  {
+   "w": "untuk",
+   "s": 29.68,
+   "e": 30.02,
    "fix": false
   },
   {
    "w": "keterangan",
-   "s": 29.13,
-   "e": 29.57,
-   "src": 30.02,
+   "s": 30.02,
+   "e": 30.46,
    "fix": false
   },
   {
    "w": "lanjut.",
-   "s": 29.57,
-   "e": 29.95,
-   "src": 30.46,
+   "s": 30.46,
+   "e": 30.84,
    "fix": false
   }
  ],
- "graphics": [
+ "broll": [
   {
-   "s": 0,
-   "e": 2.78,
-   "kind": "hook",
-   "lines": [
-    "Renovate ikut",
-    "agak-agak?"
-   ],
-   "punch": "Kos meletup.",
-   "punch_at": 1.9,
-   "note": "Hook: masalah paling sakit dulu (dipindah dari 0:11)"
+   "s": 0.0,
+   "e": 1.72,
+   "kind": "pan",
+   "clip": "living_banglo",
+   "eyebrow": "Rekaan 3D Fi-K Studio",
+   "label": "",
+   "note": "Hook visual: pan ruang tamu rekaan Fi-K, terus nampak hasil"
   },
   {
-   "s": 2.83,
-   "e": 6.16,
-   "kind": "key",
-   "text": "Baru dapat kunci rumah?",
-   "draw_at": 3.8,
-   "note": "Ikon kunci dilukis garis halus, sasar penonton"
+   "s": 16.76,
+   "e": 18.74,
+   "kind": "pan",
+   "clip": "dining_banglo",
+   "eyebrow": "Rekaan 3D Fi-K Studio",
+   "label": "Rumah yang korang impikan",
+   "note": "Pada 'seperti mana yang kita impikan'"
   },
   {
-   "s": 7.63,
-   "e": 13.61,
-   "kind": "list",
-   "eyebrow": "Masalah biasa",
-   "items": [
-    [
-     "Tak tahu nak mula dari mana",
-     9.51
-    ],
-    [
-     "Takut kena tipu harga kontraktor",
-     11.46
-    ]
-   ],
-   "note": "Senarai masalah muncul ikut ayat"
+   "s": 19.72,
+   "e": 21.12,
+   "kind": "still",
+   "img": "render_living",
+   "sketch": "render_living_sketch",
+   "eyebrow": "Rekaan 3D Fi-K Studio",
+   "label": "3D yang tepat",
+   "note": "Lakaran garis bertukar jadi render 3D"
   },
   {
-   "s": 13.61,
-   "e": 17.96,
-   "kind": "strike",
-   "eyebrow": "Renovate ikut agak-agak",
-   "items": [
-    [
-     "Kos meletup",
-     13.61
-    ],
-    [
-     "Kerja ulang-alik",
-     13.82
-    ],
-    [
-     "Hasil tak seperti impian",
-     15.22
-    ]
-   ],
-   "note": "Ulang 3 akibat, dipangkah satu per satu"
-  },
-  {
-   "s": 18.04,
-   "e": 19.02,
-   "kind": "brand",
-   "note": "Logo Fi-K Studio (hijau) atas kad krim, masuk tepat pada 'Fi-K Studio'"
-  },
-  {
-   "s": 19.02,
-   "e": 20.42,
-   "kind": "broll",
-   "img": "dining",
-   "sketch": "dining_sketch",
-   "label": "Rekaan 3D yang tepat",
-   "note": "B-roll CFik017: lakaran garis bertukar jadi gambar sebenar (3D ke realiti)"
-  },
-  {
-   "s": 20.42,
-   "e": 22.38,
-   "kind": "broll",
+   "s": 21.12,
+   "e": 23.08,
+   "kind": "still",
    "img": "family",
    "dims": 1,
+   "eyebrow": "Projek siap Fi-K Studio",
    "label": "Ikut ukuran sebenar",
-   "note": "B-roll: garis dimensi dilukis atas dinding TV, punch-in ke panel kayu"
+   "note": "Gambar projek siap (CFik017) + garis dimensi"
   },
   {
-   "s": 22.38,
-   "e": 24.54,
-   "kind": "broll",
-   "img": "kitchen",
+   "s": 23.08,
+   "e": 25.24,
+   "kind": "pan",
+   "clip": "kitchen_teres",
    "quote": [
     "Kabinet & kaunter",
     "Kemasan dinding & lantai",
     "Lampu & pendawaian"
    ],
+   "eyebrow": "Rekaan 3D Fi-K Studio",
    "label": "Anggaran harga jelas",
-   "note": "B-roll: dapur kering, punch-in ke kaunter marmar + kad sebut harga ringkas"
+   "note": "Pan dapur kering + kad sebut harga"
   },
   {
-   "s": 24.54,
-   "e": 26.02,
-   "kind": "broll",
-   "img": "toilet",
-   "label": "Kemasan sampai siap",
-   "note": "B-roll: butiran jubin mozek bilik air"
+   "s": 25.24,
+   "e": 25.92,
+   "kind": "pan",
+   "clip": "m_master",
+   "eyebrow": "Rekaan 3D Fi-K Studio",
+   "label": "Bilik tidur utama",
+   "note": "Montaj A-Z: 4 rumah berbeza"
   },
   {
-   "s": 26.02,
-   "e": 27.44,
+   "s": 25.92,
+   "e": 26.6,
+   "kind": "pan",
+   "clip": "m_kids",
+   "eyebrow": "Rekaan 3D Fi-K Studio",
+   "label": "Bilik anak",
+   "note": "Montaj"
+  },
+  {
+   "s": 26.6,
+   "e": 27.28,
+   "kind": "pan",
+   "clip": "m_bath",
+   "eyebrow": "Rekaan 3D Fi-K Studio",
+   "label": "",
+   "note": "Montaj (bilik air utama), label diganti garis A-Z"
+  },
+  {
+   "s": 27.28,
+   "e": 27.96,
+   "kind": "pan",
+   "clip": "m_condo",
+   "eyebrow": "Rekaan 3D Fi-K Studio",
+   "label": "",
+   "note": "Montaj (ruang makan kondo), label diganti garis A-Z"
+  }
+ ],
+ "graphics": [
+  {
+   "s": 0.0,
+   "e": 1.72,
+   "kind": "hook",
+   "lines": [
+    "Baru dapat",
+    "kunci rumah?"
+   ],
+   "note": "Hook: soalan terus kepada sasaran"
+  },
+  {
+   "s": 3.76,
+   "e": 4.95,
+   "kind": "pill",
+   "text": "Dengar ni dulu",
+   "note": "Penegasan + punch-in"
+  },
+  {
+   "s": 4.98,
+   "e": 11.4,
+   "kind": "list",
+   "eyebrow": "Masalah biasa",
+   "items": [
+    [
+     "Tak tahu nak mula dari mana",
+     6.96
+    ],
+    [
+     "Takut kena tipu harga kontraktor",
+     9.04
+    ]
+   ],
+   "note": "Senarai masalah muncul ikut ayat"
+  },
+  {
+   "s": 11.5,
+   "e": 16.76,
+   "kind": "strike",
+   "eyebrow": "Renovate ikut agak-agak",
+   "items": [
+    [
+     "Kos meletup",
+     13.32
+    ],
+    [
+     "Kerja ulang-alik",
+     14.52
+    ],
+    [
+     "Hasil tak seperti impian",
+     15.92
+    ]
+   ],
+   "note": "Akibat dipangkah satu per satu"
+  },
+  {
+   "s": 18.74,
+   "e": 19.72,
+   "kind": "brand",
+   "note": "Logo Fi-K Studio (hijau) pada 'Fi-K Studio'"
+  },
+  {
+   "s": 26.72,
+   "e": 28.1,
    "kind": "az",
    "steps": [
     "Konsep",
@@ -1359,19 +1253,19 @@
     "Bina",
     "Serah kunci"
    ],
-   "note": "Garis proses A ke Z dilukis kiri ke kanan"
+   "note": "Garis proses A ke Z atas montaj"
   },
   {
-   "s": 27.51,
-   "e": 30.06,
+   "s": 29.26,
+   "e": 31.068,
    "kind": "cta",
    "text": "DM kami",
    "sub": "untuk keterangan lanjut",
    "note": "CTA tenang, ikon kapal terbang kertas"
   },
   {
-   "s": 30.06,
-   "e": 32.26,
+   "s": 31.068,
+   "e": 33.268,
    "kind": "outro",
    "note": "Kad penutup krim + logo hijau"
   }
@@ -1379,151 +1273,161 @@
  "sfx": [
   {
    "t": 0.0,
-   "name": "thud",
-   "gain": 0.55
-  },
-  {
-   "t": 0.02,
    "name": "air",
    "gain": 0.5
   },
   {
-   "t": 1.9,
-   "name": "tick",
-   "gain": 0.6
+   "t": 0.05,
+   "name": "thud",
+   "gain": 0.5
   },
   {
-   "t": 2.78,
+   "t": 1.72,
    "name": "whoosh",
-   "gain": 0.45
-  },
-  {
-   "t": 3.8,
-   "name": "pen",
    "gain": 0.4
   },
   {
-   "t": 6.3,
+   "t": 3.76,
    "name": "thud",
    "gain": 0.35
   },
   {
-   "t": 7.63,
+   "t": 4.98,
    "name": "whoosh",
-   "gain": 0.35
+   "gain": 0.3
   },
   {
-   "t": 9.51,
+   "t": 6.96,
    "name": "tick",
    "gain": 0.5
   },
   {
-   "t": 11.46,
+   "t": 9.04,
    "name": "tick",
    "gain": 0.5
   },
   {
-   "t": 13.61,
+   "t": 11.5,
+   "name": "whoosh",
+   "gain": 0.3
+  },
+  {
+   "t": 13.32,
    "name": "tick",
    "gain": 0.45
   },
   {
-   "t": 13.82,
+   "t": 14.52,
    "name": "tick",
    "gain": 0.45
   },
   {
-   "t": 15.22,
+   "t": 15.92,
    "name": "tick",
    "gain": 0.45
   },
   {
-   "t": 18.04,
+   "t": 16.76,
+   "name": "whoosh",
+   "gain": 0.45
+  },
+  {
+   "t": 18.74,
    "name": "chime",
    "gain": 0.55
   },
   {
-   "t": 19.02,
-   "name": "whoosh",
-   "gain": 0.5
-  },
-  {
-   "t": 19.1,
+   "t": 19.72,
    "name": "pen",
    "gain": 0.45
   },
   {
-   "t": 19.8,
+   "t": 20.4,
    "name": "shimmer",
    "gain": 0.45
   },
   {
-   "t": 20.42,
+   "t": 21.12,
    "name": "swipe",
    "gain": 0.45
   },
   {
-   "t": 20.7,
+   "t": 21.4,
    "name": "tick",
-   "gain": 0.35
+   "gain": 0.3
   },
   {
-   "t": 21.1,
+   "t": 21.8,
    "name": "tick",
-   "gain": 0.35
+   "gain": 0.3
   },
   {
-   "t": 22.38,
+   "t": 23.08,
    "name": "swipe",
    "gain": 0.45
-  },
-  {
-   "t": 22.8,
-   "name": "tick",
-   "gain": 0.35
-  },
-  {
-   "t": 23.15,
-   "name": "tick",
-   "gain": 0.35
   },
   {
    "t": 23.5,
    "name": "tick",
+   "gain": 0.3
+  },
+  {
+   "t": 23.85,
+   "name": "tick",
+   "gain": 0.3
+  },
+  {
+   "t": 24.2,
+   "name": "tick",
+   "gain": 0.3
+  },
+  {
+   "t": 25.24,
+   "name": "swipe",
+   "gain": 0.4
+  },
+  {
+   "t": 25.92,
+   "name": "swipe",
    "gain": 0.35
   },
   {
-   "t": 24.54,
+   "t": 26.6,
    "name": "swipe",
-   "gain": 0.45
+   "gain": 0.35
   },
   {
-   "t": 26.02,
-   "name": "whoosh",
-   "gain": 0.45
-  },
-  {
-   "t": 26.1,
+   "t": 26.72,
    "name": "pen",
-   "gain": 0.4
+   "gain": 0.35
   },
   {
-   "t": 26.96,
+   "t": 27.28,
+   "name": "swipe",
+   "gain": 0.35
+  },
+  {
+   "t": 27.66,
    "name": "chime",
+   "gain": 0.35
+  },
+  {
+   "t": 27.96,
+   "name": "whoosh",
    "gain": 0.4
   },
   {
-   "t": 27.51,
+   "t": 29.26,
    "name": "thud",
    "gain": 0.35
   },
   {
-   "t": 30.06,
+   "t": 31.068,
    "name": "whoosh",
    "gain": 0.45
   },
   {
-   "t": 30.31,
+   "t": 31.318,
    "name": "chime",
    "gain": 0.6
   }
@@ -1531,103 +1435,98 @@
  "zoom": [
   {
    "t": 0,
-   "scale": 1.16,
-   "oy": 30
-  },
-  {
-   "t": 2.779,
-   "scale": 1.16,
-   "oy": 30
-  },
-  {
-   "t": 2.78,
    "scale": 1.0,
    "oy": 40
   },
   {
-   "t": 6.26,
+   "t": 3.7,
    "scale": 1.0,
    "oy": 40
   },
   {
-   "t": 6.56,
+   "t": 3.98,
    "scale": 1.12,
    "oy": 32
   },
   {
-   "t": 7.63,
+   "t": 4.97,
    "scale": 1.12,
    "oy": 32
   },
   {
-   "t": 7.63,
+   "t": 4.98,
    "scale": 1.0,
    "oy": 40
   },
   {
-   "t": 9.87,
+   "t": 9.03,
    "scale": 1.0,
    "oy": 40
   },
   {
-   "t": 9.87,
-   "scale": 1.08,
-   "oy": 34
-  },
-  {
-   "t": 12.12,
-   "scale": 1.08,
-   "oy": 34
-  },
-  {
-   "t": 12.12,
-   "scale": 1.14,
-   "oy": 30
-  },
-  {
-   "t": 13.61,
-   "scale": 1.14,
-   "oy": 30
-  },
-  {
-   "t": 13.61,
-   "scale": 1.0,
-   "oy": 40
-  },
-  {
-   "t": 15.85,
-   "scale": 1.0,
-   "oy": 40
-  },
-  {
-   "t": 16.15,
-   "scale": 1.08,
-   "oy": 34
-  },
-  {
-   "t": 19.0,
-   "scale": 1.08,
-   "oy": 34
-  },
-  {
-   "t": 26.02,
-   "scale": 1.0,
-   "oy": 40
-  },
-  {
-   "t": 27.44,
-   "scale": 1.0,
-   "oy": 40
-  },
-  {
-   "t": 27.44,
+   "t": 9.04,
    "scale": 1.1,
+   "oy": 33
+  },
+  {
+   "t": 11.49,
+   "scale": 1.1,
+   "oy": 33
+  },
+  {
+   "t": 11.5,
+   "scale": 1.0,
+   "oy": 40
+  },
+  {
+   "t": 13.31,
+   "scale": 1.0,
+   "oy": 40
+  },
+  {
+   "t": 13.32,
+   "scale": 1.12,
    "oy": 32
   },
   {
-   "t": 30.06,
-   "scale": 1.1,
+   "t": 14.51,
+   "scale": 1.12,
    "oy": 32
+  },
+  {
+   "t": 14.52,
+   "scale": 1.06,
+   "oy": 36
+  },
+  {
+   "t": 16.76,
+   "scale": 1.06,
+   "oy": 36
+  },
+  {
+   "t": 18.74,
+   "scale": 1.0,
+   "oy": 40
+  },
+  {
+   "t": 27.96,
+   "scale": 1.0,
+   "oy": 40
+  },
+  {
+   "t": 29.25,
+   "scale": 1.0,
+   "oy": 40
+  },
+  {
+   "t": 29.26,
+   "scale": 1.1,
+   "oy": 33
+  },
+  {
+   "t": 31.068,
+   "scale": 1.1,
+   "oy": 33
   }
  ]
 }
