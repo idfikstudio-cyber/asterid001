@@ -1,0 +1,189 @@
+<meta charset="utf-8">
+<title>Thumbnail CFik019</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@1,500;1,600;1,700&family=Instrument+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: three 9:16 thumbnail options side by side (stack on phones), notes under each. Same Fi-K tokens as the edit preview. */
+:root{
+  --bg:#f1f2ef; --surface:#fbfbf9; --ink:#1d2321; --muted:#5b6461; --line:#d9ddd8; --chip:#e7eae5;
+  --accent:#304945; --on-accent:#f4efe7; --sand:#b89a6a;
+  /* on-thumbnail palette: fixed, the image looks the same in every page theme */
+  --v-green:#304945; --v-cream:#f4efe7; --v-sand:#e6d3b3; --v-white:#ffffff; --v-ink:#121816;
+  --f-display:"Jost","Futura","Century Gothic",system-ui,sans-serif;
+  --f-body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-accent:"Cormorant Garamond","Iowan Old Style",Georgia,serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#111614; --surface:#18201d; --ink:#e6ebe7; --muted:#9aa6a1; --line:#2a3531; --chip:#212b27;
+  --accent:#9cc3b9; --on-accent:#10201c; --sand:#d8bd8f; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#111614; --surface:#18201d; --ink:#e6ebe7; --muted:#9aa6a1; --line:#2a3531; --chip:#212b27;
+  --accent:#9cc3b9; --on-accent:#10201c; --sand:#d8bd8f; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.55}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:22px 56px}
+header{display:flex;flex-wrap:wrap;gap:10px 24px;align-items:end;justify-content:space-between;margin-bottom:18px}
+.eyebrow{font:500 12px var(--f-display);letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin:0 0 4px}
+h1{font:400 clamp(26px,4vw,38px)/1.08 var(--f-display);margin:0;letter-spacing:.01em;text-wrap:balance}
+h1 em{font-family:var(--f-accent);font-weight:500;font-size:1.12em}
+.intro{max-width:68ch;margin:0 0 16px;color:var(--muted)}
+.toggles{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px}
+.tog{font:500 13px var(--f-body);border:1px solid var(--line);background:var(--surface);color:var(--muted);border-radius:999px;padding:6px 12px;cursor:pointer;display:inline-flex;gap:6px;align-items:center;min-height:34px}
+.tog::before{content:"";width:8px;height:8px;border-radius:50%;border:1.5px solid currentColor}
+.tog[aria-pressed="true"]{color:var(--ink);border-color:var(--ink)}
+.tog[aria-pressed="true"]::before{background:var(--accent);border-color:var(--accent)}
+.tog:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.opts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;align-items:start}
+@media (max-width:900px){.opts{grid-template-columns:minmax(0,1fr)}.opt{max-width:380px;margin-inline:auto;width:100%}}
+.opt{display:flex;flex-direction:column;gap:12px;min-width:0}
+.opt .head{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.opt .tag{font:500 11px var(--f-display);letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.opt .pick{font:500 11px var(--f-display);letter-spacing:.14em;text-transform:uppercase;background:var(--accent);color:var(--on-accent);padding:3px 9px;border-radius:99px}
+.opt h2{font:400 21px/1.2 var(--f-display);margin:0}
+.opt p{margin:0;color:var(--muted);font-size:14px}
+.opt ul{margin:0;padding-left:18px;color:var(--muted);font-size:13.5px;display:grid;gap:4px}
+
+/* ---------- the thumbnail canvas (1080x1920 at any size, via container units) ---------- */
+.tn{position:relative;width:100%;max-width:100%;aspect-ratio:9/16;border-radius:16px;overflow:hidden;background:var(--v-ink);container-type:size;box-shadow:0 18px 44px -22px rgba(20,35,30,.6)}
+.tn .bgimg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.tn .wm{position:absolute;left:7cqw;top:15cqh;width:11cqw;opacity:.95}
+.guide{position:absolute;inset:0;pointer-events:none;display:none}
+.show-crop .guide.crop{display:block}
+.guide.crop::before,.guide.crop::after{content:"";position:absolute;left:0;right:0;height:12.5cqh;background:rgba(0,0,0,.62)}
+.guide.crop::before{top:0}.guide.crop::after{bottom:0}
+.guide.crop span{position:absolute;left:3cqw;top:13.2cqh;font:500 2.4cqw var(--f-body);color:#fff;background:rgba(0,0,0,.55);padding:.4cqw 1.6cqw;border-radius:99px}
+.show-ui .guide.ui{display:block}
+.guide.ui i{position:absolute;background:repeating-linear-gradient(45deg,rgba(255,80,60,.26) 0 6px,rgba(255,80,60,.1) 6px 12px);outline:1px dashed rgba(255,140,120,.9)}
+
+/* torn photo layer (A) */
+.torn{position:absolute;left:0;right:0;top:0;height:44cqh;filter:drop-shadow(0 1.2cqw 1.6cqw rgba(0,0,0,.55))}
+.torn .paper{position:absolute;inset:0;background:var(--v-cream)}
+.torn img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+.shade-top{position:absolute;inset:0 0 auto;height:40cqh;background:linear-gradient(rgba(12,16,15,.55),rgba(12,16,15,0))}
+.shade-bot{position:absolute;inset:auto 0 0;height:46cqh;background:linear-gradient(rgba(12,16,15,0),rgba(12,16,15,.72) 38%,rgba(12,16,15,.9))}
+
+/* type */
+.t-eyebrow{font:500 5.4cqw/1.15 var(--f-display);color:var(--v-cream);text-shadow:0 .3cqw 1.6cqw rgba(0,0,0,.5)}
+.t-it{font:italic 700 19cqw/.86 var(--f-accent);color:var(--v-sand);text-shadow:0 .4cqw 2.4cqw rgba(0,0,0,.45)}
+.t-big{font:600 12.5cqw/.98 var(--f-display);color:var(--v-white);letter-spacing:-.012em;text-shadow:0 .4cqw 2.4cqw rgba(0,0,0,.45)}
+.t-sub{font:400 4.6cqw/1.25 var(--f-display);color:var(--v-cream);opacity:.92}
+.pill3{display:flex;flex-wrap:wrap;gap:1.6cqw}
+.pill3 span{font:500 3.6cqw var(--f-display);color:var(--v-green);background:var(--v-cream);border-radius:99px;padding:1cqw 3cqw}
+.blockA{position:absolute;left:7cqw;right:7cqw;top:61cqh;display:flex;flex-direction:column;gap:.9cqh}
+.blockA .t-big{margin-top:-1cqh}
+
+/* B: face full, cracked line under the hook */
+.blockB{position:absolute;left:7cqw;right:7cqw;top:57cqh;display:flex;flex-direction:column;gap:1.2cqh}
+.blockB .t-big{font-size:16cqw}
+.blockB .crack{width:100%;height:5cqh;overflow:visible}
+.blockB .crack path{fill:none;stroke:var(--v-sand);stroke-width:.7;stroke-linejoin:round;stroke-linecap:round}
+.tagtop{position:absolute;left:7cqw;top:15cqh;display:flex;gap:2cqw;align-items:center;background:rgba(18,24,22,.72);border:.3cqw solid rgba(230,211,179,.6);border-radius:99px;padding:1.2cqw 3.4cqw;font:500 3.8cqw var(--f-display);color:var(--v-cream)}
+
+/* C: diagonal sketch-to-render split on top, face below */
+.split{position:absolute;left:0;right:0;top:0;height:42cqh;clip-path:polygon(0 0,100% 0,100% 88%,0 100%);filter:drop-shadow(0 1cqw 1.4cqw rgba(0,0,0,.5))}
+.split img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 45%}
+.split .sk{clip-path:polygon(0 0,46% 0,30% 100%,0 100%)}
+.split .seam{position:absolute;inset:0;width:100%;height:100%}
+.split .seam line{stroke:var(--v-cream);stroke-width:.5}
+.split .lab{position:absolute;top:31cqh;font:500 2.8cqw var(--f-display);letter-spacing:.24em;text-transform:uppercase;color:var(--v-green);background:var(--v-cream);padding:.6cqw 2cqw;border-radius:99px}
+.blockC{position:absolute;left:7cqw;right:7cqw;top:61cqh;display:flex;flex-direction:column;gap:1cqh}
+</style>
+
+<div class="wrap">
+  <header>
+    <div>
+      <p class="eyebrow">Fi-K Studio · CFik019 · cover 1080×1920</p>
+      <h1>Cadangan <em>thumbnail</em></h1>
+    </div>
+  </header>
+  <p class="intro">Tiga arah berbeza. Wajah diambil dari video sendiri (sudah di-grade), latar dari rekaan 3D Fi-K. Hidupkan “Potongan grid IG” untuk tengok bahagian yang masih nampak di profil Instagram (3:4). Semua teks penting diletak dalam zon tu.</p>
+  <div class="toggles">
+    <button class="tog" id="t-crop" aria-pressed="false">Potongan grid IG 3:4</button>
+    <button class="tog" id="t-ui" aria-pressed="false">Zon UI TikTok/Reels</button>
+  </div>
+
+  <div class="opts" id="opts">
+    <section class="opt">
+      <div class="head"><span class="tag">Pilihan A</span><span class="pick">Disyorkan</span></div>
+      <div class="tn" id="tnA">
+        <img class="bgimg" src="assets/face_0_6.jpg" alt="" style="object-position:50% 0;transform:translateY(12cqh) scale(1.02)">
+        <div class="shade-bot"></div>
+        <div class="torn" id="tornA"><div class="paper"></div><img src="assets/dream_living.jpg" alt=""></div>
+        <div class="shade-top"></div>
+        <img class="wm" src="assets/logo-white.png" alt="">
+        <div class="blockA">
+          <span class="t-eyebrow">Baru dapat kunci rumah?</span>
+          <span class="t-it">Jangan</span>
+          <span class="t-big">renovate dulu.</span>
+          <span class="t-sub">…sebelum dapat 3 benda ni</span>
+        </div>
+        <div class="guide crop"><span>Nampak di grid IG</span></div>
+        <div class="guide ui"><i style="left:0;right:0;top:0;height:10%"></i><i style="left:0;right:0;bottom:0;height:20%"></i><i style="right:0;top:10%;bottom:20%;width:13%"></i></div>
+      </div>
+      <h2>“Baru dapat kunci rumah? Jangan renovate dulu.”</h2>
+      <p>Terus panggil sasaran, kemudian larangan yang buat orang berhenti scroll. Rumah impian di atas koyak ke wajah kau, sama dengan babak koyak dalam video.</p>
+      <ul><li>“3 benda ni” = 3D, ukuran, anggaran harga, betul-betul disebut dalam video</li><li>Mata kau tepat ke kamera</li></ul>
+    </section>
+
+    <section class="opt">
+      <div class="head"><span class="tag">Pilihan B</span></div>
+      <div class="tn" id="tnB">
+        <img class="bgimg" src="assets/face_22_0.jpg" alt="" style="object-position:50% 0;transform:translateY(4cqh) scale(1.06)">
+        <div class="shade-bot"></div>
+        <div class="tagtop">Untuk pemilik rumah baru</div>
+        <div class="blockB">
+          <span class="t-eyebrow">Renovate ikut agak-agak?</span>
+          <svg class="crack" viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0 6 L14 5.2 L19 7.4 L27 3.6 L33 6.2 L41 4.4 L46 8 L52 2.6 L58 6.6 L66 4.8 L71 7.2 L80 3.8 L87 6 L100 5"/></svg>
+          <span class="t-big">Kos <span style="font:italic 700 18cqw/.9 var(--f-accent);color:var(--v-sand)">meletup.</span></span>
+        </div>
+        <div class="guide crop"><span>Nampak di grid IG</span></div>
+        <div class="guide ui"><i style="left:0;right:0;top:0;height:10%"></i><i style="left:0;right:0;bottom:0;height:20%"></i><i style="right:0;top:10%;bottom:20%;width:13%"></i></div>
+      </div>
+      <h2>“Renovate ikut agak-agak? Kos meletup.”</h2>
+      <p>Paling tajam dari segi kesakitan: wang. Wajah kau dengan gerak ibu jari ke belakang, tanpa latar rekaan, jadi fokus 100% pada ayat.</p>
+      <ul><li>Teks paling besar antara tiga pilihan, mudah dibaca di skrin kecil</li><li>Kurang tunjuk hasil kerja Fi-K</li></ul>
+    </section>
+
+    <section class="opt">
+      <div class="head"><span class="tag">Pilihan C</span></div>
+      <div class="tn" id="tnC">
+        <img class="bgimg" src="assets/face_0_6.jpg" alt="" style="object-position:50% 0;transform:translateY(12cqh) scale(1.02)">
+        <div class="shade-bot"></div>
+        <div class="split">
+          <img src="assets/render_living.jpg" alt="">
+          <img class="sk" src="assets/render_living_sketch.jpg" alt="">
+          <svg class="seam" viewBox="0 0 100 100" preserveAspectRatio="none"><line x1="46" y1="0" x2="30" y2="100"/></svg>
+          <span class="lab" style="left:5cqw">Lakaran</span><span class="lab" style="left:52cqw;top:27cqh">Rekaan 3D</span>
+        </div>
+        <img class="wm" src="assets/logo-white.png" alt="" style="top:13cqh">
+        <div class="blockC">
+          <span class="t-big" style="font-size:12cqw">3D dulu,</span>
+          <span class="t-it" style="font-size:15cqw">baru renovate.</span>
+          <div class="pill3"><span>3D tepat</span><span>Ukuran tepat</span><span>Anggaran harga</span></div>
+        </div>
+        <div class="guide crop"><span>Nampak di grid IG</span></div>
+        <div class="guide ui"><i style="left:0;right:0;top:0;height:10%"></i><i style="left:0;right:0;bottom:0;height:20%"></i><i style="right:0;top:10%;bottom:20%;width:13%"></i></div>
+      </div>
+      <h2>“3D dulu, baru renovate.”</h2>
+      <p>Paling premium dan paling “jenama”: lakaran bertukar jadi rekaan 3D, terus tunjuk servis Fi-K. Hook lebih lembut, sesuai untuk penonton yang dah kenal Fi-K.</p>
+      <ul><li>Tiga pil = tiga manfaat yang disebut dalam video</li><li>Kurang rasa “urgent” berbanding A dan B</li></ul>
+    </section>
+  </div>
+</div>
+
+<script>
+// Torn bottom edge for option A: jagged clip on the photo, a cream "paper" layer a little lower shows the torn fibres.
+(function(){
+  let r=11;const rnd=()=>(r=(r*16807)%2147483647)/2147483647;
+  const n=44,pts=[],paper=[];
+  for(let k=0;k<=n;k++){const x=k/n*100,base=90-x*.1,j=(rnd()-.5)*(k%3?3:6.5);pts.push(`${x.toFixed(1)}% ${(base+j).toFixed(1)}%`);paper.push(`${x.toFixed(1)}% ${(base+j+1.6+rnd()*1.6).toFixed(1)}%`)}
+  const t=document.getElementById("tornA");
+  t.querySelector("img").style.clipPath=`polygon(0 0,100% 0,${[...pts].reverse().join(",")})`;
+  t.querySelector(".paper").style.clipPath=`polygon(0 0,100% 0,${[...paper].reverse().join(",")})`;
+})();
+for(const [id,cls] of [["t-crop","show-crop"],["t-ui","show-ui"]]){
+  const b=document.getElementById(id);
+  b.onclick=()=>{const on=b.getAttribute("aria-pressed")!=="true";b.setAttribute("aria-pressed",on);document.getElementById("opts").classList.toggle(cls,on)};
+}
+</script>
