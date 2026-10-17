@@ -20,8 +20,11 @@ def build(graded):
               "[ga][gbr][m1]maskedmerge[gf]","[gf]split[gc][gd]","[gd]eq=brightness=-0.08,format=gbrp[gdk]","[gdk][gc][m2]maskedmerge[gv]"];v="[gv]"
     fc.append(f"{v}tpad=start_mode=clone:start_duration={P.get('intro',0)}:stop_mode=clone:stop_duration={P['outro']},scale=-2:1280,format=yuv420p[vo]")
     fc.append(f"[ca]highpass=f=80,afftdn=nr=8:nf=-42,deesser=i=0.3,acompressor=threshold=-20dB:ratio=3:attack=8:release=120:makeup=2,"
-              f"equalizer=f=3200:t=q:w=1.2:g=2,loudnorm=I=-15:TP=-1.5:LRA=7,adelay={int(P.get('intro',0)*1000)}:all=1,apad=pad_dur={P['outro']}[ao]")
-    out=f"{outdir}/{'graded' if graded else 'orig'}.mp4"
+              f"equalizer=f=3200:t=q:w=1.2:g=2,loudnorm=I=-15:TP=-1.5:LRA=7,aresample=48000,aformat=channel_layouts=stereo[an]")
+    # the thumbnail intro: real leading silence (adelay after loudnorm was silently not applied)
+    fc.append(f"aevalsrc=0|0:s=48000:c=stereo:d={P.get('intro',0)}[sil]")
+    fc.append(f"[sil][an]concat=n=2:v=0:a=1,apad=pad_dur={P['outro']}[ao]")
+    out=f"{outdir}/{'graded' if graded else 'orig'}-v5.mp4"
     cmd=["ffmpeg","-v","error","-y","-i",src,"-i","edit/facemask.png","-i","edit/vigmask.png","-filter_complex",";".join(fc),"-map","[vo]"]
     if not graded: fc[-1]=fc[-1].replace("[ao]","[ao];[ao]anullsink")
     cmd[cmd.index("-filter_complex")+1]=";".join(fc)

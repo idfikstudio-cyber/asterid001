@@ -11,6 +11,6 @@ Preview: https://claude.ai/artifact/WPTVJ9gTpVbvEMaKV5o7Kd
 - `scripts/broll.py`: gambar projek siap CFik017 + logo.
 - `scripts/pano.py`, `scripts/broll_pans.py`: B-roll kamera bergerak dari tur 360 aihouse Fi-K (S156754984, S160622290, S157125126, S152542130).
   Muat turun cube face: `aih_fetch.py` di scratchpad (tidak disimpan; nama klien dalam tur tidak dipaparkan).
-- `preview/index.html`: halaman preview interaktif. Proxy `graded.mp4` / `orig.mp4` tidak disimpan dalam git.
+- `preview/index.html`: halaman preview interaktif. Proxy `graded-v5.mp4` / `orig-v5.mp4` tidak disimpan dalam git.
 
 Sumber: folder Google Drive "Konten Fi-k" (tidak disimpan dalam repo kerana saiz).

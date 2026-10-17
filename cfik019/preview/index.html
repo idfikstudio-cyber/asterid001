@@ -278,8 +278,8 @@ td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
     <section class="player" aria-label="Pemain preview">
       <div class="phone" id="phone">
         <div class="stage" id="stage">
-          <video id="vg" src="graded.mp4" playsinline preload="auto"></video>
-          <video id="vo" src="orig.mp4" playsinline muted preload="auto"></video>
+          <video id="vg" src="graded-v5.mp4" playsinline preload="auto"></video>
+          <video id="vo" src="orig-v5.mp4" playsinline muted preload="auto"></video>
         </div>
         <div class="broll" id="broll"></div>
         <img class="wm" id="wm" src="logo-white.png" alt="">
@@ -373,7 +373,7 @@ td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
 const $=s=>document.querySelector(s);
 const vg=$("#vg"),vo=$("#vo"),stage=$("#stage"),ov=$("#ov"),phone=$("#phone"),brl=$("#broll"),wm=$("#wm");
 let plan;
-try{plan=await (await fetch("plan.json")).json();}catch(e){$("#evlist").textContent="Data pelan tak dapat dimuat. Muat semula halaman.";return;}
+try{plan=await (await fetch("plan-v5.json")).json();}catch(e){$("#evlist").textContent="Data pelan tak dapat dimuat. Muat semula halaman.";return;}
 const DUR=plan.duration,END=plan.duration+plan.outro;$("#seek").max=END;
 const fmt=t=>{t=Math.max(0,t);const m=Math.floor(t/60),s=t-m*60;return m+":"+(s<10?"0":"")+s.toFixed(1)};
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
