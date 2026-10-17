@@ -18,9 +18,9 @@ def build(graded):
         fc+=[ "[1]format=gbrp[m1]","[2]format=gbrp[m2]",
               f"{v}format=gbrp,{GRADE},format=gbrp,split[ga][gb]","[gb]eq=brightness=0.05:gamma=1.12,format=gbrp[gbr]",
               "[ga][gbr][m1]maskedmerge[gf]","[gf]split[gc][gd]","[gd]eq=brightness=-0.08,format=gbrp[gdk]","[gdk][gc][m2]maskedmerge[gv]"];v="[gv]"
-    fc.append(f"{v}tpad=stop_mode=clone:stop_duration={P['outro']},scale=-2:1280,format=yuv420p[vo]")
+    fc.append(f"{v}tpad=start_mode=clone:start_duration={P.get('intro',0)}:stop_mode=clone:stop_duration={P['outro']},scale=-2:1280,format=yuv420p[vo]")
     fc.append(f"[ca]highpass=f=80,afftdn=nr=8:nf=-42,deesser=i=0.3,acompressor=threshold=-20dB:ratio=3:attack=8:release=120:makeup=2,"
-              f"equalizer=f=3200:t=q:w=1.2:g=2,loudnorm=I=-15:TP=-1.5:LRA=7,apad=pad_dur={P['outro']}[ao]")
+              f"equalizer=f=3200:t=q:w=1.2:g=2,loudnorm=I=-15:TP=-1.5:LRA=7,adelay={int(P.get('intro',0)*1000)}:all=1,apad=pad_dur={P['outro']}[ao]")
     out=f"{outdir}/{'graded' if graded else 'orig'}.mp4"
     cmd=["ffmpeg","-v","error","-y","-i",src,"-i","edit/facemask.png","-i","edit/vigmask.png","-filter_complex",";".join(fc),"-map","[vo]"]
     if not graded: fc[-1]=fc[-1].replace("[ao]","[ao];[ao]anullsink")

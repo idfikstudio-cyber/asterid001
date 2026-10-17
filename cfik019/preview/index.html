@@ -189,6 +189,24 @@ td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
 .pc.slashed .no{color:var(--v-cream);opacity:.6}
 @keyframes flash{0%{opacity:.22}100%{opacity:0}}
 
+/* thumbnail (option A) held for the first second */
+.th{inset:0;z-index:4;background:#121816;overflow:hidden}
+.th .in{position:absolute;inset:0;transform-origin:50% 45%}
+.g.on.th .in{animation:thpush 1s linear both}
+@keyframes thpush{from{transform:scale(1.035)}to{transform:none}}
+.th .face{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 0;transform:translateY(12cqh) scale(1.02)}
+.th .sb{position:absolute;inset:auto 0 0;height:46cqh;background:linear-gradient(rgba(12,16,15,0),rgba(12,16,15,.72) 38%,rgba(12,16,15,.9))}
+.th .torn{position:absolute;left:0;right:0;top:0;height:44cqh;filter:drop-shadow(0 1.2cqw 1.6cqw rgba(0,0,0,.55))}
+.th .torn .paper{position:absolute;inset:0;background:var(--v-cream)}
+.th .torn img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+.th .st{position:absolute;inset:0 0 auto;height:40cqh;background:linear-gradient(rgba(12,16,15,.55),rgba(12,16,15,0))}
+.th .lg{position:absolute;left:7cqw;top:15cqh;width:11cqw;opacity:.95}
+.th .bk{position:absolute;left:7cqw;right:7cqw;top:61cqh;display:flex;flex-direction:column;gap:.9cqh}
+.th .e{font:500 5.4cqw/1.15 var(--f-display);color:var(--v-cream);text-shadow:0 .3cqw 1.6cqw rgba(0,0,0,.5)}
+.th .i{font:italic 700 19cqw/.86 var(--f-accent);color:var(--v-sand);text-shadow:0 .4cqw 2.4cqw rgba(0,0,0,.45)}
+.th .b{font:600 12.5cqw/.98 var(--f-display);color:var(--v-white);letter-spacing:-.012em;text-shadow:0 .4cqw 2.4cqw rgba(0,0,0,.45);margin-top:-1cqh}
+.th .s{font:400 4.6cqw/1.25 var(--f-display);color:var(--v-cream);opacity:.92}
+
 /* tear: the dream-house frame rips in two and falls away, revealing the cost */
 .tr{inset:0;z-index:2;background:radial-gradient(120% 80% at 50% 45%,#2a2421 0%,#151a19 70%,#0e1312 100%);overflow:hidden}
 .tr .hv{position:absolute;inset:-1%;background-size:cover;background-position:center;will-change:transform}
@@ -253,7 +271,7 @@ td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
       <p class="eyebrow">Fi-K Studio · Reels / TikTok 9:16</p>
       <h1>CFik019, <em>suntingan</em> sebelum render</h1>
     </div>
-    <div class="status"><b>Preview</b> Belum render final · 31.1s tanpa potongan + 2.2s kad penutup</div>
+    <div class="status"><b>Preview</b> Belum render final · 1s thumbnail + 31.1s video tanpa potongan + 2.2s kad penutup</div>
   </header>
 
   <div class="grid">
@@ -299,7 +317,7 @@ td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
 
       <div class="pane" id="p-plan">
         <h2>Setiap suntingan, ikut masa</h2>
-        <p>Klik mana-mana baris untuk lompat ke situ. Video asal tidak dipotong, jadi masa sama dengan fail asal.</p>
+        <p>Klik mana-mana baris untuk lompat ke situ. Video asal tidak dipotong; semua masa di sini termasuk thumbnail 1 saat di depan (masa asal + 1s).</p>
         <div class="legend"><span><i style="background:var(--c-broll)"></i>B-roll</span><span><i style="background:var(--c-mg)"></i>Motion</span><span><i style="background:var(--c-zoom)"></i>Punch-in</span><span><i style="background:var(--c-sfx)"></i>SFX</span></div>
         <div class="evlist" id="evlist"></div>
       </div>
@@ -311,11 +329,12 @@ td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
       </div>
 
       <div class="pane" id="p-hook" hidden>
-        <h2>Hook: 0:00–0:01.7</h2>
+        <h2>Thumbnail 0:00–0:01, hook 0:01–0:02.7</h2>
         <p>Ayat pembuka asal dikekalkan kerana ia terus panggil sasaran: orang yang baru dapat kunci rumah dan nak renovate. Yang berubah cuma visual dua saat pertama.</p>
         <div class="cards">
-          <div class="card pick"><span class="tag">Visual hook</span><q>Korang yang baru dapat kunci rumah…</q><p>Video dibuka dengan kamera bergerak perlahan dalam ruang tamu rekaan Fi-K, dengan teks “Baru dapat kunci rumah?”. Penonton nampak hasil dulu, dengar suara korang, kemudian muka korang masuk pada “dan bercadang nak buat renovation”.</p></div>
-          <div class="card"><span class="tag">Penegasan · 0:03.8</span><q>…dengar ni betul-betul.</q><p>Punch-in 12% ke muka dan pil “Dengar ni dulu” supaya penonton berhenti scroll.</p></div>
+          <div class="card pick"><span class="tag">Thumbnail · 0:00–0:01</span><q>Baru dapat kunci rumah? Jangan renovate dulu.</q><p>Pilihan A dipegang 1 saat sebagai frame pertama, jadi ia juga jadi cover lalai di TikTok/Reels. Push-in perlahan, kemudian fade terus ke pan ruang tamu sambil suara kau mula.</p></div>
+          <div class="card"><span class="tag">Visual hook · 0:01–0:02.7</span><q>Korang yang baru dapat kunci rumah…</q><p>Video dibuka dengan kamera bergerak perlahan dalam ruang tamu rekaan Fi-K, dengan teks “Baru dapat kunci rumah?”. Penonton nampak hasil dulu, dengar suara korang, kemudian muka korang masuk pada “dan bercadang nak buat renovation”.</p></div>
+          <div class="card"><span class="tag">Penegasan · 0:03.8</span><q>…dengar ni betul-betul.</q><p>Pada 0:04.8, punch-in 12% ke muka dan pil “Dengar ni dulu” supaya penonton berhenti scroll.</p></div>
         </div>
       </div>
 
@@ -408,6 +427,9 @@ function build(g){
     case"key":el.className+=" chipk";h=`<svg viewBox="0 0 24 24"><circle cx="7.5" cy="12" r="4.5"/><path d="M12 12 H22 M18.5 12 V15.5 M21 12 V14.5"/></svg>${esc(g.text)}`;break;
     case"problem":{el.className+=" pc";const ly=c=>`<div class="ly ${c}">${g.lines.map(l=>`<div class="ln">${l.map(w=>`<span class="w${w[2]?" it":""}">${esc(w[0])}</span>`).join("")}</div>`).join("")}</div>`;
       h=`<div class="no">${esc(g.n)}</div><div class="txt">${ly("a")}${ly("b")}<svg class="cut" viewBox="0 0 100 100" preserveAspectRatio="none"><line x1="-6" y1="67" x2="106" y2="37"/></svg></div><div class="flash"></div>`;break}
+    case"thumb":{el.className+=" th";let r=11;const rnd=()=>(r=(r*16807)%2147483647)/2147483647;const n=44,pts=[],pap=[];
+      for(let k=0;k<=n;k++){const x=k/n*100,base=90-x*.1,j=(rnd()-.5)*(k%3?3:6.5);pts.push(`${x.toFixed(1)}% ${(base+j).toFixed(1)}%`);pap.push(`${x.toFixed(1)}% ${(base+j+1.6+rnd()*1.6).toFixed(1)}%`)}
+      h=`<div class="in"><img class="face" src="thumb/face_0_6.jpg" alt=""><div class="sb"></div><div class="torn"><div class="paper" style="clip-path:polygon(0 0,100% 0,${[...pap].reverse().join(",")})"></div><img src="thumb/dream_living.jpg" alt="" style="clip-path:polygon(0 0,100% 0,${[...pts].reverse().join(",")})"></div><div class="st"></div><img class="lg" src="logo-white.png" alt=""><div class="bk"><span class="e">Baru dapat kunci rumah?</span><span class="i">Jangan</span><span class="b">renovate dulu.</span><span class="s">…sebelum dapat 3 benda ni</span></div></div>`;break}
     case"tear":{el.className+=" tr";let r=7;const rnd=()=>(r=(r*16807)%2147483647)/2147483647;const n=36,pts=[];
       for(let k=0;k<=n;k++){const x=k/n*100,y=60-x*.2+(rnd()-.5)*(k%3?2.2:4.6);pts.push(`${x.toFixed(1)}% ${y.toFixed(1)}%`)}
       const top=`polygon(0 0,100% 0,${[...pts].reverse().join(",")})`,bot=`polygon(${pts.join(",")},100% 100%,0 100%)`;
@@ -449,7 +471,7 @@ function render(t){
     if(o.fill){const p=clamp((t-g.s)/((g.e-g.s)*.85));o.fill.style.width=(ease(p)*100)+"%";o.steps.forEach((s,k)=>s.classList.toggle("in",p>=k/(o.steps.length-1)-.02))}
   }
   wm.classList.toggle("hide",hide||t>=DUR||brOn);
-  const noCap=t>=DUR||GS.some(o=>o.on&&/^(hook|problem|kinetic|tear)$/.test(o.g.kind));
+  const noCap=t>=DUR||GS.some(o=>o.on&&/^(thumb|hook|problem|kinetic|tear)$/.test(o.g.kind));
   let i=-1;if(!noCap)for(let k=0;k<plan.captions.length;k++){const c=plan.captions[k];if(t>=c.s&&t<c.e){i=k;break}}
   if(i!==capIdx){capIdx=i;if(i<0)cap.innerHTML="";else{cap.innerHTML=plan.captions[i].words.map(w=>`<span class="${w.hot?"hot":""}">${esc(w.w)}</span>`).join(" ");cap.classList.remove("pop");void cap.offsetWidth;cap.classList.add("pop")}}
   if(i>=0){const ws=plan.captions[i].words,sp=cap.children;let a=-1;ws.forEach((w,k)=>{if(t>=w.s)a=k});for(let k=0;k<sp.length;k++)sp[k].classList.toggle("act",k===a)}
@@ -506,7 +528,7 @@ const SFXN={whoosh:"Whoosh lembut",air:"Hembusan udara (buka)",thud:"Hentakan le
 const ZN=[];for(let i=1;i<plan.zoom.length;i++){const a=plan.zoom[i-1],b=plan.zoom[i];if(b.scale>a.scale+.02)ZN.push({t:a.t,d:`Punch-in ${Math.round((b.scale-1)*100)}%`,s:b.t-a.t<.05?"Punch-in serta-merta pada awal ayat":"Tolak perlahan untuk penekanan"})}
 const EV=[
  ...plan.broll.map(g=>({t:g.s,k:"broll",d:g.label||(g.kind==="pan"?"Pan kamera (rekaan 3D)":"B-roll"),s:g.note})),
- ...plan.graphics.map(g=>({t:g.s,k:"mg",d:g.kind==="problem"?g.n+": "+g.lines.map(l=>l.map(w=>w[0]).join(" ")).join(" "):g.kind==="tear"?"Koyak: rumah impian, “Kos meletup.”":g.kind==="kinetic"?"Akibat: "+g.phrases.map(p=>p.a+" "+p.b).join(" / "):g.kind==="hook"?"Teks hook":g.kind==="outro"?"Kad penutup":g.text||g.eyebrow||(g.kind==="brand"?"Kad jenama Fi-K":g.kind==="az"?"Proses A ke Z":"Grafik"),s:g.note})),
+ ...plan.graphics.map(g=>({t:g.s,k:"mg",d:g.kind==="thumb"?"Thumbnail A (1 saat)":g.kind==="problem"?g.n+": "+g.lines.map(l=>l.map(w=>w[0]).join(" ")).join(" "):g.kind==="tear"?"Koyak: rumah impian, “Kos meletup.”":g.kind==="kinetic"?"Akibat: "+g.phrases.map(p=>p.a+" "+p.b).join(" / "):g.kind==="hook"?"Teks hook":g.kind==="outro"?"Kad penutup":g.text||g.eyebrow||(g.kind==="brand"?"Kad jenama Fi-K":g.kind==="az"?"Proses A ke Z":"Grafik"),s:g.note})),
  ...plan.sfx.map(s=>({t:s.t,k:"sfx",d:SFXN[s.name]||s.name})),
  ...ZN.map(z=>({t:z.t,k:"zoom",d:z.d,s:z.s}))
 ].sort((a,b)=>a.t-b.t||"broll mg zoom sfx".indexOf(a.k)-"broll mg zoom sfx".indexOf(b.k));

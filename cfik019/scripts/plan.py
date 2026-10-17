@@ -54,7 +54,23 @@ SFX=[(0.00,"air",0.5),(0.05,"thud",0.5),(1.72,"whoosh",0.4),(3.76,"thud",0.35),(
 # Face zoom (time, scale, originY%). Instant steps land on sentence starts or hide under B-roll; pushes ease over 0.3s.
 Z=[(0,1.0,40),(3.70,1.0,40),(3.98,1.12,32),(4.97,1.12,32),(4.98,1.0,40),(6.96,1.0,40),(11.49,1.0,40),(11.50,1.08,35),(13.31,1.08,35),
    (13.32,1.0,40),(16.76,1.16,32),(18.74,1.0,40),(27.96,1.0,40),(29.25,1.0,40),(29.26,1.1,33),(DUR,1.1,33)]
-json.dump({"duration":DUR,"outro":OUTRO,"cuts":[{"id":"full","src_in":0,"src_out":SRC_DUR,"out":0}],
+# 1s thumbnail (option A) before the content: shift every source-timed event by INTRO
+INTRO=1.0
+sh=lambda x:round(x+INTRO,3)
+for c in chunks:
+    c["s"],c["e"]=sh(c["s"]),sh(c["e"])
+    for w in c["words"]: w["s"]=sh(w["s"])
+for w in W: w["s"],w["e"]=sh(w["s"]),sh(w["e"])
+for g in B+G:
+    g["s"],g["e"]=sh(g["s"]),sh(g["e"])
+    if "slash" in g: g["slash"]=sh(g["slash"])
+    if g.get("kind")=="problem": g["lines"]=[[[w[0],sh(w[1])]+w[2:] for w in l] for l in g["lines"]]
+    for ph in g.get("phrases",[]): ph["t"]=sh(ph["t"])
+G.insert(0,{"s":0,"e":INTRO,"kind":"thumb","note":"Thumbnail pilihan A selama 1 saat, kemudian terus masuk konten"})
+SFX=[(0.0,"thud",0.45),(0.82,"whoosh",0.45)]+[(sh(t),n,g) for t,n,g in SFX]
+Z=[(0,1.0,40)]+[(sh(t),sc,y) for t,sc,y in Z]
+SRC_DUR,DUR=SRC_DUR,round(DUR+INTRO,3)
+json.dump({"duration":DUR,"outro":OUTRO,"intro":INTRO,"cuts":[{"id":"full","src_in":0,"src_out":SRC_DUR,"out":INTRO}],
  "captions":chunks,"words":W,"broll":B,"graphics":G,
  "sfx":[{"t":round(t,3),"name":n,"gain":g} for t,n,g in SFX],"zoom":[{"t":t,"scale":s,"oy":y} for t,s,y in Z]},
  open(sys.argv[2],"w"),ensure_ascii=False,indent=1)
