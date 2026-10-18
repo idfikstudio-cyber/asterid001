@@ -22,3 +22,8 @@ Status: **preview sahaja, belum render final.** Video sumber dari Google Drive (
 - `scripts/sifir9/sfx_extra.py` + `scripts/sfx.py` → `edit/sifir9/sfx/`.
 - `edit/sifir9/grade.txt`: colour grade (kulit kekal, cast kuning dibuang).
 - `preview/sifir9/index.html`: preview interaktif (perlu proxy media yang dijana oleh skrip di atas).
+
+## Render final (Sifir 9)
+1. `CRF=12 python3 scripts/sifir9/comp.py AsSifir.mp4 "Papan tulis.MP4" base_1080.mp4 graded 1080`
+2. Serve `preview/sifir9/` (server yang sokong range request), kemudian `node scripts/sifir9/render_overlay.js http://localhost:PORT/index.html ov 30 4` → frame grafik telus + `zoom.json`.
+3. `python3 scripts/sifir9/mix.py AsSifir.mp4 aud` dan `python3 scripts/sifir9/final.py base_1080.mp4 ov aud render/Sifir9_AsterEdu_1080x1920.mp4`.

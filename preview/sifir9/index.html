@@ -188,7 +188,7 @@ code{font-size:13px;background:var(--chip);padding:1px 5px;border-radius:4px}
 #end .tt small{display:block;font:500 3cqw var(--f-body);color:#666}
 #end .web{font:500 3.6cqw var(--f-body);color:#bbb;letter-spacing:.02em}
 #cap{left:5cqw;right:5cqw;text-align:center;font-weight:800;font-size:6.2cqw;line-height:1.2;text-transform:uppercase;letter-spacing:-.005em}
-#cap span{display:inline-block;margin:0 .5cqw;transition:transform .08s}
+#cap span{display:inline-block;margin:0 1.2cqw;transition:transform .08s}
 #cap span.on{color:var(--v-y);transform:scale(1.08)}
 #cap span.num{color:var(--v-y)}
 @media (prefers-reduced-motion:reduce){#cap span{transition:none}}
@@ -510,6 +510,9 @@ function render(t){
     $("follow").classList.toggle("done",t>=tap);$("follow").textContent=t>=tap?"Mengikuti ✓":"Follow";}
   const en=one("end"); if(t>=en.s) st($("end"),lin(t,en.s,en.s+.3),`scale(${1.06-.06*eOut(lin(t,en.s,en.s+.5))})`);
 }
+
+// hook for scripts/sifir9/render_overlay.js: draw frame t, return the face punch-in zoom
+window.asterFrame=t=>{seek(t);const m=$("stage").style.transform.match(/scale\(([\d.]+)\)/);return m?+m[1]:1};
 
 /* ---------- panel: timeline, transcript, events ---------- */
 const tl=$("tl");let tlh="";

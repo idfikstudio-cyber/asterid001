@@ -42,7 +42,7 @@ def layout(t):
     return "end"
 
 enc = subprocess.Popen(["ffmpeg", "-v", "error", "-y", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-",
-                        "-c:v", "libx264", "-preset", "medium", "-crf", "26", "-pix_fmt", "yuv420p", "-movflags", "+faststart", out],
+                        "-c:v", "libx264", "-preset", "medium", "-crf", os.environ.get("CRF", "26"), "-pix_fmt", "yuv420p", "-movflags", "+faststart", out],
                        stdin=subprocess.PIPE)
 tf, ti, bf, bi = None, -1, None, -1
 nfr = int(plan["dur"] * FPS)
