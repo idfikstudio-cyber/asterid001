@@ -4,8 +4,8 @@ import json, os, re
 ROOT = os.path.join(os.path.dirname(__file__), "..", "..")
 raw = json.load(open(os.path.join(ROOT, "edit/sifir9/transcript_raw.json")))
 
-# ---- timeline: talk video is kept whole; a 3.6s quiz is inserted after "dan seterusnya"
-Q0, QD = 41.70, 3.6          # quiz starts at talk 41.70 (gap before "Nak kuasai sifir")
+# ---- timeline: talk video is kept whole (quiz insert removed at the client's request, so E = talk time)
+Q0, QD = 41.70, 0.0          # end of the board lesson (gap before "Nak kuasai sifir")
 TALK_END = 56.10
 END_CARD = 3.4
 def e(t):                     # talk time -> edited time
@@ -15,15 +15,12 @@ SPLIT = (9.20, Q0)            # board + face split screen
 segments = [
     {"id": "intro", "t0": 0, "t1": SPLIT[0], "layout": "face", "label": "Hook + intro"},
     {"id": "lesson", "t0": SPLIT[0], "t1": Q0, "layout": "split", "label": "Ajar di papan"},
-    {"id": "quiz", "t0": Q0, "t1": Q0 + QD, "layout": "quiz", "label": "Kuiz interaktif (sisipan)"},
     {"id": "message", "t0": Q0 + QD, "t1": e(47.80), "layout": "face", "label": "Mesej: tak perlu hafal"},
     {"id": "cta", "t0": e(47.80), "t1": e(TALK_END), "layout": "face", "label": "CTA daftar 2027"},
     {"id": "end", "t0": e(TALK_END), "t1": DUR, "layout": "end", "label": "End card + TikTok"},
 ]
 edl = [  # source pieces laid on E timeline (talk video)
-    {"src": "talk", "s0": 0, "s1": Q0, "e0": 0},
-    {"src": "hold", "frame": Q0, "e0": Q0, "dur": QD},
-    {"src": "talk", "s0": Q0, "s1": TALK_END, "e0": e(Q0)},
+    {"src": "talk", "s0": 0, "s1": TALK_END, "e0": 0},
     {"src": "hold", "frame": TALK_END - 0.05, "e0": e(TALK_END), "dur": END_CARD},
 ]
 
@@ -97,8 +94,6 @@ mg = [
     {"kind": "step", "s": 32.60, "e": Q0, "n": 3, "text": "Baca setiap baris = jawapan!"},
     {"kind": "eq", "s": 35.84, "e": Q0, "rows": [[0, 35.84], [1, 37.62], [2, 39.16]] + [[i, round(40.45 + (i - 3) * 0.17, 2)] for i in range(3, 10)],
      "rows_y_out": rows_out, "note": "Label '1 × 9 =' muncul di sebelah setiap baris"},
-    {"kind": "quiz", "s": Q0, "e": Q0 + QD, "q": "7 × 9 = ?", "opts": ["56", "63", "72"], "ans": 1, "reveal": Q0 + 2.75,
-     "note": "Sisipan 3.6s: kira 3-2-1, jawapan 63, baris ke-7 menyala"},
     {"kind": "strike", "s": e(43.95), "e": e(46.10), "hit": e(44.78), "text": "MENGHAFAL", "note": "'Tak semestinya MENGHAFAL' dipangkah"},
     {"kind": "chill", "s": e(46.10), "e": e(47.80), "text": "Jangan stres! 😌"},
     {"kind": "lower", "s": e(47.88), "e": e(50.60), "title": "MATH TURBO 2027", "sub": "Pelbagai teknik kuasai Matematik"},
@@ -119,8 +114,7 @@ sfx += [("swoosh_down", 21.85, -7), ("swoosh_up", 31.45, -7)]
 for _, t in [(0, 35.84), (1, 37.62), (2, 39.16)]:
     sfx += [("marker", round(t - 0.08, 2), -10), ("ding", round(t + 0.9, 2), -16)]
 sfx += [("marker", 40.40, -12)] + [("pop", round(40.45 + i * 0.17, 2), -14) for i in range(7)]
-sfx += [("impact", Q0 + 0.02, -8), ("tick1", Q0 + 0.6, -6), ("tick1", Q0 + 1.3, -6), ("tick1", Q0 + 2.0, -6),
-        ("correct", Q0 + 2.75, -6), ("whoosh", Q0 + QD - 0.25, -8),
+sfx += [("whoosh", Q0 - 0.05, -8),
         ("bonk", e(44.78), -6), ("pop", e(46.15), -10), ("pop", e(46.60), -12),
         ("whoosh", e(47.85), -8), ("impact", e(52.50), -10), ("chaching", e(54.00), -6),
         ("click", e(55.25), -6), ("pop", e(55.40), -10), ("riser", e(TALK_END) - 1.2, -12), ("impact", e(TALK_END) + 0.05, -8)]
