@@ -64,6 +64,8 @@ Baca `BRAND/warna.txt`. Ringkasan:
 - Harga dan pakej **ditetapkan oleh Aster.** Papar harga, yuran pendaftaran dan senarai subjek **tepat seperti disebut.**
 - **JANGAN tambah teks diskaun, promo, "harga istimewa" atau tawaran** yang tidak disebut.
 - Jika harga yang disebut nampak berbeza dari skrip, jangan ubah. Tandakan `PERLU SEMAK`.
+- Baca `BRAND/rujukan-aster.txt` untuk menyemak ejaan dan ketepatan fakta yang disebut.
+  **Jangan tambah fakta dari fail itu jika tidak disebut spokesperson.**
 
 ---
 
@@ -75,9 +77,19 @@ Baca `BRAND/warna.txt`. Ringkasan:
 
 ---
 
-## 9. Penutup
+## 9. Watermark
 
-- End card 1.5 saat: logo Aster (kecil) + nombor WhatsApp **011-5596 9070**.
+- Teks **"asteredu11.com.my"** dipaparkan **SEPANJANG video**, termasuk thumbnail 1 saat di awal.
+- Warna putih, kelegapan 60–70%, saiz kecil tetapi boleh dibaca di skrin telefon.
+- Kedudukan: atas-kiri, kira-kira 12–15% dari atas frame. Jangan terlalu di tepi supaya tak mudah di-crop.
+- Jangan bertindih dengan muka spokesperson, teks hook atau caption. Jika bertindih, alihkan sedikit tetapi kekal di bahagian atas.
+
+---
+
+## 10. Penutup
+
+- End card 1.5 saat: logo Aster (kecil) + **asteredu11.com.my** + WhatsApp **011-5596 9070**.
+- End card **SETIAP** video Aster mesti paparkan **asteredu11.com.my** dengan jelas, tidak kira CTA apa yang digunakan (TOFU, BOFU, atau CTA follow/like/share).
 - CTA:
   - **TOFU:** "Follow untuk tips belajar anak seterusnya"
   - **BOFU:** "WhatsApp Cikgu AlFarhan untuk daftar / cuba kelas"
@@ -85,10 +97,12 @@ Baca `BRAND/warna.txt`. Ringkasan:
 
 ---
 
-## 10. Semakan khas Aster
+## 11. Semakan khas Aster
 
 - [ ] Wajah Cikgu AlFarhan jadi fokus; logo hanya di end card
 - [ ] Harga/pakej tepat, tiada tawaran direka
 - [ ] Muka/nama/nombor pelajar & ibu bapa diblur
 - [ ] Nombor WhatsApp betul (011-5596 9070)
 - [ ] Tiada aset Fi-k Studio / Yuran.my
+- [ ] Watermark asteredu11.com.my ada sepanjang video
+- [ ] asteredu11.com.my ada di end card
