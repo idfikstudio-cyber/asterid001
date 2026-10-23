@@ -1,0 +1,757 @@
+{
+ "id": "AS-F-001",
+ "topik": "pendaftaran-2027",
+ "jenis": "BOFU",
+ "intro": 1.0,
+ "outro": 1.5,
+ "src_duration": 36.0,
+ "watermark": "asteredu11.com.my",
+ "wm_xy": [
+  72,
+  236
+ ],
+ "whatsapp": "011-5596 9070",
+ "label": [
+  "Cikgu AlFarhan",
+  " · Aster Edu"
+ ],
+ "label_t": [
+  1.25,
+  4.3
+ ],
+ "label_y": 300,
+ "cta": [
+  "WhatsApp Cikgu AlFarhan",
+  "untuk daftar / cuba kelas"
+ ],
+ "caption_y": 1420,
+ "pop_y": 1200,
+ "board_y": 1000,
+ "zoom_anchor": [
+  410,
+  1920
+ ],
+ "zoom": [
+  {
+   "s": 0,
+   "e": 6.0,
+   "scale": 1.0
+  },
+  {
+   "s": 6.0,
+   "e": 9.83,
+   "scale": 1.0
+  },
+  {
+   "s": 9.83,
+   "e": 13.63,
+   "scale": 1.13
+  },
+  {
+   "s": 13.63,
+   "e": 18.5,
+   "scale": 1.0
+  },
+  {
+   "s": 18.5,
+   "e": 21.86,
+   "scale": 1.13
+  },
+  {
+   "s": 21.86,
+   "e": 23.84,
+   "scale": 1.0
+  },
+  {
+   "s": 23.84,
+   "e": 28.4,
+   "scale": 1.13
+  },
+  {
+   "s": 28.4,
+   "e": 30.21,
+   "scale": 1.0
+  },
+  {
+   "s": 30.21,
+   "e": 32.13,
+   "scale": 1.13
+  },
+  {
+   "s": 32.13,
+   "e": 33.62,
+   "scale": 1.0
+  },
+  {
+   "s": 33.62,
+   "e": 99,
+   "scale": 1.13
+  }
+ ],
+ "thumb": {
+  "src_t": 31.15,
+  "zoom": 1.13,
+  "y": 1060,
+  "lines": [
+   {
+    "text": "TUISYEN 2027",
+    "size": 132
+   },
+   {
+    "text": "RM99 SAHAJA",
+    "size": 150,
+    "hot": true
+   }
+  ]
+ },
+ "highlight": [
+  "RM99",
+  "RM20",
+  "BM",
+  "BI",
+  "Math",
+  "Science",
+  "Sejarah",
+  "sifir",
+  "4P",
+  "problem",
+  "2027"
+ ],
+ "captions": [
+  {
+   "s": 0.0,
+   "words": [
+    "Ibu",
+    "ayah",
+    "yang"
+   ],
+   "e": 0.84
+  },
+  {
+   "s": 0.84,
+   "words": [
+    "ada",
+    "anak",
+    "sekolah"
+   ],
+   "e": 1.6
+  },
+  {
+   "s": 1.6,
+   "words": [
+    "rendah"
+   ],
+   "e": 1.98
+  },
+  {
+   "s": 1.98,
+   "words": [
+    "tahun",
+    "4"
+   ],
+   "e": 2.44
+  },
+  {
+   "s": 2.44,
+   "words": [
+    "5",
+    "dan",
+    "6"
+   ],
+   "e": 3.12
+  },
+  {
+   "s": 3.12,
+   "words": [
+    "yang",
+    "masih",
+    "mencari"
+   ],
+   "e": 4.12
+  },
+  {
+   "s": 4.12,
+   "words": [
+    "tuisyen",
+    "untuk",
+    "tahun",
+    "2027"
+   ],
+   "e": 6.1
+  },
+  {
+   "s": 6.1,
+   "words": [
+    "Kita",
+    "ada",
+    "7"
+   ],
+   "e": 6.84
+  },
+  {
+   "s": 6.84,
+   "words": [
+    "program",
+    "dalam",
+    "satu"
+   ],
+   "e": 7.56
+  },
+  {
+   "s": 7.56,
+   "words": [
+    "pakej",
+    "serendah"
+   ],
+   "e": 8.5
+  },
+  {
+   "s": 8.5,
+   "words": [
+    "RM99",
+    "sahaja"
+   ],
+   "e": 9.86
+  },
+  {
+   "s": 9.86,
+   "words": [
+    "BM"
+   ],
+   "e": 10.22
+  },
+  {
+   "s": 10.22,
+   "words": [
+    "BI"
+   ],
+   "e": 10.7
+  },
+  {
+   "s": 10.7,
+   "words": [
+    "Math"
+   ],
+   "e": 11.06
+  },
+  {
+   "s": 11.06,
+   "words": [
+    "Science",
+    "dan",
+    "Sejarah"
+   ],
+   "e": 11.96
+  },
+  {
+   "s": 11.96,
+   "words": [
+    "bersama",
+    "dengan"
+   ],
+   "e": 12.56
+  },
+  {
+   "s": 12.56,
+   "words": [
+    "guru-guru",
+    "pakar"
+   ],
+   "e": 13.36
+  },
+  {
+   "s": 13.36,
+   "words": [
+    "kita"
+   ],
+   "e": 13.72
+  },
+  {
+   "s": 13.72,
+   "words": [
+    "Dan",
+    "kita",
+    "berikan"
+   ],
+   "e": 14.36
+  },
+  {
+   "s": 14.36,
+   "words": [
+    "2",
+    "program",
+    "tambahan"
+   ],
+   "e": 15.5
+  },
+  {
+   "s": 15.5,
+   "words": [
+    "yang",
+    "itu",
+    "program"
+   ],
+   "e": 16.32
+  },
+  {
+   "s": 16.32,
+   "words": [
+    "pengukuhan",
+    "sifir"
+   ],
+   "e": 17.48
+  },
+  {
+   "s": 17.48,
+   "words": [
+    "dan",
+    "4P"
+   ],
+   "e": 18.68
+  },
+  {
+   "s": 18.68,
+   "words": [
+    "Perpuluhan"
+   ],
+   "e": 19.38
+  },
+  {
+   "s": 19.38,
+   "words": [
+    "pecahan"
+   ],
+   "e": 20.0
+  },
+  {
+   "s": 20.0,
+   "words": [
+    "peratus",
+    "dan"
+   ],
+   "e": 20.72
+  },
+  {
+   "s": 20.72,
+   "words": [
+    "penyelesaian",
+    "masalah"
+   ],
+   "e": 21.96
+  },
+  {
+   "s": 21.96,
+   "words": [
+    "Yang",
+    "ini",
+    "yang"
+   ],
+   "e": 22.78
+  },
+  {
+   "s": 22.78,
+   "words": [
+    "anak-anak",
+    "banyak"
+   ],
+   "e": 23.38
+  },
+  {
+   "s": 23.38,
+   "words": [
+    "problem"
+   ],
+   "e": 23.96
+  },
+  {
+   "s": 23.96,
+   "words": [
+    "Dan",
+    "kita",
+    "berikan"
+   ],
+   "e": 24.68
+  },
+  {
+   "s": 24.68,
+   "words": [
+    "program",
+    "tambahan"
+   ],
+   "e": 25.54
+  },
+  {
+   "s": 25.54,
+   "words": [
+    "bersama",
+    "dengan"
+   ],
+   "e": 26.3
+  },
+  {
+   "s": 26.3,
+   "words": [
+    "pakar",
+    "motivasi"
+   ],
+   "e": 27.62
+  },
+  {
+   "s": 27.62,
+   "words": [
+    "pendidikan",
+    "kita"
+   ],
+   "e": 28.4
+  },
+  {
+   "s": 28.4,
+   "words": [
+    "Dr",
+    "Shukri",
+    "Abdullah"
+   ],
+   "e": 30.36
+  },
+  {
+   "s": 30.36,
+   "words": [
+    "Pendaftaran",
+    "sekarang"
+   ],
+   "e": 30.92
+  },
+  {
+   "s": 30.92,
+   "words": [
+    "RM20",
+    "sahaja",
+    "tau"
+   ],
+   "e": 32.2
+  },
+  {
+   "s": 32.2,
+   "words": [
+    "DM",
+    "saya",
+    "untuk"
+   ],
+   "e": 32.86
+  },
+  {
+   "s": 32.86,
+   "words": [
+    "keterangan",
+    "lanjut"
+   ],
+   "e": 33.64
+  },
+  {
+   "s": 33.64,
+   "words": [
+    "Jumpa",
+    "tahun",
+    "2027"
+   ],
+   "e": 35.93
+  }
+ ],
+ "pops": [
+  {
+   "kind": "big",
+   "s": 2.14,
+   "e": 3.62,
+   "text": "TAHUN 4, 5 & 6",
+   "sub": "SEKOLAH RENDAH",
+   "size": 112
+  },
+  {
+   "kind": "big",
+   "s": 5.1,
+   "e": 6.3,
+   "text": "2027",
+   "size": 160,
+   "y": 1235
+  },
+  {
+   "kind": "big",
+   "s": 6.6,
+   "e": 8.45,
+   "text": "7 PROGRAM",
+   "sub": "SATU PAKEJ",
+   "sub_top": false,
+   "y": 1165,
+   "size": 130
+  },
+  {
+   "kind": "big",
+   "s": 8.5,
+   "e": 9.84,
+   "text": "RM99",
+   "size": 180,
+   "y": 1235
+  },
+  {
+   "kind": "big",
+   "s": 14.36,
+   "e": 16.25,
+   "text": "2 PROGRAM",
+   "sub": "TAMBAHAN",
+   "sub_top": false,
+   "y": 1165,
+   "size": 130
+  },
+  {
+   "kind": "chips",
+   "s": 16.32,
+   "e": 18.5,
+   "chips": [
+    {
+     "t": 16.32,
+     "text": "Pengukuhan Sifir"
+    },
+    {
+     "t": 17.68,
+     "text": "4P"
+    }
+   ]
+  },
+  {
+   "kind": "warn",
+   "s": 22.95,
+   "e": 23.85,
+   "x": 790,
+   "y": 690
+  },
+  {
+   "kind": "person",
+   "s": 26.96,
+   "e": 30.2,
+   "name": "Dr Shukri Abdullah",
+   "sub": "Pakar Motivasi Pendidikan"
+  },
+  {
+   "kind": "big",
+   "s": 30.36,
+   "e": 32.15,
+   "text": "RM20",
+   "sub": "PENDAFTARAN",
+   "size": 190
+  },
+  {
+   "kind": "dm",
+   "s": 32.2,
+   "e": 33.62
+  },
+  {
+   "kind": "big",
+   "s": 34.62,
+   "e": 35.95,
+   "text": "2027",
+   "sub": "JUMPA",
+   "size": 160
+  }
+ ],
+ "boards": [
+  {
+   "s": 9.84,
+   "e": 12.84,
+   "title": "Subjek",
+   "cols": 3,
+   "items": [
+    {
+     "t": 9.86,
+     "text": "BM"
+    },
+    {
+     "t": 10.22,
+     "text": "BI"
+    },
+    {
+     "t": 10.7,
+     "text": "Math"
+    },
+    {
+     "t": 11.06,
+     "text": "Science"
+    },
+    {
+     "t": 11.5,
+     "text": "Sejarah"
+    }
+   ]
+  },
+  {
+   "s": 18.55,
+   "e": 21.55,
+   "title": "4P",
+   "cols": 2,
+   "big_first": true,
+   "items": [
+    {
+     "t": 18.68,
+     "text": "Perpuluhan"
+    },
+    {
+     "t": 19.38,
+     "text": "Pecahan"
+    },
+    {
+     "t": 20.0,
+     "text": "Peratus",
+     "pos": [
+      1,
+      0
+     ]
+    },
+    {
+     "t": 20.72,
+     "text": "Penyelesaian Masalah",
+     "pos": [
+      2,
+      0
+     ]
+    }
+   ]
+  }
+ ],
+ "sfx": [
+  {
+   "t": 0.92,
+   "name": "whoosh",
+   "gain": 0.3
+  },
+  {
+   "t": 1.25,
+   "name": "swoosh_down",
+   "gain": 0.22
+  },
+  {
+   "t": 3.14,
+   "name": "pop",
+   "gain": 0.4
+  },
+  {
+   "t": 6.1,
+   "name": "pop",
+   "gain": 0.32
+  },
+  {
+   "t": 7.6,
+   "name": "pop",
+   "gain": 0.4
+  },
+  {
+   "t": 9.5,
+   "name": "chaching",
+   "gain": 0.32
+  },
+  {
+   "t": 10.84,
+   "name": "whoosh",
+   "gain": 0.28
+  },
+  {
+   "t": 10.95,
+   "name": "click",
+   "gain": 0.45
+  },
+  {
+   "t": 11.31,
+   "name": "click",
+   "gain": 0.45
+  },
+  {
+   "t": 11.79,
+   "name": "click",
+   "gain": 0.45
+  },
+  {
+   "t": 12.15,
+   "name": "click",
+   "gain": 0.45
+  },
+  {
+   "t": 12.59,
+   "name": "ding",
+   "gain": 0.22
+  },
+  {
+   "t": 15.36,
+   "name": "pop",
+   "gain": 0.4
+  },
+  {
+   "t": 17.32,
+   "name": "pop",
+   "gain": 0.35
+  },
+  {
+   "t": 18.68,
+   "name": "pop",
+   "gain": 0.35
+  },
+  {
+   "t": 19.55,
+   "name": "whoosh",
+   "gain": 0.28
+  },
+  {
+   "t": 19.83,
+   "name": "click",
+   "gain": 0.45
+  },
+  {
+   "t": 20.53,
+   "name": "click",
+   "gain": 0.45
+  },
+  {
+   "t": 21.15,
+   "name": "click",
+   "gain": 0.45
+  },
+  {
+   "t": 21.87,
+   "name": "ding",
+   "gain": 0.22
+  },
+  {
+   "t": 23.95,
+   "name": "bonk",
+   "gain": 0.28
+  },
+  {
+   "t": 27.96,
+   "name": "swoosh_down",
+   "gain": 0.28
+  },
+  {
+   "t": 31.36,
+   "name": "chaching",
+   "gain": 0.32
+  },
+  {
+   "t": 33.2,
+   "name": "pop",
+   "gain": 0.4
+  },
+  {
+   "t": 35.62,
+   "name": "ding",
+   "gain": 0.25
+  },
+  {
+   "t": 37.01,
+   "name": "whoosh",
+   "gain": 0.28
+  },
+  {
+   "t": 37.15,
+   "name": "ding",
+   "gain": 0.22
+  }
+ ],
+ "audio_path": "/tmp/claude-0/-home-user-asterid001/d43b6372-273d-5deb-a24f-9a9b70400420/scratchpad/out/mix.wav"
+}

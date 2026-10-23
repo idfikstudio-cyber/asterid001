@@ -1,0 +1,75 @@
+RINGKASAN PREVIEW — AS-F-001_pendaftaran-2027 (Aster Edu)
+Spokesperson: Cikgu AlFarhan | Shoot: 2026-10-23_FARHAN | Jenis: BOFU (baris 1 skrip)
+Footage: sudah ditrim (tiada potongan isi; tiada senyap > 0.3 s untuk dibuang)
+Durasi: 38.5 s = thumbnail 1.0 s + isi 36.0 s + end card 1.5 s (sasaran BOFU 30–60 s ✓)
+Preview: 540×960, H.264, audio -14.0 LUFS / true peak -1.4 dBTP
+
+1. TEKS HOOK / THUMBNAIL (0:00–0:01)
+   Frame 0:31.15 (mata ke kamera, mulut tertutup), punch-in 113%.
+   "TUISYEN 2027" (putih) / "RM99 SAHAJA" (kuning #FFC83D) + watermark asteredu11.com.my.
+   Fail berasingan: AS-F-001_pendaftaran-2027_THUMB.png (1080×1920)
+
+2. CAPTION PENUH (burn-in, ikut percakapan; "/" = pertukaran baris)
+   Ibu ayah yang / ada anak sekolah / rendah / tahun 4 / 5 dan 6 / yang masih mencari /
+   tuisyen untuk tahun 2027 / Kita ada 7 / program dalam satu / pakej serendah / RM99 sahaja /
+   BM / BI / Math / Science dan Sejarah / bersama dengan / guru-guru pakar / kita /
+   Dan kita berikan / 2 program tambahan / yang itu program / pengukuhan sifir / dan 4P /
+   Perpuluhan / pecahan / peratus dan / penyelesaian masalah / Yang ini yang / anak-anak banyak /
+   problem / Dan kita berikan / program tambahan / bersama dengan / pakar motivasi /
+   pendidikan kita / Dr Shukri Abdullah / Pendaftaran sekarang / RM20 sahaja tau /
+   DM saya untuk / keterangan lanjut / Jumpa tahun 2027
+   Highlight kuning: angka, RM99, RM20, BM, BI, Math, Science, Sejarah, sifir, 4P, problem, 2027.
+   Ejaan dibetulkan (bukan ayat): tuition→tuisyen, sipir→sifir, Syukri→Shukri (ikut rujukan-aster.txt), paket→pakej.
+
+3. SFX, ANIMASI & B-ROLL (masa video output)
+   Watermark "asteredu11.com.my" putih 66%, atas-kiri (±12% dari atas), 0:00–0:38.5.
+   Label "Cikgu AlFarhan · Aster Edu"          0:01.25–0:04.30  (swoosh 0:01.25)
+   Peralihan thumbnail → isi                    0:00.92 whoosh
+   Pop-up "SEKOLAH RENDAH / TAHUN 4, 5 & 6"     0:03.14–0:04.62  pop
+   Pop-up "2027"                                0:06.10–0:07.30  pop
+   Pop-up "7 PROGRAM / SATU PAKEJ"              0:07.60–0:09.45  pop
+   Pop-up "RM99"                                0:09.50–0:10.84  cha-ching
+   Papan tulis "Subjek": BM, BI, Math, Science, Sejarah (ditulis + tanda semak ikut sebutan)
+                                                0:10.84–0:13.84  whoosh + 4× click + ding
+   Pop-up "2 PROGRAM / TAMBAHAN"                0:15.36–0:17.25  pop
+   Cip ✓ "Pengukuhan Sifir", ✓ "4P"             0:17.32–0:19.50  pop ×2
+   Papan tulis "4P": Perpuluhan, Pecahan, Peratus, Penyelesaian Masalah
+                                                0:19.55–0:22.55  whoosh + 3× click + ding
+   Ikon amaran "!" (anak-anak banyak problem)   0:23.95–0:24.85  bonk
+   Kad nama "Pakar Motivasi Pendidikan / Dr Shukri Abdullah"
+                                                0:27.96–0:31.20  swoosh
+   Pop-up "PENDAFTARAN / RM20"                  0:31.36–0:33.15  cha-ching
+   Gelembung chat "DM"                          0:33.20–0:34.62  pop
+   Pop-up "JUMPA / 2027"                        0:35.62–0:36.95  ding
+   End card                                     0:37.01–0:38.50  whoosh + ding
+   Punch-in (100% ↔ 112–113%): 0:01 100% · 0:10.8 113% · 0:14.6 100% · 0:19.5 113% · 0:22.9 100% ·
+     0:24.8 113% · 0:29.4 100% · 0:31.2 113% · 0:33.1 100% · 0:34.6 113%
+   B-roll footage: TIADA (folder B-ROLL/ kosong). Sokongan visual = animasi papan tulis + pop-up.
+   Muzik: TIADA (folder MUSIC/ kosong).
+   SFX: fail dijana sendiri (repo edit/sfx/, bebas hak cipta).
+   Colour grade: cerahkan & kontras ringan, warna kulit dikekalkan. Audio: highpass + denoise ringan + kompres ringan.
+
+4. CTA
+   Disebut dalam video: "DM saya untuk keterangan lanjut."
+   End card (BOFU, ikut DNA): logo Aster kecil (Logo Rasmi Aster.png) + asteredu11.com.my
+     + WhatsApp 011-5596 9070 + "WhatsApp Cikgu AlFarhan untuk daftar / cuba kelas".
+
+5. PERLU SEMAK
+   a) "Kita ada 7 program dalam satu pakej". rujukan-aster.txt tulis pakej = 5 subjek.
+      Dalam video: 5 subjek + 2 program tambahan (sifir & 4P) = 7. Angka "7" dipapar seperti disebut.
+   b) "Program pengukuhan sifir dan 4P" TIADA dalam rujukan-aster.txt. Sahkan program ini memang ada.
+   c) "serendah RM99 sahaja". Rujukan: RM99 SEBULAN untuk 5 subjek. "Sebulan" tidak disebut,
+      jadi tidak ditambah. Sahkan ok dipapar "RM99" sahaja.
+   d) Subjek disebut BM, BI, Math, Science, Sejarah (rujukan: B Melayu, English, Matematik, Sains, Sejarah).
+      Caption ikut sebutan. Ok?
+   e) CTA disebut "DM saya", end card guna CTA BOFU WhatsApp (ikut DNA). Ok kedua-duanya?
+   f) Tiada muzik latar (MUSIC/ kosong). Letak lagu berlesen dalam MUSIC/ jika mahu muzik di final.
+   g) Warna aksen #FFC83D masih SEMENTARA. Logo rasmi guna emas lebih gelap (±#B8954A).
+      Kemas kini warna.txt jika mahu ikut logo.
+   h) Framing asal: mata spokesperson ±46% dari atas (bukan sepertiga atas). Pada 100% tak boleh diubah;
+      punch-in 113% (anchor bawah) naikkan ke ±39%. Cadangan untuk shoot akan datang: kamera rendah sedikit / dekat.
+
+6. CAPTION TIKTOK + 5 HASHTAG
+   Ibu ayah, anak Tahun 4, 5 & 6 masih cari tuisyen untuk 2027? 7 program dalam satu pakej,
+   serendah RM99 sahaja. Pendaftaran sekarang RM20 sahaja. DM Cikgu AlFarhan untuk keterangan lanjut!
+   #tuisyenonline #asteredu #sekolahrendah #ibubapa #tuisyen2027
