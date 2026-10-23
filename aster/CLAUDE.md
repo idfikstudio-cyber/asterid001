@@ -54,7 +54,7 @@ Tonton video rujukan gaya dalam `BRAND/` sebelum edit.
 
 ### BOFU → `BRAND/rujukan-gaya-BOFU.mp4`
 - Warna: **merah + kuning**, gaya promosi meriah.
-- Banner atas (contoh **"IBU AYAH, PERHATIAN!"** + tajuk tawaran).
+- Banner atas (contoh **"IBU AYAH, PERHATIAN!"** + tajuk tawaran): **0–8 saat pertama sahaja**, kemudian hilang dengan lembut (fade).
 - Pelekat harga & fakta bila disebut: bintang harga, tiket pendaftaran, bulatan bilangan subjek.
 - Mockup telefon menunjukkan laman **asteredu11.com.my** bila sesuai.
 
@@ -102,6 +102,7 @@ Tonton video rujukan gaya dalam `BRAND/` sebelum edit.
 
 - Teks **"asteredu11.com.my"** dipaparkan **SEPANJANG video**, termasuk thumbnail 1 saat di awal.
 - Warna putih, kelegapan 60–70%, saiz kecil tetapi boleh dibaca di skrin telefon.
+- **Mesti ada bayang gelap halus** (drop shadow lembut) supaya jelas atas latar cerah. Kekal kecil.
 - Kedudukan: atas-kiri, kira-kira 12–15% dari atas frame. Jangan terlalu di tepi supaya tak mudah di-crop.
 - Jangan bertindih dengan muka spokesperson, teks hook atau caption. Jika bertindih, alihkan sedikit tetapi kekal di bahagian atas.
 
@@ -131,5 +132,6 @@ Tonton video rujukan gaya dalam `BRAND/` sebelum edit.
 - [ ] Muka/nama/nombor pelajar & ibu bapa diblur
 - [ ] Nombor WhatsApp betul (011-5596 9070)
 - [ ] Tiada aset Fi-k Studio / Yuran.my
-- [ ] Watermark asteredu11.com.my ada sepanjang video
+- [ ] Watermark asteredu11.com.my ada sepanjang video, dengan bayang halus
+- [ ] BOFU: banner atas hanya 0–8 saat, hilang dengan lembut
 - [ ] asteredu11.com.my ada di end card (besar dan jelas), bersama wajah dalam bulatan emas + @aster.edu_tpg
