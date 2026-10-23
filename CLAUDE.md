@@ -35,6 +35,11 @@ Konten/
 - **JANGAN padam, pindah atau tulis ganti apa-apa dalam `01_RAW/`, `B-ROLL/`, `MUSIC/` dan `BRAND/`.**
 - **JANGAN usik folder lama** yang bukan sebahagian struktur ini (contoh `Konten Fi-k`, `Angah`, `kon 1-5`).
 
+### Akses
+- Folder `Konten` dikongsi **"Anyone with the link - Viewer"**. Fail lebih 10 MB boleh dimuat turun terus melalui link.
+- **JANGAN ubah tetapan perkongsian** mana-mana fail atau folder.
+- Jika tidak dapat akses mana-mana fail atau folder, **berhenti dan beritahu Farhan.**
+
 ---
 
 ## 3. Aset brand
@@ -43,6 +48,10 @@ Konten/
 - Baca `BRAND/warna.txt` dahulu. Ia ringkasan rasmi warna, logo, font dan peraturan logo.
 - Jangan guna aset brand lain (logo, warna, CTA, nombor telefon) dalam video brand ini.
 - Jika font rasmi tiada dalam sistem, guna font pengganti yang disebut dalam `warna.txt` dan catat dalam log.
+
+### Video rujukan gaya
+- **Sebelum edit, tonton video rujukan gaya** dalam `BRAND/` (`rujukan-gaya-*.mp4`) yang sepadan dengan tag video.
+- Jika video rujukan **tiada atau tidak dapat ditonton**, beritahu Farhan **SEBELUM mula edit.**
 
 ---
 
@@ -123,6 +132,16 @@ Konten/
   4. CTA yang digunakan
   5. Perkara `PERLU SEMAK`
   6. **Caption TikTok pendek + 5 hashtag** yang sesuai
+- **Terbitkan preview sebagai halaman Artifact** (selain simpan fail ke `02_EDITED/_PREVIEW/`), sama seperti halaman "Sifir 9 Aster":
+  - **Kiri:** pemain video besar dengan bunyi.
+  - **Kanan, tab:**
+    - **Transkrip:** klik baris untuk lompat ke masa itu dalam video
+    - **Pelan edit:** babak, animasi/B-roll, SFX ikut masa
+    - **Warna & audio**
+    - **Status:** perkara `PERLU SEMAK`
+    - **Caption:** caption TikTok pendek + 5 hashtag
+  - **Satu Artifact untuk setiap video.**
+  - Setiap pembetulan: **terbitkan semula ke LINK YANG SAMA.** Jangan buat link baru.
 - **Berhenti dan tunggu komen Farhan.** Jangan render final.
 
 ### Peringkat 2 — Final
@@ -143,6 +162,7 @@ Konten/
 - ❌ Padam, pindah atau ganti fail dalam `01_RAW/`, `B-ROLL/`, `MUSIC/`, `BRAND/` dan folder lama
 - ❌ Campur aset satu brand ke video brand lain
 - ❌ Render final sebelum preview diluluskan
+- ❌ Ubah tetapan perkongsian fail/folder Google Drive
 
 ---
 
