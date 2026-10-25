@@ -1,0 +1,260 @@
+<title>AS-F-002 SPM 2026</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800;900&family=Lexend:wght@400;500;600&display=swap">
+<style>
+/* Layout: telefon (sticky) di kiri, helaian edit bertab di kanan; bertindan di telefon. Gaya TOFU Aster: biru gelap + kuning. */
+:root{
+  --bg:#f2f4fa; --surface:#ffffff; --ink:#111a33; --muted:#5b6480; --line:#dde2ef; --chip:#e8ecf7;
+  --accent:#1d3c9a; --mark:#ffc83d; --mark-ink:#7a5600;
+  --c-seg:#13245e; --c-mg:#e0a400; --c-sfx:#d9232d; --ok:#1f7a4d; --warn:#b45309;
+  --f-display:"Poppins","Arial Black",system-ui,sans-serif;
+  --f-body:"Lexend",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0c1224; --surface:#141c33; --ink:#eef1fa; --muted:#9aa4c2; --line:#26304d; --chip:#1b2440;
+  --accent:#7f9cff; --mark:#ffc83d; --mark-ink:#ffd970;
+  --c-seg:#c9d4ff; --c-mg:#ffc83d; --c-sfx:#ff6a72; --ok:#4ccf8f; --warn:#f0a44b; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0c1224; --surface:#141c33; --ink:#eef1fa; --muted:#9aa4c2; --line:#26304d; --chip:#1b2440;
+  --accent:#7f9cff; --mark:#ffc83d; --mark-ink:#ffd970;
+  --c-seg:#c9d4ff; --c-mg:#ffc83d; --c-sfx:#ff6a72; --ok:#4ccf8f; --warn:#f0a44b; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.55}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px 56px}
+header.top{display:flex;flex-wrap:wrap;gap:8px 24px;align-items:end;justify-content:space-between;margin-bottom:18px}
+h1{font-family:var(--f-display);font-weight:800;font-size:clamp(24px,4vw,36px);line-height:1.08;margin:0;text-wrap:balance;letter-spacing:-.02em}
+h1 mark{background:linear-gradient(transparent 55%,var(--mark) 55%);color:inherit;padding:0 .1em}
+.status{display:inline-flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:13px;color:var(--muted)}
+.status b{background:var(--mark);color:#3a2a00;font-weight:600;padding:2px 10px;border-radius:999px;font-size:12px;letter-spacing:.05em;text-transform:uppercase}
+.grid{display:grid;grid-template-columns:minmax(0,400px) minmax(0,1fr);gap:28px;align-items:start}
+@media (max-width:860px){.grid{grid-template-columns:minmax(0,1fr)}}
+.player{position:sticky;top:calc(env(safe-area-inset-top,0px) + 12px);display:flex;flex-direction:column;gap:10px;max-width:400px;width:100%;margin-inline:auto}
+@media (max-width:860px){.player{position:static}}
+.phone{width:100%;max-width:100%;aspect-ratio:9/16;border-radius:22px;overflow:hidden;background:#000;box-shadow:0 18px 50px -22px rgba(10,20,70,.6)}
+.phone video{width:100%;height:100%;display:block;object-fit:contain;background:#000}
+.hint{font-size:12.5px;color:var(--muted);margin:0}
+.panel{min-width:0;display:flex;flex-direction:column;gap:14px}
+.tl{position:relative;height:58px;border-radius:10px;background:var(--surface);border:1px solid var(--line);overflow:hidden;cursor:pointer}
+.tl .seg{position:absolute;top:0;height:22px;border-right:1px solid var(--bg);font:600 10.5px var(--f-body);color:var(--bg);background:var(--c-seg);padding:4px 6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tl .mg{position:absolute;top:27px;height:10px;border-radius:3px;background:var(--c-mg);opacity:.85}
+.tl .sx{position:absolute;top:42px;width:2px;height:10px;background:var(--c-sfx)}
+.tl .ph{position:absolute;top:0;bottom:0;width:2px;background:var(--c-sfx)}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:12.5px;color:var(--muted);margin-top:8px}
+.legend span{display:inline-flex;gap:6px;align-items:center}
+.legend i{width:10px;height:10px;border-radius:3px}
+.tabs{display:flex;gap:2px;flex-wrap:wrap;border-bottom:1px solid var(--line)}
+.tab{font:500 14px var(--f-body);background:none;border:0;border-bottom:3px solid transparent;color:var(--muted);padding:10px 10px 8px;cursor:pointer}
+.tab[aria-selected="true"]{color:var(--ink);border-color:var(--accent)}
+.tab .n{display:inline-block;min-width:18px;margin-left:4px;padding:0 5px;border-radius:99px;background:var(--mark);color:#3a2a00;font-size:11px;font-weight:600;text-align:center}
+:is(.tab,.cap-row,.ev,.tl,.btn,a):focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+a{color:var(--accent)}
+.pane{min-width:0}
+.pane h2{font-family:var(--f-display);font-weight:700;font-size:20px;margin:6px 0 6px;letter-spacing:-.01em}
+.pane h3{font-size:15px;margin:18px 0 6px;font-weight:600}
+.pane p,.pane li{max-width:68ch}
+.pane p{margin:0 0 10px}
+.caps,.evs{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.cap-row,.ev{display:grid;gap:10px;padding:8px 6px;border:0;border-bottom:1px solid var(--line);background:none;text-align:left;font:inherit;color:inherit;cursor:pointer;align-items:baseline}
+.cap-row{grid-template-columns:64px minmax(0,1fr)}
+.ev{grid-template-columns:64px 110px minmax(0,1fr)}
+@media (max-width:520px){.ev{grid-template-columns:56px minmax(0,1fr)}.ev .k{grid-column:2}}
+.cap-row:hover,.ev:hover{background:var(--chip)}
+.cap-row.on{background:color-mix(in srgb,var(--mark) 26%,transparent)}
+time{font-variant-numeric:tabular-nums;color:var(--muted);font-size:13px}
+.hl{font-weight:600;color:var(--mark-ink)}
+.fix{background:var(--mark);color:#3a2a00;border-radius:4px;padding:0 4px}
+.cap-row .sec{display:block;font-size:12px;color:var(--muted)}
+.ev .k{font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--mark-ink)}
+.ev .k.sfx{color:var(--c-sfx)}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:460px}
+th,td{text-align:left;padding:8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);font-weight:600}
+td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
+.list{display:flex;flex-direction:column;gap:10px;padding:0;margin:0;list-style:none}
+.q{border:1px solid var(--line);border-left:4px solid var(--warn);border-radius:10px;padding:10px 14px;background:var(--surface)}
+.q.done{border-left-color:var(--ok)}
+.q b{display:block;margin-bottom:2px}
+.tag{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:1px 8px;border-radius:99px;margin-right:6px}
+.tag.w{background:color-mix(in srgb,var(--warn) 18%,transparent);color:var(--warn)}
+.tag.o{background:color-mix(in srgb,var(--ok) 18%,transparent);color:var(--ok)}
+.tt{border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:14px 16px;white-space:pre-wrap;font-size:15px}
+.tt .hs{color:var(--accent);font-weight:600}
+.btn{font:500 14px var(--f-body);border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:10px;padding:8px 14px;cursor:pointer;min-height:40px;margin-top:10px}
+.copied{font-size:13px;color:var(--ok);margin-left:8px}
+code{font-size:13px;background:var(--chip);padding:1px 5px;border-radius:4px}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <h1>AS-F-002 <mark>SPM 2026</mark>: preview v1</h1>
+    <span class="status"><b>Menunggu semakan</b> TOFU · preview 540×960 · 50.9 saat · belum render final</span>
+  </header>
+
+  <div class="grid">
+    <section class="player" aria-label="Pemain preview">
+      <div class="phone"><video id="v" controls playsinline preload="metadata" poster="thumb.jpg" src="preview.mp4"></video></div>
+      <p class="hint">Tekan ▶ untuk main dengan bunyi. Klik baris transkrip atau cue pelan edit untuk lompat ke masa itu.</p>
+    </section>
+
+    <section class="panel">
+      <div>
+        <div class="tl" id="tl" role="slider" tabindex="0" aria-label="Garis masa edit" aria-valuemin="0" aria-valuemax="50.9" aria-valuenow="0"></div>
+        <div class="legend">
+          <span><i style="background:var(--c-seg)"></i>Babak</span>
+          <span><i style="background:var(--c-mg)"></i>Animasi / grafik</span>
+          <span><i style="background:var(--c-sfx)"></i>Sound effect</span>
+        </div>
+      </div>
+      <div class="tabs" role="tablist">
+        <button class="tab" role="tab" aria-selected="true" data-p="p-tr" id="tab-tr">Transkrip</button>
+        <button class="tab" role="tab" aria-selected="false" data-p="p-ed" id="tab-ed">Pelan edit</button>
+        <button class="tab" role="tab" aria-selected="false" data-p="p-ga" id="tab-ga">Warna &amp; audio</button>
+        <button class="tab" role="tab" aria-selected="false" data-p="p-q" id="tab-q">Status<span class="n" id="nq"></span></button>
+        <button class="tab" role="tab" aria-selected="false" data-p="p-cp" id="tab-cp">Caption</button>
+      </div>
+
+      <div class="pane" id="p-tr" role="tabpanel">
+        <h2>Transkrip</h2>
+        <p>Ditranskrip dengan Whisper large-v3 (masa setiap perkataan) dan dipecah ikut caption dalam video. Perkataan <span class="hl">tebal kuning</span> ialah kata kunci yang dipapar kuning. Perkataan <span class="fix">berlatar kuning</span> ialah ejaan yang dibetulkan dari transkrip (hover untuk lihat asal).</p>
+        <div class="caps" id="caps"></div>
+      </div>
+
+      <div class="pane" id="p-ed" role="tabpanel" hidden>
+        <h2>Pelan edit</h2>
+        <p>Satu take bersih, tiada ulangan. Hanya jeda senyap lebih 0.3 saat dibuang (padding 0.1 s), jadi 52.9 s jadi 48.4 s. Video = thumbnail 1 saat + isi 48.4 saat + end card 1.5 saat. Gaya ikut rujukan TOFU (<code>Aster→ rujukan-gaya-TOFU.mp4</code>): kotak atas biru gelap, nota tulisan tangan, senarai semak, kad Follow di tengah video, end card biru gelap.</p>
+        <h3>Babak</h3>
+        <div class="tbl"><table>
+          <thead><tr><th>Masa</th><th>Babak</th><th>Grafik utama</th></tr></thead>
+          <tbody id="segtbl"></tbody></table></div>
+        <h3>Potongan &amp; punch-in</h3>
+        <p>20 potongan. Zoom selang-seli 100% dan 113% setiap 2–3 potongan, mata Cikgu AlFarhan di sepertiga atas.</p>
+        <div class="tbl"><table>
+          <thead><tr><th>Masa video</th><th>Masa asal</th><th>Zoom</th></tr></thead>
+          <tbody id="cuttbl"></tbody></table></div>
+        <h3>Semua cue animasi dan SFX</h3>
+        <div class="evs" id="evs"></div>
+      </div>
+
+      <div class="pane" id="p-ga" role="tabpanel" hidden>
+        <h2>Warna dan audio</h2>
+        <h3>Colour grade</h3>
+        <div class="tbl"><table>
+          <thead><tr><th>Langkah</th><th>Nilai</th><th>Kesan</th></tr></thead>
+          <tbody>
+            <tr><td>Kecerahan</td><td class="n">+0.02, gamma 1.02</td><td>Muka lebih terang sedikit, dinding putih tak terbakar.</td></tr>
+            <tr><td>Kontras</td><td class="n">×1.06</td><td>Gambar lebih jelas tanpa bayang jadi hitam.</td></tr>
+            <tr><td>Saturasi</td><td class="n">×1.08</td><td>Baju hijau pucat dan mug biru lebih hidup.</td></tr>
+            <tr><td>Imbangan warna</td><td class="n">merah −0.01, biru +0.01</td><td>Buang sedikit warna kuning lampu. Warna kulit asli dikekalkan.</td></tr>
+          </tbody></table></div>
+        <h3>Audio</h3>
+        <div class="tbl"><table>
+          <thead><tr><th>Langkah</th><th>Kesan</th></tr></thead>
+          <tbody>
+            <tr><td>High-pass 80 Hz</td><td>Buang dengung rendah dan bunyi meja.</td></tr>
+            <tr><td>Noise reduction ringan (8 dB)</td><td>Bunyi bilik berkurang tanpa suara jadi "robot".</td></tr>
+            <tr><td>Compressor ringan (2.5:1)</td><td>Volume suara lebih sekata.</td></tr>
+            <tr><td>Fade 12 ms di setiap potongan</td><td>Tiada bunyi "klik" di sambungan.</td></tr>
+            <tr><td>Loudness −16.1 → −13.9 LUFS</td><td>Sasaran −14 LUFS. True peak −1.2 dBFS (had −1 dBTP).</td></tr>
+            <tr><td>SFX (32 cue)</td><td>Pop, whoosh, klik, tick, ding, riser, impact. Dijana sendiri, bebas hak cipta. Diletak di bawah suara.</td></tr>
+            <tr><td>Muzik latar</td><td>Tiada. Folder <code>MUSIC/</code> kosong.</td></tr>
+          </tbody></table></div>
+      </div>
+
+      <div class="pane" id="p-q" role="tabpanel" hidden>
+        <h2>Status</h2>
+        <h3>Ikut arahan sesi</h3>
+        <ul class="list" id="done"></ul>
+        <h3>Perlu semak</h3>
+        <ul class="list" id="todo"></ul>
+      </div>
+
+      <div class="pane" id="p-cp" role="tabpanel" hidden>
+        <h2>Caption TikTok</h2>
+        <div class="tt" id="tt"></div>
+        <button class="btn" id="copy">Salin caption</button><span class="copied" id="copied" hidden>Disalin</span>
+      </div>
+    </section>
+  </div>
+</div>
+
+<script>
+const DATA={"caps": [{"s": 1.0, "e": 2.88, "w": [{"t": "Akan", "hl": false, "fix": null}, {"t": "menduduki", "hl": false, "fix": null}, {"t": "SPM", "hl": true, "fix": null}]}, {"s": 2.88, "e": 4.04, "w": [{"t": "bermula", "hl": false, "fix": null}, {"t": "esok", "hl": true, "fix": null}]}, {"s": 4.04, "e": 5.22, "w": [{"t": "Moga", "hl": false, "fix": null}, {"t": "Allah", "hl": false, "fix": null}, {"t": "kurniakan", "hl": false, "fix": "kuniakan"}]}, {"s": 5.22, "e": 6.74, "w": [{"t": "awak", "hl": false, "fix": null}, {"t": "ketenangan", "hl": true, "fix": null}, {"t": "jiwa", "hl": false, "fix": null}]}, {"s": 6.74, "e": 8.26, "w": [{"t": "rohani", "hl": false, "fix": null}, {"t": "untuk", "hl": false, "fix": null}, {"t": "menjawab", "hl": false, "fix": null}]}, {"s": 8.26, "e": 9.22, "w": [{"t": "semua", "hl": false, "fix": null}, {"t": "soalan-soalan", "hl": false, "fix": null}]}, {"s": 9.22, "e": 10.5, "w": [{"t": "Tenang-tenang", "hl": true, "fix": null}, {"t": "tau", "hl": false, "fix": null}]}, {"s": 10.5, "e": 12.34, "w": [{"t": "Jangan", "hl": false, "fix": null}, {"t": "gabra", "hl": true, "fix": "gabrah"}]}, {"s": 12.34, "e": 14.88, "w": [{"t": "jangan", "hl": false, "fix": null}, {"t": "takut", "hl": true, "fix": null}, {"t": "ataupun", "hl": false, "fix": null}]}, {"s": 14.88, "e": 15.78, "w": [{"t": "tenang", "hl": true, "fix": null}, {"t": "je", "hl": false, "fix": null}, {"t": "lah", "hl": false, "fix": null}]}, {"s": 15.78, "e": 18.27, "w": [{"t": "Pastikan", "hl": false, "fix": null}, {"t": "awak", "hl": false, "fix": null}, {"t": "jawab", "hl": false, "fix": null}]}, {"s": 18.27, "e": 19.27, "w": [{"t": "soalan", "hl": false, "fix": null}, {"t": "yang", "hl": false, "fix": null}, {"t": "awak", "hl": false, "fix": null}]}, {"s": 19.27, "e": 20.25, "w": [{"t": "dapat", "hl": false, "fix": null}, {"t": "tackle", "hl": true, "fix": "taker"}, {"t": "dulu", "hl": false, "fix": null}]}, {"s": 20.25, "e": 21.7, "w": [{"t": "Then", "hl": false, "fix": null}, {"t": "baru", "hl": false, "fix": null}, {"t": "awak", "hl": false, "fix": null}]}, {"s": 21.7, "e": 23.52, "w": [{"t": "bagi", "hl": false, "fix": null}, {"t": "ruang", "hl": false, "fix": null}, {"t": "untuk", "hl": false, "fix": null}]}, {"s": 23.52, "e": 24.78, "w": [{"t": "soalan-soalan", "hl": false, "fix": null}, {"t": "yang", "hl": false, "fix": null}, {"t": "susah", "hl": true, "fix": null}]}, {"s": 24.78, "e": 25.74, "w": [{"t": "Tackle", "hl": true, "fix": "Taker"}, {"t": "soalan", "hl": false, "fix": null}, {"t": "yang", "hl": false, "fix": null}]}, {"s": 25.74, "e": 26.52, "w": [{"t": "senang", "hl": true, "fix": null}, {"t": "dulu", "hl": false, "fix": null}]}, {"s": 26.52, "e": 28.62, "w": [{"t": "kemudian", "hl": false, "fix": null}, {"t": "baru", "hl": false, "fix": null}, {"t": "tackle", "hl": true, "fix": "taker"}]}, {"s": 28.62, "e": 29.64, "w": [{"t": "soalan-soalan", "hl": false, "fix": null}, {"t": "yang", "hl": false, "fix": null}, {"t": "awak", "hl": false, "fix": null}]}, {"s": 29.64, "e": 30.9, "w": [{"t": "rasa", "hl": false, "fix": null}, {"t": "macam", "hl": false, "fix": null}, {"t": "okay", "hl": false, "fix": null}]}, {"s": 30.9, "e": 31.82, "w": [{"t": "yang", "hl": false, "fix": null}, {"t": "ni", "hl": false, "fix": null}, {"t": "nanti", "hl": false, "fix": null}]}, {"s": 31.82, "e": 32.38, "w": [{"t": "kemudian", "hl": false, "fix": null}]}, {"s": 32.38, "e": 33.41, "w": [{"t": "Yang", "hl": false, "fix": null}, {"t": "pasti", "hl": false, "fix": null}]}, {"s": 33.41, "e": 35.19, "w": [{"t": "jangan", "hl": false, "fix": null}, {"t": "tinggalkan", "hl": false, "fix": null}, {"t": "soalan", "hl": false, "fix": null}]}, {"s": 35.19, "e": 36.56, "w": [{"t": "tu", "hl": false, "fix": null}, {"t": "kosong", "hl": true, "fix": null}]}, {"s": 36.56, "e": 38.9, "w": [{"t": "Jawab", "hl": false, "fix": null}, {"t": "selagi", "hl": false, "fix": null}, {"t": "mana", "hl": false, "fix": null}]}, {"s": 38.9, "e": 39.76, "w": [{"t": "boleh", "hl": false, "fix": null}, {"t": "jawab", "hl": false, "fix": null}]}, {"s": 40.22, "e": 41.37, "w": [{"t": "Jangan", "hl": false, "fix": null}, {"t": "biarkan", "hl": false, "fix": null}, {"t": "paper", "hl": false, "fix": null}]}, {"s": 41.37, "e": 42.33, "w": [{"t": "tu", "hl": false, "fix": null}, {"t": "kosong", "hl": true, "fix": null}]}, {"s": 42.89, "e": 43.5, "w": [{"t": "Good", "hl": true, "fix": null}, {"t": "luck", "hl": true, "fix": null}]}, {"s": 43.5, "e": 45.45, "w": [{"t": "sukses", "hl": true, "fix": null}, {"t": "selalu", "hl": false, "fix": null}]}, {"s": 45.45, "e": 47.36, "w": [{"t": "InsyaAllah", "hl": false, "fix": null}, {"t": "kejayaan", "hl": true, "fix": null}, {"t": "menuju", "hl": false, "fix": null}]}, {"s": 47.36, "e": 48.44, "w": [{"t": "kamu", "hl": false, "fix": null}, {"t": "semua", "hl": false, "fix": null}]}, {"s": 48.44, "e": 49.36, "w": [{"t": "Assalamualaikum", "hl": false, "fix": null}]}], "cuts": [{"t": 1, "z": 1.0, "src": 0.0}, {"t": 4.14, "z": 1.0, "src": 3.5}, {"t": 9.33, "z": 1.13, "src": 8.93}, {"t": 14.31, "z": 1.13, "src": 14.03}, {"t": 17.14, "z": 1.13, "src": 17.29}, {"t": 20.41, "z": 1.0, "src": 20.83}, {"t": 21.09, "z": 1.0, "src": 21.69}, {"t": 22.05, "z": 1.13, "src": 22.89}, {"t": 24.93, "z": 1.13, "src": 25.93}, {"t": 26.81, "z": 1.13, "src": 28.01}, {"t": 32.48, "z": 1.0, "src": 33.81}, {"t": 32.85, "z": 1.0, "src": 34.32}, {"t": 33.58, "z": 1.13, "src": 35.25}, {"t": 36.56, "z": 1.13, "src": 38.37}, {"t": 37.78, "z": 1.13, "src": 39.77}, {"t": 38.44, "z": 1.0, "src": 40.54}, {"t": 39.72, "z": 1.0, "src": 42.06}, {"t": 40.43, "z": 1.13, "src": 43.04}, {"t": 42.9, "z": 1.13, "src": 45.84}, {"t": 45.45, "z": 1.13, "src": 48.71}, {"t": 48.25, "z": 1.0, "src": 51.77}], "mg": [[0, 1.0, "thumb", "Thumbnail 1 s: hook SPM ESOK? JANGAN GABRA!"], [0, 50.87, "watermark", "asteredu11.com.my sepanjang video, putih 66% + bayang halus, atas-kiri 14%"], [1.0, 10.4, "topbox", "Kotak atas: CALON SPM 2026 / SPM 2026 · CIKGU ALFARHAN"], [1.2, 4.2, "label", "Label Cikgu AlFarhan + wajah bulatan emas"], [3.6, 5.54, "sticker", "Pelekat merah BERMULA ESOK!"], [5.58, 9.14, "pill", "Pil hati: ketenangan jiwa"], [10.5, 15.73, "note", "Nota tulisan tangan: Jangan gabra / Jangan takut / Tenang je lah"], [15.78, 26.81, "check", "Senarai semak strategi jawab (item muncul & ditanda ikut sebutan)"], [26.81, 30.75, "follow", "CTA tengah: kad TikTok @aster.edu_tpg + Follow → Followed"], [30.85, 36.51, "check", "Senarai semak kembali: item 3 Jangan tinggal kosong"], [36.56, 39.56, "paper", "Sisipan penuh: kertas jawapan diisi (≤3 s, suara berjalan)"], [39.56, 40.53, "topbox", "Kotak atas"], [40.53, 42.69, "stamp", "Cop merah JANGAN BIAR KOSONG!"], [42.89, 45.36, "goodluck", "GOOD LUCK! + SUKSES SELALU dengan bintang"], [45.94, 48.25, "pill", "Pil bintang: kejayaan menuju kamu"], [48.25, 49.37, "topbox", "Kotak atas kembali"], [49.37, 50.87, "endcard", "End card: wajah bulatan emas, Cikgu AlFarhan, logo TikTok + @aster.edu_tpg, CTA follow, asteredu11.com.my"]], "sfx": [[0.0, "impact"], [0.95, "whoosh"], [1.2, "pop"], [3.6, "pop"], [5.58, "pop"], [10.5, "whoosh"], [10.5, "click"], [12.34, "click"], [14.88, "click"], [15.78, "whoosh"], [17.79, "pop"], [20.09, "ding"], [21.7, "pop"], [24.74, "ding"], [26.81, "whoosh"], [26.9, "pop"], [28.2, "click"], [30.85, "whoosh"], [33.83, "pop"], [36.17, "ding"], [36.51, "whoosh"], [36.71, "tick"], [37.46, "tick"], [38.21, "tick"], [39.51, "whoosh"], [40.53, "impact"], [42.64, "riser"], [42.89, "ding"], [43.5, "pop"], [45.94, "ding"], [49.32, "whoosh"], [49.62, "ding"]], "dur": 50.87};
+const $=id=>document.getElementById(id);
+const v=$("v"), D=DATA.dur;
+const fmt=t=>{t=Math.max(0,t);const m=Math.floor(t/60),s=t-m*60;return m+":"+(s<10?"0":"")+s.toFixed(1)};
+const seek=t=>{v.currentTime=Math.min(Math.max(0,t),D-0.05);};
+const SEG=[
+ [0,1.0,"Thumbnail","SPM ESOK? / JANGAN / GABRA!"],
+ [1.0,10.5,"Doa untuk calon","Kotak CALON SPM, label Cikgu AlFarhan, pelekat BERMULA ESOK!, pil KETENANGAN JIWA"],
+ [10.5,15.78,"Jangan gabra","Nota tulisan tangan INGAT!: Jangan gabra, Jangan takut, Tenang je lah"],
+ [15.78,26.81,"Soalan senang dulu","Senarai semak: Jawab soalan senang dulu, Soalan susah kemudian"],
+ [26.81,30.85,"Follow","Kad TikTok wajah + @aster.edu_tpg, Follow → Followed"],
+ [30.85,36.56,"Jangan kosong","Senarai semak: Jangan tinggal kosong"],
+ [36.56,42.89,"Jawab semua","Sisipan kertas jawapan (3 s), cop JANGAN BIAR KOSONG!"],
+ [42.89,49.37,"Good luck","GOOD LUCK! + SUKSES SELALU, pil KEJAYAAN MENUJU KAMU"],
+ [49.37,50.87,"End card","Wajah bulatan emas, Cikgu AlFarhan, logo TikTok @aster.edu_tpg, CTA follow, asteredu11.com.my"]];
+const KIND={thumb:"Thumbnail",watermark:"Watermark",topbox:"Kotak atas",label:"Label",sticker:"Pelekat",pill:"Pil",note:"Nota",check:"Senarai semak",follow:"CTA follow",paper:"Sisipan",stamp:"Cop",goodluck:"Teks besar",endcard:"End card"};
+const DONE=[
+ ["CTA follow sahaja","Kad Follow di tengah video (0:26.8) dan end card guna CTA TOFU \"Follow untuk tips belajar anak seterusnya\". Tiada CTA WhatsApp atau daftar.",26.9],
+ ["Logo TikTok","Kad Follow dan end card guna wajah dalam bulatan emas (Logo SocMed Aster) + logo TikTok + @aster.edu_tpg. Tiada Logo Rasmi Aster atau teks ASTER EDU.",49.6],
+ ["Watermark","asteredu11.com.my sepanjang video termasuk thumbnail, putih ±68% dengan bayang halus, atas-kiri 14%.",20],
+ ["Safe zone","Semua teks di atas 80% frame dan di luar jalur kanan 15%.",0.5]];
+const TODO=[
+ ["Perkataan pertama","Video bermula \"Akan menduduki SPM bermula esok\". Mungkin perkataan awal (contoh \"Kepada calon yang\") terpotong semasa rakaman. Ok bermula begini?",1.0],
+ ["End card tanpa WhatsApp","Ikut arahan \"CTA hanya follow\", nombor WhatsApp dibuang. asteredu11.com.my dikekalkan kerana DNA Aster wajibkan di setiap end card. Ok?",49.6],
+ ["Teks CTA end card","CTA TOFU dalam DNA (\"Follow untuk tips belajar anak seterusnya\") ditujukan kepada ibu bapa, tapi video ini bercakap kepada calon SPM. Kekal, atau tukar contoh \"Follow untuk tips belajar seterusnya\"?",49.6],
+ ["Durasi 50.9 s","Melebihi sasaran TOFU 20–45 s. Isi tidak dipotong untuk kejar durasi."],
+ ["\"SPM 2026\" di kotak atas","Diambil dari tajuk skrip; tidak disebut dalam video.",2.0],
+ ["Ejaan \"tackle\"","Disebut \"taker\" (3 kali). Caption guna \"tackle\".",19.3],
+ ["Fail rujukan gaya","Ketiga-tiga fail dalam BRAND/ masih bernama \"…→ rujukan-gaya-TOFU.mp4\". Dipakai \"Aster→ rujukan-gaya-TOFU.mp4\" sebagai rujukan TOFU."],
+ ["Fail preview di Drive","Ringkasan sudah dalam 02_EDITED/_PREVIEW/. Fail MP4 (6.4 MB) dan THUMB.png tidak dapat dimuat naik melalui connector Drive; sila muat turun dari halaman ini jika perlu."],
+ ["Muzik latar","Tiada (MUSIC/ kosong). B-roll tiada (folder B-ROLL/ tiada)."]];
+const TT="Calon SPM, esok dah mula! Tenang, jangan gabra. Jawab soalan senang dulu, jangan tinggal kertas kosong. Good luck, sukses selalu! 🤲";
+const HS="#SPM2026 #calonSPM #tipsSPM #cikgualfarhan #asteredu";
+
+const tl=$("tl");let h="";
+SEG.forEach(s=>h+=`<div class="seg" style="left:${s[0]/D*100}%;width:${(s[1]-s[0])/D*100}%" title="${s[2]}">${s[2]}</div>`);
+DATA.mg.filter(m=>m[2]!=="watermark").forEach(m=>h+=`<div class="mg" style="left:${m[0]/D*100}%;width:${Math.max(.5,(m[1]-m[0])/D*100)}%"></div>`);
+DATA.sfx.forEach(x=>h+=`<div class="sx" style="left:${x[0]/D*100}%"></div>`);
+tl.innerHTML=h+'<div class="ph" id="ph"></div>';
+tl.addEventListener("pointerdown",e=>{const r=tl.getBoundingClientRect();seek((e.clientX-r.left)/r.width*D)});
+tl.addEventListener("keydown",e=>{if(e.key==="ArrowRight")seek(v.currentTime+1);if(e.key==="ArrowLeft")seek(v.currentTime-1)});
+
+const segOf=t=>SEG.find(s=>t>=s[0]&&t<s[1])||SEG[SEG.length-1];
+let last="";
+$("caps").innerHTML=DATA.caps.map((c,i)=>{const sg=segOf(c.s)[2];const head=sg!==last?`<span class="sec">${sg}</span>`:"";last=sg;
+  const txt=c.w.map(w=>w.fix?`<span class="fix" title="Transkrip: ${w.fix}">${w.t}</span>`:w.hl?`<span class="hl">${w.t}</span>`:w.t).join(" ");
+  return `<button class="cap-row" data-t="${c.s}" id="cr${i}"><time>${fmt(c.s)}</time><span>${head}${txt}</span></button>`}).join("");
+
+$("segtbl").innerHTML=SEG.map(s=>`<tr><td class="n"><a href="#" data-t="${s[0]}">${fmt(s[0])}–${fmt(s[1])}</a></td><td>${s[2]}</td><td>${s[3]}</td></tr>`).join("");
+$("cuttbl").innerHTML=DATA.cuts.map(c=>`<tr><td class="n"><a href="#" data-t="${c.t}">${fmt(c.t)}</a></td><td class="n">${fmt(c.src)}</td><td class="n">${Math.round(c.z*100)}%</td></tr>`).join("");
+const evs=DATA.mg.map(m=>({t:m[0],k:KIND[m[2]]||m[2],d:m[3]+" (hingga "+fmt(m[1])+")",s:false})).concat(DATA.sfx.map(x=>({t:x[0],k:"SFX",d:x[1],s:true}))).sort((a,b)=>a.t-b.t);
+$("evs").innerHTML=evs.map(e=>`<button class="ev" data-t="${e.t}"><time>${fmt(e.t)}</time><span class="k${e.s?" sfx":""}">${e.k}</span><span>${e.d}</span></button>`).join("");
+
+const li=(d,cls,tag,lab)=>`<li class="q${cls}"><b><span class="tag ${tag}">${lab}</span>${d[0]}</b>${d[1]}${d[2]!=null?` <a href="#" data-t="${d[2]}">Lihat ${fmt(d[2])}</a>`:""}</li>`;
+$("done").innerHTML=DONE.map(d=>li(d," done","o","Siap")).join("");
+$("todo").innerHTML=TODO.map(d=>li(d,"","w","Perlu semak")).join("");
+$("nq").textContent=TODO.length;
+
+$("tt").innerHTML=TT+"\n\n<span class=\"hs\">"+HS+"</span>";
+$("copy").onclick=()=>{const t=TT+"\n\n"+HS;
+  const ok=()=>{$("copied").hidden=false;setTimeout(()=>$("copied").hidden=true,1800)};
+  const sel=()=>{const r=document.createRange();r.selectNodeContents($("tt"));const s=getSelection();s.removeAllRanges();s.addRange(r);};
+  try{navigator.clipboard.writeText(t).then(ok,sel)}catch(e){sel()}};
+
+document.addEventListener("click",e=>{const b=e.target.closest("[data-t]");if(!b||b===tl)return;e.preventDefault();seek(+b.dataset.t+0.02);});
+
+document.querySelectorAll(".tab").forEach(tb=>tb.onclick=()=>{document.querySelectorAll(".tab").forEach(x=>{x.setAttribute("aria-selected",x===tb);$(x.dataset.p).hidden=x!==tb});
+  try{localStorage.setItem("asf002-tab",tb.id)}catch(e){}});
+try{const k=localStorage.getItem("asf002-tab");if(k&&$(k))$(k).click();}catch(e){}
+
+let lastCr=-1;
+function loop(){const t=v.currentTime||0;$("ph").style.left=(t/D*100)+"%";tl.setAttribute("aria-valuenow",t.toFixed(1));
+  const ci=DATA.caps.findIndex(c=>t>=c.s&&t<c.e);
+  if(ci!==lastCr){document.querySelectorAll(".cap-row.on").forEach(x=>x.classList.remove("on"));if(ci>=0)$("cr"+ci).classList.add("on");lastCr=ci;}
+  requestAnimationFrame(loop);}
+loop();
+</script>
