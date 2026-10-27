@@ -19,9 +19,9 @@ mix = f"[v]{''.join(f'[x{j}]' for j in range(len(fx)))}amix=inputs={len(fx) + 1}
 def run(extra, out):
     g = voice + ";" + ";".join(fx) + ";" + mix + extra
     return subprocess.run(["ffmpeg", "-v", "info", "-y", *inputs, "-filter_complex", g, *out], capture_output=True, text=True)
-r = run(",loudnorm=I=-14:TP=-1.5:LRA=11:print_format=json", ["-f", "null", "-"])
+r = run(",loudnorm=I=-14:TP=-2.0:LRA=11:print_format=json", ["-f", "null", "-"])
 m = json.loads(re.search(r"\{[^{}]*\"input_i\"[^{}]*\}", r.stderr).group(0))
-ln = (f",loudnorm=I=-14:TP=-1.5:LRA=11:measured_I={m['input_i']}:measured_TP={m['input_tp']}:measured_LRA={m['input_lra']}"
+ln = (f",loudnorm=I=-14:TP=-2.0:LRA=11:measured_I={m['input_i']}:measured_TP={m['input_tp']}:measured_LRA={m['input_lra']}"
       f":measured_thresh={m['input_thresh']}:offset={m['target_offset']}:linear=true,aresample=48000")
 r = run(ln, ["-c:a", "pcm_s16le", OUT]); print(r.returncode, r.stderr[-400:] if r.returncode else "ok")
 r = subprocess.run(["ffmpeg", "-i", OUT, "-af", "ebur128=peak=true", "-f", "null", "-"], capture_output=True, text=True)
