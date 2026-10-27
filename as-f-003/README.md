@@ -1,6 +1,6 @@
 # AS-F-003 SoalanMath (Aster · TOFU+BOFU · Farhan)
 
-Status: **preview sahaja, belum render final.** Video sumber dan b-roll ada dalam Drive (Konten › Aster), tidak disimpan dalam git.
+Status: **SIAP.** Final 1080×1920 dirender 27 Okt 2026 dari preview v4 yang diluluskan Farhan. Video sumber dan b-roll ada dalam Drive (Konten › Aster), tidak disimpan dalam git.
 
 - `transcript.json`: transkrip Whisper large-v3 (masa setiap perkataan) bagi `01_RAW/2026-10-27_FARHAN/AS-F-003_SoalanMath.mp4`.
 - `build.py` → `timeline.json`: EDL (hanya senyap >0.3 s dibuang; footage sudah ditrim), caption, grafik, SFX, punch-in, peta masa b-roll iPad.
