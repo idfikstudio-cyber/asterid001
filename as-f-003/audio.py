@@ -4,13 +4,18 @@ import json, subprocess, sys, re
 tl = json.load(open(sys.argv[1])); MAIN, SFXD, OUT = sys.argv[2], sys.argv[3], sys.argv[4]
 T0, DUR = tl["thumb"], tl["dur"]
 parts, labels = [], []
+# jernihkan frasa harga di hujung: naikkan suara, presence 2–4 kHz, kurangkan boom 200 Hz (masa output)
+c0, c1 = tl["clarity"]; en = f"enable='between(t,{c0},{c1 + 0.3})'"
+CLAR = (f"volume=5dB:{en},equalizer=f=3000:t=q:w=1.2:g=4:{en},equalizer=f=1800:t=q:w=1.5:g=2:{en},"
+        f"equalizer=f=220:t=q:w=1.2:g=-3:{en},alimiter=limit=0.9:level=disabled,")
 for i, (a, b) in enumerate(tl["keep"]):
     d = b - a
-    parts.append(f"[0:a]atrim={a:.3f}:{b:.3f},asetpts=PTS-STARTPTS,afade=t=in:d=0.012,afade=t=out:st={d - 0.012:.3f}:d=0.012[s{i}]")
+    fo = 0.08 if i == len(tl["keep"]) - 1 else 0.012  # hujung rakaman: fade lebih panjang
+    parts.append(f"[0:a]atrim={a:.3f}:{b:.3f},asetpts=PTS-STARTPTS,afade=t=in:d=0.012,afade=t=out:st={d - fo:.3f}:d={fo}[s{i}]")
     labels.append(f"[s{i}]")
 voice = ";".join(parts) + f";{''.join(labels)}concat=n={len(labels)}:v=0:a=1," \
         "highpass=f=80,afftdn=nr=8:nf=-42,acompressor=threshold=-20dB:ratio=2.5:attack=8:release=120:makeup=2," \
-        f"adelay={int(T0 * 1000)}:all=1,apad=whole_dur={DUR:.3f},aformat=sample_rates=48000:channel_layouts=stereo[v]"
+        f"adelay={int(T0 * 1000)}:all=1,{CLAR}apad=whole_dur={DUR:.3f},aformat=sample_rates=48000:channel_layouts=stereo[v]"
 inputs = ["-i", MAIN]; fx = []
 for j, s in enumerate(tl["sfx"]):
     inputs += ["-i", f"{SFXD}/{s['name']}.wav"]

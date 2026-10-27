@@ -3,7 +3,7 @@
 import json, re, sys
 
 tr = json.load(open(sys.argv[1]))
-SRC_END = 93.86
+SRC_END = 94.18  # hujung rakaman: harga disebut sampai habis
 THUMB, OUTRO = 1.0, 1.5
 
 # ---- EDL: footage sudah ditrim oleh Farhan; hanya senyap >0.3 s dibuang (silencedetect -32 dB), padding 0.1 s
@@ -30,7 +30,8 @@ CONTENT = sum(b - a for a, b in keep)
 DUR = THUMB + CONTENT + OUTRO
 
 # ---- perkataan + pembetulan ejaan
-FIX = {"belajar": "Darjah", "rumah": "rendah", "tuition": "tuisyen", "syllabus": "silibus", "So": "So,"}
+FIX = {"RM69": "RM99", "belajar": "Darjah",  # RM99 disahkan Farhan
+       "rumah": "rendah", "tuition": "tuisyen", "syllabus": "silibus", "So": "So,"}
 W = []
 for sg in tr:
     for w in sg["words"]:
@@ -54,7 +55,7 @@ for k in range(len(W) - 2):
     if trio == ["2", "6", "4"]: merge_digits(W, k, 3, "2, 6, 4.");
     if trio == ["5", "2", "8"]: merge_digits(W, k, 3, "5, 2, 8.")
 
-HOT = {"Darjah", "masalah", "darab", "mudah", "tambah", "jawapan", "Senang", "DM", "RM20", "RM69", "percuma", "jadual", "silibus",
+HOT = {"Darjah", "masalah", "darab", "mudah", "tambah", "jawapan", "Senang", "DM", "RM20", "RM69", "RM99", "percuma", "jadual", "silibus",
        "4", "5", "6", "2", "8", "12", "22", "24", "32", "264", "528", "2, 6, 4", "5, 2, 8", "kedua", "pertama", "Sama", "1"}
 # caption: 1–4 perkataan, pecah ikut tanda baca / jeda > 0.35 s
 caps, cur = [], []
@@ -71,7 +72,7 @@ for c in caps:
 captions = []
 for i, c in enumerate(C):
     s = s2o(c[0]["s"]); e = s2o(C[i + 1][0]["s"]) if i + 1 < len(C) and s2o(C[i + 1][0]["s"]) - s2o(c[-1]["e"]) < 0.4 else s2o(c[-1]["e"]) + 0.15
-    captions.append({"s": round(s, 3), "e": round(min(e, THUMB + CONTENT), 3), "src": round(c[0]["s"], 2),
+    captions.append({"s": round(s, 3), "e": round(THUMB + CONTENT if i == len(C) - 1 else min(e, THUMB + CONTENT), 3), "src": round(c[0]["s"], 2),
                      "w": [{"t": re.sub(r"(?<=\D)[.,]$|^(.*\d)[.]$", lambda m: m.group(1) or "", x["w"]).rstrip(","), "hl": re.sub(r"[.,?!]", "", x["w"]) in HOT or x["w"].rstrip(".") in HOT,
                             **({"fix": x["orig"]} if "orig" in x else {})} for x in c]})
 
@@ -112,11 +113,11 @@ g(69.42, 70.85, "sticker", text="Senang kan?")
 g(78.08, 81.76, "comment", text="Komen jawapan 32 × 24 👇")
 # Jualan
 g(81.80, 85.6, "lower", title="MATH TURBO 2027", sub="Tuisyen sekolah rendah · tahun depan")
-g(82.0, 93.86, "reg", text="Pendaftaran 2027 dibuka")
+g(82.0, SRC_END, "reg", text="Pendaftaran 2027 dibuka")
 g(85.64, 87.12, "dm", text="DM saya", sub="untuk keterangan lanjut")
 g(87.46, 90.70, "chips", items=["Jadual kelas", "Silibus"])
-g(90.84, 93.86, "price1", label="Pendaftaran serendah", price="RM20")
-g(92.20, 93.86, "price2", top="5", mid="subjek", price="RM69")
+g(90.84, SRC_END, "price1", label="Pendaftaran serendah", price="RM20")
+g(92.20, SRC_END, "price2", top="5", mid="subjek", price="RM99")
 
 SFX = []
 def sfx(src, name, gain=0.6, out=None): SFX.append({"t": round(out if out is not None else s2o(src), 3), "name": name, "gain": gain})
@@ -139,7 +140,8 @@ Z, pat = [], [1.0, 1.0, 1.12, 1.12, 1.12, 1.0, 1.0, 1.12, 1.12]
 for i, b in enumerate(bounds):
     Z.append({"src": b, "t": round(s2o(b), 3), "z": pat[i % len(pat)]})
 
-json.dump({"dur": round(DUR, 3), "thumb": THUMB, "content": round(CONTENT, 3), "outro": OUTRO, "keep": keep,
+CLARITY = [round(s2o(92.95), 3), round(s2o(SRC_END), 3)]  # "5 subjek RM99": suara perlahan, dijernihkan
+json.dump({"dur": round(DUR, 3), "clarity": CLARITY, "thumb": THUMB, "content": round(CONTENT, 3), "outro": OUTRO, "keep": keep,
            "split": S(*SPLIT), "bmap": [[round(s2o(a), 3), b] for a, b in BMAP], "captions": captions, "graphics": G,
            "sfx": SFX, "zoom": Z}, open(sys.argv[2], "w"), ensure_ascii=False, indent=1)
 print("durasi", round(DUR, 2), "isi", round(CONTENT, 2), "caption", len(captions), "grafik", len(G), "sfx", len(SFX))
