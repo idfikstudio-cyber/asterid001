@@ -11,7 +11,7 @@ def s2o(s):
     return o
 fmt = lambda t: f"{int(t // 60)}:{t % 60:04.1f}"
 sp0, sp1 = tl["split"]
-SEG = [[0, T0, "Thumbnail", "ANAK SEKOLAH RENDAH / SUSAH NAK JAWAB SOALAN?? + soalan 24 × 22"],
+SEG = [[0, T0, "Thumbnail", "ANAK DARJAH 4, 5 DAN 6 / SUSAH NAK JAWAB SOALAN + soalan 24 × 22"],
        [T0, sp0, "Masalah ibu ayah", "Label Cikgu AlFarhan + wajah bulatan emas, pil Darjah 4 · 5 · 6, nota Masalah sebenar, kad Hari ni"],
        [sp0, s2o(48.34), "Soalan 1: 22 × 12", "Skrin terbelah: papan iPad atas, Cikgu bawah. LANGKAH 1–3, pop kiraan, kad JAWAPAN 264"],
        [s2o(48.34), s2o(70.85), "Soalan 2: 24 × 22", "LANGKAH 1–3, pop kiraan, kad JAWAPAN 528, pelekat Senang kan?"],
@@ -34,7 +34,7 @@ def desc(g):
     if k == "price1": return g["label"] + " " + g["price"]
     if k == "price2": return f"{g['top']} {g['mid']} {g['price']}"
     return g.get("text", "")
-MG = [[0, T0, "Thumbnail", "Hook ANAK SEKOLAH RENDAH SUSAH NAK JAWAB SOALAN?? + soalan 24 × 22 (tulisan iPad)"], [0, D, "Watermark", "asteredu11.com.my sepanjang video, putih 68% + bayang halus, atas-kiri 12%"]] + \
+MG = [[0, T0, "Thumbnail", "Hook ANAK DARJAH 4, 5 DAN 6 SUSAH NAK JAWAB SOALAN + soalan 24 × 22 (tulisan iPad)"], [0, D, "Watermark", "asteredu11.com.my sepanjang video, putih 68% + bayang halus, atas-kiri 12%"]] + \
      [[g["s"], g["e"], KIND[g["kind"]], desc(g)] for g in tl["graphics"]] + [[C, D, "End card", SEG[-1][3]]]
 cuts = [{"t": round(s2o(a), 2), "src": a} for a, b in tl["keep"]]
 zoom = [{"t": z["t"], "src": z["src"], "z": z["z"]} for z in tl["zoom"]]
@@ -48,7 +48,7 @@ DONE = [["Footage sudah ditrim", "Ikut arahan Farhan: isi tidak dipotong. Hanya 
         ["End card BOFU", "Wajah bulatan emas, Cikgu AlFarhan, @aster.edu_tpg, CTA WhatsApp Cikgu AlFarhan untuk daftar / cuba kelas, 011-5596 9070, asteredu11.com.my besar.", C + 0.6],
         ["Harga 5 subjek RM99 (v2)", "Disahkan Farhan: 5 subjek RM99. Caption dan bintang harga ditukar. Suara di frasa ini dijernihkan (+5 dB, presence 2–4 kHz, boom 220 Hz dikurangkan) dan potongan dipanjangkan ke hujung rakaman supaya perkataan tidak terpotong.", s2o(92.3)],
         ["Ayat berulang dibuang (v3)", "Ikut arahan Farhan: \"Jadi macam mana pula dengan soalan?\" (sumber 1:10.9–1:12.6) dibuang; video terus ke \"Macam mana pula dengan soalan? 32 kali dengan 24\".", s2o(75.1)],
-        ["Thumbnail baru (v3)", "Tajuk ANAK SEKOLAH RENDAH / SUSAH NAK JAWAB SOALAN?? + soalan 24 × 22 dari tulisan iPad sebenar.", 0.3],
+        ["Thumbnail baru (v4)", "Tajuk ANAK DARJAH 4, 5 DAN 6 / SUSAH NAK JAWAB SOALAN + soalan 24 × 22 dari tulisan iPad sebenar.", 0.3],
         ["Diluluskan Farhan", "Lower third MATH TURBO 2027 + pil Pendaftaran 2027 dibuka dikekalkan. End card guna CTA WhatsApp + 011-5596 9070.", s2o(82.0)],
         ["Pendaftaran RM20", "Disebut \"pendaftaran serendah RM20\"; sepadan rujukan-aster.txt (booking / pendaftaran RM20).", s2o(91.0)]]
 TODO = [
@@ -71,7 +71,7 @@ open(sys.argv[2], "w").write(page)
 L = [f"AS-F-003_SoalanMath — RINGKASAN PREVIEW (Aster Edu · TOFU+BOFU · spokesperson Farhan)",
      f"Preview 540x960, {D:.1f} saat (thumbnail 1.0 s + isi {tl['content']:.1f} s + end card 1.5 s). Footage sudah ditrim oleh Farhan; hanya jeda senyap >0.3 s dibuang (9 potongan) dan satu ayat berulang dibuang atas arahan Farhan (v3).",
      "Halaman preview: {{URL}}", "",
-     "1) TEKS HOOK / THUMBNAIL", "   ANAK SEKOLAH RENDAH / SUSAH NAK JAWAB SOALAN?? + soalan 24 × 22  (frame Cikgu AlFarhan senyum, sumber 1:10.2). Fail: AS-F-003_SoalanMath_THUMB.png", "",
+     "1) TEKS HOOK / THUMBNAIL", "   ANAK DARJAH 4, 5 DAN 6 / SUSAH NAK JAWAB SOALAN + soalan 24 × 22  (frame Cikgu AlFarhan senyum, sumber 1:10.2). Fail: AS-F-003_SoalanMath_THUMB.png", "",
      "2) CAPTION PENUH (ikut sebutan; *kata kunci kuning*)"]
 for c in caps:
     L.append(f"   {fmt(c['s'])}  " + " ".join(("*" + w["t"] + "*") if w["hl"] else w["t"] for w in c["w"]))
