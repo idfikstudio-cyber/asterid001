@@ -1,0 +1,168 @@
+<!doctype html>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800;900&family=Caveat:wght@700&display=block">
+<style>
+/* Lapisan grafik AS-F-003 (gaya HYBRID Aster: hitam + kuning). Ruang reka 1080×1920, diskala ikut viewport. */
+:root{--y:#ffc83d;--k:#0b0b0d;--w:#fff;--r:#ff4747;--g:#3ddc84;--sh:0 6px 22px rgba(0,0,0,.45)}
+html,body{margin:0;background:transparent;overflow:hidden}
+#root{position:absolute;left:0;top:0;width:1080px;height:1920px;transform-origin:0 0;font-family:Poppins,sans-serif;color:var(--w)}
+.el{position:absolute;opacity:0;will-change:transform,opacity}
+.stroke{-webkit-text-stroke:0 transparent;paint-order:stroke fill;text-shadow:0 0 2px #000,0 3px 0 #000,0 0 10px rgba(0,0,0,.65),3px 3px 0 #000,-3px 3px 0 #000,3px -2px 0 #000,-3px -2px 0 #000}
+#wm{left:64px;top:236px;font:600 30px Poppins;color:rgba(255,255,255,.68);text-shadow:0 1px 3px rgba(0,0,0,.55),0 0 8px rgba(0,0,0,.25);letter-spacing:.01em;opacity:1}
+#cap{left:60px;width:840px;text-align:center;font:800 70px/1.12 Poppins;text-transform:uppercase;letter-spacing:.01em}
+#cap b{color:var(--y);font-weight:900}
+/* thumbnail */
+#thumbShade{left:0;top:0;width:1080px;height:1000px;background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.25) 60%,transparent)}
+#hook{left:60px;top:300px;width:840px;text-align:center;text-transform:uppercase}
+#hook .l1{font:900 120px/1.02 Poppins;letter-spacing:-.01em}
+#hook .l2{display:inline-block;margin-top:18px;font:900 92px/1.1 Poppins;color:var(--k);background:var(--y);padding:4px 30px 10px;border-radius:18px;transform:rotate(-3deg);box-shadow:var(--sh)}
+#hook .mini{display:inline-block;margin-top:26px;font:700 64px Caveat;color:var(--y);background:rgba(0,0,0,.72);padding:0 26px 6px;border-radius:14px}
+/* label nama */
+.label{left:64px;top:420px;display:flex;align-items:center;gap:18px;background:rgba(10,10,12,.82);padding:12px 30px 12px 12px;border-radius:999px;box-shadow:var(--sh)}
+.face{border-radius:50%;border:6px solid var(--y);box-sizing:border-box;background:#222 center/cover}
+.label .face{width:92px;height:92px}
+.label span{font:800 40px Poppins}
+.pill{display:inline-flex;align-items:center;gap:14px;border-radius:999px;font:800 44px Poppins;padding:12px 34px;box-shadow:var(--sh);white-space:nowrap}
+.pill.yel{background:var(--y);color:var(--k)}
+.pill.red{background:var(--r);color:#fff}
+.note{left:56px;top:420px;width:430px;background:#fffdf4;color:#1d1d1d;border-radius:10px;padding:22px 28px 26px;box-shadow:var(--sh);
+  background-image:repeating-linear-gradient(transparent 0 58px,#cfe0ff 58px 60px);background-position:0 70px}
+.note h4{margin:0 0 6px;font:900 30px Poppins;letter-spacing:.06em;text-transform:uppercase;color:#c81e1e}
+.note p{margin:0;font:700 60px/1 Caveat}
+.note p u{text-decoration:none;background:linear-gradient(transparent 60%,var(--y) 60%)}
+.card{left:64px;top:330px;width:520px;background:#fff;color:#111;border-radius:22px;padding:20px 28px 24px;box-shadow:var(--sh)}
+.card small{display:block;font:700 24px Poppins;letter-spacing:.1em;text-transform:uppercase;color:#777}
+.card div{font:800 46px/1.15 Poppins}
+.card mark{background:linear-gradient(transparent 55%,var(--y) 55%);color:inherit}
+/* skrin terbelah */
+#divider{left:0;top:1000px;width:1080px;height:8px;background:var(--y)}
+#bar{right:170px;top:1012px;background:var(--y);color:var(--k);font:800 26px Poppins;padding:6px 18px;border-radius:0 0 12px 12px;letter-spacing:.02em}
+.qtag{left:48px;top:318px;font:900 34px Poppins;color:var(--k);background:var(--y);padding:6px 20px;border-radius:10px;letter-spacing:.04em}
+.step{left:36px;top:922px;display:flex;align-items:center;gap:16px;background:rgba(20,20,22,.94);border:2px solid #3a3a3a;padding:10px 26px 10px 10px;border-radius:999px}
+.step b{background:var(--y);color:var(--k);font:900 28px Poppins;padding:6px 18px;border-radius:999px;letter-spacing:.03em}
+.step span{font:700 32px Poppins}
+.calc{left:30px;top:420px;width:330px;text-align:center}
+.calc .ex{font:800 50px Poppins;color:#fff}
+.calc .rs{font:900 150px/1 Poppins}
+.calc.solo .rs{font-size:130px}
+.answer{left:120px;top:400px;width:700px;text-align:center;background:rgba(11,11,13,.93);border:5px solid var(--y);border-radius:32px;padding:20px 0 26px;box-shadow:0 0 0 10px rgba(255,200,61,.18),var(--sh)}
+.answer .q{font:800 56px Poppins}
+.answer .a{font:900 190px/1 Poppins;color:var(--y);letter-spacing:.04em}
+.answer small{display:block;font:800 28px Poppins;letter-spacing:.2em;color:#bbb}
+.sticker{left:560px;top:760px;background:var(--y);color:var(--k);font:900 48px Poppins;padding:10px 26px;border-radius:16px;box-shadow:var(--sh)}
+.comment{left:56px;top:640px;display:flex;gap:16px;align-items:center;background:#fff;color:#111;border-radius:26px;padding:16px 28px 16px 16px;box-shadow:var(--sh)}
+.comment .face{width:78px;height:78px;border-width:4px}
+.comment small{display:block;font:600 22px Poppins;color:#888}
+.comment div{font:800 38px Poppins}
+.lower{left:0;top:1120px;width:860px;padding:18px 0 22px 64px;background:linear-gradient(90deg,rgba(0,0,0,.88) 65%,transparent)}
+.lower b{display:block;font:900 66px/1 Poppins;color:var(--y);letter-spacing:.01em}
+.lower span{font:700 32px Poppins}
+.dm{left:64px;top:430px;display:flex;gap:18px;align-items:center;background:rgba(10,10,12,.88);border:3px solid var(--y);border-radius:24px;padding:16px 30px 16px 18px;box-shadow:var(--sh)}
+.dm i{width:76px;height:76px;border-radius:50%;background:var(--y);display:grid;place-items:center}
+.dm b{display:block;font:900 52px/1 Poppins;color:var(--y)}
+.dm span{font:700 30px Poppins}
+.chips{left:64px;top:440px;display:flex;gap:18px}
+.chips div{background:#fff;color:#111;font:800 40px Poppins;padding:14px 26px;border-radius:18px;box-shadow:var(--sh);display:flex;gap:12px;align-items:center}
+.chips div i{width:22px;height:22px;border-radius:6px;background:var(--y);border:3px solid #111}
+.ticket{left:56px;top:420px;width:480px;height:200px;background:var(--y);color:var(--k);border-radius:22px;box-shadow:var(--sh);display:flex;flex-direction:column;justify-content:center;padding-left:40px;box-sizing:border-box;
+  -webkit-mask:radial-gradient(circle 22px at 0 50%,transparent 98%,#000) left/51% 100% no-repeat,radial-gradient(circle 22px at 100% 50%,transparent 98%,#000) right/51% 100% no-repeat}
+.ticket small{font:800 30px Poppins;letter-spacing:.02em}
+.ticket b{font:900 104px/1 Poppins}
+.burst{left:590px;top:390px;width:310px;height:310px;display:grid;place-items:center;text-align:center;color:#fff}
+.burst svg{position:absolute;inset:0}
+.burst div{position:relative;line-height:1}
+.burst .n{font:900 70px Poppins}
+.burst .m{font:800 30px Poppins;display:block;margin:-6px 0 0}
+.burst .p{font:900 60px Poppins;color:var(--y);text-shadow:0 2px 0 #7a0d0d}
+/* end card */
+#end{left:0;top:0;width:1080px;height:1920px;background:radial-gradient(120% 70% at 45% 30%,#2b2205 0,#0b0b0d 60%);opacity:0}
+#end .in{position:absolute;left:60px;width:840px;top:330px;text-align:center}
+#end .face{width:300px;height:300px;margin:0 auto;border-width:10px;box-shadow:0 0 0 12px rgba(255,200,61,.18)}
+#end h2{margin:26px 0 0;font:900 68px Poppins;color:var(--y)}
+#end .tt{display:inline-flex;align-items:center;gap:12px;margin-top:8px;font:700 38px Poppins}
+#end .cta{margin:38px auto 0;width:760px;background:var(--y);color:var(--k);font:800 40px/1.25 Poppins;padding:20px 26px;border-radius:24px}
+#end .wa{margin-top:24px;font:800 46px Poppins}
+#end .wa span{color:var(--g)}
+#end .url{margin-top:22px;font:900 70px Poppins;color:#fff;letter-spacing:.01em;border-top:4px solid var(--y);border-bottom:4px solid var(--y);padding:10px 0}
+</style>
+<div id="root">
+  <div id="end" class="el"><div class="in">
+    <div class="face" id="endFace"></div>
+    <h2>Cikgu AlFarhan</h2>
+    <div class="tt"><svg width="40" height="40" viewBox="0 0 24 24"><path fill="#fff" d="M16.6 5.8A4.3 4.3 0 0 1 15.5 3h-3.1v12.4a2.6 2.6 0 1 1-2.6-2.6c.3 0 .5 0 .8.1V9.7a5.8 5.8 0 1 0 4.9 5.7V9a7.4 7.4 0 0 0 4.3 1.4V7.3a4.3 4.3 0 0 1-3.2-1.5z"/></svg>@aster.edu_tpg</div>
+    <div class="cta">WhatsApp Cikgu AlFarhan untuk daftar / cuba kelas</div>
+    <div class="wa">WhatsApp <span>011-5596 9070</span></div>
+    <div class="url">asteredu11.com.my</div>
+  </div></div>
+  <div id="thumbShade" class="el"></div>
+  <div id="hook" class="el"><div class="l1 stroke">Darab 2 nombor?</div><div class="l2">Cara mudah!</div></div>
+  <div id="divider" class="el"></div><div id="bar" class="el"></div>
+  <div id="gfx"></div>
+  <div id="cap" class="el stroke"></div>
+  <div id="wm" class="el">asteredu11.com.my</div>
+</div>
+<script>
+const R=document.getElementById("root"),$=id=>document.getElementById(id);
+const clamp=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
+const easeOut=x=>1-Math.pow(1-x,3), back=x=>{const c=1.7;x=x-1;return 1+x*x*((c+1)*x+c)};
+let TL,FACE;
+const H={
+ label:g=>`<div class="el label" ><div class="face" style="background-image:url(${FACE})"></div><span>${g.text}</span></div>`,
+ pill:g=>`<div class="el" style="left:0;width:960px;top:300px;text-align:center"><span class="pill yel">${g.text}</span></div>`,
+ note:g=>`<div class="el note"><h4>${g.title}</h4>${g.lines.map((l,i)=>`<p>${i==1?l.replace("darab 2 nombor","<u>darab 2 nombor</u>"):l}</p>`).join("")}</div>`,
+ today:g=>`<div class="el card"><small>${g.head}</small><div>${g.text.replace("MUDAH","<mark>MUDAH</mark>")}</div></div>`,
+ split:g=>"",
+ qtag:g=>`<div class="el qtag">${g.text}</div>`,
+ step:g=>`<div class="el step"><b>LANGKAH ${g.n}</b><span>${g.text}</span></div>`,
+ calc:g=>{const c={g:"var(--g)",r:"var(--r)",y:"var(--y)"}[g.col];const m=g.text.split(" = ");
+   return m.length>1?`<div class="el calc"><div class="ex stroke">${m[0]}</div><div class="rs stroke" style="color:${c}">= ${m[1]}</div></div>`
+                    :`<div class="el calc solo"><div class="rs stroke" style="color:${c}">${g.text}</div></div>`},
+ answer:g=>`<div class="el answer"><small>JAWAPAN</small><div class="q">${g.q} =</div><div class="a">${g.ans}</div></div>`,
+ sticker:g=>`<div class="el sticker">${g.text}</div>`,
+ comment:g=>`<div class="el comment"><div class="face" style="background-image:url(${FACE})"></div><div><small>@aster.edu_tpg</small>${g.text}</div></div>`,
+ lower:g=>`<div class="el lower"><b>${g.title}</b><span>${g.sub}</span></div>`,
+ reg:g=>`<div class="el" style="left:0;width:960px;top:300px;text-align:center"><span class="pill red">${g.text} 🔥</span></div>`,
+ dm:g=>`<div class="el dm"><i><svg width="40" height="40" viewBox="0 0 24 24"><path fill="#0b0b0d" d="M2 21l21-9L2 3v7l15 2-15 2z"/></svg></i><div><b>${g.text}</b><span>${g.sub}</span></div></div>`,
+ chips:g=>`<div class="el chips">${g.items.map(x=>`<div><i></i>${x}</div>`).join("")}</div>`,
+ price1:g=>`<div class="el ticket"><small>${g.label}</small><b>${g.price}</b></div>`,
+ price2:g=>`<div class="el burst"><svg viewBox="0 0 100 100"><polygon fill="#ff4747" stroke="#fff" stroke-width="2.5" points="${Array.from({length:32},(_,i)=>{const a=i/32*Math.PI*2,r=i%2?44:49;return (50+r*Math.cos(a)).toFixed(1)+","+(50+r*Math.sin(a)).toFixed(1)}).join(" ")}"/></svg><div><span class="n">${g.top}</span> <span class="m" style="display:inline">${g.mid}</span><br><span class="p">${g.price}</span></div></div>`,
+};
+window.init=(tl,face)=>{TL=tl;FACE=face;$("endFace").style.backgroundImage=`url(${face})`;
+  $("bar").textContent=(tl.graphics.find(g=>g.kind=="split")||{}).bar||"";
+  $("gfx").innerHTML=tl.graphics.map((g,i)=>H[g.kind](g).replace('class="el',`data-i="${i}" class="el`)).join("");
+  return document.fonts.ready.then(()=>document.fonts.size)};
+window.setScale=s=>{R.style.transform=`scale(${s})`};
+function show(el,t,s,e,kind){
+  const a=clamp((t-s)/0.22), z=clamp((e-t)/0.18);
+  if(t<s||t>=e){el.style.opacity=0;return}
+  const p=easeOut(a), q=easeOut(z);
+  let tr="";
+  if(["calc","sticker","price2","answer"].includes(kind)) tr=`scale(${0.4+0.6*back(a)})`;
+  else if(["pill","reg","qtag"].includes(kind)) tr=`translateY(${(1-p)*-30}px)`;
+  else if(kind=="note") tr=`translateX(${(1-p)*-80}px) rotate(-3deg)`;
+  else if(kind=="price1") tr=`translateX(${(1-p)*-120}px) rotate(-2deg)`;
+  else if(kind=="lower") tr=`translateX(${(1-p)*-200}px)`;
+  else tr=`translateY(${(1-p)*40}px)`;
+  if(kind=="sticker") tr+=" rotate(-6deg)";
+  el.style.transform=tr; el.style.opacity=Math.min(p*1.4,1)*q;
+}
+window.renderAt=t=>{
+  const T=TL, C=T.thumb+T.content;
+  const th=t<T.thumb;
+  $("thumbShade").style.opacity=th?1:0; $("hook").style.opacity=th?1:0; $("hook").style.transform="none";
+  const sp=t>=T.split[0]&&t<T.split[1];
+  const sa=clamp((t-T.split[0])/0.3), sb=clamp((T.split[1]-t)/0.3);
+  $("divider").style.opacity=sp?1:0; $("bar").style.opacity=sp?1:0;
+  $("divider").style.transform=`scaleX(${sp?easeOut(Math.min(sa,sb)):0})`;
+  document.querySelectorAll("#gfx .el").forEach(el=>{const g=T.graphics[+el.dataset.i];show(el,t,g.s,g.e,g.kind)});
+  // caption
+  const c=t<C?T.captions.find(c=>t>=c.s&&t<c.e):null, cap=$("cap");
+  if(c){cap.innerHTML=c.w.map(w=>w.hl?`<b>${w.t}</b>`:w.t).join(" ");cap.style.opacity=1;
+    const top=sp?1096:1300; cap.style.top=top+"px";
+    const a=clamp((t-c.s)/0.12); cap.style.transform=`scale(${0.86+0.14*easeOut(a)})`;}
+  else cap.style.opacity=0;
+  // end card
+  const ea=clamp((t-C)/0.25); $("end").style.opacity=t>=C?ea:0;
+  $("end").querySelector(".in").style.transform=`translateY(${(1-easeOut(ea))*40}px)`;
+};
+</script>

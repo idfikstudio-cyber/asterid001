@@ -1,0 +1,248 @@
+<title>AS-F-003 Soalan Math</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800;900&family=Lexend:wght@400;500;600&display=swap">
+<style>
+/* Layout: telefon (sticky) di kiri, helaian edit bertab di kanan; bertindan di telefon. Gaya HYBRID Aster: hitam papan kapur + kuning. */
+:root{
+  --bg:#f5f4ef; --surface:#ffffff; --ink:#16150f; --muted:#5f5c50; --line:#e1ded2; --chip:#efece1;
+  --accent:#8a6400; --mark:#ffc83d; --mark-ink:#7a5600;
+  --c-seg:#1b1a14; --c-mg:#e0a400; --c-sfx:#d9232d; --ok:#1f7a4d; --warn:#b45309; --g:#178a52; --r:#c92a2a;
+  --f-display:"Poppins","Arial Black",system-ui,sans-serif;
+  --f-body:"Lexend",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0f0f0c; --surface:#1a1915; --ink:#f2f0e6; --muted:#a6a290; --line:#2f2d25; --chip:#25241d;
+  --accent:#ffc83d; --mark:#ffc83d; --mark-ink:#ffd970;
+  --c-seg:#e9e5d4; --c-mg:#ffc83d; --c-sfx:#ff6a72; --ok:#4ccf8f; --warn:#f0a44b; --g:#4fd88f; --r:#ff7272; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f0f0c; --surface:#1a1915; --ink:#f2f0e6; --muted:#a6a290; --line:#2f2d25; --chip:#25241d;
+  --accent:#ffc83d; --mark:#ffc83d; --mark-ink:#ffd970;
+  --c-seg:#e9e5d4; --c-mg:#ffc83d; --c-sfx:#ff6a72; --ok:#4ccf8f; --warn:#f0a44b; --g:#4fd88f; --r:#ff7272; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.55}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px 56px}
+header.top{display:flex;flex-wrap:wrap;gap:8px 24px;align-items:end;justify-content:space-between;margin-bottom:18px}
+h1{font-family:var(--f-display);font-weight:800;font-size:clamp(24px,4vw,36px);line-height:1.08;margin:0;text-wrap:balance;letter-spacing:-.02em}
+h1 mark{background:linear-gradient(transparent 55%,var(--mark) 55%);color:inherit;padding:0 .1em}
+.status{display:inline-flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:13px;color:var(--muted)}
+.status b{background:var(--mark);color:#3a2a00;font-weight:600;padding:2px 10px;border-radius:999px;font-size:12px;letter-spacing:.05em;text-transform:uppercase}
+.grid{display:grid;grid-template-columns:minmax(0,400px) minmax(0,1fr);gap:28px;align-items:start}
+@media (max-width:860px){.grid{grid-template-columns:minmax(0,1fr)}}
+.player{position:sticky;top:calc(env(safe-area-inset-top,0px) + 12px);display:flex;flex-direction:column;gap:10px;max-width:400px;width:100%;margin-inline:auto}
+@media (max-width:860px){.player{position:static}}
+.phone{width:100%;max-width:100%;aspect-ratio:9/16;border-radius:22px;overflow:hidden;background:#000;box-shadow:0 18px 50px -22px rgba(20,18,0,.6)}
+.phone video{width:100%;height:100%;display:block;object-fit:contain;background:#000}
+.hint{font-size:12.5px;color:var(--muted);margin:0}
+.panel{min-width:0;display:flex;flex-direction:column;gap:14px}
+.tl{position:relative;height:58px;border-radius:10px;background:var(--surface);border:1px solid var(--line);overflow:hidden;cursor:pointer}
+.tl .seg{position:absolute;top:0;height:22px;border-right:1px solid var(--bg);font:600 10.5px var(--f-body);color:var(--bg);background:var(--c-seg);padding:4px 6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tl .mg{position:absolute;top:27px;height:10px;border-radius:3px;background:var(--c-mg);opacity:.85}
+.tl .sx{position:absolute;top:42px;width:2px;height:10px;background:var(--c-sfx)}
+.tl .ph{position:absolute;top:0;bottom:0;width:2px;background:var(--c-sfx)}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:12.5px;color:var(--muted);margin-top:8px}
+.legend span{display:inline-flex;gap:6px;align-items:center}
+.legend i{width:10px;height:10px;border-radius:3px}
+.tabs{display:flex;gap:2px;flex-wrap:wrap;border-bottom:1px solid var(--line)}
+.tab{font:500 14px var(--f-body);background:none;border:0;border-bottom:3px solid transparent;color:var(--muted);padding:10px 10px 8px;cursor:pointer}
+.tab[aria-selected="true"]{color:var(--ink);border-color:var(--mark)}
+.tab .n{display:inline-block;min-width:18px;margin-left:4px;padding:0 5px;border-radius:99px;background:var(--mark);color:#3a2a00;font-size:11px;font-weight:600;text-align:center}
+:is(.tab,.cap-row,.ev,.tl,.btn,a):focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+a{color:var(--accent)}
+.pane{min-width:0}
+.pane h2{font-family:var(--f-display);font-weight:700;font-size:20px;margin:6px 0 6px;letter-spacing:-.01em}
+.pane h3{font-size:15px;margin:18px 0 6px;font-weight:600}
+.pane p,.pane li{max-width:68ch}
+.pane p{margin:0 0 10px}
+.board{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:8px 0 6px}
+.board div{background:#141412;color:#f4f1e4;border-radius:12px;padding:12px 14px;font-family:var(--f-display)}
+.board small{display:block;font:600 11px var(--f-body);letter-spacing:.08em;text-transform:uppercase;color:#bdb79f}
+.board b{font-size:22px;font-weight:800}
+.board .gr{color:#4fd88f}.board .rd{color:#ff7272}.board .yl{color:#ffc83d}
+.caps,.evs{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.cap-row,.ev{display:grid;gap:10px;padding:8px 6px;border:0;border-bottom:1px solid var(--line);background:none;text-align:left;font:inherit;color:inherit;cursor:pointer;align-items:baseline}
+.cap-row{grid-template-columns:64px minmax(0,1fr)}
+.ev{grid-template-columns:64px 120px minmax(0,1fr)}
+@media (max-width:520px){.ev{grid-template-columns:56px minmax(0,1fr)}.ev .k{grid-column:2}}
+.cap-row:hover,.ev:hover{background:var(--chip)}
+.cap-row.on{background:color-mix(in srgb,var(--mark) 26%,transparent)}
+time{font-variant-numeric:tabular-nums;color:var(--muted);font-size:13px}
+.hl{font-weight:600;color:var(--mark-ink)}
+.fix{background:var(--mark);color:#3a2a00;border-radius:4px;padding:0 4px}
+.cap-row .sec{display:block;font-size:12px;color:var(--muted)}
+.ev .k{font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--mark-ink)}
+.ev .k.sfx{color:var(--c-sfx)}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:460px}
+th,td{text-align:left;padding:8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);font-weight:600}
+td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
+.list{display:flex;flex-direction:column;gap:10px;padding:0;margin:0;list-style:none}
+.q{border:1px solid var(--line);border-left:4px solid var(--warn);border-radius:10px;padding:10px 14px;background:var(--surface)}
+.q.done{border-left-color:var(--ok)}
+.q b{display:block;margin-bottom:2px}
+.tag{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:1px 8px;border-radius:99px;margin-right:6px}
+.tag.w{background:color-mix(in srgb,var(--warn) 18%,transparent);color:var(--warn)}
+.tag.o{background:color-mix(in srgb,var(--ok) 18%,transparent);color:var(--ok)}
+.tt{border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:14px 16px;white-space:pre-wrap;font-size:15px}
+.tt .hs{color:var(--accent);font-weight:600}
+.btn{font:500 14px var(--f-body);border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:10px;padding:8px 14px;cursor:pointer;min-height:40px;margin-top:10px}
+.copied{font-size:13px;color:var(--ok);margin-left:8px}
+code{font-size:13px;background:var(--chip);padding:1px 5px;border-radius:4px}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <h1>AS-F-003 <mark>Soalan Math</mark>: preview v1</h1>
+    <span class="status"><b>Preview</b> TOFU+BOFU · 540×960 · {{DUR}} saat · tunggu komen Farhan</span>
+  </header>
+
+  <div class="grid">
+    <section class="player" aria-label="Pemain preview">
+      <div class="phone"><video id="v" controls playsinline preload="metadata" poster="thumb.jpg" src="preview.mp4"></video></div>
+      <p class="hint">Tekan ▶ untuk main dengan bunyi. Klik baris transkrip atau cue pelan edit untuk lompat ke masa itu.</p>
+    </section>
+
+    <section class="panel">
+      <div>
+        <div class="tl" id="tl" role="slider" tabindex="0" aria-label="Garis masa edit" aria-valuemin="0" aria-valuemax="{{DUR}}" aria-valuenow="0"></div>
+        <div class="legend">
+          <span><i style="background:var(--c-seg)"></i>Babak</span>
+          <span><i style="background:var(--c-mg)"></i>Animasi / grafik</span>
+          <span><i style="background:var(--c-sfx)"></i>Sound effect</span>
+        </div>
+      </div>
+      <div class="tabs" role="tablist">
+        <button class="tab" role="tab" aria-selected="true" data-p="p-tr" id="tab-tr">Transkrip</button>
+        <button class="tab" role="tab" aria-selected="false" data-p="p-ed" id="tab-ed">Pelan edit</button>
+        <button class="tab" role="tab" aria-selected="false" data-p="p-ga" id="tab-ga">Warna &amp; audio</button>
+        <button class="tab" role="tab" aria-selected="false" data-p="p-q" id="tab-q">Status<span class="n" id="nq"></span></button>
+        <button class="tab" role="tab" aria-selected="false" data-p="p-cp" id="tab-cp">Caption</button>
+      </div>
+
+      <div class="pane" id="p-tr" role="tabpanel">
+        <h2>Transkrip</h2>
+        <p>Ditranskrip dengan Whisper large-v3 (masa setiap perkataan), disemak dengan transkrip kedua untuk setiap angka. Perkataan <span class="hl">tebal kuning</span> ialah kata kunci kuning dalam video. Perkataan <span class="fix">berlatar kuning</span> ialah ejaan yang dibetulkan dari transkrip (hover untuk lihat asal).</p>
+        <div class="caps" id="caps"></div>
+      </div>
+
+      <div class="pane" id="p-ed" role="tabpanel" hidden>
+        <h2>Pelan edit</h2>
+        <p>Footage sudah ditrim oleh Farhan (14 jump cut asal), jadi isi tidak dipotong. Hanya jeda senyap lebih 0.3 saat dibuang (padding 0.1 s): 93.9 s jadi 90.1 s. Video = thumbnail 1 saat + isi + end card 1.5 saat. Gaya ikut rujukan TOFU+BOFU Sifir 9: hitam + kuning, skrin terbelah dengan papan di atas dan Cikgu di bawah, label LANGKAH, bubble komen, lower third program dan pil pendaftaran.</p>
+        <h3>Apa yang ditulis di papan iPad</h3>
+        <div class="board">
+          <div><small>Langkah 1 · hijau</small><b class="gr">2 × 1, 2 × 2 → 2 4</b></div>
+          <div><small>Langkah 2 · merah</small><b class="rd">2 × 1, 2 × 2 → 2 4</b></div>
+          <div><small>Langkah 3 · tambah</small><b class="yl">22 × 12 = 264</b></div>
+          <div><small>Soalan 2</small><b class="yl">24 × 22 = 528</b></div>
+          <div><small>Cuba sendiri</small><b>32 × 24 = ?</b></div>
+        </div>
+        <h3>Babak</h3>
+        <div class="tbl"><table>
+          <thead><tr><th>Masa</th><th>Babak</th><th>Grafik utama</th></tr></thead>
+          <tbody id="segtbl"></tbody></table></div>
+        <h3>Potongan &amp; punch-in</h3>
+        <p>Zoom selang-seli 100% dan 112% setiap 2–3 potongan (jump cut asal + jeda dibuang), mata Cikgu AlFarhan kekal di aras yang sama. Ketika skrin terbelah, panel bawah kekal 100%.</p>
+        <div class="tbl"><table>
+          <thead><tr><th>Masa video</th><th>Masa asal</th><th>Zoom</th></tr></thead>
+          <tbody id="cuttbl"></tbody></table></div>
+        <h3>Semua cue animasi dan SFX</h3>
+        <div class="evs" id="evs"></div>
+      </div>
+
+      <div class="pane" id="p-ga" role="tabpanel" hidden>
+        <h2>Warna dan audio</h2>
+        <h3>Colour grade</h3>
+        <div class="tbl"><table>
+          <thead><tr><th>Langkah</th><th>Nilai</th><th>Kesan</th></tr></thead>
+          <tbody>
+            <tr><td>Kecerahan</td><td class="n">+0.02, gamma 1.02</td><td>Muka lebih terang sedikit, dinding putih tak terbakar.</td></tr>
+            <tr><td>Kontras</td><td class="n">×1.06</td><td>Gambar lebih jelas tanpa bayang jadi hitam.</td></tr>
+            <tr><td>Saturasi</td><td class="n">×1.08</td><td>Baju hijau dan sofa coklat lebih hidup.</td></tr>
+            <tr><td>Imbangan warna</td><td class="n">merah −0.01, biru +0.01</td><td>Kurangkan sedikit warna kuning lampu. Warna kulit asli dikekalkan.</td></tr>
+            <tr><td>Papan iPad</td><td class="n">tiada grade</td><td>Warna tulisan asal (kuning, hijau, merah) atas latar hitam.</td></tr>
+          </tbody></table></div>
+        <h3>Audio</h3>
+        <div class="tbl"><table>
+          <thead><tr><th>Langkah</th><th>Kesan</th></tr></thead>
+          <tbody>
+            <tr><td>High-pass 80 Hz</td><td>Buang dengung rendah.</td></tr>
+            <tr><td>Noise reduction ringan (8 dB)</td><td>Bunyi bilik berkurang tanpa suara jadi "robot".</td></tr>
+            <tr><td>Compressor ringan (2.5:1)</td><td>Volume suara lebih sekata.</td></tr>
+            <tr><td>Fade 12 ms di setiap potongan</td><td>Tiada bunyi "klik" di sambungan.</td></tr>
+            <tr><td>Loudness → −14.0 LUFS</td><td>Sasaran −14 LUFS. True peak −1.5 dBTP (had −1 dBTP).</td></tr>
+            <tr><td>SFX (48 cue)</td><td>Pop untuk setiap kiraan, klik setiap LANGKAH, riser + cha-ching untuk jawapan, whoosh, ding, impact. Dijana sendiri, bebas hak cipta, di bawah suara.</td></tr>
+            <tr><td>Muzik latar</td><td>Tiada. Folder <code>MUSIC/</code> kosong.</td></tr>
+            <tr><td>B-roll</td><td>Rakaman iPad tiada audio; suara Cikgu berjalan terus.</td></tr>
+          </tbody></table></div>
+      </div>
+
+      <div class="pane" id="p-q" role="tabpanel" hidden>
+        <h2>Status</h2>
+        <h3>Sudah dibuat</h3>
+        <ul class="list" id="done"></ul>
+        <h3>Perlu semak</h3>
+        <ul class="list" id="todo"></ul>
+      </div>
+
+      <div class="pane" id="p-cp" role="tabpanel" hidden>
+        <h2>Caption TikTok</h2>
+        <div class="tt" id="tt"></div>
+        <button class="btn" id="copy">Salin caption</button><span class="copied" id="copied" hidden>Disalin</span>
+      </div>
+    </section>
+  </div>
+</div>
+
+<script>
+/*DATA*/
+const $=id=>document.getElementById(id);
+const v=$("v"), D=DATA.dur;
+const fmt=t=>{t=Math.max(0,t);const m=Math.floor(t/60),s=t-m*60;return m+":"+(s<10?"0":"")+s.toFixed(1)};
+const seek=t=>{v.currentTime=Math.min(Math.max(0,t),D-0.05);};
+
+const tl=$("tl");let h="";
+SEG.forEach(s=>h+=`<div class="seg" style="left:${s[0]/D*100}%;width:${(s[1]-s[0])/D*100}%" title="${s[2]}">${s[2]}</div>`);
+DATA.mg.filter(m=>m[2]!=="Watermark"&&m[2]!=="Skrin terbelah").forEach(m=>h+=`<div class="mg" style="left:${m[0]/D*100}%;width:${Math.max(.5,(m[1]-m[0])/D*100)}%"></div>`);
+DATA.sfx.forEach(x=>h+=`<div class="sx" style="left:${x[0]/D*100}%"></div>`);
+tl.innerHTML=h+'<div class="ph" id="ph"></div>';
+tl.addEventListener("pointerdown",e=>{const r=tl.getBoundingClientRect();seek((e.clientX-r.left)/r.width*D)});
+tl.addEventListener("keydown",e=>{if(e.key==="ArrowRight")seek(v.currentTime+1);if(e.key==="ArrowLeft")seek(v.currentTime-1)});
+
+const segOf=t=>SEG.find(s=>t>=s[0]&&t<s[1])||SEG[SEG.length-1];
+let last="";
+$("caps").innerHTML=DATA.caps.map((c,i)=>{const sg=segOf(c.s)[2];const head=sg!==last?`<span class="sec">${sg}</span>`:"";last=sg;
+  const txt=c.w.map(w=>w.fix?`<span class="fix" title="Transkrip: ${w.fix}">${w.t}</span>`:w.hl?`<span class="hl">${w.t}</span>`:w.t).join(" ");
+  return `<button class="cap-row" data-t="${c.s}" id="cr${i}"><time>${fmt(c.s)}</time><span>${head}${txt}</span></button>`}).join("");
+
+$("segtbl").innerHTML=SEG.map(s=>`<tr><td class="n"><a href="#" data-t="${s[0]}">${fmt(s[0])}–${fmt(s[1])}</a></td><td>${s[2]}</td><td>${s[3]}</td></tr>`).join("");
+$("cuttbl").innerHTML=DATA.zoom.map(c=>`<tr><td class="n"><a href="#" data-t="${c.t}">${fmt(c.t)}</a></td><td class="n">${fmt(c.src)}</td><td class="n">${Math.round(c.z*100)}%</td></tr>`).join("");
+const evs=DATA.mg.map(m=>({t:m[0],k:m[2],d:m[3]+" (hingga "+fmt(m[1])+")",s:false})).concat(DATA.sfx.map(x=>({t:x[0],k:"SFX",d:x[1],s:true}))).sort((a,b)=>a.t-b.t);
+$("evs").innerHTML=evs.map(e=>`<button class="ev" data-t="${e.t}"><time>${fmt(e.t)}</time><span class="k${e.s?" sfx":""}">${e.k}</span><span>${e.d}</span></button>`).join("");
+
+const li=(d,cls,tag,lab)=>`<li class="q${cls}"><b><span class="tag ${tag}">${lab}</span>${d[0]}</b>${d[1]}${d[2]!=null?` <a href="#" data-t="${d[2]}">Lihat ${fmt(d[2])}</a>`:""}</li>`;
+$("done").innerHTML=DONE.map(d=>li(d," done","o","Siap")).join("");
+$("todo").innerHTML=TODO.map(d=>li(d,"","w","Perlu semak")).join("");
+$("nq").textContent=TODO.length;
+
+$("tt").innerHTML=TT+"\n\n<span class=\"hs\">"+HS+"</span>";
+$("copy").onclick=()=>{const t=TT+"\n\n"+HS;
+  const ok=()=>{$("copied").hidden=false;setTimeout(()=>$("copied").hidden=true,1800)};
+  const sel=()=>{const r=document.createRange();r.selectNodeContents($("tt"));const s=getSelection();s.removeAllRanges();s.addRange(r);};
+  try{navigator.clipboard.writeText(t).then(ok,sel)}catch(e){sel()}};
+
+document.addEventListener("click",e=>{const b=e.target.closest("[data-t]");if(!b||b===tl)return;e.preventDefault();seek(+b.dataset.t+0.02);});
+
+document.querySelectorAll(".tab").forEach(tb=>tb.onclick=()=>{document.querySelectorAll(".tab").forEach(x=>{x.setAttribute("aria-selected",x===tb);$(x.dataset.p).hidden=x!==tb});
+  try{localStorage.setItem("asf003-tab",tb.id)}catch(e){}});
+try{const k=localStorage.getItem("asf003-tab");if(k&&$(k))$(k).click();}catch(e){}
+
+let lastCr=-1;
+function loop(){const t=v.currentTime||0;$("ph").style.left=(t/D*100)+"%";tl.setAttribute("aria-valuenow",t.toFixed(1));
+  const ci=DATA.caps.findIndex(c=>t>=c.s&&t<c.e);
+  if(ci!==lastCr){document.querySelectorAll(".cap-row.on").forEach(x=>x.classList.remove("on"));if(ci>=0)$("cr"+ci).classList.add("on");lastCr=ci;}
+  requestAnimationFrame(loop);}
+loop();
+</script>
