@@ -8,7 +8,7 @@ THUMB, OUTRO = 1.0, 1.5
 
 # ---- EDL: footage sudah ditrim oleh Farhan; hanya senyap >0.3 s dibuang (silencedetect -32 dB), padding 0.1 s
 SIL = [(4.383, 4.766), (14.227, 14.691), (16.349, 16.722), (24.062, 24.519), (25.970, 26.318),
-       (31.245, 31.586), (38.333, 38.671), (45.587, 45.888), (70.809, 71.323), (72.824, 75.040)]
+       (31.245, 31.586), (38.333, 38.671), (45.587, 45.888), (70.809, 75.040)]  # v3: ayat berulang "Jadi macam mana pula dengan soalan?" dibuang (arahan Farhan)
 PAD = 0.1
 keep, t = [], 0.0
 for a, b in SIL:
@@ -37,6 +37,7 @@ for sg in tr:
     for w in sg["words"]:
         x = w["w"].strip()
         if w["s"] >= SRC_END: continue
+        if not any(ka <= (w["s"] + w["e"]) / 2 <= kb for ka, kb in keep): continue  # perkataan dalam bahagian dibuang
         if x.startswith("-") and W: W[-1]["w"] += x; W[-1]["e"] = w["e"]; continue
         base = re.sub(r"[.,?!]$", "", x)
         if base in FIX: x = FIX[base] + x[len(base):] if FIX[base][-1] not in ",." else FIX[base]

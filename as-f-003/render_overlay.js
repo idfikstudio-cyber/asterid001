@@ -11,7 +11,9 @@ const fs = require("fs"), path = require("path");
   const page = await browser.newPage({ viewport: { width: W, height: Hh } });
   await page.goto("file://" + path.resolve(__dirname, "overlay.html"));
   const faceUrl = "data:image/png;base64," + fs.readFileSync(face).toString("base64");
-  await page.evaluate(([t, f, sc]) => { setScale(sc); return init(t, f); }, [tl, faceUrl, s]);
+  // gambar soalan untuk thumbnail (tulisan iPad sebenar), pilihan: env BOARD=path.png
+  const boardUrl = process.env.BOARD ? "data:image/png;base64," + fs.readFileSync(process.env.BOARD).toString("base64") : null;
+  await page.evaluate(([t, f, sc, b]) => { setScale(sc); return init(t, f, b); }, [tl, faceUrl, s, boardUrl]);
   await page.waitForTimeout(500);
   const times = arg.includes(",") || arg.includes(".") ? arg.split(",").map(Number) : null;
   const fps = times ? 0 : +arg, n = times ? times.length : Math.round(tl.dur * fps);

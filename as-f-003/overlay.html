@@ -13,10 +13,13 @@ html,body{margin:0;background:transparent;overflow:hidden}
 #cap b{color:var(--y);font-weight:900}
 /* thumbnail */
 #thumbShade{left:0;top:0;width:1080px;height:1000px;background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.25) 60%,transparent)}
-#hook{left:60px;top:300px;width:840px;text-align:center;text-transform:uppercase}
-#hook .l1{font:900 120px/1.02 Poppins;letter-spacing:-.01em}
-#hook .l2{display:inline-block;margin-top:18px;font:900 92px/1.1 Poppins;color:var(--k);background:var(--y);padding:4px 30px 10px;border-radius:18px;transform:rotate(-3deg);box-shadow:var(--sh)}
+#hook{left:40px;top:300px;width:840px;text-align:center;text-transform:uppercase}
+#hook .l1{font:900 96px/1.04 Poppins;letter-spacing:-.01em}
+#hook .l2{display:inline-block;margin-top:18px;font:900 64px/1.15 Poppins;color:var(--k);background:var(--y);padding:4px 30px 10px;border-radius:18px;transform:rotate(-3deg);box-shadow:var(--sh)}
 #hook .mini{display:inline-block;margin-top:26px;font:700 64px Caveat;color:var(--y);background:rgba(0,0,0,.72);padding:0 26px 6px;border-radius:14px}
+#qcard{left:40px;top:1060px;width:420px;background:#0b0b0d;border:5px solid var(--y);border-radius:22px;padding:10px 14px 6px;box-shadow:var(--sh);transform:rotate(-4deg)}
+#qcard small{display:block;font:900 26px Poppins;letter-spacing:.14em;text-transform:uppercase;color:var(--y);margin-left:8px}
+#qimg{height:150px;background:center/contain no-repeat}
 /* label nama */
 .label{left:64px;top:420px;display:flex;align-items:center;gap:18px;background:rgba(10,10,12,.82);padding:12px 30px 12px 12px;border-radius:999px;box-shadow:var(--sh)}
 .face{border-radius:50%;border:6px solid var(--y);box-sizing:border-box;background:#222 center/cover}
@@ -95,7 +98,8 @@ html,body{margin:0;background:transparent;overflow:hidden}
     <div class="url">asteredu11.com.my</div>
   </div></div>
   <div id="thumbShade" class="el"></div>
-  <div id="hook" class="el"><div class="l1 stroke">Darab 2 nombor?</div><div class="l2">Cara mudah!</div></div>
+  <div id="hook" class="el"><div class="l1 stroke">Anak sekolah rendah</div><div class="l2">Susah nak jawab soalan??</div></div>
+  <div id="qcard" class="el"><small>Soalan</small><div id="qimg"></div></div>
   <div id="divider" class="el"></div><div id="bar" class="el"></div>
   <div id="gfx"></div>
   <div id="cap" class="el stroke"></div>
@@ -127,7 +131,7 @@ const H={
  price1:g=>`<div class="el ticket"><small>${g.label}</small><b>${g.price}</b></div>`,
  price2:g=>`<div class="el burst"><svg viewBox="0 0 100 100"><polygon fill="#ff4747" stroke="#fff" stroke-width="2.5" points="${Array.from({length:32},(_,i)=>{const a=i/32*Math.PI*2,r=i%2?44:49;return (50+r*Math.cos(a)).toFixed(1)+","+(50+r*Math.sin(a)).toFixed(1)}).join(" ")}"/></svg><div><span class="n">${g.top}</span> <span class="m" style="display:inline">${g.mid}</span><br><span class="p">${g.price}</span></div></div>`,
 };
-window.init=(tl,face)=>{TL=tl;FACE=face;$("endFace").style.backgroundImage=`url(${face})`;
+window.init=(tl,face,board)=>{TL=tl;FACE=face;if(board)$("qimg").style.backgroundImage=`url(${board})`;$("endFace").style.backgroundImage=`url(${face})`;
   $("bar").textContent=(tl.graphics.find(g=>g.kind=="split")||{}).bar||"";
   $("gfx").innerHTML=tl.graphics.map((g,i)=>H[g.kind](g).replace('class="el',`data-i="${i}" class="el`)).join("");
   return document.fonts.ready.then(()=>document.fonts.size)};
@@ -149,7 +153,7 @@ function show(el,t,s,e,kind){
 window.renderAt=t=>{
   const T=TL, C=T.thumb+T.content;
   const th=t<T.thumb;
-  $("thumbShade").style.opacity=th?1:0; $("hook").style.opacity=th?1:0; $("hook").style.transform="none";
+  $("thumbShade").style.opacity=th?1:0; $("hook").style.opacity=th?1:0; $("hook").style.transform="none"; $("qcard").style.opacity=th?1:0;
   const sp=t>=T.split[0]&&t<T.split[1];
   const sa=clamp((t-T.split[0])/0.3), sb=clamp((T.split[1]-t)/0.3);
   $("divider").style.opacity=sp?1:0; $("bar").style.opacity=sp?1:0;
