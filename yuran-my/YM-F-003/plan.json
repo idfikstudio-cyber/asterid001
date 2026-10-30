@@ -854,11 +854,12 @@
    "note": "B-roll motion (buatan sendiri): buku resit diselak helai demi helai, Jan → Okt"
   },
   {
-   "s": 12.64,
-   "e": 14.9,
-   "kind": "notfound",
+   "s": 11.86,
+   "e": 13.9,
+   "kind": "broll-search",
+   "stamp": 12.64,
    "text": "TAK JUMPA",
-   "note": "Kanta pembesar + pangkah lembut"
+   "note": "B-roll motion (buatan sendiri): resit bertaburan atas meja, kanta mencari, cop TAK JUMPA. Tutup saat Farhan tunduk (bukan pandang kamera)"
   },
   {
    "s": 25.9,
@@ -893,11 +894,18 @@
    "note": "B-ROLL/B-Roll_SistemYuran.my.mp4 @0:29 (invois); nama, IC, no. & jumlah diblur; zoom ke status PAID"
   },
   {
-   "s": 37.6,
-   "e": 40.6,
-   "kind": "broll-receipt",
-   "ding": 40.04,
-   "note": "B-roll motion (buatan sendiri): resit automatik terbang ke telefon ibu bapa"
+   "s": 36.9,
+   "e": 39.9,
+   "kind": "broll-video",
+   "file": "broll_apps.mp4",
+   "note": "B-ROLL/Apps Yuran.my.MP4: senarai Payments + ketuk (0:43.6–0:45.0) → resit PDF dibuka (0:46.5–0:48.1), kad resit di-zoom. Nama, emel, telefon, nama pelajar/IC & jumlah diblur"
+  },
+  {
+   "s": 38.55,
+   "e": 39.9,
+   "kind": "callout",
+   "text": "Resit dalam app Yuran.my",
+   "note": "Callout atas kad resit"
   },
   {
    "s": 40.68,
@@ -1001,9 +1009,24 @@
    "gain": 0.12
   },
   {
+   "t": 11.86,
+   "name": "whoosh",
+   "gain": 0.3
+  },
+  {
+   "t": 12.0,
+   "name": "tick",
+   "gain": 0.12
+  },
+  {
+   "t": 12.3,
+   "name": "tick",
+   "gain": 0.12
+  },
+  {
    "t": 12.64,
    "name": "pop",
-   "gain": 0.3
+   "gain": 0.35
   },
   {
    "t": 25.9,
@@ -1031,12 +1054,22 @@
    "gain": 0.3
   },
   {
-   "t": 37.6,
+   "t": 36.95,
    "name": "whoosh",
-   "gain": 0.3
+   "gain": 0.2
   },
   {
-   "t": 40.04,
+   "t": 37.8,
+   "name": "click",
+   "gain": 0.35
+  },
+  {
+   "t": 38.3,
+   "name": "whoosh",
+   "gain": 0.2
+  },
+  {
+   "t": 38.55,
    "name": "ding",
    "gain": 0.4
   },

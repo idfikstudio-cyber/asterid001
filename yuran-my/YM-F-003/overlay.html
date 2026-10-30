@@ -194,6 +194,28 @@ const R = {
       <div class="pill" style="left:540px;top:190px;transform:translateX(-50%);background:var(--aksen);color:#fff;font-size:44px;padding:16px 36px;opacity:${cl((u - .2) / .25)}">Resit automatik</div>
     </div>`;
   },
+  'broll-search'(g, t) {
+    // meja atas: slip resit bertaburan, kanta menyapu, cop TAK JUMPA
+    const u = t - g.s, d = g.e - g.s, a = io(t, g, .18, .2), ts = g.stamp - g.s;
+    const slips = [[170, 520, -14, 'JAN'], [560, 470, 9, 'MAC'], [300, 820, 6, 'MEI'], [690, 800, -8, 'JUL'], [140, 1120, 12, 'OGO'], [560, 1130, -5, 'SEP'], [380, 1420, -11, 'FEB'], [770, 1400, 7, 'JUN']];
+    const slip = ([x, y, r, m], i) => `<div class="abs" style="left:${x}px;top:${y}px;width:300px;height:220px;background:#fff;border-radius:10px;box-shadow:0 10px 24px rgba(0,0,0,.16);transform:rotate(${r}deg);padding:22px 24px;box-sizing:border-box">
+      <div style="display:flex;justify-content:space-between;font:800 28px Inter;color:var(--biru);letter-spacing:1px">RESIT<span style="color:var(--aksen)">${m}</span></div>
+      ${[0, 1, 2].map(k => `<div style="height:8px;border-radius:4px;background:#e1e4ea;margin-top:${k ? 18 : 26}px;width:${[88, 64, 76][k]}%"></div>`).join('')}</div>`;
+    const p = eio(u / Math.max(ts, .3));
+    const mx = 470 + Math.sin(p * Math.PI * 2.2) * 300, my = 640 + p * 600;
+    const ks = back((u - ts) / .3);
+    return `<div class="full" style="opacity:${a};background:radial-gradient(circle at 50% 45%,#f1f2f4,#d5d8de)">
+      <div class="full" style="transform:scale(${1.04 + .05 * u / d});transform-origin:50% 50%">${slips.map(slip).join('')}</div>
+      <div class="abs" style="left:${mx - 120}px;top:${my - 120}px;width:240px;height:240px;border-radius:50%;border:16px solid var(--hitam);box-sizing:border-box;background:rgba(41,171,226,.12);box-shadow:0 18px 30px rgba(0,0,0,.25);opacity:${u < ts + .1 ? 1 : 1 - cl((u - ts - .1) / .2)}">
+        <div style="position:absolute;left:182px;top:182px;width:34px;height:140px;background:var(--hitam);border-radius:14px;transform:rotate(-45deg);transform-origin:top center"></div></div>
+      ${u >= ts ? `<div class="abs" style="left:480px;top:1000px;transform:translate(-50%,-50%) rotate(-8deg) scale(${1.4 - .4 * ks});opacity:${cl((u - ts) / .1)};border:12px solid var(--merah);border-radius:22px;padding:14px 40px;color:var(--merah);font:900 104px Inter;letter-spacing:4px;white-space:nowrap;background:rgba(255,255,255,.88)">${g.text}</div>` : ''}
+    </div>`;
+  },
+  callout(g, t) {
+    const a = io(t, g, .15, .2);
+    return `<div class="pill" style="left:540px;top:190px;transform:translateX(-50%) scale(${back((t - g.s) / .3)});opacity:${a};background:var(--aksen);color:#fff;font-size:44px;padding:16px 36px">${g.text}</div>`;
+  },
+  'broll-video'() { return ''; },
   'cta-bio'(g, t) {
     const u = t - g.s, a = io(t, g, .2, .01);
     const W = 880, H = Math.round(W * 238 / 687), sx = W / 687;

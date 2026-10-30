@@ -39,12 +39,13 @@ G = [
     {"s": o(0.75), "e": o(5.2), "kind": "versus", "a": ["Ibu bapa", "Dah bayar", o(0.75)], "b": ["Cikgu", "Belum bayar", o(2.70)], "q": o(3.62), "note": "Dua pihak bercanggah, '?' pada 'Siapa betul?'"},
     {"s": o(5.32), "e": o(6.86), "kind": "chip", "icon": "book", "text": "Buku resit", "note": "Ikon buku resit"},
     {"s": o(6.86), "e": o(9.86), "kind": "broll-book", "note": "B-roll motion (buatan sendiri): buku resit diselak helai demi helai, Jan → Okt"},
-    {"s": o(11.64), "e": o(13.9), "kind": "notfound", "text": "TAK JUMPA", "note": "Kanta pembesar + pangkah lembut"},
+    {"s": o(10.86), "e": o(12.9), "kind": "broll-search", "stamp": o(11.64), "text": "TAK JUMPA", "note": "B-roll motion (buatan sendiri): resit bertaburan atas meja, kanta mencari, cop TAK JUMPA. Tutup saat Farhan tunduk (bukan pandang kamera)"},
     {"s": o(24.9), "e": o(26.8), "kind": "chip", "icon": "receipt-x", "text": "Resit tak dibuat", "note": "Punca sebenar"},
     {"s": o(27.72), "e": o(30.72), "kind": "broll-ledger", "note": "B-roll motion (buatan sendiri): buku rekod manual ditulis tangan"},
     {"s": o(31.94), "e": o(33.1), "kind": "logo", "note": "Logo putih atas pil biru #2A3B8F (tiada shadow)"},
     {"s": o(33.1), "e": o(36.1), "kind": "broll-screen", "img": "scr_invois.png", "focus": [1330, 413], "callout": "Status bayaran direkod", "note": "B-ROLL/B-Roll_SistemYuran.my.mp4 @0:29 (invois); nama, IC, no. & jumlah diblur; zoom ke status PAID"},
-    {"s": o(36.6), "e": o(39.6), "kind": "broll-receipt", "ding": o(39.04), "note": "B-roll motion (buatan sendiri): resit automatik terbang ke telefon ibu bapa"},
+    {"s": o(35.9), "e": o(38.9), "kind": "broll-video", "file": "broll_apps.mp4", "note": "B-ROLL/Apps Yuran.my.MP4: senarai Payments + ketuk (0:43.6–0:45.0) → resit PDF dibuka (0:46.5–0:48.1), kad resit di-zoom. Nama, emel, telefon, nama pelajar/IC & jumlah diblur"},
+    {"s": o(37.55), "e": o(38.9), "kind": "callout", "text": "Resit dalam app Yuran.my", "note": "Callout atas kad resit"},
     {"s": o(39.68), "e": o(42.95), "kind": "chip", "icon": "phone", "text": "Ibu bapa semak dalam app", "note": "Ikon telefon"},
     {"s": o(43.1), "e": o(44.6), "kind": "broll-screen", "img": "scr_dashboard.png", "focus": [990, 790], "callout": "Dashboard cikgu", "note": "B-ROLL/B-Roll_SistemYuran.my.mp4 @0:01 (dashboard); semua angka statistik diblur"},
     {"s": o(44.8), "e": o(46.9), "kind": "versus-ok", "a": ["Ibu bapa", "Lega", o(45.0)], "b": ["Cikgu", "Lega", o(45.2)], "note": "Ulang motif awal: kedua-dua pihak ✓"},
@@ -53,8 +54,8 @@ G = [
 ]
 SFX = [(T0 - 0.05, "whoosh", 0.35), (o(0.75), "pop", 0.3), (o(2.70), "pop", 0.3), (o(3.62), "tick", 0.3),
        (o(5.32), "pop", 0.25), (o(6.86), "whoosh", 0.3), (o(7.6), "tick", 0.12), (o(8.2), "tick", 0.12), (o(8.8), "tick", 0.12), (o(9.4), "tick", 0.12),
-       (o(11.64), "pop", 0.3), (o(24.9), "pop", 0.25), (o(27.72), "whoosh", 0.3), (o(31.94), "riser", 0.2), (o(32.2), "ding", 0.3),
-       (o(33.1), "whoosh", 0.3), (o(36.6), "whoosh", 0.3), (o(39.04), "ding", 0.4), (o(39.68), "pop", 0.25), (o(43.1), "whoosh", 0.25),
+       (o(10.86), "whoosh", 0.3), (o(11.0), "tick", 0.12), (o(11.3), "tick", 0.12), (o(11.64), "pop", 0.35), (o(24.9), "pop", 0.25), (o(27.72), "whoosh", 0.3), (o(31.94), "riser", 0.2), (o(32.2), "ding", 0.3),
+       (o(33.1), "whoosh", 0.3), (o(35.95), "whoosh", 0.2), (o(36.8), "click", 0.35), (o(37.3), "whoosh", 0.2), (o(37.55), "ding", 0.4), (o(39.68), "pop", 0.25), (o(43.1), "whoosh", 0.25),
        (o(45.0), "pop", 0.3), (o(45.2), "pop", 0.3), (o(46.96), "whoosh", 0.3), (o(47.6), "click", 0.5), (END, "whoosh", 0.3)]
 SFX = [{"t": round(t, 3), "name": n, "gain": g} for t, n, g in SFX]
 # punch-in: (mula sumber, skala). Asas 1.05, punch 1.15 — mata di sepertiga atas

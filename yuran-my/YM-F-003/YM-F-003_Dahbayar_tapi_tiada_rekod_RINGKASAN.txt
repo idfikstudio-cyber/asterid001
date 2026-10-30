@@ -1,5 +1,6 @@
-RINGKASAN — YM-F-003_Dahbayar_tapi_tiada_rekod (PREVIEW v1, 30/10/2026)
+RINGKASAN — YM-F-003_Dahbayar_tapi_tiada_rekod (PREVIEW v2, 30/10/2026)
 Spokesperson: Farhan · Tag: TOFU+BOFU · Durasi: 51.1 s · Preview 540x960
+Halaman preview: https://claude.ai/artifact/2FxM2W16aB7TJHV3KEZEC9
 
 1. TEKS HOOK / THUMBNAIL
    DAH BAYAR, / TAPI TIADA / REKOD?  (frame sumber 0:05.3, 1 saat, tiada logo)
@@ -66,7 +67,10 @@ Spokesperson: Farhan · Tag: TOFU+BOFU · Durasi: 51.1 s · Preview 540x960
    0:09.2  SFX: tick
    0:09.8  SFX: tick
    0:10.4  SFX: tick
-   0:12.6  Ikon: Kanta pembesar + pangkah lembut — “TAK JUMPA” (hingga 0:14.9)
+   0:11.9  B-roll motion: B-roll motion (buatan sendiri): resit bertaburan atas meja, kanta mencari, cop TAK JUMPA. Tutup saat Farhan tunduk (bukan pandang kamera) — “TAK JUMPA” (hingga 0:13.9)
+   0:11.9  SFX: whoosh
+   0:12.0  SFX: tick
+   0:12.3  SFX: tick
    0:12.6  SFX: pop
    0:25.9  Chip ikon: Punca sebenar — “Resit tak dibuat” (hingga 0:27.8)
    0:25.9  SFX: pop
@@ -77,9 +81,12 @@ Spokesperson: Farhan · Tag: TOFU+BOFU · Durasi: 51.1 s · Preview 540x960
    0:33.2  SFX: ding
    0:34.1  B-roll: B-ROLL/B-Roll_SistemYuran.my.mp4 @0:29 (invois); nama, IC, no. & jumlah diblur; zoom ke status PAID (hingga 0:37.1)
    0:34.1  SFX: whoosh
-   0:37.6  B-roll motion: B-roll motion (buatan sendiri): resit automatik terbang ke telefon ibu bapa (hingga 0:40.6)
-   0:37.6  SFX: whoosh
-   0:40.0  SFX: ding
+   0:36.9  B-roll app: B-ROLL/Apps Yuran.my.MP4: senarai Payments + ketuk (0:43.6–0:45.0) → resit PDF dibuka (0:46.5–0:48.1), kad resit di-zoom. Nama, emel, telefon, nama pelajar/IC & jumlah diblur (hingga 0:39.9)
+   0:37.0  SFX: whoosh
+   0:37.8  SFX: click
+   0:38.3  SFX: whoosh
+   0:38.5  Callout: Callout atas kad resit — “Resit dalam app Yuran.my” (hingga 0:39.9)
+   0:38.5  SFX: ding
    0:40.7  Chip ikon: Ikon telefon — “Ibu bapa semak dalam app” (hingga 0:44.0)
    0:40.7  SFX: pop
    0:44.1  B-roll: B-ROLL/B-Roll_SistemYuran.my.mp4 @0:01 (dashboard); semua angka statistik diblur (hingga 0:45.6)
