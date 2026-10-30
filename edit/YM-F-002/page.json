@@ -27,6 +27,8 @@
   "Status collection",
   "🕘 Pantau setiap pagi",
   "DALAM DASHBOARD: … Belum bayar / ✓ Dah bayar / ! Overdue (muncul ikut disebut)",
+  "B-ROLL/Sek-Integrasi-Demo-Yuran.My 0:10.6: dashboard penuh (frame statik), pan perlahan kiri → kanan merentas semua kad. Semua angka statistik diblur",
+  "Semua dalam dashboard",
   "Kad profil TikTok @yuran.my: langkah 1 Buka profil (ketuk avatar), langkah 2 Tekan link di bio (ketuk yuran.my/daftar/?tiktok, link disorot)"
  ],
  "thumb": "YURAN KAFA / TAK PERNAH / CUKUP? atas frame Farhan menunjuk (sumber 0:02.2)",
@@ -82,9 +84,15 @@
   ],
   [
    30.78,
-   36.97,
+   34.56,
    "Status bayaran",
    "Kad Belum bayar / Dah bayar / Overdue"
+  ],
+  [
+   34.56,
+   36.97,
+   "Semua dalam dashboard",
+   "B-roll dashboard Sek-Integrasi-Demo (angka diblur), pan merentas semua kad"
   ],
   [
    36.97,
@@ -124,6 +132,11 @@
    "B-roll dari folder brand",
    "Dua klip sistem: senarai invois overdue (Sek-Integrasi-Demo) dan dashboard (B-Roll_SistemYuran.my). Nama/item pelanggan dan semua angka statistik diblur. Setiap sisipan ≤3 s, suara terus berjalan.",
    12.0
+  ],
+  [
+   "Dashboard pada “semua tu kita boleh nampak dalam dashboard”",
+   "Ikut komen Farhan: B-roll dashboard dari B-ROLL/Sek-Integrasi-Demo-Yuran.My (0:34.6–0:36.9, 2.3 s). Dashboard dalam klip hanya statik ~0.9 s, jadi satu frame penuh digunakan dengan pan perlahan merentas kad Active student → Overdue → Collection. Semua angka diblur.",
+   35.0
   ],
   [
    "B-roll luar berlesen",
@@ -192,11 +205,11 @@
  "html": {
   "__DOC_TITLE__": "YM-F-002 Yuran KAFA",
   "__H1__": "YM-F-002 <span>Yuran KAFA tak pernah cukup</span>",
-  "__STATUS__": "<b>Preview v1</b> BOFU · Farhan · 540×960 · __DUR__ saat · menunggu semakan",
+  "__STATUS__": "<b>Preview v2</b> BOFU · Farhan · 540×960 · __DUR__ saat · menunggu semakan",
   "__KEY__": "ymf002",
   "__PLAN__": "<p>Video yang Farhan trim (41.5 s) digunakan terus. Isi tidak dipotong, jadi tiada jump cut tambahan. Video = thumbnail 1 s + isi 41.5 s + end card 1.5 s = 44.0 s (sasaran BOFU 30–60 s). Satu elemen grafik pada satu masa, biru korporat + biru aksen, SFX lembut. B-roll: dua klip sistem dari folder brand + satu klip stok berlesen untuk babak ibu bapa bayar.</p>",
   "__ZOOMTXT__": "<p>Asas 115% supaya mata Farhan di sepertiga atas frame (rakaman lebar). Punch-in 130% bertukar setiap ayat pada hujung ayat sahaja (tiada potongan isi).</p>",
   "__GRADE_ROWS__": "<tr><td>Kecerahan</td><td class=\"n\">+0.02, gamma 1.03</td><td>Muka lebih terang, dinding kelabu tak terbakar.</td></tr>\n            <tr><td>Kontras</td><td class=\"n\">×1.05 + lengkung lembut</td><td>Gambar lebih jelas.</td></tr>\n            <tr><td>Saturasi</td><td class=\"n\">×1.06</td><td>Baju lebih hidup tanpa kulit jadi oren.</td></tr>\n            <tr><td>Imbangan warna</td><td class=\"n\">biru −0.01</td><td>Dinding kurang sejuk. Warna kulit asli dikekalkan.</td></tr>\n            <tr><td>Ketajaman</td><td class=\"n\">unsharp 0.4</td><td>Kompensasi zoom 115–130%.</td></tr>",
-  "__AUDIO_ROWS__": "<tr><td>High-pass 80 Hz</td><td>Buang dengung rendah.</td></tr>\n            <tr><td>Noise reduction ringan (8 dB)</td><td>Bunyi bilik berkurang tanpa suara jadi \"robot\".</td></tr>\n            <tr><td>Compressor ringan (2.5:1)</td><td>Volume suara lebih sekata.</td></tr>\n            <tr><td>Muzik latar: “Infinity”, Arulo (Mixkit)</td><td>Korporat tenang dan stabil. Mixkit Stock Music Free License (komersial, media sosial, tiada atribusi). Sekitar 23 dB di bawah suara, ducking semasa bercakap. Fade masuk 1.5 s, keluar 2.5 s.</td></tr>\n            <tr><td>SFX (27 cue)</td><td>Pop, whoosh, click, tick, ding, bonk lembut ikut kemunculan grafik. Dijana sendiri, jauh di bawah suara.</td></tr>\n            <tr><td>Loudness akhir</td><td>−14.0 LUFS, true peak −1.5 dBTP.</td></tr>"
+  "__AUDIO_ROWS__": "<tr><td>High-pass 80 Hz</td><td>Buang dengung rendah.</td></tr>\n            <tr><td>Noise reduction ringan (8 dB)</td><td>Bunyi bilik berkurang tanpa suara jadi \"robot\".</td></tr>\n            <tr><td>Compressor ringan (2.5:1)</td><td>Volume suara lebih sekata.</td></tr>\n            <tr><td>Muzik latar: “Infinity”, Arulo (Mixkit)</td><td>Korporat tenang dan stabil. Mixkit Stock Music Free License (komersial, media sosial, tiada atribusi). Sekitar 23 dB di bawah suara, ducking semasa bercakap. Fade masuk 1.5 s, keluar 2.5 s.</td></tr>\n            <tr><td>SFX (29 cue)</td><td>Pop, whoosh, click, tick, ding, bonk lembut ikut kemunculan grafik. Dijana sendiri, jauh di bawah suara.</td></tr>\n            <tr><td>Loudness akhir</td><td>−14.0 LUFS, true peak −1.5 dBTP.</td></tr>"
  }
 }

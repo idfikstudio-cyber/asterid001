@@ -51,6 +51,19 @@ BROLLS = CFG.get("brolls", BROLL_001)
 def build_broll(path, dur, b):
     """spek: file, ss, crop [w, h, x, y], blur [[x, y, w, h], ...] (koordinat crop), zoom [cx, cy, tambah]."""
     cw, ch, cx_, cy_ = b["crop"]; zx, zy, za = b.get("zoom", [0.5, 0.5, 0.08])
+    if "still" in b:  # satu frame statik, blur dalam koordinat frame penuh, crop 9:16 di-pan dari x=crop[2] ke pan_to
+        still = path[:-4] + "_still.png"
+        run(["ffmpeg", "-v", "error", "-y", "-ss", str(b["still"]), "-i", P("broll", b["file"]), "-frames:v", "1", still])
+        fc = f"[0:v]fps={FPS},trim=0:{dur},setpts=PTS-STARTPTS,format=yuv420p[f0];"
+        for i, (x, y, w, h) in enumerate(b.get("blur", [])):
+            r = min(14, min(w, h) // 2 - 1); rc = min(r, min(w, h) // 4 - 1)
+            fc += f"[f{i}]split[k{i}][s{i}];[s{i}]crop={w}:{h}:{x}:{y},boxblur=lr={r}:lp=3:cr={rc}:cp=3[bl{i}];[k{i}][bl{i}]overlay={x}:{y}[f{i + 1}];"
+        n = len(b.get("blur", [])); x1 = b["pan_to"]
+        fc += (f"[f{n}]crop={cw}:{ch}:'{cx_}+({x1}-{cx_})*(0.5-0.5*cos(PI*min(t/{dur},1)))':{cy_},"
+               f"scale={W}:{H}:flags=lanczos,setsar=1,eq=saturation=1.05[o]")
+        run(["ffmpeg", "-v", "error", "-y", "-loop", "1", "-i", still, "-filter_complex", fc, "-map", "[o]",
+             "-t", str(dur), "-c:v", "libx264", "-crf", "14", "-preset", "fast", path])
+        return
     fc = f"[0:v]trim={b['ss']}:{b['ss'] + dur},setpts=PTS-STARTPTS,fps={FPS},crop={cw}:{ch}:{cx_}:{cy_}[c0];"
     for i, (x, y, w, h) in enumerate(b.get("blur", [])):  # data sebenar pelanggan diblur
         r = min(14, min(w, h) // 2 - 1); rc = min(r, min(w, h) // 4 - 1)  # had radius ffmpeg (chroma separuh saiz)
