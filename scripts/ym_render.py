@@ -1,7 +1,9 @@
 # Render Yuran.my talking-head video: thumbnail 1 s + isi (EDL) + B-roll + grafik + caption + end card.
 # usage: python3 ym_render.py <workdir> <W> <out.mp4>
-#   workdir: raw/TOFU_CikguatauKerani.MOV, edit/edl.json, edit/transcript_cut.json, broll/integrasi.mp4,
+#   workdir: raw/<src>, edit/edl.json (konfigurasi video), edit/transcript_cut.json, broll/integrasi.mp4,
 #            brand/logo_white.png, audio/*.wav (sfx + music.wav)
+#   edl.json: src, segments [[in, out, zoom], ...] (segmen bersambung = tiada potongan), face_y, thumb_t,
+#             fix {transkrip: caption}, gfx [[t0, t1, jenis, data]], sfx [[t, nama, gain]]; "END" = mula end card
 import json, os, re, subprocess, sys, math
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
@@ -9,8 +11,9 @@ from PIL import Image, ImageDraw, ImageFont, ImageFilter
 WD, W, OUT = sys.argv[1], int(sys.argv[2]), sys.argv[3]
 H = W * 16 // 9; u = W / 1080; FPS = 30
 P = lambda *a: os.path.join(WD, *a)
-EDL = json.load(open(P("edit/edl.json")))["segments"]
-SRC = P("raw", json.load(open(P("edit/edl.json")))["src"])
+CFG = json.load(open(P("edit/edl.json")))
+EDL = [s[:2] for s in CFG["segments"]]
+SRC = P("raw", CFG["src"])
 TH = 1.0                                   # thumbnail
 CONTENT = sum(b - a for a, b in EDL)
 END0 = TH + CONTENT; DUR = END0 + 1.5      # end card 1.5 s
@@ -20,8 +23,8 @@ font = lambda w, s: ImageFont.truetype(F % w, max(8, int(s * u)))
 
 # ---------------- zoom per segment (punch-in tiap 2-3 potongan), muka di sepertiga atas ----------------
 BASE, PUNCH = 1.15, 1.30
-ZOOM = [PUNCH, BASE, BASE, PUNCH, BASE, PUNCH, BASE, BASE, PUNCH, BASE, PUNCH, BASE]
-FACE_Y = 0.37                              # paras mata dalam frame asal
+ZOOM = [PUNCH if s[2] == "P" else BASE for s in CFG["segments"]]
+FACE_Y = CFG["face_y"]                             # paras mata dalam frame asal
 def y0(z, target=0.29): return max(0.0, min(1 - 1 / z, FACE_Y - target / z))
 GRADE = ("eq=brightness=0.02:contrast=1.05:saturation=1.06:gamma=1.03,"
          "colorbalance=bs=-0.01:bm=-0.01,curves=all='0/0.02 0.5/0.52 1/0.99',unsharp=5:5:0.4")
@@ -81,7 +84,7 @@ def icon_clock(d, cx, cy, r, col, ang=0.0, w=None):
     d.line([(cx, cy), (cx + r * .75 * math.sin(ang * 12), cy - r * .75 * math.cos(ang * 12))], fill=col, width=max(2, w * 2 // 3))
 
 # ---------------- captions ----------------
-FIX = {"kranik": "kerani", "MA": "admin", "turat": "surat", "pun": "punya", "lah": None, "PNP": "PnP"}
+FIX = CFG["fix"]
 HOT = {"KAFA", "kerani", "yuran", "resit", "tally", "fokus", "berkualiti", "senyap-senyap", "curi", "mendidik", "komen", "admin", "collection"}
 def captions():
     W_ = []
@@ -145,24 +148,9 @@ def card_rows(title, rows, t, t0, t1, kinds=None):
         paste(im, row, 0, 0, k)
     return im, a
 
-GFX = [  # (t0, t1, jenis, data)  — masa output
-    (1.15, 4.3, "label", "Farhan · Yuran.my"),
-    (2.80, 10.45, "rows", ("RUTIN HARIAN CIKGU", [(2.78, "PAGI", "Kutip yuran"), (3.78, "TENGAH HARI", "Buat resit"),
-                                                  (4.92, "PETANG", "Buat syllabus"), (9.50, "MALAM", "Kira yuran")])),
-    (10.50, 13.30, "broll", "sistem"),
-    (10.75, 13.20, "callout", "Tally ke tak?"),
-    (15.30, 17.75, "chip", "Ulang setiap hari"),
-    (17.95, 29.65, "rows", ("BILA WAKTUNYA?", [(19.90, None, "Fokus buat syllabus", "q"), (23.10, None, "Fokus buat PnP", "q"),
-                                              (27.24, None, "PnP berkualiti", "q")])),
-    (29.80, 32.60, "pile", None),
-    (33.35, 36.80, "timebar", None),
-    (36.95, 40.90, "rows", ("CIKGU KAFA", [(38.10, None, "Mendidik", "check"), (40.06, None, "Kerani sekolah", "cross")])),
-    (40.95, END0, "comment", None),
-]
-SFX = [(0.0, "pop", .35), (1.15, "whoosh", .35), (2.80, "pop", .4), (3.78, "pop", .35), (4.92, "pop", .35),
-       (9.50, "pop", .35), (10.45, "whoosh", .45), (10.80, "click", .5), (13.25, "whoosh", .35), (15.30, "pop", .35),
-       (19.90, "pop", .35), (23.10, "pop", .35), (27.24, "pop", .35), (29.75, "whoosh", .4), (30.30, "tick", .35),
-       (33.35, "swoosh_down", .35), (38.10, "ding", .3), (40.06, "bonk", .35), (40.95, "pop", .4), (END0, "whoosh", .4), (END0 + .2, "ding", .35)]
+def _t(x): return END0 + float(x[3:] or 0) if isinstance(x, str) else x  # "END", "END+0.2"
+GFX = [(_t(a), _t(b), k, d) for a, b, k, d in CFG["gfx"]]  # masa output
+SFX = [(_t(t), n, g) for t, n, g in CFG["sfx"]]
 
 def draw_label(im, t, t0, t1, s):
     a = ease((t - t0) / .3) * (1 - ease((t - t1 + .3) / .3))
@@ -231,7 +219,7 @@ def pile_frame(t, t0, dur):
     for i in range(0, H, max(1, int(8 * u))):  # gradien lembut
         c = int(18 * i / H); d.rectangle((0, i, W, i + 8 * u), fill=(NAVY[0] - c // 2, NAVY[1] - c // 2, NAVY[2] - c, 255))
     d.rounded_rectangle((W * .12, H * .585, W * .88, H * .600), 8 * u, fill=(255, 255, 255, 90))  # meja
-    labels = ["RESIT", "REKOD YURAN", "SURAT", "RESIT", "SENARAI BAYARAN", "RESIT", "REKOD YURAN", "SURAT"]
+    labels = ["RESIT", "REKOD YURAN", "RESIT", "SENARAI BAYARAN", "RESIT", "REKOD YURAN", "INVOIS", "RESIT"]
     rng = np.random.default_rng(5)
     for i, lab in enumerate(labels):
         st = 0.08 + i * 0.27
@@ -291,7 +279,7 @@ if __name__ == "__main__":
     tmp = P("edit", f"tmp{W}"); os.makedirs(tmp, exist_ok=True)
     build_content(f"{tmp}/content.mp4")
     BR = [g for g in GFX if g[2] == "broll"][0]; build_broll(f"{tmp}/broll.mp4", BR[1] - BR[0] + .1)
-    grab(82.9, PUNCH, f"{tmp}/thumbsrc.png")
+    grab(CFG["thumb_t"], PUNCH, f"{tmp}/thumbsrc.png")
     thumb = thumb_overlay(Image.open(f"{tmp}/thumbsrc.png").convert("RGBA"))
     thumb.convert("RGB").save(f"{tmp}/thumb.png")
     rd = lambda p: subprocess.Popen(["ffmpeg", "-v", "error", "-i", p, "-f", "rawvideo", "-pix_fmt", "rgb24", "-"], stdout=subprocess.PIPE)
@@ -328,7 +316,11 @@ if __name__ == "__main__":
     json.dump({"dur": DUR, "end0": END0, "caps": CAPS, "gfx": [list(g[:3]) for g in GFX], "sfx": SFX,
                "zoom": ZOOM, "edl": EDL}, open(f"{tmp}/meta.json", "w"), ensure_ascii=False, indent=1)
     # ---------------- audio ----------------
-    fc = "".join(f"[0:a]atrim={a}:{b},asetpts=PTS-STARTPTS,afade=t=in:d=0.01,afade=t=out:st={b - a - 0.012}:d=0.012[a{i}];" for i, (a, b) in enumerate(EDL))
+    # fade 10 ms hanya pada potongan sebenar; segmen bersambung (tukar zoom sahaja) tidak di-fade
+    cut_in = lambda i: i == 0 or abs(EDL[i - 1][1] - EDL[i][0]) > 1e-3
+    cut_out = lambda i: i == len(EDL) - 1 or abs(EDL[i + 1][0] - EDL[i][1]) > 1e-3
+    fc = "".join(f"[0:a]atrim={a}:{b},asetpts=PTS-STARTPTS" + (",afade=t=in:d=0.01" if cut_in(i) else "")
+                 + (f",afade=t=out:st={b - a - 0.012}:d=0.012" if cut_out(i) else "") + f"[a{i}];" for i, (a, b) in enumerate(EDL))
     fc += "".join(f"[a{i}]" for i in range(len(EDL))) + f"concat=n={len(EDL)}:v=0:a=1,aresample=48000,pan=stereo|c0=c0|c1=c0,"
     fc += "highpass=f=80,afftdn=nr=8:nf=-42,acompressor=threshold=-20dB:ratio=2.5:attack=8:release=160:makeup=2," \
           f"adelay={int(TH * 1000)}:all=1,apad=pad_dur=4[voice];[voice]asplit[v1][vsc];"

@@ -89,7 +89,7 @@ td.n{font-family:var(--f-mono);font-size:13px;font-variant-numeric:tabular-nums;
 <div class="wrap">
   <header class="top">
     <h1>YM-F-001 <span>Cikgu atau Kerani</span></h1>
-    <span class="status"><b>Preview</b> TOFU · Farhan · 540×960 · __DUR__ saat · menunggu semakan</span>
+    <span class="status"><b>Preview v2</b> TOFU · Farhan · 540×960 · __DUR__ saat · menunggu semakan</span>
   </header>
 
   <div class="grid">
@@ -117,19 +117,19 @@ td.n{font-family:var(--f-mono);font-size:13px;font-variant-numeric:tabular-nums;
 
       <div class="pane" id="p-tr" role="tabpanel">
         <h2>Transkrip</h2>
-        <p>Whisper large-v3 dengan masa setiap perkataan, disemak semula per pulau suara untuk kesan take ulangan. Perkataan <span class="hl">biru tebal</span> ialah kata kunci biru dalam video. Perkataan <span class="fix">berlatar biru</span> ialah ejaan yang dibetulkan dari transkrip (hover untuk lihat asal).</p>
+        <p>Whisper large-v3 dengan masa setiap perkataan, atas video yang sudah ditrim oleh Farhan. Perkataan <span class="hl">biru tebal</span> ialah kata kunci biru dalam video. Perkataan <span class="fix">berlatar biru</span> ialah ejaan yang dibetulkan dari transkrip (hover untuk lihat asal).</p>
         <div class="caps" id="caps"></div>
       </div>
 
       <div class="pane" id="p-ed" role="tabpanel" hidden>
         <h2>Pelan edit</h2>
-        <p>Footage mentah 92.1 s dengan take ulangan. Take silap, mula palsu dan senyap lebih 0.3 s dibuang; susunan ayat Farhan dikekalkan. Video = thumbnail 1 s + isi 41.8 s + end card 1.5 s. Grafik minimal ikut DNA Yuran.my: kad putih bersudut lembut, ikon ringkas, biru korporat + biru aksen, SFX lembut.</p>
+        <p>v2 guna video yang Farhan trim (28.6 s). Isi tidak dipotong langsung, jadi tiada jump cut tambahan. Video = thumbnail 1 s + isi 28.6 s + end card 1.5 s. Grafik dikurangkan berbanding v1 supaya lebih kemas: satu elemen pada satu masa, ada ruang kosong tanpa grafik (0:15–0:19), biru korporat + biru aksen, SFX lembut.</p>
         <h3>Babak</h3>
         <div class="tbl"><table>
           <thead><tr><th>Masa</th><th>Babak</th><th>Grafik utama</th></tr></thead>
           <tbody id="segtbl"></tbody></table></div>
         <h3>Punch-in zoom</h3>
-        <p>Asas 115% supaya mata Farhan di sepertiga atas frame (rakaman asal lebar, separuh badan). Punch-in 130% setiap 2–3 potongan, juga untuk sembunyikan jump cut.</p>
+        <p>Asas 115% supaya mata Farhan di sepertiga atas frame (rakaman lebar). Punch-in 130% berselang pada hujung ayat sahaja (tiada potongan isi).</p>
         <div class="tbl"><table>
           <thead><tr><th>Masa video</th><th>Zoom</th></tr></thead>
           <tbody id="cuttbl"></tbody></table></div>
@@ -147,7 +147,7 @@ td.n{font-family:var(--f-mono);font-size:13px;font-variant-numeric:tabular-nums;
             <tr><td>Kontras</td><td class="n">×1.05 + lengkung lembut</td><td>Gambar lebih jelas.</td></tr>
             <tr><td>Saturasi</td><td class="n">×1.06</td><td>Baju lebih hidup tanpa kulit jadi oren.</td></tr>
             <tr><td>Imbangan warna</td><td class="n">biru −0.01</td><td>Dinding kurang sejuk. Warna kulit asli dikekalkan.</td></tr>
-            <tr><td>Ketajaman</td><td class="n">unsharp 0.4</td><td>Kompensasi zoom 115–130% atas sumber 720p.</td></tr>
+            <tr><td>Ketajaman</td><td class="n">unsharp 0.4</td><td>Kompensasi zoom 115–130%.</td></tr>
           </tbody></table></div>
         <h3>Audio</h3>
         <div class="tbl"><table>
@@ -156,10 +156,10 @@ td.n{font-family:var(--f-mono);font-size:13px;font-variant-numeric:tabular-nums;
             <tr><td>High-pass 80 Hz</td><td>Buang dengung rendah.</td></tr>
             <tr><td>Noise reduction ringan (8 dB)</td><td>Bunyi bilik berkurang tanpa suara jadi "robot".</td></tr>
             <tr><td>Compressor ringan (2.5:1)</td><td>Volume suara lebih sekata.</td></tr>
-            <tr><td>Fade 10 ms setiap potongan</td><td>Tiada bunyi "klik" pada sambungan.</td></tr>
-            <tr><td>Muzik latar (jana sendiri)</td><td>Korporat ringan dan tenang: kekunci elektrik + pad, C–Am–F–G, 100 BPM. Bass, kick lembut dan shaker masuk selepas ~10 s, arpeggio pluck selepas ~19 s. Sekitar 21 dB di bawah suara, ducking menambah ~3 dB semasa bercakap. Fade masuk 1.5 s, keluar 2.5 s.</td></tr>
-            <tr><td>SFX (21 cue)</td><td>Pop, whoosh, click, tick, ding, bonk lembut ikut kemunculan grafik. Dijana sendiri, jauh di bawah suara.</td></tr>
-            <tr><td>Loudness akhir</td><td>−13.9 LUFS, true peak −1.7 dBTP.</td></tr>
+            
+            <tr><td>Muzik latar (jana sendiri)</td><td>Korporat ringan dan tenang: kekunci elektrik + pad, C–Am–F–G, 100 BPM. Bass, kick lembut dan shaker masuk selepas ~10 s, arpeggio pluck selepas ~19 s. Sekitar 22 dB di bawah suara, ducking menambah ~3 dB semasa bercakap. Fade masuk 1.5 s, keluar 2.5 s.</td></tr>
+            <tr><td>SFX (18 cue)</td><td>Pop, whoosh, click, tick, ding, bonk lembut ikut kemunculan grafik. Dijana sendiri, jauh di bawah suara.</td></tr>
+            <tr><td>Loudness akhir</td><td>−13.9 LUFS, true peak −2.1 dBTP.</td></tr>
           </tbody></table></div>
       </div>
 

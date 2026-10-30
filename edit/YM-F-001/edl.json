@@ -1,1 +1,14 @@
-{"src":"TOFU_CikguatauKerani.MOV","segments":[[7.67,9.64],[14.09,20.72],[24.41,28.56],[30.38,34.72],[39.60,43.71],[44.22,47.25],[52.09,56.77],[66.36,70.02],[72.01,75.37],[77.90,80.23],[82.17,83.94],[86.50,88.24]]}
+{"src":"TOFU_CikguatauKerani.mp4",
+ "note":"Footage SUDAH DITRIM oleh Farhan (28.6 s). Isi tidak dipotong; segmen bersambung hanya untuk tukar zoom pada hujung ayat.",
+ "segments":[[0,1.5667,"P"],[1.5667,5.8667,"B"],[5.8667,9.8,"P"],[9.8,13.9333,"B"],[13.9333,18.5333,"P"],[18.5333,20.4667,"B"],[20.4667,23.1,"P"],[23.1,25.3667,"B"],[25.3667,26.9667,"P"],[26.9667,28.6,"B"]],
+ "face_y":0.37,"thumb_t":25.8,
+ "fix":{"pulang":"pula","PNP":"PnP"},
+ "gfx":[[1.15,4.0,"label","Farhan · Yuran.my"],
+  [2.55,8.40,"rows",["RUTIN HARIAN CIKGU",[[2.62,"PAGI","Kutip yuran"],[3.36,"TENGAH HARI","Buat resit"],[4.50,"PETANG","Buat syllabus"],[6.86,"MALAM","Kira yuran"]]]],
+  [8.40,10.95,"broll","sistem"],[8.60,10.85,"callout","Tally ke tak?"],
+  [12.45,14.85,"chip","Ulang setiap hari"],
+  [19.50,21.45,"pile",null],
+  [21.55,24.05,"timebar",null],
+  [24.10,27.90,"rows",["CIKGU KAFA",[[25.42,null,"Mendidik","check"],[27.20,null,"Kerani sekolah","cross"]]]],
+  [28.00,"END","comment",null]],
+ "sfx":[[0.0,"pop",0.35],[1.15,"whoosh",0.3],[2.62,"pop",0.35],[3.36,"pop",0.3],[4.50,"pop",0.3],[6.86,"pop",0.3],[8.35,"whoosh",0.4],[8.65,"click",0.45],[10.90,"whoosh",0.3],[12.45,"pop",0.3],[19.45,"whoosh",0.35],[20.0,"tick",0.3],[21.55,"swoosh_down",0.3],[25.42,"ding",0.3],[27.20,"bonk",0.3],[28.0,"pop",0.35],["END","whoosh",0.4],["END+0.2","ding",0.35]]}
