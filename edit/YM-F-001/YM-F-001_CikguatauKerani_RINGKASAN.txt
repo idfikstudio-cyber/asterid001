@@ -1,7 +1,7 @@
-YM-F-001_CikguatauKerani — RINGKASAN PREVIEW v2
+YM-F-001_CikguatauKerani — RINGKASAN PREVIEW v2.1 (CTA Follow TikTok)
 Brand: Yuran.my | Spokesperson: Farhan | Jenis: TOFU | Durasi: 31.1 s (540x960 preview)
 Sumber: 01_RAW/2026-10-30_001_FARHAN/TOFU_CikguatauKerani.mp4 (28.6 s, SUDAH DITRIM oleh Farhan, isi tidak dipotong)
-Halaman preview: https://claude.ai/artifact/PMUow1UqLprFpB97bbcNg8 (v2)
+Halaman preview: https://claude.ai/artifact/PMUow1UqLprFpB97bbcNg8 (v2.1)
 
 1. TEKS HOOK / THUMBNAIL
    CIKGU KAFA / atau / KERANI?  (KERANI biru aksen #29ABE2), frame Farhan menunjuk (sumber 0:25.8). 1 saat, tiada logo.
@@ -51,20 +51,21 @@ Halaman preview: https://claude.ai/artifact/PMUow1UqLprFpB97bbcNg8 (v2)
    0:21.6-0:24.1  Bar masa: Waktu mengajar: bar biru dimakan 'dicuri kerja admin'
    0:24.1-0:27.9  Kad senarai: Cikgu KAFA: ✓ Mendidik / ✗ Kerani sekolah (dipangkah)
    0:28.0-0:29.6  Gelembung komen: Setuju atau tak setuju? Kongsi pendapat di ruang komen
-   0:29.6-0:31.1  End card: Logo putih atas biru #2A3B8F, Cara MUDAH Urus Yuran, Follow untuk tips urus yuran sekolah, hello@yuran.my
-   SFX: 0:00.0 pop, 0:01.1 whoosh, 0:02.6 pop, 0:03.4 pop, 0:04.5 pop, 0:06.9 pop, 0:08.3 whoosh, 0:08.7 click, 0:10.9 whoosh, 0:12.4 pop, 0:19.4 whoosh, 0:20.0 tick, 0:21.6 swoosh_down, 0:25.4 ding, 0:27.2 bonk, 0:28.0 pop, 0:29.6 whoosh, 0:29.8 ding
+   0:29.6-0:31.1  End card: Kad profil TikTok Yuran.My Street @yuran.my (avatar dari BRAND/Yuran Tiktok.jpg), butang + Follow, Follow TikTok Yuran.my untuk tips urus yuran sekolah, Cara MUDAH Urus Yuran, hello@yuran.my
+   SFX: 0:00.0 pop, 0:01.1 whoosh, 0:02.6 pop, 0:03.4 pop, 0:04.5 pop, 0:06.9 pop, 0:08.3 whoosh, 0:08.7 click, 0:10.9 whoosh, 0:12.4 pop, 0:19.4 whoosh, 0:20.0 tick, 0:21.6 swoosh_down, 0:25.4 ding, 0:27.2 bonk, 0:28.0 pop, 0:29.6 whoosh, 0:30.4 click
 
 4. CTA
-   TOFU: "Follow untuk tips urus yuran sekolah" + logo Yuran.my putih atas #2A3B8F + "Cara MUDAH Urus Yuran" + hello@yuran.my (end card 1.5 s).
+   TOFU: "Follow TikTok Yuran.my untuk tips urus yuran sekolah" dengan kad profil TikTok @yuran.my (Yuran.My Street) dan butang + Follow, atas biru #2A3B8F, + "Cara MUDAH Urus Yuran" + hello@yuran.my (end card 1.5 s).
+   Bilangan follower/likes dalam screenshot tidak dipaparkan (statistik tidak disebut spokesperson).
 
 5. PERLU SEMAK
    - "Pagi tadi pula collection": Transkrip dengar 'pulang'. Caption tulis 'pula'. Sila dengar dan sahkan. [0:09.4]
    - Ejaan PnP: Disebut 'P-N-P'. Caption 'PnP'. Jika mahu istilah rasmi 'PdP', beritahu. [0:16.5]
    - Muzik dijana sendiri: Folder MUSIC/ Yuran.my tiada; Farhan pilih muzik jana sendiri (korporat ringan, 100 BPM, bebas hak cipta).
    - Tiada video rujukan gaya: BRAND/ tiada rujukan-gaya-*.mp4. Diedit ikut DNA Yuran.my sahaja (Farhan setuju).
-   - Logo resolusi rendah: Logo Yuran White.png hanya 250×150, jadi end card besarkan ~2.4×. Untuk final lebih tajam jika ada logo PNG/SVG besar.
+   - Avatar end card resolusi rendah: avatar diambil dari screenshot Yuran Tiktok.jpg (bulatan ~172 px), dibesarkan ~1.7× untuk final 1080p. Lebih tajam jika ada fail gambar profil TikTok asal.
    - Gambar 'Pecah masuk KAFA' tidak digunakan: Video tidak menyebut kecurian/tunai, jadi gambar berita itu akan menambah fakta. Ada juga muka suspek dan nama sekolah.
-   - Preview MP4 belum di Drive: Alat Drive yang saya ada tidak dapat muat naik fail video besar. RINGKASAN dan log sudah dikemas kini; MP4 preview ada di halaman ini.
+   - Preview MP4 belum di Drive: Alat Drive yang saya ada tidak dapat muat naik fail video besar. MP4 preview ada di halaman Artifact.
 
 6. CAPTION TIKTOK
    Cikgu KAFA masuk untuk mendidik, bukan jadi kerani sekolah. Pagi kutip yuran, tengah hari buat resit, malam kira yuran… bila masa nak pastikan PnP berkualiti? Setuju ke tak setuju? Komen di bawah.

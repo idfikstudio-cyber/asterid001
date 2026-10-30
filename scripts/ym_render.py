@@ -245,21 +245,41 @@ def pile_frame(t, t0, dur):
     return im, a
 
 def end_card(t):
-    tt = t - END0
-    im = Image.new("RGBA", (W, H), (*NAVY, 255)); d = ImageDraw.Draw(im)
-    logo = Image.open(P("brand/logo_white.png")).convert("RGBA"); logo = logo.crop(logo.getbbox())
-    lw = int(470 * u); logo = logo.resize((lw, int(logo.size[1] * lw / logo.size[0])), Image.LANCZOS)
+    """End card TOFU: kad profil TikTok Yuran.my (dari BRAND/Yuran Tiktok.jpg) + CTA Follow + tagline + emel.
+    Bilangan follower/likes sengaja tidak dipaparkan (statistik tidak disebut spokesperson)."""
+    tt = t - END0; cx = W * .46
+    im = Image.new("RGBA", (W, H), (*NAVY, 255))
     k = ease(tt / .35)
-    paste(im, logo, W * .46 - lw / 2, H * .28 + (1 - k) * 20 * u, k)
-    f = font("ExtraBold", 64); y = H * .28 + logo.size[1] + 90 * u; parts = [("Cara ", WHITE), ("MUDAH", ACC), (" Urus Yuran", WHITE)]
-    tw = sum(text_w(d, s, f) for s, _ in parts); x = W * .46 - tw / 2
+    # avatar: bulatan logo dari screenshot profil TikTok
+    av = Image.open(P("brand/yuran_tiktok.jpg")).convert("RGBA").crop((34, 20, 206, 192))
+    D = int(300 * u); av = av.resize((D, D), Image.LANCZOS)
+    m = Image.new("L", (D * 4, D * 4), 0); ImageDraw.Draw(m).ellipse((0, 0, D * 4 - 1, D * 4 - 1), fill=255)
+    av.putalpha(m.resize((D, D), Image.LANCZOS))
+    ring = Image.new("RGBA", (D + int(20 * u), D + int(20 * u)), (0, 0, 0, 0))
+    ImageDraw.Draw(ring).ellipse((0, 0, ring.size[0] - 1, ring.size[1] - 1), fill=WHITE)
+    ring.alpha_composite(av, (int(10 * u), int(10 * u)))
+    ay = H * .19 + (1 - k) * 20 * u
+    paste(im, ring, cx - ring.size[0] / 2, ay, k)
     lay = Image.new("RGBA", im.size, (0, 0, 0, 0)); ld = ImageDraw.Draw(lay)
-    for s, c in parts: ld.text((x, y), s, font=f, fill=c); x += text_w(ld, s, f)
-    f2 = font("Bold", 38); s2 = "Follow untuk tips urus yuran sekolah"; tw2 = text_w(ld, s2, f2)
-    y2 = y + 150 * u; ld.rounded_rectangle((W * .46 - tw2 / 2 - 40 * u, y2, W * .46 + tw2 / 2 + 40 * u, y2 + 92 * u), 46 * u, fill=WHITE)
-    ld.text((W * .46, y2 + 46 * u), s2, font=f2, fill=NAVY, anchor="mm")
-    ld.text((W * .46, y2 + 190 * u), "hello@yuran.my", font=font("SemiBold", 44), fill=WHITE, anchor="mm")
-    paste(im, lay, 0, 0, ease((tt - .15) / .35))
+    y = ay + ring.size[1] + 34 * u
+    ld.text((cx, y), "Yuran.My Street", font=font("ExtraBold", 58), fill=WHITE, anchor="mt")
+    ld.text((cx, y + 80 * u), "TikTok  @yuran.my", font=font("SemiBold", 40), fill=(190, 225, 245), anchor="mt")
+    # butang Follow: berdenyut sekali + riak ketuk pada 0.75 s
+    by = y + 160 * u; pulse = 1 + 0.06 * math.sin(math.pi * min(1, max(0, (tt - .6) / .3)))
+    bw, bh = 400 * u * pulse, 100 * u * pulse
+    ld.rounded_rectangle((cx - bw / 2, by + 50 * u - bh / 2, cx + bw / 2, by + 50 * u + bh / 2), bh / 2, fill=ACC)
+    ld.text((cx, by + 50 * u), "+ Follow", font=font("ExtraBold", 46), fill=WHITE, anchor="mm")
+    if .75 <= tt < 1.25:
+        r = (tt - .75) / .5; rr = 40 * u + 140 * u * r
+        ld.ellipse((cx + 120 * u - rr, by + 50 * u - rr, cx + 120 * u + rr, by + 50 * u + rr), outline=(255, 255, 255, int(200 * (1 - r))), width=int(6 * u))
+    y2 = by + 150 * u
+    ld.text((cx, y2), "Follow TikTok Yuran.my", font=font("Bold", 44), fill=WHITE, anchor="mt")
+    ld.text((cx, y2 + 58 * u), "untuk tips urus yuran sekolah", font=font("Bold", 44), fill=WHITE, anchor="mt")
+    f = font("ExtraBold", 40); parts = [("Cara ", WHITE), ("MUDAH", ACC), (" Urus Yuran", WHITE)]
+    x = cx - sum(text_w(ld, s_, f) for s_, _ in parts) / 2; y3 = y2 + 170 * u
+    for s_, c in parts: ld.text((x, y3), s_, font=f, fill=c); x += text_w(ld, s_, f)
+    ld.text((cx, y3 + 66 * u), "hello@yuran.my", font=font("SemiBold", 36), fill=(200, 210, 240), anchor="mt")
+    paste(im, lay, 0, 0, ease((tt - .1) / .3))
     return im
 
 def thumb_overlay(base):
