@@ -1,3 +1,5 @@
 *.mp4
 *.mov
 *.wav.tmp
+edit/*/assets/
+edit/*/frames/

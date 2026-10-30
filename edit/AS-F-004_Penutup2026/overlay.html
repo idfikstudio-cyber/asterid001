@@ -1,0 +1,113 @@
+<!doctype html>
+<meta charset="utf-8">
+<!-- Lapisan grafik video (lutsinar). render.js panggil draw(t) untuk setiap frame. Unit vw/vh = kanvas 9:16. -->
+<style>
+@font-face{font-family:P;font-weight:600;src:url(fonts/Poppins-SemiBold.ttf)}
+@font-face{font-family:P;font-weight:700;src:url(fonts/Poppins-Bold.ttf)}
+@font-face{font-family:P;font-weight:800;src:url(fonts/Poppins-ExtraBold.ttf)}
+@font-face{font-family:P;font-weight:900;src:url(fonts/Poppins-Black.ttf)}
+@font-face{font-family:H;src:url(fonts/Caveat.ttf)}
+:root{--navy:#0f1d44;--navy2:#1b2f6b;--gold:#ffc83d;--paper:#fffdf6;--ink:#1d3a8a;--red:#e5484d;--white:#fff}
+html,body{margin:0;width:100vw;height:100vh;overflow:hidden;background:transparent}
+body{font-family:P,sans-serif;color:var(--white)}
+.l{position:absolute;inset:0}
+.a{position:absolute;transform-origin:50% 50%;width:max-content}
+.cx{left:50%;translate:-50% 0}
+.shadow{text-shadow:0 .5vw 0 rgba(0,0,0,.55),0 0 2.2vw rgba(0,0,0,.55),0 0 .5vw rgba(0,0,0,.8)}
+#wm{left:6vw;top:12vh;font:600 3.3vw P;color:rgba(255,255,255,.68);letter-spacing:.02em;text-shadow:0 .25vw .8vw rgba(0,0,0,.45),0 0 .25vw rgba(0,0,0,.35)}
+#cap{top:51vh;width:78vw!important;-webkit-text-stroke:1.1vw #0a1431;paint-order:stroke fill;left:45vw;translate:-50% 0;text-align:center;font:800 6.6vw/1.12 P;text-transform:uppercase;letter-spacing:.005em}
+#cap .w{display:inline-block;margin:0 .9vw}
+#cap .hot{color:var(--gold)}
+.box{background:var(--navy);border-radius:2.2vw;padding:1.2vw 3vw;box-shadow:0 1.2vw 3vw rgba(0,0,0,.35)}
+.paper{max-width:66vw;background:var(--paper);border-radius:2.4vw;box-shadow:0 1.4vw 3.4vw rgba(0,0,0,.3);color:var(--ink);background-image:linear-gradient(90deg,transparent 7vw,rgba(229,72,77,.45) 7vw,rgba(229,72,77,.45) calc(7vw + 2px),transparent calc(7vw + 2px)),repeating-linear-gradient(transparent 0 5.6vw,rgba(29,58,138,.13) 5.6vw calc(5.6vw + 1px))}
+.ptitle{font:700 3vw P;color:var(--red);text-transform:uppercase;letter-spacing:.06em}
+.hand{font:700 9vw/1.05 H;color:var(--ink)}
+.hl{background:linear-gradient(transparent 62%,rgba(255,200,61,.85) 62%);background-repeat:no-repeat}
+.series{font:800 3.6vw P;color:var(--white);letter-spacing:.04em;border:.5vw solid var(--gold)}
+.series b{color:var(--gold)}
+.pill{border-radius:99px;padding:1vw 3.2vw;font:700 3.6vw P}
+.big{font:900 17vw/1 P;color:var(--navy);background:var(--gold);border-radius:3vw;padding:1vw 5vw;box-shadow:0 1.5vw 0 var(--navy),0 2vw 4vw rgba(0,0,0,.35);letter-spacing:-.01em}
+.sub{margin-top:3vw;font:800 4.4vw P;background:var(--navy);color:#fff;border-radius:99px;padding:1.2vw 4vw;display:inline-block;border:.5vw solid var(--gold)}
+.ico{width:9vw;height:9vw;flex:none}
+.row{display:flex;align-items:center;gap:3vw}
+.chk{width:5.4vw;height:5.4vw;border:.6vw solid var(--ink);border-radius:1vw;flex:none;position:relative}
+.chk svg{position:absolute;left:-.6vw;top:-2.4vw;width:8vw;height:8vw}
+#ring{width:24vw;height:24vw;border-radius:50%;border:1.2vw solid var(--gold);overflow:hidden;box-shadow:0 1.2vw 3vw rgba(0,0,0,.35);background:#223}
+#ring img{width:100%;height:100%;object-fit:cover;transform:scale(1.18)}
+/* end card */
+#end{background:radial-gradient(120% 70% at 50% 20%,#1d3473 0%,var(--navy) 60%,#0a1431 100%)}
+#end .dots{position:absolute;inset:0;background-image:radial-gradient(rgba(255,200,61,.16) 1.6px,transparent 1.6px);background-size:6vw 6vw;mask:linear-gradient(#000,transparent 60%)}
+.c{left:46vw;text-align:center;width:80vw!important}
+#thumbdim{background:linear-gradient(180deg,rgba(8,14,35,0) 30%,rgba(8,14,35,.55) 50%,rgba(8,14,35,.78) 80%)}
+.th1{font:900 12vw/1 P;color:#fff}
+.th2{font:900 26vw/1 P;color:var(--navy);background:var(--gold);border-radius:3.4vw;padding:.4vw 5vw;display:inline-block;box-shadow:0 1.8vw 0 #0a1431}
+.th3{font:900 11vw/1 P;color:#fff;background:var(--navy);border-radius:2.6vw;padding:1.6vw 4.5vw;display:inline-block;border:.7vw solid var(--gold);rotate:-2deg}
+</style>
+<body>
+<div class="l" id="root"></div>
+<script>
+let PLAN=null; const R=document.getElementById('root');
+const clamp=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
+const easeOutBack=x=>{const c=1.6;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2)};
+const easeOut=x=>1-Math.pow(1-x,3);
+// masuk: pop 0.28 s; keluar: pudar 0.22 s
+function life(t,s,e,inD=.28,outD=.22){if(t<s||t>e)return null;const i=clamp((t-s)/inD),o=clamp((e-t)/outD);return{i,o,k:easeOutBack(i),op:Math.min(clamp(i*2.2),o)}}
+function el(html,style){const d=document.createElement('div');d.className='a';d.innerHTML=html;Object.assign(d.style,style||{});R.appendChild(d);return d}
+const ICON={
+ play:'<svg class="ico" viewBox="0 0 48 48"><circle cx="24" cy="24" r="22" fill="#e5484d"/><path d="M19 14l15 10-15 10z" fill="#fff"/></svg>',
+ book:'<svg class="ico" viewBox="0 0 48 48"><path d="M6 10c6-3 12-3 18 1v29c-6-4-12-4-18-1z" fill="#ffc83d" stroke="#0f1d44" stroke-width="2.5" stroke-linejoin="round"/><path d="M42 10c-6-3-12-3-18 1v29c6-4 12-4 18-1z" fill="#fff" stroke="#0f1d44" stroke-width="2.5" stroke-linejoin="round"/><path d="M29 18h8M29 23h8M29 28h6" stroke="#1d3a8a" stroke-width="2" stroke-linecap="round"/></svg>',
+ wa:'<svg viewBox="0 0 32 32" style="width:6vw;height:6vw;flex:none"><circle cx="16" cy="16" r="15" fill="#25d366"/><path d="M10.5 22.5l1-3.4a7 7 0 1 1 2.6 2.5zM13.6 11.8c.3-.4.7-.3 1 .1l1 1.9c.1.3 0 .6-.2.8l-.6.6c.6 1.3 1.6 2.3 2.9 2.9l.6-.6c.2-.2.5-.3.8-.2l1.9 1c.4.2.5.7.1 1-1 .9-2.2 1.3-3.6.5a10 10 0 0 1-4.5-4.6c-.6-1.3-.3-2.5.6-3.4z" fill="#fff"/></svg>',
+ tick:p=>`<svg viewBox="0 0 40 40"><path d="M6 21l9 9L36 6" fill="none" stroke="#1f9d55" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="${1-p}"/></svg>`,
+ hand:'<svg viewBox="0 0 48 48" style="width:9vw;height:9vw"><path d="M18 26V9a3 3 0 0 1 6 0v12l9 1.6a4 4 0 0 1 3.3 4.6L35 36a8 8 0 0 1-8 7h-4a8 8 0 0 1-6.4-3.2L10 31a3 3 0 0 1 4.4-4z" fill="#fff" stroke="#0f1d44" stroke-width="2.4" stroke-linejoin="round"/></svg>'
+};
+function topCard(g,t,L,inner,extra){ // kad di jalur atas (atas kepala)
+  const d=el(inner,{top:(extra&&extra.top)||'15.5vh',left:'47vw',opacity:L.op,transform:`translateX(-50%) scale(${0.55+0.45*L.k}) rotate(${(1-L.k)*-4}deg)`});return d}
+function draw(t){
+  R.innerHTML='';const P=PLAN;
+  if(t<P.thumb){drawThumb(t);wm();return}
+  if(t>=P.content_end){drawEnd(t-P.content_end);wm();return}
+  for(const g of P.graphics){const L=life(t,g.s,g.e);if(!L)continue;(KIND[g.kind]||(()=>{}))(g,t,L)}
+  // caption
+  const c=P.captions.find(c=>t>=c.s&&t<c.e);
+  if(c){const k=easeOutBack(clamp((t-c.s)/.16));
+    el(c.words.map(w=>`<span class="w ${w.hot?'hot':''}" style="opacity:${t>=w.s-0.04?1:.0}">${w.w}</span>`).join(' '),{}).id='cap';
+    const d=document.getElementById('cap');d.classList.add('shadow');d.style.transform=`scale(${0.86+0.14*k})`}
+  wm();
+}
+function wm(){el('asteredu11.com.my').id='wm'}
+const KIND={
+ series:(g,t,L)=>{const d=el(`<div class="box series">${g.text.replace('·','<b>·</b>')}</div>`,{top:'16.5vh',left:'47vw',opacity:L.op,transform:`translateX(-50%) translateY(${(1-easeOut(L.i))*-3}vh)`})},
+ name:(g,t,L)=>{el(`<div class="pill" style="background:rgba(15,29,68,.9);border:.45vw solid var(--gold)"><span style="color:var(--gold)">●</span> ${g.text}</div>`,{top:'44.5vh',left:'5vw',opacity:L.op,transform:`translateX(${(1-easeOut(L.i))*-8}vw)`})},
+ bignum:(g,t,L)=>{el(`<div style="text-align:center"><div class="big">${g.text}</div>${g.sub?`<div class="sub">${g.sub}</div>`:''}</div>`,{top:'59vh',left:'45vw',opacity:L.op,transform:`translateX(-50%) scale(${0.4+0.6*L.k})`})},
+ strike:(g,t,L)=>{const p=easeOut(clamp((t-g.s-.45)/.35));el(`<div class="box" style="position:relative;font:900 8vw P;padding:2vw 5vw">${g.text}<div style="position:absolute;left:3vw;top:50%;height:1.3vw;border-radius:1vw;background:var(--red);width:calc((100% - 6vw)*${p});rotate:-4deg"></div></div>`,{top:'61vh',left:'45vw',opacity:L.op,transform:`translateX(-50%) scale(${0.5+0.5*L.k})`})},
+ note:(g,t,L)=>{const p=easeOut(clamp((t-g.s-.35)/.6));topCard(g,t,L,`<div class="paper" style="padding:2.4vw 5vw 2.6vw 9.5vw;min-width:50vw"><div class="ptitle">${g.title}</div><div class="hand"><span class="hl" style="background-size:${p*100}% 100%">${g.text}</span></div></div>`)},
+ check:(g,t,L)=>{topCard(g,t,L,`<div class="paper" style="padding:2.2vw 5vw 2.2vw 9.5vw;min-width:56vw">${g.items.filter(([,ts])=>t>=ts-.15).map(([txt,ts])=>{const p=clamp((t-ts)/.3);return `<div class="row" style="height:9.6vw;opacity:${clamp((t-ts+.15)/.15)}"><div class="chk">${ICON.tick(p)}</div><div class="hand" style="font-size:8vw">${txt}</div></div>`}).join('')}</div>`,{top:'14.5vh'})},
+ rec:(g,t,L)=>{topCard(g,t,L,`<div class="box row" style="padding:2.2vw 4.5vw;border:.5vw solid var(--gold)">${ICON.play}<div><div style="font:800 5.4vw/1.1 P">${g.text}</div><div style="display:inline-block;margin-top:1vw;font:900 5.6vw/1 P;background:var(--gold);color:var(--navy);padding:1vw 3vw;border-radius:99px">${g.sub}</div></div></div>`)},
+ book:(g,t,L)=>{topCard(g,t,L,`<div class="paper row" style="padding:2.4vw 5vw 2.4vw 9.5vw">${ICON.book}<div class="hand" style="font-size:8.4vw;min-width:0">${g.text}</div></div>`)},
+ 'book-x':(g,t,L)=>{const p=easeOut(clamp((t-g.s-.15)/.3));topCard(g,t,L,`<div class="paper row" style="padding:2.4vw 5vw 2.4vw 9.5vw;position:relative">${ICON.book}<div class="hand" style="font-size:8.4vw;min-width:0">${g.text}</div><svg viewBox="0 0 40 40" style="position:absolute;left:8vw;top:1.4vw;width:12vw;height:12vw"><path d="M6 6L34 34M34 6L6 34" stroke="#e5484d" stroke-width="5" stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="${1-p}"/></svg></div>`)},
+ follow:(g,t,L)=>{const tap=g.s+1.1, f=t>=tap+.15;
+   el(`<div style="display:flex;flex-direction:column;align-items:center;gap:1.4vw"><div id="ring"><img src="assets/logo_socmed.png"></div>
+     <div class="shadow" style="font:800 4.6vw P">${g.text}</div>
+     <div style="position:relative"><div class="pill" style="background:${f?'#fff':'var(--gold)'};color:var(--navy);font:900 4.4vw P;padding:1.2vw 5vw;box-shadow:0 .8vw 2vw rgba(0,0,0,.35)">${f?'✓ Followed':'+ Follow saya'}</div>
+     <div style="position:absolute;right:-6vw;top:2vw;opacity:${clamp((t-g.s-.5)/.2)*clamp((tap+.7-t)/.2)};transform:translate(${clamp((tap-t)/.5)*6}vw,${clamp((tap-t)/.5)*5}vw) scale(${Math.abs(t-tap)<.12?.85:1})">${ICON.hand}</div></div></div>`,
+     {top:'8.5vh',left:'62vw',opacity:L.op,transform:`translateX(-50%) scale(${0.5+0.5*L.k})`})},
+ years:(g,t,L)=>{const p=easeOut(clamp((t-g.s-.35)/.4));el(`<div class="row" style="justify-content:center;gap:2.4vw"><div class="box" style="font:900 10vw/1 P;color:rgba(255,255,255,.75);padding:1.6vw 3.6vw">${g.text}</div><svg viewBox="0 0 40 24" style="width:10vw;opacity:${p};translate:${(1-p)*-4}vw 0;filter:drop-shadow(0 .4vw .8vw rgba(0,0,0,.6))"><path d="M3 12h30M24 4l9 8-9 8" fill="none" stroke="#fff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="big" style="font-size:12vw;opacity:${p};transform:scale(${0.6+0.4*easeOutBack(p)})">${g.to}</div></div>`,{top:'60vh',left:'45vw',opacity:L.op,transform:`translateX(-50%) scale(${0.5+0.5*L.k})`})},
+};
+function drawThumb(t){
+  el('','').className='l';R.lastChild.id='thumbdim';
+  const h=PLAN.hook;
+  el(`<div style="text-align:center;display:flex;flex-direction:column;align-items:center;gap:2.4vw">
+    <div class="th1 shadow">${h[0]}</div><div class="th2">${h[1]}</div><div class="th3">${h[2]}</div>
+    <div class="sub" style="margin-top:2.4vw;font-size:5vw">💛 ${PLAN.hook_sub}</div></div>`,{top:'46vh',left:'45vw',transform:'translateX(-50%)'});
+}
+function drawEnd(u){
+  const d=el('<div class="dots"></div>');d.className='l';d.id='end';d.style.opacity=clamp(u/.18);
+  const k=i=>easeOutBack(clamp((u-.05-i*.08)/.3)),op=i=>clamp((u-.05-i*.08)/.15);
+  el(`<div id="ring" style="width:38vw;height:38vw;border-width:1.6vw;margin:auto"><img src="assets/logo_socmed.png"></div>`,{top:'16vh',left:'46vw',transform:`translateX(-50%) scale(${k(0)})`,opacity:op(0)});
+  const c=el(`<div style="font:900 8vw P">Cikgu AlFarhan</div><div style="font:700 5vw P;color:var(--gold);margin-top:.6vw">@aster.edu_tpg</div>`,{top:'39.5vh',opacity:op(1),transform:`translateX(-50%) translateY(${(1-k(1))*3}vh)`});c.classList.add('c');
+  const c2=el(`<div style="font:800 5.6vw/1.25 P">Follow untuk tips belajar<br>anak seterusnya</div>`,{top:'51.5vh',opacity:op(2),transform:`translateX(-50%) translateY(${(1-k(2))*3}vh)`});c2.classList.add('c');
+  const c3=el(`<div style="display:inline-block;font:900 7.6vw P;color:var(--navy);background:var(--gold);border-radius:2.6vw;padding:1.8vw 4.4vw;box-shadow:0 1.2vw 0 #0a1431">asteredu11.com.my</div>`,{top:'60.5vh',opacity:op(3),transform:`translateX(-50%) scale(${0.6+0.4*k(3)})`});c3.classList.add('c');
+  const c4=el(`<div class="row" style="justify-content:center;gap:2vw;font:800 5.6vw P;white-space:nowrap">${ICON.wa}<span>WhatsApp 011-5596 9070</span></div>`,{top:'70vh',opacity:op(4),transform:`translateX(-50%) translateY(${(1-k(4))*3}vh)`});c4.classList.add('c');
+}
+window.setPlan=p=>{PLAN=p};window.draw=draw;
+</script>
