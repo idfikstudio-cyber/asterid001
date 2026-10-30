@@ -1,0 +1,1155 @@
+{
+ "t0": 1.0,
+ "end": 49.646,
+ "ctaAt": 47.96,
+ "duration": 51.146,
+ "thumb_src": 5.25,
+ "captions": [
+  {
+   "s": 1.0,
+   "e": 1.68,
+   "words": [
+    {
+     "w": "Ibu",
+     "s": 1.0
+    },
+    {
+     "w": "bapa",
+     "s": 1.12
+    },
+    {
+     "w": "kata",
+     "s": 1.36
+    }
+   ]
+  },
+  {
+   "s": 1.68,
+   "e": 2.38,
+   "words": [
+    {
+     "w": "dah",
+     "s": 1.68
+    },
+    {
+     "w": "bayar",
+     "s": 1.82
+    },
+    {
+     "w": "yuran",
+     "s": 2.1
+    }
+   ]
+  },
+  {
+   "s": 2.38,
+   "e": 3.74,
+   "words": [
+    {
+     "w": "tapi",
+     "s": 2.38
+    },
+    {
+     "w": "cikgu-cikgu",
+     "s": 2.74
+    },
+    {
+     "w": "kata",
+     "s": 3.48
+    }
+   ]
+  },
+  {
+   "s": 3.74,
+   "e": 4.62,
+   "words": [
+    {
+     "w": "belum",
+     "s": 3.74
+    },
+    {
+     "w": "bayar",
+     "s": 3.92
+    }
+   ]
+  },
+  {
+   "s": 4.62,
+   "e": 5.52,
+   "words": [
+    {
+     "w": "Siapa",
+     "s": 4.62
+    },
+    {
+     "w": "betul?",
+     "s": 5.0
+    }
+   ]
+  },
+  {
+   "s": 5.52,
+   "e": 6.32,
+   "words": [
+    {
+     "w": "Siapa",
+     "s": 5.52
+    },
+    {
+     "w": "salah?",
+     "s": 5.78,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 6.32,
+   "e": 7.86,
+   "words": [
+    {
+     "w": "Buku",
+     "s": 6.32
+    },
+    {
+     "w": "resit",
+     "s": 6.62,
+     "hot": 1
+    },
+    {
+     "w": "dah",
+     "s": 7.1
+    },
+    {
+     "w": "buat",
+     "s": 7.3
+    }
+   ]
+  },
+  {
+   "s": 7.86,
+   "e": 8.94,
+   "words": [
+    {
+     "w": "Buka",
+     "s": 7.86
+    },
+    {
+     "w": "buku",
+     "s": 8.04
+    },
+    {
+     "w": "resit",
+     "s": 8.44,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 8.94,
+   "e": 9.78,
+   "words": [
+    {
+     "w": "Dari",
+     "s": 8.94
+    },
+    {
+     "w": "helai",
+     "s": 9.18
+    },
+    {
+     "w": "demi",
+     "s": 9.6
+    }
+   ]
+  },
+  {
+   "s": 9.78,
+   "e": 10.82,
+   "words": [
+    {
+     "w": "helai",
+     "s": 9.78
+    },
+    {
+     "w": "daripada",
+     "s": 10.12
+    },
+    {
+     "w": "awal",
+     "s": 10.44
+    }
+   ]
+  },
+  {
+   "s": 10.82,
+   "e": 11.86,
+   "words": [
+    {
+     "w": "tahun",
+     "s": 10.82
+    },
+    {
+     "w": "sampai",
+     "s": 11.0
+    },
+    {
+     "w": "yang",
+     "s": 11.42
+    }
+   ]
+  },
+  {
+   "s": 11.86,
+   "e": 12.64,
+   "words": [
+    {
+     "w": "paling",
+     "s": 11.86
+    },
+    {
+     "w": "latest",
+     "s": 12.06
+    }
+   ]
+  },
+  {
+   "s": 12.64,
+   "e": 13.8,
+   "words": [
+    {
+     "w": "Tak",
+     "s": 12.64
+    },
+    {
+     "w": "jumpa",
+     "s": 12.76
+    }
+   ]
+  },
+  {
+   "s": 13.8,
+   "e": 15.04,
+   "words": [
+    {
+     "w": "Suasana",
+     "s": 13.8
+    },
+    {
+     "w": "jadi",
+     "s": 14.32
+    },
+    {
+     "w": "tegang",
+     "s": 14.5,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 15.04,
+   "e": 15.7,
+   "words": [
+    {
+     "w": "Ibu",
+     "s": 15.04
+    },
+    {
+     "w": "bapa",
+     "s": 15.18
+    },
+    {
+     "w": "rasa",
+     "s": 15.44
+    }
+   ]
+  },
+  {
+   "s": 15.7,
+   "e": 17.34,
+   "words": [
+    {
+     "w": "tertuduh",
+     "s": 15.7,
+     "hot": 1
+    },
+    {
+     "w": "sebab",
+     "s": 16.52
+    },
+    {
+     "w": "tak",
+     "s": 16.78
+    },
+    {
+     "w": "bayar",
+     "s": 16.92
+    }
+   ]
+  },
+  {
+   "s": 17.34,
+   "e": 18.22,
+   "words": [
+    {
+     "w": "Cikgu",
+     "s": 17.34
+    },
+    {
+     "w": "pula",
+     "s": 17.76
+    },
+    {
+     "w": "rasa",
+     "s": 18.0
+    }
+   ]
+  },
+  {
+   "s": 18.22,
+   "e": 19.54,
+   "words": [
+    {
+     "w": "macam",
+     "s": 18.22
+    },
+    {
+     "w": "tak",
+     "s": 18.42
+    },
+    {
+     "w": "dipercayai",
+     "s": 18.76
+    }
+   ]
+  },
+  {
+   "s": 19.54,
+   "e": 20.76,
+   "words": [
+    {
+     "w": "Tak",
+     "s": 19.54
+    },
+    {
+     "w": "amanah",
+     "s": 19.8
+    },
+    {
+     "w": "sebab",
+     "s": 20.36
+    }
+   ]
+  },
+  {
+   "s": 20.76,
+   "e": 21.32,
+   "words": [
+    {
+     "w": "dah",
+     "s": 20.76
+    },
+    {
+     "w": "bagi",
+     "s": 20.88
+    },
+    {
+     "w": "duit",
+     "s": 21.12
+    }
+   ]
+  },
+  {
+   "s": 21.32,
+   "e": 22.48,
+   "words": [
+    {
+     "w": "tapi",
+     "s": 21.32
+    },
+    {
+     "w": "tak",
+     "s": 21.58
+    },
+    {
+     "w": "rekod",
+     "s": 21.84,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 22.48,
+   "e": 23.82,
+   "words": [
+    {
+     "w": "Padahal",
+     "s": 22.48
+    },
+    {
+     "w": "parents",
+     "s": 23.0
+    },
+    {
+     "w": "dengan",
+     "s": 23.4
+    }
+   ]
+  },
+  {
+   "s": 23.82,
+   "e": 24.66,
+   "words": [
+    {
+     "w": "guru",
+     "s": 23.82
+    },
+    {
+     "w": "dah",
+     "s": 24.22
+    },
+    {
+     "w": "buat",
+     "s": 24.48
+    }
+   ]
+  },
+  {
+   "s": 24.66,
+   "e": 25.9,
+   "words": [
+    {
+     "w": "kerja",
+     "s": 24.66
+    },
+    {
+     "w": "ikhlas",
+     "s": 24.88
+    },
+    {
+     "w": "dah",
+     "s": 25.24
+    },
+    {
+     "w": "ni",
+     "s": 25.38
+    }
+   ]
+  },
+  {
+   "s": 25.9,
+   "e": 27.46,
+   "words": [
+    {
+     "w": "Rupanya",
+     "s": 25.9
+    },
+    {
+     "w": "resit",
+     "s": 26.42,
+     "hot": 1
+    },
+    {
+     "w": "lupa",
+     "s": 27.06
+    }
+   ]
+  },
+  {
+   "s": 27.46,
+   "e": 27.88,
+   "words": [
+    {
+     "w": "nak",
+     "s": 27.46
+    },
+    {
+     "w": "buat",
+     "s": 27.58
+    }
+   ]
+  },
+  {
+   "s": 27.88,
+   "e": 29.08,
+   "words": [
+    {
+     "w": "But",
+     "s": 27.88
+    },
+    {
+     "w": "itulah",
+     "s": 28.22
+    },
+    {
+     "w": "masalah",
+     "s": 28.72
+    }
+   ]
+  },
+  {
+   "s": 29.08,
+   "e": 30.0,
+   "words": [
+    {
+     "w": "sebab",
+     "s": 29.08
+    },
+    {
+     "w": "rekod",
+     "s": 29.4,
+     "hot": 1
+    },
+    {
+     "w": "manual",
+     "s": 29.76,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 30.0,
+   "e": 30.7,
+   "words": [
+    {
+     "w": "dan",
+     "s": 30.0
+    },
+    {
+     "w": "kita",
+     "s": 30.26
+    },
+    {
+     "w": "kena",
+     "s": 30.46
+    }
+   ]
+  },
+  {
+   "s": 30.7,
+   "e": 31.68,
+   "words": [
+    {
+     "w": "buat",
+     "s": 30.7
+    },
+    {
+     "w": "secara",
+     "s": 30.84
+    },
+    {
+     "w": "manual",
+     "s": 31.32,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 31.68,
+   "e": 32.94,
+   "words": [
+    {
+     "w": "Resit",
+     "s": 31.68
+    },
+    {
+     "w": "kena",
+     "s": 32.18
+    },
+    {
+     "w": "manual",
+     "s": 32.38,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 32.94,
+   "e": 34.12,
+   "words": [
+    {
+     "w": "Dengan",
+     "s": 32.94
+    },
+    {
+     "w": "Yuran.my",
+     "s": 33.26,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 34.12,
+   "e": 37.24,
+   "words": [
+    {
+     "w": "setiap",
+     "s": 34.12
+    },
+    {
+     "w": "bayaran",
+     "s": 35.26
+    },
+    {
+     "w": "pasti",
+     "s": 35.82
+    },
+    {
+     "w": "direkod",
+     "s": 36.38,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 37.24,
+   "e": 38.7,
+   "words": [
+    {
+     "w": "Lepas",
+     "s": 37.24
+    },
+    {
+     "w": "pembayaran",
+     "s": 37.66
+    },
+    {
+     "w": "diterima",
+     "s": 38.22
+    }
+   ]
+  },
+  {
+   "s": 38.7,
+   "e": 40.68,
+   "words": [
+    {
+     "w": "resit",
+     "s": 38.7,
+     "hot": 1
+    },
+    {
+     "w": "automatik",
+     "s": 39.22,
+     "hot": 1
+    },
+    {
+     "w": "dihantar",
+     "s": 40.04
+    }
+   ]
+  },
+  {
+   "s": 40.68,
+   "e": 41.76,
+   "words": [
+    {
+     "w": "Ibu",
+     "s": 40.68
+    },
+    {
+     "w": "bapa",
+     "s": 40.92
+    },
+    {
+     "w": "nampak",
+     "s": 41.2
+    }
+   ]
+  },
+  {
+   "s": 41.76,
+   "e": 42.6,
+   "words": [
+    {
+     "w": "dalam",
+     "s": 41.76
+    },
+    {
+     "w": "apps",
+     "s": 41.96
+    }
+   ]
+  },
+  {
+   "s": 42.6,
+   "e": 43.5,
+   "words": [
+    {
+     "w": "Tak",
+     "s": 42.6
+    },
+    {
+     "w": "payah",
+     "s": 42.84
+    },
+    {
+     "w": "datang",
+     "s": 43.24
+    }
+   ]
+  },
+  {
+   "s": 43.5,
+   "e": 44.1,
+   "words": [
+    {
+     "w": "tanya",
+     "s": 43.5
+    },
+    {
+     "w": "cikgu",
+     "s": 43.56
+    }
+   ]
+  },
+  {
+   "s": 44.1,
+   "e": 45.8,
+   "words": [
+    {
+     "w": "Cikgu",
+     "s": 44.1
+    },
+    {
+     "w": "nampak",
+     "s": 44.66
+    },
+    {
+     "w": "dalam",
+     "s": 45.02
+    },
+    {
+     "w": "dashboard",
+     "s": 45.18,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 45.8,
+   "e": 46.58,
+   "words": [
+    {
+     "w": "Dan",
+     "s": 45.8
+    },
+    {
+     "w": "senang",
+     "s": 45.92
+    },
+    {
+     "w": "cerita",
+     "s": 46.24
+    }
+   ]
+  },
+  {
+   "s": 46.58,
+   "e": 47.96,
+   "words": [
+    {
+     "w": "tak",
+     "s": 46.58
+    },
+    {
+     "w": "ada",
+     "s": 46.7
+    },
+    {
+     "w": "siapa",
+     "s": 46.84
+    },
+    {
+     "w": "dipersalahkan",
+     "s": 47.22,
+     "hot": 1
+    }
+   ]
+  },
+  {
+   "s": 47.96,
+   "e": 48.54,
+   "words": [
+    {
+     "w": "Nak",
+     "s": 47.96
+    },
+    {
+     "w": "demo?",
+     "s": 48.12
+    }
+   ]
+  },
+  {
+   "s": 48.54,
+   "e": 49.6,
+   "words": [
+    {
+     "w": "Klik",
+     "s": 48.54
+    },
+    {
+     "w": "link",
+     "s": 48.86
+    },
+    {
+     "w": "di",
+     "s": 49.06
+    },
+    {
+     "w": "bio",
+     "s": 49.24
+    }
+   ]
+  }
+ ],
+ "graphics": [
+  {
+   "s": 0,
+   "e": 1.0,
+   "kind": "thumb",
+   "lines": [
+    "DAH BAYAR,",
+    "TAPI TIADA",
+    "REKOD?"
+   ],
+   "note": "Thumbnail 1 s + hook"
+  },
+  {
+   "s": 1.2,
+   "e": 4.2,
+   "kind": "label",
+   "text": "Farhan · Yuran.my",
+   "note": "Label pembentang"
+  },
+  {
+   "s": 1.75,
+   "e": 6.2,
+   "kind": "versus",
+   "a": [
+    "Ibu bapa",
+    "Dah bayar",
+    1.75
+   ],
+   "b": [
+    "Cikgu",
+    "Belum bayar",
+    3.7
+   ],
+   "q": 4.62,
+   "note": "Dua pihak bercanggah, '?' pada 'Siapa betul?'"
+  },
+  {
+   "s": 6.32,
+   "e": 7.86,
+   "kind": "chip",
+   "icon": "book",
+   "text": "Buku resit",
+   "note": "Ikon buku resit"
+  },
+  {
+   "s": 7.86,
+   "e": 10.86,
+   "kind": "broll-book",
+   "note": "B-roll motion (buatan sendiri): buku resit diselak helai demi helai, Jan → Okt"
+  },
+  {
+   "s": 12.64,
+   "e": 14.9,
+   "kind": "notfound",
+   "text": "TAK JUMPA",
+   "note": "Kanta pembesar + pangkah lembut"
+  },
+  {
+   "s": 25.9,
+   "e": 27.8,
+   "kind": "chip",
+   "icon": "receipt-x",
+   "text": "Resit tak dibuat",
+   "note": "Punca sebenar"
+  },
+  {
+   "s": 28.72,
+   "e": 31.72,
+   "kind": "broll-ledger",
+   "note": "B-roll motion (buatan sendiri): buku rekod manual ditulis tangan"
+  },
+  {
+   "s": 32.94,
+   "e": 34.1,
+   "kind": "logo",
+   "note": "Logo putih atas pil biru #2A3B8F (tiada shadow)"
+  },
+  {
+   "s": 34.1,
+   "e": 37.1,
+   "kind": "broll-screen",
+   "img": "scr_invois.png",
+   "focus": [
+    1330,
+    413
+   ],
+   "callout": "Status bayaran direkod",
+   "note": "B-ROLL/B-Roll_SistemYuran.my.mp4 @0:29 (invois); nama, IC, no. & jumlah diblur; zoom ke status PAID"
+  },
+  {
+   "s": 37.6,
+   "e": 40.6,
+   "kind": "broll-receipt",
+   "ding": 40.04,
+   "note": "B-roll motion (buatan sendiri): resit automatik terbang ke telefon ibu bapa"
+  },
+  {
+   "s": 40.68,
+   "e": 43.95,
+   "kind": "chip",
+   "icon": "phone",
+   "text": "Ibu bapa semak dalam app",
+   "note": "Ikon telefon"
+  },
+  {
+   "s": 44.1,
+   "e": 45.6,
+   "kind": "broll-screen",
+   "img": "scr_dashboard.png",
+   "focus": [
+    990,
+    790
+   ],
+   "callout": "Dashboard cikgu",
+   "note": "B-ROLL/B-Roll_SistemYuran.my.mp4 @0:01 (dashboard); semua angka statistik diblur"
+  },
+  {
+   "s": 45.8,
+   "e": 47.9,
+   "kind": "versus-ok",
+   "a": [
+    "Ibu bapa",
+    "Lega",
+    46.0
+   ],
+   "b": [
+    "Cikgu",
+    "Lega",
+    46.2
+   ],
+   "note": "Ulang motif awal: kedua-dua pihak ✓"
+  },
+  {
+   "s": 47.96,
+   "e": 49.646,
+   "kind": "cta-bio",
+   "tap": 48.6,
+   "note": "Cara klik link di bio TikTok (gambar BRAND/Yuran Tiktok.jpg)"
+  },
+  {
+   "s": 49.646,
+   "e": 51.146,
+   "kind": "endcard",
+   "note": "Logo putih + Cara MUDAH Urus Yuran + Klik link di bio + hello@yuran.my"
+  }
+ ],
+ "sfx": [
+  {
+   "t": 0.95,
+   "name": "whoosh",
+   "gain": 0.35
+  },
+  {
+   "t": 1.75,
+   "name": "pop",
+   "gain": 0.3
+  },
+  {
+   "t": 3.7,
+   "name": "pop",
+   "gain": 0.3
+  },
+  {
+   "t": 4.62,
+   "name": "tick",
+   "gain": 0.3
+  },
+  {
+   "t": 6.32,
+   "name": "pop",
+   "gain": 0.25
+  },
+  {
+   "t": 7.86,
+   "name": "whoosh",
+   "gain": 0.3
+  },
+  {
+   "t": 8.6,
+   "name": "tick",
+   "gain": 0.12
+  },
+  {
+   "t": 9.2,
+   "name": "tick",
+   "gain": 0.12
+  },
+  {
+   "t": 9.8,
+   "name": "tick",
+   "gain": 0.12
+  },
+  {
+   "t": 10.4,
+   "name": "tick",
+   "gain": 0.12
+  },
+  {
+   "t": 12.64,
+   "name": "pop",
+   "gain": 0.3
+  },
+  {
+   "t": 25.9,
+   "name": "pop",
+   "gain": 0.25
+  },
+  {
+   "t": 28.72,
+   "name": "whoosh",
+   "gain": 0.3
+  },
+  {
+   "t": 32.94,
+   "name": "riser",
+   "gain": 0.2
+  },
+  {
+   "t": 33.2,
+   "name": "ding",
+   "gain": 0.3
+  },
+  {
+   "t": 34.1,
+   "name": "whoosh",
+   "gain": 0.3
+  },
+  {
+   "t": 37.6,
+   "name": "whoosh",
+   "gain": 0.3
+  },
+  {
+   "t": 40.04,
+   "name": "ding",
+   "gain": 0.4
+  },
+  {
+   "t": 40.68,
+   "name": "pop",
+   "gain": 0.25
+  },
+  {
+   "t": 44.1,
+   "name": "whoosh",
+   "gain": 0.25
+  },
+  {
+   "t": 46.0,
+   "name": "pop",
+   "gain": 0.3
+  },
+  {
+   "t": 46.2,
+   "name": "pop",
+   "gain": 0.3
+  },
+  {
+   "t": 47.96,
+   "name": "whoosh",
+   "gain": 0.3
+  },
+  {
+   "t": 48.6,
+   "name": "click",
+   "gain": 0.5
+  },
+  {
+   "t": 49.646,
+   "name": "whoosh",
+   "gain": 0.3
+  }
+ ],
+ "zoom": [
+  {
+   "src": 0,
+   "scale": 1.05
+  },
+  {
+   "src": 3.62,
+   "scale": 1.15
+  },
+  {
+   "src": 5.32,
+   "scale": 1.05
+  },
+  {
+   "src": 11.64,
+   "scale": 1.15
+  },
+  {
+   "src": 14.04,
+   "scale": 1.05
+  },
+  {
+   "src": 16.34,
+   "scale": 1.15
+  },
+  {
+   "src": 18.54,
+   "scale": 1.05
+  },
+  {
+   "src": 21.48,
+   "scale": 1.15
+  },
+  {
+   "src": 24.9,
+   "scale": 1.05
+  },
+  {
+   "src": 30.72,
+   "scale": 1.15
+  },
+  {
+   "src": 31.94,
+   "scale": 1.05
+  },
+  {
+   "src": 39.6,
+   "scale": 1.15
+  },
+  {
+   "src": 41.6,
+   "scale": 1.05
+  },
+  {
+   "src": 44.6,
+   "scale": 1.15
+  },
+  {
+   "src": 46.96,
+   "scale": 1.05
+  }
+ ],
+ "music": [
+  {
+   "file": "Minimal Emotion — Alejandro Magaña (Mixkit, 160)",
+   "from": 0,
+   "to": 32.94,
+   "offset": 0
+  },
+  {
+   "file": "Motivating Mornings — Ahjay Stelino (Mixkit, 33)",
+   "from": 32.339999999999996,
+   "to": 51.146,
+   "offset": 10.4
+  }
+ ]
+}

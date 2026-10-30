@@ -1,0 +1,116 @@
+RINGKASAN — YM-F-003_Dahbayar_tapi_tiada_rekod (PREVIEW v1, 30/10/2026)
+Spokesperson: Farhan · Tag: TOFU+BOFU · Durasi: 51.1 s · Preview 540x960
+
+1. TEKS HOOK / THUMBNAIL
+   DAH BAYAR, / TAPI TIADA / REKOD?  (frame sumber 0:05.3, 1 saat, tiada logo)
+
+2. CAPTION PENUH (ikut percakapan)
+   0:01.0  Ibu bapa kata
+   0:01.7  dah bayar yuran
+   0:02.4  tapi cikgu-cikgu kata
+   0:03.7  belum bayar
+   0:04.6  Siapa betul?
+   0:05.5  Siapa salah?
+   0:06.3  Buku resit dah buat
+   0:07.9  Buka buku resit
+   0:08.9  Dari helai demi
+   0:09.8  helai daripada awal
+   0:10.8  tahun sampai yang
+   0:11.9  paling latest
+   0:12.6  Tak jumpa
+   0:13.8  Suasana jadi tegang
+   0:15.0  Ibu bapa rasa
+   0:15.7  tertuduh sebab tak bayar
+   0:17.3  Cikgu pula rasa
+   0:18.2  macam tak dipercayai
+   0:19.5  Tak amanah sebab
+   0:20.8  dah bagi duit
+   0:21.3  tapi tak rekod
+   0:22.5  Padahal parents dengan
+   0:23.8  guru dah buat
+   0:24.7  kerja ikhlas dah ni
+   0:25.9  Rupanya resit lupa
+   0:27.5  nak buat
+   0:27.9  But itulah masalah
+   0:29.1  sebab rekod manual
+   0:30.0  dan kita kena
+   0:30.7  buat secara manual
+   0:31.7  Resit kena manual
+   0:32.9  Dengan Yuran.my
+   0:34.1  setiap bayaran pasti direkod
+   0:37.2  Lepas pembayaran diterima
+   0:38.7  resit automatik dihantar
+   0:40.7  Ibu bapa nampak
+   0:41.8  dalam apps
+   0:42.6  Tak payah datang
+   0:43.5  tanya cikgu
+   0:44.1  Cikgu nampak dalam dashboard
+   0:45.8  Dan senang cerita
+   0:46.6  tak ada siapa dipersalahkan
+   0:48.0  Nak demo?
+   0:48.5  Klik link di bio
+
+3. SFX, ANIMASI & B-ROLL (masa video)
+   0:00.0  Thumbnail: Thumbnail 1 s + hook (hingga 0:01.0)
+   0:00.9  SFX: whoosh
+   0:01.2  Label nama: Label pembentang — “Farhan · Yuran.my” (hingga 0:04.2)
+   0:01.8  Kad dua pihak: Dua pihak bercanggah, '?' pada 'Siapa betul?' (hingga 0:06.2)
+   0:01.8  SFX: pop
+   0:03.7  SFX: pop
+   0:04.6  SFX: tick
+   0:06.3  Chip ikon: Ikon buku resit — “Buku resit” (hingga 0:07.9)
+   0:06.3  SFX: pop
+   0:07.9  B-roll motion: B-roll motion (buatan sendiri): buku resit diselak helai demi helai, Jan → Okt (hingga 0:10.9)
+   0:07.9  SFX: whoosh
+   0:08.6  SFX: tick
+   0:09.2  SFX: tick
+   0:09.8  SFX: tick
+   0:10.4  SFX: tick
+   0:12.6  Ikon: Kanta pembesar + pangkah lembut — “TAK JUMPA” (hingga 0:14.9)
+   0:12.6  SFX: pop
+   0:25.9  Chip ikon: Punca sebenar — “Resit tak dibuat” (hingga 0:27.8)
+   0:25.9  SFX: pop
+   0:28.7  B-roll motion: B-roll motion (buatan sendiri): buku rekod manual ditulis tangan (hingga 0:31.7)
+   0:28.7  SFX: whoosh
+   0:32.9  Logo: Logo putih atas pil biru #2A3B8F (tiada shadow) (hingga 0:34.1)
+   0:32.9  SFX: riser
+   0:33.2  SFX: ding
+   0:34.1  B-roll: B-ROLL/B-Roll_SistemYuran.my.mp4 @0:29 (invois); nama, IC, no. & jumlah diblur; zoom ke status PAID (hingga 0:37.1)
+   0:34.1  SFX: whoosh
+   0:37.6  B-roll motion: B-roll motion (buatan sendiri): resit automatik terbang ke telefon ibu bapa (hingga 0:40.6)
+   0:37.6  SFX: whoosh
+   0:40.0  SFX: ding
+   0:40.7  Chip ikon: Ikon telefon — “Ibu bapa semak dalam app” (hingga 0:44.0)
+   0:40.7  SFX: pop
+   0:44.1  B-roll: B-ROLL/B-Roll_SistemYuran.my.mp4 @0:01 (dashboard); semua angka statistik diblur (hingga 0:45.6)
+   0:44.1  SFX: whoosh
+   0:45.8  Kad dua pihak: Ulang motif awal: kedua-dua pihak ✓ (hingga 0:47.9)
+   0:46.0  SFX: pop
+   0:46.2  SFX: pop
+   0:48.0  Panduan link bio: Cara klik link di bio TikTok (gambar BRAND/Yuran Tiktok.jpg) (hingga 0:49.6)
+   0:48.0  SFX: whoosh
+   0:48.6  SFX: click
+   0:49.6  End card: Logo putih + Cara MUDAH Urus Yuran + Klik link di bio + hello@yuran.my (hingga 0:51.1)
+   0:49.6  SFX: whoosh
+
+4. CTA
+   Klik link di bio (panduan ketuk profil TikTok yuran.my/daftar/?tiktok) + end card: logo putih, Cara MUDAH Urus Yuran, hello@yuran.my
+
+5. PERLU SEMAK
+   - “Dari helai demi helai” (transkrip: “Hari”): Bunyi awal ayat kurang jelas; mungkin “Cari helai demi helai”. Caption guna “Dari”. Beritahu jika perkataan sebenar lain.
+   - “Tak payah datang tanya cikgu” (transkrip: “yang”): Whisper dengar “datang yang cikgu”; dengan konteks dibaca “tanya”. Sahkan perkataan sebenar.
+   - “But itulah masalah”: Perkataan pertama pendek dan kurang jelas (“But”/“Tapi”). Caption ikut transkrip: “But”.
+   - CTA klik link di bio, bukan CTA DNA: Skrip bertag TOFU+BOFU. DNA: TOFU “Follow untuk tips…”, BOFU “Hubungi kami untuk demo”. Ikut arahan Farhan, CTA = klik link di bio (seperti disebut “Nak demo? Klik link di bio”). hello@yuran.my kekal di end card.
+   - Link bio yuran.my/daftar/?tiktok: Dari screenshot BRAND/Yuran Tiktok.jpg. Sahkan link masih sama di profil TikTok.
+   - Durasi 51.1 s: Melebihi sasaran TOFU (20–45 s) tetapi dalam sasaran BOFU (30–60 s). Isi tidak dipotong.
+   - Muzik dari luar folder MUSIC/: MUSIC/ Yuran.my kosong dan Farhan minta carian luar. Cadangan: simpan kedua-dua lagu Mixkit dalam MUSIC/ sebagai rekod lesen.
+   - Tiada video rujukan gaya: BRAND/ tiada rujukan-gaya-*.mp4 (Farhan setuju teruskan ikut DNA). Gaya ikut YM-F-001/002 yang diluluskan.
+   - Gambar ‘Pecah masuk KAFA’ tidak digunakan: Topik video ialah rekod bayaran, bukan kecurian; gambar berita itu juga memaparkan nama sekolah.
+   - Preview MP4 belum di Drive: Alat Drive yang ada tidak dapat muat naik fail video/gambar besar. RINGKASAN dan log dimuat naik; MP4 preview dan thumbnail ada di halaman ini dan dalam chat.
+
+6. CAPTION TIKTOK + HASHTAG
+   Ibu bapa kata dah bayar, cikgu kata belum. Buku resit diselak helai demi helai, tak jumpa. Rupanya resit lupa nak buat. Dengan Yuran.my, setiap bayaran direkod dan resit automatik dihantar. Nak demo? Klik link di bio.
+   #yuransekolah #sekolahkafa #yuranmy #gurukafa #ibubapa
+
+MUZIK: Minimal Emotion (Alejandro Magaña) + Motivating Mornings (Ahjay Stelino), Mixkit Stock Music Free License.
+FONT: Inter (ganti Acumin Pro, tiada dalam sistem).
