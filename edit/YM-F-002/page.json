@@ -1,0 +1,202 @@
+{
+ "fix_shown": {},
+ "fix_ctx": [],
+ "labels": {
+  "label": "Label nama",
+  "bignum": "Angka besar",
+  "rows": "Kad senarai",
+  "broll": "B-roll",
+  "callout": "Callout",
+  "logo": "Logo",
+  "chip": "Chip ikon",
+  "receipt": "Animasi resit",
+  "tiktok": "Panduan link bio"
+ },
+ "gfx_desc": [
+  "Farhan · Yuran.my (pil biru, atas-kiri)",
+  "“Yuran tak pernah cukup” + 100% besar biru aksen (tepat seperti disebut)",
+  "ISUNYA: ✗ Ibu bapa degil (dipangkah) / ! Kutip yuran masih manual",
+  "B-ROLL/Sek-Integrasi-Demo-Yuran.My 0:27–0:30: senarai invois overdue (pink). Lajur nama/item diblur, zoom perlahan",
+  "Duit lambat sampai",
+  "Logo Yuran.my putih atas pil biru (tiada shadow, tiada lutsinar semasa dipapar)",
+  "B-roll stok Mixkit #49311 (lesen percuma Mixkit): wanita bertudung bayar guna telefon di luar rumah",
+  "Bayar anytime, anywhere",
+  "DENGAN YURAN.MY: ✓ Duit terus masuk ke sekolah / ✗ Cikgu pegang duit (dipangkah)",
+  "Animasi sendiri: kad RESIT, cop ✓ DIBAYAR muncul pada “resit”, label On the spot. Tiada data sebenar",
+  "B-ROLL/B-Roll_SistemYuran.my 0:03–0:06: dashboard. Semua angka statistik diblur (pelajar, overdue, collection)",
+  "Status collection",
+  "🕘 Pantau setiap pagi",
+  "DALAM DASHBOARD: … Belum bayar / ✓ Dah bayar / ! Overdue (muncul ikut disebut)",
+  "Kad profil TikTok @yuran.my: langkah 1 Buka profil (ketuk avatar), langkah 2 Tekan link di bio (ketuk yuran.my/daftar/?tiktok, link disorot)"
+ ],
+ "thumb": "YURAN KAFA / TAK PERNAH / CUKUP? atas frame Farhan menunjuk (sumber 0:02.2)",
+ "end": "Navy #2A3B8F: Klik link di bio / untuk preview sistem Yuran.my, kad profil TikTok Yuran.My Street @yuran.my, link yuran.my/daftar/?tiktok disorot + ketukan, Cara MUDAH Urus Yuran, hello@yuran.my",
+ "seg": [
+  [
+   0,
+   1.0,
+   "Thumbnail",
+   "YURAN KAFA TAK PERNAH CUKUP?"
+  ],
+  [
+   1.0,
+   6.16,
+   "Hook",
+   "Ketua guru KAFA, yuran tak pernah cukup 100%. Label Farhan · Yuran.my, angka 100% besar"
+  ],
+  [
+   6.16,
+   11.38,
+   "Isu sebenar",
+   "Kad ISUNYA: ✗ Ibu bapa degil / ! Kutip yuran masih manual"
+  ],
+  [
+   11.38,
+   15.6,
+   "Akibat",
+   "B-roll invois overdue + Duit lambat sampai"
+  ],
+  [
+   15.6,
+   19.46,
+   "Dengan Yuran.my",
+   "Logo, B-roll stok ibu bapa bayar guna telefon"
+  ],
+  [
+   19.46,
+   22.41,
+   "Terus ke sekolah",
+   "Kad ✓ Duit terus masuk / ✗ Cikgu pegang duit"
+  ],
+  [
+   22.41,
+   26.39,
+   "Resit on the spot",
+   "Animasi resit DIBAYAR + On the spot"
+  ],
+  [
+   26.39,
+   30.78,
+   "Dashboard",
+   "B-roll dashboard (angka diblur) + Pantau setiap pagi"
+  ],
+  [
+   30.78,
+   36.97,
+   "Status bayaran",
+   "Kad Belum bayar / Dah bayar / Overdue"
+  ],
+  [
+   36.97,
+   "END",
+   "CTA link di bio",
+   "Panduan TikTok: buka profil @yuran.my → tekan link di bio"
+  ],
+  [
+   "END",
+   "DUR",
+   "End card",
+   "Klik link di bio + profil TikTok + Cara MUDAH Urus Yuran + hello@yuran.my"
+  ]
+ ],
+ "done": [
+  [
+   "Guna video trim Farhan",
+   "BOFU_Yuran_KAFA_tak_pernah_cukup.mp4 (41.5 s, 1080×1920). Isi tidak dipotong; tiada take ulangan.",
+   1.0
+  ],
+  [
+   "Thumbnail 1 saat",
+   "YURAN KAFA / TAK PERNAH / CUKUP? atas frame Farhan menunjuk kamera (sumber 0:02.2). Tiada logo di awal. PNG berasingan dieksport.",
+   0.3
+  ],
+  [
+   "Angka 100%",
+   "Dipapar besar 1.5 s tepat seperti disebut. Tiada angka atau statistik lain ditambah.",
+   5.2
+  ],
+  [
+   "Caption",
+   "Sepanjang video, 1–4 perkataan ikut ritma, Inter ExtraBold putih + outline gelap. Kata kunci biru #29ABE2 (KAFA, 100%, manual, lambat, resit, dashboard, overdue, link, bio…). Yuran.my dieja betul. Dalam safe zone; atas B-roll caption dapat pil biru gelap.",
+   3.0
+  ],
+  [
+   "B-roll dari folder brand",
+   "Dua klip sistem: senarai invois overdue (Sek-Integrasi-Demo) dan dashboard (B-Roll_SistemYuran.my). Nama/item pelanggan dan semua angka statistik diblur. Setiap sisipan ≤3 s, suara terus berjalan.",
+   12.0
+  ],
+  [
+   "B-roll luar berlesen",
+   "Momen “ibu bapa boleh bayar anytime, anywhere” tiada dalam folder B-ROLL (rakaman hanya paparan admin). Ditambah Mixkit #49311 (Smiling Muslim woman chatting on her cell phone), Mixkit Stock Video Free License: guna komersial dibenarkan, tiada atribusi.",
+   17.5
+  ],
+  [
+   "Muzik luar berlesen",
+   "MUSIC/ kosong. Dicari di luar: “Infinity” oleh Arulo (Mixkit, Corporate), Mixkit Stock Music Free License: komersial termasuk media sosial, tiada atribusi. Tenang dan stabil, sesuai bawah suara."
+  ],
+  [
+   "CTA: cara klik link di bio TikTok",
+   "Semasa Farhan sebut “klik link di bio”: kad profil TikTok @yuran.my (avatar dari BRAND/Yuran Tiktok.jpg) dengan langkah 1 Buka profil → 2 Tekan link di bio, ketukan jari pada yuran.my/daftar/?tiktok. End card ulang langkah sama.",
+   39.0
+  ],
+  [
+   "Brand",
+   "Biru #2A3B8F + aksen #29ABE2, logo putih atas latar biru tanpa shadow/watermark, tiada aset Fi-k Studio atau Aster. Tiada harga, diskaun atau statistik direka. Bilangan follower/likes tidak dipaparkan.",
+   16.0
+  ],
+  [
+   "Audio",
+   "High-pass, denoise ringan, compressor, normalize −14 LUFS. Muzik sekitar 23 dB di bawah suara dengan ducking."
+  ]
+ ],
+ "todo": [
+  [
+   "CTA guna “klik link di bio”, bukan CTA BOFU DNA",
+   "DNA Yuran.my untuk BOFU: “Hubungi kami untuk demo sistem Yuran.my”. Ikut arahan Farhan, CTA ialah klik link di bio TikTok (seperti disebut dalam video). hello@yuran.my kekal di end card. Sahkan.",
+   42.6
+  ],
+  [
+   "“review sistem kita”",
+   "Farhan sebut “nanti kita akan review sistem kita”. Caption ikut apa yang disebut. Jika maksudnya “preview”, beritahu.",
+   41.0
+  ],
+  [
+   "Link bio yuran.my/daftar/?tiktok",
+   "Diambil dari screenshot BRAND/Yuran Tiktok.jpg. Sila sahkan link masih sama di profil TikTok.",
+   40.0
+  ],
+  [
+   "Muzik dari luar folder MUSIC/",
+   "Peraturan umum: muzik dari MUSIC/ sahaja, tetapi MUSIC/ Yuran.my kosong dan Farhan minta carian luar. Cadangan: simpan Mixkit “Infinity” (Arulo) dalam MUSIC/ sebagai rekod. Pilihan lain Mixkit: Close Up, Motivating Mornings, PlaceIt World 01, atau muzik jana sendiri seperti YM-F-001."
+  ],
+  [
+   "B-roll stok 720p",
+   "Mixkit #49311 hanya 720p untuk muat turun percuma; dalam final 1080p klip 2.7 s ini akan sedikit lembut.",
+   17.5
+  ],
+  [
+   "Tiada video rujukan gaya",
+   "BRAND/ tiada rujukan-gaya-*.mp4. Diedit ikut DNA Yuran.my dan gaya YM-F-001 yang diluluskan."
+  ],
+  [
+   "Gambar ‘Pecah masuk KAFA’ tidak digunakan",
+   "Video tidak menyebut kecurian, jadi gambar berita itu menambah fakta; ada juga nama sekolah."
+  ],
+  [
+   "Preview MP4 belum di Drive",
+   "Alat Drive yang saya ada tidak dapat muat naik fail video. RINGKASAN dan log dimuat naik; MP4 preview ada di halaman ini."
+  ]
+ ],
+ "tt": "Ketua guru KAFA, yuran tak pernah cukup 100%? Isunya bukan ibu bapa degil, tapi cara kutip yuran masih manual. Dengan Yuran.my, ibu bapa bayar yuran anytime, anywhere, resit terus dapat dan status bayaran nampak dalam dashboard. Nak preview sistem? Klik link di bio.",
+ "hs": "#sekolahkafa #yuransekolah #yuranmy #ketuaguru #kafa",
+ "html": {
+  "__DOC_TITLE__": "YM-F-002 Yuran KAFA",
+  "__H1__": "YM-F-002 <span>Yuran KAFA tak pernah cukup</span>",
+  "__STATUS__": "<b>Preview v1</b> BOFU · Farhan · 540×960 · __DUR__ saat · menunggu semakan",
+  "__KEY__": "ymf002",
+  "__PLAN__": "<p>Video yang Farhan trim (41.5 s) digunakan terus. Isi tidak dipotong, jadi tiada jump cut tambahan. Video = thumbnail 1 s + isi 41.5 s + end card 1.5 s = 44.0 s (sasaran BOFU 30–60 s). Satu elemen grafik pada satu masa, biru korporat + biru aksen, SFX lembut. B-roll: dua klip sistem dari folder brand + satu klip stok berlesen untuk babak ibu bapa bayar.</p>",
+  "__ZOOMTXT__": "<p>Asas 115% supaya mata Farhan di sepertiga atas frame (rakaman lebar). Punch-in 130% bertukar setiap ayat pada hujung ayat sahaja (tiada potongan isi).</p>",
+  "__GRADE_ROWS__": "<tr><td>Kecerahan</td><td class=\"n\">+0.02, gamma 1.03</td><td>Muka lebih terang, dinding kelabu tak terbakar.</td></tr>\n            <tr><td>Kontras</td><td class=\"n\">×1.05 + lengkung lembut</td><td>Gambar lebih jelas.</td></tr>\n            <tr><td>Saturasi</td><td class=\"n\">×1.06</td><td>Baju lebih hidup tanpa kulit jadi oren.</td></tr>\n            <tr><td>Imbangan warna</td><td class=\"n\">biru −0.01</td><td>Dinding kurang sejuk. Warna kulit asli dikekalkan.</td></tr>\n            <tr><td>Ketajaman</td><td class=\"n\">unsharp 0.4</td><td>Kompensasi zoom 115–130%.</td></tr>",
+  "__AUDIO_ROWS__": "<tr><td>High-pass 80 Hz</td><td>Buang dengung rendah.</td></tr>\n            <tr><td>Noise reduction ringan (8 dB)</td><td>Bunyi bilik berkurang tanpa suara jadi \"robot\".</td></tr>\n            <tr><td>Compressor ringan (2.5:1)</td><td>Volume suara lebih sekata.</td></tr>\n            <tr><td>Muzik latar: “Infinity”, Arulo (Mixkit)</td><td>Korporat tenang dan stabil. Mixkit Stock Music Free License (komersial, media sosial, tiada atribusi). Sekitar 23 dB di bawah suara, ducking semasa bercakap. Fade masuk 1.5 s, keluar 2.5 s.</td></tr>\n            <tr><td>SFX (27 cue)</td><td>Pop, whoosh, click, tick, ding, bonk lembut ikut kemunculan grafik. Dijana sendiri, jauh di bawah suara.</td></tr>\n            <tr><td>Loudness akhir</td><td>−14.0 LUFS, true peak −1.5 dBTP.</td></tr>"
+ }
+}
