@@ -217,26 +217,55 @@ def thumbnail():
     bx, by = int(CX - bw / 2), int(H * 0.675 - bh / 2)
     d.rounded_rectangle((bx, by, bx + bw, by + bh), radius=int(26 * S), fill=ACC)
     d.text((CX, H * 0.675), "KAFA", font=fk, fill=WHITE, anchor="mm")
+    # logo JAIS sebagai hook tambahan (kiri muka, tidak tutup wajah atau teks)
+    cw = int(270 * S); pad = int(14 * S)
+    card = Image.new("RGBA", (cw, cw), (0, 0, 0, 0)); cd = ImageDraw.Draw(card)
+    cd.rounded_rectangle((0, 0, cw - 1, cw - 1), radius=int(32 * S), fill=WHITE, outline=ACC, width=max(2, int(6 * S)))
+    card.alpha_composite(_j.resize((cw - 2 * pad, cw - 2 * pad), Image.LANCZOS), (pad, pad))
+    sh = Image.new("RGBA", (cw + 80, cw + 80), (0, 0, 0, 0))
+    ImageDraw.Draw(sh).rounded_rectangle((40, 50, cw + 40, cw + 50), radius=int(32 * S), fill=(0, 0, 0, 120))
+    sh = sh.filter(ImageFilter.GaussianBlur(14 * S)); sh.alpha_composite(card, (40, 40))
+    im.alpha_composite(sh, (int(W * 0.165 - sh.width / 2), int(H * 0.285 - sh.height / 2)))
     return im
 
-# ---------- end card ----------
+# ---------- end card: follow TikTok (arahan Farhan, tanpa emel) ----------
 _l = Image.open(LOGO).convert("RGBA")
+TIKTOK = os.environ.get("YM_TIKTOK", os.path.join(os.path.dirname(LOGO), "tiktok.jpg"))
+_av = Image.open(TIKTOK).convert("RGBA").crop((37, 22, 202, 187))   # avatar dari BRAND/Yuran Tiktok.jpg
+TAP = 0.80
 def endcard(t):
     im = Image.new("RGBA", (W, H), BLUE); d = ImageDraw.Draw(im)
-    lw = int(440 * S); lh = int(_l.height * lw / _l.width)
-    k = ease(t / 0.35)
-    im.alpha_composite(_l.resize((lw, lh), Image.LANCZOS), (int(W / 2 - lw / 2), int(H * 0.30 - lh / 2 + (1 - k) * 20 * S)))
-    f1 = F("xb", 64); x = W / 2; y = H * 0.43
+    x = W * 0.47; k = ease(t / 0.35)
+    lw = int(380 * S); lh = int(_l.height * lw / _l.width)
+    im.alpha_composite(_l.resize((lw, lh), Image.LANCZOS), (int(x - lw / 2), int(H * 0.20 - lh / 2 + (1 - k) * 20 * S)))
+    f1 = F("xb", 58); y = H * 0.295
     p = [("Cara ", WHITE), ("MUDAH", ACC), (" Urus Yuran", WHITE)]
     tw = sum(d.textlength(s, font=f1) for s, _ in p); xx = x - tw / 2
-    for s, c in p: d.text((xx, y), s, font=f1, fill=c, anchor="lm"); xx += d.textlength(s, font=f1)
-    k2 = ease((t - 0.2) / 0.35)
-    cta = "Follow untuk tips urus yuran sekolah"; f2 = F("sb", 40)
-    cw = d.textlength(cta, font=f2) + 70 * S; chh = 84 * S; cy = H * 0.545 + (1 - k2) * 16 * S
+    for s_, c in p: d.text((xx, y), s_, font=f1, fill=c, anchor="lm"); xx += d.textlength(s_, font=f1)
+    # kad profil TikTok
+    k2 = ease((t - 0.15) / 0.35)
     ov = Image.new("RGBA", (W, H), (0, 0, 0, 0)); od = ImageDraw.Draw(ov)
-    od.rounded_rectangle((x - cw / 2, cy - chh / 2, x + cw / 2, cy + chh / 2), radius=int(chh / 2), fill=WHITE)
-    od.text((x, cy), cta, font=f2, fill=BLUE, anchor="mm")
-    od.text((x, H * 0.64), "hello@yuran.my", font=F("m", 40), fill=GREY, anchor="mm")
+    cw, ch = W * 0.74, H * 0.16; cx0 = x - cw / 2; cy0 = H * 0.37 + (1 - k2) * 24 * S
+    od.rounded_rectangle((cx0, cy0, cx0 + cw, cy0 + ch), radius=int(36 * S), fill=WHITE)
+    av = int(ch * 0.70); ax = int(cx0 + 34 * S); ay = int(cy0 + (ch - av) / 2)
+    m = Image.new("L", (av, av), 0); ImageDraw.Draw(m).ellipse((0, 0, av - 1, av - 1), fill=255)
+    a_ = _av.resize((av, av), Image.LANCZOS); a_.putalpha(m); ov.alpha_composite(a_, (ax, ay))
+    tx = ax + av + int(30 * S)
+    od.text((tx, cy0 + ch * 0.22), "Yuran.My Street", font=F("b", 44), fill=BLACK, anchor="lm")
+    od.text((tx, cy0 + ch * 0.44), "@yuran.my", font=F("m", 34), fill="#6B6E75", anchor="lm")
+    # butang Follow: berdenyut, ditekan, jadi Following
+    done = t >= TAP + 0.08
+    pr = 1 - 0.12 * math.sin(min(1, max(0, (t - TAP) / 0.16)) * math.pi)
+    pulse = 1 + 0.05 * math.sin(max(0, t - 0.35) * 2 * math.pi * 2.2) if t < TAP else 1
+    bw, bh = 300 * S * pr * pulse, 74 * S * pr * pulse; bx = tx + 150 * S; by = cy0 + ch * 0.74
+    lab = "Following ✓" if done else "+ Follow"
+    od.rounded_rectangle((bx - bw / 2, by - bh / 2, bx + bw / 2, by + bh / 2), radius=int(14 * S), fill="#E7E8E9" if done else "#FE2C55")
+    od.text((bx, by), lab, font=F("b", 34), fill=BLACK if done else WHITE, anchor="mm")
+    if TAP <= t < TAP + 0.45:   # riak sentuhan
+        r = (t - TAP) / 0.45; rr = 30 * S + 60 * S * r
+        od.ellipse((bx - rr, by - rr, bx + rr, by + rr), outline=(41, 171, 226, int(200 * (1 - r))), width=max(2, int(6 * S)))
+    od.text((x, H * 0.60), "Follow TikTok Yuran.my", font=F("xb", 54), fill=WHITE, anchor="mm")
+    od.text((x, H * 0.645), "untuk tips urus yuran sekolah", font=F("sb", 42), fill=GREY, anchor="mm")
     ov.putalpha(ov.getchannel("A").point(lambda v: int(v * k2)))
     im.alpha_composite(ov)
     return im
@@ -273,7 +302,7 @@ def render():
 SFXL = [  # (masa timeline, fail, gain dB) — SFX lembut sahaja
     (OFF - 0.12, "whoosh.wav", -24), (OFF + JAIS_IN, "pop.wav", -16), (OFF + CMT_IN, "whoosh.wav", -24),
     (OFF + 22.48, "tick.wav", -26), (OFF + 22.66, "tick.wav", -26), (OFF + 22.84, "tick.wav", -26),
-    (OFF + SEND - 0.04, "click.wav", -18), (OFF + SEND + 0.35, "pop.wav", -22), (BODY_END + 0.05, "ding.wav", -24),
+    (OFF + SEND - 0.04, "click.wav", -18), (OFF + SEND + 0.35, "pop.wav", -22), (BODY_END + 0.05, "ding.wav", -24), (BODY_END + TAP, "click.wav", -18),
 ]
 def audio():
     vo = os.path.join(OUT, "_vo.wav")
@@ -299,6 +328,6 @@ if __name__ == "__main__":
     v = render(); a = audio()
     dst = os.path.join(OUT, f"{ID}_{TAG}.mp4")
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", v, "-i", a, "-c:v", "copy", "-c:a", "aac", "-b:a", "192k",
-                    "-movflags", "+faststart", "-shortest", dst], check=True)
+                    "-movflags", "+faststart", dst], check=True)
     os.remove(v)
     print("OK", dst)

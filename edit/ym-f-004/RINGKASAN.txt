@@ -1,10 +1,10 @@
-YM-F-004_Paling_berat_bagi_guru_KAFA — RINGKASAN PREVIEW v1
+YM-F-004_Paling_berat_bagi_guru_KAFA — RINGKASAN PREVIEW v2 (logo JAIS di thumbnail, CTA Follow TikTok)
 Brand: Yuran.my | Spokesperson: Farhan | Jenis: TOFU | Durasi: 26.7 s (540x960 preview)
 Sumber: 01_RAW/2026-10-30_004_FARHAN/TOFU_Paling_berat_bagi_guru_KAFA.mp4 (24.2 s, SUDAH DITRIM oleh Farhan, isi tidak dipotong)
-Halaman preview: https://claude.ai/artifact/Emae1TLGKpZXcaJThKWx4p (v1)
+Halaman preview: https://claude.ai/artifact/Emae1TLGKpZXcaJThKWx4p (v2)
 
 1. TEKS HOOK / THUMBNAIL
-   PALING BERAT / JADI CIKGU / KAFA  (BERAT biru aksen, KAFA dalam kotak biru #29ABE2), frame Farhan pandang kamera (sumber 0:05.0). 1 saat, tiada logo.
+   PALING BERAT / JADI CIKGU / KAFA  (BERAT biru aksen, KAFA dalam kotak biru #29ABE2), + LOGO JAIS (kad putih di kiri muka) sebagai hook tambahan (v2, komen Farhan). Frame Farhan pandang kamera (sumber 0:05.0). 1 saat, tiada logo Yuran.my.
 
 2. CAPTION PENUH (masa video siap)
    0:01.0  Paling berat
@@ -34,17 +34,17 @@ Halaman preview: https://claude.ai/artifact/Emae1TLGKpZXcaJThKWx4p (v1)
    Kata kunci biru #29ABE2: berat, yuran, segan, takut, JAIS, report, pernah.
 
 3. GRAFIK, ANIMASI & SFX (masa video siap)
-   0:00.0-0:01.0  Thumbnail
+   0:00.0-0:01.0  Thumbnail + logo JAIS
    0:01.3-0:04.3  Label nama: Farhan · Yuran.my (pil biru, atas-kiri)
    0:01.0 / 0:04.6 / 0:08.3 / 0:10.2 / 0:15.8 / 0:19.0 / 0:22.0 / 0:23.2  Punch-in 100% / 112% / 115% / 100% / 112% / 100% / 112% / 100%
    0:21.1-0:22.5  LOGO JAIS (B-ROLL/Logo JAIS.png) atas kad putih berbingkai biru aksen, pop masuk tepat sebelum "JAIS", di dada (muka tidak ditutup)
    0:23.1-0:25.2  MOTION KOMEN: panel komen gaya TikTok naik -> "pernah" ditaip dalam kotak komen -> butang hantar ditekan -> komen "Pernah" (anda · baru sahaja) masuk ke ruangan komen -> ikon hati menyala
-   0:25.2-0:26.7  End card
+   0:25.2-0:26.7  End card: kad profil TikTok Yuran.My Street @yuran.my, butang + Follow berdenyut lalu ditekan jadi Following ✓
    B-roll: tiada.
-   SFX (lembut, dijana sendiri): 0:00.9 whoosh, 0:21.1 pop, 0:23.1 whoosh, 0:23.5/0:23.7/0:23.8 tick (taip), 0:24.1 click (hantar), 0:24.5 pop (hati), 0:25.2 ding
+   SFX (lembut, dijana sendiri): 0:00.9 whoosh, 0:21.1 pop, 0:23.1 whoosh, 0:23.5/0:23.7/0:23.8 tick (taip), 0:24.1 click (hantar), 0:24.5 pop (hati), 0:25.2 ding, 0:26.0 click (tekan Follow)
 
 4. CTA
-   TOFU: "Follow untuk tips urus yuran sekolah" + logo Yuran.my putih + "Cara MUDAH Urus Yuran" + hello@yuran.my atas biru #2A3B8F (end card 1.5 s).
+   TOFU (v2, komen Farhan): "Follow TikTok Yuran.my untuk tips urus yuran sekolah" + kad profil TikTok @yuran.my (avatar dari BRAND/Yuran Tiktok.jpg) + logo Yuran.my putih + "Cara MUDAH Urus Yuran" atas biru #2A3B8F (end card 1.5 s). hello@yuran.my dibuang.
 
 5. PERLU SEMAK
    - Ejaan "mintak" (transkrip "minta"): caption ikut sebutan dalam arahan Farhan. [0:21.5]
@@ -52,7 +52,8 @@ Halaman preview: https://claude.ai/artifact/Emae1TLGKpZXcaJThKWx4p (v1)
    - Logo JAIS ialah logo pihak ketiga (agensi kerajaan): guna atas arahan Farhan; video tidak mendakwa kerjasama/sokongan JAIS. Sahkan selesa dipaparkan. [0:21.1]
    - Tiada muzik latar: MUSIC/ kosong, Farhan pilih tanpa muzik.
    - Tiada video rujukan gaya dalam BRAND/ (Farhan setuju teruskan ikut DNA).
-   - CTA end card ikut DNA TOFU; YM-F-001 guna kad profil TikTok @yuran.my. Beritahu jika mahu gaya itu.
+   - End card tanpa hello@yuran.my ikut arahan Farhan (DNA asal minta emel). Bilangan following/followers/likes tidak dipaparkan.
+   - Logo JAIS dalam thumbnail = cover TikTok; pastikan selesa logo agensi kerajaan di depan.
    - Tiada B-roll: video tentang perasaan cikgu, tiada bahagian yang menerangkan sistem.
    - Preview MP4 & THUMB belum di Drive: alat Drive tidak dapat muat naik fail video/gambar besar. Ada di halaman Artifact.
 

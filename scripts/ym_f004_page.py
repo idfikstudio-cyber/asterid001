@@ -7,7 +7,7 @@ src = open(spec.origin).read().split("# ---------- frames sumber")[0]
 src = src.replace("SRC, JAIS, LOGO, SFX, OUT = sys.argv[1:6]", "SRC=JAIS=LOGO=SFX=OUT=''").replace("W = int(sys.argv[6])", "W = 1080")
 src = src.replace("CRF = sys.argv[7] if len(sys.argv) > 7 else \"20\"", "CRF='20'").replace("os.makedirs(OUT, exist_ok=True)", "")
 full = open(spec.origin).read()
-src += "\n" + full[full.index("SFXL = ["):full.index("def audio")]
+src += "\nTAP = 0.80\n" + full[full.index("SFXL = ["):full.index("def audio")]
 R = {}; exec(src, R)
 O = R["OFF"]; D = round(R["TOTAL"], 3)
 
@@ -24,11 +24,11 @@ for c in caps:
         if w["t"] == "remindkan.": w["fix"] = "remind kan"
 
 mg = [
- [0, 1.0, "Thumbnail", "Thumbnail 1 s: PALING BERAT / JADI CIKGU / KAFA (KAFA dalam kotak biru aksen) atas frame Farhan pandang kamera (sumber 0:05.0)"],
+ [0, 1.0, "Thumbnail", "Thumbnail 1 s: PALING BERAT / JADI CIKGU / KAFA (KAFA dalam kotak biru aksen) + logo JAIS (kiri muka) sebagai hook tambahan, atas frame Farhan pandang kamera (sumber 0:05.0)"],
  [O + R["LABEL_IN"], O + R["LABEL_OUT"], "Label nama", "Pil biru #2A3B8F “Farhan · Yuran.my”, atas-kiri"],
  [O + R["JAIS_IN"], O + R["JAIS_OUT"], "Logo JAIS", "Logo JAIS (B-ROLL/Logo JAIS.png) atas kad putih berbingkai biru aksen, pop masuk tepat sebelum “JAIS” dan keluar selepas “report”. Diletak di dada, muka tidak ditutup; caption turun sedikit"],
  [O + R["CMT_IN"], R["BODY_END"], "Motion komen", "Panel komen gaya TikTok naik dari bawah → “pernah” ditaip dalam kotak komen → butang hantar ditekan → komen “Pernah” (anda · baru sahaja) muncul + ikon hati menyala"],
- [R["BODY_END"], D, "End card", "Logo putih + Cara MUDAH Urus Yuran + Follow untuk tips urus yuran sekolah + hello@yuran.my"],
+ [R["BODY_END"], D, "End card", "Logo putih + Cara MUDAH Urus Yuran + kad profil TikTok Yuran.My Street @yuran.my, butang + Follow berdenyut lalu ditekan jadi Following ✓ + Follow TikTok Yuran.my untuk tips urus yuran sekolah"],
 ]
 sfx = [[round(t, 2), f.replace(".wav", "")] for t, f, g in R["SFXL"]]
 zoom = []
@@ -40,10 +40,12 @@ SEG = [
  [8.32, 19.03, "Segan", "Segan dengan ibu bapa, takut murid lupa sampaikan, tak sampai hati. Punch-in pada emosi"],
  [19.03, 22.12, "Kena collect", "Duit sekolah kena kutip, nanti JAIS minta report. Logo JAIS muncul"],
  [22.12, R["BODY_END"], "Ajakan komen", "Pernah rasa macam ni? Motion komen “pernah” di ruangan komen"],
- [R["BODY_END"], D, "End card", "CTA TOFU + hello@yuran.my"],
+ [R["BODY_END"], D, "End card", "CTA Follow TikTok @yuran.my"],
 ]
 DONE = [
  ["Guna video trim Farhan", "TOFU_Paling_berat_bagi_guru_KAFA.mp4 (24.2 s, 1080×1920, HEVC). Isi tidak dipotong; tiada senyap lebih 0.3 s.", 1.0],
+ ["v2: Logo JAIS dalam thumbnail", "Komen Farhan: logo JAIS ditambah sebagai item tambahan dalam thumbnail (kad putih di kiri muka) untuk jadi trigger hook. Tajuk kekal.", 0.3],
+ ["v2: CTA Follow TikTok", "Komen Farhan: hello@yuran.my dibuang. End card kini kad profil TikTok Yuran.My Street @yuran.my (avatar dari BRAND/Yuran Tiktok.jpg), butang + Follow berdenyut lalu ditekan jadi Following ✓ (bunyi click), + teks Follow TikTok Yuran.my untuk tips urus yuran sekolah.", R["BODY_END"] + 0.3],
  ["Thumbnail 1 saat", "PALING BERAT / JADI CIKGU / KAFA (5 perkataan, dari ayat pertama yang disebut) atas frame Farhan pandang kamera (sumber 0:05.0). Tiada logo di awal. PNG 1080×1920 berasingan dieksport.", 0.3],
  ["Logo JAIS (arahan Farhan)", "Muncul pada “Nanti JAIS mintak report” (0:21.1–0:22.5). Logo asal tidak diubah warna, tidak diputar atau diherotkan; atas kad putih supaya jelas atas baju berjalur. Pop masuk + SFX pop lembut.", 21.1],
  ["Motion komen (arahan Farhan)", "Pada “Komen pernah kalau pernah alami”: panel komen naik, perkataan “pernah” ditaip huruf demi huruf (bunyi tick lembut), butang hantar ditekan (click), komen “Pernah” masuk ke ruangan komen dan hati menyala. Komen ditulis sebagai “anda”, bukan akaun sebenar, jadi tiada komen palsu.", 23.05],
@@ -58,7 +60,8 @@ TODO = [
  ["Logo JAIS ialah logo pihak ketiga", "Fail dari B-ROLL/Logo JAIS.png, guna atas arahan Farhan. Video hanya sebut JAIS minta report, tiada dakwaan kerjasama atau sokongan JAIS. Pastikan Farhan selesa memaparkan logo agensi kerajaan.", 21.2],
  ["Tiada muzik latar", "MUSIC/ Yuran.my kosong. Farhan pilih preview tanpa muzik. Muzik boleh ditambah sebelum final jika ada fail dalam MUSIC/.", None],
  ["Tiada video rujukan gaya", "BRAND/ tiada rujukan-gaya-*.mp4 (Farhan setuju teruskan ikut DNA).", None],
- ["CTA end card ikut DNA TOFU", "“Follow untuk tips urus yuran sekolah”. YM-F-001 yang diluluskan guna kad profil TikTok @yuran.my; beritahu jika mahu gaya itu.", R["BODY_END"] + 0.4],
+ ["End card tanpa hello@yuran.my", "Ikut arahan Farhan (DNA asal minta emel di end card). Bilangan following/followers/likes dari screenshot tidak dipaparkan.", R["BODY_END"] + 0.4],
+ ["Logo JAIS dalam thumbnail", "Thumbnail jadi cover TikTok, jadi logo agensi kerajaan kelihatan paling depan. Pastikan selesa; tiada dakwaan kerjasama JAIS.", 0.3],
  ["Tiada B-roll", "Video ini tentang perasaan cikgu, tiada bahagian yang menerangkan sistem, jadi B-roll sistem tidak diselitkan. Gambar ‘Pecah masuk KAFA’ tidak berkaitan.", None],
  ["Preview MP4 belum di Drive", "Alat Drive yang ada tidak dapat muat naik fail video/gambar besar. RINGKASAN dan log dimuat naik ke Drive; MP4 preview dan thumbnail ada di halaman ini.", None],
 ]
