@@ -1,0 +1,63 @@
+YM-F-004_Paling_berat_bagi_guru_KAFA — RINGKASAN PREVIEW v1
+Brand: Yuran.my | Spokesperson: Farhan | Jenis: TOFU | Durasi: 26.7 s (540x960 preview)
+Sumber: 01_RAW/2026-10-30_004_FARHAN/TOFU_Paling_berat_bagi_guru_KAFA.mp4 (24.2 s, SUDAH DITRIM oleh Farhan, isi tidak dipotong)
+Halaman preview: https://claude.ai/artifact/Emae1TLGKpZXcaJThKWx4p (v1)
+
+1. TEKS HOOK / THUMBNAIL
+   PALING BERAT / JADI CIKGU / KAFA  (BERAT biru aksen, KAFA dalam kotak biru #29ABE2), frame Farhan pandang kamera (sumber 0:05.0). 1 saat, tiada logo.
+
+2. CAPTION PENUH (masa video siap)
+   0:01.0  Paling berat
+   0:01.9  jadi cikgu KAFA ni
+   0:03.3  bukan mengajar.
+   0:04.6  Bukan tanda buku
+   0:05.9  tapi nak
+   0:07.2  remind pasal yuran.
+   0:08.3  Depan ibu bapa,
+   0:09.3  segan.
+   0:10.3  Nak cakap dekat murid,
+   0:11.8  suruh cakap
+   0:12.5  dekat ibu ayah,
+   0:13.7  takut dia lupa
+   0:14.9  nak remindkan.
+   0:15.9  Rasa segan.
+   0:17.0  Nak cakap pun
+   0:17.9  rasa tak sampai hati.
+   0:19.0  Tapi duit sekolah ni
+   0:20.3  kena collect.
+   0:20.9  Nanti JAIS
+   0:21.5  mintak report.
+   0:22.1  Pernah rasa
+   0:22.5  macam ni tak?
+   0:23.2  Komen "pernah"
+   0:23.7  kalau pernah alami.
+   Kata kunci biru #29ABE2: berat, yuran, segan, takut, JAIS, report, pernah.
+
+3. GRAFIK, ANIMASI & SFX (masa video siap)
+   0:00.0-0:01.0  Thumbnail
+   0:01.3-0:04.3  Label nama: Farhan · Yuran.my (pil biru, atas-kiri)
+   0:01.0 / 0:04.6 / 0:08.3 / 0:10.2 / 0:15.8 / 0:19.0 / 0:22.0 / 0:23.2  Punch-in 100% / 112% / 115% / 100% / 112% / 100% / 112% / 100%
+   0:21.1-0:22.5  LOGO JAIS (B-ROLL/Logo JAIS.png) atas kad putih berbingkai biru aksen, pop masuk tepat sebelum "JAIS", di dada (muka tidak ditutup)
+   0:23.1-0:25.2  MOTION KOMEN: panel komen gaya TikTok naik -> "pernah" ditaip dalam kotak komen -> butang hantar ditekan -> komen "Pernah" (anda · baru sahaja) masuk ke ruangan komen -> ikon hati menyala
+   0:25.2-0:26.7  End card
+   B-roll: tiada.
+   SFX (lembut, dijana sendiri): 0:00.9 whoosh, 0:21.1 pop, 0:23.1 whoosh, 0:23.5/0:23.7/0:23.8 tick (taip), 0:24.1 click (hantar), 0:24.5 pop (hati), 0:25.2 ding
+
+4. CTA
+   TOFU: "Follow untuk tips urus yuran sekolah" + logo Yuran.my putih + "Cara MUDAH Urus Yuran" + hello@yuran.my atas biru #2A3B8F (end card 1.5 s).
+
+5. PERLU SEMAK
+   - Ejaan "mintak" (transkrip "minta"): caption ikut sebutan dalam arahan Farhan. [0:21.5]
+   - "nak remindkan" (transkrip "remind kan"): sahkan. [0:14.9]
+   - Logo JAIS ialah logo pihak ketiga (agensi kerajaan): guna atas arahan Farhan; video tidak mendakwa kerjasama/sokongan JAIS. Sahkan selesa dipaparkan. [0:21.1]
+   - Tiada muzik latar: MUSIC/ kosong, Farhan pilih tanpa muzik.
+   - Tiada video rujukan gaya dalam BRAND/ (Farhan setuju teruskan ikut DNA).
+   - CTA end card ikut DNA TOFU; YM-F-001 guna kad profil TikTok @yuran.my. Beritahu jika mahu gaya itu.
+   - Tiada B-roll: video tentang perasaan cikgu, tiada bahagian yang menerangkan sistem.
+   - Preview MP4 & THUMB belum di Drive: alat Drive tidak dapat muat naik fail video/gambar besar. Ada di halaman Artifact.
+
+6. CAPTION TIKTOK
+   Paling berat jadi cikgu KAFA bukan mengajar, tapi nak ingatkan pasal yuran. Segan dengan ibu bapa, tak sampai hati nak tanya. Tapi duit sekolah tetap kena kutip, nanti JAIS minta report. Pernah rasa macam ni? Komen “pernah” 👇
+   #cikgukafa #sekolahkafa #yuranmy #yuransekolah #gurukafa
+
+Nota: font Acumin Pro tiada, guna Inter. Audio -14.0 LUFS, peak -1.5 dBFS. Skrip: asterid001/scripts/ym_f004_render.py
