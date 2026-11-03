@@ -35,6 +35,8 @@ for r in P["row_flash"]:
     mg.append([S(r["t0"]), S(r["t1"]), "Kotak soalan", ["88 × 4", "99 × 2", "66 × 5"][r["row"]]])
 for L in P["langkah"]:
     mg.append([S(L["t0"]), S(L["t1"]), f"Langkah {L['n']}", f"{L['eq']} = {L['res']} (jawapan muncul {S(L['tres']):.2f})"])
+for sp, eq in zip(P["plus_arrows"], ["3 + 2 → 5 (tengah 352)", "1 + 8 → 9 (tengah 198)", "3 + 0 → 3 (tengah 330)"]):
+    mg.append([S(sp["t_first"]), S(sp["t1"]), "Anak panah +", f"Bulatan + anak panah dari dua digit luar ke ruang tengah, lencana + : {eq}"])
 mg += [[S(P["follow_cta"][0]), S(P["follow_cta"][1]), "CTA Follow", "Wajah bulatan emas + Follow saya + @aster.edu_tpg"],
        [S(P["syarat_note"][0]), S(P["syarat_note"][1]), "Nota kertas", "Teknik ni ada SYARAT! + ikon amaran"],
        [S(P["comment_bubble"][0]), S(P["comment_bubble"][1]), "Bubble komen", "@aster.edu_tpg · Comment “GOOD” di ruangan komen"],
@@ -52,6 +54,9 @@ for t, z in P["zoom_split"]:
 zoom.sort(key=lambda x: x["t"])
 
 DONE = [
+ ["v2: tali di atas frame dibuang", "Jalur/tali tergantung di bahagian atas dinding (bergoyang sedikit) dipadam pada setiap frame: kawasan itu dibina semula dari warna dinding di kiri-kanannya, dengan tepi lembut. Termasuk thumbnail.", 4.5],
+ ["v2: thumbnail jadi satu blok tajuk", "Pil DARJAH 4, 5 & 6 kini terus di bawah PANTAS! (tidak lagi jauh di bawah).", 0.3],
+ ["v2: jalan kira + untuk digit tengah", "Setiap contoh: bila Cikgu sebut 'tambah', dua digit luar dibulatkan, anak panah melengkung ke ruang tengah dan lencana + muncul. 88 × 4: 3 + 2 → 5 · 99 × 2: 8 + 1 → 9 · 66 × 5: 3 + 0 → 3. Anak panah ikut urutan sebutan Cikgu.", S(16.14)],
  ["Jenis footage: sudah ditrim", "Satu take bersih tanpa ulangan, jadi isi tidak dipotong. 3 senyap pendek (0.30–0.35 s) dipendekkan, dilindungi pertukaran zoom. 42.9 s → 42.5 s isi.", S(11.8)],
  ["Gaya ikut rujukan TOFU+BOFU_Sifir9", "Skrin terbelah: papan atas (tajuk tulisan tangan 'Teknik Darab', pil LANGKAH 1/2, penanda baris kuning) dan Cikgu di bawah, jalur kuning + label siri. Warna TOFU Aster: biru gelap + kuning (latar hitam iPad ditukar ke biru gelap).", S(13.0)],
  ["B-roll dipadan dengan sebutan", "B-Roll-AS-F-005 (rakaman iPad 1:57) dipotong dan dipercepat supaya setiap coretan muncul tepat bila Cikgu sebut: lengkung, 32, 5, garis bawah, 18, 9, 30, 3, tanda semak. Bar status iPad dan tarikh dipotong keluar.", S(13.24)],

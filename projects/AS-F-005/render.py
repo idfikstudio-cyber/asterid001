@@ -228,7 +228,7 @@ def name_label():
 
 def thumb_overlay():
     l1 = text_img("TEKNIK DARAB", "P900.ttf", 100, fill=WHITE, stroke=11, sfill=NAVY, shadow=5)
-    l2 = text_img("PANTAS!", "P900.ttf", 176, fill=YEL, stroke=13, sfill=NAVY, shadow=7)
+    l2 = text_img("PANTAS!", "P900.ttf", 168, fill=YEL, stroke=13, sfill=NAVY, shadow=7)
     return l1, l2
 
 def endcard():
@@ -346,6 +346,22 @@ def frame_half(img, z):
 
 GRADE = ("colorbalance=rs=-0.02:bs=0.03:rm=-0.01:bm=0.005:rh=0.01:bh=-0.01,"
          "curves=all='0/0.035 0.18/0.16 0.5/0.54 0.82/0.87 1/0.985',eq=brightness=0.02:contrast=1.05:saturation=1.10:gamma=1.03")
+def clean_wall(buf):
+    """Remove the hanging strip at the top of the raw frame: rebuild that patch of plain wall
+    by interpolating each row between clean columns either side, with a feathered edge."""
+    x0, x1, y1 = (int(round(v * SC)) for v in P["string_patch"])
+    a = np.frombuffer(buf, np.uint8).reshape(H, W, 3).astype(np.float32).copy()
+    L, R = a[:y1, x0 - 3:x0].mean(1), a[:y1, x1:x1 + 3].mean(1)          # (y1, 3)
+    t = np.linspace(0, 1, x1 - x0)[None, :, None]
+    fill = L[:, None, :] * (1 - t) + R[:, None, :] * t
+    fill += np.random.default_rng(1).normal(0, 1.2, fill.shape)            # keep a little grain
+    m = np.ones((y1, x1 - x0, 1), np.float32)
+    f = max(2, int(10 * SC))
+    ramp = np.linspace(0, 1, f)
+    m[:, :f, 0] *= ramp; m[:, -f:, 0] *= ramp[::-1]; m[-f:, :, 0] *= ramp[::-1, None]
+    a[:y1, x0:x1] = a[:y1, x0:x1] * (1 - m) + fill * m
+    return np.clip(a, 0, 255).astype(np.uint8).tobytes()
+
 def base_reader():
     sel = "+".join(f"between(t,{a:.3f},{b - 0.0001:.3f})" for a, b in KEEP)
     cmd = ["ffmpeg", "-v", "error", "-i", os.path.join(WD, "raw.mp4"), "-vf",
@@ -356,12 +372,12 @@ def base_reader():
     while True:
         b = p.stdout.read(n)
         if len(b) < n: break
-        last = Image.frombuffer("RGB", (W, H), b, "raw", "RGB", 0, 1); yield last
+        last = Image.frombuffer("RGB", (W, H), clean_wall(b), "raw", "RGB", 0, 1); yield last
     while True: yield last
 def grab_still(t):
     cmd = ["ffmpeg", "-v", "error", "-ss", str(t), "-i", os.path.join(WD, "raw.mp4"), "-frames:v", "1",
            "-vf", f"{GRADE},scale={W}:{H}:flags=lanczos", "-f", "rawvideo", "-pix_fmt", "rgb24", "-"]
-    return Image.frombuffer("RGB", (W, H), subprocess.run(cmd, capture_output=True, check=True).stdout, "raw", "RGB", 0, 1)
+    return Image.frombuffer("RGB", (W, H), clean_wall(subprocess.run(cmd, capture_output=True, check=True).stdout), "raw", "RGB", 0, 1)
 
 def out2src(t):
     t -= LEAD; acc = 0.0
@@ -378,13 +394,51 @@ THUMB_CHIP = pill_label("DARJAH 4, 5 & 6", 54, fg=YEL, bg=NAVY + (255,), padx=34
 CAP_IMG = {}
 def thumbnail():
     im = frame_full(grab_still(P["thumb_src_t"]), "1.0").convert("RGBA")
-    place(im, L1, 490, 370); place(im, L2, 490, 520, rot=4)
-    place(im, THUMB_CHIP, 520, 1250)
+    place(im, L1, 490, 345); place(im, L2, 490, 478, rot=4)
+    place(im, THUMB_CHIP, 490, 605)          # sits right under PANTAS! so the title reads as one block
     place(im, WATERMARK, 64, 250, anchor="l")
     return im
 THUMB = thumbnail()
 
 SPLIT_IN, SPLIT_OUT = P["split_src"]
+def bez(p0, p1, p2, u):
+    return [((1-k)**2*p0[0] + 2*(1-k)*k*p1[0] + k*k*p2[0], (1-k)**2*p0[1] + 2*(1-k)*k*p1[1] + k*k*p2[1])
+            for k in np.linspace(0, u, max(2, int(24 * u)))]
+PLUS_BADGE = None
+def draw_plus(canvas, sp, st, yoff=0):
+    """'+' working for the middle digit: arrows from the two outer digits curve into the gap,
+    a '+' badge sits above it. Left/right arrows appear when each digit is said."""
+    global PLUS_BADGE
+    if not (sp["t_first"] <= st < sp["t1"]): return
+    xl, xm, xr = sp["x"]; top = sp["top"] + yoff
+    fade = min(1, (sp["t1"] - st) / 0.15)
+    lay = Image.new("RGBA", canvas.size, (0, 0, 0, 0)); d = ImageDraw.Draw(lay)
+    col = YEL + (int(255 * fade),)
+    for side, t0 in (("l", sp["t_left"]), ("r", sp["t_right"])):
+        if st < t0: continue
+        u = ease_out((st - t0) / 0.35)
+        xs = xl if side == "l" else xr
+        p0 = (xs, top - 6); p2 = (xm + (-9 if side == "l" else 9), top - 8); p1 = ((xs + xm) / 2, top - 92)
+        pts = [(s(x), s(y)) for x, y in bez(p0, p1, p2, u)]
+        d.line(pts, fill=col, width=max(2, s(7)), joint="curve")
+        # ring round the digit being added
+        rr = 30
+        d.ellipse((s(xs - rr), s(top + 30 - rr - 4), s(xs + rr), s(top + 30 + rr + 4)), outline=col, width=max(2, s(4)))
+        if u > 0.95:   # arrow head pointing down into the gap
+            ex, ey = pts[-1]; px, py = pts[-4]
+            ang = math.atan2(ey - py, ex - px); L = s(20)
+            d.polygon([(ex, ey), (ex - L * math.cos(ang - 0.5), ey - L * math.sin(ang - 0.5)),
+                       (ex - L * math.cos(ang + 0.5), ey - L * math.sin(ang + 0.5))], fill=col)
+    canvas.alpha_composite(lay)
+    if st >= sp["t_plus"]:
+        if PLUS_BADGE is None:
+            D = s(64); PLUS_BADGE = Image.new("RGBA", (D, D), (0, 0, 0, 0))
+            ImageDraw.Draw(PLUS_BADGE).ellipse((0, 0, D - 1, D - 1), fill=YEL, outline=NAVY_D, width=max(1, s(3)))
+            pl = text_img("+", "P900.ttf", 58, fill=NAVY)
+            PLUS_BADGE.alpha_composite(pl, ((D - pl.width) // 2, (D - pl.height) // 2))
+        e = ease_out_back((st - sp["t_plus"]) / 0.22)
+        place(canvas, PLUS_BADGE, xm, top - 80, 0.5 + 0.5 * e, fade)
+
 def ov(t, t0, t1, im, cx, cy, **kw):
     e = env(t, t0, t1)
     if e: place(CANVAS, im, cx, cy, e[0], e[1], **kw)
@@ -418,6 +472,8 @@ def draw_frame(t, base):
                 box = Image.new("RGBA", (s(640), s(y1 - y0 + 30)), (0, 0, 0, 0))
                 ImageDraw.Draw(box).rounded_rectangle((0, 0, box.width - 1, box.height - 1), s(20), outline=YEL + (int(255 * q),), width=s(6))
                 CANVAS.alpha_composite(box, (s(190), s(y0 - 15)))
+        for spec in P["plus_arrows"]:
+            draw_plus(CANVAS, spec, st, yoff)
         # active-row marker
         for r in P["active_row"]:
             if r["t0"] <= st < r["t1"]:
@@ -437,7 +493,8 @@ def draw_frame(t, base):
                 place(CANVAS, CAP_IMG[k], 530, L["y"], e[0] * pop, e[1])
         # divider + series label
         CANVAS.paste(Image.new("RGBA", (W, s(10)), YEL + (255,)), (0, s(SPLIT_Y - 5)))
-        place(CANVAS, SERIES, 470, SPLIT_Y)
+        if st < P["series_label_until"]:   # row-3 pill sits low on the board, so the label steps aside
+            place(CANVAS, SERIES, 470, SPLIT_Y, alpha=min(1, (P["series_label_until"] - st) / 0.2))
         cap_y = P["cap_y_split"]
     else:
         CANVAS = frame_full(base, zoom_at(st, False)).convert("RGBA")
