@@ -274,14 +274,15 @@ def pill_2027():
     return shadowed(im)
 
 def price_star():
-    D = s(400); im = Image.new("RGBA", (D, D), (0, 0, 0, 0)); d = ImageDraw.Draw(im)
+    D = s(440); im = Image.new("RGBA", (D, D), (0, 0, 0, 0)); d = ImageDraw.Draw(im)
     pts = []
     for i in range(32):
         r = (D / 2 - s(6)) if i % 2 == 0 else (D / 2 - s(40))
         a = math.pi * 2 * i / 32 - math.pi / 2
         pts.append((D / 2 + r * math.cos(a), D / 2 + r * math.sin(a)))
     d.polygon(pts, fill=YEL, outline=INK)
-    for txt, size, dy in (("Pendaftaran serendah", 30, -88), ("RM20", 130, 2), ("sahaja", 38, 92)):
+    # every line sits inside the star's inner radius (~180 px): two short lines on top, not one long one
+    for txt, size, dy in (("Pendaftaran", 32, -108), ("serendah", 32, -72), ("RM20", 120, 12), ("sahaja", 38, 96)):
         t = text_img(txt, "P900.ttf" if txt == "RM20" else "P800.ttf", size, fill=INK)
         im.alpha_composite(t, ((D - t.width) // 2, D // 2 + s(dy) - t.height // 2))
     return shadowed(im)
@@ -530,7 +531,7 @@ def draw_frame(t, base):
         ov(st, *P["minat"], MINAT, 520, 1150)
         ov(st, *P["lower_third"], LOWER3, 40, 1150, anchor="l")
         ov(st, *P["pill_2027"], PILL27, 520, 360)
-        ov(st, *P["price"], PRICE, 520, 400, rot=-6)
+        ov(st, *P["price"], PRICE, 600, 430, rot=-6)
         ov(st, *P["dm"], DM, 520, 1170)
     for c in CAPS:
         if c["s"] <= t < c["e"]:
