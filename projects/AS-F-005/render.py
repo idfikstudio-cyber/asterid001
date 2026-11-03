@@ -316,9 +316,11 @@ def load_broll():
     raw = subprocess.run(cmd, capture_output=True, check=True).stdout
     fr = np.frombuffer(raw, np.uint8).reshape(-1, bh, bw, 3)
     # screen-blend with navy so the iPad's black page becomes the TOFU dark-blue board
-    nv = np.array(NAVY, np.float32) / 255
-    out = (1 - (1 - fr.astype(np.float32) / 255) * (1 - nv)) * 255
-    return out.astype(np.uint8)
+    # screen blend via a lookup table per channel (uint8 in, uint8 out: no big float copies at 1080p)
+    lut = np.stack([np.round(255 - (255 - np.arange(256)) * (255 - c) / 255).astype(np.uint8) for c in NAVY], 1)  # (256,3)
+    out = np.empty_like(fr)
+    for ch in range(3): out[..., ch] = lut[fr[..., ch], ch]
+    return out
 BROLL = load_broll()
 def broll_frame(src_t):
     i = int(round((broll_time(src_t) - BR_T0) * FPS)); i = min(max(i, 0), len(BROLL) - 1)
