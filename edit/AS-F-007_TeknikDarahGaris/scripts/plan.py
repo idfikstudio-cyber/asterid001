@@ -26,9 +26,9 @@ SPLIT = (20.10, 86.95)
 # source time -> B-roll time keypoints (piecewise linear; equal src times = jump)
 BMAP = [(20.10, 74.0), (25.6, 85.5), (30.0, 97.0), (32.9, 102.5), (35.2, 109.0), (38.1, 128.0),
         (40.8, 131.5), (45.4, 137.5), (50.0, 143.5), (52.6, 148.0),
-        (52.65, 150.0), (56.2, 165.0), (62.3, 179.0), (65.9, 179.5),
+        (52.65, 151.0), (56.2, 153.8), (56.21, 160.5), (56.25, 165.0), (62.3, 179.0), (65.9, 179.5),
         (65.91, 206.0), (67.5, 215.0), (69.8, 219.0), (71.4, 223.5), (76.2, 231.5), (78.4, 239.2),
-        (82.4, 240.4), (86.0, 245.0), (87.0, 246.0)]
+        (82.4, 240.4), (86.0, 241.3), (87.0, 241.4)]
 def broll_t(ts):
     for (a, x), (b, y) in zip(BMAP, BMAP[1:]):
         if a <= ts <= b and b > a:
@@ -36,7 +36,7 @@ def broll_t(ts):
     return BMAP[-1][1]
 
 # --- punch-in zoom (full-frame talking head), source ranges
-ZOOM = [(0.0, 10.15, 1.0), (10.15, 20.10, 1.13), (86.95, 97.15, 1.0), (97.15, 106.72, 1.13), (106.72, 120, 1.0)]
+ZOOM = [(0.0, 10.15, 1.18), (10.15, 20.10, 1.32), (86.95, 97.15, 1.18), (97.15, 106.72, 1.32), (106.72, 120, 1.18)]
 SPLITZOOM = [(20.10, 52.65, 1.0), (52.65, 87.0, 1.1)]
 
 # --- transcript -> captions
@@ -48,7 +48,7 @@ for s in tr:
         if t.startswith("-") and words:  # anak -anak -> anak-anak
             words[-1]["w"] += t; words[-1]["e"] = w["e"]; continue
         words.append({"w": t, "s": w["s"], "e": w["e"]})
-FIX = {"Ok": "OK", "Belisha": None}
+FIX = {"Ok": "OK", "Belisha": "Badli Shah"}
 out = []
 for w in words:
     if w["w"] in FIX:
@@ -59,8 +59,8 @@ words = out
 HL = re.compile(r"^(\d+|RM\d+|SIFIR|SUSAH|LEMAH|MATH|MATEMATIK|SUBJEK|GARISAN|GARIS|MUDAH|DARJAH|TRIK|JAWAPAN|BERTEMU|25)$")
 caps = []
 cur = []
-FORCE = {0.98, 1.84, 3.44, 4.16, 11.42, 12.12, 13.94, 14.84, 15.82, 51.12, 54.54, 55.24, 103.32}
-NOBREAK = {2.62, 2.88, 3.12, 11.88, 12.06, 21.78, 51.58, 52.04, 54.86, 55.08, 57.46, 88.44, 103.62}
+FORCE = {89.04, 0.98, 1.84, 3.44, 4.16, 11.42, 12.12, 13.94, 14.84, 15.82, 51.12, 54.54, 55.24, 103.32}
+NOBREAK = {89.84, 90.14, 90.32, 2.62, 2.88, 3.12, 11.88, 12.06, 21.78, 51.58, 52.04, 54.86, 55.08, 57.46, 88.44, 103.62}
 def flush():
     if cur:
         caps.append({"s": cur[0]["s"], "e": cur[-1]["e"], "words": [c["w"] for c in cur]})
@@ -121,10 +121,14 @@ el(62.40, 67.50, "step", n=2, text="Kali dengan 4: buat 4 garis")
 el(68.08, 83.90, "step", n=3, text="Cari garis yang bertemu")
 el(70.60, 71.80, "counter", text="4", x=760)
 el(75.98, 78.40, "counter", text="16", x=640)
+el(76.36, 81.50, "carry", text="16: tulis 6, angka 1 naik ke atas")
 el(81.60, 83.90, "counter", text="9", x=520)
 el(83.94, 86.95, "answer", text="241 × 4 = 964")
-el(87.10, 89.30, "follow")
-el(89.36, 96.95, "note", head="PESAN USTAZ", lines=[(89.36, "Plan A tak jadi?"), (91.68, "Masih ada 25 lagi alphabet"), (94.60, "Jangan start satu jalan sahaja")])
+el(52.80, 55.90, "follow", pos=(70, 640))
+el(87.74, 90.72, "photo", name="Ustaz Badli Shah", role="Timbalan Mufti Pahang")
+el(90.75, 96.95, "note", head="PESAN USTAZ BADLI SHAH", lines=[(90.75, "Plan A tak jadi?"), (91.68, "Masih ada 25 lagi alphabet"), (94.60, "Jangan start satu jalan sahaja")])
+el(97.20, 106.70, "lowerthird", text="MATH TURBO 2027")
+el(100.12, 101.55, "redpill", text="Pendaftaran 2027 dibuka")
 el(101.58, 103.25, "price", text="RM20", sub="Pendaftaran serendah")
 el(103.32, 106.70, "subjects", head="5 SUBJEK", items=[(104.18, "BM"), (104.74, "BI"), (105.18, "Math"), (105.58, "Science"), (106.14, "Sejarah")])
 el(106.76, 110.95, "dmpill", text="DM saya untuk keterangan lanjut")
@@ -138,8 +142,10 @@ sx(20.10, "whoosh", -6)
 for t in (24.70, 30.08, 35.42, 56.22, 62.40, 68.08): sx(t, "click", -6)
 for t in (40.60, 45.20, 49.70, 70.60, 75.98, 81.60): sx(t, "pop", -9)
 sx(51.10, "ding", -8); sx(54.50, "whoosh", -8); sx(83.94, "ding", -8)
-sx(86.95, "swoosh_down", -8); sx(87.10, "pop", -8)
-sx(89.36, "whoosh", -9); sx(91.68, "pop", -10); sx(94.60, "pop", -10)
+sx(52.80, "pop", -8); sx(76.36, "pop", -9)
+sx(86.95, "swoosh_down", -8); sx(87.74, "whoosh", -8)
+sx(90.75, "whoosh", -9); sx(91.68, "pop", -10); sx(94.60, "pop", -10)
+sx(97.20, "whoosh", -9); sx(100.12, "pop", -9)
 sx(101.58, "chaching", -9)
 for t in (103.32, 104.18, 104.74, 105.18, 105.58, 106.14): sx(t, "pop", -11)
 sx(106.76, "pop", -9)

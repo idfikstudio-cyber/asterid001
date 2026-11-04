@@ -1,0 +1,30 @@
+import sys, os, json
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import plan as P
+VER = sys.argv[1]; URL = sys.argv[2]
+d = json.load(open(os.path.join(P.W, "pagedata.json")))
+def f(t): m = int(t // 60); return f"{m}:{t - 60*m:04.1f}"
+L = []
+L.append(f"AS-F-007_TeknikDarahGaris — RINGKASAN PREVIEW {VER}")
+L.append(f"Aster · TOFU+BOFU (gaya rujukan TOFU+BOFU_Sifir9, hitam + kuning) · spokesperson FARHAN · durasi {P.TOTAL:.1f} s · preview 540x960\n")
+L.append("1. TEKS HOOK / THUMBNAIL")
+L.append(" TAK HAFAL SIFIR? / GUNA GARISAN! + pil 'Darjah 4, 5 & 6' + nota kecil '321 × 3 = ?'")
+L.append(" Frame: Cikgu tersenyum ke kamera (sumber 0:52.4). Fail: AS-F-007_TeknikDarahGaris_THUMB.png\n")
+L.append("2. CAPTION PENUH (burn-in, ikut sebutan)")
+for c in P.caps: L.append(f" {f(P.o(c['s']))} {c['text']}")
+L.append("\n3. SFX, ANIMASI & B-ROLL (masa video)")
+for a, b, k, t in d["mg"]: L.append(f" {f(a)}–{f(b)} {k}: {t}")
+L.append(" B-roll iPad (B-Roll-AS-F-006_TeknikDarahGaris, skrin terbelah atas):")
+for a, b, t in d["broll"]: L.append(f"  {f(a)}–{f(b)} {t}")
+L.append(" SFX: " + ", ".join(f"{f(t)} {n}" for t, n in d["sfx"]))
+L.append("\n4. CTA")
+L.append(" Tengah video (±0:53): Follow saya @aster.edu_tpg (wajah bulatan emas)")
+L.append(" Jualan: lower third MATH TURBO 2027 · pil 'Pendaftaran 2027 dibuka' · bintang 'Pendaftaran serendah RM20' · cip 5 SUBJEK (BM, BI, Math, Science, Sejarah) · pil 'DM saya untuk keterangan lanjut'")
+L.append(" End card (BOFU): WhatsApp Cikgu AlFarhan untuk daftar / cuba kelas · asteredu11.com.my · WhatsApp 011-5596 9070 · @aster.edu_tpg\n")
+L.append("5. PERLU SEMAK")
+for t, x, _ in d["TODO"]: L.append(f" - {t}: {x}")
+L.append("\n6. CAPTION TIKTOK + 5 HASHTAG")
+L.append(" " + d["TT"].replace("\n", "\n ")); L.append(" " + d["HS"])
+L.append(f"\nArtifact preview: {URL}")
+open(os.path.join(P.W, "RINGKASAN_AS-F-007.txt"), "w").write("\n".join(L) + "\n")
+print("ok")

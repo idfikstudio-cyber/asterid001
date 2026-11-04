@@ -10,7 +10,7 @@ ROOT = P.S; WK = P.W; FD = os.path.join(ROOT, "fonts"); DL = os.path.join(ROOT, 
 FW, FH = 1080, 1920
 W, H = int(FW * SC), int(FH * SC)
 FPS = 30
-NAVY = (18, 32, 74); NAVY2 = (10, 20, 52); YEL = (255, 200, 61); WHITE = (255, 255, 255); INK = (22, 28, 48); RED = (214, 48, 49)
+NAVY = (20, 20, 20); NAVY2 = (0, 0, 0); YEL = (255, 200, 61); WHITE = (255, 255, 255); INK = (22, 28, 48); RED = (214, 48, 49)
 GRADE = "colorbalance=rs=-0.02:bs=0.03:rm=-0.01:bm=0.005:rh=0.01:bh=-0.01,curves=all='0/0.035 0.18/0.16 0.5/0.54 0.82/0.87 1/0.985',eq=brightness=0.025:contrast=1.05:saturation=1.08:gamma=1.04"
 
 def s(v): return int(round(v * SC))
@@ -127,7 +127,7 @@ def render_el(e, st):
             b.alpha_composite(tag, (s(12), (b.height - tag.height) // 2))
             b.alpha_composite(t, (tag.width + s(32), (b.height - t.height) // 2))
             return shadowed(b, 8, (0, 3), 120)
-        return C(id(e), mk), (50, 790), "tl"
+        return C(id(e), mk), (40, 1068), "tl"
     if k == "counter":
         def mk():
             d = 150; im = Image.new("RGBA", (s(d), s(d)), (0, 0, 0, 0))
@@ -142,7 +142,7 @@ def render_el(e, st):
             b = rbox((t.width + s(70), t.height + s(46)), 26, YEL + (255,), outline=WHITE, width=max(1, s(6)))
             b.alpha_composite(t, (s(35), s(20)))
             return shadowed(b, 14, (0, 8), 160)
-        return C(id(e), mk), (480, 800), "c"
+        return C(id(e), mk), (470, 1140), "c"
     if k == "follow":
         def mk():
             fc = face_circle(190, 9)
@@ -153,7 +153,7 @@ def render_el(e, st):
             x = fc.width + s(24); y0 = (h - t1.height - t2.height - s(14)) // 2
             im.alpha_composite(t1, (x, y0)); im.alpha_composite(t2, (x, y0 + t1.height + s(14)))
             return shadowed(im, 12, (0, 5), 130)
-        return C(id(e), mk), (60, 300), "tl"
+        return C(id(e), mk), e.get("pos", (60, 300)), "tl"
     if k == "price":
         def mk():
             d = 380; im = Image.new("RGBA", (s(d), s(d)), (0, 0, 0, 0)); dr = ImageDraw.Draw(im)
@@ -188,6 +188,23 @@ def render_el(e, st):
                 y += max(c.height for c in r) + s(12)
             return shadowed(im, 10, (0, 5), 130)
         return C((id(e), len(shown)), mk), (60, 290), "tl"
+    if k == "carry":
+        def mk():
+            t = text_img(e["text"], F("Poppins-ExtraBold", 34), NAVY)
+            b = rbox((t.width + s(44), t.height + s(28)), 16, YEL + (255,), outline=WHITE, width=max(1, s(4)))
+            b.alpha_composite(t, (s(22), s(14)))
+            return shadowed(b, 10, (0, 5), 150)
+        return C(id(e), mk), (40, 1066), "tl"
+    if k == "lowerthird":
+        def mk():
+            t = text_img(e["text"], F("Poppins-Black", 56), YEL)
+            b = rbox((t.width + s(56), t.height + s(32)), 14, NAVY + (232,))
+            ImageDraw.Draw(b).rectangle((0, s(10), s(10), b.height - s(10)), fill=YEL)
+            b.alpha_composite(t, (s(32), s(16)))
+            return shadowed(b, 10, (0, 5), 140)
+        return C(id(e), mk), (50, 1050), "tl"
+    if k == "redpill":
+        return C(id(e), lambda: shadowed(pill(e["text"], 40, (214, 48, 49, 255), WHITE, padx=30, pady=14, font="Poppins-ExtraBold"), 10, (0, 5), 140)), (60, 300), "tl"
     if k == "dmpill":
         return C(id(e), lambda: shadowed(pill("💬 " if False else e["text"], 40, YEL + (255,), NAVY, padx=30, pady=14, font="Poppins-ExtraBold"), 10, (0, 5), 140)), (60, 300), "tl"
     return None
@@ -216,7 +233,7 @@ def paste(frame, img, pos, anchor, sc=1.0, a=1.0):
     else: frame.paste(img, (x, y), img)
 
 # ---------- watermark
-WM = shadowed(text_img("asteredu11.com.my", F("Poppins-SemiBold", 30), (255, 255, 255, 172)), 4, (0, 2), 140)
+WM = shadowed(text_img("asteredu11.com.my", F("Poppins-SemiBold", 28), (255, 255, 255, 105)), 4, (0, 2), 90)
 
 # ---------- caption images
 def cap_img(c):
@@ -251,20 +268,17 @@ def grab_still(t):
     cmd = ["ffmpeg", "-v", "error", "-ss", str(t), "-i", os.path.join(DL, "main.mp4"), "-frames:v", "1", "-vf", f"{GRADE},scale={W}:{H}:flags=lanczos,format=rgb24", "-f", "rawvideo", "-"]
     return Image.frombytes("RGB", (W, H), subprocess.run(cmd, capture_output=True).stdout)
 
+FACE_Y_OUT = 0.345
 def full_frame(src, z):
-    # lift + desk extension
-    top = src.crop((0, s(SHIFT), W, H))
-    desk = src.crop((0, H - s(160), W, H)).resize((W, s(SHIFT)), Image.BILINEAR)
-    fr = Image.new("RGB", (W, H)); fr.paste(top, (0, 0)); fr.paste(desk, (0, H - s(SHIFT)))
-    if z > 1.001:
-        fx, fy = s(FACE[0]), s(FACE[1] - SHIFT)
-        x0 = fx - fx / z; y0 = fy - fy / z
-        fr = fr.resize((W, H), Image.BICUBIC, box=(x0, y0, x0 + W / z, y0 + H / z))
-    return fr
+    # pure crop-zoom of the real frame (no stretched pixels); face as high as the zoom allows
+    w, h = FW / z, FH / z
+    x0 = min(max(FACE[0] - w / 2, 0), FW - w)
+    y0 = min(max(FACE[1] - FACE_Y_OUT * h, 0), FH - h)
+    return src.resize((W, H), Image.BICUBIC, box=(s(x0), s(y0), s(x0 + w), s(y0 + h)))
 
-PANEL_H = 900; DIV_H = 60
+PANEL_H = 1000; DIV_H = 50
 def bottom_panel(src, z):
-    top = FACE[1] - 320
+    top = FACE[1] - 230
     bh = FH - PANEL_H - DIV_H
     x0, y0, w, h = 0, top, FW, bh
     if z > 1.001:
@@ -274,13 +288,14 @@ def bottom_panel(src, z):
 
 # B-roll frames
 BR = os.path.join(WK, f"broll_{SC}")
-IN_W, IN_H = 1020, 850
+IN_W, IN_H = 1020, 940
 def prep_broll():
-    if os.path.isdir(BR) and len(glob.glob(BR + "/*.jpg")) > 5000: return
+    if os.path.isdir(BR) and len(glob.glob(BR + "/*.jpg")) > 5000 and os.path.exists(BR + "/.v2"): return
     os.makedirs(BR, exist_ok=True)
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", "70", "-to", "247", "-i", os.path.join(DL, "broll.mp4"),
-                    "-vf", f"fps=30,crop=1320:1100:0:190,scale={s(IN_W)}:{s(IN_H)}:flags=lanczos", "-q:v", "3",
+                    "-vf", f"fps=30,crop=1440:1327:0:140,scale={s(IN_W)}:{s(IN_H)}:flags=lanczos", "-q:v", "3",
                     os.path.join(BR, "%05d.jpg")], check=True)
+    open(BR + "/.v2", "w").close()
 def broll_frame(bt):
     i = int(round((bt - 70.0) * 30)) + 1
     i = max(1, min(i, len(os.listdir(BR))))
@@ -324,7 +339,7 @@ def fit_text(text, font, size, maxw, **kw):
 
 def make_thumb():
     src = grab_still(P.THUMB_SRC)
-    fr = full_frame(src, 1.0).convert("RGBA")
+    fr = full_frame(src, 1.18).convert("RGBA")
     # darken lower-middle for legibility
     g = Image.new("L", (1, H));
     for y in range(H):
@@ -360,8 +375,8 @@ def make_endcard():
     def ctr(img, y): im.alpha_composite(img, (s(cx) - img.width // 2, s(y)))
     ctr(text_img("Cikgu AlFarhan", F("Poppins-ExtraBold", 64), WHITE), 800)
     ctr(text_img("@aster.edu_tpg", F("Poppins-Bold", 42), YEL), 890)
-    cta1 = text_img("Follow untuk tips belajar", F("Poppins-ExtraBold", 44), NAVY)
-    cta2 = text_img("anak seterusnya", F("Poppins-ExtraBold", 44), NAVY)
+    cta1 = text_img("WhatsApp Cikgu AlFarhan", F("Poppins-ExtraBold", 44), NAVY)
+    cta2 = text_img("untuk daftar / cuba kelas", F("Poppins-ExtraBold", 44), NAVY)
     b = rbox((max(cta1.width, cta2.width) + s(70), cta1.height + cta2.height + s(56)), 30, YEL + (255,))
     b.alpha_composite(cta1, ((b.width - cta1.width) // 2, s(20))); b.alpha_composite(cta2, ((b.width - cta2.width) // 2, s(30) + cta1.height))
     ctr(b, 1010)
@@ -402,18 +417,55 @@ def main():
     enc.stdin.close(); enc.wait()
     print("content frames", n, "expected", int(P.CONTENT * FPS))
 
+_photo = {}
+def photo_frame(e, lt):
+    if "bg" not in _photo:
+        im = Image.open(os.path.join(DL, "badli.jpg")).convert("RGB")
+        bgi = im.resize((W, int(W * im.height / im.width)), Image.BICUBIC)
+        bgi = bgi.crop((0, (bgi.height - H) // 2 if bgi.height > H else 0, W, min(bgi.height, H))).resize((W, H)).filter(ImageFilter.GaussianBlur(s(40)))
+        bgi = Image.blend(bgi, Image.new("RGB", (W, H), NAVY2), 0.45)
+        _photo["bg"] = bgi; _photo["im"] = im
+        lab1 = text_img(e["name"], F("Poppins-Black", 58), NAVY)
+        lab2 = text_img(e["role"], F("Poppins-Bold", 38), WHITE)
+        b1 = rbox((lab1.width + s(50), lab1.height + s(28)), 12, YEL + (255,)); b1.alpha_composite(lab1, (s(25), s(12)))
+        b2 = rbox((lab2.width + s(40), lab2.height + s(22)), 12, NAVY + (240,)); b2.alpha_composite(lab2, (s(20), s(9)))
+        lt3 = Image.new("RGBA", (max(b1.width, b2.width), b1.height + b2.height + s(8)), (0, 0, 0, 0))
+        lt3.alpha_composite(b1, (0, 0)); lt3.alpha_composite(b2, (0, b1.height + s(8)))
+        _photo["lt"] = shadowed(lt3, 12, (0, 6), 150)
+    fr = _photo["bg"].copy().convert("RGBA")
+    im = _photo["im"]; cw = 600; ch = int(cw * im.height / im.width)
+    z = 1.0 + 0.05 * min(1, lt / 3.0)
+    pw, ph = int(s(cw) * z), int(s(ch) * z)
+    ph_img = im.resize((pw, ph), Image.BICUBIC)
+    m = Image.new("L", (pw, ph), 0); ImageDraw.Draw(m).rounded_rectangle((0, 0, pw - 1, ph - 1), s(28), fill=255)
+    card = Image.new("RGBA", (pw + s(16), ph + s(16)), (0, 0, 0, 0))
+    ImageDraw.Draw(card).rounded_rectangle((0, 0, card.width - 1, card.height - 1), s(34), fill=YEL + (255,))
+    card.paste(ph_img, (s(8), s(8)), m)
+    card = shadowed(card, 18, (0, 10), 160)
+    fr.alpha_composite(card, (s(470) - card.width // 2, s(130)))
+    fr.alpha_composite(_photo["lt"], (s(60), s(130) + int(s(ch) * 1.05) - s(60)))
+    return fr
+
 def compose(src, st, bg):
         if P.SPLIT[0] <= st < P.SPLIT[1]:
             fr = Image.new("RGB", (W, H)); fr.paste(bg, (0, 0))
             fr.paste(broll_frame(P.broll_t(st)), (s(30), s(28)), inset_mask())
             fr.paste(bottom_panel(src, zoom_at(st, P.SPLITZOOM)), (0, s(PANEL_H + DIV_H)))
             fr = fr.convert("RGBA"); fr.alpha_composite(divider(), (0, s(PANEL_H)))
-            capy = 1470
+            capy = 1480; wm = (640, 238)
         else:
-            fr = full_frame(src, zoom_at(st, P.ZOOM)).convert("RGBA"); capy = 1330
-        fr.alpha_composite(WM, (s(60), s(250)))
+            ph = [e for e in P.E if e["kind"] == "photo" and e["s"] <= st < e["e"]]
+            if ph:
+                a = min(1.0, (st - ph[0]["s"]) / 0.12, (ph[0]["e"] - st) / 0.12)
+                base = full_frame(src, zoom_at(st, P.ZOOM)).convert("RGBA")
+                fr = Image.blend(base, photo_frame(ph[0], st - ph[0]["s"]), max(0.0, a))
+            else:
+                fr = full_frame(src, zoom_at(st, P.ZOOM)).convert("RGBA")
+            capy = 1330; wm = (60, 250)
+        fr.alpha_composite(WM, (s(wm[0]), s(wm[1])))
         for e in P.E:
-            if e["s"] <= st < e["e"]:
+            if e["s"] <= st < e["e"] and e["kind"] != "photo":
+                if e["kind"] == "step" and any(x["kind"] == "carry" and x["s"] <= st < x["e"] for x in P.E): continue
                 r = render_el(e, st)
                 if r:
                     img, pos, anc = r; sc, a = anim(st - e["s"], e["e"] - e["s"])
