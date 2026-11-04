@@ -1,6 +1,6 @@
 # AS-F-007_TeknikDarahGaris (Aster, TOFU+BOFU)
 
-Status: **preview v3, menunggu komen Farhan.** Artifact: https://claude.ai/artifact/4ysUSXgB97DgriaW82GiW9
+Status: **SIAP. Final 1080x1920 dirender 4 Nov 2026** (`render.py 1.0`), dihantar terus kepada Farhan. Artifact: https://claude.ai/artifact/4ysUSXgB97DgriaW82GiW9
 
 Struktur kerja (sama seperti scratchpad sesi): `dl/` (main.mp4, broll.mp4, face.png, badli.jpg dari Drive), `fonts/` (Poppins, Caveat), `work/`, `page/`, `scripts/`.
 
