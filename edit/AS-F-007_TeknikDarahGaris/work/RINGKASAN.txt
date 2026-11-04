@@ -1,4 +1,4 @@
-AS-F-007_TeknikDarahGaris — RINGKASAN PREVIEW v2
+AS-F-007_TeknikDarahGaris — RINGKASAN PREVIEW v3
 Aster · TOFU+BOFU (gaya rujukan TOFU+BOFU_Sifir9, hitam + kuning) · spokesperson FARHAN · durasi 112.8 s · preview 540x960
 
 1. TEKS HOOK / THUMBNAIL
@@ -122,8 +122,7 @@ Aster · TOFU+BOFU (gaya rujukan TOFU+BOFU_Sifir9, hitam + kuning) · spokespers
  1:16.8–1:21.9 Cip: 16: tulis 6, angka 1 naik ke atas
  1:22.0–1:24.3 Bulatan kiraan: 9
  1:24.3–1:27.3 Jawapan: 241 × 4 = 964
- 1:28.1–1:31.1 B-roll foto: Foto Ustaz Badli Shah (B-ROLL/Badli_Shah_2018.jpg) + label Ustaz Badli Shah · Timbalan Mufti Pahang
- 1:31.2–1:37.3 Nota kertas: PESAN USTAZ BADLI SHAH: Plan A tak jadi? / Masih ada 25 lagi alphabet / Jangan start satu jalan sahaja
+ 1:28.1–1:34.8 B-roll foto: Foto Ustaz Badli Shah (B-ROLL/Badli_Shah_2018.jpg) + label Ustaz Badli Shah · Timbalan Mufti Pahang + petikan “Kalau plan A tak jadi, masih ada 25 lagi alphabet untuk kita boleh guna”
  1:37.6–1:47.1 Lower third: MATH TURBO 2027
  1:40.5–1:42.0 Pil: Pendaftaran 2027 dibuka
  1:42.0–1:43.7 Pelekat harga: Bintang kuning: Pendaftaran serendah RM20
@@ -141,7 +140,7 @@ Aster · TOFU+BOFU (gaya rujukan TOFU+BOFU_Sifir9, hitam + kuning) · spokespers
   1:06.3–1:07.9 4 garisan melintang (B-roll 206–215 s)
   1:07.9–1:18.8 Kira titik bertemu → 4, 16 (tulis 6, angka 1 naik ke atas dan dibulatkan) (B-roll 215–239 s)
   1:18.8–1:27.3 Kira 9, jawapan 9 6 4 digaris (B-roll 239–241 s)
- SFX: 0:00.0 pop, 0:01.0 whoosh, 0:01.2 pop, 0:12.4 pop, 0:14.2 whoosh, 0:16.8 pop, 0:21.1 whoosh, 0:25.7 click, 0:31.1 click, 0:36.2 click, 0:41.4 pop, 0:46.0 pop, 0:50.4 pop, 0:51.8 ding, 0:53.5 pop, 0:55.2 whoosh, 0:56.9 click, 1:02.8 click, 1:08.5 click, 1:11.0 pop, 1:16.4 pop, 1:16.8 pop, 1:22.0 pop, 1:24.3 ding, 1:27.3 swoosh_down, 1:28.1 whoosh, 1:31.2 whoosh, 1:32.1 pop, 1:35.0 pop, 1:37.6 whoosh, 1:40.5 pop, 1:42.0 chaching, 1:43.7 pop, 1:44.6 pop, 1:45.1 pop, 1:45.6 pop, 1:46.0 pop, 1:46.5 pop, 1:47.2 pop, 1:51.3 whoosh
+ SFX: 0:00.0 pop, 0:01.0 whoosh, 0:01.2 pop, 0:12.4 pop, 0:14.2 whoosh, 0:16.8 pop, 0:21.1 whoosh, 0:25.7 click, 0:31.1 click, 0:36.2 click, 0:41.4 pop, 0:46.0 pop, 0:50.4 pop, 0:51.8 ding, 0:53.5 pop, 0:55.2 whoosh, 0:56.9 click, 1:02.8 click, 1:08.5 click, 1:11.0 pop, 1:16.4 pop, 1:16.8 pop, 1:22.0 pop, 1:24.3 ding, 1:27.3 swoosh_down, 1:28.1 whoosh, 1:29.3 pop, 1:34.8 whoosh, 1:37.6 whoosh, 1:40.5 pop, 1:42.0 chaching, 1:43.7 pop, 1:44.6 pop, 1:45.1 pop, 1:45.6 pop, 1:46.0 pop, 1:46.5 pop, 1:47.2 pop, 1:51.3 whoosh
 
 4. CTA
  Tengah video (±0:53): Follow saya @aster.edu_tpg (wajah bulatan emas)
@@ -152,6 +151,7 @@ Aster · TOFU+BOFU (gaya rujukan TOFU+BOFU_Sifir9, hitam + kuning) · spokespers
  - Lower third MATH TURBO 2027 + pil 'Pendaftaran 2027 dibuka': Cikgu sebut 'kita dah buka pendaftaran' tetapi tidak sebut 'Math Turbo' atau '2027'. Diletak ikut DNA (bila beralih ke jualan), sama seperti AS-F-003 yang diluluskan. Buang jika tidak mahu.
  - CTA end card WhatsApp vs 'DM saya': Cikgu sebut 'DM saya' (dipapar sebagai pil). End card guna CTA BOFU DNA: WhatsApp Cikgu AlFarhan untuk daftar / cuba kelas.
  - Caption 'tangan 1': Caption ikut sebutan ('Kalau 16 yang ni tangan 1'); penerangan '16: tulis 6, angka 1 naik ke atas' dipapar sebagai cip. Beritahu jika mahu caption diubah.
+ - Sisipan foto Ustaz 6.7 s: Peraturan umum hadkan B-roll 3 s setiap sisipan; dipanjangkan atas permintaan Farhan supaya petikan sempat dibaca. Suara Cikgu terus berjalan.
  - Fail video tidak dimuat naik ke Drive: RINGKASAN.txt disimpan dalam 02_EDITED/_PREVIEW/; video preview dan thumbnail ada dalam halaman ini.
 
 6. CAPTION TIKTOK + 5 HASHTAG

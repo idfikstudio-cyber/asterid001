@@ -433,7 +433,7 @@ def photo_frame(e, lt):
         lt3.alpha_composite(b1, (0, 0)); lt3.alpha_composite(b2, (0, b1.height + s(8)))
         _photo["lt"] = shadowed(lt3, 12, (0, 6), 150)
     fr = _photo["bg"].copy().convert("RGBA")
-    im = _photo["im"]; cw = 600; ch = int(cw * im.height / im.width)
+    im = _photo["im"]; cw = 500; ch = int(cw * im.height / im.width)
     z = 1.0 + 0.05 * min(1, lt / 3.0)
     pw, ph = int(s(cw) * z), int(s(ch) * z)
     ph_img = im.resize((pw, ph), Image.BICUBIC)
@@ -442,8 +442,40 @@ def photo_frame(e, lt):
     ImageDraw.Draw(card).rounded_rectangle((0, 0, card.width - 1, card.height - 1), s(34), fill=YEL + (255,))
     card.paste(ph_img, (s(8), s(8)), m)
     card = shadowed(card, 18, (0, 10), 160)
-    fr.alpha_composite(card, (s(470) - card.width // 2, s(130)))
-    fr.alpha_composite(_photo["lt"], (s(60), s(130) + int(s(ch) * 1.05) - s(60)))
+    fr.alpha_composite(card, (s(470) - card.width // 2, s(100)))
+    fr.alpha_composite(_photo["lt"], (s(60), s(100) + int(s(ch) * 1.05) - s(60)))
+    if e.get("quote") and lt >= e["qt"] - e["s"]:
+        if "q" not in _photo:
+            words = e["quote"].split(); f = F("Poppins-ExtraBold", 46); lines, cur = [], []
+            for w in words:
+                if cur and f.getlength(" ".join(cur + [w])) > s(760): lines.append(cur); cur = []
+                cur.append(w)
+            lines.append(cur)
+            rows = []
+            for i, ln in enumerate(lines):
+                toks = list(ln)
+                if i == 0: toks[0] = "“" + toks[0]
+                if i == len(lines) - 1: toks[-1] = toks[-1] + "”"
+                parts = [text_img(t, f, YEL if t.strip("“”,") == "25" else WHITE) for t in toks]
+                gap = s(14); wd = sum(x.width for x in parts) + gap * (len(parts) - 1)
+                hb = f.getbbox("ÀgHy"); hh = hb[3] - hb[1] + 6
+                row = Image.new("RGBA", (wd, hh), (0, 0, 0, 0)); x = 0
+                for t, pimg in zip(toks, parts):
+                    row.alpha_composite(pimg, (x, max(0, f.getbbox(t)[1] - hb[1]))); x += pimg.width + gap
+                rows.append(row)
+            src_t = text_img("— Ustaz Badli Shah", F("Poppins-SemiBold", 30), YEL)
+            bw = max(r_.width for r_ in rows + [src_t]) + s(70)
+            bh = sum(r_.height + s(6) for r_ in rows) + src_t.height + s(64)
+            box = rbox((bw, bh), 22, NAVY + (225,), outline=YEL + (255,), width=max(1, s(3)))
+            y = s(24)
+            for r_ in rows: box.alpha_composite(r_, ((bw - r_.width) // 2, y)); y += r_.height + s(6)
+            box.alpha_composite(src_t, ((bw - src_t.width) // 2, y + s(10)))
+            _photo["q"] = shadowed(box, 14, (0, 6), 150)
+        qa = min(1.0, (lt - (e["qt"] - e["s"])) / 0.15)
+        q = _photo["q"]
+        if qa < 1:
+            q = q.copy(); q.putalpha(q.split()[3].point(lambda v: int(v * qa)))
+        fr.alpha_composite(q, (s(470) - q.width // 2, s(100) + int(s(ch) * 1.05) + s(115)))
     return fr
 
 def compose(src, st, bg):
@@ -459,9 +491,10 @@ def compose(src, st, bg):
                 a = min(1.0, (st - ph[0]["s"]) / 0.12, (ph[0]["e"] - st) / 0.12)
                 base = full_frame(src, zoom_at(st, P.ZOOM)).convert("RGBA")
                 fr = Image.blend(base, photo_frame(ph[0], st - ph[0]["s"]), max(0.0, a))
+                capy = 1410
             else:
-                fr = full_frame(src, zoom_at(st, P.ZOOM)).convert("RGBA")
-            capy = 1330; wm = (60, 250)
+                fr = full_frame(src, zoom_at(st, P.ZOOM)).convert("RGBA"); capy = 1330
+            wm = (60, 250)
         fr.alpha_composite(WM, (s(wm[0]), s(wm[1])))
         for e in P.E:
             if e["s"] <= st < e["e"] and e["kind"] != "photo":
