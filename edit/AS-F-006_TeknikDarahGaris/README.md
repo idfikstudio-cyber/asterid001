@@ -1,0 +1,14 @@
+# AS-F-006_TeknikDarahGaris (Aster, TOFU)
+
+Status: **preview v1, menunggu komen Farhan.** Artifact: https://claude.ai/artifact/4ysUSXgB97DgriaW82GiW9
+
+Struktur kerja (sama seperti scratchpad sesi): `dl/` (main.mp4, broll.mp4, face.png dari Drive), `fonts/` (Poppins, Caveat), `work/`, `page/`, `scripts/`.
+
+1. `scripts/transcribe.py work/main16.wav work/transcript.json` (Whisper large-v3, masa per perkataan)
+2. `scripts/plan.py`: potongan senyap, peta B-roll ikut sebutan, zoom, caption, grafik, SFX
+3. `scripts/music.py work/music.wav 125`: muzik latar dijana sendiri (MUSIC/ kosong)
+4. `scripts/render.py 0.5 work/prev_v.mp4 work/thumb_540.png` (preview) atau `1.0` (final 1080x1920)
+5. `scripts/audio.py work/mix.wav`: denoise, SFX, muzik + ducking, -14 LUFS / -1.5 dBTP
+6. `scripts/gen_page.py v1`: halaman preview Artifact dari `page/template.html`
+
+SFX dari `edit/sfx/`.
