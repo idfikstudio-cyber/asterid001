@@ -40,6 +40,8 @@ sfx = [[round(t, 2), f.replace(".wav", "")] for t, f, g in R["SFXL"]]
 zoom = []
 for t, z in R["ZOOM"]:
     zoom.append({"t": round(t + O, 2), "m": "100% (asas)" if z == 1 else f"{round(z*100)}% punch-in"})
+zoom.append({"t": round(8.90 + O, 2), "m": "165% close-up muka pada “duit tu hilang” (zoom masuk 0.2 s, hingga 0:10.8)"})
+zoom.sort(key=lambda x: x["t"])
 SEG = [
  [0, 1.0, "Thumbnail", "Hook DUIT YURAN DALAM LACI? + gambar kes pecah masuk"],
  [1.0, 6.18, "Duit dalam laci", "Kutip pagi, bank-in petang (B-roll duit selit). Kalau hilang, siapa tanggung? Muzik 1 (tegang)"],
@@ -50,6 +52,7 @@ SEG = [
  [R["BODY_END"], D, "End card", "CTA Follow TikTok @yuran.my"],
 ]
 DONE = [
+ ["v3: Close-up pada “hilang”", "Komen Farhan: pada “duit tu hilang” (0:09.9–0:10.8) wajah zoom masuk ke close-up 165% dalam 0.2 s, kemudian kembali ke saiz asas pada “Siapa yang akan tanggung”.", 9.9],
  ["v2: B-roll duit selit & duit dalam laci", "Komen Farhan: B-ROLL/duit selit.jpeg pada “petang nanti baru nak pergi bank-in” (0:03.1–0:05.3) dan B-ROLL/Duit dalam laci.jpeg pada “Itu belum cerita lagi kalau duit kurang” (0:14.9–0:17.8). Suara terus berjalan; label Farhan · Yuran.my kini tamat pada 0:03.1 supaya tidak bertindih dengan B-roll.", O + R["B0"][0]],
  ["Guna video trim Farhan", "TOFU_Duit_yuran_dalam_laci.mp4 (39.9 s, 1080×1920, HEVC). Isi tidak dipotong; tiada senyap lebih 0.35 s.", 1.0],
  ["Kes kecuaian / pecah masuk (arahan Farhan)", "3 sisipan B-roll kes dari B-ROLL/ (setiap satu 3 s, suara terus berjalan): hantaran pecah masuk KAFAI As Syariff Banting, artikel polis buru suspek pecah masuk sekolah agama curi duit + tajuk Media Selangor, dan gambar pejabat sekolah selepas dipecah masuk. Nama sekolah tidak diblur (arahan Farhan). Tiada teks atau fakta ditambah pada artikel.", O + B1[0]],

@@ -1,7 +1,7 @@
-YM-F-005_Duit_yuran_dalam_laci — RINGKASAN PREVIEW v2 (B-roll duit selit & duit dalam laci)
+YM-F-005_Duit_yuran_dalam_laci — RINGKASAN PREVIEW v3 (close-up pada "duit tu hilang")
 Brand: Yuran.my | Spokesperson: Farhan | Jenis: TOFU | Durasi: 42.4 s (540x960 preview)
 Sumber: 01_RAW/2026-10-30_005_FARHAN/TOFU_Duit_yuran_dalam_laci.mp4 (39.9 s, SUDAH DITRIM oleh Farhan, isi tidak dipotong)
-Halaman preview: https://claude.ai/artifact/HbjLRRgCSWFU2XeiM5sqVq (v2)
+Halaman preview: https://claude.ai/artifact/HbjLRRgCSWFU2XeiM5sqVq (v3)
 
 1. TEKS HOOK / THUMBNAIL
    DUIT YURAN / DALAM / LACI?  (yuran biru aksen, LACI? dalam kotak biru #29ABE2) + kad gambar kes pecah masuk bertanda PECAH MASUK (kiri muka). Frame Farhan pandang kamera (sumber 0:02.4). 1 saat, tiada logo Yuran.my.
@@ -59,6 +59,7 @@ Halaman preview: https://claude.ai/artifact/HbjLRRgCSWFU2XeiM5sqVq (v2)
    0:34.7-0:37.7  B-ROLL GAMBAR: B-ROLL/PecahmasukKafa 2.jpg: pejabat sekolah selepas pecah masuk (29.03.2026), zoom perlahan
    0:37.8-0:40.9  MOTION KOMEN: Panel komen naik: “Ada sekolah kena pecah masuk?” → “Kongsikan pengalaman...” ditaip dalam kotak komen → butang hantar berdenyut pada “Cuba komen”. Tiada komen palsu dipaparkan
    0:40.9-0:42.4  END CARD: Logo putih + Cara MUDAH Urus Yuran + kad profil TikTok Yuran.My Street @yuran.my, butang + Follow ditekan jadi Following ✓ + Follow TikTok Yuran.my untuk tips urus yuran sekolah
+   0:09.9-0:10.8  CLOSE-UP (v3): zoom masuk ke 165% pada "duit tu hilang"
    Punch-in: 0:01.0 100% (asas), 0:04.7 112% punch-in, 0:06.2 100% (asas), 0:14.9 112% punch-in, 0:18.9 100% (asas), 0:21.7 112% punch-in, 0:23.6 100% (asas), 0:25.6 112% punch-in, 0:29.1 100% (asas), 0:33.4 112% punch-in, 0:34.7 100% (asas)
    Muzik: 0:00-0:20.3 'Echoes' (Andrew Ev) babak masalah/tegang -> crossfade 1 s pada 'Ini bukan soal amanah' -> 0:20.3-0:42.4 'Dreaming Big' (Ahjay Stelino) babak sistem/harapan. Mixkit Stock Music Free License. ~24 dB di bawah suara, ducking.
    SFX (lembut, dijana sendiri): 0:00.9 whoosh, 0:03.0 whoosh, 0:14.9 whoosh, 0:06.3 whoosh, 0:10.7 whoosh, 0:12.1 pop, 0:34.6 whoosh, 0:20.3 pop, 0:23.6 ding, 0:25.6 pop, 0:26.4 pop, 0:28.2 pop, 0:29.4 pop, 0:37.8 whoosh, 0:38.2 tick, 0:38.6 tick, 0:39.0 tick, 0:39.5 tick, 0:40.9 ding, 0:41.7 click

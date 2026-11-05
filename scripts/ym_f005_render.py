@@ -72,16 +72,20 @@ def reader(t0=0):
     return subprocess.Popen(["ffmpeg", "-v", "error", "-ss", str(t0), "-i", SRC, "-vf", GRADE + ",fps=30",
                              "-f", "rawvideo", "-pix_fmt", "rgb24", "-"], stdout=subprocess.PIPE)
 SW, SH = 1080, 1920
+CLOSE = [(8.90, 9.80)]   # close-up muka pada "duit tu hilang" (0:10, v3, arahan Farhan)
+CLOSE_Z = 1.65
 def zoom_at(t):
     z = 1.0
     for a, v in ZOOM:
         if t >= a: z = v
+    for a, b in CLOSE:
+        if a <= t < b: z = z + (CLOSE_Z - z) * ease((t - a) / 0.22)
     return z
 def place(fr, z):
     im = Image.fromarray(fr)
     if z != 1.0:
         cw, ch = SW / z, SH / z
-        cx, cy = SW / 2, SH * 0.30          # muka kekal di sepertiga atas
+        cx, cy = SW / 2, SH * (0.30 + 0.035 * min(1, max(0, z - 1.15) / 0.23))   # muka kekal di sepertiga atas; close-up ditarik ke muka
         x0 = cx - cw / 2; y0 = cy - ch * 0.30
         im = im.crop((int(x0), int(y0), int(x0 + cw), int(y0 + ch)))
     return im.resize((W, H), Image.LANCZOS)
