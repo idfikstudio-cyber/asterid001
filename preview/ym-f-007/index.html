@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ms"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>YM-F-007 Pantau Yuran</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: telefon (sticky) di kiri, helaian edit bertab di kanan; bertindan di telefon. Gaya Yuran.my: biru korporat + biru aksen, kemas. */
+:root{
+  --bg:#f2f4f9; --surface:#ffffff; --ink:#1d2033; --muted:#596079; --line:#dde1ec; --chip:#eaedf6;
+  --navy:#2a3b8f; --accent:#29abe2; --accent-ink:#0b7fb0; --accent-soft:#d8f0fb;
+  --c-seg:#2a3b8f; --c-mg:#29abe2; --c-sfx:#c8435a; --ok:#1f7a4d; --warn:#b45309;
+  --f-body:"Source Sans 3","Segoe UI",system-ui,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#0d1122; --surface:#151b33; --ink:#e8ebf6; --muted:#9aa2bf; --line:#27304f; --chip:#1d2541;
+  --navy:#9fb0f5; --accent:#4cc3f2; --accent-ink:#7fd5f7; --accent-soft:#163552;
+  --c-seg:#9fb0f5; --c-mg:#4cc3f2; --c-sfx:#ff7d92; --ok:#4ccf8f; --warn:#f0a44b; color-scheme:dark}}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.55}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-top:calc(20px + env(safe-area-inset-top,0px));padding-bottom:calc(56px + env(safe-area-inset-bottom,0px))}
+header.top{display:flex;flex-wrap:wrap;gap:8px 24px;align-items:end;justify-content:space-between;margin-bottom:18px}
+h1{font-weight:800;font-size:clamp(26px,4vw,38px);line-height:1.08;margin:0;text-wrap:balance;letter-spacing:-.015em;color:var(--navy)}
+h1 span{color:var(--ink);font-weight:600}
+.status{display:inline-flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:14px;color:var(--muted)}
+.status b{background:var(--accent-soft);color:var(--accent-ink);font-weight:700;padding:2px 10px;border-radius:999px;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.grid{display:grid;grid-template-columns:minmax(0,400px) minmax(0,1fr);gap:28px;align-items:start}
+@media (max-width:860px){.grid{grid-template-columns:minmax(0,1fr)}}
+.player{position:sticky;top:calc(env(safe-area-inset-top,0px) + 12px);display:flex;flex-direction:column;gap:10px;max-width:400px;width:100%;margin-inline:auto}
+@media (max-width:860px){.player{position:static}}
+.phone{width:100%;aspect-ratio:9/16;border-radius:22px;overflow:hidden;background:#000;box-shadow:0 18px 50px -22px rgba(20,30,90,.55)}
+.phone video{width:100%;height:100%;display:block;object-fit:contain;background:#000}
+.hint{font-size:13px;color:var(--muted);margin:0}
+.panel{min-width:0;display:flex;flex-direction:column;gap:14px}
+.tl{position:relative;height:58px;border-radius:10px;background:var(--surface);border:1px solid var(--line);overflow:hidden;cursor:pointer}
+.tl .seg{position:absolute;top:0;height:22px;border-right:1px solid var(--bg);font:600 11px var(--f-body);color:var(--bg);background:var(--c-seg);padding:4px 6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tl .mg{position:absolute;top:27px;height:10px;border-radius:3px;background:var(--c-mg);opacity:.9}
+.tl .sx{position:absolute;top:42px;width:2px;height:10px;background:var(--c-sfx)}
+.tl .ph{position:absolute;top:0;bottom:0;width:2px;background:var(--c-sfx)}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:13px;color:var(--muted);margin-top:8px}
+.legend span{display:inline-flex;gap:6px;align-items:center}
+.legend i{width:10px;height:10px;border-radius:3px}
+.tabs{display:flex;gap:2px;flex-wrap:wrap;border-bottom:1px solid var(--line)}
+.tab{font:600 15px var(--f-body);background:none;border:0;border-bottom:3px solid transparent;color:var(--muted);padding:10px 10px 8px;cursor:pointer}
+.tab[aria-selected="true"]{color:var(--ink);border-color:var(--accent)}
+.tab .n{display:inline-block;min-width:18px;margin-left:4px;padding:0 5px;border-radius:99px;background:var(--warn);color:var(--surface);font-size:11px;font-weight:700;text-align:center}
+:is(.tab,.cap-row,.ev,.tl,.btn,a):focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+a{color:var(--accent-ink)}
+.pane{min-width:0}
+.pane h2{font-weight:800;font-size:21px;margin:6px 0 6px;color:var(--navy)}
+.pane h3{font-size:16px;margin:18px 0 6px;font-weight:700}
+.pane p,.pane li{max-width:68ch}
+.pane p{margin:0 0 10px}
+.caps,.evs{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.cap-row,.ev{display:grid;gap:10px;padding:8px 6px;border:0;border-bottom:1px solid var(--line);background:none;text-align:left;font:inherit;color:inherit;cursor:pointer;align-items:baseline}
+.cap-row{grid-template-columns:64px minmax(0,1fr)}
+.ev{grid-template-columns:64px 130px minmax(0,1fr)}
+@media (max-width:520px){.ev{grid-template-columns:56px minmax(0,1fr)}.ev .k{grid-column:2}}
+.cap-row:hover,.ev:hover{background:var(--chip)}
+.cap-row.on{background:var(--accent-soft)}
+time{font-family:var(--f-mono);font-variant-numeric:tabular-nums;color:var(--muted);font-size:13px}
+.hl{font-weight:700;color:var(--accent-ink)}
+.fix{background:var(--accent-soft);color:var(--accent-ink);border-radius:4px;padding:0 4px;border-bottom:1px dashed var(--accent)}
+.cap-row .sec{display:block;font-size:12px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+.ev .k{font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--accent-ink)}
+.ev .k.sfx{color:var(--c-sfx)}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:15px;min-width:460px}
+th,td{text-align:left;padding:8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700}
+td.n{font-family:var(--f-mono);font-size:13px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.list{display:flex;flex-direction:column;gap:10px;padding:0;margin:0;list-style:none}
+.q{border:1px solid var(--line);border-left:4px solid var(--warn);border-radius:10px;padding:10px 14px;background:var(--surface)}
+.q.done{border-left-color:var(--ok)}
+.q b{display:block;margin-bottom:2px}
+.tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:1px 8px;border-radius:99px;margin-right:6px}
+.tag.w{background:color-mix(in srgb,var(--warn) 18%,transparent);color:var(--warn)}
+.tag.o{background:color-mix(in srgb,var(--ok) 18%,transparent);color:var(--ok)}
+.tt{border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:14px 16px;white-space:pre-wrap;font-size:16px}
+.tt .hs{color:var(--accent-ink);font-weight:600}
+.btn{font:600 15px var(--f-body);border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:10px;padding:8px 14px;cursor:pointer;min-height:40px;margin-top:10px}
+.copied{font-size:14px;color:var(--ok);margin-left:8px}
+</style></head><body>
+
+<div class="wrap">
+  <header class="top">
+    <h1>YM-F-007 <span>Pantau yuran dalam 2 minit</span></h1>
+    <span class="status"><b>Preview v1</b> TOFU · Farhan · 5 Nov 2026 · 540×960 · 93.2 saat</span>
+  </header>
+
+  <div class="grid">
+    <section class="player" aria-label="Pemain preview">
+      <div class="phone"><video id="v" controls playsinline preload="metadata" poster="thumb.jpg" src="preview.mp4"></video></div>
+      <p class="hint">Tekan ▶ untuk main dengan bunyi. Klik baris transkrip atau cue pelan edit untuk lompat ke masa itu.</p>
+    </section>
+
+    <section class="panel">
+      <div>
+        <div class="tl" id="tl" role="slider" tabindex="0" aria-label="Garis masa edit" aria-valuemin="0" aria-valuemax="93.2" aria-valuenow="0"></div>
+        <div class="legend">
+          <span><i style="background:var(--c-seg)"></i>Babak</span>
+          <span><i style="background:var(--c-mg)"></i>Grafik / animasi</span>
+          <span><i style="background:var(--c-sfx)"></i>Sound effect</span>
+        </div>
+      </div>
+      <div class="tabs" role="tablist">
+        <button class="tab" role="tab" aria-selected="true" data-p="p-tr" id="tab-tr">Transkrip</button>
+        <button class="tab" role="tab" aria-selected="false" data-p="p-ed" id="tab-ed">Pelan edit</button>
+        <button class="tab" role="tab" aria-selected="false" data-p="p-ga" id="tab-ga">Warna &amp; audio</button>
+        <button class="tab" role="tab" aria-selected="false" data-p="p-q" id="tab-q">Status<span class="n" id="nq"></span></button>
+        <button class="tab" role="tab" aria-selected="false" data-p="p-cp" id="tab-cp">Caption</button>
+      </div>
+
+      <div class="pane" id="p-tr" role="tabpanel">
+        <h2>Transkrip</h2>
+        <p>Whisper large-v3 dengan masa setiap perkataan, atas video yang sudah ditrim oleh Farhan (tiada take ulangan, tiada senyap lebih 0.3 s). Masa ialah masa dalam video siap (termasuk thumbnail 1 s). Perkataan <span class="hl">biru tebal</span> ialah kata kunci biru dalam video. Perkataan <span class="fix">berlatar biru</span> berbeza dari transkrip (hover untuk lihat asal); semak di tab Status.</p>
+        <div class="caps" id="caps"></div>
+      </div>
+
+      <div class="pane" id="p-ed" role="tabpanel" hidden>
+        <h2>Pelan edit</h2>
+        <p>Video yang Farhan trim (90.7 s) digunakan terus. Isi tidak dipotong. Video = thumbnail 1 s + isi 90.7 s + end card 1.5 s = 93.2 s (melebihi sasaran TOFU 20–45 s; isi tidak dipotong untuk kejar durasi). Aliran: hook 2 minit → tak payah tunggu admin/kerani → check sendiri guna apa-apa device → dashboard (unpaid, overdue, berapa lama) → <b>demo guna handphone dengan B-roll “B-Roll Pantau Yuran” diselitkan ikut apa yang disebut</b> (200 pelanggan, 1 program, overdue, Jun, Julai, Ogos, September, Oktober) → nak tengok cara follow up? Setiap sisipan B-roll ≤ 3 s, selang-seli dengan muka Farhan.</p>
+        <h3>Babak</h3>
+        <div class="tbl"><table>
+          <thead><tr><th>Masa</th><th>Babak</th><th>Isi / grafik</th></tr></thead>
+          <tbody id="segtbl"></tbody></table></div>
+        <h3>Punch-in zoom</h3>
+        <p>Bertukar pada permulaan ayat (tiada potongan isi). Mata Farhan kekal di sepertiga atas frame.</p>
+        <div class="tbl"><table>
+          <thead><tr><th>Masa video</th><th>Zoom</th></tr></thead>
+          <tbody id="cuttbl"></tbody></table></div>
+        <h3>Semua cue grafik dan SFX</h3>
+        <div class="evs" id="evs"></div>
+      </div>
+
+      <div class="pane" id="p-ga" role="tabpanel" hidden>
+        <h2>Warna dan audio</h2>
+        <h3>Colour grade</h3>
+        <div class="tbl"><table>
+          <thead><tr><th>Langkah</th><th>Nilai</th><th>Kesan</th></tr></thead>
+          <tbody>
+            <tr><td>Kecerahan</td><td class="n">+0.012</td><td>Muka sedikit lebih terang, dinding kelabu tak terbakar.</td></tr>
+            <tr><td>Kontras</td><td class="n">×1.04</td><td>Gambar lebih jelas.</td></tr>
+            <tr><td>Saturasi</td><td class="n">×1.04</td><td>Warna lebih hidup, warna kulit asli dikekalkan (tiada anjakan oren/merah).</td></tr>
+            <tr><td>Ketajaman</td><td class="n">unsharp 0.25</td><td>Kompensasi punch-in 112%.</td></tr>
+            <tr><td>Latar</td><td class="n">tiada blur</td><td>Latar dinding kosong rata, kesan depth of field tidak perlu.</td></tr>
+          </tbody></table></div>
+        <h3>Audio</h3>
+        <div class="tbl"><table>
+          <thead><tr><th>Langkah</th><th>Kesan</th></tr></thead>
+          <tbody>
+            <tr><td>High-pass 70 Hz</td><td>Buang dengung rendah.</td></tr>
+            <tr><td>Noise reduction ringan (8 dB)</td><td>Bunyi bilik berkurang tanpa suara jadi “robot”.</td></tr>
+            <tr><td>Kompresor lembut 2.5:1</td><td>Suara lebih rata dan jelas di telefon.</td></tr>
+            <tr><td>Muzik: “Dreaming Big”, Ahjay Stelino (Mixkit)</td><td>Sepanjang video. Muzik korporat ringan, tenang dan positif (sama seperti YM-F-005/006 yang diluluskan). Mixkit Stock Music Free License (komersial, media sosial, tiada atribusi). MUSIC/ Yuran.my masih kosong.</td></tr>
+            <tr><td>Aras muzik &amp; ducking</td><td>Lebih kurang 24 dB di bawah suara, ducking (sidechain) semasa bercakap; naik pada thumbnail dan end card (tiada suara).</td></tr>
+            <tr><td>SFX</td><td>Whoosh pada setiap B-roll, pop lembut pada setiap callout, kad dan angka besar, ding pada “internet”, tick pada taip komen, click pada Follow. Dijana sendiri, 18–27 dB di bawah suara.</td></tr>
+            <tr><td>Loudness akhir</td><td>−14.0 LUFS, peak −1.4 dBFS.</td></tr>
+          </tbody></table></div>
+      </div>
+
+      <div class="pane" id="p-q" role="tabpanel" hidden>
+        <h2>Status</h2>
+        <h3>Perlu semak</h3>
+        <ul class="list" id="todo"></ul>
+        <h3>Sudah dibuat</h3>
+        <ul class="list" id="done"></ul>
+      </div>
+
+      <div class="pane" id="p-cp" role="tabpanel" hidden>
+        <h2>Caption TikTok</h2>
+        <div class="tt" id="tt"></div>
+        <button class="btn" id="copy">Salin caption</button><span class="copied" id="copied" hidden>Disalin</span>
+      </div>
+    </section>
+  </div>
+</div>
+
+<script>
+const DATA={"caps": [{"s": 1.0, "e": 2.08, "w": [{"t": "Pantau", "hl": true, "fix": null}, {"t": "yuran", "hl": true, "fix": null}, {"t": "dalam", "hl": false, "fix": null}, {"t": "masa", "hl": false, "fix": null}]}, {"s": 2.1, "e": 3.02, "w": [{"t": "2", "hl": true, "fix": null}, {"t": "minit", "hl": true, "fix": null}, {"t": "sahaja.", "hl": false, "fix": null}]}, {"s": 3.04, "e": 4.14, "w": [{"t": "Tak", "hl": false, "fix": null}, {"t": "payah", "hl": false, "fix": null}, {"t": "tunggu", "hl": false, "fix": null}, {"t": "admin,", "hl": false, "fix": null}]}, {"s": 4.16, "e": 5.24, "w": [{"t": "tak", "hl": false, "fix": null}, {"t": "payah", "hl": false, "fix": null}, {"t": "tunggu", "hl": false, "fix": null}, {"t": "kerani,", "hl": false, "fix": null}]}, {"s": 5.26, "e": 6.54, "w": [{"t": "tak", "hl": false, "fix": null}, {"t": "payah", "hl": false, "fix": null}, {"t": "tunggu", "hl": false, "fix": null}, {"t": "siapa-siapa.", "hl": false, "fix": null}]}, {"s": 6.56, "e": 7.36, "w": [{"t": "Kita", "hl": false, "fix": null}, {"t": "boleh", "hl": false, "fix": null}, {"t": "check", "hl": false, "fix": null}, {"t": "sendiri", "hl": false, "fix": null}]}, {"s": 7.38, "e": 8.62, "w": [{"t": "gunakan", "hl": false, "fix": null}, {"t": "handphone,", "hl": true, "fix": null}]}, {"s": 8.64, "e": 9.24, "w": [{"t": "tablet,", "hl": true, "fix": null}]}, {"s": 9.26, "e": 9.86, "w": [{"t": "komputer,", "hl": true, "fix": null}]}, {"s": 9.88, "e": 10.7, "w": [{"t": "apa", "hl": false, "fix": null}, {"t": "sahaja", "hl": false, "fix": null}, {"t": "device", "hl": false, "fix": null}]}, {"s": 10.72, "e": 11.52, "w": [{"t": "yang", "hl": false, "fix": null}, {"t": "boleh", "hl": false, "fix": null}, {"t": "connect", "hl": false, "fix": null}]}, {"s": 11.54, "e": 12.24, "w": [{"t": "dengan", "hl": false, "fix": null}, {"t": "internet.", "hl": false, "fix": null}]}, {"s": 12.26, "e": 14.02, "w": [{"t": "Nak", "hl": false, "fix": null}, {"t": "pantau", "hl": false, "fix": null}, {"t": "prestasi", "hl": false, "fix": null}, {"t": "yuran", "hl": true, "fix": null}]}, {"s": 14.04, "e": 14.72, "w": [{"t": "yang", "hl": false, "fix": null}, {"t": "masuk,", "hl": false, "fix": null}]}, {"s": 14.74, "e": 15.62, "w": [{"t": "kita", "hl": false, "fix": null}, {"t": "sediakan", "hl": false, "fix": null}, {"t": "dashboard", "hl": true, "fix": null}]}, {"s": 15.64, "e": 17.26, "w": [{"t": "untuk", "hl": false, "fix": null}, {"t": "anda", "hl": false, "fix": null}, {"t": "pantau", "hl": false, "fix": null}]}, {"s": 17.28, "e": 18.08, "w": [{"t": "dan", "hl": false, "fix": null}, {"t": "semak", "hl": false, "fix": null}]}, {"s": 18.1, "e": 19.14, "w": [{"t": "secara", "hl": false, "fix": null}, {"t": "konsisten.", "hl": false, "fix": null}]}, {"s": 19.16, "e": 20.82, "w": [{"t": "Berapa", "hl": false, "fix": null}, {"t": "yang", "hl": false, "fix": null}, {"t": "unpaid,", "hl": true, "fix": null}]}, {"s": 20.84, "e": 22.34, "w": [{"t": "berapa", "hl": false, "fix": null}, {"t": "yang", "hl": false, "fix": null}, {"t": "overdue,", "hl": true, "fix": null}]}, {"s": 22.36, "e": 24.24, "w": [{"t": "berapa", "hl": false, "fix": null}, {"t": "lama", "hl": false, "fix": null}, {"t": "dah", "hl": false, "fix": null}, {"t": "overdue.", "hl": true, "fix": null}]}, {"s": 24.26, "e": 25.34, "w": [{"t": "Semuanya", "hl": false, "fix": null}, {"t": "dalam", "hl": false, "fix": null}, {"t": "sistem", "hl": false, "fix": null}]}, {"s": 25.36, "e": 26.0, "w": [{"t": "kita", "hl": false, "fix": null}, {"t": "sediakan.", "hl": false, "fix": null}]}, {"s": 26.02, "e": 27.7, "w": [{"t": "Jom", "hl": false, "fix": null}, {"t": "saya", "hl": false, "fix": null}, {"t": "tunjukkan", "hl": false, "fix": null}, {"t": "dashboard,", "hl": true, "fix": null}]}, {"s": 27.72, "e": 28.66, "w": [{"t": "pantau", "hl": false, "fix": null}, {"t": "yuran", "hl": false, "fix": null}]}, {"s": 28.68, "e": 29.92, "w": [{"t": "guna", "hl": false, "fix": null}, {"t": "handphone", "hl": true, "fix": null}, {"t": "sahaja.", "hl": false, "fix": null}]}, {"s": 29.94, "e": 30.92, "w": [{"t": "Bila", "hl": false, "fix": null}, {"t": "kita", "hl": false, "fix": null}, {"t": "dah", "hl": false, "fix": null}, {"t": "login,", "hl": false, "fix": null}]}, {"s": 30.94, "e": 31.96, "w": [{"t": "kita", "hl": false, "fix": null}, {"t": "akan", "hl": false, "fix": null}, {"t": "tengok", "hl": false, "fix": null}, {"t": "semua", "hl": false, "fix": null}]}, {"s": 31.98, "e": 33.22, "w": [{"t": "prestasi-prestasi", "hl": false, "fix": null}]}, {"s": 33.24, "e": 34.16, "w": [{"t": "tentang", "hl": false, "fix": null}, {"t": "yuran", "hl": false, "fix": null}]}, {"s": 34.18, "e": 35.0, "w": [{"t": "yang", "hl": false, "fix": null}, {"t": "kita", "hl": false, "fix": null}, {"t": "kenakan.", "hl": false, "fix": null}]}, {"s": 35.02, "e": 35.96, "w": [{"t": "Yang", "hl": false, "fix": null}, {"t": "ini", "hl": false, "fix": null}, {"t": "sekarang", "hl": false, "fix": null}, {"t": "ni", "hl": false, "fix": null}]}, {"s": 35.98, "e": 37.28, "w": [{"t": "ada", "hl": false, "fix": null}, {"t": "200.", "hl": true, "fix": null}]}, {"s": 37.3, "e": 38.48, "w": [{"t": "200", "hl": true, "fix": null}, {"t": "ni", "hl": false, "fix": null}, {"t": "maksudnya", "hl": false, "fix": null}]}, {"s": 38.5, "e": 40.38, "w": [{"t": "200", "hl": true, "fix": null}, {"t": "pelanggan.", "hl": true, "fix": null}]}, {"s": 40.4, "e": 41.34, "w": [{"t": "Kita", "hl": false, "fix": null}, {"t": "ada", "hl": false, "fix": null}, {"t": "satu", "hl": false, "fix": null}, {"t": "sahaja", "hl": false, "fix": null}]}, {"s": 41.36, "e": 42.04, "w": [{"t": "program.", "hl": false, "fix": null}]}, {"s": 42.06, "e": 43.24, "w": [{"t": "Boleh", "hl": false, "fix": null}, {"t": "kita", "hl": false, "fix": null}, {"t": "tengok", "hl": false, "fix": null}, {"t": "view", "hl": false, "fix": null}, {"t": "dah,", "hl": false, "fix": null}]}, {"s": 43.26, "e": 44.56, "w": [{"t": "berapa", "hl": false, "fix": null}, {"t": "yang", "hl": false, "fix": null}, {"t": "overdue.", "hl": true, "fix": null}]}, {"s": 44.58, "e": 45.68, "w": [{"t": "Ini", "hl": false, "fix": null}, {"t": "saya", "hl": false, "fix": null}, {"t": "nak", "hl": false, "fix": null}, {"t": "tekankan", "hl": false, "fix": null}]}, {"s": 45.7, "e": 46.56, "w": [{"t": "dekat", "hl": false, "fix": null}, {"t": "sini", "hl": false, "fix": null}, {"t": "adalah", "hl": false, "fix": null}]}, {"s": 46.58, "e": 48.2, "w": [{"t": "bulanan", "hl": true, "fix": null}, {"t": "collection.", "hl": true, "fix": null}]}, {"s": 48.22, "e": 48.52, "w": [{"t": "Contoh,", "hl": false, "fix": null}]}, {"s": 48.54, "e": 49.82, "w": [{"t": "kita", "hl": false, "fix": null}, {"t": "semak", "hl": false, "fix": null}, {"t": "pada", "hl": false, "fix": null}, {"t": "bulan", "hl": false, "fix": null}, {"t": "Jun.", "hl": true, "fix": null}]}, {"s": 49.84, "e": 50.42, "w": [{"t": "Bila", "hl": false, "fix": null}, {"t": "kita", "hl": false, "fix": null}, {"t": "semak", "hl": false, "fix": null}]}, {"s": 50.44, "e": 51.2, "w": [{"t": "pada", "hl": false, "fix": null}, {"t": "bulan", "hl": false, "fix": null}, {"t": "Jun,", "hl": true, "fix": null}]}, {"s": 51.22, "e": 51.92, "w": [{"t": "waktu", "hl": false, "fix": null}, {"t": "ni", "hl": false, "fix": null}, {"t": "dia", "hl": false, "fix": null}, {"t": "tak", "hl": false, "fix": null}]}, {"s": 51.94, "e": 52.86, "w": [{"t": "guna", "hl": false, "fix": null}, {"t": "sistem", "hl": false, "fix": null}, {"t": "lagi.", "hl": false, "fix": null}]}, {"s": 52.88, "e": 54.0, "w": [{"t": "Jadinya", "hl": false, "fix": null}, {"t": "tak", "hl": false, "fix": null}, {"t": "ada", "hl": false, "fix": null}, {"t": "record,", "hl": true, "fix": null}]}, {"s": 54.02, "e": 54.42, "w": [{"t": "tak", "hl": false, "fix": null}, {"t": "ada", "hl": false, "fix": null}, {"t": "data.", "hl": true, "fix": null}]}, {"s": 54.44, "e": 55.72, "w": [{"t": "Jadi,", "hl": false, "fix": null}, {"t": "kalau", "hl": false, "fix": null}, {"t": "kita", "hl": false, "fix": null}, {"t": "nak", "hl": false, "fix": null}, {"t": "tengok", "hl": false, "fix": null}]}, {"s": 55.74, "e": 56.38, "w": [{"t": "bulan", "hl": false, "fix": null}, {"t": "Julai.", "hl": true, "fix": null}]}, {"s": 56.4, "e": 57.14, "w": [{"t": "Pada", "hl": false, "fix": null}, {"t": "bulan", "hl": false, "fix": null}, {"t": "Julai,", "hl": true, "fix": null}]}, {"s": 57.16, "e": 57.92, "w": [{"t": "kita", "hl": false, "fix": null}, {"t": "dah", "hl": false, "fix": null}, {"t": "tahu", "hl": false, "fix": null}, {"t": "dah", "hl": false, "fix": null}]}, {"s": 57.94, "e": 58.8, "w": [{"t": "berapa", "hl": false, "fix": null}, {"t": "peratus", "hl": false, "fix": null}]}, {"s": 58.82, "e": 59.7, "w": [{"t": "yang", "hl": false, "fix": null}, {"t": "belum", "hl": false, "fix": null}, {"t": "collect,", "hl": false, "fix": null}]}, {"s": 59.72, "e": 60.46, "w": [{"t": "berapa", "hl": false, "fix": null}, {"t": "peratus", "hl": false, "fix": null}]}, {"s": 60.48, "e": 61.08, "w": [{"t": "yang", "hl": false, "fix": null}, {"t": "dah", "hl": false, "fix": null}, {"t": "collect.", "hl": false, "fix": null}]}, {"s": 61.1, "e": 62.32, "w": [{"t": "Kat", "hl": false, "fix": null}, {"t": "sini,", "hl": false, "fix": null}, {"t": "bulan", "hl": false, "fix": null}, {"t": "Julai,", "hl": true, "fix": null}]}, {"s": 62.34, "e": 63.5, "w": [{"t": "100%", "hl": true, "fix": null}, {"t": "collection.", "hl": false, "fix": null}]}, {"s": 63.52, "e": 64.08, "w": [{"t": "Jom", "hl": false, "fix": null}, {"t": "kita", "hl": false, "fix": null}, {"t": "tengok", "hl": false, "fix": null}]}, {"s": 64.1, "e": 65.04, "w": [{"t": "pada", "hl": false, "fix": null}, {"t": "bulan", "hl": false, "fix": null}, {"t": "Ogos.", "hl": true, "fix": null}]}, {"s": 65.06, "e": 65.92, "w": [{"t": "Pada", "hl": false, "fix": null}, {"t": "bulan", "hl": false, "fix": null}, {"t": "Ogos,", "hl": true, "fix": null}]}, {"s": 65.94, "e": 66.94, "w": [{"t": "peningkatan", "hl": true, "fix": null}, {"t": "berlaku.", "hl": false, "fix": null}]}, {"s": 66.96, "e": 68.3, "w": [{"t": "Dan", "hl": false, "fix": null}, {"t": "kita", "hl": false, "fix": null}, {"t": "tengok", "hl": false, "fix": null}, {"t": "kat", "hl": false, "fix": null}, {"t": "sini,", "hl": false, "fix": null}]}, {"s": 68.32, "e": 70.24, "w": [{"t": "100%", "hl": true, "fix": null}, {"t": "juga", "hl": false, "fix": null}, {"t": "collection.", "hl": false, "fix": null}]}, {"s": 70.26, "e": 71.24, "w": [{"t": "Pada", "hl": false, "fix": null}, {"t": "bulan", "hl": false, "fix": null}, {"t": "September,", "hl": true, "fix": null}]}, {"s": 71.26, "e": 72.6, "w": [{"t": "berlaku", "hl": false, "fix": null}, {"t": "lagi", "hl": false, "fix": null}, {"t": "peningkatan", "hl": true, "fix": null}]}, {"s": 72.62, "e": 73.3, "w": [{"t": "dengan", "hl": false, "fix": null}, {"t": "prestasi", "hl": false, "fix": null}]}, {"s": 73.32, "e": 74.98, "w": [{"t": "kutipan", "hl": false, "fix": null}, {"t": "yuran", "hl": false, "fix": null}, {"t": "100%.", "hl": true, "fix": null}]}, {"s": 75.0, "e": 76.04, "w": [{"t": "Tak", "hl": false, "fix": null}, {"t": "ada", "hl": false, "fix": null}, {"t": "overdue", "hl": true, "fix": null}, {"t": "tau.", "hl": false, "fix": null}]}, {"s": 76.06, "e": 76.68, "w": [{"t": "Dan", "hl": false, "fix": null}, {"t": "Oktober", "hl": true, "fix": "Otober (transkrip)"}, {"t": "pula", "hl": false, "fix": null}]}, {"s": 76.7, "e": 77.26, "w": [{"t": "macam", "hl": false, "fix": null}, {"t": "mana?", "hl": false, "fix": null}]}, {"s": 77.28, "e": 78.58, "w": [{"t": "Oktober", "hl": true, "fix": "Otober (transkrip)"}, {"t": "ni", "hl": false, "fix": null}, {"t": "baru", "hl": false, "fix": null}, {"t": "lagi", "hl": false, "fix": null}, {"t": "kan.", "hl": false, "fix": null}]}, {"s": 78.6, "e": 79.56, "w": [{"t": "Untuk", "hl": false, "fix": null}, {"t": "bulan", "hl": false, "fix": null}, {"t": "Oktober", "hl": true, "fix": "Otober (transkrip)"}, {"t": "ni", "hl": false, "fix": null}]}, {"s": 79.58, "e": 81.2, "w": [{"t": "kita", "hl": false, "fix": null}, {"t": "tengok", "hl": false, "fix": null}, {"t": "hampir", "hl": false, "fix": null}, {"t": "70%", "hl": true, "fix": null}]}, {"s": 81.22, "e": 81.98, "w": [{"t": "kutipan", "hl": false, "fix": null}, {"t": "yang", "hl": false, "fix": null}, {"t": "telah", "hl": false, "fix": null}]}, {"s": 82.0, "e": 82.96, "w": [{"t": "berjaya", "hl": false, "fix": null}, {"t": "dikutip.", "hl": false, "fix": null}]}, {"s": 82.98, "e": 84.42, "w": [{"t": "Tinggal", "hl": false, "fix": null}, {"t": "lagi", "hl": false, "fix": null}, {"t": "30%", "hl": true, "fix": null}, {"t": "sahaja.", "hl": false, "fix": null}]}, {"s": 84.44, "e": 85.58, "w": [{"t": "Nak", "hl": false, "fix": null}, {"t": "saya", "hl": false, "fix": null}, {"t": "tunjuk", "hl": false, "fix": null}, {"t": "tak?", "hl": false, "fix": null}]}, {"s": 85.6, "e": 86.8, "w": [{"t": "Macam", "hl": false, "fix": null}, {"t": "mana", "hl": false, "fix": null}, {"t": "nak", "hl": false, "fix": null}, {"t": "follow", "hl": true, "fix": null}, {"t": "up?", "hl": true, "fix": null}]}, {"s": 86.82, "e": 87.9, "w": [{"t": "Sebab", "hl": false, "fix": null}, {"t": "tengah", "hl": false, "fix": null}, {"t": "sakit", "hl": false, "fix": null}, {"t": "perut", "hl": false, "fix": null}, {"t": "ni.", "hl": false, "fix": null}]}, {"s": 87.92, "e": 89.0, "w": [{"t": "Nak", "hl": false, "fix": null}, {"t": "membuang", "hl": false, "fix": null}, {"t": "jap.", "hl": false, "fix": null}]}, {"s": 89.02, "e": 89.62, "w": [{"t": "Saya", "hl": false, "fix": null}, {"t": "follow", "hl": true, "fix": null}, {"t": "up", "hl": true, "fix": null}]}, {"s": 89.64, "e": 90.92, "w": [{"t": "dalam", "hl": false, "fix": null}, {"t": "toilet", "hl": false, "fix": null}, {"t": "lah", "hl": false, "fix": null}, {"t": "eh.", "hl": false, "fix": null}]}, {"s": 90.94, "e": 91.68, "w": [{"t": "Sakit", "hl": false, "fix": null}, {"t": "ni.", "hl": false, "fix": null}]}], "mg": [[0, 1.0, "Thumbnail", "Thumbnail 1 s: PANTAU yuran / dalam / 2 MINIT (kotak biru aksen) + potongan dashboard telefon (September 100%), atas frame Farhan pegang handphone (sumber 0:25.3)"], [2.1, 3.3, "Angka", "“2 minit” teks besar"], [3.1, 6.5, "Kad grafik", "Tak payah tunggu → ✗ Admin → ✗ Kerani → ✗ Siapa-siapa"], [3.4, 6.4, "Label nama", "Pil biru #2A3B8F “Farhan · Yuran.my”, atas-kiri"], [6.6, 12.2, "Kad grafik", "Check sendiri guna → [Handphone] → [Tablet] → [Komputer] → ✓ Apa sahaja device + internet"], [14.74, 17.74, "B-roll Pantau Yuran", "B-Roll Pantau Yuran.mp4 (0:02): dashboard atas (Good Morning, 200 Active Asset, 1 Active Event); zoom perlahan + callout biru"], [19.16, 22.16, "B-roll Pantau Yuran", "B-Roll Pantau Yuran.mp4 (0:54): kad Overdue: 43 Overdue Invoices, RM 6,450 Overdue Amount, 4 Average Days Overdue; zoom perlahan + callout biru"], [22.3, 25.3, "B-roll Pantau Yuran", "B-Roll Pantau Yuran.mp4 (0:54): kad Overdue: 43 Overdue Invoices, RM 6,450 Overdue Amount, 4 Average Days Overdue; zoom perlahan + callout biru"], [35.4, 38.4, "B-roll Pantau Yuran", "B-Roll Pantau Yuran.mp4 (0:02): dashboard atas (Good Morning, 200 Active Asset, 1 Active Event); zoom perlahan + callout biru + pil “200 pelanggan”"], [40.4, 43.4, "B-roll Pantau Yuran", "B-Roll Pantau Yuran.mp4 (0:02): dashboard atas (Good Morning, 200 Active Asset, 1 Active Event); zoom perlahan + callout biru + pil “1 program”"], [46.4, 49.4, "B-roll Pantau Yuran", "B-Roll Pantau Yuran.mp4 (1:01): Collection Stats by Month (pilihan bulan); zoom perlahan + callout biru"], [49.6, 52.6, "B-roll Pantau Yuran", "B-Roll Pantau Yuran.mp4 (1:14): Jun 2026: RM 0, 0.00%; zoom perlahan + callout biru"], [60.5, 63.5, "B-roll Pantau Yuran", "B-Roll Pantau Yuran.mp4 (1:26): Julai 2026: RM 2,600, 100.00%; zoom perlahan + callout biru + pil “100%”"], [64.6, 67.6, "B-roll Pantau Yuran", "B-Roll Pantau Yuran.mp4 (1:44): Ogos 2026: RM 8,750, 100.00%; zoom perlahan + callout biru + pil “Peningkatan”"], [68.2, 69.95, "Angka", "“100%” teks besar + “juga collection”"], [70.4, 73.4, "B-roll Pantau Yuran", "B-Roll Pantau Yuran.mp4 (1:56): September 2026: RM 34,300, 100.00%; zoom perlahan + callout biru + pil “Peningkatan”"], [73.95, 75.95, "Angka", "“100%” teks besar + “Tak ada overdue”"], [78.6, 81.6, "B-roll Pantau Yuran", "B-Roll Pantau Yuran.mp4 (2:20): Oktober 2026: RM 21,500, 68.75%; zoom perlahan + callout biru + pil “hampir 70%”"], [83.3, 84.4, "Angka", "“30%” teks besar + “tinggal lagi”"], [84.44, 86.8, "Motion komen", "Panel komen: “Nak tengok cara follow up?” → “Nak” ditaip → butang hantar berdenyut, pada “Nak saya tunjuk tak? Macam mana nak follow up?”"], [91.7, 93.2, "End card", "Logo putih + Cara MUDAH Urus Yuran + kad profil TikTok @yuran.my, + Follow ditekan jadi Following ✓ + Follow TikTok Yuran.my untuk tips urus yuran sekolah"]], "sfx": [[0.88, "whoosh"], [2.1, "pop"], [3.1, "pop"], [3.8, "pop"], [4.84, "pop"], [6.0, "pop"], [6.6, "pop"], [7.94, "pop"], [8.64, "pop"], [9.26, "pop"], [11.3, "ding"], [14.69, "whoosh"], [15.4, "pop"], [19.11, "whoosh"], [19.7, "pop"], [21.3, "pop"], [22.7, "pop"], [35.35, "whoosh"], [36.1, "pop"], [40.35, "whoosh"], [40.7, "pop"], [42.3, "pop"], [46.35, "whoosh"], [46.7, "pop"], [49.9, "pop"], [50.9, "pop"], [60.45, "whoosh"], [60.8, "pop"], [61.7, "pop"], [64.55, "whoosh"], [64.9, "pop"], [65.9, "pop"], [68.2, "pop"], [70.35, "whoosh"], [70.7, "pop"], [71.8, "pop"], [73.95, "pop"], [78.55, "whoosh"], [78.9, "pop"], [80.5, "pop"], [83.3, "pop"], [84.44, "whoosh"], [85.05, "tick"], [85.25, "tick"], [85.5, "tick"], [91.75, "ding"], [92.5, "click"]], "zoom": [{"t": 1.0, "m": "100% (asas)"}, {"t": 3.04, "m": "112% punch-in"}, {"t": 6.56, "m": "100% (asas)"}, {"t": 12.26, "m": "112% punch-in"}, {"t": 19.16, "m": "100% (asas)"}, {"t": 26.02, "m": "112% punch-in"}, {"t": 29.94, "m": "100% (asas)"}, {"t": 35.02, "m": "112% punch-in"}, {"t": 40.4, "m": "100% (asas)"}, {"t": 44.58, "m": "112% punch-in"}, {"t": 48.22, "m": "100% (asas)"}, {"t": 52.88, "m": "112% punch-in"}, {"t": 54.44, "m": "100% (asas)"}, {"t": 60.48, "m": "112% punch-in"}, {"t": 63.52, "m": "100% (asas)"}, {"t": 66.96, "m": "112% punch-in"}, {"t": 70.26, "m": "100% (asas)"}, {"t": 75.0, "m": "112% punch-in"}, {"t": 76.06, "m": "100% (asas)"}, {"t": 82.98, "m": "112% punch-in"}, {"t": 84.44, "m": "100% (asas)"}, {"t": 86.82, "m": "112% punch-in"}, {"t": 89.02, "m": "100% (asas)"}], "dur": 93.2};
+const SEG=[[0, 1.0, "Thumbnail", "Hook PANTAU YURAN DALAM 2 MINIT + dashboard telefon"], [1.0, 12.26, "Hook & device", "2 minit; tak payah tunggu admin/kerani; check sendiri guna handphone, tablet, komputer"], [12.26, 26.02, "Dashboard", "Pantau prestasi yuran: unpaid, overdue, berapa lama overdue (B-roll dashboard & overdue)"], [26.02, 44.58, "Demo handphone", "Login → 200 pelanggan, 1 program, view overdue (B-roll)"], [44.58, 54.44, "Bulanan collection", "Pilih bulan; Jun belum guna sistem: tiada rekod"], [54.44, 76.06, "Julai–September", "Julai 100%, Ogos peningkatan 100%, September peningkatan 100%, tiada overdue"], [76.06, 84.44, "Oktober", "Hampir 70% dikutip, tinggal 30%"], [84.44, 91.7, "Follow up?", "Nak saya tunjuk cara follow up? (motion komen) + gurauan sakit perut"], [91.7, 93.2, "End card", "CTA TOFU Follow TikTok @yuran.my"]];
+const DONE=[["B-roll “B-Roll Pantau Yuran” (arahan Farhan)", "Rakaman skrin telefon diselitkan pada setiap perkara yang Farhan terangkan semasa demo: dashboard, unpaid/overdue (43 invois), berapa lama overdue (4 hari purata), 200 pelanggan, 1 program, Collection Stats by Month, Jun (RM 0), Julai 100%, Ogos & September (peningkatan), Oktober 68.75% (“hampir 70%”). Setiap sisipan ≤ 3 s, zoom perlahan dan callout biru pada kad yang disebut; suara terus berjalan. Notifikasi WhatsApp yang muncul dalam rakaman (2:32) tidak digunakan.", 14.74], ["Guna video trim Farhan", "TOFU_PantauYuran.mp4 (90.7 s, 1080×1920, HEVC). Tiada take ulangan; satu jeda 0.31 s sahaja (0:43.3), isi tidak dipotong.", 1.0], ["Thumbnail 1 saat", "PANTAU yuran dalam 2 MINIT (dari tajuk skrip & ayat pertama) + potongan dashboard telefon. Tiada logo di awal. PNG 1080×1920 dieksport.", 0.3], ["Angka tepat seperti disebut", "2 minit, 200 pelanggan, 100% (Julai, Ogos, September), hampir 70%, 30%. Angka RM pada skrin B-roll tidak dijadikan teks besar kerana tidak disebut.", 2.1], ["Caption", "Sepanjang video, 1–4 perkataan, Inter ExtraBold putih + outline gelap. Kata kunci biru #29ABE2: pantau yuran, 2 minit, dashboard, unpaid, overdue, 200, nama bulan, 100%, 70%, 30%, peningkatan, record/data, follow up.", 3.0], ["End card TOFU", "CTA Follow TikTok @yuran.my, gaya YM-F-004 hingga 006 yang diluluskan.", 92.0], ["Audio", "High-pass 70 Hz, denoise ringan, kompresor lembut, normalize −14 LUFS; muzik ~24 dB di bawah suara dengan ducking."]];
+const TODO=[["Durasi 93.2 s melebihi TOFU (20–45 s)", "Isi tidak dipotong. Jika mahu pendekkan, Farhan boleh pilih bahagian untuk dibuang, contohnya gurauan penutup (1:26.8–1:31.4) atau ulangan “bila kita semak pada bulan Jun”."], ["Gurauan sakit perut / “nak membuang” di penutup", "“Sebab tengah sakit perut ni. Nak membuang jap. Saya follow up dalam toilet lah eh.” dikekalkan kerana video sudah ditrim. DNA Yuran.my minta nada sopan & profesional; sahkan Farhan selesa ia kekal dalam video akaun syarikat.", 86.82], ["Data dalam B-roll Pantau Yuran", "Angka agregat akaun (200 aset, RM 21,500, RM 6,450 overdue dan lain-lain) dipaparkan tanpa blur. Tiada nama pelajar atau nombor telefon kelihatan. Sahkan akaun ini akaun demo, atau pelanggan setuju angka dipaparkan.", 14.74], ["“200 pelanggan” vs “Active Asset”", "Farhan sebut 200 pelanggan; kad dalam sistem berlabel “200 ACTIVE ASSET”. Pil tulis “200 pelanggan” ikut apa yang disebut.", 36.1], ["“Oktober” (transkrip: “Otober”)", "Caption guna ejaan baku ‘Oktober’.", 76.06], ["“hampir 70%” vs skrin 68.75%", "Teks ikut apa yang disebut (“hampir 70%”); skrin menunjukkan 68.75%, selari dengan ‘hampir’.", 80.5], ["Muzik dari luar folder MUSIC/", "MUSIC/ Yuran.my kosong. Guna “Dreaming Big” (Ahjay Stelino), Mixkit Stock Music Free License, sama seperti YM-F-005/006."], ["Tiada video rujukan gaya", "BRAND/ tiada rujukan-gaya-*.mp4 (Farhan setuju ikut DNA untuk video sebelum ini)."], ["Preview MP4 belum di Drive", "Alat Drive tidak dapat muat naik fail video besar. RINGKASAN dimuat naik ke 02_EDITED/_PREVIEW; MP4 preview dan thumbnail ada di halaman ini."]];
+const TT="Pantau yuran dalam 2 minit je, tak payah tunggu admin atau kerani. Buka dashboard Yuran.my guna handphone: berapa unpaid, berapa overdue, kutipan setiap bulan. Nak tengok cara follow up? Comment “nak” 👇";
+const HS="#yuranmy #yuransekolah #sekolahkafa #pantauyuran #dashboard";
+
+const $=id=>document.getElementById(id);
+const v=$("v"), D=DATA.dur;
+const fmt=t=>{t=Math.max(0,t);const m=Math.floor(t/60),s=t-m*60;return m+":"+(s<10?"0":"")+s.toFixed(1)};
+const seek=t=>{v.currentTime=Math.min(Math.max(0,t),D-0.05);};
+
+const tl=$("tl");let h="";
+SEG.forEach(s=>h+=`<div class="seg" style="left:${s[0]/D*100}%;width:${(s[1]-s[0])/D*100}%" title="${s[2]}">${s[2]}</div>`);
+DATA.mg.forEach(m=>h+=`<div class="mg" style="left:${m[0]/D*100}%;width:${Math.max(.5,(m[1]-m[0])/D*100)}%"></div>`);
+DATA.sfx.forEach(x=>h+=`<div class="sx" style="left:${x[0]/D*100}%"></div>`);
+tl.innerHTML=h+'<div class="ph" id="ph"></div>';
+tl.addEventListener("pointerdown",e=>{const r=tl.getBoundingClientRect();seek((e.clientX-r.left)/r.width*D)});
+tl.addEventListener("keydown",e=>{if(e.key==="ArrowRight")seek(v.currentTime+1);if(e.key==="ArrowLeft")seek(v.currentTime-1)});
+
+const segOf=t=>SEG.find(s=>t>=s[0]&&t<s[1])||SEG[SEG.length-1];
+let last="";
+$("caps").innerHTML=DATA.caps.map((c,i)=>{const sg=segOf(c.s)[2];const head=sg!==last?`<span class="sec">${sg}</span>`:"";last=sg;
+  const txt=c.w.map(w=>w.fix?`<span class="fix${w.hl?" hl":""}" title="Transkrip: ${w.fix}">${w.t}</span>`:w.hl?`<span class="hl">${w.t}</span>`:w.t).join(" ");
+  return `<button class="cap-row" data-t="${c.s}" id="cr${i}"><time>${fmt(c.s)}</time><span>${head}${txt}</span></button>`}).join("");
+
+$("segtbl").innerHTML=SEG.map(s=>`<tr><td class="n"><a href="#" data-t="${s[0]}">${fmt(s[0])}–${fmt(s[1])}</a></td><td>${s[2]}</td><td>${s[3]}</td></tr>`).join("");
+$("cuttbl").innerHTML=DATA.zoom.map(c=>`<tr><td class="n"><a href="#" data-t="${c.t}">${fmt(c.t)}</a></td><td>${c.m}</td></tr>`).join("");
+const evs=DATA.mg.map(m=>({t:m[0],k:m[2],d:m[3]+" (hingga "+fmt(m[1])+")",s:false})).concat(DATA.sfx.map(x=>({t:x[0],k:"SFX",d:x[1],s:true}))).sort((a,b)=>a.t-b.t);
+$("evs").innerHTML=evs.map(e=>`<button class="ev" data-t="${e.t}"><time>${fmt(e.t)}</time><span class="k${e.s?" sfx":""}">${e.k}</span><span>${e.d}</span></button>`).join("");
+
+const li=(d,cls,tag,lab)=>`<li class="q${cls}"><b><span class="tag ${tag}">${lab}</span>${d[0]}</b>${d[1]}${d[2]!=null?` <a href="#" data-t="${d[2]}">Lihat ${fmt(d[2])}</a>`:""}</li>`;
+$("done").innerHTML=DONE.map(d=>li(d," done","o","Siap")).join("");
+$("todo").innerHTML=TODO.map(d=>li(d,"","w","Perlu semak")).join("");
+$("nq").textContent=TODO.length;
+
+$("tt").innerHTML=TT+"\n\n<span class=\"hs\">"+HS+"</span>";
+$("copy").onclick=()=>{const t=TT+"\n\n"+HS;
+  const ok=()=>{$("copied").hidden=false;setTimeout(()=>$("copied").hidden=true,1800)};
+  const sel=()=>{const r=document.createRange();r.selectNodeContents($("tt"));const s=getSelection();s.removeAllRanges();s.addRange(r);};
+  try{navigator.clipboard.writeText(t).then(ok,sel)}catch(e){sel()}};
+
+document.addEventListener("click",e=>{const b=e.target.closest("[data-t]");if(!b||b===tl)return;e.preventDefault();seek(+b.dataset.t+0.02);});
+
+document.querySelectorAll(".tab").forEach(tb=>tb.onclick=()=>{document.querySelectorAll(".tab").forEach(x=>{x.setAttribute("aria-selected",x===tb);$(x.dataset.p).hidden=x!==tb});
+  try{localStorage.setItem("ymf007-tab",tb.id)}catch(e){}});
+try{const k=localStorage.getItem("ymf007-tab");if(k&&$(k))$(k).click();}catch(e){}
+
+let lastCr=-1;
+function loop(){const t=v.currentTime||0;$("ph").style.left=(t/D*100)+"%";tl.setAttribute("aria-valuenow",t.toFixed(1));
+  const ci=DATA.caps.findIndex(c=>t>=c.s&&t<c.e);
+  if(ci!==lastCr){document.querySelectorAll(".cap-row.on").forEach(x=>x.classList.remove("on"));if(ci>=0)$("cr"+ci).classList.add("on");lastCr=ci;}
+  requestAnimationFrame(loop);}
+loop();
+</script>
+</body></html>
