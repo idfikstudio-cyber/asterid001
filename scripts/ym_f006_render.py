@@ -46,9 +46,9 @@ CAP = [
 ]
 ZOOM = [(0.00, 1.00), (5.04, 1.12), (7.30, 1.00), (11.14, 1.12), (12.82, 1.00), (18.64, 1.12), (20.66, 1.00),
         (27.84, 1.12), (32.46, 1.00), (33.32, 1.12), (37.06, 1.00)]
-JAIS_IN, JAIS_OUT = 2.70, 4.95          # "laporan kat JAIS"
+JAIS_IN, JAIS_OUT = 2.62, 4.95          # "laporan kat JAIS" (v2: naik dari belakang bahu)
 CAL = (5.04, 7.25)                      # "Hujung bulan, laporan nak kena hantar kat JAIS"
-RCP = (7.30, 11.10)                     # "Kumpullah semua resit..."
+RCP = (7.30, 11.10)                     # "Kumpullah semua resit..." (v2: hujan resit penuh skrin)
 SHEET = (12.82, 18.62)                  # Excel -> salah -> berjam-jam
 SH_ERR, SH_CLOCK = 15.72, 16.78
 LOGO_IN, LOGO_OUT = 19.80, 20.66        # "Yuran.my"
@@ -59,7 +59,7 @@ PKG = (33.30, 37.04); PKG_C1, PKG_C2 = 34.54, 36.30
 CTA = (37.06, 41.21); CTA_TAP = 37.70
 LABEL_IN, LABEL_OUT = 0.25, 2.60
 THUMB_SRC_T = 11.5
-LOW_WINS = [(JAIS_IN - 0.3, JAIS_OUT), CAL, RCP, SHEET, (LOGO_IN, LOGO_OUT), BA, BB, MASA, PKG, CTA]
+LOW_WINS = [CAL, SHEET, (LOGO_IN, LOGO_OUT), BA, BB, MASA, PKG, CTA]
 def inwin(t, w): return w[0] <= t < w[1]
 
 def ease(x): x = min(1, max(0, x)); return 1 - (1 - x) ** 3
@@ -130,6 +130,11 @@ def caption(base, t):
     a, s = cur; k = ease((t - a) / 0.12)
     y = H * (0.755 if any(inwin(t, w) for w in LOW_WINS) else 0.64)
     tw = ImageDraw.Draw(base).textlength(s.replace("*", ""), font=CAP_FONT) + 30 * S
+    if RCP[0] + 0.8 <= t < RAIN_CLEAR + 0.2:   # jalur gelap supaya caption jelas atas timbunan resit
+        bw_, bh_ = min(W * 0.84, tw * 0.95 + 50 * S), 110 * S
+        band = Image.new("RGBA", (int(bw_), int(bh_)), (0, 0, 0, 0))
+        ImageDraw.Draw(band).rounded_rectangle((0, 0, bw_ - 1, bh_ - 1), radius=int(bh_ / 2), fill=(13, 17, 34, 170))
+        base.alpha_composite(band, (int(CX - bw_ / 2), int(y - bh_ / 2)))
     fit = min(1.0, W * 0.80 / tw)          # caption panjang dikecilkan supaya kekal dalam safe zone
     draw_rich(base, CX, y + (1 - k) * 18 * S, s, CAP_FONT, sc=(0.9 + 0.1 * k) * fit, alpha=k)
 
@@ -192,13 +197,35 @@ def jais_card(cw):
     cd.rounded_rectangle((0, 0, cw - 1, cw - 1), radius=int(36 * S), fill=WHITE, outline=ACC, width=max(2, int(6 * S)))
     card.alpha_composite(_j.resize((cw - 2 * pad, cw - 2 * pad), Image.LANCZOS), (pad, pad))
     return shadowed(card, 14, 110)
-def jais(base, t):
-    if not (JAIS_IN <= t < JAIS_OUT): return
-    kin = back((t - JAIS_IN) / 0.32); kout = 1 - ease((t - (JAIS_OUT - 0.22)) / 0.22)
-    sh = jais_card(int(300 * S)); sc = max(0.01, kin * (0.85 + 0.15 * kout))
-    sh = sh.resize((max(1, int(sh.width * sc)), max(1, int(sh.height * sc))), Image.LANCZOS)
-    fade_layer(sh, min(1, (t - JAIS_IN) / 0.12) * kout)
-    base.alpha_composite(sh, (int(W * 0.47 - sh.width / 2), int(H * 0.57 - sh.height / 2)))
+# v2: logo JAIS naik dari belakang bahu Farhan (mask badan, MediaPipe selfie multiclass)
+SEG_MODEL = os.environ.get("YM_SEG", "")
+_seg = None; _mcache = {}
+def person_mask(fr, key):
+    global _seg
+    if key in _mcache: return _mcache[key]
+    if _seg is None:
+        import mediapipe as mp
+        from mediapipe.tasks import python as mpt
+        from mediapipe.tasks.python import vision
+        _seg = (mp, vision.ImageSegmenter.create_from_options(vision.ImageSegmenterOptions(
+            base_options=mpt.BaseOptions(model_asset_path=SEG_MODEL), output_confidence_masks=True)))
+    mp, sg = _seg
+    r = sg.segment(mp.Image(image_format=mp.ImageFormat.SRGB, data=np.ascontiguousarray(fr)))
+    fg = 1 - r.confidence_masks[0].numpy_view()[..., 0]
+    m = Image.fromarray((np.clip((fg - 0.35) / 0.3, 0, 1) * 255).astype(np.uint8)).filter(ImageFilter.GaussianBlur(2))
+    _mcache[key] = m; return m
+JAIS_X0, JAIS_Y0, JAIS_X1, JAIS_Y1 = 0.58, 0.64, 0.71, 0.305   # mula tersembunyi di belakang dada, naik serong ke sebelah kepala
+def jais_behind(im, fr, t, key):
+    if not (JAIS_IN <= t < JAIS_OUT): return im
+    up = back((t - JAIS_IN) / 0.60); down = ease((t - (JAIS_OUT - 0.35)) / 0.35)
+    f = up - down * up
+    x = JAIS_X0 + (JAIS_X1 - JAIS_X0) * f; y = JAIS_Y0 + (JAIS_Y1 - JAIS_Y0) * f
+    sh = jais_card(int(320 * S))
+    lay = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    lay.alpha_composite(sh, (int(W * x - sh.width / 2), int(H * y - sh.height / 2)))
+    m = place(np.array(person_mask(fr, key).convert("RGB")), zoom_at(t)).convert("L")
+    out = im.copy(); out.alpha_composite(lay)
+    return Image.composite(im, out, m)
 
 def calendar(d, x, y, s, top):
     d.rounded_rectangle((x, y, x + s, y + s), radius=int(s * 0.14), fill=WHITE, outline="#CBD0DA", width=max(2, int(3 * S)))
@@ -226,28 +253,53 @@ def cal_card(base, t):
         lay.alpha_composite(fade_layer(l2, k2))
     put_card(base, lay, k, ko, 0.595)
 
-def receipt(w, h, rnd):
-    r = Image.new("RGBA", (int(w), int(h)), (0, 0, 0, 0)); d = ImageDraw.Draw(r)
-    d.rectangle((0, 0, w - 1, h - 1), fill="#FFFDF6", outline="#D8D2C2", width=max(1, int(2 * S)))
-    d.text((w / 2, h * 0.16), "RESIT", font=F("b", 22), fill="#8A7F68", anchor="mm")
-    for i in range(4):
-        L = w * (0.45 + 0.35 * rnd[i]); d.line((w * 0.12, h * (0.36 + i * 0.14), w * 0.12 + L, h * (0.36 + i * 0.14)), fill="#CFC8B6", width=max(2, int(4 * S)))
+# v2: resit turun macam hujan sampai menutup skrin, kemudian runtuh pada "Besok nak hantar"
+RAIN_END, RAIN_CLEAR = 10.30, 10.95
+def receipt(w, h, rnd, tint):
+    w, h = int(w), int(h); r = Image.new("RGBA", (w, h), (0, 0, 0, 0)); d = ImageDraw.Draw(r)
+    zz = [(0, 0), (w, 0), (w, h - 10 * S)]
+    n = 9
+    for i in range(n, -1, -1): zz.append((w * i / n, h - (0 if i % 2 else 10 * S)))
+    d.polygon(zz, fill=tint, outline="#CFC6B2")
+    d.text((w / 2, h * 0.12), "RESIT", font=F("b", 30), fill="#7E735C", anchor="mm")
+    d.line((w * 0.1, h * 0.21, w * 0.9, h * 0.21), fill="#CFC6B2", width=max(1, int(2 * S)))
+    for i in range(6):
+        L = w * (0.35 + 0.45 * rnd[i % 4]); y = h * (0.30 + i * 0.1)
+        d.line((w * 0.1, y, w * 0.1 + L, y), fill="#D2CBB9", width=max(2, int(5 * S)))
+    d.line((w * 0.55, h * 0.88, w * 0.9, h * 0.88), fill="#B8AE96", width=max(2, int(4 * S)))
     return r
 _rr = np.random.default_rng(3)
-RCP_ITEMS = [(RCP[0] + 0.15 + i * 0.42, _rr.uniform(-1, 1), _rr.uniform(-14, 14), _rr.random(4)) for i in range(8)]
-def rcp_card(base, t):
-    if not inwin(t, RCP): return
-    ch = H * 0.17; lay, d, k, ko = card_base(t, RCP, ch); cw = lay.width
-    d.rounded_rectangle((0, 0, cw - 1, ch - 1), radius=int(30 * S), fill="#EEF1F7")
-    for t0, xo, rot, rnd in RCP_ITEMS:
-        if t < t0: continue
-        p = ease((t - t0) / 0.30)
-        rc = receipt(150 * S, 190 * S, rnd).rotate(rot * (1.0 - 0.3 * p), resample=Image.BICUBIC, expand=True)
-        x = cw / 2 + xo * cw * 0.30 - rc.width / 2; y = (ch * 0.52 - rc.height / 2) - (1 - p) * ch * 0.7
-        lay.alpha_composite(fade_layer(rc, min(1, p * 1.6)), (int(x), int(y)))
-    m = Image.new("L", lay.size, 0); ImageDraw.Draw(m).rounded_rectangle((0, 0, cw - 1, ch - 1), radius=int(30 * S), fill=255)
-    lay.putalpha(Image.fromarray(np.minimum(np.array(lay.getchannel("A")), np.array(m))))
-    put_card(base, lay, k, ko, 0.595)
+_TINTS = ["#FFFDF6", "#FFF9EC", "#FBF7FF", "#F6FBFF", "#FFFDF0"]
+RN = 170
+RAIN = []
+for i in range(RN):
+    q = i / (RN - 1)
+    t_land = RCP[0] + 0.35 + (RAIN_END - RCP[0] - 0.35) * (q ** 0.8)
+    RAIN.append(dict(t_land=t_land, dur=_rr.uniform(0.45, 0.7), x=_rr.uniform(-0.08, 1.08), y=1.02 - 1.22 * q + _rr.uniform(-0.06, 0.06),
+                     rot=_rr.uniform(-32, 32), sway=_rr.uniform(-0.05, 0.05), var=i % 12, drop=_rr.uniform(0, 0.12)))
+RCP_ITEMS = [(r["t_land"], 0, 0, 0) for r in RAIN[::12]]
+_rimg = {}
+def rimg(v):
+    if v not in _rimg:
+        rr = np.random.default_rng(100 + v)
+        _rimg[v] = receipt(300 * S, 380 * S, rr.random(4), _TINTS[v % len(_TINTS)])
+    return _rimg[v]
+_rot = {}
+def rain(im, t):
+    if not (RCP[0] <= t < RAIN_CLEAR + 0.55): return
+    for i, r in enumerate(RAIN):
+        t0 = r["t_land"] - r["dur"]
+        if t < t0: break
+        key = (r["var"], int(r["rot"]))
+        if key not in _rot: _rot[key] = rimg(r["var"]).rotate(r["rot"], resample=Image.BICUBIC, expand=True)
+        img = _rot[key]
+        p = min(1, (t - t0) / r["dur"])
+        ty = r["y"] * H; y = -img.height + (ty + img.height) * (p ** 1.6)
+        x = (r["x"] + r["sway"] * math.sin(p * math.pi * 2)) * W
+        if t >= RAIN_CLEAR + r["drop"]:   # runtuh ke bawah
+            u = t - RAIN_CLEAR - r["drop"]; y += u * 2.2 * H + u * u * 16 * H
+        if y > H + 20: continue
+        im.alpha_composite(img, (int(x - img.width / 2), int(y - img.height / 2)))
 
 def clock(d, cx, cy, r, t):
     d.ellipse((cx - r, cy - r, cx + r, cy + r), fill=WHITE, outline=BLUE, width=max(3, int(6 * S)))
@@ -428,8 +480,13 @@ def thumbnail():
     bx, by = int(CX - bw / 2), int(H * 0.695 - bh / 2)
     d.rounded_rectangle((bx, by, bx + bw, by + bh), radius=int(26 * S), fill=ACC)
     d.text((CX, H * 0.695), "REPORT?", font=fk, fill=WHITE, anchor="mm")
-    sh = jais_card(int(270 * S))
-    im.alpha_composite(sh, (int(W * 0.165 - sh.width / 2), int(H * 0.285 - sh.height / 2)))
+    # v2: logo JAIS lebih besar, sebelah pipi kiri Farhan, tepat di atas huruf S dalam "JAIS"
+    fj = F("xb", 132); dj = ImageDraw.Draw(im)
+    wj = dj.textlength("JAIS", font=fj); ws = dj.textlength("S", font=fj)
+    sx = CX + wj / 2 - ws / 2
+    sh = jais_card(int(360 * S))
+    lx = max(sx, W * 0.665)   # tepi kiri logo di tepi pipi, tidak menutup muka
+    im.alpha_composite(sh, (int(lx - sh.width / 2), int(H * 0.485 - sh.height + 40 * S)))
     return im
 
 # ---------- end card BOFU: link di bio untuk demo (tanpa emel, ikut YM-F-004/005) ----------
@@ -472,8 +529,9 @@ def render():
             raw = rd.stdout.read(fb)
             if len(raw) == fb: last = np.frombuffer(raw, np.uint8).reshape(SH, SW, 3)
             im = place(last, zoom_at(t)).convert("RGBA")
+            im = jais_behind(im, last, t, i)
             im = broll(im, t)
-            label(im, t); jais(im, t); cal_card(im, t); rcp_card(im, t); sheet_card(im, t); logo_pill(im, t)
+            label(im, t); cal_card(im, t); rain(im, t); sheet_card(im, t); logo_pill(im, t)
             masa_card(im, t); pkg_card(im, t); cta_card(im, t); caption(im, t)
             fade = ease((T - (BODY_END - 0.15)) / 0.15) if T > BODY_END - 0.15 else 0
             if fade: im = Image.blend(im, Image.new("RGBA", (W, H), BLUE), fade)
@@ -486,8 +544,8 @@ def render():
 
 # ---------- audio ----------
 SFXL = [  # (masa timeline, fail, gain dB) — SFX lembut sahaja
-    (OFF - 0.12, "whoosh.wav", -24), (OFF + JAIS_IN, "pop.wav", -16), (OFF + CAL[0], "pop.wav", -20),
-    *[(OFF + t0, "tick.wav", -25) for t0, *_ in RCP_ITEMS],
+    (OFF - 0.12, "whoosh.wav", -24), (OFF + JAIS_IN + 0.12, "pop.wav", -16), (OFF + CAL[0], "pop.wav", -20),
+    (OFF + RCP[0] + 0.05, "whoosh.wav", -22), *[(OFF + t0, "tick.wav", -27) for t0, *_ in RCP_ITEMS], (OFF + RAIN_CLEAR, "swoosh_down.wav", -20),
     (OFF + SHEET[0], "whoosh.wav", -24), *[(OFF + SHEET[0] + 0.2 + i * 0.42, "tick.wav", -27) for i in range(4)],
     (OFF + SH_ERR, "bonk.wav", -26), *[(OFF + SH_CLOCK + 0.1 + i * 0.4, "tick.wav", -26) for i in range(4)],
     (OFF + LOGO_IN, "ding.wav", -22), (OFF + BA[0] - 0.05, "whoosh.wav", -22), (OFF + BB[0] - 0.05, "whoosh.wav", -22),

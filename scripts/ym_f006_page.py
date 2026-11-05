@@ -7,7 +7,7 @@ src = open(spec.origin).read().split("# ---------- frames sumber")[0]
 src = src.replace("SRC, BROLL, LOGO, SFX, OUT = sys.argv[1:6]", "SRC=BROLL=LOGO=SFX=OUT=''").replace("W = int(sys.argv[6])", "W = 1080")
 src = src.replace("CRF = sys.argv[7] if len(sys.argv) > 7 else \"20\"", "CRF='20'").replace("os.makedirs(OUT, exist_ok=True)", "")
 full = open(spec.origin).read()
-src += "\nTAP = 0.75\nRCP_ITEMS = [(RCP[0] + 0.15 + i * 0.42, 0, 0, 0) for i in range(8)]\n" + full[full.index("SFXL = ["):full.index("def audio")]
+src += "\nTAP = 0.75\nRAIN_CLEAR = 10.95\nRCP_ITEMS = [(RCP[0] + 0.15 + i * 0.42, 0, 0, 0) for i in range(8)]\n" + full[full.index("SFXL = ["):full.index("def audio")]
 R = {}; exec(src, R)
 O = R["OFF"]; D = round(R["TOTAL"], 3)
 
@@ -25,11 +25,11 @@ for c in caps:
 
 g = lambda k: R[k]
 mg = [
- [0, 1.0, "Thumbnail", "Thumbnail 1 s: JAIS / MINTAK / REPORT? (REPORT? dalam kotak biru aksen) + kad logo JAIS (kiri muka), atas frame Farhan (sumber 0:11.5)"],
+ [0, 1.0, "Thumbnail", "Thumbnail 1 s: JAIS / MINTAK / REPORT? (REPORT? dalam kotak biru aksen) + kad logo JAIS lebih besar di sebelah pipi kiri Farhan, tepat di atas huruf S (v2), atas frame Farhan (sumber 0:11.5)"],
  [O + g("LABEL_IN"), O + g("LABEL_OUT"), "Label nama", "Pil biru #2A3B8F “Farhan · Yuran.my”, atas-kiri"],
- [O + g("JAIS_IN"), O + g("JAIS_OUT"), "Logo JAIS", "B-ROLL/Logo JAIS.png atas kad putih (gaya YM-F-004), pop masuk pada “laporan kat JAIS”"],
+ [O + g("JAIS_IN"), O + g("JAIS_OUT"), "Logo JAIS", "v2: Logo JAIS (B-ROLL/Logo JAIS.png) naik dari belakang dada/bahu Farhan ke sebelah kepala pada “laporan kat JAIS”, kemudian turun semula ke belakang. Badan Farhan di depan logo (mask MediaPipe)"],
  [O + g("CAL")[0], O + g("CAL")[1], "Kad grafik", "Ikon kalendar “Hujung bulan” → ikon dokumen “Laporan ke JAIS”"],
- [O + g("RCP")[0], O + g("RCP")[1], "Motion", "Resit-resit jatuh dan bertimbun satu demi satu (“Kumpullah semua resit…”). Grafik buatan sendiri, tiada data sebenar"],
+ [O + g("RCP")[0], O + g("RCP")[1], "Motion", "v2: Hujan resit: ~170 resit turun macam hujan dan bertimbun sampai menutup seluruh skrin & wajah Farhan; runtuh ke bawah pada “Besok nak hantar”. Grafik buatan sendiri, tiada data sebenar; caption atas jalur gelap supaya jelas"],
  [O + g("SHEET")[0], O + g("SHEET")[1], "Motion", "Hamparan gaya Excel: baris ditaip satu-satu → sel salah bertanda merah ✗ (“salah lagi”) → jam berputar laju + “Berjam-jam hilang”. Tiada data sebenar (bar kelabu)"],
  [O + g("LOGO_IN"), O + g("LOGO_OUT"), "Logo", "Logo Yuran.my putih atas pil biru #2A3B8F (tiada shadow) pada “Yuran.my”"],
  [O + g("BA")[0], O + g("BA")[1], "B-roll sistem", "B-ROLL/B-Roll_SistemYuran.my.mp4 @1:56.6: menu Advanced Reports, Invoice List Report → Collection Report. Jadual kosong, tiada data pelanggan"],
@@ -53,6 +53,9 @@ SEG = [
  [R["BODY_END"], D, "End card", "CTA BOFU: Klik link di bio untuk demo"],
 ]
 DONE = [
+ ["v2: Logo JAIS dari belakang", "Komen Farhan: logo JAIS kini keluar dari belakang Farhan. Mask badan setiap frame (MediaPipe selfie multiclass) supaya badan & kepala berada di depan logo semasa ia naik dan turun.", O + g("JAIS_IN")],
+ ["v2: Hujan resit", "Komen Farhan: pada “Kumpullah semua resit…” resit turun macam hujan sampai menutup skrin dan wajah, menunjukkan resit yang terlalu banyak. Runtuh ke bawah pada 0:11.95 supaya wajah kembali pada “Besok nak hantar”.", O + g("RCP")[0]],
+ ["v2: Logo JAIS dalam thumbnail", "Komen Farhan: logo lebih besar (360 px) dan dialihkan ke sebelah pipi kiri Farhan, tepat di atas huruf S dalam “JAIS”, tanpa menutup muka.", 0.3],
  ["Guna video trim Farhan", "BOFU_JAIS_Mintak_Report_KAFA.mp4 (41.2 s, 1080×1920, HEVC). Isi tidak dipotong; tiada senyap lebih 0.3 s.", 1.0],
  ["Thumbnail 1 saat", "JAIS / MINTAK / REPORT? (dari tajuk skrip) + kad logo JAIS sebagai hook tambahan (seperti YM-F-004). Tiada logo Yuran.my di awal. PNG 1080×1920 berasingan dieksport.", 0.3],
  ["Babak masalah dengan motion", "Logo JAIS, kalendar hujung bulan, resit bertimbun, hamparan Excel ditaip → salah → jam berjam-jam. Semua grafik buatan sendiri tanpa data sebenar.", O + 2.7],

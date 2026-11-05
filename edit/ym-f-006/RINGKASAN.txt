@@ -1,10 +1,10 @@
-YM-F-006_JAIS_Mintak_Report_KAFA — RINGKASAN PREVIEW v1
+YM-F-006_JAIS_Mintak_Report_KAFA — RINGKASAN PREVIEW v2 (logo JAIS dari belakang, hujan resit, thumbnail)
 Brand: Yuran.my | Spokesperson: Farhan | Jenis: BOFU | Durasi: 43.7 s (540x960 preview)
 Sumber: 01_RAW/2026-10-30_006_FARHAN/BOFU_JAIS_Mintak_Report_KAFA.mp4 (41.2 s, SUDAH DITRIM oleh Farhan, isi tidak dipotong)
-Halaman preview: https://claude.ai/artifact/NDtAKih13AFT3nmQV7DEK3 (v1)
+Halaman preview: https://claude.ai/artifact/NDtAKih13AFT3nmQV7DEK3 (v2)
 
 1. TEKS HOOK / THUMBNAIL
-   JAIS / MINTAK / REPORT?  (JAIS biru aksen, REPORT? dalam kotak biru #29ABE2) + kad logo JAIS (kiri muka). Frame Farhan (sumber 0:11.5). 1 saat, tiada logo Yuran.my.
+   JAIS / MINTAK / REPORT?  (JAIS biru aksen, REPORT? dalam kotak biru #29ABE2) + kad logo JAIS lebih besar di sebelah pipi kiri Farhan, atas huruf S (v2). Frame Farhan (sumber 0:11.5). 1 saat, tiada logo Yuran.my.
 
 2. CAPTION PENUH (masa video siap)
    0:01.0  Ini yang biasa
@@ -56,9 +56,9 @@ Halaman preview: https://claude.ai/artifact/NDtAKih13AFT3nmQV7DEK3 (v1)
 3. GRAFIK, B-ROLL, MUZIK & SFX (masa video siap)
    0:00.0-0:01.0  THUMBNAIL: Thumbnail 1 s: JAIS / MINTAK / REPORT? (REPORT? dalam kotak biru aksen) + kad logo JAIS (kiri muka), atas frame Farhan (sumber 0:11.5)
    0:01.2-0:03.6  LABEL NAMA: Pil biru #2A3B8F “Farhan · Yuran.my”, atas-kiri
-   0:03.7-0:06.0  LOGO JAIS: B-ROLL/Logo JAIS.png atas kad putih (gaya YM-F-004), pop masuk pada “laporan kat JAIS”
+   0:03.7-0:06.0  LOGO JAIS (v2): naik dari belakang dada/bahu Farhan ke sebelah kepala, kemudian turun semula; badan di depan logo (mask MediaPipe)
    0:06.0-0:08.2  KAD GRAFIK: Ikon kalendar “Hujung bulan” → ikon dokumen “Laporan ke JAIS”
-   0:08.3-0:12.1  MOTION: Resit-resit jatuh dan bertimbun satu demi satu (“Kumpullah semua resit…”). Grafik buatan sendiri, tiada data sebenar
+   0:08.3-0:12.1  HUJAN RESIT (v2): ~170 resit turun macam hujan sampai menutup seluruh skrin & wajah; runtuh ke bawah pada 0:11.95 (“Besok nak hantar”). Grafik buatan sendiri
    0:13.8-0:19.6  MOTION: Hamparan gaya Excel: baris ditaip satu-satu → sel salah bertanda merah ✗ (“salah lagi”) → jam berputar laju + “Berjam-jam hilang”. Tiada data sebenar (bar kelabu)
    0:20.8-0:21.7  LOGO: Logo Yuran.my putih atas pil biru #2A3B8F (tiada shadow) pada “Yuran.my”
    0:21.9-0:24.9  B-ROLL SISTEM: B-ROLL/B-Roll_SistemYuran.my.mp4 @1:56.6: menu Advanced Reports, Invoice List Report → Collection Report. Jadual kosong, tiada data pelanggan
