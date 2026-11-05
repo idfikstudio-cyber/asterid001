@@ -1,0 +1,93 @@
+YM-F-006_JAIS_Mintak_Report_KAFA — RINGKASAN PREVIEW v1
+Brand: Yuran.my | Spokesperson: Farhan | Jenis: BOFU | Durasi: 43.7 s (540x960 preview)
+Sumber: 01_RAW/2026-10-30_006_FARHAN/BOFU_JAIS_Mintak_Report_KAFA.mp4 (41.2 s, SUDAH DITRIM oleh Farhan, isi tidak dipotong)
+Halaman preview: https://claude.ai/artifact/NDtAKih13AFT3nmQV7DEK3 (v1)
+
+1. TEKS HOOK / THUMBNAIL
+   JAIS / MINTAK / REPORT?  (JAIS biru aksen, REPORT? dalam kotak biru #29ABE2) + kad logo JAIS (kiri muka). Frame Farhan (sumber 0:11.5). 1 saat, tiada logo Yuran.my.
+
+2. CAPTION PENUH (masa video siap)
+   0:01.0  Ini yang biasa
+   0:01.6  saya terima.
+   0:02.3  Asyik bila nak hantar
+   0:03.3  laporan kat JAIS je,
+   0:04.4  banyak lah kena
+   0:05.4  bawa report.
+   0:06.1  Hujung bulan,
+   0:06.7  laporan nak kena
+   0:07.5  hantar kat JAIS.
+   0:08.3  Kumpullah semua resit.
+   0:09.6  Kalau resit tak buat,
+   0:10.5  buatlah resit
+   0:11.3  kejap-kejap tu.
+   0:12.2  Besok nak hantar
+   0:13.1  kat JAIS ni.
+   0:13.8  Type satu-satu
+   0:14.7  dalam Excel.
+   0:15.9  Semak semula,
+   0:16.7  salah lagi.
+   0:17.8  Berjam-jam hilang,
+   0:19.1  betul tak?
+   0:19.7  Inilah keistimewaan
+   0:20.9  Yuran.my.
+   0:21.7  Kita dah siapkan
+   0:22.7  template yang khas
+   0:23.8  untuk hantar
+   0:24.5  kat JAIS dah.
+   0:25.3  Data kutipan
+   0:26.3  tersusun rapi.
+   0:27.8  Tak perlu type semula.
+   0:28.9  Masa yang kita luangkan
+   0:30.3  untuk buat rekod tu,
+   0:31.4  kita luangkan masa
+   0:32.5  dengan pelajar.
+   0:33.5  Habis cerita.
+   0:34.3  Package kami, Pro+,
+   0:35.5  sesuai dengan
+   0:36.3  sekolah-sekolah KAFA.
+   0:37.3  Tak ada kontrak.
+   0:38.1  Cuba klik
+   0:38.6  link in bio.
+   0:39.2  Kita demo dulu.
+   0:40.1  Kalau sesuai,
+   0:40.8  cikgu setuju.
+   0:41.5  Let's go.
+
+3. GRAFIK, B-ROLL, MUZIK & SFX (masa video siap)
+   0:00.0-0:01.0  THUMBNAIL: Thumbnail 1 s: JAIS / MINTAK / REPORT? (REPORT? dalam kotak biru aksen) + kad logo JAIS (kiri muka), atas frame Farhan (sumber 0:11.5)
+   0:01.2-0:03.6  LABEL NAMA: Pil biru #2A3B8F “Farhan · Yuran.my”, atas-kiri
+   0:03.7-0:06.0  LOGO JAIS: B-ROLL/Logo JAIS.png atas kad putih (gaya YM-F-004), pop masuk pada “laporan kat JAIS”
+   0:06.0-0:08.2  KAD GRAFIK: Ikon kalendar “Hujung bulan” → ikon dokumen “Laporan ke JAIS”
+   0:08.3-0:12.1  MOTION: Resit-resit jatuh dan bertimbun satu demi satu (“Kumpullah semua resit…”). Grafik buatan sendiri, tiada data sebenar
+   0:13.8-0:19.6  MOTION: Hamparan gaya Excel: baris ditaip satu-satu → sel salah bertanda merah ✗ (“salah lagi”) → jam berputar laju + “Berjam-jam hilang”. Tiada data sebenar (bar kelabu)
+   0:20.8-0:21.7  LOGO: Logo Yuran.my putih atas pil biru #2A3B8F (tiada shadow) pada “Yuran.my”
+   0:21.9-0:24.9  B-ROLL SISTEM: B-ROLL/B-Roll_SistemYuran.my.mp4 @1:56.6: menu Advanced Reports, Invoice List Report → Collection Report. Jadual kosong, tiada data pelanggan
+   0:25.3-0:28.3  B-ROLL APP: B-ROLL/B-Roll Pantau Yuran.mp4 @1:41: dashboard Collection Stats (Ogos 2026). Semua angka RM, peratus dan bilangan diblur
+   0:28.8-0:33.5  KAD GRAFIK: ✗ Masa untuk buat rekod (garis potong) → ✓ Masa dengan pelajar
+   0:34.3-0:38.0  KAD PAKEJ: Pakej Pro+ → ✓ Sesuai untuk KAFA → ✓ Tiada kontrak. Tiada harga dipaparkan (tidak disebut)
+   0:38.1-0:42.2  CTA: Kad profil TikTok Yuran.My Street, link bio yuran.my/daftar/?tiktok diketuk (riak) pada “link in bio”
+   0:42.2-0:43.7  END CARD: Logo putih + Cara MUDAH Urus Yuran + kad profil dengan link bio diketuk + Klik link di bio untuk demo sistem Yuran.my
+   Punch-in: 0:01.0 100% (asas), 0:06.0 112% punch-in, 0:08.3 100% (asas), 0:12.1 112% punch-in, 0:13.8 100% (asas), 0:19.6 112% punch-in, 0:21.7 100% (asas), 0:28.8 112% punch-in, 0:33.5 100% (asas), 0:34.3 112% punch-in, 0:38.1 100% (asas)
+   Muzik: 0:00-0:19.7 'Complicated' (Arulo) babak masalah/sibuk -> crossfade 1 s pada 'Inilah keistimewaan Yuran.my' -> 'Driving Ambition' (Ahjay Stelino) babak penyelesaian. Mixkit Stock Music Free License. ~24 dB di bawah suara, ducking.
+   SFX (lembut, dijana sendiri): 0:00.9 whoosh, 0:03.7 pop, 0:06.0 pop, 0:08.4 tick, 0:08.9 tick, 0:09.3 tick, 0:09.7 tick, 0:10.1 tick, 0:10.6 tick, 0:11.0 tick, 0:11.4 tick, 0:13.8 whoosh, 0:14.0 tick, 0:14.4 tick, 0:14.9 tick, 0:15.3 tick, 0:16.7 bonk, 0:17.9 tick, 0:18.3 tick, 0:18.7 tick, 0:19.1 tick, 0:20.8 ding, 0:21.9 whoosh, 0:25.2 whoosh, 0:28.8 pop, 0:31.4 ding, 0:34.3 pop, 0:35.5 pop, 0:37.3 pop, 0:38.1 whoosh, 0:38.7 click, 0:42.3 ding, 0:43.0 click
+
+4. CTA
+   BOFU (ikut percakapan & gaya YM-F-002/003): kad profil TikTok dengan link bio yuran.my/daftar/?tiktok diketuk pada 'link in bio'; end card: logo Yuran.my putih + 'Cara MUDAH Urus Yuran' + kad profil + 'Klik link di bio untuk demo sistem Yuran.my' (1.5 s). Tanpa emel.
+
+5. PERLU SEMAK
+   - “banyak lah kena bawa report”: Bunyi kurang jelas pada 0:04.4–0:06.0; Whisper dengar ‘banyak lah kena bawa report’. Sahkan ayat sebenar. [0:04.4]
+   - “sekolah-sekolah KAFA” (transkrip: “kola-kola KAFA”): Dibaca sebagai ‘sekolah-sekolah KAFA’. Sahkan. Kad pakej tulis ‘Sesuai untuk KAFA’. [0:36.3]
+   - “link in bio” (transkrip: “lini bio”): Caption tulis ‘link in bio’. Sahkan jika Farhan sebut ‘link di bio’. [0:38.6]
+   - “Ini yang biasa saya terima”: Sahkan perkataan ‘terima’ (mungkin ‘dengar’). [0:01.6]
+   - Template khas JAIS: Tiada rakaman skrin template berlabel JAIS dalam B-ROLL/. Video tunjuk halaman Collection Report / Invoice List Report sebagai laporan sistem. Jika ada rakaman template JAIS sebenar, beri dan saya ganti. [0:21.9]
+   - “Tak ada kontrak” & Pakej Pro+: Fakta disebut Farhan; dipaparkan seperti disebut. Sahkan dengan VHA Cognitive bahawa Pro+ memang tanpa kontrak. [0:37.2]
+   - CTA BOFU: link di bio, bukan DNA: DNA BOFU: ‘Hubungi kami untuk demo sistem Yuran.my’. Ikut percakapan dan gaya YM-F-002/003: ‘Klik link di bio untuk demo sistem Yuran.my’. Link bio dari BRAND/Yuran Tiktok.jpg; sahkan masih sama. [0:42.5]
+   - Muzik dari luar folder MUSIC/: MUSIC/ masih kosong. Mixkit Complicated (Arulo) & Driving Ambition (Ahjay Stelino), Mixkit Stock Music Free License. [0:19.7]
+   - Tiada video rujukan gaya: BRAND/ tiada rujukan-gaya-*.mp4 (ikut DNA seperti YM-F-004/005).
+   - Preview MP4 belum di Drive: Alat Drive tidak dapat muat naik fail besar. MP4 preview dan thumbnail ada di halaman ini.
+
+6. CAPTION TIKTOK
+   JAIS mintak report hujung bulan? Kumpul resit, type satu-satu dalam Excel, salah lagi… berjam-jam hilang. Dengan Yuran.my, template laporan untuk JAIS dah siap dan data kutipan tersusun rapi. Pakej Pro+, tiada kontrak. Klik link di bio untuk demo dulu 👆
+   #sekolahkafa #gurukafa #yuranmy #laporanjais #yuransekolah
+
+Nota: font Acumin Pro tiada, guna Inter. Audio -14.0 LUFS, peak -1.6 dBFS. Skrip: asterid001/scripts/ym_f006_render.py

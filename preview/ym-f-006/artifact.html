@@ -1,0 +1,238 @@
+<title>YM-F-006 JAIS Mintak Report</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: telefon (sticky) di kiri, helaian edit bertab di kanan; bertindan di telefon. Gaya Yuran.my: biru korporat + biru aksen, kemas. */
+:root{
+  --bg:#f2f4f9; --surface:#ffffff; --ink:#1d2033; --muted:#596079; --line:#dde1ec; --chip:#eaedf6;
+  --navy:#2a3b8f; --accent:#29abe2; --accent-ink:#0b7fb0; --accent-soft:#d8f0fb;
+  --c-seg:#2a3b8f; --c-mg:#29abe2; --c-sfx:#c8435a; --ok:#1f7a4d; --warn:#b45309;
+  --f-body:"Source Sans 3","Segoe UI",system-ui,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#0d1122; --surface:#151b33; --ink:#e8ebf6; --muted:#9aa2bf; --line:#27304f; --chip:#1d2541;
+  --navy:#9fb0f5; --accent:#4cc3f2; --accent-ink:#7fd5f7; --accent-soft:#163552;
+  --c-seg:#9fb0f5; --c-mg:#4cc3f2; --c-sfx:#ff7d92; --ok:#4ccf8f; --warn:#f0a44b; color-scheme:dark}}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.55}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-top:calc(20px + env(safe-area-inset-top,0px));padding-bottom:calc(56px + env(safe-area-inset-bottom,0px))}
+header.top{display:flex;flex-wrap:wrap;gap:8px 24px;align-items:end;justify-content:space-between;margin-bottom:18px}
+h1{font-weight:800;font-size:clamp(26px,4vw,38px);line-height:1.08;margin:0;text-wrap:balance;letter-spacing:-.015em;color:var(--navy)}
+h1 span{color:var(--ink);font-weight:600}
+.status{display:inline-flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:14px;color:var(--muted)}
+.status b{background:var(--accent-soft);color:var(--accent-ink);font-weight:700;padding:2px 10px;border-radius:999px;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.grid{display:grid;grid-template-columns:minmax(0,400px) minmax(0,1fr);gap:28px;align-items:start}
+@media (max-width:860px){.grid{grid-template-columns:minmax(0,1fr)}}
+.player{position:sticky;top:calc(env(safe-area-inset-top,0px) + 12px);display:flex;flex-direction:column;gap:10px;max-width:400px;width:100%;margin-inline:auto}
+@media (max-width:860px){.player{position:static}}
+.phone{width:100%;aspect-ratio:9/16;border-radius:22px;overflow:hidden;background:#000;box-shadow:0 18px 50px -22px rgba(20,30,90,.55)}
+.phone video{width:100%;height:100%;display:block;object-fit:contain;background:#000}
+.hint{font-size:13px;color:var(--muted);margin:0}
+.panel{min-width:0;display:flex;flex-direction:column;gap:14px}
+.tl{position:relative;height:58px;border-radius:10px;background:var(--surface);border:1px solid var(--line);overflow:hidden;cursor:pointer}
+.tl .seg{position:absolute;top:0;height:22px;border-right:1px solid var(--bg);font:600 11px var(--f-body);color:var(--bg);background:var(--c-seg);padding:4px 6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tl .mg{position:absolute;top:27px;height:10px;border-radius:3px;background:var(--c-mg);opacity:.9}
+.tl .sx{position:absolute;top:42px;width:2px;height:10px;background:var(--c-sfx)}
+.tl .ph{position:absolute;top:0;bottom:0;width:2px;background:var(--c-sfx)}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:13px;color:var(--muted);margin-top:8px}
+.legend span{display:inline-flex;gap:6px;align-items:center}
+.legend i{width:10px;height:10px;border-radius:3px}
+.tabs{display:flex;gap:2px;flex-wrap:wrap;border-bottom:1px solid var(--line)}
+.tab{font:600 15px var(--f-body);background:none;border:0;border-bottom:3px solid transparent;color:var(--muted);padding:10px 10px 8px;cursor:pointer}
+.tab[aria-selected="true"]{color:var(--ink);border-color:var(--accent)}
+.tab .n{display:inline-block;min-width:18px;margin-left:4px;padding:0 5px;border-radius:99px;background:var(--warn);color:var(--surface);font-size:11px;font-weight:700;text-align:center}
+:is(.tab,.cap-row,.ev,.tl,.btn,a):focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+a{color:var(--accent-ink)}
+.pane{min-width:0}
+.pane h2{font-weight:800;font-size:21px;margin:6px 0 6px;color:var(--navy)}
+.pane h3{font-size:16px;margin:18px 0 6px;font-weight:700}
+.pane p,.pane li{max-width:68ch}
+.pane p{margin:0 0 10px}
+.caps,.evs{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.cap-row,.ev{display:grid;gap:10px;padding:8px 6px;border:0;border-bottom:1px solid var(--line);background:none;text-align:left;font:inherit;color:inherit;cursor:pointer;align-items:baseline}
+.cap-row{grid-template-columns:64px minmax(0,1fr)}
+.ev{grid-template-columns:64px 130px minmax(0,1fr)}
+@media (max-width:520px){.ev{grid-template-columns:56px minmax(0,1fr)}.ev .k{grid-column:2}}
+.cap-row:hover,.ev:hover{background:var(--chip)}
+.cap-row.on{background:var(--accent-soft)}
+time{font-family:var(--f-mono);font-variant-numeric:tabular-nums;color:var(--muted);font-size:13px}
+.hl{font-weight:700;color:var(--accent-ink)}
+.fix{background:var(--accent-soft);color:var(--accent-ink);border-radius:4px;padding:0 4px;border-bottom:1px dashed var(--accent)}
+.cap-row .sec{display:block;font-size:12px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+.ev .k{font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--accent-ink)}
+.ev .k.sfx{color:var(--c-sfx)}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:15px;min-width:460px}
+th,td{text-align:left;padding:8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700}
+td.n{font-family:var(--f-mono);font-size:13px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.list{display:flex;flex-direction:column;gap:10px;padding:0;margin:0;list-style:none}
+.q{border:1px solid var(--line);border-left:4px solid var(--warn);border-radius:10px;padding:10px 14px;background:var(--surface)}
+.q.done{border-left-color:var(--ok)}
+.q b{display:block;margin-bottom:2px}
+.tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:1px 8px;border-radius:99px;margin-right:6px}
+.tag.w{background:color-mix(in srgb,var(--warn) 18%,transparent);color:var(--warn)}
+.tag.o{background:color-mix(in srgb,var(--ok) 18%,transparent);color:var(--ok)}
+.tt{border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:14px 16px;white-space:pre-wrap;font-size:16px}
+.tt .hs{color:var(--accent-ink);font-weight:600}
+.btn{font:600 15px var(--f-body);border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:10px;padding:8px 14px;cursor:pointer;min-height:40px;margin-top:10px}
+.copied{font-size:14px;color:var(--ok);margin-left:8px}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <h1>YM-F-006 <span>JAIS mintak report KAFA</span></h1>
+    <span class="status"><b>Preview v1</b> BOFU · Farhan · 5 Nov 2026 · 540×960 · 43.7 saat</span>
+  </header>
+
+  <div class="grid">
+    <section class="player" aria-label="Pemain preview">
+      <div class="phone"><video id="v" controls playsinline preload="metadata" poster="thumb.jpg" src="preview.mp4"></video></div>
+      <p class="hint">Tekan ▶ untuk main dengan bunyi. Klik baris transkrip atau cue pelan edit untuk lompat ke masa itu.</p>
+    </section>
+
+    <section class="panel">
+      <div>
+        <div class="tl" id="tl" role="slider" tabindex="0" aria-label="Garis masa edit" aria-valuemin="0" aria-valuemax="43.7" aria-valuenow="0"></div>
+        <div class="legend">
+          <span><i style="background:var(--c-seg)"></i>Babak</span>
+          <span><i style="background:var(--c-mg)"></i>Grafik / animasi</span>
+          <span><i style="background:var(--c-sfx)"></i>Sound effect</span>
+        </div>
+      </div>
+      <div class="tabs" role="tablist">
+        <button class="tab" role="tab" aria-selected="true" data-p="p-tr" id="tab-tr">Transkrip</button>
+        <button class="tab" role="tab" aria-selected="false" data-p="p-ed" id="tab-ed">Pelan edit</button>
+        <button class="tab" role="tab" aria-selected="false" data-p="p-ga" id="tab-ga">Warna &amp; audio</button>
+        <button class="tab" role="tab" aria-selected="false" data-p="p-q" id="tab-q">Status<span class="n" id="nq"></span></button>
+        <button class="tab" role="tab" aria-selected="false" data-p="p-cp" id="tab-cp">Caption</button>
+      </div>
+
+      <div class="pane" id="p-tr" role="tabpanel">
+        <h2>Transkrip</h2>
+        <p>Whisper large-v3 dengan masa setiap perkataan, atas video yang sudah ditrim oleh Farhan. Masa ialah masa dalam video siap (termasuk thumbnail 1 s). Perkataan <span class="hl">biru tebal</span> ialah kata kunci biru dalam video. Perkataan <span class="fix">berlatar biru</span> berbeza dari transkrip (hover untuk lihat asal); semak di tab Status.</p>
+        <div class="caps" id="caps"></div>
+      </div>
+
+      <div class="pane" id="p-ed" role="tabpanel" hidden>
+        <h2>Pelan edit</h2>
+        <p>Video yang Farhan trim (41.2 s) digunakan terus. Isi tidak dipotong. Video = thumbnail 1 s + isi 41.2 s + end card 1.5 s = 43.7 s (sasaran BOFU 30–60 s). Cerita dua babak: masalah (laporan JAIS hujung bulan, resit, Excel, salah, berjam-jam) dengan motion buatan sendiri → penyelesaian (Yuran.my: laporan sistem, data kutipan, masa dengan pelajar, Pro+, demo) dengan B-roll sistem sebenar. Muzik bertukar ikut babak. Satu elemen grafik pada satu masa, SFX lembut.</p>
+        <h3>Babak</h3>
+        <div class="tbl"><table>
+          <thead><tr><th>Masa</th><th>Babak</th><th>Isi / grafik</th></tr></thead>
+          <tbody id="segtbl"></tbody></table></div>
+        <h3>Punch-in zoom</h3>
+        <p>Bertukar pada permulaan ayat (tiada potongan isi). Mata Farhan kekal di sepertiga atas frame.</p>
+        <div class="tbl"><table>
+          <thead><tr><th>Masa video</th><th>Zoom</th></tr></thead>
+          <tbody id="cuttbl"></tbody></table></div>
+        <h3>Semua cue grafik dan SFX</h3>
+        <div class="evs" id="evs"></div>
+      </div>
+
+      <div class="pane" id="p-ga" role="tabpanel" hidden>
+        <h2>Warna dan audio</h2>
+        <h3>Colour grade</h3>
+        <div class="tbl"><table>
+          <thead><tr><th>Langkah</th><th>Nilai</th><th>Kesan</th></tr></thead>
+          <tbody>
+            <tr><td>Kecerahan</td><td class="n">+0.012</td><td>Muka sedikit lebih terang, dinding kelabu tak terbakar.</td></tr>
+            <tr><td>Kontras</td><td class="n">×1.04</td><td>Gambar lebih jelas.</td></tr>
+            <tr><td>Saturasi</td><td class="n">×1.05</td><td>Warna lebih hidup, warna kulit asli dikekalkan (tiada anjakan oren/merah).</td></tr>
+            <tr><td>Ketajaman</td><td class="n">unsharp 0.25</td><td>Kompensasi punch-in 112%.</td></tr>
+            <tr><td>Latar</td><td class="n">tiada blur</td><td>Latar dinding kosong rata, kesan depth of field tidak perlu.</td></tr>
+          </tbody></table></div>
+        <h3>Audio</h3>
+        <div class="tbl"><table>
+          <thead><tr><th>Langkah</th><th>Kesan</th></tr></thead>
+          <tbody>
+            <tr><td>High-pass 70 Hz</td><td>Buang dengung rendah.</td></tr>
+            <tr><td>Noise reduction ringan (8 dB)</td><td>Bunyi bilik berkurang tanpa suara jadi “robot”.</td></tr>
+            <tr><td>Kompresor lembut 2.5:1</td><td>Suara lebih rata dan jelas di telefon.</td></tr>
+            <tr><td>Muzik 1: “Complicated”, Arulo (Mixkit)</td><td>Babak masalah 0:00–0:19.7 (laporan JAIS, resit, Excel, berjam-jam). Rentak sibuk dan sedikit tegang. Mixkit Stock Music Free License (komersial, media sosial, tiada atribusi).</td></tr>
+            <tr><td>Muzik 2: “Driving Ambition”, Ahjay Stelino (Mixkit)</td><td>Crossfade 1 s pada “Inilah keistimewaan Yuran.my” (0:19.7) hingga end card. Muzik harapan untuk babak penyelesaian dan CTA. Lesen yang sama.</td></tr>
+            <tr><td>Aras muzik &amp; ducking</td><td>Lebih kurang 24 dB di bawah suara, ducking (sidechain) semasa bercakap; naik pada thumbnail dan end card (tiada suara).</td></tr>
+            <tr><td>SFX</td><td>Pop pada logo & kad, tick pada resit jatuh dan taip Excel, bonk lembut pada “salah”, ding pada logo Yuran.my, whoosh pada B-roll, click pada link bio. Dijana sendiri, 18–27 dB di bawah suara.</td></tr>
+            <tr><td>Loudness akhir</td><td>−14.0 LUFS, peak −1.6 dBFS.</td></tr>
+          </tbody></table></div>
+      </div>
+
+      <div class="pane" id="p-q" role="tabpanel" hidden>
+        <h2>Status</h2>
+        <h3>Perlu semak</h3>
+        <ul class="list" id="todo"></ul>
+        <h3>Sudah dibuat</h3>
+        <ul class="list" id="done"></ul>
+      </div>
+
+      <div class="pane" id="p-cp" role="tabpanel" hidden>
+        <h2>Caption TikTok</h2>
+        <div class="tt" id="tt"></div>
+        <button class="btn" id="copy">Salin caption</button><span class="copied" id="copied" hidden>Disalin</span>
+      </div>
+    </section>
+  </div>
+</div>
+
+<script>
+const DATA={"caps": [{"s": 1.0, "e": 1.62, "w": [{"t": "Ini", "hl": false, "fix": null}, {"t": "yang", "hl": false, "fix": null}, {"t": "biasa", "hl": false, "fix": null}]}, {"s": 1.64, "e": 2.28, "w": [{"t": "saya", "hl": false, "fix": null}, {"t": "terima.", "hl": false, "fix": null}]}, {"s": 2.3, "e": 3.32, "w": [{"t": "Asyik", "hl": false, "fix": null}, {"t": "bila", "hl": false, "fix": null}, {"t": "nak", "hl": false, "fix": null}, {"t": "hantar", "hl": false, "fix": null}]}, {"s": 3.34, "e": 4.34, "w": [{"t": "laporan", "hl": true, "fix": null}, {"t": "kat", "hl": false, "fix": null}, {"t": "JAIS", "hl": true, "fix": null}, {"t": "je,", "hl": false, "fix": null}]}, {"s": 4.36, "e": 5.36, "w": [{"t": "banyak", "hl": false, "fix": null}, {"t": "lah", "hl": false, "fix": null}, {"t": "kena", "hl": false, "fix": null}]}, {"s": 5.38, "e": 6.04, "w": [{"t": "bawa", "hl": false, "fix": null}, {"t": "report.", "hl": true, "fix": null}]}, {"s": 6.06, "e": 6.7, "w": [{"t": "Hujung", "hl": true, "fix": null}, {"t": "bulan,", "hl": true, "fix": null}]}, {"s": 6.72, "e": 7.48, "w": [{"t": "laporan", "hl": true, "fix": null}, {"t": "nak", "hl": false, "fix": null}, {"t": "kena", "hl": false, "fix": null}]}, {"s": 7.5, "e": 8.3, "w": [{"t": "hantar", "hl": false, "fix": null}, {"t": "kat", "hl": false, "fix": null}, {"t": "JAIS.", "hl": true, "fix": null}]}, {"s": 8.32, "e": 9.54, "w": [{"t": "Kumpullah", "hl": false, "fix": null}, {"t": "semua", "hl": false, "fix": null}, {"t": "resit.", "hl": true, "fix": "risik"}]}, {"s": 9.56, "e": 10.5, "w": [{"t": "Kalau", "hl": false, "fix": null}, {"t": "resit", "hl": true, "fix": "risik"}, {"t": "tak", "hl": false, "fix": null}, {"t": "buat,", "hl": false, "fix": null}]}, {"s": 10.52, "e": 11.26, "w": [{"t": "buatlah", "hl": false, "fix": null}, {"t": "resit", "hl": true, "fix": "risik"}]}, {"s": 11.28, "e": 12.14, "w": [{"t": "kejap-kejap", "hl": false, "fix": null}, {"t": "tu.", "hl": false, "fix": null}]}, {"s": 12.16, "e": 13.06, "w": [{"t": "Besok", "hl": false, "fix": null}, {"t": "nak", "hl": false, "fix": null}, {"t": "hantar", "hl": false, "fix": null}]}, {"s": 13.08, "e": 13.82, "w": [{"t": "kat", "hl": false, "fix": null}, {"t": "JAIS", "hl": true, "fix": null}, {"t": "ni.", "hl": false, "fix": null}]}, {"s": 13.84, "e": 14.66, "w": [{"t": "Type", "hl": false, "fix": null}, {"t": "satu-satu", "hl": false, "fix": null}]}, {"s": 14.68, "e": 15.88, "w": [{"t": "dalam", "hl": false, "fix": null}, {"t": "Excel.", "hl": true, "fix": null}]}, {"s": 15.9, "e": 16.7, "w": [{"t": "Semak", "hl": false, "fix": null}, {"t": "semula,", "hl": false, "fix": null}]}, {"s": 16.72, "e": 17.76, "w": [{"t": "salah", "hl": true, "fix": null}, {"t": "lagi.", "hl": false, "fix": null}]}, {"s": 17.78, "e": 19.12, "w": [{"t": "Berjam-jam", "hl": true, "fix": null}, {"t": "hilang,", "hl": true, "fix": null}]}, {"s": 19.14, "e": 19.64, "w": [{"t": "betul", "hl": false, "fix": null}, {"t": "tak?", "hl": false, "fix": null}]}, {"s": 19.66, "e": 20.86, "w": [{"t": "Inilah", "hl": false, "fix": null}, {"t": "keistimewaan", "hl": false, "fix": null}]}, {"s": 20.88, "e": 21.66, "w": [{"t": "Yuran.my.", "hl": true, "fix": null}]}, {"s": 21.68, "e": 22.66, "w": [{"t": "Kita", "hl": false, "fix": null}, {"t": "dah", "hl": false, "fix": null}, {"t": "siapkan", "hl": false, "fix": null}]}, {"s": 22.68, "e": 23.8, "w": [{"t": "template", "hl": true, "fix": null}, {"t": "yang", "hl": false, "fix": null}, {"t": "khas", "hl": false, "fix": null}]}, {"s": 23.82, "e": 24.46, "w": [{"t": "untuk", "hl": false, "fix": null}, {"t": "hantar", "hl": false, "fix": null}]}, {"s": 24.48, "e": 25.32, "w": [{"t": "kat", "hl": false, "fix": null}, {"t": "JAIS", "hl": true, "fix": null}, {"t": "dah.", "hl": false, "fix": null}]}, {"s": 25.34, "e": 26.3, "w": [{"t": "Data", "hl": false, "fix": null}, {"t": "kutipan", "hl": true, "fix": null}]}, {"s": 26.32, "e": 27.82, "w": [{"t": "tersusun", "hl": false, "fix": null}, {"t": "rapi.", "hl": true, "fix": null}]}, {"s": 27.84, "e": 28.84, "w": [{"t": "Tak", "hl": false, "fix": null}, {"t": "perlu", "hl": false, "fix": null}, {"t": "type", "hl": false, "fix": null}, {"t": "semula.", "hl": false, "fix": null}]}, {"s": 28.86, "e": 30.26, "w": [{"t": "Masa", "hl": false, "fix": null}, {"t": "yang", "hl": false, "fix": null}, {"t": "kita", "hl": false, "fix": null}, {"t": "luangkan", "hl": false, "fix": null}]}, {"s": 30.28, "e": 31.4, "w": [{"t": "untuk", "hl": false, "fix": null}, {"t": "buat", "hl": false, "fix": null}, {"t": "rekod", "hl": true, "fix": null}, {"t": "tu,", "hl": false, "fix": null}]}, {"s": 31.42, "e": 32.5, "w": [{"t": "kita", "hl": false, "fix": null}, {"t": "luangkan", "hl": false, "fix": null}, {"t": "masa", "hl": false, "fix": null}]}, {"s": 32.52, "e": 33.46, "w": [{"t": "dengan", "hl": false, "fix": null}, {"t": "pelajar.", "hl": true, "fix": null}]}, {"s": 33.48, "e": 34.32, "w": [{"t": "Habis", "hl": false, "fix": null}, {"t": "cerita.", "hl": false, "fix": null}]}, {"s": 34.34, "e": 35.52, "w": [{"t": "Package", "hl": false, "fix": null}, {"t": "kami,", "hl": false, "fix": null}, {"t": "Pro+,", "hl": true, "fix": "ProPlus"}]}, {"s": 35.54, "e": 36.32, "w": [{"t": "sesuai", "hl": false, "fix": null}, {"t": "dengan", "hl": false, "fix": null}]}, {"s": 36.34, "e": 37.28, "w": [{"t": "sekolah-sekolah", "hl": false, "fix": "kola-kola"}, {"t": "KAFA.", "hl": true, "fix": null}]}, {"s": 37.3, "e": 38.06, "w": [{"t": "Tak", "hl": false, "fix": null}, {"t": "ada", "hl": false, "fix": null}, {"t": "kontrak.", "hl": true, "fix": null}]}, {"s": 38.08, "e": 38.62, "w": [{"t": "Cuba", "hl": false, "fix": null}, {"t": "klik", "hl": false, "fix": null}]}, {"s": 38.64, "e": 39.2, "w": [{"t": "link", "hl": true, "fix": "lini"}, {"t": "in", "hl": true, "fix": null}, {"t": "bio.", "hl": true, "fix": null}]}, {"s": 39.22, "e": 40.12, "w": [{"t": "Kita", "hl": false, "fix": null}, {"t": "demo", "hl": true, "fix": null}, {"t": "dulu.", "hl": false, "fix": null}]}, {"s": 40.14, "e": 40.78, "w": [{"t": "Kalau", "hl": false, "fix": null}, {"t": "sesuai,", "hl": false, "fix": null}]}, {"s": 40.8, "e": 41.46, "w": [{"t": "cikgu", "hl": false, "fix": null}, {"t": "setuju.", "hl": false, "fix": null}]}, {"s": 41.48, "e": 42.21, "w": [{"t": "Let's", "hl": false, "fix": null}, {"t": "go.", "hl": false, "fix": null}]}], "mg": [[0, 1.0, "Thumbnail", "Thumbnail 1 s: JAIS / MINTAK / REPORT? (REPORT? dalam kotak biru aksen) + kad logo JAIS (kiri muka), atas frame Farhan (sumber 0:11.5)"], [1.25, 3.6, "Label nama", "Pil biru #2A3B8F “Farhan · Yuran.my”, atas-kiri"], [3.7, 5.95, "Logo JAIS", "B-ROLL/Logo JAIS.png atas kad putih (gaya YM-F-004), pop masuk pada “laporan kat JAIS”"], [6.04, 8.25, "Kad grafik", "Ikon kalendar “Hujung bulan” → ikon dokumen “Laporan ke JAIS”"], [8.3, 12.1, "Motion", "Resit-resit jatuh dan bertimbun satu demi satu (“Kumpullah semua resit…”). Grafik buatan sendiri, tiada data sebenar"], [13.82, 19.62, "Motion", "Hamparan gaya Excel: baris ditaip satu-satu → sel salah bertanda merah ✗ (“salah lagi”) → jam berputar laju + “Berjam-jam hilang”. Tiada data sebenar (bar kelabu)"], [20.8, 21.66, "Logo", "Logo Yuran.my putih atas pil biru #2A3B8F (tiada shadow) pada “Yuran.my”"], [21.9, 24.9, "B-roll sistem", "B-ROLL/B-Roll_SistemYuran.my.mp4 @1:56.6: menu Advanced Reports, Invoice List Report → Collection Report. Jadual kosong, tiada data pelanggan"], [25.3, 28.3, "B-roll app", "B-ROLL/B-Roll Pantau Yuran.mp4 @1:41: dashboard Collection Stats (Ogos 2026). Semua angka RM, peratus dan bilangan diblur"], [28.84, 33.46, "Kad grafik", "✗ Masa untuk buat rekod (garis potong) → ✓ Masa dengan pelajar"], [34.3, 38.04, "Kad pakej", "Pakej Pro+ → ✓ Sesuai untuk KAFA → ✓ Tiada kontrak. Tiada harga dipaparkan (tidak disebut)"], [38.06, 42.21, "CTA", "Kad profil TikTok Yuran.My Street, link bio yuran.my/daftar/?tiktok diketuk (riak) pada “link in bio”"], [42.21, 43.71, "End card", "Logo putih + Cara MUDAH Urus Yuran + kad profil dengan link bio diketuk + Klik link di bio untuk demo sistem Yuran.my"]], "sfx": [[0.88, "whoosh"], [3.7, "pop"], [6.04, "pop"], [8.45, "tick"], [8.87, "tick"], [9.29, "tick"], [9.71, "tick"], [10.13, "tick"], [10.55, "tick"], [10.97, "tick"], [11.39, "tick"], [13.82, "whoosh"], [14.02, "tick"], [14.44, "tick"], [14.86, "tick"], [15.28, "tick"], [16.72, "bonk"], [17.88, "tick"], [18.28, "tick"], [18.68, "tick"], [19.08, "tick"], [20.8, "ding"], [21.85, "whoosh"], [25.25, "whoosh"], [28.84, "pop"], [31.42, "ding"], [34.3, "pop"], [35.54, "pop"], [37.3, "pop"], [38.06, "whoosh"], [38.7, "click"], [42.26, "ding"], [42.96, "click"]], "zoom": [{"t": 1.0, "m": "100% (asas)"}, {"t": 6.04, "m": "112% punch-in"}, {"t": 8.3, "m": "100% (asas)"}, {"t": 12.14, "m": "112% punch-in"}, {"t": 13.82, "m": "100% (asas)"}, {"t": 19.64, "m": "112% punch-in"}, {"t": 21.66, "m": "100% (asas)"}, {"t": 28.84, "m": "112% punch-in"}, {"t": 33.46, "m": "100% (asas)"}, {"t": 34.32, "m": "112% punch-in"}, {"t": 38.06, "m": "100% (asas)"}], "dur": 43.71};
+const SEG=[[0, 1.0, "Thumbnail", "Hook JAIS MINTAK REPORT? + logo JAIS"], [1.0, 13.84, "Laporan JAIS", "Asyik nak hantar laporan JAIS, hujung bulan, kumpul resit. Muzik 1 (sibuk/tegang)"], [13.84, 19.66, "Excel & salah", "Type satu-satu dalam Excel, salah lagi, berjam-jam hilang"], [19.66, 28.84, "Yuran.my", "Template khas untuk JAIS, data kutipan tersusun rapi. Muzik bertukar ke muzik 2 (harapan)"], [28.84, 34.32, "Masa pelajar", "Masa buat rekod jadi masa dengan pelajar"], [34.32, 42.21, "Pro+ & demo", "Pakej Pro+, tiada kontrak, klik link in bio untuk demo"], [42.21, 43.71, "End card", "CTA BOFU: Klik link di bio untuk demo"]];
+const DONE=[["Guna video trim Farhan", "BOFU_JAIS_Mintak_Report_KAFA.mp4 (41.2 s, 1080×1920, HEVC). Isi tidak dipotong; tiada senyap lebih 0.3 s.", 1.0], ["Thumbnail 1 saat", "JAIS / MINTAK / REPORT? (dari tajuk skrip) + kad logo JAIS sebagai hook tambahan (seperti YM-F-004). Tiada logo Yuran.my di awal. PNG 1080×1920 berasingan dieksport.", 0.3], ["Babak masalah dengan motion", "Logo JAIS, kalendar hujung bulan, resit bertimbun, hamparan Excel ditaip → salah → jam berjam-jam. Semua grafik buatan sendiri tanpa data sebenar.", 3.7], ["B-roll sistem Yuran.my", "Template/laporan: halaman Invoice List Report → Collection Report dari B-Roll_SistemYuran.my (jadual kosong). Data kutipan: dashboard dari B-Roll Pantau Yuran (B-roll baru), angka diblur. Setiap sisipan 3 s, suara terus berjalan.", 21.9], ["Muzik berlesen ikut babak", "Babak masalah (0:00–0:19.7): “Complicated”, Arulo — rentak sibuk. Crossfade 1 s pada “Inilah keistimewaan Yuran.my” ke “Driving Ambition”, Ahjay Stelino — muzik harapan. Kedua-dua Mixkit Stock Music Free License. ~24 dB di bawah suara dengan ducking.", 19.66], ["CTA BOFU ikut percakapan", "“Cuba klik link in bio. Kita demo dulu” → kad profil TikTok dengan link bio diketuk; end card “Klik link di bio untuk demo sistem Yuran.my”, tanpa emel (seperti YM-F-004/005).", 38.06], ["Caption & ejaan", "1–4 perkataan, Inter ExtraBold. Ejaan DNA: resit (transkrip ‘risik’), Pro+ (transkrip ‘ProPlus’), Yuran.my, KAFA. Kata kunci biru: laporan, JAIS, report, resit, Excel, salah, berjam-jam, template, kutipan, rapi, rekod, pelajar, Pro+, kontrak, demo, link in bio.", 3.0], ["Brand & fakta", "Tiada harga, diskaun atau statistik ditambah. Pakej Pro+ dipaparkan tanpa harga kerana tidak disebut.", 34.3], ["Audio", "High-pass 70 Hz, denoise ringan, kompresor lembut, normalize −14.0 LUFS (peak −1.6 dBFS)."]];
+const TODO=[["“banyak lah kena bawa report”", "Bunyi kurang jelas pada 0:04.4–0:06.0; Whisper dengar ‘banyak lah kena bawa report’. Sahkan ayat sebenar.", 4.4], ["“sekolah-sekolah KAFA” (transkrip: “kola-kola KAFA”)", "Dibaca sebagai ‘sekolah-sekolah KAFA’. Sahkan. Kad pakej tulis ‘Sesuai untuk KAFA’.", 36.3], ["“link in bio” (transkrip: “lini bio”)", "Caption tulis ‘link in bio’. Sahkan jika Farhan sebut ‘link di bio’.", 38.6], ["“Ini yang biasa saya terima”", "Sahkan perkataan ‘terima’ (mungkin ‘dengar’).", 1.6], ["Template khas JAIS", "Tiada rakaman skrin template berlabel JAIS dalam B-ROLL/. Video tunjuk halaman Collection Report / Invoice List Report sebagai laporan sistem. Jika ada rakaman template JAIS sebenar, beri dan saya ganti.", 21.9], ["“Tak ada kontrak” & Pakej Pro+", "Fakta disebut Farhan; dipaparkan seperti disebut. Sahkan dengan VHA Cognitive bahawa Pro+ memang tanpa kontrak.", 37.24], ["CTA BOFU: link di bio, bukan DNA", "DNA BOFU: ‘Hubungi kami untuk demo sistem Yuran.my’. Ikut percakapan dan gaya YM-F-002/003: ‘Klik link di bio untuk demo sistem Yuran.my’. Link bio dari BRAND/Yuran Tiktok.jpg; sahkan masih sama.", 42.51], ["Muzik dari luar folder MUSIC/", "MUSIC/ masih kosong. Mixkit Complicated (Arulo) & Driving Ambition (Ahjay Stelino), Mixkit Stock Music Free License.", 19.66], ["Tiada video rujukan gaya", "BRAND/ tiada rujukan-gaya-*.mp4 (ikut DNA seperti YM-F-004/005)."], ["Preview MP4 belum di Drive", "Alat Drive tidak dapat muat naik fail besar. MP4 preview dan thumbnail ada di halaman ini."]];
+const TT="JAIS mintak report hujung bulan? Kumpul resit, type satu-satu dalam Excel, salah lagi… berjam-jam hilang. Dengan Yuran.my, template laporan untuk JAIS dah siap dan data kutipan tersusun rapi. Pakej Pro+, tiada kontrak. Klik link di bio untuk demo dulu 👆";
+const HS="#sekolahkafa #gurukafa #yuranmy #laporanjais #yuransekolah";
+
+const $=id=>document.getElementById(id);
+const v=$("v"), D=DATA.dur;
+const fmt=t=>{t=Math.max(0,t);const m=Math.floor(t/60),s=t-m*60;return m+":"+(s<10?"0":"")+s.toFixed(1)};
+const seek=t=>{v.currentTime=Math.min(Math.max(0,t),D-0.05);};
+
+const tl=$("tl");let h="";
+SEG.forEach(s=>h+=`<div class="seg" style="left:${s[0]/D*100}%;width:${(s[1]-s[0])/D*100}%" title="${s[2]}">${s[2]}</div>`);
+DATA.mg.forEach(m=>h+=`<div class="mg" style="left:${m[0]/D*100}%;width:${Math.max(.5,(m[1]-m[0])/D*100)}%"></div>`);
+DATA.sfx.forEach(x=>h+=`<div class="sx" style="left:${x[0]/D*100}%"></div>`);
+tl.innerHTML=h+'<div class="ph" id="ph"></div>';
+tl.addEventListener("pointerdown",e=>{const r=tl.getBoundingClientRect();seek((e.clientX-r.left)/r.width*D)});
+tl.addEventListener("keydown",e=>{if(e.key==="ArrowRight")seek(v.currentTime+1);if(e.key==="ArrowLeft")seek(v.currentTime-1)});
+
+const segOf=t=>SEG.find(s=>t>=s[0]&&t<s[1])||SEG[SEG.length-1];
+let last="";
+$("caps").innerHTML=DATA.caps.map((c,i)=>{const sg=segOf(c.s)[2];const head=sg!==last?`<span class="sec">${sg}</span>`:"";last=sg;
+  const txt=c.w.map(w=>w.fix?`<span class="fix${w.hl?" hl":""}" title="Transkrip: ${w.fix}">${w.t}</span>`:w.hl?`<span class="hl">${w.t}</span>`:w.t).join(" ");
+  return `<button class="cap-row" data-t="${c.s}" id="cr${i}"><time>${fmt(c.s)}</time><span>${head}${txt}</span></button>`}).join("");
+
+$("segtbl").innerHTML=SEG.map(s=>`<tr><td class="n"><a href="#" data-t="${s[0]}">${fmt(s[0])}–${fmt(s[1])}</a></td><td>${s[2]}</td><td>${s[3]}</td></tr>`).join("");
+$("cuttbl").innerHTML=DATA.zoom.map(c=>`<tr><td class="n"><a href="#" data-t="${c.t}">${fmt(c.t)}</a></td><td>${c.m}</td></tr>`).join("");
+const evs=DATA.mg.map(m=>({t:m[0],k:m[2],d:m[3]+" (hingga "+fmt(m[1])+")",s:false})).concat(DATA.sfx.map(x=>({t:x[0],k:"SFX",d:x[1],s:true}))).sort((a,b)=>a.t-b.t);
+$("evs").innerHTML=evs.map(e=>`<button class="ev" data-t="${e.t}"><time>${fmt(e.t)}</time><span class="k${e.s?" sfx":""}">${e.k}</span><span>${e.d}</span></button>`).join("");
+
+const li=(d,cls,tag,lab)=>`<li class="q${cls}"><b><span class="tag ${tag}">${lab}</span>${d[0]}</b>${d[1]}${d[2]!=null?` <a href="#" data-t="${d[2]}">Lihat ${fmt(d[2])}</a>`:""}</li>`;
+$("done").innerHTML=DONE.map(d=>li(d," done","o","Siap")).join("");
+$("todo").innerHTML=TODO.map(d=>li(d,"","w","Perlu semak")).join("");
+$("nq").textContent=TODO.length;
+
+$("tt").innerHTML=TT+"\n\n<span class=\"hs\">"+HS+"</span>";
+$("copy").onclick=()=>{const t=TT+"\n\n"+HS;
+  const ok=()=>{$("copied").hidden=false;setTimeout(()=>$("copied").hidden=true,1800)};
+  const sel=()=>{const r=document.createRange();r.selectNodeContents($("tt"));const s=getSelection();s.removeAllRanges();s.addRange(r);};
+  try{navigator.clipboard.writeText(t).then(ok,sel)}catch(e){sel()}};
+
+document.addEventListener("click",e=>{const b=e.target.closest("[data-t]");if(!b||b===tl)return;e.preventDefault();seek(+b.dataset.t+0.02);});
+
+document.querySelectorAll(".tab").forEach(tb=>tb.onclick=()=>{document.querySelectorAll(".tab").forEach(x=>{x.setAttribute("aria-selected",x===tb);$(x.dataset.p).hidden=x!==tb});
+  try{localStorage.setItem("ymf006-tab",tb.id)}catch(e){}});
+try{const k=localStorage.getItem("ymf006-tab");if(k&&$(k))$(k).click();}catch(e){}
+
+let lastCr=-1;
+function loop(){const t=v.currentTime||0;$("ph").style.left=(t/D*100)+"%";tl.setAttribute("aria-valuenow",t.toFixed(1));
+  const ci=DATA.caps.findIndex(c=>t>=c.s&&t<c.e);
+  if(ci!==lastCr){document.querySelectorAll(".cap-row.on").forEach(x=>x.classList.remove("on"));if(ci>=0)$("cr"+ci).classList.add("on");lastCr=ci;}
+  requestAnimationFrame(loop);}
+loop();
+</script>
+
