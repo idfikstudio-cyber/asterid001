@@ -1,7 +1,7 @@
-YM-F-005_Duit_yuran_dalam_laci — RINGKASAN PREVIEW v1
+YM-F-005_Duit_yuran_dalam_laci — RINGKASAN PREVIEW v2 (B-roll duit selit & duit dalam laci)
 Brand: Yuran.my | Spokesperson: Farhan | Jenis: TOFU | Durasi: 42.4 s (540x960 preview)
 Sumber: 01_RAW/2026-10-30_005_FARHAN/TOFU_Duit_yuran_dalam_laci.mp4 (39.9 s, SUDAH DITRIM oleh Farhan, isi tidak dipotong)
-Halaman preview: https://claude.ai/artifact/HbjLRRgCSWFU2XeiM5sqVq (v1)
+Halaman preview: https://claude.ai/artifact/HbjLRRgCSWFU2XeiM5sqVq (v2)
 
 1. TEKS HOOK / THUMBNAIL
    DUIT YURAN / DALAM / LACI?  (yuran biru aksen, LACI? dalam kotak biru #29ABE2) + kad gambar kes pecah masuk bertanda PECAH MASUK (kiri muka). Frame Farhan pandang kamera (sumber 0:02.4). 1 saat, tiada logo Yuran.my.
@@ -49,9 +49,11 @@ Halaman preview: https://claude.ai/artifact/HbjLRRgCSWFU2XeiM5sqVq (v1)
 
 3. GRAFIK, B-ROLL, MUZIK & SFX (masa video siap)
    0:00.0-0:01.0  THUMBNAIL: Thumbnail 1 s: DUIT YURAN / DALAM / LACI? (LACI? dalam kotak biru aksen) + kad gambar kes pecah masuk bertanda PECAH MASUK (kiri muka), atas frame Farhan pandang kamera (sumber 0:02.4)
-   0:01.2-0:04.2  LABEL NAMA: Pil biru #2A3B8F “Farhan · Yuran.my”, atas-kiri
+   0:01.2-0:03.1  LABEL NAMA: Pil biru #2A3B8F “Farhan · Yuran.my”, atas-kiri
+   0:03.1-0:05.3  B-ROLL (v2): B-ROLL/duit selit.jpeg pada “petang nanti baru nak pergi bank-in”
    0:06.4-0:09.4  B-ROLL ARTIKEL: B-ROLL/Pecah_masuk_Kafa.jpg: hantaran “SEKOLAH KAFAI AS SYARIFF BANTING KENA PECAH MASUK” + gambar bilik bersepah (29.03.2026). Kad atas latar kabur gelap, zoom perlahan
    0:10.8-0:13.8  B-ROLL ARTIKEL: B-ROLL/PecahmasukKafa_3.png: “Polis buru suspek pecah masuk sekolah agama curi duit” (30 Mei 2025, CCTV). Pada 12.1 s tajuk Media Selangor “Dua suspek pecah masuk sekolah agama di Bukit Jelutong dikesan” (Pecah_masuk_Kafa 4.jpg, tajuk sahaja) masuk di bawah
+   0:14.9-0:17.8  B-ROLL (v2): B-ROLL/Duit dalam laci.jpeg pada “Itu belum cerita lagi kalau duit kurang”
    0:20.3-0:29.1  KAD GRAFIK: ✗ Bukan soal amanah → ✓ Soal SISTEM (garis potong) → Sistem melindungi: ✓ Cikgu, ✓ Ibu bapa. Kad putih di dada; caption turun sedikit
    0:29.4-0:33.4  KAD SOALAN: “Masih guna tunai?” dengan pilihan Ya / Tak (sorotan bergilir, tiada jawapan dipilih)
    0:34.7-0:37.7  B-ROLL GAMBAR: B-ROLL/PecahmasukKafa 2.jpg: pejabat sekolah selepas pecah masuk (29.03.2026), zoom perlahan
@@ -59,7 +61,7 @@ Halaman preview: https://claude.ai/artifact/HbjLRRgCSWFU2XeiM5sqVq (v1)
    0:40.9-0:42.4  END CARD: Logo putih + Cara MUDAH Urus Yuran + kad profil TikTok Yuran.My Street @yuran.my, butang + Follow ditekan jadi Following ✓ + Follow TikTok Yuran.my untuk tips urus yuran sekolah
    Punch-in: 0:01.0 100% (asas), 0:04.7 112% punch-in, 0:06.2 100% (asas), 0:14.9 112% punch-in, 0:18.9 100% (asas), 0:21.7 112% punch-in, 0:23.6 100% (asas), 0:25.6 112% punch-in, 0:29.1 100% (asas), 0:33.4 112% punch-in, 0:34.7 100% (asas)
    Muzik: 0:00-0:20.3 'Echoes' (Andrew Ev) babak masalah/tegang -> crossfade 1 s pada 'Ini bukan soal amanah' -> 0:20.3-0:42.4 'Dreaming Big' (Ahjay Stelino) babak sistem/harapan. Mixkit Stock Music Free License. ~24 dB di bawah suara, ducking.
-   SFX (lembut, dijana sendiri): 0:00.9 whoosh, 0:06.3 whoosh, 0:10.7 whoosh, 0:12.1 pop, 0:34.6 whoosh, 0:20.3 pop, 0:23.6 ding, 0:25.6 pop, 0:26.4 pop, 0:28.2 pop, 0:29.4 pop, 0:37.8 whoosh, 0:38.2 tick, 0:38.6 tick, 0:39.0 tick, 0:39.5 tick, 0:40.9 ding, 0:41.7 click
+   SFX (lembut, dijana sendiri): 0:00.9 whoosh, 0:03.0 whoosh, 0:14.9 whoosh, 0:06.3 whoosh, 0:10.7 whoosh, 0:12.1 pop, 0:34.6 whoosh, 0:20.3 pop, 0:23.6 ding, 0:25.6 pop, 0:26.4 pop, 0:28.2 pop, 0:29.4 pop, 0:37.8 whoosh, 0:38.2 tick, 0:38.6 tick, 0:39.0 tick, 0:39.5 tick, 0:40.9 ding, 0:41.7 click
 
 4. CTA
    TOFU (ikut gaya YM-F-004 yang diluluskan): 'Follow TikTok Yuran.my untuk tips urus yuran sekolah' + kad profil TikTok @yuran.my, butang + Follow ditekan jadi Following + logo Yuran.my putih + 'Cara MUDAH Urus Yuran' atas biru #2A3B8F (end card 1.5 s). Tanpa hello@yuran.my.
@@ -70,6 +72,8 @@ Halaman preview: https://claude.ai/artifact/HbjLRRgCSWFU2XeiM5sqVq (v1)
    - Nama sekolah & kes sebenar dipaparkan: Ikut arahan Farhan, nama KAFAI As Syariff Banting dan papan tanda sekolah tidak diblur. Video tidak mendakwa sekolah itu cuai; ia hanya memaparkan berita kes pecah masuk. Pastikan selesa. [0:06.4]
    - Gambar pegawai polis & byline wartawan: Artikel PecahmasukKafa_3 memaparkan gambar pegawai polis (IQBAL) dan nama wartawan seperti asal. Suspek dalam CCTV memang sudah dikaburkan oleh penerbit. [0:10.8]
    - Tangkapan skrin berita pihak ketiga: Tangkapan skrin artikel Media Selangor & portal berita dipaparkan seperti asal, tanpa logo Yuran.my di atasnya. Gambar stok dalam artikel Media Selangor tidak digunakan (tidak berkaitan). [0:12.1]
+   - Resolusi gambar Duit dalam laci: fail asal kecil (405x493), dipaparkan sebagai kad sederhana; sedikit lembut pada 1080p. [0:14.9]
+   - Label nama lebih pendek: 1.8 s (DNA ±3 s) kerana B-roll duit selit masuk pada 0:03.1.
    - Tiada video rujukan gaya: BRAND/ tiada rujukan-gaya-*.mp4 (Farhan setuju ikut DNA, sama seperti YM-F-004).
    - Preview MP4 belum di Drive: Alat Drive tidak dapat muat naik fail video/gambar besar. RINGKASAN dimuat naik; MP4 preview dan thumbnail ada di halaman ini.
 

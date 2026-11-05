@@ -26,6 +26,8 @@ B1, B2, B3, C1, PO = R["B1"], R["B2"], R["B3"], R["CARD1"], R["POLL"]
 mg = [
  [0, 1.0, "Thumbnail", "Thumbnail 1 s: DUIT YURAN / DALAM / LACI? (LACI? dalam kotak biru aksen) + kad gambar kes pecah masuk bertanda PECAH MASUK (kiri muka), atas frame Farhan pandang kamera (sumber 0:02.4)"],
  [O + R["LABEL_IN"], O + R["LABEL_OUT"], "Label nama", "Pil biru #2A3B8F “Farhan · Yuran.my”, atas-kiri"],
+ [O + R["B0"][0], O + R["B0"][1], "B-roll (v2)", "B-ROLL/duit selit.jpeg: duit tunai berikat getah di tangan + duit dalam plastik, pada “petang nanti baru nak pergi bank-in”"],
+ [O + R["B4"][0], O + R["B4"][1], "B-roll (v2)", "B-ROLL/Duit dalam laci.jpeg: seikat duit kertas berlabel, pada “Itu belum cerita lagi kalau duit kurang”"],
  [O + B1[0], O + B1[1], "B-roll artikel", "B-ROLL/Pecah_masuk_Kafa.jpg: hantaran “SEKOLAH KAFAI AS SYARIFF BANTING KENA PECAH MASUK” + gambar bilik bersepah (29.03.2026). Kad atas latar kabur gelap, zoom perlahan"],
  [O + B2[0], O + B2[1], "B-roll artikel", "B-ROLL/PecahmasukKafa_3.png: “Polis buru suspek pecah masuk sekolah agama curi duit” (30 Mei 2025, CCTV). Pada " + f"{O + R['B2_STRIP']:.1f}" + " s tajuk Media Selangor “Dua suspek pecah masuk sekolah agama di Bukit Jelutong dikesan” (Pecah_masuk_Kafa 4.jpg, tajuk sahaja) masuk di bawah"],
  [O + C1[0], O + C1[1], "Kad grafik", "✗ Bukan soal amanah → ✓ Soal SISTEM (garis potong) → Sistem melindungi: ✓ Cikgu, ✓ Ibu bapa. Kad putih di dada; caption turun sedikit"],
@@ -40,16 +42,17 @@ for t, z in R["ZOOM"]:
     zoom.append({"t": round(t + O, 2), "m": "100% (asas)" if z == 1 else f"{round(z*100)}% punch-in"})
 SEG = [
  [0, 1.0, "Thumbnail", "Hook DUIT YURAN DALAM LACI? + gambar kes pecah masuk"],
- [1.0, 6.18, "Duit dalam laci", "Kutip pagi, bank-in petang. Kalau hilang, siapa tanggung? Muzik 1 (tegang)"],
- [6.18, O + C1[0], "Kes pecah masuk", "Kes sekolah kena pecah masuk: 2 sisipan B-roll artikel. Siapa tanggung, dipersalahkan, rugi, ganti?"],
+ [1.0, 6.18, "Duit dalam laci", "Kutip pagi, bank-in petang (B-roll duit selit). Kalau hilang, siapa tanggung? Muzik 1 (tegang)"],
+ [6.18, O + C1[0], "Kes pecah masuk", "Kes sekolah kena pecah masuk: 2 sisipan B-roll artikel. Siapa tanggung, dipersalahkan, rugi? Duit kurang (B-roll duit dalam laci), siapa ganti?"],
  [O + C1[0], O + 28.10, "Soal sistem", "Bukan soal amanah, soal sistem yang lindungi cikgu & ibu bapa. Muzik bertukar ke muzik 2 (harapan)"],
  [O + 28.10, O + 32.46, "Masih tunai?", "Soalan kepada sekolah/ketua guru: masih guna tunai?"],
  [O + 32.46, R["BODY_END"], "Kongsi pengalaman", "B-roll pejabat dipecah masuk + motion komen"],
  [R["BODY_END"], D, "End card", "CTA Follow TikTok @yuran.my"],
 ]
 DONE = [
+ ["v2: B-roll duit selit & duit dalam laci", "Komen Farhan: B-ROLL/duit selit.jpeg pada “petang nanti baru nak pergi bank-in” (0:03.1–0:05.3) dan B-ROLL/Duit dalam laci.jpeg pada “Itu belum cerita lagi kalau duit kurang” (0:14.9–0:17.8). Suara terus berjalan; label Farhan · Yuran.my kini tamat pada 0:03.1 supaya tidak bertindih dengan B-roll.", O + R["B0"][0]],
  ["Guna video trim Farhan", "TOFU_Duit_yuran_dalam_laci.mp4 (39.9 s, 1080×1920, HEVC). Isi tidak dipotong; tiada senyap lebih 0.35 s.", 1.0],
- ["Kes kecuaian / pecah masuk (arahan Farhan)", "3 sisipan B-roll dari B-ROLL/ (setiap satu 3 s, suara terus berjalan): hantaran pecah masuk KAFAI As Syariff Banting, artikel polis buru suspek pecah masuk sekolah agama curi duit + tajuk Media Selangor, dan gambar pejabat sekolah selepas dipecah masuk. Nama sekolah tidak diblur (arahan Farhan). Tiada teks atau fakta ditambah pada artikel.", O + B1[0]],
+ ["Kes kecuaian / pecah masuk (arahan Farhan)", "3 sisipan B-roll kes dari B-ROLL/ (setiap satu 3 s, suara terus berjalan): hantaran pecah masuk KAFAI As Syariff Banting, artikel polis buru suspek pecah masuk sekolah agama curi duit + tajuk Media Selangor, dan gambar pejabat sekolah selepas dipecah masuk. Nama sekolah tidak diblur (arahan Farhan). Tiada teks atau fakta ditambah pada artikel.", O + B1[0]],
  ["Muzik berlesen ikut babak (arahan Farhan)", "Babak masalah (0:00–0:20.3): “Echoes”, Andrew Ev — atmosfera tegang tanpa jadi seram. Crossfade 1 s pada “Ini bukan soal amanah” ke “Dreaming Big”, Ahjay Stelino — muzik harapan untuk babak sistem & ajakan komen. Kedua-dua Mixkit Stock Music Free License (komersial, media sosial, tiada atribusi). ~24 dB di bawah suara dengan ducking; naik pada thumbnail & end card.", O + C1[0]],
  ["Thumbnail 1 saat", "DUIT YURAN / DALAM / LACI? (dari tajuk skrip & ayat pertama) + kad gambar kes pecah masuk sebagai hook tambahan. Tiada logo Yuran.my di awal. PNG 1080×1920 berasingan dieksport.", 0.3],
  ["Kad grafik & soalan", "“Bukan soal amanah → Soal SISTEM → Sistem melindungi Cikgu / Ibu bapa” dan “Masih guna tunai? Ya / Tak”, semua ikut ayat yang disebut. Kad putih di dada, muka tidak ditutup.", O + C1[0]],
@@ -64,6 +67,8 @@ TODO = [
  ["Nama sekolah & kes sebenar dipaparkan", "Ikut arahan Farhan, nama KAFAI As Syariff Banting dan papan tanda sekolah tidak diblur. Video tidak mendakwa sekolah itu cuai; ia hanya memaparkan berita kes pecah masuk. Pastikan selesa.", O + B1[0]],
  ["Gambar pegawai polis & byline wartawan", "Artikel PecahmasukKafa_3 memaparkan gambar pegawai polis (IQBAL) dan nama wartawan seperti asal. Suspek dalam CCTV memang sudah dikaburkan oleh penerbit.", O + B2[0]],
  ["Tangkapan skrin berita pihak ketiga", "Tangkapan skrin artikel Media Selangor & portal berita dipaparkan seperti asal, tanpa logo Yuran.my di atasnya. Gambar stok dalam artikel Media Selangor tidak digunakan (tidak berkaitan).", O + R["B2_STRIP"]],
+ ["Resolusi gambar Duit dalam laci", "Fail asal kecil (405×493), jadi dipaparkan sebagai kad sederhana; masih sedikit lembut pada final 1080p. Jika ada versi lebih besar, beritahu.", O + R["B4"][0]],
+ ["Label nama lebih pendek", "Label Farhan · Yuran.my kini 1.8 s (DNA: ±3 s) kerana B-roll duit selit masuk pada 0:03.1.", 1.3],
  ["Tiada video rujukan gaya", "BRAND/ tiada rujukan-gaya-*.mp4 (Farhan setuju ikut DNA, sama seperti YM-F-004).", None],
  ["Preview MP4 belum di Drive", "Alat Drive tidak dapat muat naik fail video/gambar besar. RINGKASAN dimuat naik; MP4 preview dan thumbnail ada di halaman ini.", None],
 ]

@@ -46,6 +46,8 @@ CAP = [
 ZOOM = [(0.00, 1.00), (3.70, 1.12), (5.15, 1.00), (13.90, 1.12), (17.88, 1.00), (20.66, 1.12), (22.60, 1.00),
         (24.62, 1.12), (28.10, 1.00), (32.44, 1.12), (33.74, 1.00)]
 # B-roll artikel (maks 3 s setiap satu; suara terus berjalan)
+B0 = (2.05, 4.30)      # "petang nanti baru nak pergi bank-in" -> B-ROLL/duit selit.jpeg (v2, arahan Farhan)
+B4 = (13.90, 16.80)    # "Itu belum cerita lagi kalau duit kurang" -> B-ROLL/Duit dalam laci.jpeg (v2, arahan Farhan)
 B1 = (5.40, 8.40)      # hantaran "SEKOLAH KAFAI AS SYARIFF BANTING KENA PECAH MASUK"
 B2 = (9.75, 12.75)     # artikel "Polis buru suspek pecah masuk sekolah agama curi duit" + tajuk Media Selangor
 B2_STRIP = 11.10
@@ -55,7 +57,7 @@ CARD1_R2, CARD1_B, CARD1_C1, CARD1_C2 = 22.60, 24.62, 25.45, 27.25
 POLL = (28.40, 32.40)   # "masih gunakan tunai?"
 CMT_IN = 36.80
 TYPE_A, TYPE_B = 37.05, 38.70
-LABEL_IN, LABEL_OUT = 0.25, 3.25          # "Farhan · Yuran.my"
+LABEL_IN, LABEL_OUT = 0.25, 2.05          # "Farhan · Yuran.my" (tamat sebelum B-roll duit selit)
 THUMB_SRC_T = 2.4
 def inwin(t, w): return w[0] <= t < w[1]
 
@@ -121,7 +123,7 @@ def caption(base, t):
         if a - 0.02 <= t < min(nxt, b + 0.45) or (a <= t and i + 1 == len(CAP)): cur = (a, s)
     if not cur: return
     a, s = cur; k = ease((t - a) / 0.12)
-    y = H * (0.545 if t >= CMT_IN else 0.755 if (inwin(t, B1) or inwin(t, B2) or inwin(t, B3) or inwin(t, CARD1) or inwin(t, POLL)) else 0.64)
+    y = H * (0.545 if t >= CMT_IN else 0.755 if (inwin(t, B0) or inwin(t, B4) or inwin(t, B1) or inwin(t, B2) or inwin(t, B3) or inwin(t, CARD1) or inwin(t, POLL)) else 0.64)
     tw = ImageDraw.Draw(base).textlength(s.replace("*", ""), font=CAP_FONT) + 30 * S
     fit = min(1.0, W * 0.80 / tw)          # caption panjang dikecilkan supaya kekal dalam safe zone
     draw_rich(base, CX, y + (1 - k) * 18 * S, s, CAP_FONT, sc=(0.9 + 0.1 * k) * fit, alpha=k)
@@ -152,6 +154,8 @@ def blur_boxes(im, boxes, r=16):
     return im
 _A1 = Image.open(os.path.join(BROLL, "a1.jpg")).convert("RGB").crop((0, 0, 1224, 1420))   # nama sekolah tidak diblur (arahan Farhan: berita awam)
 _A2 = Image.open(os.path.join(BROLL, "a2.jpg")).convert("RGB")
+_B0 = Image.open(os.path.join(BROLL, "b_selit.jpg")).convert("RGB")
+_B4 = Image.open(os.path.join(BROLL, "b_laci.jpg")).convert("RGB")
 _A3 = Image.open(os.path.join(BROLL, "a3.png")).convert("RGB")
 _A4H = Image.open(os.path.join(BROLL, "a4.jpg")).convert("RGB").crop((0, 0, 830, 78))
 _bgcache = {}
@@ -172,13 +176,14 @@ def bg_of(key, img):
         _bgcache[key] = b
     return _bgcache[key].copy()
 def broll(base, t):
-    for key, (a, b), img, w, cy in (("a1", B1, _A1, 0.84, 0.40), ("a3", B2, _A3, 0.80, 0.37), ("a2", B3, _A2, 1.10, 0.40)):
+    for key, (a, b), img, w, cy in (("b0", B0, _B0, 0.92, 0.40), ("b4", B4, _B4, 0.66, 0.40), ("a1", B1, _A1, 0.84, 0.40), ("a3", B2, _A3, 0.80, 0.37), ("a2", B3, _A2, 1.10, 0.40)):
         if not (a <= t < b): continue
         k = ease((t - a) / 0.22) * (1 - ease((t - (b - 0.22)) / 0.22))
         p = (t - a) / (b - a)
         fr = bg_of(key, img)
         c = shadowed(card_img(img, W * w * (1.0 + 0.035 * p)))
-        fr.alpha_composite(c, (int(W * 0.47 - c.width / 2), int(H * cy - c.height / 2 + (1 - k) * 40 * S)))
+        cx = 0.50 if key in ("b0", "a2") else 0.47   # gambar lebar ditengahkan
+        fr.alpha_composite(c, (int(W * cx - c.width / 2), int(H * cy - c.height / 2 + (1 - k) * 40 * S)))
         if key == "a3" and t >= B2_STRIP:
             ks = ease((t - B2_STRIP) / 0.3)
             s2 = shadowed(card_img(_A4H, W * 0.80, 14), 12, 110)
@@ -397,6 +402,7 @@ def render():
 # ---------- audio ----------
 SFXL = [  # (masa timeline, fail, gain dB) — SFX lembut sahaja
     (OFF - 0.12, "whoosh.wav", -24),
+    (OFF + B0[0] - 0.05, "whoosh.wav", -22), (OFF + B4[0] - 0.05, "whoosh.wav", -22),
     (OFF + B1[0] - 0.05, "whoosh.wav", -22), (OFF + B2[0] - 0.05, "whoosh.wav", -22), (OFF + B2_STRIP, "pop.wav", -22),
     (OFF + B3[0] - 0.05, "whoosh.wav", -22),
     (OFF + CARD1[0], "pop.wav", -18), (OFF + CARD1_R2, "ding.wav", -26), (OFF + CARD1_B, "pop.wav", -20),
