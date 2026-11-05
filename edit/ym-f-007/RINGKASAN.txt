@@ -1,0 +1,84 @@
+YM-F-007_Siapa_belum_bayar — RINGKASAN PREVIEW v1
+Brand: Yuran.my | Spokesperson: Farhan | Jenis: TOFU+BOFU | Durasi: 37.2 s (540x960 preview)
+Sumber: 01_RAW/2026-10-30_007_FARHAN/TOFU+BOFU_Siapa_belum_bayar.mp4 (34.7 s, tiada take ulangan; isi tidak dipotong)
+Halaman preview: https://claude.ai/artifact/KkfXXwtpYtfArX2jTyCo4K (v1)
+
+1. TEKS HOOK / THUMBNAIL
+   SIAPA / BELUM / BAYAR?  (belum biru aksen, BAYAR? dalam kotak merah) + kad status kecil (Dah bayar / ? / Belum) di atas kiri. Frame Farhan (sumber 0:00.9). 1 saat, tiada logo Yuran.my.
+
+2. CAPTION PENUH (masa video siap)
+   0:01.0  Siapa belum bayar
+   0:01.9  bulan ni?
+   0:02.4  Cikgu pun buka
+   0:03.6  lah buku.
+   0:04.6  Selak,
+   0:05.3  selak,
+   0:05.9  selak.
+   0:06.3  Ada nama yang
+   0:07.0  dah bayar
+   0:07.6  tapi lupa nak record.
+   0:09.1  Ada yang belum bayar
+   0:10.4  tapi lupa nak
+   0:11.5  hantar reminder.
+   0:12.4  Nak follow up,
+   0:13.2  segan-segan.
+   0:14.0  Macam kita ni
+   0:14.6  collect hutang ke tak?
+   0:15.9  Sebabnya takut
+   0:17.0  bila follow up,
+   0:17.8  tersalah pula.
+   0:18.9  Dia dah pernah bayar
+   0:20.0  tapi kita kata
+   0:20.8  belum bayar.
+   0:21.5  Yuran.my
+   0:22.5  tunjukkan status ni.
+   0:24.3  Settle.
+   0:25.1  Dikemas kini
+   0:25.8  setiap kali
+   0:26.4  pembayaran masuk.
+   0:27.3  Follow up jadi tepat.
+   0:28.5  Confirm.
+   0:29.0  Tak perlu teka-teka lagi.
+   0:30.3  Klik saja reminder
+   0:31.3  terus hantar.
+   0:32.2  Klik link di bio
+   0:33.0  untuk demo
+   0:33.9  sistem Yuran.my.
+
+3. GRAFIK, B-ROLL, MUZIK & SFX (masa video siap)
+   0:00.0-0:01.0  THUMBNAIL: Thumbnail 1 s: SIAPA / BELUM / BAYAR? (BAYAR? dalam kotak merah) + kad status kecil (Dah bayar / ? / Belum) di atas kiri, atas frame Farhan (sumber 0:00.9)
+   0:01.2-0:02.4  LABEL NAMA: Pil biru #2A3B8F “Farhan · Yuran.my”, atas-kiri
+   0:02.4-0:06.3  MOTION: Buku rekod dibuka, muka surat diselak tiga kali tepat pada “selak, selak, selak”
+   0:06.3-0:12.4  KAD GRAFIK: Senarai: “Dah bayar” → ✗ Tak direkod (pada “record”), “Belum bayar” → ✗ Tiada reminder (pada “reminder”). Nama sebagai bar kelabu
+   0:12.4-0:15.9  MOTION: Mesej ke ibu bapa ditaip “Assalamualaikum puan, yuran bulan ni…” lalu dipadam semula (segan-segan)
+   0:15.9-0:21.5  KAD GRAFIK: ✗ Kita kata: Belum bayar → ✓ Sebenarnya: Dah bayar
+   0:21.5-0:22.5  LOGO: Logo Yuran.my putih atas pil biru #2A3B8F (tiada shadow)
+   0:22.5-0:25.4  B-ROLL SISTEM: B-ROLL/B-Roll_SistemYuran.my.mp4 @0:31.3: senarai invois ditapis Overdue (merah); callout biru pada lajur Status. Nama pelajar (Items) dan jumlah RM individu diblur
+   0:25.4-0:27.3  B-ROLL SISTEM: B-ROLL/B-Roll_SistemYuran.my.mp4 @0:44.3: senarai invois ditapis Paid (hijau) pada “Dikemas kini setiap kali pembayaran masuk”; callout lajur Status, data peribadi diblur
+   0:27.3-0:30.3  KAD GRAFIK: ✓ Follow up tepat → ✓ Tak perlu teka-teka
+   0:30.3-0:32.2  MOTION: Butang “Hantar reminder” diketuk → “Reminder dihantar ✓” (grafik ringkas, bukan rakaman skrin)
+   0:32.2-0:35.7  CTA: Kad profil TikTok Yuran.My Street, link bio yuran.my/daftar/?tiktok diketuk pada “Klik link di bio”
+   0:35.7-0:37.2  END CARD: Logo putih + Cara MUDAH Urus Yuran + kad profil dengan link bio diketuk + Klik link di bio untuk demo sistem Yuran.my
+   Punch-in: 0:01.0 100% (asas), 0:02.4 112% punch-in, 0:06.3 100% (asas), 0:12.4 112% punch-in, 0:15.9 100% (asas), 0:18.9 112% punch-in, 0:21.5 100% (asas), 0:27.3 112% punch-in, 0:30.3 100% (asas), 0:32.2 112% punch-in
+   Muzik: 0:00-0:21.5 'Echoes' (Andrew Ev) babak masalah -> crossfade 1 s pada 'Yuran.my tunjukkan status ni' -> 'Discover' (Eugenio Mininni) babak penyelesaian. Mixkit Stock Music Free License. ~24 dB di bawah suara, ducking.
+   SFX (lembut, dijana sendiri): 0:00.9 whoosh, 0:02.4 pop, 0:03.7 whoosh, 0:04.6 whoosh, 0:05.3 whoosh, 0:05.9 whoosh, 0:06.3 pop, 0:08.6 bonk, 0:09.1 pop, 0:11.7 bonk, 0:12.4 pop, 0:12.6 tick, 0:12.8 tick, 0:13.0 tick, 0:13.2 tick, 0:15.9 pop, 0:18.9 ding, 0:21.5 ding, 0:22.4 whoosh, 0:25.4 click, 0:27.3 pop, 0:29.0 pop, 0:30.3 pop, 0:31.3 click, 0:31.4 ding, 0:32.2 whoosh, 0:32.5 click, 0:35.8 ding, 0:36.5 click
+
+4. CTA
+   BOFU (ikut percakapan, sama seperti YM-F-006): kad profil TikTok dengan link bio yuran.my/daftar/?tiktok diketuk pada 'Klik link di bio'; end card: logo Yuran.my putih + 'Cara MUDAH Urus Yuran' + kad profil + 'Klik link di bio untuk demo sistem Yuran.my' (1.5 s). Tanpa emel.
+
+5. PERLU SEMAK
+   - “Selak, selak, selak” (transkrip: “Select”): Dibaca sebagai ‘selak’ (menyelak buku). Sahkan. [0:04.6]
+   - “Settle.” dan “Confirm.”: Perkataan pendek selepas ‘status ni’ (0:24.3) dan ‘tepat’ (0:28.5) didengar ‘Settle’ dan ‘Confirm’. Sahkan. [0:24.3]
+   - “collect hutang” (transkrip: “collect utang”): Caption tulis ‘hutang’ (ejaan baku). Sahkan. [0:14.6]
+   - Video tidak dinyatakan ‘sudah ditrim’: Transkrip tiada take ulangan atau gagap, jadi saya anggap sudah ditrim dan tidak memotong isi. Beritahu jika ini footage mentah.
+   - Reminder: grafik, bukan rakaman skrin: Tiada rakaman butang reminder dalam B-ROLL/; dipaparkan butang ringkas “Hantar reminder”. Jika ada rakaman skrin reminder sebenar, beri dan saya ganti. [0:30.3]
+   - CTA BOFU: link di bio: Ikut percakapan (sama seperti YM-F-006). DNA BOFU: ‘Hubungi kami untuk demo sistem Yuran.my’. Tag skrip TOFU+BOFU. [0:36.0]
+   - Muzik dari luar folder MUSIC/: MUSIC/ masih kosong. Mixkit Echoes (Andrew Ev) & Discover (Eugenio Mininni), Mixkit Stock Music Free License. [0:21.5]
+   - Tiada video rujukan gaya: BRAND/ tiada rujukan-gaya-*.mp4 (ikut DNA seperti YM-F-004..006).
+   - Preview MP4 belum di Drive: Alat Drive tidak dapat muat naik fail besar. MP4 preview dan thumbnail ada di halaman ini.
+
+6. CAPTION TIKTOK
+   Siapa belum bayar bulan ni? Selak buku, dah bayar tapi lupa rekod, belum bayar tapi lupa reminder. Nak follow up pun segan, takut tersalah. Dengan Yuran.my, status bayaran dikemas kini setiap kali bayaran masuk. Klik link di bio untuk demo sistem Yuran.my 👆
+   #sekolahkafa #gurukafa #yuranmy #yuransekolah #kutipanyuran
+
+Nota: font Acumin Pro tiada, guna Inter. Audio -14.0 LUFS, peak -1.7 dBFS. Skrip: asterid001/scripts/ym_f007_render.py
