@@ -78,6 +78,10 @@ CARD_OFF = (49.90, 57.50)
 OFF_R1, OFF_R2, OFF_R3 = 51.90, 54.38, 56.50
 CARD_BAN = (59.40, 63.80)
 BAN_B = 62.90
+BAN_ICON = 60.82          # "possible WhatsApp kita tu kena ban" -> ikon WhatsApp berpalang (v2)
+BR_PROOF = (63.80, 65.96)  # "Tak caya? Cuba chat. Kami tak tipu." -> bukti polisi WhatsApp (v2)
+PROOF_PHONE = 64.40
+CH_FREE = 22.30           # v2: point kedua "Secara percuma" (arahan Farhan, walaupun tidak disebut)
 CMT_IN = 65.96
 TYPE_A, TYPE_B = 70.22, 70.62
 LABEL_IN, LABEL_OUT = 0.25, 3.60
@@ -141,7 +145,7 @@ def draw_rich(base, cx, cy, s, font, sc=1.0, stroke=None, colors=(WHITE, ACC), a
 
 CAP_FONT = F("xb", 78)
 CX = W * 0.46          # elak jalur kanan 15%
-LOWWIN = (BR_DASH, BR_INV, BR_APP, BR_OVD, BR_WA, CARD_CH, CARD_WA, CARD_COST, CARD_OFF, CARD_BAN)
+LOWWIN = (BR_DASH, BR_INV, BR_APP, BR_OVD, BR_WA, BR_PROOF, CARD_CH, CARD_WA, CARD_COST, CARD_OFF, CARD_BAN)
 def caption(base, t):
     cur = None
     for i, (a, b, s) in enumerate(CAP):
@@ -291,12 +295,50 @@ def app_broll(t):
     fr.alpha_composite(s2, (int(W * 0.47 - s2.width / 2), int(H * 0.40 - s2.height / 2 + (1 - k) * 40 * S)))
     return fr, k
 
+# Bukti polisi WhatsApp (v2): WhatsApp Help Center (English) + skrin akaun diharamkan (dikongsi Farhan)
+_PF = Image.open(os.path.join(AS, "proof_faq_en.png")).convert("RGB")
+_PB = Image.open(os.path.join(AS, "proof_banned.png")).convert("RGB").crop((0, 0, 924, 1180))
+def proof_broll(t):
+    a, b = BR_PROOF
+    k = ease((t - a) / 0.22) * (1 - ease((t - (b - 0.22)) / 0.22))
+    fr = bg_of("proof", _PF)
+    p = (t - a) / (b - a)
+    cw = int(W * 0.76 * (1 + 0.03 * p)); c = _PF.resize((cw, int(_PF.height * cw / _PF.width)), Image.LANCZOS).convert("RGBA")
+    sx = cw / _PF.width
+    if t >= a + 0.35:   # sorot ayat "permanently banned"
+        kh = ease((t - a - 0.35) / 0.35)
+        hl = Image.new("RGBA", c.size, (0, 0, 0, 0)); hd = ImageDraw.Draw(hl)
+        x1 = 22 * sx + (985 * sx) * kh
+        hd.rounded_rectangle((22 * sx, 367 * sx, x1, 505 * sx), radius=int(10 * S), fill=(41, 171, 226, 60), outline=ACC, width=max(2, int(5 * S)))
+        c.alpha_composite(hl)
+    c.putalpha(round_mask(c.size, int(24 * S)))
+    sc = shadowed(c)
+    cx0, cy0 = int(W * 0.46 - sc.width / 2), int(H * 0.27 - sc.height / 2 + (1 - k) * 40 * S)
+    fr.alpha_composite(sc, (cx0, cy0))
+    # label sumber
+    f = F("sb", 30); d = ImageDraw.Draw(fr); txt = "Sumber: faq.whatsapp.com"
+    tw = d.textlength(txt, font=f); py = cy0 + sc.height - 30 * S
+    lx = cx0 + 50 + 20 * S
+    d.rounded_rectangle((lx, py, lx + tw + 48 * S, py + 58 * S), radius=int(29 * S), fill=BLUE)
+    d.text((lx + 24 * S, py + 29 * S), txt, font=f, fill=WHITE, anchor="lm")
+    if t >= PROOF_PHONE:  # skrin "This account can't use WhatsApp"
+        kp = ease((t - PROOF_PHONE) / 0.3)
+        pw = int(W * 0.30); ph = int(_PB.height * pw / _PB.width)
+        pc = _PB.resize((pw, ph), Image.LANCZOS).convert("RGBA"); bz = int(10 * S)
+        body = Image.new("RGBA", (pw + 2 * bz, ph + 2 * bz), (0, 0, 0, 0))
+        ImageDraw.Draw(body).rounded_rectangle((0, 0, body.width - 1, body.height - 1), radius=int(40 * S), fill="#2A2D3A")
+        pc.putalpha(round_mask(pc.size, int(32 * S))); body.alpha_composite(pc, (bz, bz))
+        body = shadowed(body, 20, 160).rotate(-5, resample=Image.BICUBIC, expand=True)
+        fr.alpha_composite(fade_layer(body, kp), (int(W * 0.68 - body.width / 2 + (1 - kp) * 120 * S), int(H * 0.615 - body.height / 2)))
+    return fr, k
+
 def broll(base, t):
     if inwin(t, BR_DASH): fr, k = screen_card("dash", t, BR_DASH)
     elif inwin(t, BR_INV): fr, k = screen_card("inv", t, BR_INV)
     elif inwin(t, BR_APP): fr, k = app_broll(t)
     elif inwin(t, BR_OVD): fr, k = screen_card("ovd", t, BR_OVD)
     elif inwin(t, BR_WA): fr, k = screen_card("wa", t, BR_WA, wa_extra)
+    elif inwin(t, BR_PROOF): fr, k = proof_broll(t)
     else: return base
     # B-roll bersambung (invois -> apps): tiada fade ke muka di antara
     if inwin(t, BR_INV) and t > BR_INV[1] - 0.22: k = 1
@@ -354,21 +396,29 @@ def pill(lay, x0, y0, txt, f, fg, bg, k, icon=None):
 
 def card_ch(base, t):
     if not inwin(t, CARD_CH): return
-    ch = H * 0.15
+    ch = H * 0.19
     lay, d, k, ko = card_base(t, CARD_CH, ch); cw = lay.width
     f = F("b", 44)
-    y0 = int(ch * 0.12)
+    y0 = int(ch * 0.08)
     if t >= CH_A: pill(lay, int(36 * S), y0, "Apps", f, BLUE, "#D8F0FB", ease((t - CH_A) / 0.25), lambda d_, x, y, r: ic_phone(d_, x, y, r, BLUE))
     if t >= CH_E: pill(lay, int(cw * 0.50), y0, "Email", f, BLUE, "#D8F0FB", ease((t - CH_E) / 0.25), lambda d_, x, y, r: ic_mail(d_, x, y, r, BLUE))
     if t >= CH_AUTO:
         ka = ease((t - CH_AUTO) / 0.25)
         l2 = Image.new("RGBA", lay.size, (0, 0, 0, 0)); d2 = ImageDraw.Draw(l2)
-        yy = ch * 0.74
+        yy = ch * 0.56
         mark(d2, int(70 * S), yy, int(28 * S), True)
         fb = F("xb", 50)
         d2.text((int(116 * S), yy), "Pelanggan dapat ", font=F("b", 44), fill=BLACK, anchor="lm")
         d2.text((int(116 * S) + d2.textlength("Pelanggan dapat ", font=F("b", 44)), yy), "automatik", font=fb, fill=ACC, anchor="lm")
         lay.alpha_composite(fade_layer(l2, ka))
+        if t >= CH_FREE:   # v2: point kedua (arahan Farhan)
+            kf = ease((t - CH_FREE) / 0.25)
+            l3 = Image.new("RGBA", lay.size, (0, 0, 0, 0)); d3 = ImageDraw.Draw(l3)
+            yy = ch * 0.82
+            mark(d3, int(70 * S), yy, int(28 * S), True)
+            d3.text((int(116 * S), yy), "Secara ", font=F("b", 44), fill=BLACK, anchor="lm")
+            d3.text((int(116 * S) + d3.textlength("Secara ", font=F("b", 44)), yy), "percuma", font=fb, fill=ACC, anchor="lm")
+            lay.alpha_composite(fade_layer(l3, kf))
     elif t < CH_A:
         d.text((cw // 2, ch * 0.5), "Invois dihantar ke…", font=F("sb", 40), fill="#7A7C80", anchor="mm")
     put_card(base, lay, k, ko, 0.595)
@@ -421,29 +471,32 @@ def shield(d, cx, cy, r, fill):
     d.line([(cx - r * 0.35, cy), (cx - r * 0.05, cy + r * 0.3), (cx + r * 0.4, cy - r * 0.3)], fill=WHITE, width=w, joint="curve")
 def card_off(base, t):
     if not inwin(t, CARD_OFF): return
-    ch = H * 0.20
-    lay, d, k, ko = card_base(t, CARD_OFF, ch); cw = lay.width
-    shield(d, int(66 * S), ch * 0.17, int(32 * S), WAG)
+    ch = H * 0.235
+    lay, d, k, ko = card_base(t, CARD_OFF, ch, 0.84); cw = lay.width
+    shield(d, int(66 * S), ch * 0.15, int(32 * S), WAG)
     fb = F("xb", 50)
-    d.text((int(116 * S), ch * 0.17), "WhatsApp ", font=fb, fill=BLACK, anchor="lm")
-    d.text((int(116 * S) + d.textlength("WhatsApp ", font=fb), ch * 0.17), "official", font=fb, fill=ACC, anchor="lm")
+    d.text((int(116 * S), ch * 0.15), "WhatsApp ", font=fb, fill=BLACK, anchor="lm")
+    d.text((int(116 * S) + d.textlength("WhatsApp ", font=fb), ch * 0.15), "official", font=fb, fill=ACC, anchor="lm")
     f = F("b", 40)
-    for yy, t0, txt, ok in ((0.43, OFF_R1, "Berdaftar secara rasmi", True), (0.63, OFF_R2, "Kena bayar", True), (0.83, OFF_R3, "Bukan kita yang ambil, WhatsApp yang ambil", None)):
+    for yy, t0, txt, ok in ((0.36, OFF_R1, "Berdaftar secara rasmi", True), (0.53, OFF_R2, "Kena bayar", True), (0.70, OFF_R3, "Bukan kita yang ambil,\nWhatsApp yang ambil", None)):
         if t < t0: continue
         kr = ease((t - t0) / 0.25)
         l2 = Image.new("RGBA", lay.size, (0, 0, 0, 0)); d2 = ImageDraw.Draw(l2)
         y = ch * yy
         if ok: mark(d2, int(66 * S), y, int(22 * S), True)
         else: d2.ellipse((int(56 * S), y - 10 * S, int(76 * S), y + 10 * S), fill=BLUE)
-        ff = f if d2.textlength(txt, font=f) < cw - 140 * S else F("b", 34)
-        d2.text((int(106 * S), y), txt, font=ff, fill=BLACK if ok else BLUE, anchor="lm")
+        if "\n" in txt:   # v2: ayat penuh dalam dua baris (tidak terpotong)
+            for j, line in enumerate(txt.split("\n")):
+                d2.text((int(106 * S), y + j * ch * 0.15), line, font=f, fill=BLUE, anchor="lm")
+        else:
+            d2.text((int(106 * S), y), txt, font=f, fill=BLACK if ok else BLUE, anchor="lm")
         lay.alpha_composite(fade_layer(l2, kr))
     put_card(base, lay, k, ko, 0.585)
 
 def card_ban(base, t):
     if not inwin(t, CARD_BAN): return
     ch = H * 0.15
-    lay, d, k, ko = card_base(t, CARD_BAN, ch); cw = lay.width
+    lay, d, k, ko = card_base(t, CARD_BAN, ch, 0.84); cw = lay.width
     y1 = ch * 0.30
     mark(d, int(62 * S), y1, int(26 * S), False)
     d.text((int(108 * S), y1), "WhatsApp tak rasmi", font=F("b", 46), fill="#5A5D66", anchor="lm")
@@ -457,7 +510,36 @@ def card_ban(base, t):
         d2.text((int(108 * S), y2), "Risiko kena ", font=F("b", 48), fill=BLACK, anchor="lm")
         d2.text((int(108 * S) + d2.textlength("Risiko kena ", font=F("b", 48)), y2), "BAN", font=fb, fill=RED, anchor="lm")
         lay.alpha_composite(fade_layer(l2, min(1, kb)))
+    if t >= BAN_ICON:   # v2: ikon WhatsApp berpalang
+        ki = back((t - BAN_ICON) / 0.35)
+        rr = ch * 0.34
+        l4 = Image.new("RGBA", lay.size, (0, 0, 0, 0)); d4 = ImageDraw.Draw(l4)
+        ic_wa_banned(d4, cw - rr - 34 * S, ch * 0.5, rr, t - BAN_ICON)
+        sc = max(0.01, min(ki, 1.1))
+        if sc != 1:
+            cx_, cy_ = cw - rr - 34 * S, ch * 0.5
+            l4 = l4.resize((max(1, int(l4.width * sc)), max(1, int(l4.height * sc))), Image.LANCZOS)
+            tmp = Image.new("RGBA", (max(lay.width, l4.width), max(lay.height, l4.height)), (0, 0, 0, 0))
+            ox, oy = int(cx_ - cx_ * sc), int(cy_ - cy_ * sc)
+            tmp.paste(l4, (ox, oy), l4)
+            l4 = tmp.crop((0, 0, lay.width, lay.height))
+        lay.alpha_composite(fade_layer(l4, min(1, ki)))
     put_card(base, lay, k, ko, 0.595)
+
+def ic_wa_banned(d, cx, cy, r, dt):
+    """Ikon ringkas gaya WhatsApp (dilukis sendiri) dengan palang larangan merah."""
+    ri = r * 0.68
+    d.ellipse((cx - ri, cy - ri, cx + ri, cy + ri), fill=WAG)
+    d.polygon([(cx - ri * 0.75, cy + ri * 0.5), (cx - ri * 1.05, cy + ri * 1.08), (cx - ri * 0.25, cy + ri * 0.88)], fill=WAG)
+    d.ellipse((cx - ri * 0.78, cy - ri * 0.78, cx + ri * 0.78, cy + ri * 0.78), outline=WHITE, width=max(2, int(ri * 0.12)))
+    # gagang telefon
+    hw = max(2, int(ri * 0.2))
+    d.arc((cx - ri * 0.42, cy - ri * 0.42, cx + ri * 0.42, cy + ri * 0.42), 110, 250, fill=WHITE, width=hw)
+    # palang merah: bulatan + garis, garis dilukis masuk dalam 0.25 s
+    w = max(3, int(r * 0.16))
+    d.ellipse((cx - r, cy - r, cx + r, cy + r), outline=RED, width=w)
+    q = min(1, max(0, dt / 0.25)); a = r * 0.70
+    d.line((cx - a, cy - a, cx - a + 2 * a * q, cy - a + 2 * a * q), fill=RED, width=w)
 
 # ---------- motion komen: "Comment nak" ----------
 def comments(base, t):
@@ -618,7 +700,8 @@ SFXL = [  # (masa timeline, fail, gain dB) — SFX lembut sahaja
     (OFF + NUM[0], "pop.wav", -19),
     (OFF + CARD_COST[0], "pop.wav", -20), (OFF + COST_FREE, "ding.wav", -24), (OFF + COST_R2, "pop.wav", -23), (OFF + COST_KR, "pop.wav", -22),
     (OFF + CARD_OFF[0], "pop.wav", -20), (OFF + OFF_R1, "pop.wav", -24), (OFF + OFF_R2, "pop.wav", -24), (OFF + OFF_R3, "pop.wav", -24),
-    (OFF + CARD_BAN[0], "pop.wav", -21), (OFF + BAN_B, "bonk.wav", -24),
+    (OFF + CARD_BAN[0], "pop.wav", -21), (OFF + BAN_ICON, "pop.wav", -21), (OFF + BAN_B, "bonk.wav", -24),
+    (OFF + CH_FREE, "pop.wav", -23), (OFF + BR_PROOF[0] - 0.05, "whoosh.wav", -22), (OFF + PROOF_PHONE, "pop.wav", -22),
     (OFF + CMT_IN, "whoosh.wav", -24), (OFF + TYPE_A + 0.05, "tick.wav", -27), (OFF + TYPE_A + 0.25, "tick.wav", -27), (OFF + TYPE_B + 0.05, "tick.wav", -27),
     (BODY_END + 0.05, "ding.wav", -24), (BODY_END + TAP, "click.wav", -18),
 ]
