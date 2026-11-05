@@ -46,7 +46,7 @@ ZOOM = [(0.00, 1.00), (1.40, 1.12), (5.32, 1.00), (11.38, 1.12), (14.88, 1.00), 
 BOOK = (1.42, 5.32); FLIPS = [2.72, 3.64, 4.34, 4.90]      # buka buku, selak x3
 LIST = (5.34, 11.38); L1, L1X, L2, L2X = 5.34, 7.64, 8.12, 10.74
 CHAT = (11.40, 14.88); TYPE_A, TYPE_B, DEL_A, DEL_B = 11.50, 12.30, 12.50, 13.40
-WRONG = (14.90, 20.52); W2 = 17.92
+WRONG = (14.90, 20.52); W2 = 17.92        # v2: chat penuh skrin
 LOGO_IN, LOGO_OUT = 20.46, 21.46
 BA = (21.46, 24.40)    # status: B-Roll_SistemYuran.my @0:30 (tapis Overdue)
 BB = (24.40, 26.30)    # dikemas kini: B-Roll_SistemYuran.my @0:42.6 (tapis Paid)
@@ -234,20 +234,20 @@ def chip(d, x, y, h, label, fg, bg, f):
 def list_card(base, t):
     if not inwin(t, LIST): return
     ch = H * 0.15; lay, d, k, ko = card_base(t, LIST, ch); cw = lay.width
-    fc = F("b", 32)
+    fc = F("b", 30)
     for i, (t0, tx, ok, lab, bad) in enumerate(((L1, L1X, True, "Dah bayar", "Tak direkod"), (L2, L2X, False, "Belum bayar", "Tiada reminder"))):
         if t < t0: continue
         y = ch * (0.30 + i * 0.42); ka = ease((t - t0) / 0.25)
         l2 = Image.new("RGBA", lay.size, (0, 0, 0, 0)); d2 = ImageDraw.Draw(l2)
         d2.ellipse((30 * S, y - 26 * S, 82 * S, y + 26 * S), fill=GREY)
-        d2.rounded_rectangle((100 * S, y - 12 * S, 300 * S, y + 12 * S), radius=int(6 * S), fill="#C9CED8")
-        x = 330 * S
+        d2.rounded_rectangle((96 * S, y - 12 * S, 200 * S, y + 12 * S), radius=int(6 * S), fill="#C9CED8")
+        x = 222 * S
         x += chip(d2, x, y, 56 * S, lab, "#1F7A4D" if ok else "#C8435A", "#DDF3E6" if ok else "#FBE3E7", fc) + 14 * S
         if t >= tx:
             kb = ease((t - tx) / 0.25)
             l3 = Image.new("RGBA", lay.size, (0, 0, 0, 0)); d3 = ImageDraw.Draw(l3)
             mark(d3, int(x + 22 * S), y, int(20 * S), False)
-            d3.text((x + 52 * S, y), bad, font=F("xb", 32), fill="#C8435A", anchor="lm")
+            d3.text((x + 50 * S, y), bad, font=F("xb", 30), fill="#C8435A", anchor="lm")
             l2.alpha_composite(fade_layer(l3, kb))
         lay.alpha_composite(fade_layer(l2, ka))
     put_card(base, lay, k, ko, 0.595)
@@ -275,20 +275,81 @@ def chat_card(base, t):
     a = 14 * S; d.polygon([(bx - a, by - a), (bx + a + 2, by), (bx - a, by + a), (bx - a * 0.45, by)], fill=WHITE)
     put_card(base, lay, k, ko, 0.595)
 
-def wrong_card(base, t):
-    if not inwin(t, WRONG): return
-    ch = H * 0.15; lay, d, k, ko = card_base(t, WRONG, ch)
-    f = F("b", 42); fb = F("xb", 46); y1, y2 = ch * 0.30, ch * 0.70
-    mark(d, int(55 * S), y1, int(26 * S), False)
-    d.text((int(100 * S), y1), "Kita kata: ", font=f, fill="#6B6E75", anchor="lm")
-    d.text((int(100 * S) + d.textlength("Kita kata: ", font=f), y1), "Belum bayar", font=f, fill="#C8435A", anchor="lm")
-    if t >= W2:
-        l2 = Image.new("RGBA", lay.size, (0, 0, 0, 0)); d2 = ImageDraw.Draw(l2)
-        mark(d2, int(55 * S), y2, int(26 * S), True)
-        d2.text((int(100 * S), y2), "Sebenarnya: ", font=fb, fill=BLACK, anchor="lm")
-        d2.text((int(100 * S) + d2.textlength("Sebenarnya: ", font=fb), y2), "Dah bayar", font=fb, fill="#1F7A4D", anchor="lm")
-        lay.alpha_composite(fade_layer(l2, ease((t - W2) / 0.25)))
-    put_card(base, lay, k, ko, 0.595)
+# v2: perbualan chat penuh skrin pada "Sebabnya takut bila follow up, tersalah pula..." (teks dari Farhan)
+CHAT_T = "Puan, saya nak followup yuran anak puan."
+CHAT_P = "Saya dah bayar lah akhir Mei lepas. Cikgu tak check ke? patutlah saya tak dapat resit!"
+CT_IN, CP_TYPING, CP_IN = 15.05, 16.70, 17.92
+_emo = None
+def emoji_img(px):
+    global _emo
+    if _emo is None:
+        ef = ImageFont.truetype("/usr/share/fonts/truetype/noto/NotoColorEmoji.ttf", 109)
+        e = Image.new("RGBA", (136, 128), (0, 0, 0, 0)); ImageDraw.Draw(e).text((0, 0), "\U0001F620", font=ef, embedded_color=True)
+        _emo = e.crop(e.getbbox())
+    return _emo.resize((int(px), int(px * _emo.height / _emo.width)), Image.LANCZOS)
+def wrap(d, text, font, maxw):
+    lines, cur = [], ""
+    for w_ in text.split():
+        tst = (cur + " " + w_).strip()
+        if d.textlength(tst, font=font) <= maxw or not cur: cur = tst
+        else: lines.append(cur); cur = w_
+    lines.append(cur); return lines
+def bubble(text, mine, name=None, emoji=False):
+    f = F("m", 50); fn = F("b", 34); lh = int(66 * S); pad = int(30 * S); maxw = int(W * 0.74)
+    tmp = ImageDraw.Draw(Image.new("RGBA", (1, 1)))
+    lines = wrap(tmp, text, f, maxw - 2 * pad - (int(64 * S) if emoji else 0))
+    tw = max(tmp.textlength(l, font=f) for l in lines) + (int(72 * S) if emoji else 0)
+    if name: tw = max(tw, tmp.textlength(name, font=fn))
+    bw = int(min(maxw, tw + 2 * pad)); top = int(50 * S) if name else 0
+    bh = top + len(lines) * lh + int(2 * pad) + int(24 * S)
+    b = Image.new("RGBA", (bw, bh), (0, 0, 0, 0)); d = ImageDraw.Draw(b)
+    d.rounded_rectangle((0, 0, bw - 1, bh - 1), radius=int(24 * S), fill="#D9F2DC" if mine else WHITE)
+    if name: d.text((pad, pad - 4 * S), name, font=fn, fill="#C2185B", anchor="lt")
+    for i, l in enumerate(lines): d.text((pad, pad + top + i * lh), l, font=f, fill=BLACK, anchor="lt")
+    if emoji:
+        e = emoji_img(58 * S); lx = pad + tmp.textlength(lines[-1], font=f) + 10 * S
+        b.alpha_composite(e, (int(lx), int(pad + top + (len(lines) - 1) * lh + 2 * S)))
+    if mine: d.text((bw - pad, bh - 14 * S), "✓✓", font=F("b", 24), fill=ACC, anchor="rb")
+    return b
+_bub = {}
+def chat_full(base, t):
+    if not inwin(t, WRONG): return base
+    k = ease((t - WRONG[0]) / 0.30) * (1 - ease((t - (WRONG[1] - 0.22)) / 0.22))
+    fr = Image.new("RGBA", (W, H), "#ECE5DD"); d = ImageDraw.Draw(fr)
+    for yy in range(0, H, int(90 * S)):          # corak wallpaper lembut
+        for xx in range(0, W, int(90 * S)):
+            d.ellipse((xx + 40 * S, yy + 40 * S, xx + 48 * S, yy + 48 * S), fill="#E2DACF")
+    hy0, hy1 = int(H * 0.075), int(H * 0.165)
+    d.rectangle((0, hy0, W, hy1), fill="#1E5F57")
+    d.text((40 * S, (hy0 + hy1) / 2), "‹", font=F("b", 64), fill=WHITE, anchor="lm")
+    d.ellipse((96 * S, (hy0 + hy1) / 2 - 42 * S, 180 * S, (hy0 + hy1) / 2 + 42 * S), fill="#F4C7D7")
+    d.text((138 * S, (hy0 + hy1) / 2), "H", font=F("b", 40), fill="#8E2450", anchor="mm")
+    d.text((204 * S, (hy0 + hy1) / 2 - 18 * S), "Haminah", font=F("b", 40), fill=WHITE, anchor="lm")
+    d.text((204 * S, (hy0 + hy1) / 2 + 24 * S), "ibu bapa", font=F("m", 28), fill="#CFE6E2", anchor="lm")
+    if "t" not in _bub:
+        _bub["t"] = bubble(CHAT_T, True); _bub["p"] = bubble(CHAT_P, False, "Haminah", emoji=True)
+    y = int(H * 0.215)
+    if t >= CT_IN:
+        bt = _bub["t"]; kb = back((t - CT_IN) / 0.3)
+        b2 = bt.resize((max(1, int(bt.width * (0.8 + 0.2 * min(1, kb)))), max(1, int(bt.height * (0.8 + 0.2 * min(1, kb))))), Image.LANCZOS)
+        fr.alpha_composite(fade_layer(b2, min(1, (t - CT_IN) / 0.15)), (int(W * 0.85 - b2.width), y))
+        y += bt.height + int(40 * S)
+    if CP_TYPING <= t < CP_IN:                   # "sedang menaip..."
+        tb = Image.new("RGBA", (int(150 * S), int(76 * S)), (0, 0, 0, 0)); td = ImageDraw.Draw(tb)
+        td.rounded_rectangle((0, 0, tb.width - 1, tb.height - 1), radius=int(24 * S), fill=WHITE)
+        for j in range(3):
+            o = 0.5 + 0.5 * math.sin((t * 6 - j * 0.7) * math.pi)
+            cx_ = (38 + j * 37) * S; td.ellipse((cx_ - 10 * S, 38 * S - 10 * S - o * 6 * S, cx_ + 10 * S, 38 * S + 10 * S - o * 6 * S), fill="#9AA0A6")
+        fr.alpha_composite(tb, (int(W * 0.06), y))
+    if t >= CP_IN:
+        bp = _bub["p"]; kb = back((t - CP_IN) / 0.3)
+        b2 = bp.resize((max(1, int(bp.width * (0.8 + 0.2 * min(1, kb)))), max(1, int(bp.height * (0.8 + 0.2 * min(1, kb))))), Image.LANCZOS)
+        fr.alpha_composite(fade_layer(b2, min(1, (t - CP_IN) / 0.15)), (int(W * 0.06), y))
+    # kotak taip di bawah (di atas zon caption)
+    d.rounded_rectangle((W * 0.05, H * 0.665, W * 0.80, H * 0.705), radius=int(H * 0.02), fill=WHITE)
+    d.text((W * 0.09, H * 0.685), "Mesej", font=F("m", 32), fill="#9AA0A6", anchor="lm")
+    d.ellipse((W * 0.82, H * 0.665, W * 0.82 + H * 0.04, H * 0.705), fill="#1E5F57")
+    return Image.blend(base, fr, k)
 
 # ---------- babak penyelesaian ----------
 _clips = {}
@@ -404,16 +465,20 @@ def thumbnail():
     d.rounded_rectangle((bx, by, bx + bw, by + bh), radius=int(26 * S), fill="#C8435A")
     d.text((CX, H * 0.695), "BAYAR?", font=fk, fill=WHITE, anchor="mm")
     # kad status kecil sebagai hook tambahan (kiri muka): dah bayar / ? / belum
-    cw, chh = int(420 * S), int(300 * S)
+    cw, chh = int(380 * S), int(280 * S)
     card = Image.new("RGBA", (cw, chh), (0, 0, 0, 0)); cd = ImageDraw.Draw(card)
     cd.rounded_rectangle((0, 0, cw - 1, chh - 1), radius=int(26 * S), fill=WHITE)
     for i, (lab, fg, bg) in enumerate((("Dah bayar", "#1F7A4D", "#DDF3E6"), ("?", "#6B6E75", GREY), ("Belum", "#C8435A", "#FBE3E7"))):
         y = chh * (0.2 + i * 0.3)
         cd.ellipse((22 * S, y - 24 * S, 70 * S, y + 24 * S), fill=GREY)
         cd.rounded_rectangle((86 * S, y - 12 * S, 186 * S, y + 12 * S), radius=int(6 * S), fill="#C9CED8")
-        chip(cd, 196 * S, y, 56 * S, lab, fg, bg, F("b", 30))
-    sh = shadowed(card, 14, 120).rotate(-4, resample=Image.BICUBIC, expand=True)
-    im.alpha_composite(sh, (int(W * 0.215 - sh.width / 2), int(H * 0.19 - sh.height / 2)))
+        chip(cd, 196 * S, y, 52 * S, lab, fg, bg, F("b", 28))
+    sh = shadowed(card, 14, 120).rotate(4, resample=Image.BICUBIC, expand=True)
+    # v2: sebelah pipi Farhan, tepat di atas huruf "a" terakhir dalam "Siapa" (kekal dalam bingkai cover TikTok)
+    fs = F("xb", 132); ds = ImageDraw.Draw(im)
+    ax = CX + ds.textlength("Siapa", font=fs) / 2 - ds.textlength("a", font=fs) / 2
+    lx = max(ax, W * 0.69)
+    im.alpha_composite(sh, (int(lx - sh.width / 2), int(H * 0.485 - sh.height + 30 * S)))
     return im
 
 # ---------- end card BOFU: link di bio untuk demo (tanpa emel, ikut YM-F-004/005) ----------
@@ -457,7 +522,8 @@ def render():
             if len(raw) == fb: last = np.frombuffer(raw, np.uint8).reshape(SH, SW, 3)
             im = place(last, zoom_at(t)).convert("RGBA")
             im = broll(im, t)
-            label(im, t); book_card(im, t); list_card(im, t); chat_card(im, t); wrong_card(im, t); logo_pill(im, t)
+            im = chat_full(im, t)
+            label(im, t); book_card(im, t); list_card(im, t); chat_card(im, t); logo_pill(im, t)
             tepat_card(im, t); rem_card(im, t); cta_card(im, t); caption(im, t)
             fade = ease((T - (BODY_END - 0.15)) / 0.15) if T > BODY_END - 0.15 else 0
             if fade: im = Image.blend(im, Image.new("RGBA", (W, H), BLUE), fade)
@@ -473,7 +539,7 @@ SFXL = [  # (masa timeline, fail, gain dB) — SFX lembut sahaja
     (OFF - 0.12, "whoosh.wav", -24), (OFF + BOOK[0], "pop.wav", -20), *[(OFF + ft, "whoosh.wav", -26) for ft in FLIPS],
     (OFF + L1, "pop.wav", -22), (OFF + L1X, "bonk.wav", -27), (OFF + L2, "pop.wav", -22), (OFF + L2X, "bonk.wav", -27),
     (OFF + CHAT[0], "pop.wav", -22), *[(OFF + TYPE_A + 0.1 + i * 0.2, "tick.wav", -28) for i in range(4)],
-    (OFF + WRONG[0], "pop.wav", -20), (OFF + W2, "ding.wav", -26),
+    (OFF + WRONG[0], "whoosh.wav", -22), (OFF + CT_IN, "pop.wav", -18), (OFF + CP_IN, "pop.wav", -16), (OFF + CP_IN + 0.05, "bonk.wav", -26),
     (OFF + LOGO_IN, "ding.wav", -22), (OFF + BA[0] - 0.05, "whoosh.wav", -22), (OFF + BB[0], "click.wav", -24),
     (OFF + TEPAT[0], "pop.wav", -20), (OFF + T2, "pop.wav", -22),
     (OFF + REM[0], "pop.wav", -20), (OFF + REM_TAP, "click.wav", -18), (OFF + REM_TAP + 0.15, "ding.wav", -26),

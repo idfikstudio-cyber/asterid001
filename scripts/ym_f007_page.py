@@ -7,7 +7,7 @@ src = open(spec.origin).read().split("# ---------- frames sumber")[0]
 src = src.replace("SRC, BROLL, LOGO, SFX, OUT = sys.argv[1:6]", "SRC=BROLL=LOGO=SFX=OUT=''").replace("W = int(sys.argv[6])", "W = 1080")
 src = src.replace("CRF = sys.argv[7] if len(sys.argv) > 7 else \"20\"", "CRF='20'").replace("os.makedirs(OUT, exist_ok=True)", "")
 full = open(spec.origin).read()
-src += "\nTAP = 0.75\n" + full[full.index("SFXL = ["):full.index("def audio")]
+src += "\nTAP = 0.75\nCT_IN, CP_TYPING, CP_IN = 15.05, 16.70, 17.92\n" + full[full.index("SFXL = ["):full.index("def audio")]
 R = {}; exec(src, R)
 O = R["OFF"]; D = round(R["TOTAL"], 3)
 
@@ -25,12 +25,12 @@ for c in caps:
 
 g = lambda k: R[k]
 mg = [
- [0, 1.0, "Thumbnail", "Thumbnail 1 s: SIAPA / BELUM / BAYAR? (BAYAR? dalam kotak merah) + kad status kecil (Dah bayar / ? / Belum) di atas kiri, atas frame Farhan (sumber 0:00.9)"],
+ [0, 1.0, "Thumbnail", "Thumbnail 1 s: SIAPA / BELUM / BAYAR? (BAYAR? dalam kotak merah) + kad status kecil (Dah bayar / ? / Belum) di sebelah pipi Farhan, atas huruf “a” terakhir dalam “Siapa” (v2), atas frame Farhan (sumber 0:00.9)"],
  [O + g("LABEL_IN"), O + g("LABEL_OUT"), "Label nama", "Pil biru #2A3B8F “Farhan · Yuran.my”, atas-kiri"],
  [O + g("BOOK")[0], O + g("BOOK")[1], "Motion", "Buku rekod dibuka, muka surat diselak tiga kali tepat pada “selak, selak, selak”"],
  [O + g("LIST")[0], O + g("LIST")[1], "Kad grafik", "Senarai: “Dah bayar” → ✗ Tak direkod (pada “record”), “Belum bayar” → ✗ Tiada reminder (pada “reminder”). Nama sebagai bar kelabu"],
  [O + g("CHAT")[0], O + g("CHAT")[1], "Motion", "Mesej ke ibu bapa ditaip “Assalamualaikum puan, yuran bulan ni…” lalu dipadam semula (segan-segan)"],
- [O + g("WRONG")[0], O + g("WRONG")[1], "Kad grafik", "✗ Kita kata: Belum bayar → ✓ Sebenarnya: Dah bayar"],
+ [O + g("WRONG")[0], O + g("WRONG")[1], "Chat penuh skrin", "v2: skrin chat penuh. Cikgu: “Puan, saya nak followup yuran anak puan.” → Haminah sedang menaip… → Haminah: “Saya dah bayar lah akhir Mei lepas. Cikgu tak check ke? patutlah saya tak dapat resit! 😠” (teks dari Farhan)"],
  [O + g("LOGO_IN"), O + g("LOGO_OUT"), "Logo", "Logo Yuran.my putih atas pil biru #2A3B8F (tiada shadow)"],
  [O + g("BA")[0], O + g("BA")[1], "B-roll sistem", "B-ROLL/B-Roll_SistemYuran.my.mp4 @0:31.3: senarai invois ditapis Overdue (merah); callout biru pada lajur Status. Nama pelajar (Items) dan jumlah RM individu diblur"],
  [O + g("BB")[0], O + g("BB")[1], "B-roll sistem", "B-ROLL/B-Roll_SistemYuran.my.mp4 @0:44.3: senarai invois ditapis Paid (hijau) pada “Dikemas kini setiap kali pembayaran masuk”; callout lajur Status, data peribadi diblur"],
@@ -53,6 +53,9 @@ SEG = [
  [R["BODY_END"], D, "End card", "CTA BOFU: Klik link di bio untuk demo"],
 ]
 DONE = [
+ ["v2: Kad status thumbnail", "Komen Farhan: kad Dah bayar / ? / Belum dialihkan ke sebelah pipi, atas huruf “a” terakhir dalam “Siapa”, supaya tidak terkeluar dari bingkai cover TikTok.", 0.3],
+ ["v2: “Tiada reminder” penuh", "Komen Farhan: teks terputus di tepi kad. Bar nama dipendekkan dan fon dikecilkan sedikit; kini muat sepenuhnya.", O + g("L2X")],
+ ["v2: Chat penuh skrin", "Komen Farhan: pada “Sebabnya takut bila follow up, tersalah pula… kita kata belum bayar” kini skrin chat penuh: mesej cikgu, ‘sedang menaip’, kemudian balasan Haminah dengan 😠 tepat pada “Dia dah pernah bayar”.", O + g("WRONG")[0]],
  ["Guna video (tiada take ulangan)", "TOFU+BOFU_Siapa_belum_bayar.mp4 (34.7 s, 1080×1920, HEVC). Transkrip tiada take ulangan, jadi dianggap sudah ditrim; isi tidak dipotong (satu jeda 0.47 s selepas “Settle” dikekalkan).", 1.0],
  ["Thumbnail 1 saat", "SIAPA / BELUM / BAYAR? (dari tajuk skrip & ayat pertama) + kad status kecil sebagai hook tambahan. Tiada logo Yuran.my di awal. PNG 1080×1920 berasingan dieksport.", 0.3],
  ["Babak masalah dengan motion", "Buku diselak ikut “selak, selak, selak”, senarai dah bayar/belum bayar dengan ✗, mesej ditaip lalu dipadam (segan), kad “Kita kata vs Sebenarnya”. Semua grafik buatan sendiri tanpa data sebenar.", O + 1.42],
@@ -66,6 +69,7 @@ TODO = [
  ["“Selak, selak, selak” (transkrip: “Select”)", "Dibaca sebagai ‘selak’ (menyelak buku). Sahkan.", 4.64],
  ["“Settle.” dan “Confirm.”", "Perkataan pendek selepas ‘status ni’ (0:24.3) dan ‘tepat’ (0:28.5) didengar ‘Settle’ dan ‘Confirm’. Sahkan.", 24.34],
  ["“collect hutang” (transkrip: “collect utang”)", "Caption tulis ‘hutang’ (ejaan baku). Sahkan.", 14.58],
+ ["Perbualan chat ialah lakonan", "Nama ‘Haminah’ dan mesej diberi oleh Farhan sebagai contoh. Pastikan ia bukan nama ibu bapa sebenar yang boleh dikenali.", O + g("CP_IN") if "CP_IN" in R else O + 17.92],
  ["Video tidak dinyatakan ‘sudah ditrim’", "Transkrip tiada take ulangan atau gagap, jadi saya anggap sudah ditrim dan tidak memotong isi. Beritahu jika ini footage mentah.", None],
  ["Reminder: grafik, bukan rakaman skrin", "Tiada rakaman butang reminder dalam B-ROLL/; dipaparkan butang ringkas “Hantar reminder”. Jika ada rakaman skrin reminder sebenar, beri dan saya ganti.", O + g("REM")[0]],
  ["CTA BOFU: link di bio", "Ikut percakapan (sama seperti YM-F-006). DNA BOFU: ‘Hubungi kami untuk demo sistem Yuran.my’. Tag skrip TOFU+BOFU.", R["BODY_END"] + 0.3],

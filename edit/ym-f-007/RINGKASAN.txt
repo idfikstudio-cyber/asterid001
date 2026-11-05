@@ -1,10 +1,10 @@
-YM-F-007_Siapa_belum_bayar — RINGKASAN PREVIEW v1
+YM-F-007_Siapa_belum_bayar — RINGKASAN PREVIEW v2 (kad thumbnail, Tiada reminder, chat penuh skrin)
 Brand: Yuran.my | Spokesperson: Farhan | Jenis: TOFU+BOFU | Durasi: 37.2 s (540x960 preview)
 Sumber: 01_RAW/2026-10-30_007_FARHAN/TOFU+BOFU_Siapa_belum_bayar.mp4 (34.7 s, tiada take ulangan; isi tidak dipotong)
-Halaman preview: https://claude.ai/artifact/KkfXXwtpYtfArX2jTyCo4K (v1)
+Halaman preview: https://claude.ai/artifact/KkfXXwtpYtfArX2jTyCo4K (v2)
 
 1. TEKS HOOK / THUMBNAIL
-   SIAPA / BELUM / BAYAR?  (belum biru aksen, BAYAR? dalam kotak merah) + kad status kecil (Dah bayar / ? / Belum) di atas kiri. Frame Farhan (sumber 0:00.9). 1 saat, tiada logo Yuran.my.
+   SIAPA / BELUM / BAYAR?  (belum biru aksen, BAYAR? dalam kotak merah) + kad status kecil (Dah bayar / ? / Belum) di sebelah pipi, atas huruf "a" terakhir dalam "Siapa" (v2). Frame Farhan (sumber 0:00.9). 1 saat, tiada logo Yuran.my.
 
 2. CAPTION PENUH (masa video siap)
    0:01.0  Siapa belum bayar
@@ -51,7 +51,7 @@ Halaman preview: https://claude.ai/artifact/KkfXXwtpYtfArX2jTyCo4K (v1)
    0:02.4-0:06.3  MOTION: Buku rekod dibuka, muka surat diselak tiga kali tepat pada “selak, selak, selak”
    0:06.3-0:12.4  KAD GRAFIK: Senarai: “Dah bayar” → ✗ Tak direkod (pada “record”), “Belum bayar” → ✗ Tiada reminder (pada “reminder”). Nama sebagai bar kelabu
    0:12.4-0:15.9  MOTION: Mesej ke ibu bapa ditaip “Assalamualaikum puan, yuran bulan ni…” lalu dipadam semula (segan-segan)
-   0:15.9-0:21.5  KAD GRAFIK: ✗ Kita kata: Belum bayar → ✓ Sebenarnya: Dah bayar
+   0:15.9-0:21.5  CHAT PENUH SKRIN (v2): Cikgu: "Puan, saya nak followup yuran anak puan." -> Haminah sedang menaip... -> Haminah: "Saya dah bayar lah akhir Mei lepas. Cikgu tak check ke? patutlah saya tak dapat resit! 😠" (teks dari Farhan)
    0:21.5-0:22.5  LOGO: Logo Yuran.my putih atas pil biru #2A3B8F (tiada shadow)
    0:22.5-0:25.4  B-ROLL SISTEM: B-ROLL/B-Roll_SistemYuran.my.mp4 @0:31.3: senarai invois ditapis Overdue (merah); callout biru pada lajur Status. Nama pelajar (Items) dan jumlah RM individu diblur
    0:25.4-0:27.3  B-ROLL SISTEM: B-ROLL/B-Roll_SistemYuran.my.mp4 @0:44.3: senarai invois ditapis Paid (hijau) pada “Dikemas kini setiap kali pembayaran masuk”; callout lajur Status, data peribadi diblur
@@ -70,6 +70,7 @@ Halaman preview: https://claude.ai/artifact/KkfXXwtpYtfArX2jTyCo4K (v1)
    - “Selak, selak, selak” (transkrip: “Select”): Dibaca sebagai ‘selak’ (menyelak buku). Sahkan. [0:04.6]
    - “Settle.” dan “Confirm.”: Perkataan pendek selepas ‘status ni’ (0:24.3) dan ‘tepat’ (0:28.5) didengar ‘Settle’ dan ‘Confirm’. Sahkan. [0:24.3]
    - “collect hutang” (transkrip: “collect utang”): Caption tulis ‘hutang’ (ejaan baku). Sahkan. [0:14.6]
+   - Perbualan chat ialah lakonan: nama "Haminah" & mesej dari Farhan; pastikan bukan nama ibu bapa sebenar. [0:18.9]
    - Video tidak dinyatakan ‘sudah ditrim’: Transkrip tiada take ulangan atau gagap, jadi saya anggap sudah ditrim dan tidak memotong isi. Beritahu jika ini footage mentah.
    - Reminder: grafik, bukan rakaman skrin: Tiada rakaman butang reminder dalam B-ROLL/; dipaparkan butang ringkas “Hantar reminder”. Jika ada rakaman skrin reminder sebenar, beri dan saya ganti. [0:30.3]
    - CTA BOFU: link di bio: Ikut percakapan (sama seperti YM-F-006). DNA BOFU: ‘Hubungi kami untuk demo sistem Yuran.my’. Tag skrip TOFU+BOFU. [0:36.0]
