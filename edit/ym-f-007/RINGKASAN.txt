@@ -70,7 +70,7 @@ Halaman preview: https://claude.ai/artifact/KkfXXwtpYtfArX2jTyCo4K (v2)
    - “Selak, selak, selak” (transkrip: “Select”): Dibaca sebagai ‘selak’ (menyelak buku). Sahkan. [0:04.6]
    - “Settle.” dan “Confirm.”: Perkataan pendek selepas ‘status ni’ (0:24.3) dan ‘tepat’ (0:28.5) didengar ‘Settle’ dan ‘Confirm’. Sahkan. [0:24.3]
    - “collect hutang” (transkrip: “collect utang”): Caption tulis ‘hutang’ (ejaan baku). Sahkan. [0:14.6]
-   - Perbualan chat ialah lakonan: nama "Haminah" & mesej dari Farhan; pastikan bukan nama ibu bapa sebenar. [0:18.9]
+   - Perbualan chat ialah lakonan: nama "Haminah" disahkan lakonan oleh Farhan (selesai). [0:18.9]
    - Video tidak dinyatakan ‘sudah ditrim’: Transkrip tiada take ulangan atau gagap, jadi saya anggap sudah ditrim dan tidak memotong isi. Beritahu jika ini footage mentah.
    - Reminder: grafik, bukan rakaman skrin: Tiada rakaman butang reminder dalam B-ROLL/; dipaparkan butang ringkas “Hantar reminder”. Jika ada rakaman skrin reminder sebenar, beri dan saya ganti. [0:30.3]
    - CTA BOFU: link di bio: Ikut percakapan (sama seperti YM-F-006). DNA BOFU: ‘Hubungi kami untuk demo sistem Yuran.my’. Tag skrip TOFU+BOFU. [0:36.0]
