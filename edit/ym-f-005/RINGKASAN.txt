@@ -1,0 +1,80 @@
+YM-F-005_Duit_yuran_dalam_laci — RINGKASAN PREVIEW v1
+Brand: Yuran.my | Spokesperson: Farhan | Jenis: TOFU | Durasi: 42.4 s (540x960 preview)
+Sumber: 01_RAW/2026-10-30_005_FARHAN/TOFU_Duit_yuran_dalam_laci.mp4 (39.9 s, SUDAH DITRIM oleh Farhan, isi tidak dipotong)
+Halaman preview: https://claude.ai/artifact/HbjLRRgCSWFU2XeiM5sqVq (v1)
+
+1. TEKS HOOK / THUMBNAIL
+   DUIT YURAN / DALAM / LACI?  (yuran biru aksen, LACI? dalam kotak biru #29ABE2) + kad gambar kes pecah masuk bertanda PECAH MASUK (kiri muka). Frame Farhan pandang kamera (sumber 0:02.4). 1 saat, tiada logo Yuran.my.
+
+2. CAPTION PENUH (masa video siap)
+   0:01.0  Duit yuran dalam laci,
+   0:02.1  pagi tadi kutip,
+   0:03.1  petang nanti baru
+   0:04.0  nak pergi bank-in.
+   0:04.7  Kalau hilang,
+   0:05.3  siapa yang tanggung?
+   0:06.2  Pernah kan jadi kes
+   0:07.1  sekolah kena pecah masuk
+   0:08.3  dan lastnya
+   0:09.4  duit tu hilang.
+   0:10.8  Siapa yang akan tanggung?
+   0:12.1  Siapa yang akan dipersalahkan?
+   0:13.6  Siapa yang akan rugi?
+   0:14.9  Itu belum cerita lagi
+   0:16.1  kalau duit kurang,
+   0:17.1  siapa yang akan
+   0:18.1  dipersalahkan?
+   0:18.9  Dan siapa yang
+   0:19.6  akan ganti?
+   0:20.3  Ini bukan soal
+   0:21.0  amanah ya.
+   0:21.7  Guru KAFA saya jamin,
+   0:22.9  mesti amanah.
+   0:23.6  Ini adalah soal sistem.
+   0:25.6  Sistem yang akan
+   0:26.5  lindungi cikgu.
+   0:27.2  Sistem juga yang akan
+   0:28.3  lindungi ibu bapa.
+   0:29.1  So sekolah cikgu,
+   0:30.6  ketua guru,
+   0:31.4  masih gunakan
+   0:32.4  tunai cash ke?
+   0:33.5  Kongsikan pengalaman.
+   0:34.8  Ada tak sekolah anda
+   0:36.1  ataupun sekolah
+   0:37.5  ketua guru yang lain
+   0:38.7  kena pecah masuk?
+   0:40.2  Cuba komen.
+   Kata kunci biru #29ABE2: yuran, laci, hilang, tanggung, pecah masuk, dipersalahkan, rugi, kurang, ganti, amanah, sistem, lindungi, tunai, komen.
+
+3. GRAFIK, B-ROLL, MUZIK & SFX (masa video siap)
+   0:00.0-0:01.0  THUMBNAIL: Thumbnail 1 s: DUIT YURAN / DALAM / LACI? (LACI? dalam kotak biru aksen) + kad gambar kes pecah masuk bertanda PECAH MASUK (kiri muka), atas frame Farhan pandang kamera (sumber 0:02.4)
+   0:01.2-0:04.2  LABEL NAMA: Pil biru #2A3B8F “Farhan · Yuran.my”, atas-kiri
+   0:06.4-0:09.4  B-ROLL ARTIKEL: B-ROLL/Pecah_masuk_Kafa.jpg: hantaran “SEKOLAH KAFAI AS SYARIFF BANTING KENA PECAH MASUK” + gambar bilik bersepah (29.03.2026). Kad atas latar kabur gelap, zoom perlahan
+   0:10.8-0:13.8  B-ROLL ARTIKEL: B-ROLL/PecahmasukKafa_3.png: “Polis buru suspek pecah masuk sekolah agama curi duit” (30 Mei 2025, CCTV). Pada 12.1 s tajuk Media Selangor “Dua suspek pecah masuk sekolah agama di Bukit Jelutong dikesan” (Pecah_masuk_Kafa 4.jpg, tajuk sahaja) masuk di bawah
+   0:20.3-0:29.1  KAD GRAFIK: ✗ Bukan soal amanah → ✓ Soal SISTEM (garis potong) → Sistem melindungi: ✓ Cikgu, ✓ Ibu bapa. Kad putih di dada; caption turun sedikit
+   0:29.4-0:33.4  KAD SOALAN: “Masih guna tunai?” dengan pilihan Ya / Tak (sorotan bergilir, tiada jawapan dipilih)
+   0:34.7-0:37.7  B-ROLL GAMBAR: B-ROLL/PecahmasukKafa 2.jpg: pejabat sekolah selepas pecah masuk (29.03.2026), zoom perlahan
+   0:37.8-0:40.9  MOTION KOMEN: Panel komen naik: “Ada sekolah kena pecah masuk?” → “Kongsikan pengalaman...” ditaip dalam kotak komen → butang hantar berdenyut pada “Cuba komen”. Tiada komen palsu dipaparkan
+   0:40.9-0:42.4  END CARD: Logo putih + Cara MUDAH Urus Yuran + kad profil TikTok Yuran.My Street @yuran.my, butang + Follow ditekan jadi Following ✓ + Follow TikTok Yuran.my untuk tips urus yuran sekolah
+   Punch-in: 0:01.0 100% (asas), 0:04.7 112% punch-in, 0:06.2 100% (asas), 0:14.9 112% punch-in, 0:18.9 100% (asas), 0:21.7 112% punch-in, 0:23.6 100% (asas), 0:25.6 112% punch-in, 0:29.1 100% (asas), 0:33.4 112% punch-in, 0:34.7 100% (asas)
+   Muzik: 0:00-0:20.3 'Echoes' (Andrew Ev) babak masalah/tegang -> crossfade 1 s pada 'Ini bukan soal amanah' -> 0:20.3-0:42.4 'Dreaming Big' (Ahjay Stelino) babak sistem/harapan. Mixkit Stock Music Free License. ~24 dB di bawah suara, ducking.
+   SFX (lembut, dijana sendiri): 0:00.9 whoosh, 0:06.3 whoosh, 0:10.7 whoosh, 0:12.1 pop, 0:34.6 whoosh, 0:20.3 pop, 0:23.6 ding, 0:25.6 pop, 0:26.4 pop, 0:28.2 pop, 0:29.4 pop, 0:37.8 whoosh, 0:38.2 tick, 0:38.6 tick, 0:39.0 tick, 0:39.5 tick, 0:40.9 ding, 0:41.7 click
+
+4. CTA
+   TOFU (ikut gaya YM-F-004 yang diluluskan): 'Follow TikTok Yuran.my untuk tips urus yuran sekolah' + kad profil TikTok @yuran.my, butang + Follow ditekan jadi Following + logo Yuran.my putih + 'Cara MUDAH Urus Yuran' atas biru #2A3B8F (end card 1.5 s). Tanpa hello@yuran.my.
+
+5. PERLU SEMAK
+   - “bank-in” (transkrip: “back in”): Farhan sebut ‘pergi bank-in’; Whisper dengar ‘back in’. Caption tulis ‘bank-in’. [0:04.0]
+   - Muzik dari luar folder MUSIC/: MUSIC/ Yuran.my kosong; Farhan minta muzik berlesen. Mixkit Stock Music Free License. Cadangan: simpan Echoes (Andrew Ev) & Dreaming Big (Ahjay Stelino) dalam MUSIC/ sebagai rekod lesen. [0:20.3]
+   - Nama sekolah & kes sebenar dipaparkan: Ikut arahan Farhan, nama KAFAI As Syariff Banting dan papan tanda sekolah tidak diblur. Video tidak mendakwa sekolah itu cuai; ia hanya memaparkan berita kes pecah masuk. Pastikan selesa. [0:06.4]
+   - Gambar pegawai polis & byline wartawan: Artikel PecahmasukKafa_3 memaparkan gambar pegawai polis (IQBAL) dan nama wartawan seperti asal. Suspek dalam CCTV memang sudah dikaburkan oleh penerbit. [0:10.8]
+   - Tangkapan skrin berita pihak ketiga: Tangkapan skrin artikel Media Selangor & portal berita dipaparkan seperti asal, tanpa logo Yuran.my di atasnya. Gambar stok dalam artikel Media Selangor tidak digunakan (tidak berkaitan). [0:12.1]
+   - Tiada video rujukan gaya: BRAND/ tiada rujukan-gaya-*.mp4 (Farhan setuju ikut DNA, sama seperti YM-F-004).
+   - Preview MP4 belum di Drive: Alat Drive tidak dapat muat naik fail video/gambar besar. RINGKASAN dimuat naik; MP4 preview dan thumbnail ada di halaman ini.
+
+6. CAPTION TIKTOK
+   Duit yuran dalam laci, pagi kutip, petang baru nak bank-in. Kalau sekolah kena pecah masuk dan duit hilang, siapa yang tanggung? Ini bukan soal amanah, ini soal sistem yang lindungi cikgu dan ibu bapa. Sekolah anda masih guna tunai? Kongsikan pengalaman di ruangan komen 👇
+   #sekolahkafa #yuransekolah #yuranmy #gurukafa #cashless
+
+Nota: font Acumin Pro tiada, guna Inter. Audio -13.9 LUFS, peak -2.3 dBFS. Skrip: asterid001/scripts/ym_f005_render.py
