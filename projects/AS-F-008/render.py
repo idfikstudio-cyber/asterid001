@@ -179,23 +179,32 @@ def paper(w, h):
     return im
 
 def q_card(st):
-    """7 × 8 = ? written on a paper card; '?' wobbles; 'dia diam' adds '. . .'"""
+    """7 × 8 = ? on a paper card. The whole line is drawn on one baseline (no per-glyph boxes),
+    revealed piece by piece as each part is said; '?' in red, wobbling; '. . .' when 'dia diam'."""
     Q = P["q_card"]
-    w, h = s(620), s(250)
-    im = paper(w, h)
-    x = s(110)
-    for txt, t0 in Q["eq"] + [["=", Q["q"]], ["?", Q["q"]]]:
-        if st < t0: continue
-        t = chalk(txt, 150, RED if txt == "?" else NAVY)
+    w, h = s(700), s(250)
+    im = paper(w, h); d = ImageDraw.Draw(im)
+    f = F("Caveat.ttf", 150)
+    parts = [(txt, t0) for txt, t0 in Q["eq"]] + [("=", Q["q"]), ("?", Q["q"])]
+    full = " ".join(t for t, _ in parts)
+    x0 = (w - f.getlength(full)) / 2; base = s(170)
+    shown = ""
+    for i, (txt, t0) in enumerate(parts):
+        if st < t0: break
+        prefix = (shown + " ") if shown else ""
+        x = x0 + f.getlength(prefix)
         if txt == "?":
-            ang = math.sin(st * 9) * 8
-            t = t.rotate(ang, resample=Image.BICUBIC, expand=True)
-        im.alpha_composite(wipe(t, (st - t0) / 0.25), (x, s(30) if txt != "?" else s(20)))
-        x += t.width + s(18)
+            g = Image.new("RGBA", (s(140), s(200)), (0, 0, 0, 0))
+            ImageDraw.Draw(g).text((s(30), s(165)), "?", font=f, fill=RED, anchor="ls")
+            g = g.rotate(math.sin(st * 9) * 8, resample=Image.BICUBIC, center=(s(60), s(120)))
+            im.alpha_composite(g, (int(x - s(30)), int(base - s(165))))
+        else:
+            d.text((x, base), txt, font=f, fill=NAVY, anchor="ls")
+        shown = prefix + txt
     if st >= Q["diam"]:
         n = min(3, int((st - Q["diam"]) / 0.18) + 1)
-        dots = text_img(". " * n, "P900.ttf", 60, fill=(120, 120, 130))
-        im.alpha_composite(dots, (w - s(150), h - s(90)))
+        dots = text_img(". " * n, "P900.ttf", 50, fill=(120, 120, 130))
+        im.alpha_composite(dots, (w - s(120), h - s(56)))
     return shadowed(im)
 
 def tally_img(n):
@@ -390,7 +399,7 @@ def draw_frame(t, base):
     ov(st, P["darjah_chip"][0], P["q_card"]["t0"] - 0.05, DARJAH, 520, 380)
     Q = P["q_card"]
     e = env(st, Q["t0"], Q["t1"])
-    if e: place(CANVAS, q_card(st), 520, 400, e[0], e[1], rot=-2)
+    if e: place(CANVAS, q_card(st), 520, 425, e[0], e[1], rot=-2)
     T = P["tally"]
     e = env(st, T["t0"], T["t1"])
     if e:
