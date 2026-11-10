@@ -1,0 +1,77 @@
+AS-F-009_KelasPercuma — RINGKASAN PREVIEW
+Aster · BOFU (merah + kuning) · spokesperson FARHAN · durasi 28.5 s · preview 540x960
+
+1. TEKS HOOK / THUMBNAIL
+ ANAK LEMAH / SIFIR? + pil 'IBU AYAH, PERHATIAN!' + pil 'KELAS PERCUMA SETIAP SABTU'
+ Frame: Cikgu senyum ke kamera (sumber 0:25.5). Fail: AS-F-009_KelasPercuma_THUMB.png
+
+2. CAPTION PENUH (burn-in, ikut sebutan)
+ 0:01.0 Anak lemah sifir
+ 0:01.9 Sebab tu kita
+ 0:02.5 bagikan kelas percuma
+ 0:03.5 setiap hari Sabtu
+ 0:04.5 untuk kukuhkan sifir
+ 0:06.1 Bukan sifir sahaja
+ 0:07.2 tapi 4P
+ 0:08.7 Penyelesaian masalah
+ 0:09.9 perpuluhan
+ 0:10.8 peratus dan pecahan
+ 0:12.1 Tapi percuma ni
+ 0:12.8 untuk pelajar yang berdaftar
+ 0:14.0 dengan kami sahaja
+ 0:14.9 Kelas tetap jalan
+ 0:15.9 macam biasa
+ 0:16.7 5 subjek
+ 0:17.5 serendah RM59
+ 0:18.9 BM, BI
+ 0:20.0 Math
+ 0:20.4 Sains dan Sejarah
+ 0:21.4 Ada rakaman
+ 0:22.1 Kalau terlepas
+ 0:22.8 jangan risau
+ 0:23.5 Percuma je
+ 0:24.4 Nak berdaftar?
+ 0:25.2 DM saya
+ 0:25.7 untuk keterangan lanjut
+
+3. SFX & ANIMASI (masa video; tiada B-roll)
+ 0:00.0–0:01.0 Thumbnail: IBU AYAH, PERHATIAN! · ANAK LEMAH / SIFIR? · pil KELAS PERCUMA SETIAP SABTU
+ 0:00.0–0:28.4 Watermark: asteredu11.com.my sepanjang video (termasuk thumbnail & end card), putih ±40% + bayang halus, atas-kiri 11%
+ 0:01.0–0:09.0 Banner atas BOFU: IBU AYAH, PERHATIAN! + KELAS PERCUMA; SETIAP HARI SABTU! (3.5); Untuk kukuhkan sifir (4.8); fade 8.4–9.0
+ 0:01.3–0:04.3 Label nama: Wajah bulatan emas + Cikgu AlFarhan
+ 0:06.1–0:12.0 Kad SIFIR + 4P: SIFIR → + 4P (7.2) → Penyelesaian masalah 8.7 · Perpuluhan 9.9 · Peratus 10.8 · Pecahan 11.5
+ 0:12.1–0:14.8 Tiket: KELAS PERCUMA + Untuk pelajar berdaftar sahaja (12.8)
+ 0:14.9–0:17.4 Label siri: KELAS PERCUMA · CIKGU ALFARHAN
+ 0:14.9–0:16.6 Pil: ✓ Kelas tetap jalan macam biasa
+ 0:16.7–0:21.3 Bulatan bilangan: 5 SUBJEK
+ 0:17.5–0:21.3 Bintang harga: SERENDAH RM59 (PERLU SEMAK)
+ 0:18.9–0:21.3 Cip subjek: BM 18.9 · BI 19.5 · Math 20.0 · Sains 20.4 · Sejarah 20.8
+ 0:21.4–0:23.5 Pil merah: ADA RAKAMAN
+ 0:22.1–0:23.5 Pil: Terlepas? Jangan risau
+ 0:23.5–0:24.4 Cop: PERCUMA JE!
+ 0:24.4–0:26.9 Mockup telefon: asteredu11.com.my · wajah bulatan emas · Cikgu AlFarhan · butang Daftar Sekarang
+ 0:25.2–0:26.9 Pil: DM saya
+ 0:26.9–0:28.4 End card: Wajah bulatan emas, Cikgu AlFarhan, @aster.edu_tpg, CTA WhatsApp Cikgu AlFarhan untuk daftar / cuba kelas, asteredu11.com.my besar, WhatsApp 011-5596 9070
+ SFX: 0:00.0 pop, 0:00.9 whoosh, 0:01.0 pop, 0:01.3 pop, 0:04.5 pop, 0:05.8 pop, 0:06.1 whoosh, 0:07.2 ding, 0:08.7 pop, 0:09.9 pop, 0:10.8 pop, 0:11.5 pop, 0:12.1 whoosh, 0:12.1 click, 0:12.8 pop, 0:14.9 pop, 0:16.7 pop, 0:17.5 chaching, 0:18.9 pop, 0:19.5 pop, 0:20.0 pop, 0:20.4 pop, 0:20.8 pop, 0:21.4 ding, 0:22.1 pop, 0:23.5 impact, 0:24.4 whoosh, 0:25.2 click, 0:26.9 whoosh, 0:27.1 ding
+ Zoom: 0:00.0 112% (thumbnail), 0:01.0 106%, 0:04.5 111% punch-in, 0:06.1 106%, 0:09.1 115% punch-in, 0:12.1 107%, 0:14.9 110% punch-in, 0:17.9 103% (ruang bintang harga + 5 SUBJEK), 0:21.4 112% punch-in, 0:24.4 105%
+
+4. CTA
+ Pil 'DM saya' (0:25.2, ikut sebutan 'DM saya untuk keterangan lanjut')
+ End card (BOFU): WhatsApp Cikgu AlFarhan untuk daftar / cuba kelas · asteredu11.com.my · WhatsApp 011-5596 9070 · @aster.edu_tpg
+
+5. PERLU SEMAK
+ - Harga: 'serendah RM59' atau RM99?: Transkrip utama (Whisper large-v3) dan dua semakan kedua mendengar 'serendah 59'; satu cubaan bahasa Inggeris dengar '99'. rujukan-aster.txt: RM99 sebulan untuk 5 subjek. Video papar RM59 ikut transkrip (tidak diubah sendiri). Sila dengar 0:17.5 dan sahkan; jika RM99, bintang + caption akan ditukar.
+ - CTA: DM vs WhatsApp: Cikgu sebut 'DM saya untuk keterangan lanjut' (pil DM saya), end card guna CTA BOFU DNA: WhatsApp Cikgu AlFarhan untuk daftar / cuba kelas. Sama seperti AS-F-006.
+ - Durasi 28.5 s: Bawah sasaran BOFU 30–60 s. Isi tidak dipanjangkan (tiada isi tambahan disebut).
+ - Tiada B-roll: Folder B-ROLL tiada rakaman untuk AS-F-009; video guna grafik sahaja. Mockup telefon ialah lukisan ringkas (bukan tangkapan skrin laman sebenar).
+ - Muzik dari luar MUSIC/: MUSIC/ masih kosong; guna 'Wholesome' Kevin MacLeod CC BY 4.0 seperti AS-F-005 hingga AS-F-008. Kredit wajib dalam caption.
+ - Fail video tidak dapat dimuat naik ke Drive: Connector Drive tidak dapat muat naik video; preview + thumbnail ada dalam halaman ini. RINGKASAN.txt disimpan dalam 02_EDITED/_PREVIEW/.
+
+6. CAPTION TIKTOK + 5 HASHTAG
+ Anak lemah sifir? Kelas PERCUMA setiap hari Sabtu untuk kukuhkan sifir + 4P (penyelesaian masalah, perpuluhan, peratus, pecahan) 📚 Khas untuk pelajar berdaftar. Nak daftar? DM Cikgu AlFarhan 👇
+ 
+ Muzik: “Wholesome” Kevin MacLeod (incompetech.com), CC BY 4.0
+
+ #cikgualfarhan #kelaspercuma #sifir #tuisyenonline #asteredu
+
+Artifact preview: https://claude.ai/artifact/ChSeTt4zgiT1PAjdBfPL7Y
