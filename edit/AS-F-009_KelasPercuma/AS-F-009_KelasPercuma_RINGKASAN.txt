@@ -1,5 +1,5 @@
 AS-F-009_KelasPercuma — RINGKASAN PREVIEW
-Aster · BOFU (merah + kuning) · spokesperson FARHAN · durasi 28.5 s · preview 540x960
+Aster · BOFU (merah + kuning) · spokesperson FARHAN · durasi 28.5 s · v2 (pembetulan Farhan) · FINAL 1080x1920
 
 1. TEKS HOOK / THUMBNAIL
  ANAK LEMAH / SIFIR? + pil 'IBU AYAH, PERHATIAN!' + pil 'KELAS PERCUMA SETIAP SABTU'
@@ -22,7 +22,7 @@ Aster · BOFU (merah + kuning) · spokesperson FARHAN · durasi 28.5 s · previe
  0:14.9 Kelas tetap jalan
  0:15.9 macam biasa
  0:16.7 5 subjek
- 0:17.5 serendah RM59
+ 0:17.5 serendah RM99
  0:18.9 BM, BI
  0:20.0 Math
  0:20.4 Sains dan Sejarah
@@ -44,7 +44,7 @@ Aster · BOFU (merah + kuning) · spokesperson FARHAN · durasi 28.5 s · previe
  0:14.9–0:17.4 Label siri: KELAS PERCUMA · CIKGU ALFARHAN
  0:14.9–0:16.6 Pil: ✓ Kelas tetap jalan macam biasa
  0:16.7–0:21.3 Bulatan bilangan: 5 SUBJEK
- 0:17.5–0:21.3 Bintang harga: SERENDAH RM59 (PERLU SEMAK)
+ 0:17.5–0:21.3 Bintang harga: SERENDAH RM99 (disahkan Farhan)
  0:18.9–0:21.3 Cip subjek: BM 18.9 · BI 19.5 · Math 20.0 · Sains 20.4 · Sejarah 20.8
  0:21.4–0:23.5 Pil merah: ADA RAKAMAN
  0:22.1–0:23.5 Pil: Terlepas? Jangan risau
@@ -59,18 +59,15 @@ Aster · BOFU (merah + kuning) · spokesperson FARHAN · durasi 28.5 s · previe
  Pil 'DM saya' (0:25.2, ikut sebutan 'DM saya untuk keterangan lanjut')
  End card (BOFU): WhatsApp Cikgu AlFarhan untuk daftar / cuba kelas · asteredu11.com.my · WhatsApp 011-5596 9070 · @aster.edu_tpg
 
-5. PERLU SEMAK
- - Harga: 'serendah RM59' atau RM99?: Transkrip utama (Whisper large-v3) dan dua semakan kedua mendengar 'serendah 59'; satu cubaan bahasa Inggeris dengar '99'. rujukan-aster.txt: RM99 sebulan untuk 5 subjek. Video papar RM59 ikut transkrip (tidak diubah sendiri). Sila dengar 0:17.5 dan sahkan; jika RM99, bintang + caption akan ditukar.
- - CTA: DM vs WhatsApp: Cikgu sebut 'DM saya untuk keterangan lanjut' (pil DM saya), end card guna CTA BOFU DNA: WhatsApp Cikgu AlFarhan untuk daftar / cuba kelas. Sama seperti AS-F-006.
- - Durasi 28.5 s: Bawah sasaran BOFU 30–60 s. Isi tidak dipanjangkan (tiada isi tambahan disebut).
- - Tiada B-roll: Folder B-ROLL tiada rakaman untuk AS-F-009; video guna grafik sahaja. Mockup telefon ialah lukisan ringkas (bukan tangkapan skrin laman sebenar).
- - Muzik dari luar MUSIC/: MUSIC/ masih kosong; guna 'Wholesome' Kevin MacLeod CC BY 4.0 seperti AS-F-005 hingga AS-F-008. Kredit wajib dalam caption.
- - Fail video tidak dapat dimuat naik ke Drive: Connector Drive tidak dapat muat naik video; preview + thumbnail ada dalam halaman ini. RINGKASAN.txt disimpan dalam 02_EDITED/_PREVIEW/.
+5. PERLU SEMAK / PEMBETULAN
+ v2 (pembetulan Farhan 10 Nov 2026):
+ - Harga disahkan RM99 (transkrip dengar RM59) -> bintang + caption SERENDAH RM99.
+ - CTA WhatsApp di end card diluluskan.
+ - Muzik Wholesome (perlu kredit) diganti muzik asal dijana sendiri (marimba + pad, C major 100 BPM), bebas hak cipta, TIADA kredit perlu.
+ Baki: durasi 28.5 s bawah sasaran BOFU 30-60 s (tiada isi tambahan). Tiada B-roll.
 
 6. CAPTION TIKTOK + 5 HASHTAG
  Anak lemah sifir? Kelas PERCUMA setiap hari Sabtu untuk kukuhkan sifir + 4P (penyelesaian masalah, perpuluhan, peratus, pecahan) 📚 Khas untuk pelajar berdaftar. Nak daftar? DM Cikgu AlFarhan 👇
- 
- Muzik: “Wholesome” Kevin MacLeod (incompetech.com), CC BY 4.0
 
  #cikgualfarhan #kelaspercuma #sifir #tuisyenonline #asteredu
 

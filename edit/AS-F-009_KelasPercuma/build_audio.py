@@ -12,8 +12,8 @@ m=json.loads(re.search(r"\{[^{}]*input_i[^{}]*\}",r.stderr).group(0))
 ln=f"loudnorm=I=-14:TP=-1.5:LRA=9:measured_I={m['input_i']}:measured_TP={m['input_tp']}:measured_LRA={m['input_lra']}:measured_thresh={m['input_thresh']}:offset={m['target_offset']}:linear=true"
 run(f'ffmpeg -v error -y -i {S}/raw/AS-F-009_KelasPercuma.mp4 -af "{pre},{ln},aresample=48000,adelay=1000:all=1,apad=whole_dur=28.45" -ac 2 {S}/work/voice.wav')
 # 2) music bed: -16.5 LUFS src -> ~-38 under speech, ~-26 on thumb/end
-mus=f"atrim=0:28.45,asetpts=PTS-STARTPTS,aresample=48000,volume='if(lt(t,0.9),0.32,if(lt(t,1.2),0.32-(t-0.9)/0.3*0.235,if(lt(t,26.85),0.085,0.085+min((t-26.85)/0.3,1)*0.235)))':eval=frame,afade=t=out:st=27.9:d=0.55"
-inputs=f'-i {S}/work/voice.wav -i {S}/music/wholesome.mp3 '
+mus=f"atrim=0:28.45,asetpts=PTS-STARTPTS,aresample=48000,volume='if(lt(t,0.9),0.25,if(lt(t,1.2),0.25-(t-0.9)/0.3*0.184,if(lt(t,26.85),0.066,0.066+min((t-26.85)/0.3,1)*0.184)))':eval=frame,afade=t=out:st=27.9:d=0.55"
+inputs=f'-i {S}/work/voice.wav -i {S}/music/aster_ceria.wav '
 fl=f"[1:a]{mus}[m];"
 for i,(t,n,g) in enumerate(SFX):
     inputs+=f"-i {S}/sfx/{n}.wav "
