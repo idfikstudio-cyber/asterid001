@@ -1,0 +1,69 @@
+AS-F-011_RM99,5 subjek sebulan — RINGKASAN PREVIEW
+Aster · BOFU (merah + kuning) · spokesperson FARHAN · durasi 24.0 s · preview 540x960
+
+1. TEKS HOOK / THUMBNAIL
+ 5 SUBJEK / RM99 + pil 'IBU AYAH, PERHATIAN!' + pil 'BM · BI · MATH · SAINS · SEJARAH'
+ Frame: Cikgu senyum ke kamera (sumber 0:21.4). Fail: AS-F-011_RM99,5 subjek sebulan_THUMB.png
+
+2. CAPTION PENUH (burn-in, ikut sebutan)
+ 0:01.0 RM99 dengan
+ 0:01.9 5 subjek
+ 0:02.8 BM, BI, Math
+ 0:03.5 Sains, Sejarah
+ 0:04.6 Setiap minggu
+ 0:05.5 seminggu sekali
+ 0:06.3 melalui Zoom
+ 0:07.0 di rumah sahaja
+ 0:08.1 Rakaman percuma
+ 0:09.2 modul percuma
+ 0:10.3 guru ada 2 orang
+ 0:11.3 dalam satu kelas
+ 0:12.2 nota dan modul
+ 0:13.6 Lepas tu
+ 0:14.2 ujian bulanan kita akan buat
+ 0:15.6 setiap hujung bulan
+ 0:16.9 supaya anak-anak tahu
+ 0:18.0 tahap dia dalam bulan tersebut
+ 0:19.8 Pendaftaran RM20 sahaja
+ 0:21.0 DM saya
+ 0:21.7 untuk keterangan lanjut
+
+3. SFX & ANIMASI (masa video; tiada B-roll)
+ 0:00.0–0:01.0 Thumbnail: IBU AYAH, PERHATIAN! · 5 SUBJEK / RM99 · pil BM · BI · MATH · SAINS · SEJARAH
+ 0:00.0–0:24.0 Watermark: asteredu11.com.my sepanjang video (termasuk thumbnail & end card), putih ±40% + bayang halus, atas-kiri 11%
+ 0:01.0–0:09.0 Banner atas BOFU: IBU AYAH, PERHATIAN! + RM99 · 5 SUBJEK; SEMINGGU SEKALI! (5.5); fade 8.4–9.0
+ 0:01.0–0:02.8 Bintang harga: RM99
+ 0:01.3–0:04.3 Label nama: Wajah bulatan emas + Cikgu AlFarhan
+ 0:01.9–0:05.9 Bulatan bilangan: 5 SUBJEK
+ 0:02.8–0:05.9 Cip subjek: BM 2.8 · BI 3.2 · Math 3.5 · Sains 3.9 · Sejarah 4.1
+ 0:06.3–0:08.1 Pil: Melalui Zoom
+ 0:07.0–0:08.1 Pil merah: Di rumah sahaja
+ 0:08.1–0:13.5 Senarai semak: ✓ Rakaman percuma 8.1 · ✓ Modul percuma 9.2 · ✓ 2 guru dalam 1 kelas 10.3 · ✓ Nota dan modul 12.2
+ 0:13.6–0:19.7 Kad kalendar: UJIAN BULANAN · setiap hujung bulan (15.6)
+ 0:16.9–0:19.7 Pil: Anak tahu tahap dia (graf naik)
+ 0:19.8–0:22.5 Tiket: PENDAFTARAN RM20 SAHAJA
+ 0:21.0–0:22.5 Mockup telefon: asteredu11.com.my · wajah bulatan emas · Cikgu AlFarhan · butang Daftar Sekarang
+ 0:21.0–0:22.5 Pil: DM saya
+ 0:22.5–0:24.0 End card: Merah + kuning: wajah bulatan emas, Cikgu AlFarhan, @aster.edu_tpg, CTA WhatsApp Cikgu AlFarhan untuk daftar / cuba kelas, asteredu11.com.my besar, WhatsApp 011-5596 9070
+ SFX: 0:00.0 pop, 0:00.9 whoosh, 0:01.0 pop, 0:01.3 pop, 0:04.5 pop, 0:05.8 pop, 0:06.1 whoosh, 0:07.2 ding, 0:08.7 pop, 0:09.9 pop, 0:10.8 pop, 0:11.5 pop, 0:12.1 whoosh, 0:12.1 click, 0:12.8 pop, 0:14.9 pop, 0:16.7 pop, 0:17.5 chaching, 0:18.9 pop, 0:19.5 pop, 0:20.0 pop, 0:20.4 pop, 0:20.8 pop, 0:21.4 ding, 0:22.1 pop, 0:23.5 impact, 0:24.4 whoosh, 0:25.2 click, 0:26.9 whoosh, 0:27.1 ding
+ Zoom: 0:00.0 112% (thumbnail), 0:01.0 106%, 0:04.6 112% punch-in, 0:08.1 105%, 0:13.6 112% punch-in, 0:16.9 106%, 0:19.8 104% (ruang tiket RM20), 0:21.0 112% punch-in
+
+4. CTA
+ Pil 'DM saya' (0:21.0, ikut sebutan) + mockup telefon asteredu11.com.my
+ End card (BOFU): WhatsApp Cikgu AlFarhan untuk daftar / cuba kelas · asteredu11.com.my · WhatsApp 011-5596 9070 · @aster.edu_tpg
+
+5. PERLU SEMAK
+ - Durasi 24.0 s: Bawah sasaran BOFU 30–60 s. Isi tidak dipanjangkan (tiada isi tambahan disebut).
+ - 'Setiap minggu, seminggu sekali': Dipapar seperti disebut (banner SEMINGGU SEKALI!). Fakta ini tiada dalam rujukan-aster.txt; sila sahkan betul.
+ - 'sebulan' tidak disebut: Tajuk fail 'RM99,5 subjek sebulan', tetapi Cikgu tidak sebut 'sebulan' dalam video, jadi perkataan itu tidak dipapar. Beritahu jika mahu ditambah.
+ - CTA: DM vs WhatsApp: Cikgu sebut 'DM saya' (pil DM saya); end card guna CTA BOFU WhatsApp seperti AS-F-009.
+ - Fail video tidak dapat dimuat naik ke Drive: Had 10 MB connector; preview + thumbnail ada dalam halaman ini. RINGKASAN.txt disimpan dalam 02_EDITED/_PREVIEW/.
+
+6. CAPTION TIKTOK + 5 HASHTAG
+ RM99 untuk 5 subjek: BM, BI, Math, Sains, Sejarah 📚 Kelas Zoom seminggu sekali, dari rumah je. Rakaman & modul percuma, 2 guru dalam 1 kelas, ujian bulanan setiap hujung bulan. Pendaftaran RM20 sahaja! DM untuk info 👇
+
+ #cikgualfarhan #tuisyenonline #kelaszoom #ibubapa #asteredu
+
+ Muzik: Aster_MuzikLatar_Ceria_100BPM (muzik rasmi Aster, tiada kredit perlu)
+
+Artifact preview: https://claude.ai/artifact/6nPXzQCDuFDmxKcsWHMjok

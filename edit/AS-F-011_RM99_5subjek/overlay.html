@@ -1,0 +1,203 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="fonts_local.css"><style>
+:root{--red:#e31b23;--red2:#b5121b;--yel:#ffd21f;--ink:#1a0d0d;--white:#fff}
+html,body{margin:0;background:transparent;overflow:hidden}
+#stage{position:absolute;left:0;top:0;width:1080px;height:1920px;transform-origin:0 0;font-family:Poppins,sans-serif;color:#fff}
+.el{position:absolute;opacity:0;will-change:transform,opacity}
+.shadow{filter:drop-shadow(0 6px 14px rgba(0,0,0,.45))}
+/* watermark */
+#wm{left:72px;top:212px;font:600 30px Poppins;color:rgba(255,255,255,.42);text-shadow:0 1px 3px rgba(0,0,0,.55),0 0 8px rgba(0,0,0,.25);letter-spacing:.3px;opacity:1}
+/* banner */
+#banner{left:0;top:262px;width:1080px;text-align:center}
+.pillY{display:inline-flex;align-items:center;gap:10px;background:#1c1c1c;border:4px solid var(--yel);color:#fff;border-radius:999px;padding:6px 26px;font:800 32px Poppins;letter-spacing:.5px}
+.pillY svg{width:34px;height:34px}
+.redbar{margin:12px auto 0;width:960px;background:linear-gradient(180deg,#f2262e,#c8141c);border-radius:14px;font:900 96px/1.05 Poppins;letter-spacing:-1px;padding:6px 0 10px;text-shadow:0 4px 0 rgba(0,0,0,.25);box-shadow:0 8px 24px rgba(0,0,0,.35)}
+.yelline{margin-top:6px;font:900 64px/1.1 Poppins;color:var(--yel);-webkit-text-stroke:3px #7a0d10;paint-order:stroke fill;text-shadow:0 5px 0 #7a0d10}
+.whitepill{display:inline-block;margin-top:8px;background:#fff;color:#222;border-radius:999px;padding:4px 24px;font:700 32px Poppins}
+.whitepill b{color:var(--red)}
+/* name label */
+#name{left:70px;top:1030px;display:flex;align-items:center;gap:0}
+#name .ring{width:104px;height:104px;border-radius:50%;border:6px solid var(--yel);overflow:hidden;background:#333;position:relative;z-index:2;box-shadow:0 4px 14px rgba(0,0,0,.4)}
+#name .ring img{width:100%;height:100%;object-fit:cover}
+#name .txt{margin-left:-22px;background:#fff;color:#1b1b1b;border-radius:0 999px 999px 0;padding:10px 30px 10px 40px;font:800 38px Poppins}
+#name .txt small{display:block;font:700 22px Poppins;color:var(--red);margin-top:-4px}
+/* captions */
+#cap{left:60px;width:860px;top:1290px;text-align:center;font:800 66px/1.18 Poppins;letter-spacing:-.5px;opacity:1}
+#cap .w{display:inline-block;margin:0 9px;color:#fff;-webkit-text-stroke:10px rgba(0,0,0,.9);paint-order:stroke fill;text-shadow:0 5px 10px rgba(0,0,0,.5)}
+#cap .w.hl{color:#2a1500;-webkit-text-stroke:0;background:var(--yel);border-radius:12px;padding:0 14px;text-shadow:none;box-shadow:0 4px 0 #b58b00,0 6px 14px rgba(0,0,0,.35)}
+/* 4P card */
+#card4p{left:66px;top:985px;width:600px;background:#fff;border-radius:26px;padding:22px 26px 18px;color:#1b1b1b;box-shadow:0 14px 34px rgba(0,0,0,.45);border-top:14px solid var(--red)}
+#card4p .hd{display:flex;align-items:center;gap:14px;font:900 50px Poppins;margin-bottom:6px}
+#card4p .sifir{background:#1b1b1b;color:#fff;border-radius:12px;padding:0 16px}
+#card4p .plus{color:var(--red)}
+#card4p .p4{background:var(--yel);color:#2a1500;border-radius:50%;width:92px;height:92px;display:grid;place-items:center;font:900 46px Poppins;box-shadow:0 4px 0 #b58b00}
+#card4p .it{display:flex;align-items:center;gap:14px;font:700 36px Poppins;padding:5px 0;border-top:2px dashed #e6e0d6}
+#card4p .it i{font-style:normal;width:50px;height:50px;border-radius:50%;background:var(--red);color:#fff;display:grid;place-items:center;font:900 28px Poppins;flex:none}
+/* ticket */
+#ticket{left:70px;top:950px;width:790px;height:250px;display:flex;transform-origin:center}
+#ticket .stub{width:150px;background:var(--red);border-radius:22px 0 0 22px;display:grid;place-items:center;border-right:6px dashed #fff}
+#ticket .stub svg{width:84px;height:84px}
+#ticket .body{flex:1;background:#fff;border-radius:0 22px 22px 0;color:#1b1b1b;padding:22px 30px;box-shadow:0 14px 30px rgba(0,0,0,.4)}
+#ticket .t1{font:900 74px/1 Poppins;color:var(--red);letter-spacing:-1px}
+#ticket .t0{font:800 30px Poppins;color:#333}
+#ticket .t2{white-space:nowrap;font:700 31px/1.2 Poppins;margin-top:10px;background:var(--yel);display:inline-block;padding:2px 14px;border-radius:10px;color:#2a1500}
+/* pills */
+.pill{display:inline-flex;align-items:center;gap:14px;background:#fff;color:#1b1b1b;border-radius:999px;padding:12px 30px 12px 16px;font:800 40px Poppins;box-shadow:0 8px 20px rgba(0,0,0,.35);white-space:nowrap}
+.pill .ic{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;flex:none}
+.pill .ic svg{width:34px;height:34px}
+.pill.red{background:var(--red);color:#fff}
+#series{left:72px;top:262px;background:rgba(20,20,20,.78);border-left:8px solid var(--yel);color:#fff;font:800 28px Poppins;letter-spacing:1px;padding:8px 22px;border-radius:8px}
+/* 5 subjek */
+#subj5{left:704px;top:470px;width:200px;height:200px;border-radius:50%;background:var(--yel);color:#2a1500;display:flex;flex-direction:column;align-items:center;justify-content:center;border:7px solid #fff;box-shadow:0 10px 26px rgba(0,0,0,.4)}
+#subj5 b{font:900 112px/0.9 Poppins}
+#subj5 span{font:900 32px Poppins;letter-spacing:1px}
+/* star */
+#star{left:20px;top:300px;width:400px;height:400px;transform-origin:center}
+#star .in{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--red);transform:rotate(-8deg)}
+#star .s1{font:900 34px Poppins;letter-spacing:2px;color:#1b1b1b}
+#star .s2{font:900 112px/0.95 Poppins;letter-spacing:-3px}
+/* subjects chips */
+.chip{display:inline-flex;align-items:center;gap:10px;background:#fff;border:5px solid var(--red);color:#1b1b1b;border-radius:999px;padding:6px 26px 6px 10px;font:800 44px Poppins;box-shadow:0 6px 16px rgba(0,0,0,.35)}
+.chip i{width:46px;height:46px;border-radius:50%;background:var(--red);color:#fff;font:900 26px/46px Poppins;text-align:center;font-style:normal}
+/* stamp */
+#stamp{left:170px;top:1115px;width:640px;white-space:nowrap;text-align:center;font:900 76px/1 Poppins;color:var(--red);border:12px solid var(--red);border-radius:24px;padding:14px 0;background:rgba(255,255,255,.92);letter-spacing:-1px;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+/* phone */
+#phone{left:40px;top:930px;width:240px;height:450px;border-radius:46px;background:#111;padding:14px;box-shadow:0 18px 40px rgba(0,0,0,.5)}
+#phone .scr{width:100%;height:100%;border-radius:34px;background:#fff;overflow:hidden;color:#1b1b1b;display:flex;flex-direction:column;align-items:center}
+#phone .url{margin:24px 8px 0;align-self:stretch;background:#eee;border-radius:10px;font:700 16px Poppins;padding:8px 10px;display:flex;gap:6px;align-items:center;justify-content:center;color:#333}
+#phone .hero{margin-top:18px;align-self:stretch;background:linear-gradient(180deg,#f2262e,#b5121b);padding:22px 0 18px;display:flex;flex-direction:column;align-items:center;color:#fff}
+#phone .hero .ring{width:90px;height:90px;border-radius:50%;border:6px solid var(--yel);overflow:hidden}
+#phone .hero .ring img{width:100%;height:100%;object-fit:cover}
+#phone .hero b{font:800 24px Poppins;margin-top:8px}
+#phone .btn{margin-top:18px;white-space:nowrap;background:var(--yel);color:#2a1500;font:900 20px Poppins;border-radius:999px;padding:14px 26px;box-shadow:0 5px 0 #b58b00}
+#phone .ln{margin-top:22px;width:220px;height:14px;border-radius:8px;background:#eee}
+#phone .ln.s{width:160px;margin-top:12px}
+#tap{left:250px;top:1150px;width:90px;height:90px}
+/* end card */
+#end{left:0;top:0;width:1080px;height:1920px;background:radial-gradient(circle at 50% 35%,#f0262e 0%,#c3121a 55%,#8e0b12 100%);text-align:center}
+#end .dots{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.08) 3px,transparent 3.5px);background-size:44px 44px}
+#end .ring{position:absolute;left:360px;top:300px;width:360px;height:360px;border-radius:50%;border:12px solid var(--yel);overflow:hidden;box-shadow:0 0 0 8px rgba(255,210,31,.35),0 18px 40px rgba(0,0,0,.45)}
+#end .ring img{width:100%;height:100%;object-fit:cover}
+#end .nm{position:absolute;left:0;width:1080px;top:700px;font:900 76px Poppins;letter-spacing:-1px}
+#end .hd{position:absolute;left:0;width:1080px;top:800px;font:800 42px Poppins;color:var(--yel)}
+#end .cta{position:absolute;left:170px;width:740px;top:900px;background:#fff;color:#1b1b1b;border-radius:26px;padding:22px 26px;font:800 42px/1.25 Poppins;box-shadow:0 10px 26px rgba(0,0,0,.35)}
+#end .cta b{color:#1f9d4c}
+#end .web{position:absolute;left:150px;width:780px;top:1130px;background:#1b1b1b;border:6px solid var(--yel);border-radius:24px;padding:16px 0;font:900 74px Poppins;color:var(--yel);letter-spacing:-1px}
+#end .wa{position:absolute;left:0;width:1080px;top:1300px;font:800 52px Poppins;display:flex;justify-content:center;align-items:center;gap:16px}
+#end .wa svg{width:60px;height:60px}
+/* thumbnail */
+#thumb{left:0;top:0;width:1080px;height:1920px}
+#thumb .top{position:absolute;left:0;width:1080px;top:262px;text-align:center}
+#thumb .hook{position:absolute;left:70px;width:860px;top:985px;text-align:center}
+#thumb .h1{font:900 128px/1 Poppins;color:#fff;-webkit-text-stroke:16px #111;paint-order:stroke fill;letter-spacing:-3px;text-shadow:0 10px 20px rgba(0,0,0,.5)}
+#thumb .h2{display:inline-block;margin-top:10px;font:900 170px/1 Poppins;color:var(--ink);background:var(--yel);padding:4px 34px 14px;border-radius:26px;letter-spacing:-5px;box-shadow:0 10px 0 #b58b00,0 18px 34px rgba(0,0,0,.45);transform:rotate(-3deg)}
+#thumb .sub{display:inline-block;white-space:nowrap;margin-top:38px;background:var(--red);color:#fff;font:900 46px Poppins;padding:10px 34px;border-radius:999px;border:5px solid #fff;box-shadow:0 10px 24px rgba(0,0,0,.4)}
+#thumb .sub span{color:var(--yel)}
+
+#check{left:66px;top:930px;width:620px;background:#fff;border-radius:26px;padding:18px 26px 14px;color:#1b1b1b;box-shadow:0 14px 34px rgba(0,0,0,.45);border-top:14px solid var(--red)}
+#check .it{display:flex;align-items:center;gap:14px;font:800 38px Poppins;padding:6px 0;border-top:2px dashed #eee}
+#check .it:first-child{border-top:0}
+#check .it i{font-style:normal;width:50px;height:50px;border-radius:50%;background:#1f9d4c;color:#fff;display:grid;place-items:center;font:900 30px Poppins;flex:none}
+#check .it b{color:var(--red)}
+#cal{left:540px;top:262px;width:370px;background:#fff;border-radius:22px;overflow:hidden;color:#1b1b1b;box-shadow:0 12px 30px rgba(0,0,0,.45);text-align:center}
+#cal .top{background:var(--red);color:#fff;font:900 38px Poppins;padding:10px 0;letter-spacing:1px}
+#cal .bd{padding:12px 10px 16px;font:900 46px/1.05 Poppins}
+#cal .bd small{display:block;font:800 32px Poppins;color:#666;margin-top:6px}
+.chips{left:70px;top:1150px;display:flex;gap:12px}
+.chip{font-size:36px;padding:4px 20px 4px 8px}
+.chip i{width:40px;height:40px;line-height:40px;font-size:22px}
+#bars{display:inline-flex;align-items:flex-end;gap:5px;height:40px}
+#bars s{display:block;width:10px;background:#1f9d4c;border-radius:3px}
+</style></head>
+<body><div id="stage">
+<div id="thumb" class="el" data-in="0" data-out="1.0" data-a="none">
+  <div class="top"><span class="pillY"><svg viewBox="0 0 24 24" fill="#ffd21f"><path d="M3 10v4h3l5 4V6L6 10H3zm13.5 2A4.5 4.5 0 0 0 14 8v8a4.5 4.5 0 0 0 2.5-4zM14 3.2v2.1a7 7 0 0 1 0 13.4v2.1a9 9 0 0 0 0-17.6z"/></svg>IBU AYAH, PERHATIAN!</span></div>
+  <div class="hook"><div class="h1">5 SUBJEK</div><div class="h2">RM99</div><br><div class="sub">BM · BI · <span>MATH</span> · SAINS · SEJARAH</div></div>
+</div>
+<div id="banner" class="el" data-in="1.0" data-out="9.0" data-a="drop" data-fo="0.6">
+  <span class="pillY"><svg viewBox="0 0 24 24" fill="#ffd21f"><path d="M3 10v4h3l5 4V6L6 10H3zm13.5 2A4.5 4.5 0 0 0 14 8v8a4.5 4.5 0 0 0 2.5-4zM14 3.2v2.1a7 7 0 0 1 0 13.4v2.1a9 9 0 0 0 0-17.6z"/></svg>IBU AYAH, PERHATIAN!</span>
+  <div class="redbar">RM99 · 5 SUBJEK</div>
+  <div class="yelline el" data-in="5.48" data-out="9.0" data-a="pop" data-fo="0.6" style="position:relative">SEMINGGU SEKALI!</div>
+</div>
+<div id="name" class="el shadow" data-in="1.3" data-out="4.3" data-a="slide"><div class="ring"><img src="face.png"></div><div class="txt">Cikgu AlFarhan</div></div>
+<div id="star" class="el" data-in="1.0" data-out="2.76" data-a="pop" style="left:560px;top:820px;width:360px;height:360px">
+  <svg viewBox="0 0 400 400" width="360" height="360" style="position:absolute;inset:0"><polygon fill="#ffd21f" stroke="#1b1b1b" stroke-width="8" stroke-linejoin="round" points="200.0,10.0 233.4,53.8 282.4,28.8 293.5,82.7 348.5,81.5 335.1,134.9 385.2,157.7 350.0,200.0 385.2,242.3 335.1,265.1 348.5,318.5 293.5,317.3 282.4,371.2 233.4,346.2 200.0,390.0 166.6,346.2 117.6,371.2 106.5,317.3 51.5,318.5 64.9,265.1 14.8,242.3 50.0,200.0 14.8,157.7 64.9,134.9 51.5,81.5 106.5,82.7 117.6,28.8 166.6,53.8"/></svg>
+  <div class="in"><div class="s2" style="font-size:100px">RM99</div></div>
+</div>
+<div id="subj5" class="el" data-in="1.94" data-out="5.9" data-a="pop" style="top:600px"><b>5</b><span>SUBJEK</span></div>
+<div class="chips el" data-in="2.76" data-out="5.9" data-a="none" style="opacity:1">
+  <span class="chip el" data-in="2.76" data-out="5.9" data-a="pop" style="position:relative"><i>B</i>BM</span>
+  <span class="chip el" data-in="3.22" data-out="5.9" data-a="pop" style="position:relative"><i>B</i>BI</span>
+  <span class="chip el" data-in="3.52" data-out="5.9" data-a="pop" style="position:relative"><i>÷</i>Math</span>
+  <span class="chip el" data-in="3.90" data-out="5.9" data-a="pop" style="position:relative"><i>S</i>Sains</span>
+  <span class="chip el" data-in="4.12" data-out="5.9" data-a="pop" style="position:relative"><i>S</i>Sejarah</span>
+</div>
+<div class="el" data-in="6.3" data-out="8.1" data-a="pop" style="left:110px;top:1010px"><span class="pill"><span class="ic" style="background:#2d8cff"><svg viewBox="0 0 24 24" fill="#fff"><path d="M17 10.5V7a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-3.5l4 4v-11z"/></svg></span>Melalui Zoom</span></div>
+<div class="el" data-in="7.04" data-out="8.1" data-a="pop" style="left:150px;top:1130px"><span class="pill red"><span class="ic" style="background:#fff"><svg viewBox="0 0 24 24" fill="#e31b23"><path d="M12 3 2 12h3v8h5v-5h4v5h5v-8h3z"/></svg></span>Di rumah sahaja</span></div>
+<div id="check" class="el" data-in="8.12" data-out="13.5" data-a="pop">
+  <div class="it el" data-in="8.12" data-out="13.5" data-a="slide" style="position:relative"><i>✓</i>Rakaman <b>percuma</b></div>
+  <div class="it el" data-in="9.2" data-out="13.5" data-a="slide" style="position:relative"><i>✓</i>Modul <b>percuma</b></div>
+  <div class="it el" data-in="10.26" data-out="13.5" data-a="slide" style="position:relative"><i>✓</i><b>2 guru</b> dalam 1 kelas</div>
+  <div class="it el" data-in="12.22" data-out="13.5" data-a="slide" style="position:relative"><i>✓</i>Nota dan modul</div>
+</div>
+<div id="cal" class="el" data-in="13.56" data-out="19.74" data-a="pop"><div class="top">UJIAN BULANAN</div><div class="bd"><svg viewBox="0 0 24 24" width="96" height="96" fill="#e31b23"><path d="M7 2v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-2V2h-2v2H9V2zM5 9h14v11H5zm9 7h4v3h-4z"/></svg><small class="el" data-in="15.6" data-out="19.74" data-a="pop" style="position:relative">setiap hujung bulan</small></div></div>
+<div class="el" data-in="16.86" data-out="19.74" data-a="pop" style="left:110px;top:1110px"><span class="pill"><span class="ic" style="background:#eafbf0"><span id="bars"><s style="height:14px"></s><s style="height:24px"></s><s style="height:36px"></s></span></span>Anak tahu tahap dia</span></div>
+<div id="ticket" class="el" data-in="19.8" data-out="22.5" data-a="pop" data-rot="-4" style="left:60px;top:300px;width:760px;height:230px">
+  <div class="stub"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17l-6.1 3.4 1.5-6.8L2.2 9l6.9-.7z"/></svg></div>
+  <div class="body"><div class="t0">PENDAFTARAN</div><div class="t1">RM20</div><div class="t2" style="position:relative">SAHAJA</div></div>
+</div>
+<div id="phone" class="el" data-in="21.04" data-out="22.5" data-a="slide">
+  <div class="scr"><div class="url"><svg viewBox="0 0 24 24" width="18" height="18" fill="#1f9d4c"><path d="M12 1a5 5 0 0 0-5 5v4H5v13h14V10h-2V6a5 5 0 0 0-5-5zm-3 9V6a3 3 0 0 1 6 0v4z"/></svg>asteredu11.com.my</div>
+  <div class="hero"><div class="ring"><img src="face.png"></div><b>Cikgu AlFarhan</b></div>
+  <div class="btn">Daftar Sekarang</div><div class="ln"></div><div class="ln s"></div></div>
+</div>
+<div class="el" data-in="21.04" data-out="22.5" data-a="pop" style="left:420px;top:1120px"><span class="pill"><span class="ic" style="background:var(--red)"><svg viewBox="0 0 24 24" fill="#fff"><path d="M4 4h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H8l-4 4V6a2 2 0 0 1 2-2z"/></svg></span>DM saya</span></div>
+
+<div id="end" class="el" data-in="22.5" data-out="99" data-a="fade">
+  <div class="dots"></div>
+  <div class="ring"><img src="face.png"></div>
+  <div class="nm">Cikgu AlFarhan</div>
+  <div class="hd">@aster.edu_tpg</div>
+  <div class="cta"><b>WhatsApp</b> Cikgu AlFarhan untuk daftar / cuba kelas</div>
+  <div class="web">asteredu11.com.my</div>
+  <div class="wa"><svg viewBox="0 0 24 24" fill="#25d366"><circle cx="12" cy="12" r="11" fill="#fff"/><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3zm4.4 12.6c-.2.5-1.1 1-1.6 1-.4.1-.9.1-1.5-.1a13 13 0 0 1-5.6-4.9c-.4-.6-.9-1.6-.9-2.6 0-1 .5-1.5.7-1.7.2-.2.4-.3.6-.3h.4c.1 0 .3 0 .5.4l.7 1.6c.1.1.1.3 0 .4l-.3.5-.4.4c-.1.1-.3.3-.1.5.2.3.7 1.2 1.6 1.9 1.1 1 2 1.3 2.3 1.4.3.1.4.1.6-.1l.8-1c.2-.2.3-.2.6-.1l1.6.8c.2.1.4.2.4.3.1.1.1.6-.1 1.1z"/></svg>011-5596 9070</div>
+</div>
+
+<div id="cap" class="el"></div>
+<div id="wm" class="el">asteredu11.com.my</div>
+</div><script>
+const CAPS=[[1.0, 1.94, "*RM99 dengan"], [1.94, 2.76, "*5 *subjek"], [2.76, 3.52, "*BM, *BI, *Math"], [3.52, 4.6, "*Sains, *Sejarah"], [4.6, 5.48, "Setiap minggu"], [5.48, 6.3, "*seminggu *sekali"], [6.3, 7.04, "melalui *Zoom"], [7.04, 8.06, "di rumah sahaja"], [8.12, 9.2, "*Rakaman *percuma"], [9.2, 10.26, "*modul *percuma"], [10.26, 11.32, "guru ada *2 orang"], [11.32, 12.22, "dalam satu kelas"], [12.22, 13.5, "nota dan modul"], [13.56, 14.14, "Lepas tu"], [14.18, 15.6, "*ujian *bulanan kita akan buat"], [15.6, 16.86, "setiap hujung bulan"], [16.86, 17.98, "supaya anak-anak tahu"], [17.98, 19.74, "tahap dia dalam bulan tersebut"], [19.8, 21.02, "Pendaftaran *RM20 sahaja"], [21.04, 21.7, "*DM saya"], [21.7, 22.5, "untuk keterangan lanjut"]];
+const els=[...document.querySelectorAll('.el[data-in]')];
+const cap=document.getElementById('cap'),wm=document.getElementById('wm');
+const clamp=x=>Math.max(0,Math.min(1,x));
+const back=x=>{const c1=1.70158,c3=c1+1;return 1+c3*Math.pow(x-1,3)+c1*Math.pow(x-1,2)};
+const outc=x=>1-Math.pow(1-x,3);
+let lastCap=-2;
+window.render=function(t){
+  for(const e of els){
+    const a=+e.dataset.in,b=+e.dataset.out,fo=+(e.dataset.fo||0.18),rot=+(e.dataset.rot||0),kind=e.dataset.a;
+    if(e.classList.contains('it'))e.style.display=t<a?'none':'flex';
+    if(e.classList.contains('chips')){e.style.opacity=(t>=a&&t<b)?1:0;continue}
+    if(t<a||t>=b){e.style.opacity=0;continue}
+    const k=clamp((t-a)/0.28),o=clamp((b-t)/fo);
+    let op=Math.min(clamp((t-a)/0.12),o),tr='';
+    if(kind==='pop'){const s=0.55+0.45*back(k);tr=`scale(${s}) rotate(${rot}deg)`}
+    else if(kind==='slide'){tr=`translateX(${(1-outc(k))*-60}px)`}
+    else if(kind==='drop'){tr=`translateY(${(1-outc(k))*-40}px)`}
+    else if(kind==='stamp'){const s=1+1.2*(1-outc(clamp((t-a)/0.18)));tr=`scale(${s}) rotate(${rot}deg)`;op=Math.min(clamp((t-a)/0.08),o)}
+    else if(kind==='fade'){op=Math.min(clamp((t-a)/0.25),o)}
+    else {op=1}
+    if(kind!=='none'&&kind!=='fade'&&o<1) tr+=` scale(${0.94+0.06*o})`;
+    e.style.opacity=op;e.style.transform=tr;
+  }
+  // captions (hidden on thumbnail & end card)
+  const i=CAPS.findIndex(c=>t>=c[0]&&t<c[1]);
+  if(i!==lastCap){lastCap=i;
+    cap.innerHTML=i<0?'':CAPS[i][2].split(' ').map(w=>w[0]==='*'?`<span class="w hl">${w.slice(1)}</span>`:`<span class="w">${w}</span>`).join(' ');}
+  cap.style.top=(t>=9.1&&t<14.5)?'1420px':'1290px';
+  if(i>=0){const k=clamp((t-CAPS[i][0])/0.12);cap.style.transform=`scale(${0.9+0.1*outc(k)})`;cap.style.opacity=1}
+  // watermark: on top of everything incl. end card
+  wm.style.opacity=1;
+};
+window.CAPS=CAPS;
+window.scaleStage=s=>{document.getElementById('stage').style.transform=`scale(${s})`};
+</script></body></html>
