@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="ms"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>AS-F-012 Darjah 6 ke T1</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Lexend:wght@400;500;600&family=Caveat:wght@700&display=swap">
+<style>
+/* Layout: telefon (sticky) di kiri, helaian edit bertab di kanan; bertindan di telefon. Gaya HYBRID Aster: hitam + kuning. */
+:root{--bg:#faf4f3;--surface:#fff;--ink:#22100f;--muted:#6e5856;--line:#ecdcd9;--chip:#f6e8e6;--accent:#8a6400;--mark:#ffc83d;--mark-ink:#7a5600;--paper:#fffdf6;
+--c-seg:#1b1b1b;--c-mg:#e0a400;--c-sfx:#d9232d;--c-br:#2f8f6b;--ok:#1f7a4d;--warn:#b45309;
+--f-display:"Poppins","Arial Black",system-ui,sans-serif;--f-body:"Lexend",system-ui,-apple-system,"Segoe UI",sans-serif;--f-hand:"Caveat","Comic Sans MS",cursive;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#160b0b;--surface:#221312;--ink:#f6e9e7;--muted:#bfa3a0;--line:#3d2524;--chip:#2e1a19;--accent:#ff8a8f;--mark:#ffc83d;--mark-ink:#ffd970;--paper:#2a1817;--c-seg:#f2c9c6;--c-mg:#ffc83d;--c-sfx:#ff6a72;--c-br:#5fd3a4;--ok:#4ccf8f;--warn:#f0a44b;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#160b0b;--surface:#221312;--ink:#f6e9e7;--muted:#bfa3a0;--line:#3d2524;--chip:#2e1a19;--accent:#ff8a8f;--mark:#ffc83d;--mark-ink:#ffd970;--paper:#2a1817;--c-seg:#f2c9c6;--c-mg:#ffc83d;--c-sfx:#ff6a72;--c-br:#5fd3a4;--ok:#4ccf8f;--warn:#f0a44b;color-scheme:dark}
+*{box-sizing:border-box}html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.55}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px 56px}
+header.top{display:flex;flex-wrap:wrap;gap:8px 24px;align-items:end;justify-content:space-between;margin-bottom:18px}
+h1{font-family:var(--f-display);font-weight:800;font-size:clamp(24px,4vw,36px);line-height:1.08;margin:0;text-wrap:balance;letter-spacing:-.02em}
+h1 mark{background:linear-gradient(transparent 55%,var(--mark) 55%);color:inherit;padding:0 .1em}
+.status{display:inline-flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:13px;color:var(--muted)}
+.status b{background:var(--mark);color:#3a2a00;font-weight:600;padding:2px 10px;border-radius:999px;font-size:12px;letter-spacing:.05em;text-transform:uppercase}
+.grid{display:grid;grid-template-columns:minmax(0,400px) minmax(0,1fr);gap:28px;align-items:start}
+@media (max-width:860px){.grid{grid-template-columns:minmax(0,1fr)}}
+.player{position:sticky;top:calc(env(safe-area-inset-top,0px) + 12px);display:flex;flex-direction:column;gap:10px;max-width:400px;width:100%;margin-inline:auto}
+@media (max-width:860px){.player{position:static}}
+.phone{width:100%;aspect-ratio:9/16;border-radius:22px;overflow:hidden;background:#000;box-shadow:0 18px 50px -22px rgba(60,10,10,.6)}
+.phone video{width:100%;height:100%;display:block;object-fit:contain;background:#000}
+.hint{font-size:12.5px;color:var(--muted);margin:0}
+.panel{min-width:0;display:flex;flex-direction:column;gap:14px}
+.tl{position:relative;height:72px;border-radius:10px;background:var(--surface);border:1px solid var(--line);overflow:hidden;cursor:pointer;touch-action:none}
+.tl .seg{position:absolute;top:0;height:22px;border-right:1px solid var(--bg);font:600 10.5px var(--f-body);color:var(--bg);background:var(--c-seg);padding:4px 6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tl .mg{position:absolute;top:40px;height:10px;border-radius:3px;background:var(--c-mg);opacity:.85}
+.tl .sx{position:absolute;top:56px;width:2px;height:10px;background:var(--c-sfx)}
+.tl .ph{position:absolute;top:0;bottom:0;width:2px;background:var(--c-sfx)}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:12.5px;color:var(--muted);margin-top:8px}
+.legend span{display:inline-flex;gap:6px;align-items:center}.legend i{width:10px;height:10px;border-radius:3px}
+.tabs{display:flex;gap:2px;flex-wrap:wrap;border-bottom:1px solid var(--line)}
+.tab{font:500 14px var(--f-body);background:none;border:0;border-bottom:3px solid transparent;color:var(--muted);padding:10px 10px 8px;cursor:pointer}
+.tab[aria-selected="true"]{color:var(--ink);border-color:var(--mark)}
+.tab .n{display:inline-block;min-width:18px;margin-left:4px;padding:0 5px;border-radius:99px;background:var(--mark);color:#3a2a00;font-size:11px;font-weight:600;text-align:center}
+:is(.tab,.cap-row,.ev,.tl,.btn,a):focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+a{color:var(--accent)}.pane{min-width:0}
+.pane h2{font-family:var(--f-display);font-weight:700;font-size:20px;margin:6px 0 6px;letter-spacing:-.01em}
+.pane h3{font-size:15px;margin:18px 0 6px;font-weight:600}.pane p,.pane li{max-width:68ch}.pane p{margin:0 0 10px}
+.mood{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin:8px 0 4px}
+.mood .h{font:700 26px/1.1 var(--f-hand);color:var(--accent)}
+.mood small{display:block;font:600 11px var(--f-body);letter-spacing:.08em;text-transform:uppercase;color:var(--c-sfx);margin-bottom:2px}
+.caps,.evs{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.cap-row,.ev{display:grid;gap:10px;padding:8px 6px;border:0;border-bottom:1px solid var(--line);background:none;text-align:left;font:inherit;color:inherit;cursor:pointer;align-items:baseline}
+.cap-row{grid-template-columns:64px minmax(0,1fr)}.ev{grid-template-columns:64px 130px minmax(0,1fr)}
+@media (max-width:520px){.ev{grid-template-columns:56px minmax(0,1fr)}.ev .k{grid-column:2}}
+.cap-row:hover,.ev:hover{background:var(--chip)}.cap-row.on{background:color-mix(in srgb,var(--mark) 26%,transparent)}
+time{font-variant-numeric:tabular-nums;color:var(--muted);font-size:13px}
+.hl{font-weight:600;color:var(--mark-ink)}.fix{background:var(--mark);color:#3a2a00;border-radius:4px;padding:0 4px}
+.rv{text-decoration:underline wavy var(--warn);text-underline-offset:3px}
+.cap-row .sec{display:block;font-size:12px;color:var(--muted)}
+.ev .k{font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--mark-ink)}.ev .k.sfx{color:var(--c-sfx)}
+.tbl{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:14px;min-width:460px}
+th,td{text-align:left;padding:8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);font-weight:600}td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
+.list{display:flex;flex-direction:column;gap:10px;padding:0;margin:0;list-style:none}
+.q{border:1px solid var(--line);border-left:4px solid var(--warn);border-radius:10px;padding:10px 14px;background:var(--surface)}.q.done{border-left-color:var(--ok)}
+.q b{display:block;margin-bottom:2px}
+.tag{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:1px 8px;border-radius:99px;margin-right:6px}
+.tag.w{background:color-mix(in srgb,var(--warn) 18%,transparent);color:var(--warn)}.tag.o{background:color-mix(in srgb,var(--ok) 18%,transparent);color:var(--ok)}
+.tt{border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:14px 16px;white-space:pre-wrap;font-size:15px}.tt .hs{color:var(--accent);font-weight:600}
+.btn{font:500 14px var(--f-body);border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:10px;padding:8px 14px;cursor:pointer;min-height:40px;margin-top:10px}
+.copied{font-size:13px;color:var(--ok);margin-left:8px}
+</style></head><body>
+<div class="wrap">
+  <header class="top">
+    <h1>AS-F-012 <mark>Darjah 6 ke Tingkatan 1</mark>: preview</h1>
+    <span class="status"><b>Menunggu semakan</b> TOFU+BOFU · preview v1 · 540×960 · 24.6 saat</span>
+  </header>
+  <div class="grid">
+    <section class="player" aria-label="Pemain preview">
+      <div class="phone"><video id="v" controls playsinline preload="metadata" poster="thumb.jpg" src="preview.mp4"></video></div>
+      <p class="hint">Tekan ▶ untuk main dengan bunyi. Klik baris transkrip atau cue pelan edit untuk lompat ke masa itu.</p>
+    </section>
+    <section class="panel">
+      <div>
+        <div class="tl" id="tl" role="slider" tabindex="0" aria-label="Garis masa edit" aria-valuemin="0" aria-valuemax="24.58" aria-valuenow="0"></div>
+        <div class="legend"><span><i style="background:var(--c-seg)"></i>Babak</span><span><i style="background:var(--c-br)"></i>B-roll</span><span><i style="background:var(--c-mg)"></i>Animasi / grafik</span><span><i style="background:var(--c-sfx)"></i>Sound effect</span></div>
+      </div>
+      <div class="tabs" role="tablist">
+        <button class="tab" role="tab" aria-selected="true" data-p="p-tr" id="tab-tr">Transkrip</button>
+        <button class="tab" role="tab" aria-selected="false" data-p="p-ed" id="tab-ed">Pelan edit</button>
+        <button class="tab" role="tab" aria-selected="false" data-p="p-ga" id="tab-ga">Warna &amp; audio</button>
+        <button class="tab" role="tab" aria-selected="false" data-p="p-q" id="tab-q">Status<span class="n" id="nq"></span></button>
+        <button class="tab" role="tab" aria-selected="false" data-p="p-cp" id="tab-cp">Caption</button>
+      </div>
+      <div class="pane" id="p-tr" role="tabpanel">
+        <h2>Transkrip</h2>
+        <p>Ditranskrip dengan Whisper large-v3 (masa setiap perkataan); frasa kurang jelas disemak dengan transkrip kedua. <span class="hl">Tebal kuning</span> = kata kunci berlatar kuning dalam video. <span class="fix">Berlatar kuning</span> = ejaan dibetulkan dari transkrip (hover untuk asal). <span class="rv">Garis beralun</span> = perlu disahkan.</p>
+        <div class="caps" id="caps"></div>
+      </div>
+      <div class="pane" id="p-ed" role="tabpanel" hidden>
+        <h2>Pelan edit</h2>
+        <p>Footage satu take tanpa ulangan dan tiada senyap lebih 0.3 s, jadi isi tidak dipotong (22.08 s, hingga hujung rakaman). Video = thumbnail 1 saat + isi + end card 1.5 saat. Tag <b>TOFU+BOFU</b> → gaya <b>HYBRID hitam + kuning</b>: separuh pertama masalah Tingkatan 1 (papan algebra, nota, CTA Follow), B-roll kad pencapaian pelajar, kemudian jualan (Pendaftaran 2027 dibuka, MATH TURBO 2027, kelas Sabtu percuma).</p>
+        <div class="mood"><small>Mood video</small><div class="h">Jangan tunggu Tingkatan 1: kukuhkan asas sekarang</div></div>
+        <h3>Babak</h3>
+        <div class="tbl"><table><thead><tr><th>Masa</th><th>Babak</th><th>Grafik utama</th></tr></thead><tbody id="segtbl"></tbody></table></div>
+        <h3>Punch-in zoom</h3>
+        <p>Selang-seli 106% dan 111–113% ikut ayat; zoom berpaut di bawah supaya mata Cikgu naik ke bahagian atas frame.</p>
+        <div class="tbl"><table><thead><tr><th>Masa video</th><th>Zoom</th></tr></thead><tbody id="cuttbl"></tbody></table></div>
+        <h3>Semua cue animasi dan SFX</h3>
+        <div class="evs" id="evs"></div>
+      </div>
+      <div class="pane" id="p-ga" role="tabpanel" hidden>
+        <h2>Warna dan audio</h2>
+        <h3>Colour grade</h3>
+        <div class="tbl"><table><thead><tr><th>Langkah</th><th>Nilai</th><th>Kesan</th></tr></thead><tbody>
+          <tr><td>Kecerahan</td><td class="n">+0.02, gamma 1.04</td><td>Bilik agak malap: muka diangkat sedikit.</td></tr>
+          <tr><td>Kontras</td><td class="n">×1.06 + lengkung S lembut</td><td>Gambar lebih jelas.</td></tr>
+          <tr><td>Saturasi</td><td class="n">×1.06</td><td>Warna lebih hidup tanpa kulit jadi oren.</td></tr>
+          <tr><td>Imbangan warna</td><td class="n">merah −0.03 (bayang), −0.02 (tengah); biru +0.02</td><td>Kurangkan kehangatan lampu; warna kulit asli dan baju merah jambu kekal.</td></tr>
+        </tbody></table></div>
+        <h3>Audio</h3>
+        <div class="tbl"><table><thead><tr><th>Langkah</th><th>Kesan</th></tr></thead><tbody>
+          <tr><td>High-pass 80 Hz + noise reduction ringan + compressor 2.5:1 + EQ kejelasan +1.5 dB @3.5 kHz</td><td>Suara jelas dan sekata.</td></tr>
+          <tr><td>Muzik latar</td><td>Muzik rasmi Aster: Aster_MuzikLatar_Ceria_100BPM (MUSIC/). Tiada kredit perlu. ±23 dB di bawah suara, naik pada thumbnail dan end card.</td></tr>
+          <tr><td>SFX</td><td>Pop (grafik), whoosh (tukar babak, B-roll), tick (tulis algebra), bonk lembut (lemah lagi), impact lembut (NGERI), click (tukar kad B-roll), ding (masa terbaik, jualan, end card).</td></tr>
+          <tr><td>Loudness akhir</td><td>−13.8 LUFS, true peak −1.5 dBTP.</td></tr>
+        </tbody></table></div>
+      </div>
+      <div class="pane" id="p-q" role="tabpanel" hidden>
+        <h2>Status</h2><h3>Perlu semak</h3><ul class="list" id="todo"></ul><h3>Sudah dibuat</h3><ul class="list" id="done"></ul>
+      </div>
+      <div class="pane" id="p-cp" role="tabpanel" hidden>
+        <h2>Caption TikTok</h2><div class="tt" id="tt"></div>
+        <button class="btn" id="copy">Salin caption</button><span class="copied" id="copied" hidden>Disalin</span>
+      </div>
+    </section>
+  </div>
+</div>
+<script>
+const P={"DATA": {"caps": [{"s": 1.0, "e": 2.08, "w": [{"t": "Siapa", "hl": false, "fix": null, "q": false}, {"t": "yang", "hl": false, "fix": null, "q": false}, {"t": "ada", "hl": false, "fix": null, "q": false}, {"t": "anak", "hl": false, "fix": null, "q": false}]}, {"s": 2.08, "e": 2.96, "w": [{"t": "Tingkatan", "hl": true, "fix": null, "q": false}, {"t": "1?", "hl": true, "fix": null, "q": false}]}, {"s": 2.96, "e": 4.64, "w": [{"t": "Algebra", "hl": true, "fix": null, "q": false}, {"t": "menunggu", "hl": false, "fix": null, "q": false}]}, {"s": 4.64, "e": 5.18, "w": [{"t": "pecahan", "hl": true, "fix": "Jahang", "q": false}]}, {"s": 5.18, "e": 5.8, "w": [{"t": "perpuluhan", "hl": true, "fix": "pepuhang", "q": false}]}, {"s": 5.8, "e": 6.38, "w": [{"t": "peratus", "hl": true, "fix": null, "q": false}]}, {"s": 6.38, "e": 7.14, "w": [{"t": "Kalau", "hl": false, "fix": null, "q": false}, {"t": "asas", "hl": false, "fix": null, "q": false}]}, {"s": 7.14, "e": 8.0, "w": [{"t": "Darjah", "hl": true, "fix": null, "q": false}, {"t": "6", "hl": true, "fix": null, "q": false}, {"t": "ni", "hl": false, "fix": null, "q": false}, {"t": "lemah", "hl": true, "fix": null, "q": false}, {"t": "lagi", "hl": false, "fix": null, "q": false}]}, {"s": 9.0, "e": 9.8, "w": [{"t": "Tingkatan", "hl": false, "fix": null, "q": false}, {"t": "1", "hl": false, "fix": null, "q": false}]}, {"s": 9.8, "e": 11.06, "w": [{"t": "merupakan", "hl": false, "fix": null, "q": false}, {"t": "step", "hl": false, "fix": null, "q": false}]}, {"s": 11.06, "e": 12.24, "w": [{"t": "yang", "hl": false, "fix": null, "q": false}, {"t": "paling", "hl": false, "fix": null, "q": false}, {"t": "ngeri", "hl": true, "fix": null, "q": false}]}, {"s": 12.24, "e": 12.82, "w": [{"t": "untuk", "hl": false, "fix": null, "q": false}, {"t": "anak-anak", "hl": false, "fix": null, "q": false}]}, {"s": 12.82, "e": 14.04, "w": [{"t": "Sekarang", "hl": false, "fix": null, "q": false}, {"t": "masa", "hl": false, "fix": null, "q": false}, {"t": "yang", "hl": false, "fix": null, "q": false}, {"t": "terbaik", "hl": true, "fix": null, "q": false}]}, {"s": 14.04, "e": 15.0, "w": [{"t": "Kami", "hl": false, "fix": null, "q": false}, {"t": "nak", "hl": false, "fix": null, "q": false}, {"t": "bantu", "hl": false, "fix": null, "q": false}]}, {"s": 15.0, "e": 16.28, "w": [{"t": "anak-anak", "hl": false, "fix": null, "q": false}, {"t": "sekolah", "hl": true, "fix": null, "q": false}, {"t": "menengah", "hl": true, "fix": null, "q": false}, {"t": "ni", "hl": false, "fix": null, "q": false}]}, {"s": 16.42, "e": 17.26, "w": [{"t": "Kelas", "hl": false, "fix": null, "q": false}, {"t": "hari", "hl": false, "fix": null, "q": false}, {"t": "Sabtu", "hl": true, "fix": null, "q": false}]}, {"s": 17.26, "e": 18.14, "w": [{"t": "percuma", "hl": true, "fix": null, "q": false}, {"t": "sahaja", "hl": false, "fix": null, "q": false}]}, {"s": 18.14, "e": 19.8, "w": [{"t": "untuk", "hl": false, "fix": null, "q": false}, {"t": "pelajar-pelajar", "hl": false, "fix": null, "q": false}, {"t": "sekolah", "hl": true, "fix": null, "q": false}, {"t": "menengah", "hl": true, "fix": null, "q": false}]}, {"s": 19.82, "e": 20.82, "w": [{"t": "untuk", "hl": false, "fix": null, "q": false}, {"t": "kuatkan", "hl": false, "fix": "buatkan", "q": false}, {"t": "algebra", "hl": true, "fix": null, "q": false}]}, {"s": 21.18, "e": 21.7, "w": [{"t": "DM", "hl": true, "fix": null, "q": false}, {"t": "saya", "hl": false, "fix": null, "q": false}]}, {"s": 21.7, "e": 23.08, "w": [{"t": "untuk", "hl": false, "fix": null, "q": false}, {"t": "keterangan", "hl": false, "fix": null, "q": false}, {"t": "lanjut", "hl": false, "fix": null, "q": false}]}], "mg": [[0, 1.0, "Thumbnail", "TINGKATAN 1 / ALGEBRA MENUNGGU! + pil Kelas Sabtu PERCUMA"], [0, 24.58, "Watermark", "asteredu11.com.my sepanjang video (termasuk thumbnail & end card), putih ±40% + bayang halus, atas-kiri 11%"], [1.0, 2.9, "Kad kertas", "Siapa ada anak · Tingkatan 1?"], [1.3, 4.3, "Label nama", "Wajah bulatan emas + Cikgu AlFarhan"], [2.96, 6.36, "Papan hitam", "ALGEBRA · x + 5 = 12 ditulis huruf demi huruf"], [4.64, 6.36, "Cip", "Pecahan 4.6 · Perpuluhan 5.2 · Peratus 5.8"], [6.38, 8.95, "Nota kertas", "Kalau asas... ✗ Darjah 6 lemah lagi (7.6)"], [6.6, 8.95, "CTA Follow", "Wajah bulatan emas + Cikgu AlFarhan + @aster.edu_tpg + Follow saya (TOFU)"], [9.0, 12.8, "Teks besar", "TINGKATAN 1 · step paling NGERI (11.8)"], [12.82, 14.0, "Pil kuning", "Sekarang masa terbaik ✓"], [14.04, 16.3, "B-roll (2.3 s)", "Kad pencapaian pelajar Aster April 2026: Tingkatan 1 (Testimoni 8) → Tingkatan 3 (Testimoni 3) → Tingkatan 4 Teras (Testimoni 9); latar gelap, zoom perlahan; suara terus berjalan"], [16.42, 19.8, "Pil merah", "Pendaftaran 2027 dibuka (mula jualan)"], [16.42, 17.6, "Lower third", "MATH TURBO 2027 · Tuisyen online bersama Cikgu AlFarhan"], [17.26, 19.8, "Kad", "Kelas hari Sabtu · PERCUMA · untuk pelajar sekolah menengah (18.4)"], [19.82, 21.1, "Pil kuning", "Kuatkan ALGEBRA ✓"], [21.18, 23.08, "Pil", "DM saya"], [23.08, 24.58, "End card", "Hitam + kuning: wajah bulatan emas, Cikgu AlFarhan, @aster.edu_tpg, CTA WhatsApp Cikgu AlFarhan untuk daftar / cuba kelas, asteredu11.com.my besar, WhatsApp 011-5596 9070"]], "sfx": [[0.0, "pop"], [0.95, "whoosh"], [1.02, "pop"], [1.3, "pop"], [2.96, "whoosh"], [3.1, "tick"], [4.64, "pop"], [5.18, "pop"], [5.8, "pop"], [6.38, "whoosh"], [6.6, "pop"], [7.6, "bonk"], [9.0, "pop"], [11.76, "impact"], [12.82, "ding"], [14.04, "whoosh"], [14.8, "click"], [15.55, "click"], [16.3, "whoosh"], [16.42, "ding"], [17.26, "pop"], [18.42, "pop"], [19.82, "ding"], [21.18, "pop"], [23.12, "whoosh"], [23.2, "ding"]], "zoom": [{"t": 0, "m": "112% (thumbnail)"}, {"t": 1.0, "m": "106%"}, {"t": 4.64, "m": "112% punch-in"}, {"t": 6.38, "m": "106%"}, {"t": 9.0, "m": "113% punch-in"}, {"t": 12.82, "m": "106%"}, {"t": 14.04, "m": "B-roll penuh skrin"}, {"t": 16.42, "m": "111% punch-in"}, {"t": 19.82, "m": "106%"}, {"t": 21.18, "m": "112% punch-in"}], "dur": 24.58, "broll": [[14.04, 16.3]]}, "SEG": [[0, 1.0, "Thumbnail", "TINGKATAN 1 / ALGEBRA MENUNGGU!"], [1.0, 6.38, "Tingkatan 1", "Siapa ada anak Tingkatan 1? · papan ALGEBRA · pecahan, perpuluhan, peratus"], [6.38, 12.82, "Masalah", "Asas Darjah 6 lemah · CTA Follow · step paling NGERI"], [12.82, 16.42, "Masa terbaik", "Sekarang masa terbaik · B-roll kad pencapaian pelajar"], [16.42, 21.18, "Kelas percuma", "Pendaftaran 2027 dibuka · MATH TURBO 2027 · Kelas Sabtu PERCUMA untuk sekolah menengah · kuatkan algebra"], [21.18, 23.08, "CTA", "DM saya"], [23.08, 24.58, "End card", "CTA BOFU WhatsApp + asteredu11.com.my"]], "TODO": [["B-roll kad pencapaian: nama penuh & markah kelihatan", "Farhan sahkan wajah boleh dipapar. Kad juga menunjukkan nama penuh pelajar dan markah (tidak diblur). Beritahu jika nama perlu diblur. Markah tidak disebut Cikgu; ia sebahagian daripada gambar bukti.", 14.04], ["Kad PERCUMA: 'untuk pelajar sekolah menengah'", "Dipapar seperti disebut. Dalam AS-F-009 Cikgu sebut kelas Sabtu percuma 'untuk pelajar yang berdaftar dengan kami sahaja'. Sila sahkan dua kenyataan ini selari.", 18.42], ["'kuatkan algebra'", "Transkrip utama 'buatkan algebra'; semakan kedua (large-v3) 'kuatkan algebra'. Caption guna 'kuatkan'.", 19.82], ["Lower third MATH TURBO 2027 + pil Pendaftaran 2027 dibuka", "Ikut DNA HYBRID dan AS-F-010 yang diluluskan.", 16.42], ["Durasi 24.6 s", "Bawah sasaran BOFU 30–60 s. Isi tidak dipanjangkan.", null], ["Fail video tidak dapat dimuat naik ke Drive", "Had 10 MB connector; preview + thumbnail ada dalam halaman ini.", null]], "DONE": [["Tag TOFU+BOFU → gaya HYBRID hitam + kuning", "Ikut TOFU+BOFU_Sifir9 dan AS-F-010: papan hitam algebra, nota kertas, CTA Follow tengah video, lower third + pil Pendaftaran 2027 dibuka, end card CTA BOFU.", 2.96], ["B-roll testimoni baru", "Kad pencapaian sebenar dari B-ROLL (disahkan Farhan boleh guna). 2.3 s, bawah had 3 s; tidak menutup thumbnail atau baris hook.", 14.04], ["Disemak dengan transkrip kedua", "'Jahang, pepuhang' → pecahan, perpuluhan (dengan prompt konteks).", 4.64], ["Jenis footage: sudah ditrim", "Satu take tanpa ulangan; tiada senyap > 0.3 s. Audio dikekalkan hingga hujung rakaman (22.08 s) supaya 'lanjut' tidak terpotong.", 21.7], ["Masa SFX disahkan", "Senarai SFX khas video ini (disemak selepas dijana, berbeza dari AS-F-009/010/011).", null], ["Muzik rasmi Aster", "Aster_MuzikLatar_Ceria_100BPM. Tiada kredit perlu.", 2.0], ["Wajah Cikgu, bukan logo · safe zone", "Bulatan emas guna Logo SocMed Aster; teks di atas 80% frame dan di luar jalur kanan 15%.", 23.5]], "TT": "Anak nak masuk Tingkatan 1? Algebra menunggu! Pecahan, perpuluhan, peratus... kalau asas Darjah 6 masih lemah, Tingkatan 1 boleh jadi step paling ngeri 😰 Sekarang masa terbaik. Kelas hari Sabtu PERCUMA untuk pelajar sekolah menengah, untuk kuatkan algebra. DM untuk info 👇", "HS": "#cikgualfarhan #tingkatan1 #algebra #tuisyenonline #asteredu"};
+const DATA=P.DATA,SEG=P.SEG,TODO=P.TODO,DONE=P.DONE,TT=P.TT,HS=P.HS;
+const $=id=>document.getElementById(id);
+const v=$("v"),D=DATA.dur;
+const fmt=t=>{t=Math.max(0,t);const m=Math.floor(t/60),s=t-m*60;return m+":"+(s<10?"0":"")+s.toFixed(1)};
+const seek=t=>{v.currentTime=Math.min(Math.max(0,t),D-0.05);};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]));
+const tl=$("tl");let h="";
+SEG.forEach(s=>h+=`<div class="seg" style="left:${s[0]/D*100}%;width:${(s[1]-s[0])/D*100}%" title="${esc(s[2])}">${esc(s[2])}</div>`);
+DATA.mg.filter(m=>m[2]!=="Watermark").forEach(m=>h+=`<div class="mg" style="left:${m[0]/D*100}%;width:${Math.max(.5,(m[1]-m[0])/D*100)}%"></div>`);
+DATA.sfx.forEach(x=>h+=`<div class="sx" style="left:${x[0]/D*100}%"></div>`);
+tl.innerHTML=h+'<div class="ph" id="ph"></div>';
+tl.addEventListener("pointerdown",e=>{const r=tl.getBoundingClientRect();seek((e.clientX-r.left)/r.width*D)});
+tl.addEventListener("keydown",e=>{if(e.key==="ArrowRight")seek(v.currentTime+1);if(e.key==="ArrowLeft")seek(v.currentTime-1)});
+const segOf=t=>SEG.find(s=>t>=s[0]&&t<s[1])||SEG[SEG.length-1];
+let last="";
+$("caps").innerHTML=DATA.caps.map((c,i)=>{const sg=segOf(c.s)[2];const head=sg!==last?`<span class="sec">${esc(sg)}</span>`:"";last=sg;
+  const txt=c.w.map(w=>{let t=esc(w.t);if(w.hl)t=`<span class="hl">${t}</span>`;if(w.fix)t=`<span class="fix" title="Transkrip: ${esc(w.fix)}">${t}</span>`;if(w.q)t=`<span class="rv" title="Perlu disahkan: rujukan-aster.txt = RM99">${t}</span>`;return t}).join(" ");
+  return `<button class="cap-row" data-t="${c.s}" id="cr${i}"><time>${fmt(c.s)}</time><span>${head}${txt}</span></button>`}).join("");
+$("segtbl").innerHTML=SEG.map(s=>`<tr><td class="n"><a href="#" data-t="${s[0]}">${fmt(s[0])}–${fmt(s[1])}</a></td><td>${esc(s[2])}</td><td>${esc(s[3])}</td></tr>`).join("");
+$("cuttbl").innerHTML=DATA.zoom.map(c=>`<tr><td class="n"><a href="#" data-t="${c.t}">${fmt(c.t)}</a></td><td>${esc(c.m)}</td></tr>`).join("");
+const evs=DATA.mg.map(m=>({t:m[0],k:m[2],d:m[3]+" (hingga "+fmt(m[1])+")",s:false})).concat(DATA.sfx.map(x=>({t:x[0],k:"SFX",d:x[1],s:true}))).sort((a,b)=>a.t-b.t);
+$("evs").innerHTML=evs.map(e=>`<button class="ev" data-t="${e.t}"><time>${fmt(e.t)}</time><span class="k${e.s?" sfx":""}">${esc(e.k)}</span><span>${esc(e.d)}</span></button>`).join("");
+const li=(d,cls,tag,lab)=>`<li class="q${cls}"><b><span class="tag ${tag}">${lab}</span>${esc(d[0])}</b>${esc(d[1])}${d[2]!=null?` <a href="#" data-t="${d[2]}">Lihat ${fmt(d[2])}</a>`:""}</li>`;
+$("done").innerHTML=DONE.map(d=>li(d," done","o","Siap")).join("");
+$("todo").innerHTML=TODO.map(d=>li(d,"","w","Perlu semak")).join("");
+$("nq").textContent=TODO.length;
+$("tt").innerHTML=esc(TT)+"\n\n<span class=\"hs\">"+esc(HS)+"</span>";
+$("copy").onclick=()=>{const t=TT+"\n\n"+HS;const ok=()=>{$("copied").hidden=false;setTimeout(()=>$("copied").hidden=true,1800)};
+  const sel=()=>{const r=document.createRange();r.selectNodeContents($("tt"));const s=getSelection();s.removeAllRanges();s.addRange(r);};
+  try{navigator.clipboard.writeText(t).then(ok,sel)}catch(e){sel()}};
+document.addEventListener("click",e=>{const b=e.target.closest("[data-t]");if(!b||b===tl)return;e.preventDefault();seek(+b.dataset.t+0.02);});
+document.querySelectorAll(".tab").forEach(tb=>tb.onclick=()=>{document.querySelectorAll(".tab").forEach(x=>{x.setAttribute("aria-selected",x===tb);$(x.dataset.p).hidden=x!==tb});
+  try{localStorage.setItem("asf012-tab",tb.id)}catch(e){}});
+try{const k=localStorage.getItem("asf012-tab");if(k&&$(k))$(k).click();}catch(e){}
+let lastCr=-1;
+function loop(){const t=v.currentTime||0;$("ph").style.left=(t/D*100)+"%";tl.setAttribute("aria-valuenow",t.toFixed(1));
+  const ci=DATA.caps.findIndex(c=>t>=c.s&&t<c.e);
+  if(ci!==lastCr){document.querySelectorAll(".cap-row.on").forEach(x=>x.classList.remove("on"));if(ci>=0)$("cr"+ci).classList.add("on");lastCr=ci;}
+  requestAnimationFrame(loop);}
+loop();
+</script>
+</body></html>

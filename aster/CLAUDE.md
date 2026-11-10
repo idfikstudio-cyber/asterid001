@@ -108,6 +108,13 @@ Tonton video rujukan gaya dalam `BRAND/` sebelum edit.
 - **JANGAN papar muka, nama penuh atau nombor telefon pelajar dan ibu bapa.** Blur jika terkena (senarai peserta Zoom, chat, tangkapan WhatsApp testimoni).
 - Testimoni WhatsApp: blur nama dan nombor, kekalkan isi mesej.
 
+### Pengecualian: kad testimoni & pencapaian rasmi Aster (`B-ROLL/Testimoni 1–10.jpeg`)
+- Disahkan Farhan (10 Nov 2026): testimoni benar dan **wajah pelajar boleh dipapar**. Boleh guna untuk konten Aster akan datang.
+- Kegunaan: B-roll bukti (maks 3 s setiap sisipan, suara terus berjalan), contoh bila Cikgu sebut membantu pelajar / keputusan / sekolah menengah. Pilih kad yang sepadan dengan tahap disebut (contoh Tingkatan 1).
+- Jangan tulis caption atau teks tambahan tentang markah yang tidak disebut Cikgu; markah kekal sebagai sebahagian gambar.
+- Nama penuh pada kad: tandakan `PERLU SEMAK` sehingga Farhan sahkan sama ada perlu diblur.
+- Poster program (`40b4a194…jpeg`, `95ca73c5…jpeg`) memaparkan fakta seperti "20 sesi sebulan" dan logo rasmi: guna hanya jika fakta itu disebut dalam video.
+
 ---
 
 ## 9. Watermark
