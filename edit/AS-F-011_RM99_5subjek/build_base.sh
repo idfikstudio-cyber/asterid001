@@ -7,7 +7,7 @@ e=str(K[-1][1])
 for i in range(len(K)-1,0,-1): e=f'if(lt(t,{K[i][0]-1:.2f}),{K[i-1][1]},{e})'
 print(e)")"
 ffmpeg -v error -y -i raw.mp4 -loop 1 -t 1.0 -framerate 30 -i work/thumbsrc.png -f lavfi -t 1.5 -i "color=c=black:s=${W}x${H}:r=30" -filter_complex "
-[0:v]trim=0:21.5,setpts=PTS-STARTPTS,fps=30,$GR,scale=w='trunc(${W}*($Z)/2)*2':h=-2:eval=frame,crop=${W}:${H}:(iw-${W})/2:ih-${H},setsar=1,format=yuv420p[ct];
+[0:v]trim=0:21.567,setpts=PTS-STARTPTS,fps=30,$GR,scale=w='trunc(${W}*($Z)/2)*2':h=-2:eval=frame,crop=${W}:${H}:(iw-${W})/2:ih-${H},setsar=1,format=yuv420p[ct];
 [1:v]$GR,scale=$((W*112/100/2*2)):-2,crop=${W}:${H}:(iw-${W})/2:ih-${H},setsar=1,fps=30,format=yuv420p[t];
 [2:v]setsar=1,format=yuv420p[e];
 [t][ct][e]concat=n=3:v=1:a=0[v]" -map "[v]" -c:v libx264 -crf 16 -preset fast -r 30 $OUT

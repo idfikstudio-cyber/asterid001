@@ -1,9 +1,9 @@
 import subprocess,json,re,sys
 S="/tmp/claude-0/-home-user-asterid001/800365bc-ab7d-5fea-89c1-d7dec64a8258/scratchpad/a10";SFXD=S+"/../sfx"
-SFX=[(0.0,"pop",.6),(0.95,"whoosh",.55),(1.02,"pop",.45),(1.3,"pop",.35),(4.48,"pop",.4),(5.82,"pop",.35),(6.08,"whoosh",.5),(7.2,"ding",.4),
-(8.68,"pop",.35),(9.9,"pop",.35),(10.78,"pop",.35),(11.48,"pop",.35),(12.06,"whoosh",.5),(12.12,"click",.5),(12.76,"pop",.35),
-(14.9,"pop",.4),(16.68,"pop",.5),(17.5,"chaching",.55),(18.9,"pop",.3),(19.52,"pop",.3),(19.96,"pop",.3),(20.36,"pop",.3),(20.82,"pop",.3),
-(21.4,"ding",.4),(22.1,"pop",.35),(23.54,"impact",.35),(24.36,"whoosh",.5),(25.16,"click",.55),(26.95,"whoosh",.6),(27.05,"ding",.35)]
+SFX=[(0.0,"pop",.6),(0.95,"whoosh",.55),(1.05,"tick",.45),(1.3,"pop",.35),(4.85,"pop",.4),(8.77,"swoosh_down",.4),(10.55,"pop",.45),(12.37,"pop",.45),
+(14.47,"whoosh",.5),(17.45,"bonk",.45),(19.36,"pop",.4),(19.96,"click",.5),(21.6,"pop",.4),(21.95,"click",.5),(22.64,"whoosh",.5),(23.0,"pop",.4),(24.66,"pop",.4),
+(26.3,"whoosh",.5),(26.38,"ding",.4),(28.08,"impact",.3),(29.82,"pop",.4),(31.7,"pop",.4),(35.16,"ding",.4),(37.06,"click",.5),(38.7,"click",.5),(40.26,"pop",.4),
+(41.8,"ding",.4),(43.3,"pop",.45),(44.82,"whoosh",.6),(44.92,"ding",.35)]
 def run(c): return subprocess.run(c,shell=True,capture_output=True,text=True)
 # 1) voice clean + normalize to -14
 pre="aselect='between(t,0,2.52)+between(t,2.89,17.36)+between(t,17.77,44.60)',asetpts=N/SR/TB,highpass=f=80,afftdn=nr=8:nf=-42:tn=1,acompressor=threshold=-20dB:ratio=2.5:attack=8:release=120:makeup=2,equalizer=f=3500:t=q:w=1:g=1.5"
