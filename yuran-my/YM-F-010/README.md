@@ -8,6 +8,7 @@ B-roll `DownloadDocument.mp4`, `UploadDocument.MP4`, `B-Roll Pantau Yuran.mp4`, 
 - `transcript.json`: Whisper large-v3, masa setiap perkataan.
 - `plan.py` → `plan.json`: caption, B-roll (crop, blur data, callout), grafik, SFX, zoom pada garis masa video siap.
 - `render.py <dl_dir> <out.mp4> [540|1080]`: render preview (540) atau final (1080, CRF 19, AAC 192k). Fail dalam `<dl_dir>`: raw.mp4, pantau.mp4, apps.mp4, DownloadDocument.mp4, UploadDocument.mp4, logo_white.png.
+- `render_169.py <dl_dir> <out.mp4> [960|1920]`: versi melintang 16:9 (Farhan kiri, panel kanan untuk B-roll dalam bingkai telefon, kad grafik dan caption). Guna semula `render.py`.
 - `notes.py` + `build_page.py <out_dir>`: halaman Artifact preview dan `_RINGKASAN.txt`.
 
 Baris log (tambah ke `03_LOG/edit-log.csv`):

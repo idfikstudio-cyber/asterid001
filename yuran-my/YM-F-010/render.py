@@ -39,7 +39,8 @@ def text_w(f, s): return f.getlength(s)
 
 # ---------- pembaca frame ----------
 class Reader:
-    def __init__(self, args, w=W, h=H):
+    def __init__(self, args, w=None, h=None):
+        w = w or W; h = h or H
         self.n = w * h * 3; self.w, self.h = w, h
         self.p = subprocess.Popen(["ffmpeg", "-v", "error"] + args + ["-f", "rawvideo", "-pix_fmt", "rgb24", "-"], stdout=subprocess.PIPE)
         self.last = None
