@@ -1,5 +1,5 @@
 AS-F-010_2GuruDalam1Kelas — RINGKASAN PREVIEW
-Aster · TOFU+BOFU → HYBRID (hitam + kuning) · spokesperson FARHAN · durasi 46.3 s · preview 540x960
+Aster · TOFU+BOFU → HYBRID (hitam + kuning) · spokesperson FARHAN · durasi 46.3 s · v2 (pembetulan Farhan) · FINAL 1080x1920
 
 1. TEKS HOOK / THUMBNAIL
  ANAK MENANGIS / BILA ULANG KAJI? + pil '2 GURU dalam 1 KELAS'
@@ -22,7 +22,7 @@ Aster · TOFU+BOFU → HYBRID (hitam + kuning) · spokesperson FARHAN · durasi 
  0:12.9 tak buat ulang kaji lagi ni?
  0:14.5 Esok babak yang sama
  0:15.9 Kadang-kadang ada
- 0:16.6 sesetengah anak   [PERLU SEMAK]
+ 0:16.6 satu peel anak
  0:17.4 esok sakit
  0:18.0 tak nak pergi sekolah
  0:19.4 Anak ni bukan malas
@@ -86,13 +86,12 @@ Aster · TOFU+BOFU → HYBRID (hitam + kuning) · spokesperson FARHAN · durasi 
  Pil 'DM kami' (0:43.3, ikut sebutan)
  End card (HYBRID → CTA BOFU): WhatsApp Cikgu AlFarhan untuk daftar / cuba kelas · asteredu11.com.my · WhatsApp 011-5596 9070 · @aster.edu_tpg
 
-5. PERLU SEMAK
- - Perkataan kurang jelas 0:16.6: Transkrip dengar 'ada satu pengen anak' (semakan kedua: 'penyelanak' / 'perempuan anak'). Caption guna 'Kadang-kadang ada sesetengah anak' sebagai tekaan paling hampir. Sila dengar dan betulkan jika lain.
- - Lower third MATH TURBO 2027 + pil Pendaftaran 2027 dibuka: Nama program tidak disebut dalam video ini, tetapi elemen ini diwajibkan DNA HYBRID bila beralih ke jualan (sama seperti AS-F-003, AS-F-006, AS-F-007). Beritahu jika mahu dibuang.
- - CTA: DM vs WhatsApp: Cikgu sebut 'DM kami' (pil DM kami); end card guna CTA BOFU DNA WhatsApp, sama seperti AS-F-009.
- - Pil 'ada yang MENANGIS' dan bubble IBU AYAH: Ayat ikut sebutan Cikgu. Beritahu jika mahu nada lebih lembut (DNA: mesra, bukan menakutkan).
- - Tiada B-roll: Folder B-ROLL tiada rakaman untuk AS-F-010; mockup chat kelas ialah lukisan ringkas (bukan tangkapan skrin Zoom sebenar, tiada nama pelajar).
- - Fail video tidak dapat dimuat naik ke Drive: Had 10 MB connector; preview + thumbnail ada dalam halaman ini. RINGKASAN.txt disimpan dalam 02_EDITED/_PREVIEW/.
+5. PERLU SEMAK / PEMBETULAN
+ v2 (pembetulan Farhan 10 Nov 2026):
+ - 0:16.6 disahkan: 'Kadang-kadang ada satu peel anak' (caption dikemas kini).
+ - Lower third MATH TURBO 2027 + pil Pendaftaran 2027 dibuka: kekal.
+ - Nada pil MENANGIS + bubble IBU AYAH: OK.
+ Tiada perkara terbuka.
 
 6. CAPTION TIKTOK + 5 HASHTAG
  Pukul 9 malam, anak termenung depan buku... ada yang menangis 😢 Anak bukan malas, ibu pun bukan garang. Asas belum kukuh. Kelas kami ada 2 guru dalam 1 kelas: seorang mengajar, seorang jawab soalan. Anak tak perlu buka kamera, taip je soalan ✍️ DM untuk info lanjut 👇

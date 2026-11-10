@@ -1,7 +1,7 @@
 import json,re
 S="/tmp/claude-0/-home-user-asterid001/800365bc-ab7d-5fea-89c1-d7dec64a8258/scratchpad"
 caps=json.load(open(f"{S}/a10/work/caps.json"))
-FIX={"garang":"garam","Taip":"Baik","sesetengah":"pengen"}
+FIX={"garang":"garam","Taip":"Baik","peel":"pengen (disahkan Farhan: peel)"}
 C=[]
 for s,e,txt in caps:
   ws=[]
@@ -29,13 +29,8 @@ ZOOM=[(0,"112% (thumbnail)"),(1.0,"106%"),(3.52,"112% (sorok potongan senyap)"),
 SEG=[[0,1.0,"Thumbnail","ANAK MENANGIS BILA ULANG KAJI? + 2 GURU dalam 1 KELAS"],[1.0,9.37,"Malam ulang kaji","Jam 9:00 malam · termenung · ada yang menangis"],
 [9.37,19.36,"Tekanan","Bubble IBU AYAH x2 · Esok babak yang sama · Sakit, tak nak pergi sekolah"],[19.36,26.3,"Punca","Coret MALAS / GARANG · Masalah sebenar: asas tak kukuh · CTA Follow"],
 [26.3,35.16,"2 guru 1 kelas","Pendaftaran 2027 dibuka · MATH TURBO 2027 · kad 2 GURU"],[35.16,44.82,"Tak perlu takut","Kamera / mikrofon tak payah buka · chat: taip, cikgu kedua jawab · DM kami"],[44.82,46.32,"End card","CTA BOFU WhatsApp + asteredu11.com.my"]]
-TODO=[["Perkataan kurang jelas 0:16.6","Transkrip dengar 'ada satu pengen anak' (semakan kedua: 'penyelanak' / 'perempuan anak'). Caption guna 'Kadang-kadang ada sesetengah anak' sebagai tekaan paling hampir. Sila dengar dan betulkan jika lain.",16.55],
-["Lower third MATH TURBO 2027 + pil Pendaftaran 2027 dibuka","Nama program tidak disebut dalam video ini, tetapi elemen ini diwajibkan DNA HYBRID bila beralih ke jualan (sama seperti AS-F-003, AS-F-006, AS-F-007). Beritahu jika mahu dibuang.",26.3],
-["CTA: DM vs WhatsApp","Cikgu sebut 'DM kami' (pil DM kami); end card guna CTA BOFU DNA WhatsApp, sama seperti AS-F-009.",43.3],
-["Pil 'ada yang MENANGIS' dan bubble IBU AYAH","Ayat ikut sebutan Cikgu. Beritahu jika mahu nada lebih lembut (DNA: mesra, bukan menakutkan).",8.77],
-["Tiada B-roll","Folder B-ROLL tiada rakaman untuk AS-F-010; mockup chat kelas ialah lukisan ringkas (bukan tangkapan skrin Zoom sebenar, tiada nama pelajar).",40.26],
-["Fail video tidak dapat dimuat naik ke Drive","Had 10 MB connector; preview + thumbnail ada dalam halaman ini. RINGKASAN.txt disimpan dalam 02_EDITED/_PREVIEW/.",None]]
-DONE=[["Tag TOFU+BOFU → gaya HYBRID hitam + kuning","Ikut rujukan TOFU+BOFU_Sifir9: kad kertas putih, teks coret merah, CTA Follow tengah video, lower third program + pil Pendaftaran 2027 dibuka bila masuk jualan, end card CTA BOFU.",19.36],
+TODO=[]
+DONE=[["v2: 'satu peel anak'","Disahkan Farhan: ayat penuh 'Kadang-kadang ada satu peel anak' (transkrip dengar 'pengen'). Caption dikemas kini.",16.55],["Lower third MATH TURBO 2027 + pil Pendaftaran 2027 dibuka","Disahkan Farhan: kekal.",26.3],["Nada pil MENANGIS + bubble IBU AYAH","Disahkan Farhan: OK.",8.77],["CTA","Pil DM kami (ikut sebutan) + end card CTA BOFU WhatsApp.",43.3],["Tiada B-roll","Mockup chat kelas ialah lukisan ringkas (tiada nama pelajar).",40.26],["Tag TOFU+BOFU → gaya HYBRID hitam + kuning","Ikut rujukan TOFU+BOFU_Sifir9: kad kertas putih, teks coret merah, CTA Follow tengah video, lower third program + pil Pendaftaran 2027 dibuka bila masuk jualan, end card CTA BOFU.",19.36],
 ["Jenis footage: sudah ditrim","Satu take tanpa ulangan. Dua senyap dipendekkan (0:02.5–0:02.9 dan 0:17.4–0:17.8); potongan disorok dengan pertukaran zoom.",3.52],
 ["Disemak dengan transkrip kedua","'garam' → garang; 'Baik sahaja' → Taip sahaja (kedua-dua model setuju dengan prompt konteks).",22.0],
 ["Fakta disebut sahaja","2 guru dalam 1 kelas (seorang mengajar, seorang jawab soalan) sepadan rujukan-aster.txt. Tiada harga disebut, jadi tiada harga dipapar.",28.08],
@@ -50,7 +45,7 @@ t=open(f"{S}/work/tpl.html").read()
 R=[("<title>AS-F-009 Kelas Percuma</title>","<title>AS-F-010 2 Guru 1 Kelas</title>"),
 ("Gaya BOFU Aster: merah + kuning.","Gaya HYBRID Aster: hitam + kuning."),
 ("--accent:#c4141c","--accent:#8a6400"),("--c-seg:#5c0b0f","--c-seg:#1b1b1b"),
-('<h1>AS-F-009 <mark>Kelas Percuma</mark>: final</h1>','<h1>AS-F-010 <mark>2 Guru Dalam 1 Kelas</mark>: preview</h1>'),
+('<h1>AS-F-009 <mark>Kelas Percuma</mark>: final</h1>','<h1>AS-F-010 <mark>2 Guru Dalam 1 Kelas</mark>: final</h1>'),
 ('<b>Final siap</b> BOFU · v2 ikut pembetulan Farhan 10 Nov 2026 · final 1080×1920 · 28.5 saat','<b>Menunggu semakan</b> TOFU+BOFU · preview v1 · 540×960 · 46.3 saat'),
 ('aria-valuemax="28.45"','aria-valuemax="46.32"'),
 ("harga disahkan Farhan (RM99).","frasa kurang jelas disemak dengan transkrip kedua."),
