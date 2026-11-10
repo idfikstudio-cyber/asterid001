@@ -1,0 +1,1939 @@
+{
+ "dur": 56.01,
+ "thumb": 1.0,
+ "end": 1.5,
+ "body_dur": 53.51,
+ "cuts": [
+  [
+   3.05,
+   3.27
+  ]
+ ],
+ "caps": [
+  {
+   "s": 1.0,
+   "e": 2.1,
+   "w": [
+    {
+     "t": "Pantau",
+     "hl": false,
+     "fix": null,
+     "s": 1.0
+    },
+    {
+     "t": "perkara-perkara",
+     "hl": false,
+     "fix": null,
+     "s": 1.42
+    }
+   ]
+  },
+  {
+   "s": 2.1,
+   "e": 3.16,
+   "w": [
+    {
+     "t": "penting",
+     "hl": true,
+     "fix": null,
+     "s": 2.1
+    },
+    {
+     "t": "seperti",
+     "hl": false,
+     "fix": null,
+     "s": 2.48
+    },
+    {
+     "t": "yuran",
+     "hl": false,
+     "fix": null,
+     "s": 2.76
+    }
+   ]
+  },
+  {
+   "s": 3.16,
+   "e": 4.2,
+   "w": [
+    {
+     "t": "dan",
+     "hl": false,
+     "fix": null,
+     "s": 3.16
+    },
+    {
+     "t": "lain-lain",
+     "hl": false,
+     "fix": null,
+     "s": 3.42
+    },
+    {
+     "t": "dalam",
+     "hl": false,
+     "fix": null,
+     "s": 3.8
+    }
+   ]
+  },
+  {
+   "s": 4.2,
+   "e": 5.34,
+   "w": [
+    {
+     "t": "satu",
+     "hl": false,
+     "fix": null,
+     "s": 4.2
+    },
+    {
+     "t": "skrin",
+     "hl": true,
+     "fix": null,
+     "s": 4.52
+    },
+    {
+     "t": "handphone",
+     "hl": true,
+     "fix": null,
+     "s": 4.96
+    }
+   ]
+  },
+  {
+   "s": 5.34,
+   "e": 5.92,
+   "w": [
+    {
+     "t": "sahaja",
+     "hl": false,
+     "fix": null,
+     "s": 5.34
+    }
+   ]
+  },
+  {
+   "s": 5.92,
+   "e": 6.48,
+   "w": [
+    {
+     "t": "Boleh",
+     "hl": false,
+     "fix": null,
+     "s": 5.92
+    },
+    {
+     "t": "tengok",
+     "hl": false,
+     "fix": null,
+     "s": 6.02
+    },
+    {
+     "t": "terus",
+     "hl": false,
+     "fix": null,
+     "s": 6.3
+    }
+   ]
+  },
+  {
+   "s": 6.48,
+   "e": 7.66,
+   "w": [
+    {
+     "t": "siapa",
+     "hl": false,
+     "fix": null,
+     "s": 6.48
+    },
+    {
+     "t": "yang",
+     "hl": false,
+     "fix": null,
+     "s": 6.76
+    },
+    {
+     "t": "bayar",
+     "hl": true,
+     "fix": null,
+     "s": 7.04
+    }
+   ]
+  },
+  {
+   "s": 7.66,
+   "e": 9.0,
+   "w": [
+    {
+     "t": "belum",
+     "hl": true,
+     "fix": null,
+     "s": 7.66
+    },
+    {
+     "t": "bayar",
+     "hl": true,
+     "fix": null,
+     "s": 8.08
+    }
+   ]
+  },
+  {
+   "s": 9.0,
+   "e": 9.94,
+   "w": [
+    {
+     "t": "overdue",
+     "hl": true,
+     "fix": null,
+     "s": 9.0
+    }
+   ]
+  },
+  {
+   "s": 9.94,
+   "e": 11.28,
+   "w": [
+    {
+     "t": "berapa",
+     "hl": false,
+     "fix": null,
+     "s": 9.94
+    },
+    {
+     "t": "lama",
+     "hl": true,
+     "fix": null,
+     "s": 10.24
+    },
+    {
+     "t": "overdue",
+     "hl": true,
+     "fix": null,
+     "s": 10.54
+    }
+   ]
+  },
+  {
+   "s": 11.28,
+   "e": 12.22,
+   "w": [
+    {
+     "t": "yang",
+     "hl": false,
+     "fix": null,
+     "s": 11.28
+    },
+    {
+     "t": "dah",
+     "hl": false,
+     "fix": null,
+     "s": 11.44
+    },
+    {
+     "t": "bayar",
+     "hl": true,
+     "fix": null,
+     "s": 11.68
+    }
+   ]
+  },
+  {
+   "s": 12.22,
+   "e": 13.4,
+   "w": [
+    {
+     "t": "Semua",
+     "hl": false,
+     "fix": null,
+     "s": 12.22
+    },
+    {
+     "t": "kita",
+     "hl": false,
+     "fix": null,
+     "s": 12.76
+    },
+    {
+     "t": "sediakan",
+     "hl": false,
+     "fix": null,
+     "s": 12.94
+    }
+   ]
+  },
+  {
+   "s": 13.4,
+   "e": 14.56,
+   "w": [
+    {
+     "t": "dalam",
+     "hl": false,
+     "fix": null,
+     "s": 13.4
+    },
+    {
+     "t": "skrin",
+     "hl": true,
+     "fix": null,
+     "s": 13.78
+    },
+    {
+     "t": "handphone",
+     "hl": true,
+     "fix": null,
+     "s": 14.18
+    }
+   ]
+  },
+  {
+   "s": 14.56,
+   "e": 15.44,
+   "w": [
+    {
+     "t": "pun",
+     "hl": false,
+     "fix": null,
+     "s": 14.56
+    },
+    {
+     "t": "boleh",
+     "hl": false,
+     "fix": null,
+     "s": 14.78
+    },
+    {
+     "t": "tengok",
+     "hl": false,
+     "fix": null,
+     "s": 15.02
+    }
+   ]
+  },
+  {
+   "s": 15.44,
+   "e": 16.3,
+   "w": [
+    {
+     "t": "Lepas",
+     "hl": false,
+     "fix": null,
+     "s": 15.44
+    },
+    {
+     "t": "ahli",
+     "hl": false,
+     "fix": null,
+     "s": 15.68
+    },
+    {
+     "t": "buat",
+     "hl": false,
+     "fix": null,
+     "s": 16.12
+    }
+   ]
+  },
+  {
+   "s": 16.3,
+   "e": 16.9,
+   "w": [
+    {
+     "t": "bayaran",
+     "hl": false,
+     "fix": null,
+     "s": 16.3
+    }
+   ]
+  },
+  {
+   "s": 16.9,
+   "e": 18.46,
+   "w": [
+    {
+     "t": "resit",
+     "hl": true,
+     "fix": null,
+     "s": 16.9
+    },
+    {
+     "t": "dihantar",
+     "hl": false,
+     "fix": null,
+     "s": 17.52
+    },
+    {
+     "t": "secara",
+     "hl": false,
+     "fix": null,
+     "s": 17.98
+    }
+   ]
+  },
+  {
+   "s": 18.46,
+   "e": 19.1,
+   "w": [
+    {
+     "t": "automatik",
+     "hl": true,
+     "fix": "otomatik",
+     "s": 18.46
+    }
+   ]
+  },
+  {
+   "s": 19.1,
+   "e": 19.76,
+   "w": [
+    {
+     "t": "Tak",
+     "hl": false,
+     "fix": null,
+     "s": 19.1
+    },
+    {
+     "t": "payah",
+     "hl": false,
+     "fix": null,
+     "s": 19.32
+    },
+    {
+     "t": "dah",
+     "hl": false,
+     "fix": null,
+     "s": 19.6
+    }
+   ]
+  },
+  {
+   "s": 19.76,
+   "e": 20.62,
+   "w": [
+    {
+     "t": "buat",
+     "hl": false,
+     "fix": null,
+     "s": 19.76
+    },
+    {
+     "t": "resit",
+     "hl": true,
+     "fix": null,
+     "s": 19.88
+    },
+    {
+     "t": "manual",
+     "hl": true,
+     "fix": null,
+     "s": 20.12
+    }
+   ]
+  },
+  {
+   "s": 20.62,
+   "e": 21.6,
+   "w": [
+    {
+     "t": "Nak",
+     "hl": false,
+     "fix": null,
+     "s": 20.62
+    },
+    {
+     "t": "catat",
+     "hl": false,
+     "fix": null,
+     "s": 20.76
+    },
+    {
+     "t": "kehadiran",
+     "hl": true,
+     "fix": null,
+     "s": 21.16
+    }
+   ]
+  },
+  {
+   "s": 21.6,
+   "e": 22.38,
+   "w": [
+    {
+     "t": "pun",
+     "hl": false,
+     "fix": null,
+     "s": 21.6
+    },
+    {
+     "t": "kita",
+     "hl": false,
+     "fix": null,
+     "s": 21.76
+    },
+    {
+     "t": "sediakan",
+     "hl": false,
+     "fix": null,
+     "s": 21.98
+    }
+   ]
+  },
+  {
+   "s": 22.38,
+   "e": 23.34,
+   "w": [
+    {
+     "t": "dalam",
+     "hl": false,
+     "fix": null,
+     "s": 22.38
+    },
+    {
+     "t": "sistem",
+     "hl": false,
+     "fix": null,
+     "s": 22.6
+    },
+    {
+     "t": "kita",
+     "hl": false,
+     "fix": null,
+     "s": 22.88
+    }
+   ]
+  },
+  {
+   "s": 23.34,
+   "e": 24.9,
+   "w": [
+    {
+     "t": "Tinggal",
+     "hl": false,
+     "fix": null,
+     "s": 23.34
+    },
+    {
+     "t": "nak",
+     "hl": false,
+     "fix": null,
+     "s": 23.9
+    },
+    {
+     "t": "tik-tik-tik",
+     "hl": false,
+     "fix": null,
+     "s": 24.06
+    }
+   ]
+  },
+  {
+   "s": 24.9,
+   "e": 25.12,
+   "w": [
+    {
+     "t": "je",
+     "hl": false,
+     "fix": null,
+     "s": 24.9
+    }
+   ]
+  },
+  {
+   "s": 25.12,
+   "e": 26.06,
+   "w": [
+    {
+     "t": "Siapa",
+     "hl": false,
+     "fix": null,
+     "s": 25.12
+    },
+    {
+     "t": "yang",
+     "hl": false,
+     "fix": null,
+     "s": 25.54
+    },
+    {
+     "t": "hadir",
+     "hl": true,
+     "fix": null,
+     "s": 25.7
+    }
+   ]
+  },
+  {
+   "s": 26.06,
+   "e": 26.76,
+   "w": [
+    {
+     "t": "siapa",
+     "hl": false,
+     "fix": null,
+     "s": 26.06
+    },
+    {
+     "t": "yang",
+     "hl": false,
+     "fix": null,
+     "s": 26.44
+    },
+    {
+     "t": "tak",
+     "hl": false,
+     "fix": null,
+     "s": 26.62
+    }
+   ]
+  },
+  {
+   "s": 26.76,
+   "e": 27.06,
+   "w": [
+    {
+     "t": "hadir",
+     "hl": true,
+     "fix": null,
+     "s": 26.76
+    }
+   ]
+  },
+  {
+   "s": 27.06,
+   "e": 28.06,
+   "w": [
+    {
+     "t": "Nak",
+     "hl": false,
+     "fix": null,
+     "s": 27.06
+    },
+    {
+     "t": "share",
+     "hl": false,
+     "fix": null,
+     "s": 27.2
+    },
+    {
+     "t": "laporan",
+     "hl": true,
+     "fix": null,
+     "s": 27.54
+    }
+   ]
+  },
+  {
+   "s": 28.06,
+   "e": 28.9,
+   "w": [
+    {
+     "t": "tentang",
+     "hl": false,
+     "fix": null,
+     "s": 28.06
+    },
+    {
+     "t": "ahli",
+     "hl": false,
+     "fix": null,
+     "s": 28.28
+    }
+   ]
+  },
+  {
+   "s": 28.9,
+   "e": 29.52,
+   "w": [
+    {
+     "t": "kita",
+     "hl": false,
+     "fix": null,
+     "s": 28.9
+    },
+    {
+     "t": "boleh",
+     "hl": false,
+     "fix": null,
+     "s": 29.02
+    },
+    {
+     "t": "hantar",
+     "hl": false,
+     "fix": null,
+     "s": 29.22
+    }
+   ]
+  },
+  {
+   "s": 29.52,
+   "e": 29.86,
+   "w": [
+    {
+     "t": "dokumen",
+     "hl": true,
+     "fix": null,
+     "s": 29.52
+    }
+   ]
+  },
+  {
+   "s": 29.86,
+   "e": 31.34,
+   "w": [
+    {
+     "t": "Ahli",
+     "hl": false,
+     "fix": null,
+     "s": 29.86
+    },
+    {
+     "t": "download",
+     "hl": true,
+     "fix": null,
+     "s": 30.62
+    },
+    {
+     "t": "sahaja",
+     "hl": false,
+     "fix": null,
+     "s": 30.86
+    }
+   ]
+  },
+  {
+   "s": 31.34,
+   "e": 32.06,
+   "w": [
+    {
+     "t": "dokumen",
+     "hl": true,
+     "fix": null,
+     "s": 31.34
+    },
+    {
+     "t": "yang",
+     "hl": false,
+     "fix": null,
+     "s": 31.7
+    },
+    {
+     "t": "kita",
+     "hl": false,
+     "fix": null,
+     "s": 31.88
+    }
+   ]
+  },
+  {
+   "s": 32.06,
+   "e": 33.4,
+   "w": [
+    {
+     "t": "sediakan",
+     "hl": false,
+     "fix": null,
+     "s": 32.06
+    },
+    {
+     "t": "dalam",
+     "hl": false,
+     "fix": null,
+     "s": 32.46
+    },
+    {
+     "t": "apps",
+     "hl": false,
+     "fix": null,
+     "s": 32.98
+    }
+   ]
+  },
+  {
+   "s": 33.4,
+   "e": 35.12,
+   "w": [
+    {
+     "t": "bila-bila",
+     "hl": false,
+     "fix": null,
+     "s": 33.4
+    },
+    {
+     "t": "masa",
+     "hl": false,
+     "fix": null,
+     "s": 34.24
+    },
+    {
+     "t": "sahaja",
+     "hl": false,
+     "fix": null,
+     "s": 34.48
+    }
+   ]
+  },
+  {
+   "s": 35.12,
+   "e": 36.48,
+   "w": [
+    {
+     "t": "E-sijil",
+     "hl": true,
+     "fix": "Isi jil",
+     "s": 35.12
+    },
+    {
+     "t": "boleh",
+     "hl": false,
+     "fix": null,
+     "s": 35.94
+    }
+   ]
+  },
+  {
+   "s": 36.48,
+   "e": 37.82,
+   "w": [
+    {
+     "t": "reminder",
+     "hl": true,
+     "fix": null,
+     "s": 36.48
+    },
+    {
+     "t": "boleh",
+     "hl": false,
+     "fix": null,
+     "s": 36.84
+    }
+   ]
+  },
+  {
+   "s": 37.82,
+   "e": 39.12,
+   "w": [
+    {
+     "t": "prestasi",
+     "hl": true,
+     "fix": null,
+     "s": 37.82
+    },
+    {
+     "t": "anak",
+     "hl": false,
+     "fix": null,
+     "s": 38.24
+    },
+    {
+     "t": "boleh",
+     "hl": false,
+     "fix": null,
+     "s": 38.56
+    }
+   ]
+  },
+  {
+   "s": 39.12,
+   "e": 40.48,
+   "w": [
+    {
+     "t": "prestasi",
+     "hl": true,
+     "fix": null,
+     "s": 39.12
+    },
+    {
+     "t": "ahli",
+     "hl": false,
+     "fix": null,
+     "s": 39.68
+    },
+    {
+     "t": "boleh",
+     "hl": false,
+     "fix": null,
+     "s": 40.1
+    }
+   ]
+  },
+  {
+   "s": 40.48,
+   "e": 41.46,
+   "w": [
+    {
+     "t": "apa",
+     "hl": false,
+     "fix": null,
+     "s": 40.48
+    },
+    {
+     "t": "sahaja",
+     "hl": false,
+     "fix": null,
+     "s": 40.72
+    },
+    {
+     "t": "surat",
+     "hl": true,
+     "fix": null,
+     "s": 41.14
+    }
+   ]
+  },
+  {
+   "s": 41.46,
+   "e": 42.4,
+   "w": [
+    {
+     "t": "jemputan",
+     "hl": true,
+     "fix": null,
+     "s": 41.46
+    },
+    {
+     "t": "pun",
+     "hl": false,
+     "fix": null,
+     "s": 41.98
+    },
+    {
+     "t": "boleh",
+     "hl": false,
+     "fix": null,
+     "s": 42.1
+    }
+   ]
+  },
+  {
+   "s": 42.4,
+   "e": 43.0,
+   "w": [
+    {
+     "t": "Semua",
+     "hl": false,
+     "fix": null,
+     "s": 42.4
+    },
+    {
+     "t": "kita",
+     "hl": false,
+     "fix": null,
+     "s": 42.68
+    },
+    {
+     "t": "boleh",
+     "hl": false,
+     "fix": null,
+     "s": 42.76
+    }
+   ]
+  },
+  {
+   "s": 43.0,
+   "e": 44.2,
+   "w": [
+    {
+     "t": "download",
+     "hl": true,
+     "fix": null,
+     "s": 43.0
+    },
+    {
+     "t": "dalam",
+     "hl": false,
+     "fix": null,
+     "s": 43.26
+    },
+    {
+     "t": "sistem",
+     "hl": false,
+     "fix": null,
+     "s": 43.84
+    }
+   ]
+  },
+  {
+   "s": 44.2,
+   "e": 45.4,
+   "w": [
+    {
+     "t": "ahli",
+     "hl": false,
+     "fix": null,
+     "s": 44.2
+    },
+    {
+     "t": "tinggal",
+     "hl": false,
+     "fix": null,
+     "s": 44.86
+    },
+    {
+     "t": "nak",
+     "hl": false,
+     "fix": null,
+     "s": 45.28
+    }
+   ]
+  },
+  {
+   "s": 45.4,
+   "e": 46.24,
+   "w": [
+    {
+     "t": "download",
+     "hl": true,
+     "fix": null,
+     "s": 45.4
+    },
+    {
+     "t": "sahaja",
+     "hl": false,
+     "fix": null,
+     "s": 45.68
+    }
+   ]
+  },
+  {
+   "s": 46.24,
+   "e": 46.76,
+   "w": [
+    {
+     "t": "Semua",
+     "hl": false,
+     "fix": null,
+     "s": 46.24
+    },
+    {
+     "t": "yang",
+     "hl": false,
+     "fix": null,
+     "s": 46.58
+    },
+    {
+     "t": "saya",
+     "hl": false,
+     "fix": null,
+     "s": 46.64
+    }
+   ]
+  },
+  {
+   "s": 46.76,
+   "e": 47.36,
+   "w": [
+    {
+     "t": "cerita",
+     "hl": false,
+     "fix": null,
+     "s": 46.76
+    },
+    {
+     "t": "dengan",
+     "hl": false,
+     "fix": null,
+     "s": 47.1
+    },
+    {
+     "t": "ni",
+     "hl": false,
+     "fix": null,
+     "s": 47.16
+    }
+   ]
+  },
+  {
+   "s": 47.36,
+   "e": 48.36,
+   "w": [
+    {
+     "t": "semua",
+     "hl": false,
+     "fix": null,
+     "s": 47.36
+    },
+    {
+     "t": "dalam",
+     "hl": false,
+     "fix": null,
+     "s": 47.72
+    },
+    {
+     "t": "apps",
+     "hl": false,
+     "fix": null,
+     "s": 48.04
+    }
+   ]
+  },
+  {
+   "s": 48.36,
+   "e": 49.2,
+   "w": [
+    {
+     "t": "Yuran.my",
+     "hl": true,
+     "fix": "yuran .my",
+     "s": 48.36
+    }
+   ]
+  },
+  {
+   "s": 49.2,
+   "e": 50.0,
+   "w": [
+    {
+     "t": "Anda",
+     "hl": false,
+     "fix": null,
+     "s": 49.2
+    },
+    {
+     "t": "perlukan",
+     "hl": false,
+     "fix": null,
+     "s": 49.38
+    },
+    {
+     "t": "sistem",
+     "hl": false,
+     "fix": null,
+     "s": 49.7
+    }
+   ]
+  },
+  {
+   "s": 50.0,
+   "e": 50.64,
+   "w": [
+    {
+     "t": "macam",
+     "hl": false,
+     "fix": null,
+     "s": 50.0
+    },
+    {
+     "t": "mana?",
+     "hl": false,
+     "fix": null,
+     "s": 50.22
+    }
+   ]
+  },
+  {
+   "s": 50.64,
+   "e": 51.76,
+   "w": [
+    {
+     "t": "Cuba",
+     "hl": false,
+     "fix": null,
+     "s": 50.64
+    },
+    {
+     "t": "ceritakan",
+     "hl": false,
+     "fix": null,
+     "s": 50.82
+    },
+    {
+     "t": "di",
+     "hl": false,
+     "fix": null,
+     "s": 51.38
+    }
+   ]
+  },
+  {
+   "s": 51.76,
+   "e": 52.44,
+   "w": [
+    {
+     "t": "ruangan",
+     "hl": false,
+     "fix": null,
+     "s": 51.76
+    },
+    {
+     "t": "komen",
+     "hl": true,
+     "fix": null,
+     "s": 52.02
+    }
+   ]
+  },
+  {
+   "s": 52.44,
+   "e": 52.9,
+   "w": [
+    {
+     "t": "Klik",
+     "hl": false,
+     "fix": null,
+     "s": 52.44
+    },
+    {
+     "t": "link",
+     "hl": false,
+     "fix": null,
+     "s": 52.58
+    },
+    {
+     "t": "di",
+     "hl": false,
+     "fix": null,
+     "s": 52.78
+    }
+   ]
+  },
+  {
+   "s": 52.9,
+   "e": 53.96,
+   "w": [
+    {
+     "t": "bawah",
+     "hl": false,
+     "fix": null,
+     "s": 52.9
+    },
+    {
+     "t": "untuk",
+     "hl": false,
+     "fix": null,
+     "s": 53.22
+    },
+    {
+     "t": "sesi",
+     "hl": false,
+     "fix": null,
+     "s": 53.72
+    }
+   ]
+  },
+  {
+   "s": 53.96,
+   "e": 54.44,
+   "w": [
+    {
+     "t": "demo",
+     "hl": true,
+     "fix": null,
+     "s": 53.96
+    }
+   ]
+  }
+ ],
+ "br": [
+  {
+   "id": "B1",
+   "src": [
+    3.27,
+    5.1
+   ],
+   "file": "pantau.mp4",
+   "at": 0.6,
+   "crop": [
+    0,
+    60,
+    1080,
+    1920
+   ],
+   "kb": [
+    1.0,
+    1.06
+   ],
+   "label": null,
+   "note": "B-ROLL/B-Roll Pantau Yuran.mp4 @0:00.6: dashboard Yuran.my di skrin telefon (Good Morning, Overdue Invoice Alerts)",
+   "blur": [],
+   "callout": [],
+   "s": 4.05,
+   "e": 5.88
+  },
+  {
+   "id": "B2",
+   "src": [
+    8.4,
+    11.2
+   ],
+   "file": "pantau.mp4",
+   "at": 55.0,
+   "crop": [
+    0,
+    180,
+    1080,
+    1920
+   ],
+   "kb": [
+    1.0,
+    1.04
+   ],
+   "label": null,
+   "note": "B-ROLL/B-Roll Pantau Yuran.mp4 @0:55.0: kad 43 Overdue Invoices → callout Average Days Overdue pada “berapa lama overdue”",
+   "blur": [],
+   "callout": [
+    [
+     55.0,
+     55.76,
+     [
+      50,
+      1020,
+      1030,
+      1310
+     ],
+     [
+      50,
+      1000,
+      1030,
+      1290
+     ]
+    ],
+    [
+     55.76,
+     57.8,
+     [
+      50,
+      1715,
+      1030,
+      2015
+     ],
+     [
+      50,
+      1665,
+      1030,
+      1955
+     ]
+    ]
+   ],
+   "s": 9.18,
+   "e": 11.98
+  },
+  {
+   "id": "B3",
+   "src": [
+    15.4,
+    18.3
+   ],
+   "file": "apps.mp4",
+   "at": 40.6,
+   "crop": [
+    0,
+    95,
+    592,
+    1052
+   ],
+   "kb": [
+    1.0,
+    1.05
+   ],
+   "label": "App ahli",
+   "note": "B-ROLL/Apps Yuran.my.MP4 @0:40.6: senarai resit (Payments) dengan butang muat turun; callout resit pertama pada “resit”. Jumlah RM individu & key diblur",
+   "blur": [
+    [
+     130,
+     243,
+     545,
+     291,
+     0,
+     99
+    ],
+    [
+     130,
+     357,
+     545,
+     405,
+     0,
+     99
+    ],
+    [
+     130,
+     471,
+     545,
+     519,
+     0,
+     99
+    ],
+    [
+     130,
+     585,
+     545,
+     633,
+     0,
+     99
+    ],
+    [
+     130,
+     699,
+     545,
+     747,
+     0,
+     99
+    ],
+    [
+     130,
+     813,
+     545,
+     863,
+     0,
+     99
+    ],
+    [
+     130,
+     927,
+     545,
+     977,
+     0,
+     99
+    ],
+    [
+     130,
+     1041,
+     545,
+     1091,
+     0,
+     99
+    ],
+    [
+     130,
+     1155,
+     545,
+     1205,
+     0,
+     99
+    ]
+   ],
+   "callout": [
+    [
+     41.3,
+     43.6,
+     [
+      8,
+      200,
+      585,
+      300
+     ],
+     [
+      8,
+      200,
+      585,
+      300
+     ]
+    ]
+   ],
+   "s": 16.18,
+   "e": 19.08
+  },
+  {
+   "id": "B4",
+   "src": [
+    26.3,
+    29.08
+   ],
+   "file": "DownloadDocument.mp4",
+   "at": 19.0,
+   "crop": [
+    0,
+    150,
+    576,
+    1024
+   ],
+   "kb": [
+    1.0,
+    1.05
+   ],
+   "label": "Paparan admin",
+   "note": "B-ROLL/DownloadDocument.mp4 @0:19.0: admin isi “Add New Document” (Exam, Untitled design.pdf) → Upload → dokumen masuk senarai pelajar. Nama & no. pelajar diblur",
+   "blur": [
+    [
+     40,
+     465,
+     545,
+     630,
+     20.38,
+     99
+    ]
+   ],
+   "callout": [
+    [
+     19.0,
+     20.3,
+     [
+      62,
+      735,
+      515,
+      828
+     ],
+     [
+      62,
+      735,
+      515,
+      828
+     ]
+    ],
+    [
+     20.6,
+     21.8,
+     [
+      25,
+      1025,
+      555,
+      1095
+     ],
+     [
+      25,
+      1025,
+      555,
+      1095
+     ]
+    ]
+   ],
+   "s": 27.08,
+   "e": 29.86
+  },
+  {
+   "id": "B5",
+   "src": [
+    29.08,
+    32.08
+   ],
+   "file": "UploadDocument.mp4",
+   "at": 7.7,
+   "crop": [
+    0,
+    40,
+    592,
+    1052
+   ],
+   "kb": [
+    1.0,
+    1.05
+   ],
+   "label": "App ahli",
+   "note": "B-ROLL/UploadDocument.mp4 @0:07.7: app ahli, tab Documents (Laporan Prestasi, Exam) dengan butang muat turun; callout butang muat turun. Nama & no. pelajar diblur",
+   "blur": [
+    [
+     25,
+     285,
+     567,
+     445,
+     0,
+     99
+    ]
+   ],
+   "callout": [
+    [
+     8.45,
+     10.7,
+     [
+      510,
+      548,
+      585,
+      715
+     ],
+     [
+      510,
+      548,
+      585,
+      715
+     ]
+    ]
+   ],
+   "s": 29.86,
+   "e": 32.86
+  },
+  {
+   "id": "B6",
+   "src": [
+    41.62,
+    44.4
+   ],
+   "file": "UploadDocument.mp4",
+   "at": 11.3,
+   "crop": [
+    0,
+    40,
+    592,
+    1052
+   ],
+   "kb": [
+    1.0,
+    1.06
+   ],
+   "label": "App ahli",
+   "note": "B-ROLL/UploadDocument.mp4 @0:11.3: Laporan Prestasi Pelajar dibuka dalam app ahli. Nama sekolah & nama pelajar diblur",
+   "blur": [
+    [
+     150,
+     285,
+     450,
+     330,
+     0,
+     99
+    ],
+    [
+     35,
+     988,
+     130,
+     1020,
+     0,
+     99
+    ],
+    [
+     25,
+     285,
+     567,
+     445,
+     0,
+     11.45
+    ]
+   ],
+   "callout": [],
+   "s": 42.4,
+   "e": 45.18
+  }
+ ],
+ "g": [
+  {
+   "k": "label",
+   "s": 1.15,
+   "e": 4.05,
+   "note": "Pil biru #2A3B8F “Farhan · Yuran.my”, atas-kiri"
+  },
+  {
+   "k": "status",
+   "s": 6.73,
+   "e": 9.18,
+   "note": "Kad 3 status muncul ikut sebutan: Bayar ✓ (6.3) → Belum bayar (7.3) → Overdue (8.2)"
+  },
+  {
+   "k": "manual",
+   "s": 19.08,
+   "e": 20.48,
+   "note": "Kad “Resit manual” dipangkah ✗"
+  },
+  {
+   "k": "attend",
+   "s": 20.98,
+   "e": 26.98,
+   "note": "Kad Kehadiran: 4 baris (nama sebagai bar kelabu), ✓ ditanda tepat pada “tik-tik-tik”, ✗ pada “tak hadir”"
+  },
+  {
+   "k": "docs",
+   "s": 35.08,
+   "e": 42.33,
+   "note": "Kad Dokumen: E-sijil, Reminder, Prestasi anak, Prestasi ahli, Surat jemputan muncul satu-satu ikut sebutan, ikon muat turun"
+  },
+  {
+   "k": "logo",
+   "s": 48.23,
+   "e": 49.18,
+   "note": "Logo Yuran.my putih atas pil biru #2A3B8F (tiada shadow) pada “apps Yuran.my”"
+  },
+  {
+   "k": "comment",
+   "s": 50.58,
+   "e": 52.33,
+   "note": "Ikon gelembung komen dengan titik menaip pada “Cuba ceritakan di ruangan komen”"
+  },
+  {
+   "k": "cta",
+   "s": 52.4,
+   "e": 54.51,
+   "note": "Butang “Sesi demo Yuran.my” + anak panah ke bawah pada “Klik link di bawah”"
+  }
+ ],
+ "docs": [
+  [
+   "E-sijil",
+   35.12
+  ],
+  [
+   "Reminder",
+   36.48
+  ],
+  [
+   "Prestasi anak",
+   37.82
+  ],
+  [
+   "Prestasi ahli",
+   39.12
+  ],
+  [
+   "Surat jemputan",
+   41.14
+  ]
+ ],
+ "status": [
+  [
+   "Bayar",
+   7.04,
+   "ok"
+  ],
+  [
+   "Belum bayar",
+   8.08,
+   "warn"
+  ],
+  [
+   "Overdue",
+   8.93,
+   "bad"
+  ]
+ ],
+ "ticks": [
+  24.06,
+  24.34,
+  24.56
+ ],
+ "cross": 26.62,
+ "sfx": [
+  [
+   0.85,
+   "whoosh",
+   -20
+  ],
+  [
+   4.05,
+   "whoosh",
+   -24
+  ],
+  [
+   7.04,
+   "pop",
+   -22
+  ],
+  [
+   8.08,
+   "pop",
+   -22
+  ],
+  [
+   8.93,
+   "pop",
+   -22
+  ],
+  [
+   9.06,
+   "whoosh",
+   -24
+  ],
+  [
+   9.94,
+   "click",
+   -18
+  ],
+  [
+   16.06,
+   "whoosh",
+   -24
+  ],
+  [
+   16.9,
+   "click",
+   -18
+  ],
+  [
+   19.1,
+   "pop",
+   -22
+  ],
+  [
+   19.63,
+   "bonk",
+   -26
+  ],
+  [
+   21.16,
+   "pop",
+   -22
+  ],
+  [
+   24.06,
+   "click",
+   -16
+  ],
+  [
+   24.34,
+   "click",
+   -16
+  ],
+  [
+   24.56,
+   "click",
+   -16
+  ],
+  [
+   26.62,
+   "bonk",
+   -26
+  ],
+  [
+   26.96,
+   "whoosh",
+   -24
+  ],
+  [
+   29.74,
+   "whoosh",
+   -24
+  ],
+  [
+   30.62,
+   "click",
+   -18
+  ],
+  [
+   35.12,
+   "pop",
+   -23
+  ],
+  [
+   36.48,
+   "pop",
+   -23
+  ],
+  [
+   37.82,
+   "pop",
+   -23
+  ],
+  [
+   39.12,
+   "pop",
+   -23
+  ],
+  [
+   41.14,
+   "pop",
+   -23
+  ],
+  [
+   42.28,
+   "whoosh",
+   -24
+  ],
+  [
+   48.36,
+   "ding",
+   -22
+  ],
+  [
+   50.64,
+   "pop",
+   -22
+  ],
+  [
+   52.44,
+   "click",
+   -16
+  ],
+  [
+   54.56,
+   "ding",
+   -22
+  ]
+ ],
+ "zoom": [
+  [
+   1.0,
+   1.0
+  ],
+  [
+   5.92,
+   1.12
+  ],
+  [
+   12.22,
+   1.0
+  ],
+  [
+   15.44,
+   1.12
+  ],
+  [
+   20.62,
+   1.0
+  ],
+  [
+   23.34,
+   1.12
+  ],
+  [
+   25.12,
+   1.0
+  ],
+  [
+   27.06,
+   1.12
+  ],
+  [
+   32.98,
+   1.0
+  ],
+  [
+   35.12,
+   1.12
+  ],
+  [
+   42.4,
+   1.0
+  ],
+  [
+   46.24,
+   1.12
+  ],
+  [
+   49.2,
+   1.0
+  ],
+  [
+   52.44,
+   1.12
+  ]
+ ],
+ "seg": [
+  [
+   0,
+   1.0,
+   "Thumbnail",
+   "Hook ANDA PERLUKAN SISTEM MACAM MANA? atas frame Farhan (sumber 0:47.0)"
+  ],
+  [
+   1.0,
+   15.4,
+   "Pantau dalam telefon",
+   "Pantau yuran dalam satu skrin telefon: siapa bayar, belum bayar, overdue, berapa lama overdue"
+  ],
+  [
+   15.4,
+   20.58,
+   "Resit automatik",
+   "Resit dihantar automatik lepas bayaran; tak perlu resit manual"
+  ],
+  [
+   20.58,
+   27.02,
+   "Kehadiran",
+   "Catat kehadiran dalam sistem, tik-tik-tik, siapa hadir / tak hadir"
+  ],
+  [
+   27.02,
+   46.2,
+   "Dokumen",
+   "Hantar dokumen (B-roll DownloadDocument / UploadDocument), ahli download dalam apps, senarai jenis dokumen"
+  ],
+  [
+   46.2,
+   54.51,
+   "Penutup & CTA",
+   "Semua dalam apps Yuran.my; ceritakan di komen; klik link di bawah untuk sesi demo"
+  ],
+  [
+   54.51,
+   56.01,
+   "End card",
+   "Logo putih + Cara MUDAH Urus Yuran + hello@yuran.my + CTA TOFU"
+  ]
+ ],
+ "thumb_src": 47.0
+}
