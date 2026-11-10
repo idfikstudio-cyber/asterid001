@@ -68,7 +68,19 @@ Tonton video rujukan gaya dalam `BRAND/` sebelum edit.
 ### Semua gaya
 - Thumbnail 1 saat dengan hook besar ikut gaya video rujukan.
 - SFX lebih kerap: pop, whoosh, ding (tetapi jangan tenggelamkan suara).
-- Muzik ringan, positif, sesuai untuk keluarga.
+- Muzik ringan, positif, sesuai untuk keluarga (lihat Bahagian 5A).
+
+---
+
+## 5A. Muzik latar rasmi Aster (KHAS ASTER SAHAJA)
+
+- **Trek tetap:** `MUSIC/Aster_MuzikLatar_Ceria_100BPM.mp3` (Konten › Aster › MUSIC). Muzik asal dijana sendiri: ceria ringan, marimba + pad + bass + perkusi lembut, C major 100 BPM, 120 saat.
+- Diluluskan Farhan 10 Nov 2026 (mula dipakai AS-F-009). **Guna trek ini untuk SEMUA video Aster** supaya siri sekata.
+- **Bebas hak cipta, TIADA kredit diperlukan** dalam caption TikTok. Jangan tambah baris kredit muzik.
+- **Jangan guna "Wholesome" (Kevin MacLeod) lagi** untuk video baru: ia perlukan kredit CC BY dalam setiap posting.
+- Aras: ±23 dB di bawah suara semasa bercakap, naik pada thumbnail dan end card, fade di hujung.
+- Jika video lebih panjang dari 120 s, jana semula dengan `scripts/aster_music.py <out.wav> <saat>` (corak sama, boleh dipanjangkan).
+- **Khas Aster:** jangan guna trek ini untuk Fi-k Studio atau Yuran.my.
 - Semua harga/fakta mesti sama seperti yang **disebut** dan sepadan dengan `BRAND/rujukan-aster.txt`.
 
 ---
@@ -132,6 +144,7 @@ Tonton video rujukan gaya dalam `BRAND/` sebelum edit.
 - [ ] Muka/nama/nombor pelajar & ibu bapa diblur
 - [ ] Nombor WhatsApp betul (011-5596 9070)
 - [ ] Tiada aset Fi-k Studio / Yuran.my
+- [ ] Muzik latar = Aster_MuzikLatar_Ceria_100BPM.mp3 (tiada kredit muzik dalam caption)
 - [ ] Watermark asteredu11.com.my ada sepanjang video, dengan bayang halus
 - [ ] BOFU: banner atas hanya 0–8 saat, hilang dengan lembut
 - [ ] asteredu11.com.my ada di end card (besar dan jelas), bersama wajah dalam bulatan emas + @aster.edu_tpg
