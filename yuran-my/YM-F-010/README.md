@@ -16,3 +16,9 @@ Baris log (tambah ke `03_LOG/edit-log.csv`):
 ```
 YM-F-010,SistemMacamMana,FARHAN,TOFU,56.0,SIAP,"Final dirender 10/11/2026 selepas Farhan luluskan preview v1 (https://claude.ai/artifact/3H3vre2r4djUEvaw38A6Up). YM-F-010_SistemMacamMana_FINAL.mp4: 1080x1920, 30fps, H.264 CRF 19, AAC 192k, -14.0 LUFS, peak -1.5 dBFS + _THUMB.png (di 02_EDITED). Fail final dihantar dalam chat Claude; perlu dimuat naik manual ke 02_EDITED (alat Drive had 4.2 MB). Video trim Farhan 53.7s, isi tidak dipotong (senyap 0.22s dibuang). Durasi 56.0s melebihi TOFU 45s. B-roll DownloadDocument (admin hantar dokumen) & UploadDocument (app ahli download) atas permintaan Farhan + Pantau Yuran + Apps Yuran.my; nama/no. pelajar, nama sekolah, jumlah RM individu diblur. Caption 'E-sijil', 'cerita dengan ni', CTA end card TOFU dan angka dashboard demo diterima seperti preview. Tiada muzik (MUSIC/ tiada). Tiada rujukan-gaya (Farhan setuju). Font Inter ganti Acumin Pro."
 ```
+
+Versi 16:9 (diluluskan 10/11/2026): `YM-F-010_SistemMacamMana_16x9_FINAL.mp4` 1920x1080, 30fps, H.264 CRF 19, AAC 192k, -14.0 LUFS, 56.0s + `_16x9_THUMB.png` (di 02_EDITED). Baris log tambahan:
+
+```
+YM-F-010-16x9,SistemMacamMana,FARHAN,TOFU,56.0,SIAP,"Versi melintang 1920x1080 dari final 9:16 yang diluluskan; Farhan kiri, panel kanan (B-roll dalam bingkai telefon, kad grafik, caption). Preview 16:9 diluluskan 10/11/2026. MP4 perlu dimuat naik manual ke 02_EDITED (alat Drive had 4.2 MB)."
+```
