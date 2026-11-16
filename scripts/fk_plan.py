@@ -132,6 +132,9 @@ for n in NUMS:
     fs = min(fit(line, 150, 820) for line in n["text"].split("\\N"))   # teks panjang: pecah dengan \N
     ev.append(f"Dialogue: 4,{ts(n['s']+OFF)},{ts(n['e']+OFF)},Num,,0,0,0,,{{\\an5\\pos(480,1020)\\fs{fs}\\fad(80,150)\\fscx70\\fscy70\\t(0,120,\\fscx100\\fscy100)}}{n['text']}")
 # Hook pada thumbnail (0–1s): baris dari config [{text, fs, y}] (fs None = auto muat lebar)
+# QC: blok hook mesti di tengah zon crop 1:1 (y 420-1500) dengan margin -> baseline 700..1460 (DNA 6)
+for hl in C["hook_lines"]:
+    assert 700 <= hl["y"] <= 1460, f"QC GAGAL: hook '{hl['text']}' y={hl['y']} di luar zon selamat 1:1 (700-1460)"
 for hl in C["hook_lines"]:
     fs = hl.get("fs") or fit(hl["text"], 170, 900)
     ev.append(f"Dialogue: 5,{ts(0)},{ts(1.0)},Hook,,0,0,0,,{{\\an2\\pos(540,{hl['y']})\\fs{fs}}}{hl['text']}")

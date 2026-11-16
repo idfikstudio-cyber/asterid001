@@ -214,6 +214,8 @@ supaya Farhan boleh tukar mana-mana B-roll sebelum render final.
   - Dalam fail asal, **simbol FK (frame 0–37) sudah di tengah** (x = 538) tetapi **wordmark (frame 45+) berpusat x = 569**.
     Alih **wordmark sahaja** 29 px ke kiri, beransur semasa transisi (frame 37–47), supaya simbol FK, wordmark, tagline
     dan CTA semuanya di tengah (x = 540). Jangan alih seluruh outro (simbol FK akan lari ke kiri).
+  - **QC automatik** dalam `scripts/fk_render.py`: selepas render, pusat outro diukur setiap 6 frame; jika lari
+    > 4 px dari x = 540, render **gagal** dan tidak boleh dihantar. `fk_plan.py` juga menolak hook di luar zon 1:1.
 - Selepas wordmark statik (±1.85 s dalam outro), teks muncul perlahan di bawah wordmark (pusat x = 540):
   - Tagline: **"Design Dulu, Baru Bina"** (Montserrat SemiBold, hijau #304945)
   - CTA: kotak hijau #304945, teks putih: **"DM untuk keterangan lanjut"**

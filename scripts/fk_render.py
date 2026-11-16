@@ -195,4 +195,28 @@ subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", tmp, "-i", apath, "-vf", vf
                 "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", "-shortest", OUT], check=True)
 # thumbnail PNG (frame 0.5s, dengan teks hook)
 subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", "0.5", "-i", tmp, "-frames:v", "1", "-vf", f"ass={ASS}", THUMB], check=True)
+
+# ---- QC automatik: outro mesti di tengah (simbol FK, wordmark, tagline, CTA) ----
+# Jika lari > 4 px dari x=540, render dianggap gagal (elak ulang isu FK-F-008).
+qc = cv2.VideoCapture(OUT); fps_o = qc.get(5) or 30
+n_out = int(qc.get(7)); start = n_out - OUTRO_N
+bad = []
+for k in range(start + 2, n_out, 6):
+    qc.set(cv2.CAP_PROP_POS_FRAMES, k); ok, fr = qc.read()
+    if not ok:
+        continue
+    if (OW, OH) != (W, H):
+        fr = cv2.resize(fr, (W, H))
+    g = cv2.cvtColor(fr, cv2.COLOR_BGR2GRAY)
+    if g[40, 40] < 220:            # masih crossfade dari video, langkau
+        continue
+    ys, xs = np.where(g[300:1500] < 170)
+    if len(xs) < 300:
+        continue
+    cxo = (xs.min() + xs.max()) / 2
+    if abs(cxo - W / 2) > 4:
+        bad.append((k - start, round(cxo, 1)))
+if bad:
+    raise SystemExit(f"QC GAGAL: outro tidak di tengah (frame outro, pusat x): {bad[:8]}")
+print("QC outro: di tengah (x=540 ±4 px)")
 print("ok", OUT)
