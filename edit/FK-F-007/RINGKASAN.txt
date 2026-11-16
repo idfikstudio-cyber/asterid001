@@ -1,6 +1,6 @@
-RINGKASAN EDIT — FK-F-007_Farhan_Punca Renovate Lambat Siap (preview v2)
+RINGKASAN EDIT — FK-F-007_Farhan_Punca Renovate Lambat Siap (preview v3)
 Brand: Fi-k Studio | Spokesperson: Farhan (Founder) | Tag skrip: TOFU+BOFU
-Footage: SUDAH DITRIM (tiada isi dipotong) | Durasi: 70.3 s (1 s thumbnail + 67.9 s isi + 1.5 s end card)
+Footage: SUDAH DITRIM (tiada isi dipotong) | Durasi: 72.8 s (1 s thumbnail + 67.9 s isi + 4.0 s outro)
 Rujukan gaya: BRAND/rujukan video/Apa beza Kontraktor, Arkitek dan Interior Design.mp4
 
 1) TEKS HOOK / THUMBNAIL
@@ -46,7 +46,7 @@ Rujukan gaya: BRAND/rujukan video/Apa beza Kontraktor, Arkitek dan Interior Desi
    0:49.86–0:54.70  Tajuk poin: Kotak hijau atas: “PALING PENTING”
    0:54.82–0:57.46  B-roll: B-ROLL/Video Onprogress/IMG_9310.MOV (2.6 s) pada 'Sebab itu kita datangkan dengan design dulu'
    1:00.36–1:03.26  B-roll: B-ROLL/Video Projek Dah Siap/IMG_0535.MOV (2.9 s) pada 'semua kerja-kerja tu akan smooth sahaja' (projek siap)
-   1:08.87–1:10.37  End card: Putih: Logo Green + “We Design, You Build.” + “Follow untuk tips reno seterusnya” + “DM / WhatsApp kami untuk 3D design rumah anda”
+   1:08.87–1:12.90  Outro: BRAND/Outro Potrait.mp4 (animasi logo, 4.0 s) + “Design Dulu, Baru Bina” + kotak hijau “DM untuk keterangan lanjut” muncul selepas logo statik
    0:05.48  SFX whoosh lembut
    0:09.30  SFX pop lembut
    0:14.50  SFX whoosh lembut
@@ -61,21 +61,22 @@ Rujukan gaya: BRAND/rujukan video/Apa beza Kontraktor, Arkitek dan Interior Desi
    Motion zoom: 0:01.00 zoom in perlahan 100% → 113%; 0:05.60 zoom out perlahan 113% → 100%; 0:10.14 zoom in perlahan 100% → 113%; 0:14.62 zoom out perlahan 113% → 100%; 0:18.72 zoom in perlahan 100% → 113%; 0:23.82 zoom out perlahan 113% → 100%; 0:29.12 zoom in perlahan 100% → 113%; 0:30.36 zoom out perlahan 113% → 100%; 0:35.74 zoom in perlahan 100% → 113%; 0:38.88 zoom out perlahan 113% → 100%; 0:42.90 zoom in perlahan 100% → 113%; 0:45.16 zoom out perlahan 113% → 100%; 0:48.30 zoom in perlahan 100% → 113%; 0:48.80 zoom out perlahan 113% → 100%; 0:54.82 zoom in perlahan 100% → 113%; 0:56.72 zoom out perlahan 113% → 100%; 1:00.36 zoom in perlahan 100% → 113%; 1:04.98 zoom out perlahan 113% → 100%; 1:07.18 zoom in perlahan 100% → 113%
 
 4) CTA
-   End card: "Follow untuk tips reno seterusnya" + "DM / WhatsApp kami untuk 3D design rumah anda" (TOFU + BOFU).
+   Outro: "Design Dulu, Baru Bina" + "DM untuk keterangan lanjut".
 
 5) PERLU SEMAK
-   - Durasi 70.3 s: Melebihi sasaran BOFU 30–60 s; footage sudah ditrim jadi isi tidak dipotong.
+   - Durasi 72.8 s: Melebihi sasaran BOFU 30–60 s; footage sudah ditrim jadi isi tidak dipotong.
    - B-roll IMG_0535 resolusi rendah: Klip projek siap hanya 352×640, jadi nampak lembut dalam 1080p.
-   - Preview MP4 & log belum di Drive: Alat Drive hadkan ±3 MB setiap muat naik dan tidak boleh tulis ganti fail sedia ada. THUMB & RINGKASAN v2 dimuat naik sebagai fail baru di _PREVIEW; video preview ada di halaman ini; baris log perlu ditambah manual.
+   - Preview MP4 & log belum di Drive: Alat Drive hadkan ±3 MB setiap muat naik dan tidak boleh tulis ganti fail sedia ada. RINGKASAN v3 dimuat naik sebagai fail baru di _PREVIEW; video preview ada di halaman ini; baris log perlu ditambah manual.
 
 6) CAPTION TIKTOK
-   Nak reno rumah sebelum raya? Elakkan 3 punca ni dulu supaya projek tak lambat siap. Follow untuk tips reno seterusnya & DM kami untuk 3D design rumah anda.
+   Nak reno rumah sebelum raya? Elakkan 3 punca ni dulu supaya projek tak lambat siap. DM untuk keterangan lanjut.
    #renovaterumah #interiordesign #fikstudio #renorumah #tipsrenovate
 
-Perubahan v2 (ikut komen Farhan):
+Perubahan v2–v3 (ikut komen Farhan):
+   - v3: outro brand: End card diganti dengan BRAND/Outro Potrait.mp4. Hanya 4.0 s pertama digunakan (animasi logo); 2.2 s terakhir fail itu skrin putih kosong, jadi tidak dimasukkan. Crossfade 0.25 s dari Farhan.
+   - v3: tagline & CTA: “Design Dulu, Baru Bina” + kotak hijau “DM untuk keterangan lanjut” di bawah wordmark, muncul pada 1.85 s outro.
    - v2: bokeh lebih halus: Blur dikurangkan (jejari 8 px, sebelum ini 26 px) dan berperingkat ikut jarak dari badan: dekat badan kurang kabur, jauh lebih kabur, macam lensa sebenar. Latar (rak, panel kayu, pokok) masih jelas nampak. Tepi badan dilembutkan supaya tak nampak 'cut-out'; sharpen dikurangkan.
    - v2: B-roll ±setiap 8 saat: 7 sisipan (0:05.6, 0:14.6, 0:23.8, 0:31.8, 0:42.9, 0:54.8, 1:00.4), semua ≤3 s. Tiada B-roll pada hook, angka, tajuk poin #1/#2/#3, “paling penting” dan CTA, jadi muka Farhan nampak pada poin penting.
    - v2: motion zoom pada muka: Zoom in perlahan sepanjang satu ayat, zoom out pada ayat seterusnya (100% ↔ 114%, ease in/out). Zoom berpusat pada muka (dijejak setiap frame, dilicinkan 1 s), mata kekal di sepertiga atas.
    - v2: caption disahkan: “RAYA DAH DEKAT NI” (1:05.0) dan “TIME TU” (0:26.7) ikut Farhan.
-   - v2: CTA TOFU + BOFU: End card: “Follow untuk tips reno seterusnya” + “DM / WhatsApp kami untuk 3D design rumah anda”.
    - v2: tiada muzik: Dikekalkan tanpa muzik, ikut Farhan.

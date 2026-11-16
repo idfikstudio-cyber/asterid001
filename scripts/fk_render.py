@@ -55,36 +55,30 @@ def grade(f):
     x = np.clip(g + (x - g) * 1.05, 0, 1)
     return (x * 255 + 0.5).astype(np.uint8)
 
-# ---- end card (PIL) ----
-def end_card():
-    im = Image.new("RGB", (W, H), "white")
-    logo = Image.open(f"{WD}/logo_green.png").convert("RGBA")
-    bb = logo.getbbox(); logo = logo.crop(bb)
-    lw = 640; logo = logo.resize((lw, int(logo.height * lw / logo.width)), Image.LANCZOS)
-    cx = int(W * 0.85 / 2) + 20
-    ly = 470
-    im.paste(logo, (cx - lw // 2, ly), logo)
+# ---- outro (BRAND/Outro Potrait.mp4) + tagline & CTA (v3) ----
+OUTRO_N = int(round(END * FPS))      # 121 frame: animasi logo sahaja, buang ekor putih kosong
+TEXT_IN = 55                          # wordmark statik dari frame ~55 (1.83 s)
+
+def outro_text():
+    im = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     d = ImageDraw.Draw(im)
-    f1 = ImageFont.truetype("/root/.fonts/Montserrat-SemiBold.ttf", 50)
-    tag = "We Design, You Build."
-    y = ly + logo.height + 70
-    d.text((cx - d.textlength(tag, font=f1) / 2, y), tag, font=f1, fill=GREEN)
-    f3 = ImageFont.truetype("/root/.fonts/Montserrat-Bold.ttf", 42)
-    fol = "Follow untuk tips reno seterusnya"
+    cx = 569                          # pusat wordmark dalam outro (x 271-867)
+    f1 = ImageFont.truetype("/root/.fonts/Montserrat-SemiBold.ttf", 52)
+    tag = P.get("tagline", "Design Dulu, Baru Bina")
+    y = 1150
+    d.text((cx - d.textlength(tag, font=f1) / 2, y), tag, font=f1, fill=GREEN + (255,))
+    f2 = ImageFont.truetype("/root/.fonts/Montserrat-ExtraBold.ttf", 46)
+    cta = P.get("cta", "DM untuk keterangan lanjut")
     y += 120
-    d.text((cx - d.textlength(fol, font=f3) / 2, y), fol, font=f3, fill=GREEN)
-    f2 = ImageFont.truetype("/root/.fonts/Montserrat-ExtraBold.ttf", 44)
-    lines = ["DM / WhatsApp kami untuk", "3D design rumah anda"]
-    y += 110
-    bw = max(d.textlength(l, font=f2) for l in lines) + 80
-    d.rounded_rectangle((cx - bw / 2, y - 30, cx + bw / 2, y + 2 * 62 + 20), 22, fill=GREEN)
-    for l in lines:
-        d.text((cx - d.textlength(l, font=f2) / 2, y), l, font=f2, fill="white"); y += 62
-    return cv2.cvtColor(np.array(im), cv2.COLOR_RGB2BGR)
+    bw = d.textlength(cta, font=f2) + 90
+    d.rounded_rectangle((cx - bw / 2, y - 26, cx + bw / 2, y + 74), 24, fill=GREEN + (255,))
+    d.text((cx - d.textlength(cta, font=f2) / 2, y), cta, font=f2, fill=(255, 255, 255, 255))
+    a = np.array(im).astype(np.float32) / 255
+    return cv2.cvtColor((a[..., :3] * 255).astype(np.uint8), cv2.COLOR_RGB2BGR).astype(np.float32), a[..., 3:4]
 
 import os
 REUSE = os.environ.get("REUSE") == "1" and os.path.exists(OUT + ".noass.mp4")
-ec = end_card()
+OT_RGB, OT_A = outro_text()
 BOKEH = os.environ.get("BOKEH", "bokeh_full.mp4")
 cap = cv2.VideoCapture(f"{WD}/{BOKEH}")
 src_frames = []  # baca berurutan
@@ -118,10 +112,17 @@ if not REUSE:
                   out = cv2.addWeighted(bf, a, out, 1 - a, 0) if a < 1 else bf
       last = out
       enc.stdin.write(out.tobytes())
-  # end card fade-in 0.25s
-  for k in range(int(END * FPS)):
-      a = min(1.0, k / (0.25 * FPS))
-      enc.stdin.write(cv2.addWeighted(ec, a, last, 1 - a, 0).tobytes())
+  # outro: crossfade 0.25 s dari frame terakhir, teks muncul perlahan selepas logo statik
+  oc = cv2.VideoCapture(f"{WD}/outro.mp4")
+  for k in range(OUTRO_N):
+      ok, of = oc.read()
+      if not ok:
+          break
+      ta = min(1.0, max(0.0, (k - TEXT_IN) / 12.0))
+      if ta > 0:
+          of = (of.astype(np.float32) * (1 - OT_A * ta) + OT_RGB * OT_A * ta).astype(np.uint8)
+      xa = min(1.0, k / 8.0)
+      enc.stdin.write((cv2.addWeighted(of, xa, last, 1 - xa, 0) if xa < 1 else of).tobytes())
   enc.stdin.close(); enc.wait()
 
 # ---- audio: denoise ringan, suara -14 LUFS / -1 dBTP, SFX lembut ----

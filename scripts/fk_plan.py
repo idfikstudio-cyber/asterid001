@@ -9,7 +9,7 @@ from PIL import ImageFont
 TR, OUT = sys.argv[1], sys.argv[2]
 OFF = 1.0            # thumbnail 1 saat
 SRC_DUR = 67.87
-END = 1.5            # end card
+END = 121 / 30       # outro BRAND/Outro Potrait.mp4, frame 0-120 (selepas itu skrin putih kosong)
 GREEN_ASS = "&H00454930"   # #304945 (BGR)
 FONT_BLACK = "/root/.fonts/Montserrat-Black.ttf"
 fnt = ImageFont.truetype(FONT_BLACK, 100)
@@ -156,7 +156,7 @@ open(f"{OUT}/captions.ass", "w").write(hdr + "\n".join(ev) + "\n")
 plan = dict(offset=OFF, thumb_t=17.6, src_dur=SRC_DUR, end_card=END, total=OFF + SRC_DUR + END,
             hook="3 PUNCA RENO LAMBAT SIAP", label=LABEL, points=POINTS, nums=NUMS, broll=BROLL,
             zoom=ZOOM, sfx=SFX, chunks=chunks, perlu_semak=PERLU_SEMAK,
-            cta="Follow untuk tips reno seterusnya + DM / WhatsApp kami untuk 3D design rumah anda")
+            cta="DM untuk keterangan lanjut", tagline="Design Dulu, Baru Bina")
 json.dump(plan, open(f"{OUT}/plan.json", "w"), ensure_ascii=False, indent=1)
 print(len(chunks), "chunks;", "total", plan["total"])
 for p in PERLU_SEMAK: print("SEMAK", p)
