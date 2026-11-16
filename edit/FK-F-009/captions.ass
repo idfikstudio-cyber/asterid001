@@ -1,0 +1,234 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: CapOut,Montserrat Black,120,&H00FFFFFF,&H00FFFFFF,&H00454930,&H00000000,0,0,0,0,100,100,1,0,1,17,0,2,60,200,500,1
+Style: CapIn,Montserrat Black,120,&H00FFFFFF,&H00FFFFFF,&H00151515,&H00000000,0,0,0,0,100,100,1,0,1,6,0,2,60,200,500,1
+Style: CapKey,Montserrat Black,120,&H00FFFFFF,&H00FFFFFF,&H00454930,&H00000000,0,0,0,0,100,100,1,0,3,16,0,2,60,200,500,1
+Style: Label,Montserrat SemiBold,46,&H00FFFFFF,&H00FFFFFF,&H00454930,&H00000000,0,0,0,0,100,100,0.5,0,3,12,0,7,70,200,250,1
+Style: Point,Montserrat ExtraBold,58,&H00FFFFFF,&H00FFFFFF,&H00454930,&H00000000,0,0,0,0,100,100,1,0,3,18,0,7,70,200,230,1
+Style: Num,Montserrat Black,150,&H00454930,&H00FFFFFF,&H00FFFFFF,&H00000000,0,0,0,0,100,100,1,0,1,14,0,5,60,200,0,1
+Style: Hook,Montserrat Black,150,&H00454930,&H00FFFFFF,&H00FFFFFF,&H80000000,0,0,0,0,100,100,0,0,1,18,6,7,70,190,260,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 1,0:00:01.00,0:00:01.58,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}AKAK-AKAK
+Dialogue: 2,0:00:01.00,0:00:01.58,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}AKAK-AKAK
+Dialogue: 1,0:00:01.58,0:00:01.72,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}YANG
+Dialogue: 2,0:00:01.58,0:00:01.72,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}YANG
+Dialogue: 1,0:00:01.72,0:00:02.04,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}TAKUT
+Dialogue: 2,0:00:01.72,0:00:02.04,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}TAKUT
+Dialogue: 1,0:00:02.04,0:00:02.34,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}KABINET
+Dialogue: 2,0:00:02.04,0:00:02.34,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}KABINET
+Dialogue: 1,0:00:02.34,0:00:02.52,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}KITCHEN
+Dialogue: 2,0:00:02.34,0:00:02.52,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}KITCHEN
+Dialogue: 2,0:00:02.52,0:00:03.08,CapKey,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}PUTIH
+Dialogue: 1,0:00:03.08,0:00:03.84,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}DIA TU CEPAT
+Dialogue: 2,0:00:03.08,0:00:03.84,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}DIA TU CEPAT
+Dialogue: 2,0:00:03.84,0:00:04.28,CapKey,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}KOTOR
+Dialogue: 1,0:00:04.30,0:00:04.66,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}INI SAYA
+Dialogue: 2,0:00:04.30,0:00:04.66,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}INI SAYA
+Dialogue: 1,0:00:04.66,0:00:05.18,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs109}NAK KONGSIKAN
+Dialogue: 2,0:00:04.66,0:00:05.18,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs109}NAK KONGSIKAN
+Dialogue: 1,0:00:06.30,0:00:06.42,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}YANG
+Dialogue: 2,0:00:06.30,0:00:06.42,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}YANG
+Dialogue: 2,0:00:06.42,0:00:06.92,CapKey,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}SELAMAT
+Dialogue: 1,0:00:06.92,0:00:07.60,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}SEPANJANG
+Dialogue: 2,0:00:06.92,0:00:07.60,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}SEPANJANG
+Dialogue: 1,0:00:07.60,0:00:07.88,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}ZAMAN
+Dialogue: 2,0:00:07.60,0:00:07.88,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}ZAMAN
+Dialogue: 2,0:00:08.12,0:00:08.30,CapKey,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}SAVE
+Dialogue: 1,0:00:08.30,0:00:08.46,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}DULU
+Dialogue: 2,0:00:08.30,0:00:08.46,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}DULU
+Dialogue: 1,0:00:08.46,0:00:08.70,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}VIDEO
+Dialogue: 2,0:00:08.46,0:00:08.70,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}VIDEO
+Dialogue: 1,0:00:08.70,0:00:09.44,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}NI UNTUK
+Dialogue: 2,0:00:08.70,0:00:09.44,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}NI UNTUK
+Dialogue: 1,0:00:09.44,0:00:09.82,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}RUJUKAN
+Dialogue: 2,0:00:09.44,0:00:09.82,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}RUJUKAN
+Dialogue: 1,0:00:09.82,0:00:10.08,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}AKAN
+Dialogue: 2,0:00:09.82,0:00:10.08,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}AKAN
+Dialogue: 1,0:00:10.08,0:00:10.50,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}DATANG
+Dialogue: 2,0:00:10.08,0:00:10.50,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}DATANG
+Dialogue: 1,0:00:10.50,0:00:11.28,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}SEBELUM
+Dialogue: 2,0:00:10.50,0:00:11.28,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}SEBELUM
+Dialogue: 1,0:00:11.28,0:00:11.66,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}BUAT
+Dialogue: 2,0:00:11.28,0:00:11.66,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}BUAT
+Dialogue: 1,0:00:11.66,0:00:12.00,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}KITCHEN
+Dialogue: 2,0:00:11.66,0:00:12.00,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}KITCHEN
+Dialogue: 1,0:00:12.00,0:00:12.38,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}KABINET
+Dialogue: 2,0:00:12.00,0:00:12.38,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}KABINET
+Dialogue: 1,0:00:12.38,0:00:12.76,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}NANTI
+Dialogue: 2,0:00:12.38,0:00:12.76,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}NANTI
+Dialogue: 1,0:00:12.86,0:00:13.04,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}YANG
+Dialogue: 2,0:00:12.86,0:00:13.04,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}YANG
+Dialogue: 1,0:00:13.04,0:00:13.32,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}PERTAMA
+Dialogue: 2,0:00:13.04,0:00:13.32,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}PERTAMA
+Dialogue: 1,0:00:13.64,0:00:14.40,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}PILIHAN
+Dialogue: 2,0:00:13.64,0:00:14.40,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}PILIHAN
+Dialogue: 1,0:00:14.40,0:00:15.06,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}WARNA
+Dialogue: 2,0:00:14.40,0:00:15.06,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}WARNA
+Dialogue: 2,0:00:15.06,0:00:15.48,CapKey,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}KELABU
+Dialogue: 2,0:00:15.48,0:00:15.72,CapKey,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}CAIR
+Dialogue: 1,0:00:15.72,0:00:16.12,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}ATAUPUN
+Dialogue: 2,0:00:15.72,0:00:16.12,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}ATAUPUN
+Dialogue: 1,0:00:16.12,0:00:16.60,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}DIPANGGIL
+Dialogue: 2,0:00:16.12,0:00:16.60,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}DIPANGGIL
+Dialogue: 2,0:00:16.60,0:00:17.08,CapKey,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}GREIGE
+Dialogue: 1,0:00:17.28,0:00:17.62,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}SEBAB
+Dialogue: 2,0:00:17.28,0:00:17.62,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}SEBAB
+Dialogue: 1,0:00:17.62,0:00:17.84,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}APA
+Dialogue: 2,0:00:17.62,0:00:17.84,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}APA
+Dialogue: 1,0:00:17.92,0:00:18.24,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}SEBAB
+Dialogue: 2,0:00:17.92,0:00:18.24,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}SEBAB
+Dialogue: 1,0:00:18.24,0:00:18.60,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}PEMILIHAN
+Dialogue: 2,0:00:18.24,0:00:18.60,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}PEMILIHAN
+Dialogue: 1,0:00:18.60,0:00:18.92,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}WARNA
+Dialogue: 2,0:00:18.60,0:00:18.92,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}WARNA
+Dialogue: 1,0:00:18.92,0:00:19.70,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}NI KURANG
+Dialogue: 2,0:00:18.92,0:00:19.70,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}NI KURANG
+Dialogue: 2,0:00:19.70,0:00:20.32,CapKey,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}BERMINYAK
+Dialogue: 2,0:00:20.32,0:00:21.24,CapKey,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs100}DAN FINGERPRINT
+Dialogue: 1,0:00:21.24,0:00:21.98,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}KURANG
+Dialogue: 2,0:00:21.24,0:00:21.98,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}KURANG
+Dialogue: 1,0:00:21.98,0:00:22.52,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}NAK NAMPAK
+Dialogue: 2,0:00:21.98,0:00:22.52,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}NAK NAMPAK
+Dialogue: 1,0:00:22.54,0:00:22.72,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}YANG
+Dialogue: 2,0:00:22.54,0:00:22.72,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}YANG
+Dialogue: 1,0:00:22.72,0:00:23.10,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}KEDUA
+Dialogue: 2,0:00:22.72,0:00:23.10,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}KEDUA
+Dialogue: 1,0:00:23.14,0:00:23.72,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}WARNA
+Dialogue: 2,0:00:23.14,0:00:23.72,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}WARNA
+Dialogue: 1,0:00:23.72,0:00:24.26,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}CORAK
+Dialogue: 2,0:00:23.72,0:00:24.26,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}CORAK
+Dialogue: 2,0:00:24.26,0:00:24.62,CapKey,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}KAYU
+Dialogue: 1,0:00:24.64,0:00:25.14,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}NAMPAK
+Dialogue: 2,0:00:24.64,0:00:25.14,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}NAMPAK
+Dialogue: 2,0:00:25.14,0:00:25.44,CapKey,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}WARM
+Dialogue: 1,0:00:25.44,0:00:26.18,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}DAN SESUAI
+Dialogue: 2,0:00:25.44,0:00:26.18,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}DAN SESUAI
+Dialogue: 1,0:00:26.18,0:00:26.38,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}UNTUK
+Dialogue: 2,0:00:26.18,0:00:26.38,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}UNTUK
+Dialogue: 1,0:00:26.38,0:00:26.68,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}RUMAH
+Dialogue: 2,0:00:26.38,0:00:26.68,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}RUMAH
+Dialogue: 1,0:00:26.68,0:00:27.32,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}KELUARGA
+Dialogue: 2,0:00:26.68,0:00:27.32,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}KELUARGA
+Dialogue: 1,0:00:27.32,0:00:27.50,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}LAH
+Dialogue: 2,0:00:27.32,0:00:27.50,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}LAH
+Dialogue: 1,0:00:27.58,0:00:27.80,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}NOMBOR
+Dialogue: 2,0:00:27.58,0:00:27.80,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}NOMBOR
+Dialogue: 1,0:00:27.80,0:00:28.04,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}TIGA
+Dialogue: 2,0:00:27.80,0:00:28.04,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}TIGA
+Dialogue: 2,0:00:28.16,0:00:28.60,CapKey,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}GABUNGAN
+Dialogue: 2,0:00:28.60,0:00:29.52,CapKey,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}2 WARNA
+Dialogue: 1,0:00:29.52,0:00:29.88,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}DALAM
+Dialogue: 2,0:00:29.52,0:00:29.88,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}DALAM
+Dialogue: 1,0:00:29.88,0:00:30.16,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}SATU
+Dialogue: 2,0:00:29.88,0:00:30.16,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}SATU
+Dialogue: 1,0:00:31.70,0:00:32.08,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}PEMILIHAN
+Dialogue: 2,0:00:31.70,0:00:32.08,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}PEMILIHAN
+Dialogue: 2,0:00:32.08,0:00:32.72,CapKey,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}2 WARNA
+Dialogue: 1,0:00:32.72,0:00:33.26,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}NI AKAN
+Dialogue: 2,0:00:32.72,0:00:33.26,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}NI AKAN
+Dialogue: 1,0:00:33.26,0:00:33.88,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}NAMPAKKAN
+Dialogue: 2,0:00:33.26,0:00:33.88,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}NAMPAKKAN
+Dialogue: 1,0:00:33.88,0:00:34.28,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}DAPUR
+Dialogue: 2,0:00:33.88,0:00:34.28,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}DAPUR
+Dialogue: 1,0:00:34.28,0:00:34.60,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}TU LEBIH
+Dialogue: 2,0:00:34.28,0:00:34.60,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}TU LEBIH
+Dialogue: 2,0:00:34.60,0:00:35.16,CapKey,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}LUAS
+Dialogue: 1,0:00:35.18,0:00:35.42,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}TAPI
+Dialogue: 2,0:00:35.18,0:00:35.42,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}TAPI
+Dialogue: 1,0:00:35.42,0:00:36.04,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}SYARAT
+Dialogue: 2,0:00:35.42,0:00:36.04,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}SYARAT
+Dialogue: 1,0:00:36.04,0:00:36.18,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}YANG
+Dialogue: 2,0:00:36.04,0:00:36.18,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}YANG
+Dialogue: 1,0:00:36.18,0:00:36.42,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}PALING
+Dialogue: 2,0:00:36.18,0:00:36.42,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}PALING
+Dialogue: 2,0:00:36.42,0:00:36.88,CapKey,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}PENTING
+Dialogue: 1,0:00:36.90,0:00:37.64,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}PILIH
+Dialogue: 2,0:00:36.90,0:00:37.64,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}PILIH
+Dialogue: 1,0:00:37.64,0:00:38.16,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}WARNA
+Dialogue: 2,0:00:37.64,0:00:38.16,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}WARNA
+Dialogue: 1,0:00:38.16,0:00:38.34,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}YANG
+Dialogue: 2,0:00:38.16,0:00:38.34,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}YANG
+Dialogue: 1,0:00:38.34,0:00:38.72,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}AKAK
+Dialogue: 2,0:00:38.34,0:00:38.72,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}AKAK
+Dialogue: 2,0:00:38.72,0:00:39.36,CapKey,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}MINAT
+Dialogue: 1,0:00:39.36,0:00:39.60,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}TENGOK
+Dialogue: 2,0:00:39.36,0:00:39.60,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}TENGOK
+Dialogue: 1,0:00:39.60,0:00:39.90,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}SETIAP
+Dialogue: 2,0:00:39.60,0:00:39.90,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}SETIAP
+Dialogue: 1,0:00:39.90,0:00:40.08,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}HARI
+Dialogue: 2,0:00:39.90,0:00:40.08,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}HARI
+Dialogue: 2,0:00:40.18,0:00:40.40,CapKey,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}JANGAN
+Dialogue: 1,0:00:40.40,0:00:40.74,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}IKUT
+Dialogue: 2,0:00:40.40,0:00:40.74,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}IKUT
+Dialogue: 2,0:00:40.74,0:00:40.92,CapKey,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}TREND
+Dialogue: 1,0:00:40.92,0:00:41.32,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}SAHAJA
+Dialogue: 2,0:00:40.92,0:00:41.32,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}SAHAJA
+Dialogue: 1,0:00:41.32,0:00:41.66,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}SEBAB
+Dialogue: 2,0:00:41.32,0:00:41.66,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}SEBAB
+Dialogue: 2,0:00:41.66,0:00:41.90,CapKey,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}TREND
+Dialogue: 1,0:00:41.90,0:00:42.60,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}NI BIASANYA
+Dialogue: 2,0:00:41.90,0:00:42.60,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}NI BIASANYA
+Dialogue: 1,0:00:42.60,0:00:42.78,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}AKAN
+Dialogue: 2,0:00:42.60,0:00:42.78,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}AKAN
+Dialogue: 1,0:00:42.78,0:00:43.20,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}BERUBAH
+Dialogue: 2,0:00:42.78,0:00:43.20,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}BERUBAH
+Dialogue: 1,0:00:44.14,0:00:44.26,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}CUBA
+Dialogue: 2,0:00:44.14,0:00:44.26,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}CUBA
+Dialogue: 1,0:00:44.26,0:00:44.52,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}AKAK
+Dialogue: 2,0:00:44.26,0:00:44.52,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}AKAK
+Dialogue: 1,0:00:44.52,0:00:44.78,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}KOMEN
+Dialogue: 2,0:00:44.52,0:00:44.78,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}KOMEN
+Dialogue: 1,0:00:44.78,0:00:45.44,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}PEMILIHAN
+Dialogue: 2,0:00:44.78,0:00:45.44,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}PEMILIHAN
+Dialogue: 1,0:00:45.44,0:00:45.82,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}WARNA
+Dialogue: 2,0:00:45.44,0:00:45.82,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}WARNA
+Dialogue: 1,0:00:45.82,0:00:45.98,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}YANG
+Dialogue: 2,0:00:45.82,0:00:45.98,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}YANG
+Dialogue: 1,0:00:45.98,0:00:46.22,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}AKAK
+Dialogue: 2,0:00:45.98,0:00:46.22,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}AKAK
+Dialogue: 1,0:00:46.22,0:00:46.40,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}SUKA
+Dialogue: 2,0:00:46.22,0:00:46.40,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}SUKA
+Dialogue: 1,0:00:46.40,0:00:46.84,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}UNTUK
+Dialogue: 2,0:00:46.40,0:00:46.84,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}UNTUK
+Dialogue: 1,0:00:46.84,0:00:47.22,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}DAPUR
+Dialogue: 2,0:00:46.84,0:00:47.22,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}DAPUR
+Dialogue: 1,0:00:47.22,0:00:47.38,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}KITCHEN
+Dialogue: 2,0:00:47.22,0:00:47.38,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}KITCHEN
+Dialogue: 1,0:00:47.38,0:00:47.78,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}AKAK
+Dialogue: 2,0:00:47.38,0:00:47.78,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}AKAK
+Dialogue: 1,0:00:47.80,0:00:48.08,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}SAYA
+Dialogue: 2,0:00:47.80,0:00:48.08,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}SAYA
+Dialogue: 1,0:00:48.08,0:00:48.54,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}NAK TENGOK
+Dialogue: 2,0:00:48.08,0:00:48.54,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}NAK TENGOK
+Dialogue: 1,0:00:48.54,0:00:49.06,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}PEMILIHAN
+Dialogue: 2,0:00:48.54,0:00:49.06,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}PEMILIHAN
+Dialogue: 1,0:00:49.06,0:00:49.36,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}AKAK
+Dialogue: 2,0:00:49.06,0:00:49.36,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}AKAK
+Dialogue: 1,0:00:49.36,0:00:49.46,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}MACAM
+Dialogue: 2,0:00:49.36,0:00:49.46,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}MACAM
+Dialogue: 1,0:00:49.46,0:00:49.72,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}MANA
+Dialogue: 2,0:00:49.46,0:00:49.72,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}MANA
+Dialogue: 3,0:00:01.15,0:00:04.20,Label,,0,0,0,,{\fad(200,250)}Farhan · Founder Fi-k Studio
+Dialogue: 3,0:00:10.30,0:00:12.80,Label,,0,0,0,,{\an7\pos(70,330)\fad(150,150)}Design 3D Fi-k Studio
+Dialogue: 3,0:00:17.92,0:00:20.40,Label,,0,0,0,,{\an7\pos(70,330)\fad(150,150)}Contoh inspirasi warna
+Dialogue: 3,0:00:24.64,0:00:27.10,Label,,0,0,0,,{\an7\pos(70,330)\fad(150,150)}Contoh inspirasi warna
+Dialogue: 3,0:00:31.90,0:00:34.80,Label,,0,0,0,,{\an7\pos(70,330)\fad(150,150)}Design 3D Fi-k Studio
+Dialogue: 3,0:00:12.86,0:00:22.52,Point,,0,0,0,,{\fad(180,200)\move(40,230,70,230,0,220)}#1  KELABU CAIR (GREIGE)
+Dialogue: 3,0:00:22.54,0:00:27.44,Point,,0,0,0,,{\fad(180,200)\move(40,230,70,230,0,220)}#2  CORAK KAYU
+Dialogue: 3,0:00:27.58,0:00:35.16,Point,,0,0,0,,{\fad(180,200)\move(40,230,70,230,0,220)}#3  GABUNGAN 2 WARNA
+Dialogue: 3,0:00:35.18,0:00:40.06,Point,,0,0,0,,{\fad(180,200)\move(40,230,70,230,0,220)}SYARAT PALING PENTING
+Dialogue: 4,0:00:05.18,0:00:06.80,Num,,0,0,0,,{\an5\pos(480,1020)\fs102\fad(80,150)\fscx70\fscy70\t(0,120,\fscx100\fscy100)}3 PILIHAN WARNA
+Dialogue: 4,0:00:30.16,0:00:31.70,Num,,0,0,0,,{\an5\pos(480,1020)\fs124\fad(80,150)\fscx70\fscy70\t(0,120,\fscx100\fscy100)}BAWAH GELAP\NATAS CERAH
+Dialogue: 4,0:00:43.20,0:00:44.14,Num,,0,0,0,,{\an5\pos(480,1020)\fs114\fad(80,150)\fscx70\fscy70\t(0,120,\fscx100\fscy100)}SETIAP 5 TAHUN
+Dialogue: 5,0:00:00.00,0:00:01.00,Hook,,0,0,0,,{\an2\pos(540,1140)\fs210}3 WARNA
+Dialogue: 5,0:00:00.00,0:00:01.00,Hook,,0,0,0,,{\an2\pos(540,1330)\fs210}KABINET
+Dialogue: 5,0:00:00.00,0:00:01.00,Hook,,0,0,0,,{\an2\pos(540,1480)\fs102}SEPANJANG ZAMAN

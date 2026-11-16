@@ -120,6 +120,9 @@ for c in chunks:
         ev.append(f"Dialogue: 1,{ts(s)},{ts(e)},CapOut,,0,0,0,,{POP}{{\\fs{fs}}}{c['text']}")
         ev.append(f"Dialogue: 2,{ts(s)},{ts(e)},CapIn,,0,0,0,,{POP}{{\\fs{fs}}}{c['text']}")
 ev.append(f"Dialogue: 3,{ts(LABEL['s']+OFF)},{ts(LABEL['e']+OFF)},Label,,0,0,0,,{{\\fad(200,250)}}{LABEL['text']}")
+# tag kecil atas B-roll (cth. "Design 3D Fi-k Studio", "Contoh inspirasi warna"), di bawah tajuk poin
+for tg in C.get("tags", []):
+    ev.append(f"Dialogue: 3,{ts(tg['s']+OFF)},{ts(tg['e']+OFF)},Label,,0,0,0,,{{\\an7\\pos(70,330)\\fad(150,150)}}{tg['text']}")
 for p in POINTS:
     ev.append(f"Dialogue: 3,{ts(p['s']+OFF)},{ts(p['e']+OFF)},Point,,0,0,0,,{{\\fad(180,200)\\move(40,230,70,230,0,220)}}{p['text']}")
 for n in NUMS:

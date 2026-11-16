@@ -1,0 +1,118 @@
+{
+ "id": "FK-F-009",
+ "topik": "Warna Kabinet Sepanjang Zaman",
+ "tag": "TOFU",
+ "ver": "v1",
+ "status": "Preview v1 · tunggu komen",
+ "tarikh": "16 Nov 2026",
+ "edit_intro": "Ikut DNA Fi-k Studio v3.2. Footage tiada take ulangan/senyap >0.3 s; isi 49.0 s digunakan penuh. Thumbnail 1 s + isi 49.0 s + outro brand 4.0 s = 54.0 s. B-roll tambahan Kitchen Greige, Warm Kitchen dan Gabungan 2 Warna diletak tepat selepas setiap warna disebut (bukan pada ayat tajuk poin). Design 3D Fi-k dari AIHouse 720 dirender terus dari imej panorama (pan kamera perlahan, tanpa UI viewer dan tanpa nama projek/client): dapur island dan dapur basah.",
+ "seg": [
+  [
+   0,
+   1.0,
+   "Thumbnail",
+   "Hook 3 WARNA / KABINET / SEPANJANG ZAMAN atas frame Farhan tunjuk 3 jari (sumber 0:04.3), di tengah frame"
+  ],
+  [
+   1.0,
+   12.86,
+   "Hook",
+   "“Akak-akak yang takut kabinet kitchen putih dia tu cepat kotor… 3 pilihan warna yang selamat sepanjang zaman” + 3D dapur island pada “sebelum buat kitchen kabinet nanti”"
+  ],
+  [
+   12.86,
+   22.52,
+   "#1 Kelabu cair (greige)",
+   "Tajuk poin #1 (muka Farhan) → Kitchen Greige pada “kurang berminyak”"
+  ],
+  [
+   22.52,
+   27.44,
+   "#2 Corak kayu",
+   "Tajuk poin #2 (muka Farhan) → Warm Kitchen pada “nampak warm… rumah keluarga”"
+  ],
+  [
+   27.44,
+   35.16,
+   "#3 Gabungan 2 warna",
+   "Gabungan 2 Warna pada “gabungan 2 warna dalam satu” → BAWAH GELAP / ATAS CERAH → 3D dapur basah pada “dapur lebih luas”"
+  ],
+  [
+   35.16,
+   40.06,
+   "Syarat",
+   "SYARAT PALING PENTING: pilih warna yang akak minat tengok setiap hari (muka Farhan)"
+  ],
+  [
+   40.06,
+   44.14,
+   "Jangan ikut trend",
+   "Trend berubah SETIAP 5 TAHUN (muka Farhan)"
+  ],
+  [
+   44.14,
+   49.95,
+   "CTA",
+   "Komen pemilihan warna akak"
+  ],
+  [
+   49.95,
+   53.98,
+   "Outro",
+   "Outro Potrait + Design Dulu, Baru Bina + DM untuk keterangan lanjut"
+  ]
+ ],
+ "done": [
+  [
+   "Ikut DNA v3.2",
+   "Bokeh halus, motion zoom muka, caption 1 perkataan + kotak hijau kata kunci, tajuk poin #1–#3, hook & kad di tengah, tiada muzik, outro brand.",
+   2.0
+  ],
+  [
+   "B-roll tambahan Farhan",
+   "Kitchen Greige (0:17.9), Warm Kitchen (0:24.6) — gambar potret, skrin penuh Ken Burns; Gabungan 2 Warna (0:28.4) — kad di tengah skrin.",
+   17.92
+  ],
+  [
+   "Design 3D AIHouse",
+   "Dari pautan AIHouse 720: ruang “island” (0:10.3) dan “wet kitchen” (0:31.9), pan kamera perlahan 2.6–3.0 s. Dirender terus dari imej panorama, jadi tiada butang viewer dan tiada nama projek/client dalam frame. Tag “Design 3D Fi-k Studio”. Klip disimpan juga ke B-ROLL/Render 3D (FIK03_island.mp4, FIK03_wet-kitchen.mp4).",
+   10.3
+  ],
+  [
+   "Teks besar",
+   "3 PILIHAN WARNA, BAWAH GELAP / ATAS CERAH, SETIAP 5 TAHUN — tepat seperti disebut.",
+   5.18
+  ],
+  [
+   "Audio",
+   "Denoise ringan; loudness dua laluan −14.2 LUFS, peak −1.2 dBFS. SFX lembut dijana sendiri."
+  ]
+ ],
+ "todo": [
+  [
+   "“SAVE DULU VIDEO NI” (0:08.1)",
+   "Transkrip dengar “Saya dulu video ni”. Caption tulis SAVE. Sila sahkan.",
+   8.12
+  ],
+  [
+   "Gambar Kitchen Greige & Warm Kitchen",
+   "Nampak macam gambar stok/AI, bukan projek Fi-k (DNA: jangan menyamar projek kami). Saya letak tag “Contoh inspirasi warna”. Tukar dengan gambar projek sebenar jika ada.",
+   17.92
+  ],
+  [
+   "Gabungan 2 Warna",
+   "Nampak macam render 3D; tiada tag. Jika ia bukan design Fi-k, beritahu supaya saya tambah tag “Contoh inspirasi warna”.",
+   28.4
+  ],
+  [
+   "Durasi 54.0 s",
+   "Melebihi sasaran TOFU 20–45 s; footage tiada ulangan jadi isi tidak dipotong."
+  ],
+  [
+   "Preview MP4 & log belum di Drive",
+   "Alat Drive hadkan ±3 MB setiap muat naik dan tidak boleh tulis ganti fail sedia ada. THUMB & RINGKASAN dimuat naik ke _PREVIEW; video preview ada di halaman ini; baris log perlu ditambah manual."
+  ]
+ ],
+ "tt": "Takut kabinet putih cepat kotor? Ni 3 warna kabinet yang selamat sepanjang zaman: kelabu cair (greige), corak kayu, dan gabungan 2 warna — bawah gelap, atas cerah. Akak pilih yang mana? Komen bawah! DM untuk keterangan lanjut.",
+ "hs": "#kabinetdapur #warnakabinet #interiordesign #fikstudio #dapurrumah"
+}

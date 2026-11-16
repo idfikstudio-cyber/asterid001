@@ -141,8 +141,14 @@ for k, s in enumerate(P["sfx"]):
 flt.append("".join(mix) + f"amix=inputs={len(mix)}:normalize=0:duration=first,loudnorm=I=-14:TP=-1.5:LRA=9,alimiter=limit=0.85:level=false,aresample=48000[a]")
 apath = OUT + ".a.wav"
 subprocess.run(["ffmpeg", "-v", "error", "-y", *inputs, "-filter_complex", ";".join(flt), "-map", "[a]",
-                "-t", str(total), "-ar", "48000", apath], check=True)
-
+                "-t", str(total), "-ar", "48000", apath + ".1.wav"], check=True)
+# laluan 2: ukur loudness sebenar, betulkan gain ke -14 LUFS, limiter true peak <= -1 dBTP
+import re as _re
+meas = subprocess.run(["ffmpeg", "-i", apath + ".1.wav", "-af", "ebur128", "-f", "null", "-"], capture_output=True, text=True).stderr
+I = float(_re.findall(r"I:\s+(-?[0-9.]+) LUFS", meas)[-1])
+subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", apath + ".1.wav", "-af",
+                f"volume={-14.0 - I:.2f}dB,alimiter=limit=0.85:level=false", "-ar", "48000", apath], check=True)
+os.remove(apath + ".1.wav")
 vf = f"ass={ASS}"
 if (OW, OH) != (W, H):
     vf += f",scale={OW}:{OH}:flags=lanczos"

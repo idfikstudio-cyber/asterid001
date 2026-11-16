@@ -161,6 +161,12 @@ yang paling sesuai.
 ### 7.6 Link AIHouse 720
 - Buka link dari lajur **"Link AiHouse"** dalam sheet `Projek Fi-k Studio`, rakam paparan 720 bergerak
   (pan perlahan 8–12 saat setiap ruang, 9:16) dan jadikan klip B-roll.
+- **Cara rakam (disahkan FK-F-009):** jangan rakam skrin viewer (panorama tak keluar dalam browser headless, dan
+  UI + tajuk projek yang mengandungi **nama client** akan masuk frame). Ambil imej cubemap terus:
+  buka pautan dengan Playwright, guna krpano (`krpanoSWFObject`) untuk senarai `scene[i].title` (cth. dry kitchen,
+  island, wet kitchen) dan `loadscene(...)`, kemudian `image.cube.url` → `https://3vj-render.3vjia.com/.../show_{f,b,l,r,u,d}.jpg`.
+  Render pan 9:16 dengan `scripts/fk_pano.py <cube_dir> out.mp4 <saat> <yaw0> <yaw1> <pitch> <fov>` (pitch +10–15 pandang
+  ke kabinet, fov 70–74). Tag kecil "Design 3D Fi-k Studio" semasa klip.
 - **Semak folder `B-ROLL › Render 3D` dulu** sebelum rakam baru.
 - Klip baru disimpan dalam `B-ROLL › Render 3D` dengan nama `[PROJECT NUM]_[ruang].mp4` supaya boleh
   guna semula. Ini **tambah fail baru sahaja** — jangan padam, pindah atau tulis ganti fail sedia ada
@@ -177,6 +183,8 @@ yang paling sesuai.
 - Elak klip resolusi rendah (contoh `IMG_0535.MOV` 352×640) jika ada pilihan lain.
 - Fail `.HEIC` tukar ke JPG dulu sebelum guna (salinan kerja, bukan ganti fail asal).
 - **Jangan paparkan nama client atau nama firma** dalam video atau caption.
+- Gambar yang **bukan projek Fi-k** (stok/AI/inspirasi) yang Farhan minta guna: letak tag kecil **"Contoh inspirasi warna"**
+  (atau seumpamanya) supaya tak menyamar projek kami, dan tanda PERLU SEMAK.
 
 ### 7.8 Dalam preview
 Dalam ringkasan dan tab **Pelan edit** preview, senaraikan B-roll untuk setiap sisipan:
