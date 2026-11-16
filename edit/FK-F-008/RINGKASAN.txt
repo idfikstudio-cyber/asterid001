@@ -1,0 +1,73 @@
+RINGKASAN EDIT — FK-F-008_Farhan_Dapur Pemaju Pun Cukup? (preview v1)
+Brand: Fi-k Studio | Spokesperson: Farhan (Founder) | Tag skrip: TOFU
+Durasi: 52.0 s (1 s thumbnail + 47.0 s isi + 4.0 s outro)
+DNA: fik-studio/CLAUDE.md v3.1
+
+1) TEKS HOOK / THUMBNAIL
+   "DAPUR PEMAJU / PUN CUKUP?" atas frame Farhan (sumber 0:05.8).
+
+2) CAPTION PENUH (ikut percakapan; masa ikut video preview)
+   [0:01.00] Akak-akak, suami kata dapur pemaju yang bagi tu pun dah cukup dah.
+   [0:04.38] Cuba tunjuk video ni.
+   [0:05.28] Raya nanti siapa yang paling lama kat dapur?
+   [0:07.56] Kadang-kadang nak letak pinggan mangkuk atas singki yang pemaju bagi tu pun, singki tu pun dah sempit sebelah.
+   [0:12.72] Periuk yang besar-besar masak tu pun nak cuci dekat singki tu pun susah.
+   [0:16.64] Sebabnya, kecik.
+   [0:17.68] Lauk yang dah siap masak tu nak hidang kat mana?
+   [0:19.96] Takkan kita nak penuhkan dekat dapur tu dengan meja banquet.
+   [0:23.34] Lauk tak ada tempat nak letak, pinggan mangkuk tak ada tempat nak simpan.
+   [0:27.00] Periuk besar tu kita tak tahu nak simpan kat mana.
+   [0:29.28] Benda sebabnya semuanya open.
+   [0:31.02] Itu belum lagi masuk dengan cawan-cawan.
+   [0:33.08] Cakap dekat suami tu, dapur yang kita nak rancang nak buat ni menjimatkan masa dan menjimatkan tenaga.
+   [0:39.22] Sekali buat, jimat bertahun-tahun.
+   [0:41.08] Tapi syaratnya kena plan betul-betul.
+   [0:43.38] Tag suami akak dekat ruangan komen.
+   [0:44.98] Kalau dia setuju, DM kami untuk keterangan lanjut.
+
+3) SFX, ANIMASI, B-ROLL, ZOOM (masa ikut video preview)
+   Bokeh halus berperingkat sepanjang video; subjek dijernihkan sedikit.
+   0:00.00–0:01.00  Thumbnail: Hook “DAPUR PEMAJU / PUN CUKUP?” atas frame Farhan (sumber 0:05.8), latar bokeh
+   0:01.15–0:04.30  Label: Pil hijau “Farhan · Founder Fi-k Studio”
+   0:07.56–0:17.64  Tajuk poin: Kotak hijau atas: “#1 SINGKI KECIK”
+   0:09.46–0:11.90  B-roll: B-ROLL/Singki Pemaju.jpeg (gambar, Ken Burns, 2.4 s) pada 'atas singki yang pemaju bagi tu' (singki pemaju sebenar, kecil & tiada kabinet)
+   0:17.00–0:18.10  Teks besar: “KECIK” (hijau #304945, stroke putih)
+   0:17.68–0:23.30  Tajuk poin: Kotak hijau atas: “#2 LAUK NAK HIDANG KAT MANA?”
+   0:21.20–0:23.30  B-roll: B-ROLL/Meja banquet.jpg (gambar, Ken Burns, 2.1 s) pada 'penuhkan dekat dapur tu dengan meja banquet'
+   0:23.34–0:33.04  Tajuk poin: Kotak hijau atas: “#3 TAK ADA TEMPAT NAK SIMPAN”
+   0:28.90–0:30.90  B-roll: B-ROLL/Gambar Onprogress/29ab1425-3c34-4112-8de9-6389bc1d0d3b.jpeg (gambar, Ken Burns, 2.0 s) pada 'tak tahu nak simpan kat mana. Sebabnya semuanya open' (dapur basah terbuka, tiada kabinet)
+   0:34.38–0:36.40  B-roll: B-ROLL/Gambar Projek Onprogress/78193e5b-88fb-4956-8445-df9810ac967f.jpeg (gambar, Ken Burns, 2.0 s) pada 'dapur yang kita nak rancang nak buat ni' (dapur siap: island + kabinet tinggi)
+   0:36.48–0:39.10  Teks besar: “JIMAT MASA & TENAGA” (hijau #304945, stroke putih)
+   0:39.94–0:41.05  Teks besar: “JIMAT BERTAHUN-TAHUN” (hijau #304945, stroke putih)
+   0:41.08–0:43.34  Tajuk poin: Kotak hijau atas: “SYARAT: PLAN BETUL-BETUL”
+   0:48.02–0:52.05  Outro: BRAND/Outro Potrait.mp4 (animasi logo, 4.0 s) + “Design Dulu, Baru Bina” + kotak hijau “DM untuk keterangan lanjut” muncul selepas logo statik
+   0:09.34  SFX whoosh lembut
+   0:17.00  SFX pop lembut
+   0:21.08  SFX whoosh lembut
+   0:28.78  SFX whoosh lembut
+   0:34.26  SFX whoosh lembut
+   0:36.48  SFX pop lembut
+   0:39.94  SFX pop lembut
+   Motion zoom: 0:01.00 zoom in perlahan 100% → 113%; 0:04.38 zoom out perlahan 113% → 100%; 0:05.28 zoom in perlahan 100% → 113%; 0:07.56 zoom out perlahan 113% → 100%; 0:12.72 zoom in perlahan 100% → 113%; 0:16.64 zoom out perlahan 113% → 100%; 0:17.68 zoom in perlahan 100% → 113%; 0:19.96 zoom out perlahan 113% → 100%; 0:23.34 zoom in perlahan 100% → 113%; 0:27.00 zoom out perlahan 113% → 100%; 0:29.28 zoom in perlahan 100% → 113%; 0:31.02 zoom out perlahan 113% → 100%; 0:33.08 zoom in perlahan 100% → 113%; 0:39.22 zoom out perlahan 113% → 100%; 0:41.08 zoom in perlahan 100% → 113%; 0:43.38 zoom out perlahan 113% → 100%; 0:44.98 zoom in perlahan 100% → 113%
+
+   Senarai B-roll: [baris skrip] → [folder / nama fail] → [sebab]
+   0:09.46  'atas singki yang pemaju bagi tu' → B-ROLL/Singki Pemaju.jpeg → 'atas singki yang pemaju bagi tu' (singki pemaju sebenar, kecil & tiada kabinet)
+   0:21.20  'penuhkan dekat dapur tu dengan meja banquet' → B-ROLL/Meja banquet.jpg → 'penuhkan dekat dapur tu dengan meja banquet'
+   0:28.90  'tak tahu nak simpan kat mana. Sebabnya semuanya open' → B-ROLL/Gambar Onprogress/29ab1425-3c34-4112-8de9-6389bc1d0d3b.jpeg → 'tak tahu nak simpan kat mana. Sebabnya semuanya open' (dapur basah terbuka, tiada kabinet)
+   0:34.38  'dapur yang kita nak rancang nak buat ni' → B-ROLL/Gambar Projek Onprogress/78193e5b-88fb-4956-8445-df9810ac967f.jpeg → 'dapur yang kita nak rancang nak buat ni' (dapur siap: island + kabinet tinggi)
+
+4) CTA
+   Outro: "Design Dulu, Baru Bina" + "DM untuk keterangan lanjut".
+
+5) PERLU SEMAK
+   - “SEMPIT” (0:12.0): Transkrip dengar “singki tu pun dah sengit sebelah”. Caption tulis SEMPIT. Sila sahkan.
+   - “TAG SUAMI AKAK” (0:43.4): Transkrip dengar “Dekat suami akak dekat ruangan komen”. Caption tulis TAG. Sila sahkan.
+   - “Benda sebabnya semuanya open” (0:29.3): Ikut transkrip; keyakinan rendah pada “Benda”. Sila semak.
+   - Gambar Singki & Meja resolusi rendah: 697×440 dan 754×446. Dipapar sebagai kad supaya tak pecah; kalau ada gambar lebih besar, boleh ganti.
+   - Ejaan “singki”: Ikut nama fail Farhan (ejaan baku: “sinki”). Beritahu jika mahu tukar.
+   - Durasi 52.1 s: Melebihi sasaran TOFU 20–45 s; footage tiada ulangan jadi isi tidak dipotong.
+   - Preview MP4 & log belum di Drive: Alat Drive hadkan ±3 MB setiap muat naik dan tidak boleh tulis ganti fail sedia ada. THUMB & RINGKASAN dimuat naik ke _PREVIEW; video preview ada di halaman ini; baris log perlu ditambah manual.
+
+6) CAPTION TIKTOK
+   Suami kata dapur pemaju dah cukup? Singki kecik, lauk tak ada tempat nak hidang, pinggan mangkuk tak ada tempat nak simpan. Dapur yang dirancang betul-betul jimat masa & tenaga, jimat bertahun-tahun. Tag suami akak! DM untuk keterangan lanjut.
+   #dapurrumah #renovatedapur #interiordesign #fikstudio #kabinetdapur

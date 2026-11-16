@@ -1,0 +1,150 @@
+{
+ "src_dur": 67.87,
+ "thumb_t": 17.6,
+ "fix": {
+  "Ryan": "Raya",
+  "adekat": "dah dekat"
+ },
+ "fix_at": {
+  "25.94": "tu"
+ },
+ "key": [
+  "3",
+  "TIGA",
+  "LAMBAT",
+  "DELAY",
+  "JANGAN",
+  "SEMINGGU",
+  "MINGGU",
+  "PENTING",
+  "SALAHKAN",
+  "PERTAMA",
+  "KEDUA",
+  "KETIGA",
+  "KABINET",
+  "TAK TEPAT",
+  "BERUBAH-UBAH",
+  "AGREEMENT",
+  "SETTLE",
+  "DESIGN"
+ ],
+ "label": {
+  "s": 0.15,
+  "e": 3.3,
+  "text": "Farhan · Founder Fi-k Studio"
+ },
+ "points": [
+  {
+   "s": 18.56,
+   "e": 22.82,
+   "text": "#1  DESIGN BERUBAH-UBAH"
+  },
+  {
+   "s": 28.12,
+   "e": 34.74,
+   "text": "#2  UKURAN TAK TEPAT"
+  },
+  {
+   "s": 38.2,
+   "e": 41.9,
+   "text": "#3  TAK ADA AGREEMENT"
+  },
+  {
+   "s": 48.86,
+   "e": 53.7,
+   "text": "PALING PENTING"
+  }
+ ],
+ "nums": [
+  {
+   "s": 8.3,
+   "e": 9.8,
+   "text": "3 PERKARA"
+  },
+  {
+   "s": 17.14,
+   "e": 18.5,
+   "text": "3 BENDA"
+  },
+  {
+   "s": 35.82,
+   "e": 37.2,
+   "text": "SEMINGGU DUA"
+  },
+  {
+   "s": 37.28,
+   "e": 38.8,
+   "text": "3 MINGGU"
+  }
+ ],
+ "broll": [
+  {
+   "s": 4.6,
+   "e": 7.46,
+   "clip": "b5",
+   "type": "video",
+   "src": "B-ROLL/Video Onprogress/IMG_9303.MOV",
+   "why": "'Kalau nak renovate rumah, nak siapkan sebelum raya'"
+  },
+  {
+   "s": 13.62,
+   "e": 16.12,
+   "clip": "b6",
+   "type": "video",
+   "src": "B-ROLL/Video Onprogress/IMG_9298.MOV",
+   "why": "'Biasanya rumah yang tak siap sebelum raya ni'"
+  },
+  {
+   "s": 22.82,
+   "e": 25.62,
+   "clip": "b1",
+   "type": "video",
+   "src": "B-ROLL/Video Onprogress/IMG_9301.MOV",
+   "why": "'Projek tengah ongoing, nak tukar situ, nak tukar sini'"
+  },
+  {
+   "s": 30.76,
+   "e": 33.3,
+   "clip": "b2",
+   "type": "video",
+   "src": "B-ROLL/Video Onprogress/IMG_9321.MOV",
+   "why": "'kabinet yang kita rancang tu kita kena buat balik'"
+  },
+  {
+   "s": 41.9,
+   "e": 44.62,
+   "clip": "b3",
+   "type": "video",
+   "src": "B-ROLL/Video Onprogress/IMG_9290.MOV",
+   "why": "'Lepas tu, tak tahulah siapa yang bertanggungjawab'"
+  },
+  {
+   "s": 53.82,
+   "e": 56.46,
+   "clip": "b7",
+   "type": "video",
+   "src": "B-ROLL/Video Onprogress/IMG_9310.MOV",
+   "why": "'Sebab itu kita datangkan dengan design dulu'"
+  },
+  {
+   "s": 59.36,
+   "e": 62.26,
+   "clip": "b4",
+   "type": "video",
+   "src": "B-ROLL/Video Projek Dah Siap/IMG_0535.MOV",
+   "why": "'semua kerja-kerja tu akan smooth sahaja' (projek siap)"
+  }
+ ],
+ "hook_lines": [
+  {
+   "text": "3 PUNCA",
+   "fs": 250,
+   "y": 1400
+  },
+  {
+   "text": "RENO LAMBAT SIAP",
+   "fs": 112,
+   "y": 1530
+  }
+ ]
+}

@@ -1,0 +1,129 @@
+{
+ "src_dur": 47.02,
+ "thumb_t": 5.8,
+ "fix": {
+  "sengit": "sempit"
+ },
+ "fix_at": {
+  "42.38": "Tag"
+ },
+ "perlu_semak": [
+  "0:12.0 transkrip dengar \"singki tu pun dah sengit sebelah\"; caption tulis \"SEMPIT\". Sila sahkan.",
+  "0:43.4 transkrip dengar \"Dekat suami akak dekat ruangan komen\"; caption tulis \"TAG SUAMI AKAK\". Sila sahkan.",
+  "0:29.3 \"Benda sebabnya semuanya open\" ikut transkrip (keyakinan rendah pada \"Benda\"); sila semak."
+ ],
+ "key": [
+  "SINGKI",
+  "PEMAJU",
+  "KECIK",
+  "SUSAH",
+  "SEMPIT",
+  "BANQUET",
+  "MEJA BANQUET",
+  "SIMPAN",
+  "OPEN",
+  "JIMAT",
+  "MENJIMATKAN",
+  "MASA",
+  "TENAGA",
+  "PLAN",
+  "RANCANG",
+  "CUKUP"
+ ],
+ "label": {
+  "s": 0.15,
+  "e": 3.3,
+  "text": "Farhan · Founder Fi-k Studio"
+ },
+ "points": [
+  {
+   "s": 6.56,
+   "e": 16.64,
+   "text": "#1  SINGKI KECIK"
+  },
+  {
+   "s": 16.68,
+   "e": 22.3,
+   "text": "#2  LAUK NAK HIDANG KAT MANA?"
+  },
+  {
+   "s": 22.34,
+   "e": 32.04,
+   "text": "#3  TAK ADA TEMPAT NAK SIMPAN"
+  },
+  {
+   "s": 40.08,
+   "e": 42.34,
+   "text": "SYARAT: PLAN BETUL-BETUL"
+  }
+ ],
+ "nums": [
+  {
+   "s": 16.0,
+   "e": 17.1,
+   "text": "KECIK"
+  },
+  {
+   "s": 35.48,
+   "e": 38.1,
+   "text": "JIMAT MASA\\N& TENAGA"
+  },
+  {
+   "s": 38.94,
+   "e": 40.05,
+   "text": "JIMAT\\NBERTAHUN-TAHUN"
+  }
+ ],
+ "broll": [
+  {
+   "s": 8.46,
+   "e": 10.9,
+   "clip": "g1",
+   "type": "image",
+   "img": "singki_pemaju.jpeg",
+   "src": "B-ROLL/Singki Pemaju.jpeg",
+   "why": "'atas singki yang pemaju bagi tu' (singki pemaju sebenar, kecil & tiada kabinet)"
+  },
+  {
+   "s": 20.2,
+   "e": 22.3,
+   "clip": "g2",
+   "type": "image",
+   "img": "meja_banquet.jpg",
+   "src": "B-ROLL/Meja banquet.jpg",
+   "why": "'penuhkan dekat dapur tu dengan meja banquet'"
+  },
+  {
+   "s": 27.9,
+   "e": 29.9,
+   "clip": "g3",
+   "type": "image",
+   "img": "go14.jpg",
+   "src": "B-ROLL/Gambar Onprogress/29ab1425-3c34-4112-8de9-6389bc1d0d3b.jpeg",
+   "why": "'tak tahu nak simpan kat mana. Sebabnya semuanya open' (dapur basah terbuka, tiada kabinet)"
+  },
+  {
+   "s": 33.38,
+   "e": 35.4,
+   "clip": "g4",
+   "type": "image",
+   "img": "gp14.jpg",
+   "src": "B-ROLL/Gambar Projek Onprogress/78193e5b-88fb-4956-8445-df9810ac967f.jpeg",
+   "why": "'dapur yang kita nak rancang nak buat ni' (dapur siap: island + kabinet tinggi)"
+  }
+ ],
+ "hook_lines": [
+  {
+   "text": "DAPUR PEMAJU",
+   "fs": null,
+   "y": 1370
+  },
+  {
+   "text": "PUN CUKUP?",
+   "fs": 200,
+   "y": 1540
+  }
+ ],
+ "cta": "DM untuk keterangan lanjut",
+ "tagline": "Design Dulu, Baru Bina"
+}
