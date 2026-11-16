@@ -14,7 +14,7 @@
   {
    "s": 6.56,
    "e": 16.64,
-   "text": "#1  SINGKI KECIK"
+   "text": "#1  SINKI KECIK"
   },
   {
    "s": 16.68,
@@ -57,7 +57,7 @@
    "type": "image",
    "img": "singki_pemaju.jpeg",
    "src": "B-ROLL/Singki Pemaju.jpeg",
-   "why": "'atas singki yang pemaju bagi tu' (singki pemaju sebenar, kecil & tiada kabinet)"
+   "why": "'atas sinki yang pemaju bagi tu' (sinki pemaju sebenar, kecil & tiada kabinet)"
   },
   {
    "s": 20.2,
@@ -353,7 +353,7 @@
    "e": 8.46
   },
   {
-   "text": "SINGKI",
+   "text": "SINKI",
    "s": 8.46,
    "e": 8.78
   },
@@ -378,7 +378,7 @@
    "e": 9.9
   },
   {
-   "text": "SINGKI",
+   "text": "SINKI",
    "s": 9.96,
    "e": 10.42
   },
@@ -388,7 +388,7 @@
    "e": 10.98
   },
   {
-   "text": "SEMPIT",
+   "text": "SENGIT",
    "s": 10.98,
    "e": 11.32
   },
@@ -433,7 +433,7 @@
    "e": 14.58
   },
   {
-   "text": "SINGKI",
+   "text": "SINKI",
    "s": 14.58,
    "e": 14.92
   },
@@ -588,11 +588,6 @@
    "e": 28.28
   },
   {
-   "text": "BENDA",
-   "s": 28.28,
-   "e": 28.38
-  },
-  {
    "text": "SEBABNYA",
    "s": 28.38,
    "e": 29.04
@@ -743,13 +738,8 @@
    "e": 42.34
   },
   {
-   "text": "TAG SUAMI",
-   "s": 42.38,
-   "e": 42.72
-  },
-  {
-   "text": "AKAK",
-   "s": 42.72,
+   "text": "TAG SUAMI AKAK",
+   "s": 42.3,
    "e": 42.98
   },
   {
@@ -798,11 +788,7 @@
    "e": 46.8
   }
  ],
- "perlu_semak": [
-  "0:12.0 transkrip dengar \"singki tu pun dah sengit sebelah\"; caption tulis \"SEMPIT\". Sila sahkan.",
-  "0:43.4 transkrip dengar \"Dekat suami akak dekat ruangan komen\"; caption tulis \"TAG SUAMI AKAK\". Sila sahkan.",
-  "0:29.3 \"Benda sebabnya semuanya open\" ikut transkrip (keyakinan rendah pada \"Benda\"); sila semak."
- ],
+ "perlu_semak": [],
  "cta": "DM untuk keterangan lanjut",
  "tagline": "Design Dulu, Baru Bina"
 }

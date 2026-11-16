@@ -1,4 +1,4 @@
-# DNA Editing — Fi-k Studio (v3.1)
+# DNA Editing — Fi-k Studio (v3.2)
 
 > Ikut juga peraturan umum dalam `../CLAUDE.md`. Fail ini hanya perkara khusus Fi-k Studio.
 > Folder Drive: **Konten › Fi-k Studio**
@@ -6,6 +6,7 @@
 > **v3 (16 Nov 2026)** dikunci dari FK-F-007 "Punca Renovate Lambat Siap" yang diluluskan Farhan.
 > Video contoh: https://claude.ai/artifact/5zAKQgNo7fkCJ1htsBU21t · skrip: `scripts/bokeh.py`, `fk_plan.py`, `fk_render.py`, `fk_page.py`.
 > **v3.1:** digabung dengan peraturan B-roll terperinci (folder, padanan ayat, aliran cerita, Render 3D AIHouse).
+> **v3.2 (FK-F-008):** hook thumbnail, kad B-roll dan outro di tengah; ejaan baku "sinki"; frasa CTA satu caption.
 > Jika fail ini bercanggah dengan `../CLAUDE.md`, **ikut fail ini.**
 
 ---
@@ -88,12 +89,15 @@ Baca `BRAND/warna.txt`. Ringkasan:
 - Kedudukan ±73% tinggi frame, dalam safe zone (bukan bawah 20%, bukan jalur kanan 15%).
 - **Kata kunci** dalam **kotak hijau #304945, teks putih**: angka, lambat, delay, jangan, penting, salahkan, pertama/kedua/ketiga, kabinet, tak tepat, agreement, design, settle, harga RM, "2 kali ganda", "rugi", "tertipu", "wajib", "bajet".
 - Jangan papar caption yang sama dengan kad angka besar pada masa yang sama.
-- Istilah yang mesti dieja betul: ID, 3D, AIHouse, kabinet, quotation, kontraktor, Design & Build, reno.
+- Istilah yang mesti dieja betul: ID, 3D, AIHouse, kabinet, quotation, kontraktor, Design & Build, reno, **sinki** (ejaan baku, bukan "singki").
+- Frasa CTA/tindakan (contoh "TAG SUAMI AKAK") dipapar sebagai **satu caption penuh** supaya tak terpotong.
 - Warna merah/pink dalam video rujukan **ditukar ke hijau #304945**.
 
 ### Thumbnail / hook (1 saat)
-- Pilih frame yang menyokong hook (contoh: Farhan tunjuk 3 jari untuk "3 PUNCA").
-- Teks hook besar Montserrat Black **hijau #304945 + stroke putih tebal + bayang lembut**, 2 baris (baris 1 besar, contoh "3 PUNCA"; baris 2 lebih kecil, contoh "RENO LAMBAT SIAP"), bahagian bawah-tengah (±70–80% tinggi), tidak tutup muka atau tangan.
+- Pilih frame yang menyokong hook (contoh: Farhan tunjuk 3 jari untuk "3 PUNCA", muka ragu-ragu untuk soalan).
+- Teks hook besar Montserrat Black **hijau #304945 + stroke putih tebal + bayang lembut**, 2 baris, **di tengah frame**
+  (x = 540, baris ±y 50–62% tinggi). Mesti kekal dalam zon crop **1:1 (y 420–1500)** dan **4:5 (y 285–1635)** supaya
+  tak terpotong di grid Facebook/IG dan tepi feed TikTok. Jangan letak hook di bahagian bawah frame.
 
 ### Grafik
 - **Tajuk poin** (kotak hijau #304945, teks putih, ExtraBold, kiri atas): "#1 …", "#2 …", "#3 …", "PALING PENTING". Kekal sepanjang poin itu diterangkan.
@@ -167,6 +171,8 @@ yang paling sesuai.
   bawah B-roll (B-roll tutup visual sahaja).
 - Video B-roll: ambil bahagian paling stabil dan menarik, **1.5–3 saat** setiap potongan.
 - Gambar statik: **1.5–2.5 saat** setiap satu, dengan zoom/pan perlahan (Ken Burns). Jangan biar statik kaku.
+  Gambar potret → skrin penuh. Gambar kecil/landskap → **kad bersudut bulat di tengah skrin** (x = 540, ±44% tinggi)
+  atas latar gambar sama yang dikaburkan (`scripts/fk_imgclip.py`).
 - **Jangan ulang fail B-roll yang sama** dalam satu video.
 - Elak klip resolusi rendah (contoh `IMG_0535.MOV` 352×640) jika ada pilihan lain.
 - Fail `.HEIC` tukar ke JPG dulu sebelum guna (salinan kerja, bukan ganti fail asal).
@@ -188,7 +194,8 @@ supaya Farhan boleh tukar mana-mana B-roll sebelum render final.
 - Guna **`BRAND/Outro Potrait.mp4`** sebagai penutup (ganti end card statik).
   - Guna **4.0 saat pertama sahaja** (frame 0–120): selepas itu fail hanya skrin putih kosong.
   - Crossfade 0.25 saat dari frame terakhir isi ke outro.
-- Selepas wordmark statik (±1.85 s dalam outro), teks muncul perlahan di bawah wordmark (pusat x ≈ 569):
+  - Wordmark dalam fail asal berpusat x = 569; **alih seluruh outro 29 px ke kiri** supaya logo, tagline dan CTA betul-betul di tengah (x = 540).
+- Selepas wordmark statik (±1.85 s dalam outro), teks muncul perlahan di bawah wordmark (pusat x = 540):
   - Tagline: **"Design Dulu, Baru Bina"** (Montserrat SemiBold, hijau #304945)
   - CTA: kotak hijau #304945, teks putih: **"DM untuk keterangan lanjut"**
 - **CTA cukup "DM untuk keterangan lanjut"** untuk TOFU dan BOFU, kecuali Farhan minta lain.
@@ -208,5 +215,6 @@ supaya Farhan boleh tukar mana-mana B-roll sebelum render final.
 - [ ] Tiada nama client / nama firma dalam video atau caption
 - [ ] Senarai `[baris skrip] → [fail] → [sebab]` ada dalam preview
 - [ ] Caption 1 perkataan, kata kunci dalam kotak #304945
-- [ ] Outro brand + "Design Dulu, Baru Bina" + "DM untuk keterangan lanjut"
+- [ ] Outro brand + "Design Dulu, Baru Bina" + "DM untuk keterangan lanjut", semuanya di tengah
+- [ ] Hook thumbnail di tengah, dalam zon crop 1:1 & 4:5; kad B-roll di tengah skrin
 - [ ] Tiada muzik (kecuali diminta)

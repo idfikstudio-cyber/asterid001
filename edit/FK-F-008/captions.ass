@@ -67,7 +67,7 @@ Dialogue: 1,0:00:08.88,0:00:09.20,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100
 Dialogue: 2,0:00:08.88,0:00:09.20,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}MANGKUK
 Dialogue: 1,0:00:09.20,0:00:09.46,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}ATAS
 Dialogue: 2,0:00:09.20,0:00:09.46,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}ATAS
-Dialogue: 2,0:00:09.46,0:00:09.78,CapKey,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}SINGKI
+Dialogue: 2,0:00:09.46,0:00:09.78,CapKey,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}SINKI
 Dialogue: 1,0:00:09.78,0:00:09.90,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}YANG
 Dialogue: 2,0:00:09.78,0:00:09.90,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}YANG
 Dialogue: 2,0:00:09.90,0:00:10.30,CapKey,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}PEMAJU
@@ -75,10 +75,11 @@ Dialogue: 1,0:00:10.30,0:00:10.60,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100
 Dialogue: 2,0:00:10.30,0:00:10.60,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}BAGI
 Dialogue: 1,0:00:10.60,0:00:10.90,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}TU PUN
 Dialogue: 2,0:00:10.60,0:00:10.90,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}TU PUN
-Dialogue: 2,0:00:10.96,0:00:11.42,CapKey,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}SINGKI
+Dialogue: 2,0:00:10.96,0:00:11.42,CapKey,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}SINKI
 Dialogue: 1,0:00:11.42,0:00:11.98,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}TU PUN DAH
 Dialogue: 2,0:00:11.42,0:00:11.98,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}TU PUN DAH
-Dialogue: 2,0:00:11.98,0:00:12.32,CapKey,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}SEMPIT
+Dialogue: 1,0:00:11.98,0:00:12.32,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}SENGIT
+Dialogue: 2,0:00:11.98,0:00:12.32,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}SENGIT
 Dialogue: 1,0:00:12.32,0:00:12.62,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}SEBELAH
 Dialogue: 2,0:00:12.32,0:00:12.62,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}SEBELAH
 Dialogue: 1,0:00:12.72,0:00:13.04,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}PERIUK
@@ -95,7 +96,7 @@ Dialogue: 1,0:00:14.76,0:00:15.06,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100
 Dialogue: 2,0:00:14.76,0:00:15.06,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}CUCI
 Dialogue: 1,0:00:15.06,0:00:15.58,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}DEKAT
 Dialogue: 2,0:00:15.06,0:00:15.58,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}DEKAT
-Dialogue: 2,0:00:15.58,0:00:15.92,CapKey,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}SINGKI
+Dialogue: 2,0:00:15.58,0:00:15.92,CapKey,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}SINKI
 Dialogue: 2,0:00:15.92,0:00:16.62,CapKey,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}TU PUN SUSAH
 Dialogue: 1,0:00:16.64,0:00:17.10,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}SEBABNYA
 Dialogue: 2,0:00:16.64,0:00:17.10,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}SEBABNYA
@@ -150,8 +151,6 @@ Dialogue: 2,0:00:28.22,0:00:28.56,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\
 Dialogue: 2,0:00:28.56,0:00:28.96,CapKey,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}NAK SIMPAN
 Dialogue: 1,0:00:28.96,0:00:29.28,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}KAT MANA
 Dialogue: 2,0:00:28.96,0:00:29.28,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}KAT MANA
-Dialogue: 1,0:00:29.28,0:00:29.38,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}BENDA
-Dialogue: 2,0:00:29.28,0:00:29.38,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}BENDA
 Dialogue: 1,0:00:29.38,0:00:30.04,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}SEBABNYA
 Dialogue: 2,0:00:29.38,0:00:30.04,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}SEBABNYA
 Dialogue: 1,0:00:30.04,0:00:30.60,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}SEMUANYA
@@ -199,10 +198,7 @@ Dialogue: 2,0:00:42.12,0:00:42.46,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\
 Dialogue: 2,0:00:42.46,0:00:42.74,CapKey,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}PLAN
 Dialogue: 1,0:00:42.74,0:00:43.34,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}BETUL-BETUL
 Dialogue: 2,0:00:42.74,0:00:43.34,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}BETUL-BETUL
-Dialogue: 1,0:00:43.38,0:00:43.72,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}TAG SUAMI
-Dialogue: 2,0:00:43.38,0:00:43.72,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}TAG SUAMI
-Dialogue: 1,0:00:43.72,0:00:43.98,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}AKAK
-Dialogue: 2,0:00:43.72,0:00:43.98,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}AKAK
+Dialogue: 2,0:00:43.30,0:00:43.98,CapKey,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs106}TAG SUAMI AKAK
 Dialogue: 1,0:00:43.98,0:00:44.24,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}DEKAT
 Dialogue: 2,0:00:43.98,0:00:44.24,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}DEKAT
 Dialogue: 1,0:00:44.24,0:00:44.52,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}RUANGAN
@@ -222,12 +218,12 @@ Dialogue: 2,0:00:47.04,0:00:47.42,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\
 Dialogue: 1,0:00:47.42,0:00:47.80,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}LANJUT
 Dialogue: 2,0:00:47.42,0:00:47.80,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}LANJUT
 Dialogue: 3,0:00:01.15,0:00:04.30,Label,,0,0,0,,{\fad(200,250)}Farhan · Founder Fi-k Studio
-Dialogue: 3,0:00:07.56,0:00:17.64,Point,,0,0,0,,{\fad(180,200)\move(40,230,70,230,0,220)}#1  SINGKI KECIK
+Dialogue: 3,0:00:07.56,0:00:17.64,Point,,0,0,0,,{\fad(180,200)\move(40,230,70,230,0,220)}#1  SINKI KECIK
 Dialogue: 3,0:00:17.68,0:00:23.30,Point,,0,0,0,,{\fad(180,200)\move(40,230,70,230,0,220)}#2  LAUK NAK HIDANG KAT MANA?
 Dialogue: 3,0:00:23.34,0:00:33.04,Point,,0,0,0,,{\fad(180,200)\move(40,230,70,230,0,220)}#3  TAK ADA TEMPAT NAK SIMPAN
 Dialogue: 3,0:00:41.08,0:00:43.34,Point,,0,0,0,,{\fad(180,200)\move(40,230,70,230,0,220)}SYARAT: PLAN BETUL-BETUL
 Dialogue: 4,0:00:17.00,0:00:18.10,Num,,0,0,0,,{\an5\pos(480,1020)\fs150\fad(80,150)\fscx70\fscy70\t(0,120,\fscx100\fscy100)}KECIK
 Dialogue: 4,0:00:36.48,0:00:39.10,Num,,0,0,0,,{\an5\pos(480,1020)\fs150\fad(80,150)\fscx70\fscy70\t(0,120,\fscx100\fscy100)}JIMAT MASA\N& TENAGA
 Dialogue: 4,0:00:39.94,0:00:41.05,Num,,0,0,0,,{\an5\pos(480,1020)\fs100\fad(80,150)\fscx70\fscy70\t(0,120,\fscx100\fscy100)}JIMAT\NBERTAHUN-TAHUN
-Dialogue: 5,0:00:00.00,0:00:01.00,Hook,,0,0,0,,{\an2\pos(470,1370)\fs117}DAPUR PEMAJU
-Dialogue: 5,0:00:00.00,0:00:01.00,Hook,,0,0,0,,{\an2\pos(470,1540)\fs200}PUN CUKUP?
+Dialogue: 5,0:00:00.00,0:00:01.00,Hook,,0,0,0,,{\an2\pos(540,1010)\fs129}DAPUR PEMAJU
+Dialogue: 5,0:00:00.00,0:00:01.00,Hook,,0,0,0,,{\an2\pos(540,1195)\fs220}PUN CUKUP?

@@ -30,6 +30,7 @@ for w in words:
         w["w"] = w["w"].replace(core, FIX_AT[round(w["s"], 2)])
     elif core in FIX:
         w["w"] = w["w"].replace(core, FIX[core])
+words = [w for w in words if w["w"].strip()]   # fix_at "" = buang perkataan (cth. tersalah dengar)
 # gabung "-kadang", "-ubah", "-kerja", "-apa" dengan perkataan sebelum
 merged = []
 for w in words:
@@ -57,6 +58,10 @@ while i < len(words):
 for k, c in enumerate(chunks):
     nxt = chunks[k + 1]["s"] if k + 1 < len(chunks) else c["e"] + 0.3
     c["e"] = min(max(c["e"], c["s"] + 0.18), nxt) if nxt - c["e"] < 0.35 else c["e"] + 0.1
+# force_chunks: ganti caption dalam julat [s,e) dengan satu caption tetap (cth. frasa CTA supaya jelas)
+for fc in C.get("force_chunks", []):
+    chunks = [c for c in chunks if not (fc["s"] - 0.05 <= c["s"] < fc["e"])] + [dict(text=fc["text"], s=fc["s"], e=fc["e"])]
+chunks.sort(key=lambda c: c["s"])
 
 # ---- overlay teks, B-roll (masa sumber, dari config) ----
 LABEL = C.get("label", dict(s=0.15, e=3.3, text="Farhan · Founder Fi-k Studio"))
@@ -122,8 +127,8 @@ for n in NUMS:
     ev.append(f"Dialogue: 4,{ts(n['s']+OFF)},{ts(n['e']+OFF)},Num,,0,0,0,,{{\\an5\\pos(480,1020)\\fs{fs}\\fad(80,150)\\fscx70\\fscy70\\t(0,120,\\fscx100\\fscy100)}}{n['text']}")
 # Hook pada thumbnail (0–1s): baris dari config [{text, fs, y}] (fs None = auto muat lebar)
 for hl in C["hook_lines"]:
-    fs = hl.get("fs") or fit(hl["text"], 170, 820)
-    ev.append(f"Dialogue: 5,{ts(0)},{ts(1.0)},Hook,,0,0,0,,{{\\an2\\pos(470,{hl['y']})\\fs{fs}}}{hl['text']}")
+    fs = hl.get("fs") or fit(hl["text"], 170, 900)
+    ev.append(f"Dialogue: 5,{ts(0)},{ts(1.0)},Hook,,0,0,0,,{{\\an2\\pos(540,{hl['y']})\\fs{fs}}}{hl['text']}")
 open(f"{OUT}/captions.ass", "w").write(hdr + "\n".join(ev) + "\n")
 
 plan = dict(offset=OFF, thumb_t=C["thumb_t"], src_dur=SRC_DUR, end_card=END, total=OFF + SRC_DUR + END,

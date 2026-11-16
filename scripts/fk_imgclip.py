@@ -2,7 +2,7 @@
 
 python3 fk_imgclip.py <gambar> <out.mp4> <saat> [in|out]
 - Gambar potret (lebar/tinggi < 0.8): skrin penuh, crop 9:16, zoom perlahan 100% -> 108% (atau sebaliknya).
-- Gambar landskap / kecil: kad di tengah (sudut bulat, bayang lembut) atas latar gambar sama yang dikaburkan
+- Gambar landskap / kecil: kad di tengah skrin (sudut bulat, bayang lembut) atas latar gambar sama yang dikaburkan
   dan digelapkan sedikit, kad zoom perlahan 100% -> 106%. Tiada herot, tiada crop berat pada gambar kecil.
 """
 import sys, subprocess, numpy as np, cv2
@@ -41,7 +41,7 @@ else:
     card = im.resize((cw * 2, chh * 2), Image.LANCZOS)   # 2x untuk zoom tanpa pecah
     mask = Image.new("L", card.size, 0); ImageDraw.Draw(mask).rounded_rectangle((0, 0, *card.size), 56, fill=255)
     sh = Image.new("L", (W, H), 0)
-    cx, cy = (W * 0.85) / 2 + 20, int(H * 0.42)          # tengah zon selamat, atas caption
+    cx, cy = W / 2, int(H * 0.44)                        # tengah skrin (permintaan Farhan), atas caption
     ImageDraw.Draw(sh).rounded_rectangle((cx - cw / 2, cy - chh / 2 + 18, cx + cw / 2, cy + chh / 2 + 18), 28, fill=150)
     sh = sh.filter(ImageFilter.GaussianBlur(24))
     base = Image.composite(Image.new("RGB", (W, H), (0, 0, 0)), bg, sh)

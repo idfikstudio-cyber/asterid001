@@ -58,11 +58,12 @@ def grade(f):
 # ---- outro (BRAND/Outro Potrait.mp4) + tagline & CTA (v3) ----
 OUTRO_N = int(round(END * FPS))      # 121 frame: animasi logo sahaja, buang ekor putih kosong
 TEXT_IN = 55                          # wordmark statik dari frame ~55 (1.83 s)
+OUTRO_DX = W // 2 - 569                # wordmark asal berpusat x=569 (271-867); alih ke tengah 540
 
 def outro_text():
     im = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     d = ImageDraw.Draw(im)
-    cx = 569                          # pusat wordmark dalam outro (x 271-867)
+    cx = W // 2                       # outro dialih supaya wordmark di tengah (lihat OUTRO_DX)
     f1 = ImageFont.truetype("/root/.fonts/Montserrat-SemiBold.ttf", 52)
     tag = P.get("tagline", "Design Dulu, Baru Bina")
     y = 1150
@@ -118,6 +119,8 @@ if not REUSE:
       ok, of = oc.read()
       if not ok:
           break
+      bgc = tuple(int(v) for v in of[40, 40])
+      of = cv2.warpAffine(of, np.float32([[1, 0, OUTRO_DX], [0, 1, 0]]), (W, H), borderMode=cv2.BORDER_CONSTANT, borderValue=bgc)
       ta = min(1.0, max(0.0, (k - TEXT_IN) / 12.0))
       if ta > 0:
           of = (of.astype(np.float32) * (1 - OT_A * ta) + OT_RGB * OT_A * ta).astype(np.uint8)

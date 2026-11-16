@@ -2,16 +2,16 @@
  "id": "FK-F-008",
  "topik": "Dapur Pemaju Pun Cukup?",
  "tag": "TOFU",
- "ver": "v1",
- "status": "Preview v1 · tunggu komen",
+ "ver": "v2",
+ "status": "Preview v2 · tunggu komen",
  "tarikh": "16 Nov 2026",
- "edit_intro": "Ikut DNA Fi-k Studio v3.1. Footage tiada take ulangan/senyap >0.3 s, jadi isi 47.0 s digunakan penuh. Thumbnail 1 s + isi 47.0 s + outro brand 4.0 s = 52.1 s. Bokeh halus berperingkat, motion zoom in/out pada muka, caption satu perkataan, tajuk poin #1–#3, B-roll ±setiap 6–8 saat yang sepadan dengan ayat (tiada B-roll pada hook, teks besar, syarat dan CTA). B-roll tambahan Singki Pemaju dan Meja banquet dipapar sebagai kad (gambar kecil, landskap) atas latar kabur dengan Ken Burns.",
+ "edit_intro": "Ikut DNA Fi-k Studio v3.1. Footage tiada take ulangan/senyap >0.3 s, jadi isi 47.0 s digunakan penuh. Thumbnail 1 s + isi 47.0 s + outro brand 4.0 s = 52.1 s. Bokeh halus berperingkat, motion zoom in/out pada muka, caption satu perkataan, tajuk poin #1–#3, B-roll ±setiap 6–8 saat yang sepadan dengan ayat (tiada B-roll pada hook, teks besar, syarat dan CTA). B-roll tambahan Singki Pemaju dan Meja banquet dipapar sebagai kad di tengah skrin (gambar kecil, landskap) atas latar kabur dengan Ken Burns. v2: kad B-roll, outro dan hook thumbnail kini di tengah; caption disahkan Farhan.",
  "seg": [
   [
    0,
    1.0,
    "Thumbnail",
-   "Hook DAPUR PEMAJU / PUN CUKUP? atas frame Farhan (muka ragu-ragu, sumber 0:05.8)"
+   "Hook DAPUR PEMAJU / PUN CUKUP? di tengah frame (selamat untuk crop 1:1 & 4:5 FB/IG), sumber 0:05.8"
   ],
   [
    1.0,
@@ -22,8 +22,8 @@
   [
    7.5,
    17.7,
-   "#1 Singki kecik",
-   "Tajuk poin #1 + kad Singki Pemaju pada “singki yang pemaju bagi tu” + teks besar KECIK"
+   "#1 Sinki kecik",
+   "Tajuk poin #1 + kad Singki Pemaju (tengah skrin) pada “sinki yang pemaju bagi tu” + teks besar KECIK"
   ],
   [
    17.7,
@@ -64,6 +64,26 @@
  ],
  "done": [
   [
+   "v2: kad B-roll di tengah",
+   "Kad Singki Pemaju, Meja banquet dan dapur basah kini di tengah skrin (sebelum ini di tengah zon selamat TikTok, jadi nampak ke kiri).",
+   9.46
+  ],
+  [
+   "v2: outro di tengah",
+   "Wordmark dalam fail Outro Potrait asal berpusat 29 px ke kanan; seluruh outro dialih supaya logo, tagline dan CTA betul-betul di tengah.",
+   48.0
+  ],
+  [
+   "v2: hook thumbnail di tengah",
+   "DAPUR PEMAJU / PUN CUKUP? dialih ke tengah frame (y ±50–62%), dalam zon crop 1:1 dan 4:5 Facebook/IG dan jauh dari tepi feed TikTok.",
+   0.3
+  ],
+  [
+   "v2: caption disahkan",
+   "SENGIT dikekalkan (0:12); “TAG SUAMI AKAK” dipapar sebagai satu caption penuh 0.7 s (0:43.3); “Benda” dibuang (0:29); ejaan baku SINKI.",
+   43.3
+  ],
+  [
    "Ikut DNA v3.1",
    "Bokeh halus berperingkat (latar masih nampak), motion zoom in/out pada muka (100% ↔ 114%), caption 1 perkataan Montserrat Black + stroke #304945, kata kunci dalam kotak hijau, tiada muzik, outro brand.",
    2.0
@@ -80,13 +100,8 @@
   ],
   [
    "Tajuk poin & teks besar",
-   "#1 SINGKI KECIK, #2 LAUK NAK HIDANG KAT MANA?, #3 TAK ADA TEMPAT NAK SIMPAN, SYARAT: PLAN BETUL-BETUL; teks besar KECIK, JIMAT MASA & TENAGA, JIMAT BERTAHUN-TAHUN — semua dari ayat yang disebut.",
+   "#1 SINKI KECIK, #2 LAUK NAK HIDANG KAT MANA?, #3 TAK ADA TEMPAT NAK SIMPAN, SYARAT: PLAN BETUL-BETUL; teks besar KECIK, JIMAT MASA & TENAGA, JIMAT BERTAHUN-TAHUN — semua dari ayat yang disebut.",
    7.56
-  ],
-  [
-   "Thumbnail 1 saat",
-   "DAPUR PEMAJU / PUN CUKUP? (dari tajuk skrip) atas frame Farhan dengan muka ragu-ragu.",
-   0.3
   ],
   [
    "Audio",
@@ -95,38 +110,24 @@
  ],
  "todo": [
   [
-   "“SEMPIT” (0:12.0)",
-   "Transkrip dengar “singki tu pun dah sengit sebelah”. Caption tulis SEMPIT. Sila sahkan.",
-   11.98
-  ],
-  [
-   "“TAG SUAMI AKAK” (0:43.4)",
-   "Transkrip dengar “Dekat suami akak dekat ruangan komen”. Caption tulis TAG. Sila sahkan.",
-   43.38
-  ],
-  [
-   "“Benda sebabnya semuanya open” (0:29.3)",
-   "Ikut transkrip; keyakinan rendah pada “Benda”. Sila semak.",
-   29.28
-  ],
-  [
    "Gambar Singki & Meja resolusi rendah",
    "697×440 dan 754×446. Dipapar sebagai kad supaya tak pecah; kalau ada gambar lebih besar, boleh ganti.",
    9.46
   ],
   [
-   "Ejaan “singki”",
-   "Ikut nama fail Farhan (ejaan baku: “sinki”). Beritahu jika mahu tukar."
-  ],
-  [
-   "Durasi 52.1 s",
-   "Melebihi sasaran TOFU 20–45 s; footage tiada ulangan jadi isi tidak dipotong."
-  ],
-  [
    "Preview MP4 & log belum di Drive",
    "Alat Drive hadkan ±3 MB setiap muat naik dan tidak boleh tulis ganti fail sedia ada. THUMB & RINGKASAN dimuat naik ke _PREVIEW; video preview ada di halaman ini; baris log perlu ditambah manual."
+  ],
+  [
+   "Durasi 52.1 s (dikekalkan)",
+   "Melebihi sasaran TOFU 20–45 s; dikekalkan ikut Farhan."
   ]
  ],
- "tt": "Suami kata dapur pemaju dah cukup? Singki kecik, lauk tak ada tempat nak hidang, pinggan mangkuk tak ada tempat nak simpan. Dapur yang dirancang betul-betul jimat masa & tenaga, jimat bertahun-tahun. Tag suami akak! DM untuk keterangan lanjut.",
- "hs": "#dapurrumah #renovatedapur #interiordesign #fikstudio #kabinetdapur"
+ "tt": "Suami kata dapur pemaju dah cukup? Sinki kecik, lauk tak ada tempat nak hidang, pinggan mangkuk tak ada tempat nak simpan. Dapur yang dirancang betul-betul jimat masa & tenaga, jimat bertahun-tahun. Tag suami akak! DM untuk keterangan lanjut.",
+ "hs": "#dapurrumah #renovatedapur #interiordesign #fikstudio #kabinetdapur",
+ "changes": [
+  "Kad B-roll, outro dan hook thumbnail di tengah",
+  "SENGIT dikekalkan; TAG SUAMI AKAK satu caption penuh; 'Benda' dibuang; ejaan SINKI",
+  "Durasi dikekalkan"
+ ]
 }
