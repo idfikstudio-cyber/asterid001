@@ -1,4 +1,4 @@
-# DNA Editing — Fi-k Studio (v3.2)
+# DNA Editing — Fi-k Studio (v3.3)
 
 > Ikut juga peraturan umum dalam `../CLAUDE.md`. Fail ini hanya perkara khusus Fi-k Studio.
 > Folder Drive: **Konten › Fi-k Studio**
@@ -7,6 +7,7 @@
 > Video contoh: https://claude.ai/artifact/5zAKQgNo7fkCJ1htsBU21t · skrip: `scripts/bokeh.py`, `fk_plan.py`, `fk_render.py`, `fk_page.py`.
 > **v3.1:** digabung dengan peraturan B-roll terperinci (folder, padanan ayat, aliran cerita, Render 3D AIHouse).
 > **v3.2 (FK-F-008):** hook thumbnail, kad B-roll dan outro di tengah; ejaan baku "sinki"; frasa CTA satu caption.
+> **v3.3 (FK-F-009):** butang save + klik; hook baris rapat; outro: alih wordmark sahaja; tag 3D → realiti.
 > Jika fail ini bercanggah dengan `../CLAUDE.md`, **ikut fail ini.**
 
 ---
@@ -96,12 +97,18 @@ Baca `BRAND/warna.txt`. Ringkasan:
 ### Thumbnail / hook (1 saat)
 - Pilih frame yang menyokong hook (contoh: Farhan tunjuk 3 jari untuk "3 PUNCA", muka ragu-ragu untuk soalan).
 - Teks hook besar Montserrat Black **hijau #304945 + stroke putih tebal + bayang lembut**, 2 baris, **di tengah frame**
-  (x = 540, baris ±y 50–62% tinggi). Mesti kekal dalam zon crop **1:1 (y 420–1500)** dan **4:5 (y 285–1635)** supaya
-  tak terpotong di grid Facebook/IG dan tepi feed TikTok. Jangan letak hook di bahagian bawah frame.
+  (x = 540). **Baris rapat** (jarak baris ±0.8× saiz font) dan blok teks di tengah (±y 900–1350), jauh di dalam zon
+  crop **1:1 (y 420–1500)** dan **4:5 (y 285–1635)** supaya tak terpotong di grid Facebook/IG dan tepi feed TikTok.
+  Jangan letak hook di bahagian bawah frame.
 
 ### Grafik
 - **Tajuk poin** (kotak hijau #304945, teks putih, ExtraBold, kiri atas): "#1 …", "#2 …", "#3 …", "PALING PENTING". Kekal sepanjang poin itu diterangkan.
 - **Angka besar** 1–2 saat di tengah dada (hijau #304945 + stroke putih), tepat seperti disebut (contoh "3 PERKARA", "SEMINGGU DUA", "3 MINGGU").
+
+### Ajakan simpan / tindakan
+- Bila spokesperson sebut **"save dulu video ni"** (atau seumpamanya): papar **ikon butang save (bookmark)** di tengah
+  (x = 540, y ±1060) yang ditekan — muncul kosong, ditekan dengan riak + **bunyi klik**, bertukar hijau #304945 penuh
+  (`save_icon` dalam config).
 
 ### SFX & muzik
 - SFX sedikit dan lembut sahaja: "pop" lembut pada angka, "whoosh" lembut pada B-roll (dijana sendiri).
@@ -183,6 +190,8 @@ yang paling sesuai.
 - Elak klip resolusi rendah (contoh `IMG_0535.MOV` 352×640) jika ada pilihan lain.
 - Fail `.HEIC` tukar ke JPG dulu sebelum guna (salinan kerja, bukan ganti fail asal).
 - **Jangan paparkan nama client atau nama firma** dalam video atau caption.
+- Design 3D Fi-k (AIHouse / render) → tag **"Design 3D Fi-k Studio"**; jika ada gambar realiti projek yang sama, letak
+  **selepas** 3D dengan tag **"Realiti: projek siap Fi-k Studio"** (3D → realiti).
 - Gambar yang **bukan projek Fi-k** (stok/AI/inspirasi) yang Farhan minta guna: letak tag kecil **"Contoh inspirasi warna"**
   (atau seumpamanya) supaya tak menyamar projek kami, dan tanda PERLU SEMAK.
 
@@ -202,7 +211,9 @@ supaya Farhan boleh tukar mana-mana B-roll sebelum render final.
 - Guna **`BRAND/Outro Potrait.mp4`** sebagai penutup (ganti end card statik).
   - Guna **4.0 saat pertama sahaja** (frame 0–120): selepas itu fail hanya skrin putih kosong.
   - Crossfade 0.25 saat dari frame terakhir isi ke outro.
-  - Wordmark dalam fail asal berpusat x = 569; **alih seluruh outro 29 px ke kiri** supaya logo, tagline dan CTA betul-betul di tengah (x = 540).
+  - Dalam fail asal, **simbol FK (frame 0–37) sudah di tengah** (x = 538) tetapi **wordmark (frame 45+) berpusat x = 569**.
+    Alih **wordmark sahaja** 29 px ke kiri, beransur semasa transisi (frame 37–47), supaya simbol FK, wordmark, tagline
+    dan CTA semuanya di tengah (x = 540). Jangan alih seluruh outro (simbol FK akan lari ke kiri).
 - Selepas wordmark statik (±1.85 s dalam outro), teks muncul perlahan di bawah wordmark (pusat x = 540):
   - Tagline: **"Design Dulu, Baru Bina"** (Montserrat SemiBold, hijau #304945)
   - CTA: kotak hijau #304945, teks putih: **"DM untuk keterangan lanjut"**
@@ -224,5 +235,5 @@ supaya Farhan boleh tukar mana-mana B-roll sebelum render final.
 - [ ] Senarai `[baris skrip] → [fail] → [sebab]` ada dalam preview
 - [ ] Caption 1 perkataan, kata kunci dalam kotak #304945
 - [ ] Outro brand + "Design Dulu, Baru Bina" + "DM untuk keterangan lanjut", semuanya di tengah
-- [ ] Hook thumbnail di tengah, dalam zon crop 1:1 & 4:5; kad B-roll di tengah skrin
+- [ ] Hook thumbnail di tengah, baris rapat, dalam zon crop 1:1 & 4:5; kad B-roll di tengah skrin
 - [ ] Tiada muzik (kecuali diminta)

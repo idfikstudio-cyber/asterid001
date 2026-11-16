@@ -221,7 +221,9 @@ Dialogue: 3,0:00:01.15,0:00:04.20,Label,,0,0,0,,{\fad(200,250)}Farhan · Founder
 Dialogue: 3,0:00:10.30,0:00:12.80,Label,,0,0,0,,{\an7\pos(70,330)\fad(150,150)}Design 3D Fi-k Studio
 Dialogue: 3,0:00:17.92,0:00:20.40,Label,,0,0,0,,{\an7\pos(70,330)\fad(150,150)}Contoh inspirasi warna
 Dialogue: 3,0:00:24.64,0:00:27.10,Label,,0,0,0,,{\an7\pos(70,330)\fad(150,150)}Contoh inspirasi warna
-Dialogue: 3,0:00:31.90,0:00:34.80,Label,,0,0,0,,{\an7\pos(70,330)\fad(150,150)}Design 3D Fi-k Studio
+Dialogue: 3,0:00:28.40,0:00:30.16,Label,,0,0,0,,{\an7\pos(70,330)\fad(150,150)}Design 3D Fi-k Studio
+Dialogue: 3,0:00:31.80,0:00:33.45,Label,,0,0,0,,{\an7\pos(70,330)\fad(150,150)}Realiti: projek siap Fi-k Studio
+Dialogue: 3,0:00:33.45,0:00:35.16,Label,,0,0,0,,{\an7\pos(70,330)\fad(150,150)}Design 3D Fi-k Studio
 Dialogue: 3,0:00:12.86,0:00:22.52,Point,,0,0,0,,{\fad(180,200)\move(40,230,70,230,0,220)}#1  KELABU CAIR (GREIGE)
 Dialogue: 3,0:00:22.54,0:00:27.44,Point,,0,0,0,,{\fad(180,200)\move(40,230,70,230,0,220)}#2  CORAK KAYU
 Dialogue: 3,0:00:27.58,0:00:35.16,Point,,0,0,0,,{\fad(180,200)\move(40,230,70,230,0,220)}#3  GABUNGAN 2 WARNA
@@ -229,6 +231,6 @@ Dialogue: 3,0:00:35.18,0:00:40.06,Point,,0,0,0,,{\fad(180,200)\move(40,230,70,23
 Dialogue: 4,0:00:05.18,0:00:06.80,Num,,0,0,0,,{\an5\pos(480,1020)\fs102\fad(80,150)\fscx70\fscy70\t(0,120,\fscx100\fscy100)}3 PILIHAN WARNA
 Dialogue: 4,0:00:30.16,0:00:31.70,Num,,0,0,0,,{\an5\pos(480,1020)\fs124\fad(80,150)\fscx70\fscy70\t(0,120,\fscx100\fscy100)}BAWAH GELAP\NATAS CERAH
 Dialogue: 4,0:00:43.20,0:00:44.14,Num,,0,0,0,,{\an5\pos(480,1020)\fs114\fad(80,150)\fscx70\fscy70\t(0,120,\fscx100\fscy100)}SETIAP 5 TAHUN
-Dialogue: 5,0:00:00.00,0:00:01.00,Hook,,0,0,0,,{\an2\pos(540,1140)\fs210}3 WARNA
-Dialogue: 5,0:00:00.00,0:00:01.00,Hook,,0,0,0,,{\an2\pos(540,1330)\fs210}KABINET
-Dialogue: 5,0:00:00.00,0:00:01.00,Hook,,0,0,0,,{\an2\pos(540,1480)\fs102}SEPANJANG ZAMAN
+Dialogue: 5,0:00:00.00,0:00:01.00,Hook,,0,0,0,,{\an2\pos(540,1060)\fs210}3 WARNA
+Dialogue: 5,0:00:00.00,0:00:01.00,Hook,,0,0,0,,{\an2\pos(540,1225)\fs210}KABINET
+Dialogue: 5,0:00:00.00,0:00:01.00,Hook,,0,0,0,,{\an2\pos(540,1345)\fs102}SEPANJANG ZAMAN

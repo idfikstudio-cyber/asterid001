@@ -73,6 +73,9 @@ ZOOM = []
 for k, (s, e, _) in enumerate(sents):
     ZOOM.append(dict(s=s, e=e, z0=1.0 if k % 2 == 0 else 1.14, z1=1.14 if k % 2 == 0 else 1.0))
 SFX = [dict(t=n["s"], f="softpop") for n in NUMS] + [dict(t=b["s"] - 0.12, f="softwhoosh") for b in BROLL]
+SAVE = C.get("save_icon")         # {s, e}: ikon butang save ditekan + bunyi klik (cth. "save dulu video ni")
+if SAVE:
+    SFX.append(dict(t=SAVE["s"] + 0.45, f="click"))
 
 # ---- ASS ----
 def ts(x):
@@ -137,7 +140,7 @@ open(f"{OUT}/captions.ass", "w").write(hdr + "\n".join(ev) + "\n")
 plan = dict(offset=OFF, thumb_t=C["thumb_t"], src_dur=SRC_DUR, end_card=END, total=OFF + SRC_DUR + END,
             hook=" ".join(h["text"] for h in C["hook_lines"]), label=LABEL, points=POINTS, nums=NUMS, broll=BROLL,
             zoom=ZOOM, sfx=SFX, chunks=chunks, perlu_semak=PERLU_SEMAK,
-            cta=C.get("cta", "DM untuk keterangan lanjut"), tagline=C.get("tagline", "Design Dulu, Baru Bina"))
+            save_icon=SAVE, cta=C.get("cta", "DM untuk keterangan lanjut"), tagline=C.get("tagline", "Design Dulu, Baru Bina"))
 json.dump(plan, open(f"{OUT}/plan.json", "w"), ensure_ascii=False, indent=1)
 print(len(chunks), "chunks;", "total", plan["total"])
 for p in PERLU_SEMAK: print("SEMAK", p)

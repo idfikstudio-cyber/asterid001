@@ -58,12 +58,16 @@ def grade(f):
 # ---- outro (BRAND/Outro Potrait.mp4) + tagline & CTA (v3) ----
 OUTRO_N = int(round(END * FPS))      # 121 frame: animasi logo sahaja, buang ekor putih kosong
 TEXT_IN = 55                          # wordmark statik dari frame ~55 (1.83 s)
-OUTRO_DX = W // 2 - 569                # wordmark asal berpusat x=569 (271-867); alih ke tengah 540
+# Dalam fail asal: simbol FK (frame 0-37) berpusat x=538 (sudah tengah); wordmark (frame 45+) berpusat x=569.
+# Alih wordmark sahaja ke x=540, dengan peralihan lembut semasa transisi (frame 37-47).
+def outro_dx(k):
+    a = min(1.0, max(0.0, (k - 37) / 10.0)); a = a * a * (3 - 2 * a)
+    return (W // 2 - 569) * a
 
 def outro_text():
     im = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     d = ImageDraw.Draw(im)
-    cx = W // 2                       # outro dialih supaya wordmark di tengah (lihat OUTRO_DX)
+    cx = W // 2                       # wordmark dialih ke tengah (lihat outro_dx)
     f1 = ImageFont.truetype("/root/.fonts/Montserrat-SemiBold.ttf", 52)
     tag = P.get("tagline", "Design Dulu, Baru Bina")
     y = 1150
@@ -80,6 +84,36 @@ def outro_text():
 import os
 REUSE = os.environ.get("REUSE") == "1" and os.path.exists(OUT + ".noass.mp4")
 OT_RGB, OT_A = outro_text()
+
+# ---- ikon butang SAVE (bookmark) ditekan: pop masuk, tekan pada +0.45 s (isi hijau + riak), pudar keluar ----
+def save_icon(t):
+    """t = saat sejak ikon mula. Pulang (rgb float32, alpha) saiz penuh, atau None."""
+    S = P.get("save_icon")
+    dur = S["e"] - S["s"]
+    if t < 0 or t > dur:
+        return None
+    tap = 0.45
+    sc = 0.6 + 0.4 * min(1, t / 0.15)
+    if tap <= t < tap + 0.12: sc *= 0.88                       # butang tertekan
+    fade = min(1.0, (dur - t) / 0.2)
+    filled = t >= tap
+    im = Image.new("RGBA", (W, H), (0, 0, 0, 0)); d = ImageDraw.Draw(im)
+    cx, cy, R = W // 2, 1060, int(110 * sc)
+    if filled and t < tap + 0.5:                              # riak bulat
+        rr = int(R + (t - tap) / 0.5 * 120); ra = int(200 * (1 - (t - tap) / 0.5))
+        d.ellipse((cx - rr, cy - rr, cx + rr, cy + rr), outline=(255, 255, 255, ra), width=8)
+    d.ellipse((cx - R - 6, cy - R - 6 + 10, cx + R + 6, cy + R + 6 + 10), fill=(0, 0, 0, 70))   # bayang
+    d.ellipse((cx - R, cy - R, cx + R, cy + R), fill=(255, 255, 255, 255))
+    bw, bh = int(R * 0.9), int(R * 1.15)
+    x0, y0 = cx - bw // 2, cy - bh // 2
+    poly = [(x0, y0), (x0 + bw, y0), (x0 + bw, y0 + bh), (cx, y0 + int(bh * 0.72)), (x0, y0 + bh)]
+    if filled:
+        d.polygon(poly, fill=GREEN + (255,))
+    else:
+        d.line(poly + [poly[0]], fill=GREEN + (255,), width=max(6, int(R * 0.12)), joint="curve")
+    a = np.array(im).astype(np.float32) / 255
+    a[..., 3] *= fade
+    return cv2.cvtColor((a[..., :3] * 255).astype(np.uint8), cv2.COLOR_RGB2BGR).astype(np.float32), a[..., 3:4]
 BOKEH = os.environ.get("BOKEH", "bokeh_full.mp4")
 cap = cv2.VideoCapture(f"{WD}/{BOKEH}")
 src_frames = []  # baca berurutan
@@ -111,6 +145,10 @@ if not REUSE:
               if ok2:
                   a = min(1.0, (t - b["s"]) / 0.15, (b["e"] - t) / 0.15)
                   out = cv2.addWeighted(bf, a, out, 1 - a, 0) if a < 1 else bf
+      if P.get("save_icon"):
+          si = save_icon(t - P["save_icon"]["s"])
+          if si is not None:
+              out = (out.astype(np.float32) * (1 - si[1]) + si[0] * si[1]).astype(np.uint8)
       last = out
       enc.stdin.write(out.tobytes())
   # outro: crossfade 0.25 s dari frame terakhir, teks muncul perlahan selepas logo statik
@@ -120,7 +158,7 @@ if not REUSE:
       if not ok:
           break
       bgc = tuple(int(v) for v in of[40, 40])
-      of = cv2.warpAffine(of, np.float32([[1, 0, OUTRO_DX], [0, 1, 0]]), (W, H), borderMode=cv2.BORDER_CONSTANT, borderValue=bgc)
+      of = cv2.warpAffine(of, np.float32([[1, 0, outro_dx(k)], [0, 1, 0]]), (W, H), borderMode=cv2.BORDER_CONSTANT, borderValue=bgc)
       ta = min(1.0, max(0.0, (k - TEXT_IN) / 12.0))
       if ta > 0:
           of = (of.astype(np.float32) * (1 - OT_A * ta) + OT_RGB * OT_A * ta).astype(np.uint8)
@@ -136,7 +174,7 @@ mix = ["[v]"]
 for k, s in enumerate(P["sfx"]):
     inputs += ["-i", f"{WD}/sfx/{s['f']}.wav"]
     d = int((s["t"] + OFF) * 1000)
-    vol = 0.22 if s["f"] == "softpop" else 0.18
+    vol = {"softpop": 0.22, "softwhoosh": 0.18, "click": 0.35}.get(s["f"], 0.2)
     flt.append(f"[{k+1}:a]aformat=channel_layouts=stereo,volume={vol},adelay={d}|{d}[s{k}]"); mix.append(f"[s{k}]")
 flt.append("".join(mix) + f"amix=inputs={len(mix)}:normalize=0:duration=first,loudnorm=I=-14:TP=-1.5:LRA=9,alimiter=limit=0.85:level=false,aresample=48000[a]")
 apath = OUT + ".a.wav"

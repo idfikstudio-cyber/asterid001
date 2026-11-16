@@ -1,4 +1,4 @@
-RINGKASAN EDIT — FK-F-009_Farhan_Warna Kabinet Sepanjang Zaman (preview v1)
+RINGKASAN EDIT — FK-F-009_Farhan_Warna Kabinet Sepanjang Zaman (preview v2)
 Brand: Fi-k Studio | Spokesperson: Farhan (Founder) | Tag skrip: TOFU
 Durasi: 54.0 s (1 s thumbnail + 49.0 s isi + 4.0 s outro)
 DNA: fik-studio/CLAUDE.md v3.1
@@ -32,19 +32,22 @@ DNA: fik-studio/CLAUDE.md v3.1
    0:22.54–0:27.44  Tajuk poin: Kotak hijau atas: “#2 CORAK KAYU”
    0:24.64–0:27.10  B-roll: B-ROLL/Warm Kitchen.jpg (gambar, Ken Burns, 2.5 s) pada 'Nampak warm dan sesuai untuk rumah keluarga' (contoh kabinet corak kayu)
    0:27.58–0:35.16  Tajuk poin: Kotak hijau atas: “#3 GABUNGAN 2 WARNA”
-   0:28.40–0:30.16  B-roll: B-ROLL/Gabungan 2 Warna.png (gambar, Ken Burns, 1.8 s) pada 'gabungan 2 warna dalam satu'
+   0:28.40–0:30.16  B-roll: B-ROLL/Gabungan 2 Warna.png (gambar, Ken Burns, 1.8 s) pada 'gabungan 2 warna dalam satu' (design 3D Fi-k)
    0:30.16–0:31.70  Teks besar: “BAWAH GELAP ATAS CERAH” (hijau #304945, stroke putih)
-   0:31.90–0:34.80  B-roll: 3D AIHouse 720 (S156348610) › wet kitchen (video, 2.9 s) pada 'nampakkan dapur tu lebih luas' (3D Fi-k: atas putih, bawah kayu)
+   0:31.80–0:33.55  B-roll: B-ROLL/Gabungan 2 warna realiti.png (gambar, Ken Burns, 1.7 s) pada 'Pemilihan 2 warna ni akan nampakkan dapur' (realiti design 3D tadi, projek siap Fi-k)
+   0:33.40–0:35.16  B-roll: 3D AIHouse 720 (S156348610) › wet kitchen (video, 1.8 s) pada 'dapur tu lebih luas' (3D Fi-k: atas putih, bawah kayu)
    0:35.18–0:40.06  Tajuk poin: Kotak hijau atas: “SYARAT PALING PENTING”
    0:43.20–0:44.14  Teks besar: “SETIAP 5 TAHUN” (hijau #304945, stroke putih)
    0:49.95–0:53.98  Outro: BRAND/Outro Potrait.mp4 (animasi logo, 4.0 s) + “Design Dulu, Baru Bina” + kotak hijau “DM untuk keterangan lanjut” muncul selepas logo statik
    0:05.18  SFX pop lembut
+   0:08.57  SFX whoosh lembut
    0:10.18  SFX whoosh lembut
    0:17.80  SFX whoosh lembut
    0:24.52  SFX whoosh lembut
    0:28.28  SFX whoosh lembut
    0:30.16  SFX pop lembut
-   0:31.78  SFX whoosh lembut
+   0:31.68  SFX whoosh lembut
+   0:33.28  SFX whoosh lembut
    0:43.20  SFX pop lembut
    Motion zoom: 0:01.00 zoom in perlahan 100% → 113%; 0:04.30 zoom out perlahan 113% → 100%; 0:08.12 zoom in perlahan 100% → 113%; 0:12.86 zoom out perlahan 113% → 100%; 0:17.28 zoom in perlahan 100% → 113%; 0:22.54 zoom out perlahan 113% → 100%; 0:27.58 zoom in perlahan 100% → 113%; 0:30.16 zoom out perlahan 113% → 100%; 0:31.70 zoom in perlahan 100% → 113%; 0:35.18 zoom out perlahan 113% → 100%; 0:40.18 zoom in perlahan 100% → 113%; 0:44.14 zoom out perlahan 113% → 100%; 0:47.80 zoom in perlahan 100% → 113%
 
@@ -52,19 +55,25 @@ DNA: fik-studio/CLAUDE.md v3.1
    0:10.30  'sebelum buat kitchen kabinet nanti' → 3D AIHouse 720 (S156348610) › island → 'sebelum buat kitchen kabinet nanti' (design 3D dapur Fi-k)
    0:17.92  'pemilihan warna ni kurang berminyak' → B-ROLL/Kitchen Greige.jpg → 'pemilihan warna ni kurang berminyak' (contoh kabinet greige)
    0:24.64  'Nampak warm dan sesuai untuk rumah keluarga' → B-ROLL/Warm Kitchen.jpg → 'Nampak warm dan sesuai untuk rumah keluarga' (contoh kabinet corak kayu)
-   0:28.40  'gabungan 2 warna dalam satu' → B-ROLL/Gabungan 2 Warna.png → 'gabungan 2 warna dalam satu'
-   0:31.90  'nampakkan dapur tu lebih luas' → 3D AIHouse 720 (S156348610) › wet kitchen → 'nampakkan dapur tu lebih luas' (3D Fi-k: atas putih, bawah kayu)
+   0:28.40  'gabungan 2 warna dalam satu' → B-ROLL/Gabungan 2 Warna.png → 'gabungan 2 warna dalam satu' (design 3D Fi-k)
+   0:31.80  'Pemilihan 2 warna ni akan nampakkan dapur' → B-ROLL/Gabungan 2 warna realiti.png → 'Pemilihan 2 warna ni akan nampakkan dapur' (realiti design 3D tadi, projek siap Fi-k)
+   0:33.40  'dapur tu lebih luas' → 3D AIHouse 720 (S156348610) › wet kitchen → 'dapur tu lebih luas' (3D Fi-k: atas putih, bawah kayu)
 
 4) CTA
    Outro: "Design Dulu, Baru Bina" + "DM untuk keterangan lanjut".
 
 5) PERLU SEMAK
-   - “SAVE DULU VIDEO NI” (0:08.1): Transkrip dengar “Saya dulu video ni”. Caption tulis SAVE. Sila sahkan.
-   - Gambar Kitchen Greige & Warm Kitchen: Nampak macam gambar stok/AI, bukan projek Fi-k (DNA: jangan menyamar projek kami). Saya letak tag “Contoh inspirasi warna”. Tukar dengan gambar projek sebenar jika ada.
-   - Gabungan 2 Warna: Nampak macam render 3D; tiada tag. Jika ia bukan design Fi-k, beritahu supaya saya tambah tag “Contoh inspirasi warna”.
-   - Durasi 54.0 s: Melebihi sasaran TOFU 20–45 s; footage tiada ulangan jadi isi tidak dipotong.
+   - Gambar realiti 600×800: Resolusi rendah; dalam 1080×1920 nampak sedikit lembut. Boleh ganti jika ada gambar lebih besar.
+   - Durasi 54.0 s (dikekalkan): Melebihi sasaran TOFU 20–45 s; dikekalkan ikut Farhan.
+   - FK-F-008 final: outro: Final FK-F-008 yang sudah dihantar guna alihan outro lama (simbol FK 29 px ke kiri). Boleh render semula jika mahu.
    - Preview MP4 & log belum di Drive: Alat Drive hadkan ±3 MB setiap muat naik dan tidak boleh tulis ganti fail sedia ada. THUMB & RINGKASAN dimuat naik ke _PREVIEW; video preview ada di halaman ini; baris log perlu ditambah manual.
 
 6) CAPTION TIKTOK
    Takut kabinet putih cepat kotor? Ni 3 warna kabinet yang selamat sepanjang zaman: kelabu cair (greige), corak kayu, dan gabungan 2 warna — bawah gelap, atas cerah. Akak pilih yang mana? Komen bawah! DM untuk keterangan lanjut.
    #kabinetdapur #warnakabinet #interiordesign #fikstudio #dapurrumah
+
+Perubahan (ikut komen Farhan):
+   - Butang SAVE + bunyi klik
+   - Gabungan 2 Warna = design 3D Fi-k, disusuli realiti
+   - Outro: simbol FK & wordmark di tengah
+   - Hook thumbnail: baris dirapatkan, blok di tengah

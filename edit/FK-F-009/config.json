@@ -5,9 +5,7 @@
  "fix_at": {
   "7.12": "Save"
  },
- "perlu_semak": [
-  "0:08.1 transkrip dengar \"Saya dulu video ni\"; caption tulis \"SAVE DULU VIDEO NI\". Sila sahkan."
- ],
+ "perlu_semak": [],
  "key": [
   "3",
   "2",
@@ -110,15 +108,24 @@
    "type": "image",
    "img": "gabungan_2_warna.png",
    "src": "B-ROLL/Gabungan 2 Warna.png",
-   "why": "'gabungan 2 warna dalam satu'"
+   "why": "'gabungan 2 warna dalam satu' (design 3D Fi-k)"
   },
   {
-   "s": 30.9,
-   "e": 33.8,
+   "s": 30.8,
+   "e": 32.55,
+   "clip": "g4",
+   "type": "image",
+   "img": "gabungan_realiti.png",
+   "src": "B-ROLL/Gabungan 2 warna realiti.png",
+   "why": "'Pemilihan 2 warna ni akan nampakkan dapur' (realiti design 3D tadi, projek siap Fi-k)"
+  },
+  {
+   "s": 32.4,
+   "e": 34.16,
    "clip": "p2",
    "type": "video",
    "src": "3D AIHouse 720 (S156348610) › wet kitchen",
-   "why": "'nampakkan dapur tu lebih luas' (3D Fi-k: atas putih, bawah kayu)"
+   "why": "'dapur tu lebih luas' (3D Fi-k: atas putih, bawah kayu)"
   }
  ],
  "tags": [
@@ -138,8 +145,18 @@
    "text": "Contoh inspirasi warna"
   },
   {
-   "s": 30.9,
-   "e": 33.8,
+   "s": 27.4,
+   "e": 29.16,
+   "text": "Design 3D Fi-k Studio"
+  },
+  {
+   "s": 30.8,
+   "e": 32.45,
+   "text": "Realiti: projek siap Fi-k Studio"
+  },
+  {
+   "s": 32.45,
+   "e": 34.16,
    "text": "Design 3D Fi-k Studio"
   }
  ],
@@ -147,19 +164,23 @@
   {
    "text": "3 WARNA",
    "fs": 210,
-   "y": 1140
+   "y": 1060
   },
   {
    "text": "KABINET",
    "fs": 210,
-   "y": 1330
+   "y": 1225
   },
   {
    "text": "SEPANJANG ZAMAN",
    "fs": null,
-   "y": 1480
+   "y": 1345
   }
  ],
  "cta": "DM untuk keterangan lanjut",
- "tagline": "Design Dulu, Baru Bina"
+ "tagline": "Design Dulu, Baru Bina",
+ "save_icon": {
+  "s": 7.12,
+  "e": 8.9
+ }
 }
