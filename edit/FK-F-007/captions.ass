@@ -121,10 +121,10 @@ Dialogue: 1,0:00:25.86,0:00:26.34,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100
 Dialogue: 2,0:00:25.86,0:00:26.34,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}NAK TUKAR
 Dialogue: 1,0:00:26.34,0:00:26.56,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}SINI
 Dialogue: 2,0:00:26.34,0:00:26.56,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}SINI
-Dialogue: 1,0:00:26.72,0:00:26.94,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}TAMBAH
-Dialogue: 2,0:00:26.72,0:00:26.94,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}TAMBAH
-Dialogue: 1,0:00:26.94,0:00:27.12,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}SITU
-Dialogue: 2,0:00:26.94,0:00:27.12,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}SITU
+Dialogue: 1,0:00:26.72,0:00:26.94,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}TIME
+Dialogue: 2,0:00:26.72,0:00:26.94,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}TIME
+Dialogue: 1,0:00:26.94,0:00:27.12,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}TU
+Dialogue: 2,0:00:26.94,0:00:27.12,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}TU
 Dialogue: 1,0:00:27.26,0:00:27.66,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}BANYAK
 Dialogue: 2,0:00:27.26,0:00:27.66,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}BANYAK
 Dialogue: 1,0:00:27.66,0:00:28.42,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}KERJA-KERJA

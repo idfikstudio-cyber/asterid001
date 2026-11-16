@@ -14,18 +14,38 @@ W, H = 1080, 1920
 OFF, END = P["offset"], P["end_card"]
 GREEN = (0x30, 0x49, 0x45)
 
-def zoom_at(t):
-    for z in P["zoom"]:
-        if z["s"] - 0.05 <= t < z["e"] + 0.05:
-            return z["z"]
-    return 1.0
+# ---- motion zoom pada muka (v2) ----
+_fj = json.load(open(f"{WD}/face.json"))
+_fp = np.array(_fj["pts"], float)
+_fi = np.arange(_fj["n"])
+FX = np.interp(_fi, _fp[:, 0], _fp[:, 1]); FY = np.interp(_fi, _fp[:, 0], _fp[:, 2])
+_k = np.ones(31) / 31   # licin ~1 s supaya kamera tak goyang
+FX = np.convolve(np.pad(FX, 15, mode="edge"), _k, "valid"); FY = np.convolve(np.pad(FY, 15, mode="edge"), _k, "valid")
 
-def punch(f, z):
-    if z == 1.0:
+def ease(x):
+    x = min(max(x, 0.0), 1.0)
+    return x * x * (3 - 2 * x)
+
+def zoom_at(t):
+    zs = P["zoom"]
+    for z in zs:
+        if z["s"] <= t < z["e"]:
+            return z["z0"] + (z["z1"] - z["z0"]) * ease((t - z["s"]) / max(0.3, z["e"] - z["s"]))
+    # celah antara ayat: kekal pada nilai akhir ayat sebelum
+    prev = [z for z in zs if z["e"] <= t]
+    return prev[-1]["z1"] if prev else zs[0]["z0"]
+
+def punch(f, z, i=None):
+    if z <= 1.001:
         return f
-    w, h = int(W / z), int(H / z)
-    x, y = (W - w) // 2, int((H - h) * 0.25)   # muka kekal sepertiga atas
-    return cv2.resize(f[y:y + h, x:x + w], (W, H), interpolation=cv2.INTER_CUBIC)
+    fx = FX[min(i, len(FX) - 1)] if i is not None else W / 2
+    fy = FY[min(i, len(FY) - 1)] if i is not None else H * 0.4
+    w, h = W / z, H / z
+    # letak muka pada 50% lebar & 36% tinggi tetingkap (mata di sepertiga atas), kemudian kekang dalam frame
+    x0 = min(max(fx - 0.5 * w, 0), W - w)
+    y0 = min(max(fy - 0.36 * h, 0), H - h)
+    M = np.float32([[z, 0, -x0 * z], [0, z, -y0 * z]])
+    return cv2.warpAffine(f, M, (W, H), flags=cv2.INTER_CUBIC, borderMode=cv2.BORDER_REPLICATE)
 
 def grade(f):
     # jelas & cerah sedikit; kekal warna kulit (tiada anjakan hue)
@@ -42,16 +62,20 @@ def end_card():
     bb = logo.getbbox(); logo = logo.crop(bb)
     lw = 640; logo = logo.resize((lw, int(logo.height * lw / logo.width)), Image.LANCZOS)
     cx = int(W * 0.85 / 2) + 20
-    ly = 560
+    ly = 470
     im.paste(logo, (cx - lw // 2, ly), logo)
     d = ImageDraw.Draw(im)
     f1 = ImageFont.truetype("/root/.fonts/Montserrat-SemiBold.ttf", 50)
     tag = "We Design, You Build."
     y = ly + logo.height + 70
     d.text((cx - d.textlength(tag, font=f1) / 2, y), tag, font=f1, fill=GREEN)
+    f3 = ImageFont.truetype("/root/.fonts/Montserrat-Bold.ttf", 42)
+    fol = "Follow untuk tips reno seterusnya"
+    y += 120
+    d.text((cx - d.textlength(fol, font=f3) / 2, y), fol, font=f3, fill=GREEN)
     f2 = ImageFont.truetype("/root/.fonts/Montserrat-ExtraBold.ttf", 44)
     lines = ["DM / WhatsApp kami untuk", "3D design rumah anda"]
-    y += 140
+    y += 110
     bw = max(d.textlength(l, font=f2) for l in lines) + 80
     d.rounded_rectangle((cx - bw / 2, y - 30, cx + bw / 2, y + 2 * 62 + 20), 22, fill=GREEN)
     for l in lines:
@@ -61,7 +85,8 @@ def end_card():
 import os
 REUSE = os.environ.get("REUSE") == "1" and os.path.exists(OUT + ".noass.mp4")
 ec = end_card()
-cap = cv2.VideoCapture(f"{WD}/bokeh_full.mp4")
+BOKEH = os.environ.get("BOKEH", "bokeh_full.mp4")
+cap = cv2.VideoCapture(f"{WD}/{BOKEH}")
 src_frames = []  # baca berurutan
 brs = {b["clip"]: cv2.VideoCapture(f"{WD}/br/{b['clip']}.mp4") for b in P["broll"]}
 
@@ -72,7 +97,7 @@ if not REUSE:
                           "-pix_fmt", "yuv420p", tmp], stdin=subprocess.PIPE)
   # thumbnail frame: dari masa sumber 'thumb_t'
   tt = P.get("thumb_t", 2.0)
-  c2 = cv2.VideoCapture(f"{WD}/bokeh_full.mp4"); c2.set(cv2.CAP_PROP_POS_MSEC, tt * 1000)
+  c2 = cv2.VideoCapture(f"{WD}/{BOKEH}"); c2.set(cv2.CAP_PROP_POS_MSEC, tt * 1000)
   ok, th = c2.read(); th = grade(th)
   for _ in range(int(OFF * FPS)):
       enc.stdin.write(th.tobytes())
@@ -84,7 +109,7 @@ if not REUSE:
       if not ok:
           f = last
       t = i / FPS
-      out = grade(punch(f, zoom_at(t)))
+      out = grade(punch(f, zoom_at(t), i))
       for b in P["broll"]:
           if b["s"] <= t < b["e"]:
               ok2, bf = brs[b["clip"]].read()

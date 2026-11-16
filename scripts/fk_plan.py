@@ -19,12 +19,15 @@ words = [dict(w=w["w"].strip(), s=w["s"], e=w["e"]) for s in t for w in s["words
 sents = [(s["start"], s["end"], s["text"].strip()) for s in t]
 
 # ---- pembetulan ejaan / dengar (caption ikut apa yang disebut) ----
-FIX = {"Ryan": "Raya", "adekat": "dah dekat", "time": "tambah"}
+# disahkan Farhan (v2): "Raya dah dekat ni", "time tu"
+FIX = {"Ryan": "Raya", "adekat": "dah dekat"}
+FIX_AT = {25.94: "tu"}   # transkrip dengar "situ" selepas "time"
 PERLU_SEMAK = []
 for w in words:
     core = re.sub(r"[^\w\-]", "", w["w"])
-    if core in FIX:
-        PERLU_SEMAK.append(f'{w["s"]+OFF:.2f}s: transkrip dengar "{core}", caption tulis "{FIX[core]}"')
+    if round(w["s"], 2) in FIX_AT:
+        w["w"] = w["w"].replace(core, FIX_AT[round(w["s"], 2)])
+    elif core in FIX:
         w["w"] = w["w"].replace(core, FIX[core])
 # gabung "-kadang", "-ubah", "-kerja", "-apa" dengan perkataan sebelum
 merged = []
@@ -69,20 +72,28 @@ NUMS = [  # angka besar 1-2 saat, tepat seperti disebut
     dict(s=35.82, e=37.20, text="SEMINGGU DUA"),
     dict(s=37.28, e=38.80, text="3 MINGGU"),
 ]
+# B-roll kira-kira setiap 8 s, TIDAK pada poin penting (hook, angka, tajuk poin #1/#2/#3, "paling penting", CTA)
 BROLL = [
+    dict(s=4.60, e=7.46, clip="b5", src="B-ROLL/Video Onprogress/IMG_9303.MOV",
+         why="'Kalau nak renovate rumah, nak siapkan sebelum raya'"),
+    dict(s=13.62, e=16.12, clip="b6", src="B-ROLL/Video Onprogress/IMG_9298.MOV",
+         why="'Biasanya rumah yang tak siap sebelum raya ni'"),
     dict(s=22.82, e=25.62, clip="b1", src="B-ROLL/Video Onprogress/IMG_9301.MOV",
          why="'Projek tengah ongoing, nak tukar situ, nak tukar sini'"),
     dict(s=30.76, e=33.30, clip="b2", src="B-ROLL/Video Onprogress/IMG_9321.MOV",
          why="'kabinet yang kita rancang tu kita kena buat balik'"),
-    dict(s=39.24, e=41.62, clip="b3", src="B-ROLL/Video Onprogress/IMG_9290.MOV",
-         why="'agreement yang tulus dan ikhlas' (klien pegang dokumen)"),
+    dict(s=41.90, e=44.62, clip="b3", src="B-ROLL/Video Onprogress/IMG_9290.MOV",
+         why="'Lepas tu, tak tahulah siapa yang bertanggungjawab'"),
+    dict(s=53.82, e=56.46, clip="b7", src="B-ROLL/Video Onprogress/IMG_9310.MOV",
+         why="'Sebab itu kita datangkan dengan design dulu'"),
     dict(s=59.36, e=62.26, clip="b4", src="B-ROLL/Video Projek Dah Siap/IMG_0535.MOV",
          why="'semua kerja-kerja tu akan smooth sahaja' (projek siap)"),
 ]
 # punch-in: selang-seli ikut ayat (DNA Farhan: setiap 2 potongan)
+# v2: motion zoom lembut pada muka -- zoom in perlahan satu ayat, zoom out ayat seterusnya
 ZOOM = []
 for k, (s, e, _) in enumerate(sents):
-    ZOOM.append(dict(s=s, e=e, z=1.0 if k % 2 == 0 else 1.12))
+    ZOOM.append(dict(s=s, e=e, z0=1.0 if k % 2 == 0 else 1.14, z1=1.14 if k % 2 == 0 else 1.0))
 SFX = [dict(t=n["s"], f="softpop") for n in NUMS] + [dict(t=b["s"] - 0.12, f="softwhoosh") for b in BROLL]
 
 # ---- ASS ----
@@ -145,7 +156,7 @@ open(f"{OUT}/captions.ass", "w").write(hdr + "\n".join(ev) + "\n")
 plan = dict(offset=OFF, thumb_t=17.6, src_dur=SRC_DUR, end_card=END, total=OFF + SRC_DUR + END,
             hook="3 PUNCA RENO LAMBAT SIAP", label=LABEL, points=POINTS, nums=NUMS, broll=BROLL,
             zoom=ZOOM, sfx=SFX, chunks=chunks, perlu_semak=PERLU_SEMAK,
-            cta="DM / WhatsApp kami untuk 3D design rumah anda")
+            cta="Follow untuk tips reno seterusnya + DM / WhatsApp kami untuk 3D design rumah anda")
 json.dump(plan, open(f"{OUT}/plan.json", "w"), ensure_ascii=False, indent=1)
 print(len(chunks), "chunks;", "total", plan["total"])
 for p in PERLU_SEMAK: print("SEMAK", p)

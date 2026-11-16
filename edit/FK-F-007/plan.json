@@ -56,6 +56,20 @@
  ],
  "broll": [
   {
+   "s": 4.6,
+   "e": 7.46,
+   "clip": "b5",
+   "src": "B-ROLL/Video Onprogress/IMG_9303.MOV",
+   "why": "'Kalau nak renovate rumah, nak siapkan sebelum raya'"
+  },
+  {
+   "s": 13.62,
+   "e": 16.12,
+   "clip": "b6",
+   "src": "B-ROLL/Video Onprogress/IMG_9298.MOV",
+   "why": "'Biasanya rumah yang tak siap sebelum raya ni'"
+  },
+  {
    "s": 22.82,
    "e": 25.62,
    "clip": "b1",
@@ -70,11 +84,18 @@
    "why": "'kabinet yang kita rancang tu kita kena buat balik'"
   },
   {
-   "s": 39.24,
-   "e": 41.62,
+   "s": 41.9,
+   "e": 44.62,
    "clip": "b3",
    "src": "B-ROLL/Video Onprogress/IMG_9290.MOV",
-   "why": "'agreement yang tulus dan ikhlas' (klien pegang dokumen)"
+   "why": "'Lepas tu, tak tahulah siapa yang bertanggungjawab'"
+  },
+  {
+   "s": 53.82,
+   "e": 56.46,
+   "clip": "b7",
+   "src": "B-ROLL/Video Onprogress/IMG_9310.MOV",
+   "why": "'Sebab itu kita datangkan dengan design dulu'"
   },
   {
    "s": 59.36,
@@ -88,97 +109,116 @@
   {
    "s": 0.0,
    "e": 4.46,
-   "z": 1.0
+   "z0": 1.0,
+   "z1": 1.14
   },
   {
    "s": 4.6,
    "e": 9.12,
-   "z": 1.12
+   "z0": 1.14,
+   "z1": 1.0
   },
   {
    "s": 9.14,
    "e": 13.48,
-   "z": 1.0
+   "z0": 1.0,
+   "z1": 1.14
   },
   {
    "s": 13.62,
    "e": 17.62,
-   "z": 1.12
+   "z0": 1.14,
+   "z1": 1.0
   },
   {
    "s": 17.72,
    "e": 22.74,
-   "z": 1.0
+   "z0": 1.0,
+   "z1": 1.14
   },
   {
    "s": 22.82,
    "e": 27.96,
-   "z": 1.12
+   "z0": 1.14,
+   "z1": 1.0
   },
   {
    "s": 28.12,
    "e": 29.36,
-   "z": 1.0
+   "z0": 1.0,
+   "z1": 1.14
   },
   {
    "s": 29.36,
    "e": 34.68,
-   "z": 1.12
+   "z0": 1.14,
+   "z1": 1.0
   },
   {
    "s": 34.74,
    "e": 37.86,
-   "z": 1.0
+   "z0": 1.0,
+   "z1": 1.14
   },
   {
    "s": 37.88,
    "e": 41.62,
-   "z": 1.12
+   "z0": 1.14,
+   "z1": 1.0
   },
   {
    "s": 41.9,
    "e": 44.1,
-   "z": 1.0
+   "z0": 1.0,
+   "z1": 1.14
   },
   {
    "s": 44.16,
    "e": 47.12,
-   "z": 1.12
+   "z0": 1.14,
+   "z1": 1.0
   },
   {
    "s": 47.3,
    "e": 47.74,
-   "z": 1.0
+   "z0": 1.0,
+   "z1": 1.14
   },
   {
    "s": 47.8,
    "e": 53.6,
-   "z": 1.12
+   "z0": 1.14,
+   "z1": 1.0
   },
   {
    "s": 53.82,
    "e": 55.6,
-   "z": 1.0
+   "z0": 1.0,
+   "z1": 1.14
   },
   {
    "s": 55.72,
    "e": 59.06,
-   "z": 1.12
+   "z0": 1.14,
+   "z1": 1.0
   },
   {
    "s": 59.36,
    "e": 63.92,
-   "z": 1.0
+   "z0": 1.0,
+   "z1": 1.14
   },
   {
    "s": 63.98,
    "e": 66.12,
-   "z": 1.12
+   "z0": 1.14,
+   "z1": 1.0
   },
   {
    "s": 66.18,
    "e": 67.7,
-   "z": 1.0
+   "z0": 1.0,
+   "z1": 1.14
   }
  ],
  "sfx": [
@@ -199,6 +239,14 @@
    "f": "softpop"
   },
   {
+   "t": 4.4799999999999995,
+   "f": "softwhoosh"
+  },
+  {
+   "t": 13.5,
+   "f": "softwhoosh"
+  },
+  {
    "t": 22.7,
    "f": "softwhoosh"
   },
@@ -207,7 +255,11 @@
    "f": "softwhoosh"
   },
   {
-   "t": 39.120000000000005,
+   "t": 41.78,
+   "f": "softwhoosh"
+  },
+  {
+   "t": 53.7,
    "f": "softwhoosh"
   },
   {
@@ -502,12 +554,12 @@
    "e": 25.56
   },
   {
-   "text": "TAMBAH",
+   "text": "TIME",
    "s": 25.72,
    "e": 25.94
   },
   {
-   "text": "SITU",
+   "text": "TU",
    "s": 25.94,
    "e": 26.12
   },
@@ -1037,10 +1089,6 @@
    "e": 67.7
   }
  ],
- "perlu_semak": [
-  "26.72s: transkrip dengar \"time\", caption tulis \"tambah\"",
-  "64.98s: transkrip dengar \"Ryan\", caption tulis \"Raya\"",
-  "65.26s: transkrip dengar \"adekat\", caption tulis \"dah dekat\""
- ],
- "cta": "DM / WhatsApp kami untuk 3D design rumah anda"
+ "perlu_semak": [],
+ "cta": "Follow untuk tips reno seterusnya + DM / WhatsApp kami untuk 3D design rumah anda"
 }
