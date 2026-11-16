@@ -1,0 +1,186 @@
+{
+ "src_dur": 48.95,
+ "thumb_t": 4.3,
+ "fix": {},
+ "fix_at": {
+  "7.12": "Save"
+ },
+ "perlu_semak": [],
+ "key": [
+  "3",
+  "2",
+  "5",
+  "PUTIH",
+  "KOTOR",
+  "SELAMAT",
+  "GREIGE",
+  "KELABU",
+  "CAIR",
+  "BERMINYAK",
+  "FINGERPRINT",
+  "KAYU",
+  "WARM",
+  "GABUNGAN",
+  "GELAP",
+  "CERAH",
+  "LUAS",
+  "PENTING",
+  "MINAT",
+  "JANGAN",
+  "TREND",
+  "SAVE"
+ ],
+ "label": {
+  "s": 0.15,
+  "e": 3.2,
+  "text": "Farhan · Founder Fi-k Studio"
+ },
+ "points": [
+  {
+   "s": 11.86,
+   "e": 21.52,
+   "text": "#1  KELABU CAIR (GREIGE)"
+  },
+  {
+   "s": 21.54,
+   "e": 26.44,
+   "text": "#2  CORAK KAYU"
+  },
+  {
+   "s": 26.58,
+   "e": 34.16,
+   "text": "#3  GABUNGAN 2 WARNA"
+  },
+  {
+   "s": 34.18,
+   "e": 39.06,
+   "text": "SYARAT PALING PENTING"
+  }
+ ],
+ "nums": [
+  {
+   "s": 4.18,
+   "e": 5.8,
+   "text": "3 PILIHAN WARNA"
+  },
+  {
+   "s": 29.16,
+   "e": 30.7,
+   "text": "BAWAH GELAP\\NATAS CERAH"
+  },
+  {
+   "s": 42.2,
+   "e": 43.14,
+   "text": "SETIAP 5 TAHUN"
+  }
+ ],
+ "broll": [
+  {
+   "s": 9.3,
+   "e": 11.8,
+   "clip": "p1",
+   "type": "video",
+   "src": "3D AIHouse 720 (S156348610) › island",
+   "why": "'sebelum buat kitchen kabinet nanti' (design 3D dapur Fi-k)"
+  },
+  {
+   "s": 16.92,
+   "e": 19.4,
+   "clip": "g1",
+   "type": "image",
+   "img": "kitchen_greige.jpg",
+   "src": "B-ROLL/Kitchen Greige.jpg",
+   "why": "'pemilihan warna ni kurang berminyak' (contoh kabinet greige)"
+  },
+  {
+   "s": 23.64,
+   "e": 26.1,
+   "clip": "g2",
+   "type": "image",
+   "img": "warm_kitchen.jpg",
+   "src": "B-ROLL/Warm Kitchen.jpg",
+   "why": "'Nampak warm dan sesuai untuk rumah keluarga' (contoh kabinet corak kayu)"
+  },
+  {
+   "s": 27.4,
+   "e": 29.16,
+   "clip": "g3",
+   "type": "image",
+   "img": "gabungan_2_warna.png",
+   "src": "B-ROLL/Gabungan 2 Warna.png",
+   "why": "'gabungan 2 warna dalam satu' (design 3D Fi-k)"
+  },
+  {
+   "s": 30.8,
+   "e": 32.55,
+   "clip": "g4",
+   "type": "image",
+   "img": "gabungan_realiti.png",
+   "src": "B-ROLL/Gabungan 2 warna realiti.png",
+   "why": "'Pemilihan 2 warna ni akan nampakkan dapur' (realiti design 3D tadi, projek siap Fi-k)"
+  },
+  {
+   "s": 32.4,
+   "e": 34.16,
+   "clip": "p2",
+   "type": "video",
+   "src": "3D AIHouse 720 (S156348610) › wet kitchen",
+   "why": "'dapur tu lebih luas' (3D Fi-k: atas putih, bawah kayu)"
+  }
+ ],
+ "tags": [
+  {
+   "s": 9.3,
+   "e": 11.8,
+   "text": "Design 3D Fi-k Studio"
+  },
+  {
+   "s": 16.92,
+   "e": 19.4,
+   "text": "Contoh inspirasi warna"
+  },
+  {
+   "s": 23.64,
+   "e": 26.1,
+   "text": "Contoh inspirasi warna"
+  },
+  {
+   "s": 27.4,
+   "e": 29.16,
+   "text": "Design 3D Fi-k Studio"
+  },
+  {
+   "s": 30.8,
+   "e": 32.45,
+   "text": "Realiti: projek siap Fi-k Studio"
+  },
+  {
+   "s": 32.45,
+   "e": 34.16,
+   "text": "Design 3D Fi-k Studio"
+  }
+ ],
+ "hook_lines": [
+  {
+   "text": "3 WARNA",
+   "fs": 210,
+   "y": 1060
+  },
+  {
+   "text": "KABINET",
+   "fs": 210,
+   "y": 1225
+  },
+  {
+   "text": "SEPANJANG ZAMAN",
+   "fs": null,
+   "y": 1345
+  }
+ ],
+ "cta": "DM untuk keterangan lanjut",
+ "tagline": "Design Dulu, Baru Bina",
+ "save_icon": {
+  "s": 7.12,
+  "e": 8.9
+ }
+}

@@ -1,0 +1,138 @@
+{
+ "id": "FK-F-009",
+ "topik": "Warna Kabinet Sepanjang Zaman",
+ "tag": "TOFU",
+ "ver": "v2",
+ "status": "Preview v2 · tunggu komen",
+ "tarikh": "16 Nov 2026",
+ "edit_intro": "Ikut DNA Fi-k Studio v3.2. Footage tiada take ulangan/senyap >0.3 s; isi 49.0 s digunakan penuh. Thumbnail 1 s + isi 49.0 s + outro brand 4.0 s = 54.0 s. B-roll tambahan Kitchen Greige, Warm Kitchen dan Gabungan 2 Warna diletak tepat selepas setiap warna disebut (bukan pada ayat tajuk poin). Design 3D Fi-k dari AIHouse 720 dirender terus dari imej panorama (pan kamera perlahan, tanpa UI viewer dan tanpa nama projek/client): dapur island dan dapur basah. v2: butang SAVE + bunyi klik pada “save dulu video ni”; Gabungan 2 Warna (3D) disusuli gambar realiti projek yang sama; outro dibetulkan supaya simbol FK dan wordmark kedua-duanya di tengah; jarak baris hook thumbnail dirapatkan.",
+ "seg": [
+  [
+   0,
+   1.0,
+   "Thumbnail",
+   "Hook 3 WARNA / KABINET / SEPANJANG ZAMAN — baris rapat, blok di tengah frame (zon crop 1:1 & 4:5), sumber 0:04.3"
+  ],
+  [
+   1.0,
+   12.86,
+   "Hook",
+   "Hook + butang SAVE ditekan (bunyi klik) pada “save dulu video ni” + 3D dapur island pada “sebelum buat kitchen kabinet nanti”"
+  ],
+  [
+   12.86,
+   22.52,
+   "#1 Kelabu cair (greige)",
+   "Tajuk poin #1 (muka Farhan) → Kitchen Greige pada “kurang berminyak”"
+  ],
+  [
+   22.52,
+   27.44,
+   "#2 Corak kayu",
+   "Tajuk poin #2 (muka Farhan) → Warm Kitchen pada “nampak warm… rumah keluarga”"
+  ],
+  [
+   27.44,
+   35.16,
+   "#3 Gabungan 2 warna",
+   "Gabungan 2 Warna (design 3D Fi-k) → BAWAH GELAP / ATAS CERAH → gambar realiti projek siap → 3D dapur basah pada “dapur lebih luas”"
+  ],
+  [
+   35.16,
+   40.06,
+   "Syarat",
+   "SYARAT PALING PENTING: pilih warna yang akak minat tengok setiap hari (muka Farhan)"
+  ],
+  [
+   40.06,
+   44.14,
+   "Jangan ikut trend",
+   "Trend berubah SETIAP 5 TAHUN (muka Farhan)"
+  ],
+  [
+   44.14,
+   49.95,
+   "CTA",
+   "Komen pemilihan warna akak"
+  ],
+  [
+   49.95,
+   53.98,
+   "Outro",
+   "Outro Potrait + Design Dulu, Baru Bina + DM untuk keterangan lanjut"
+  ]
+ ],
+ "done": [
+  [
+   "v2: butang SAVE + bunyi klik",
+   "0:08.1 “SAVE DULU VIDEO NI”: ikon bookmark muncul, ditekan pada perkataan “video” (riak + bunyi klik), bertukar hijau penuh.",
+   8.12
+  ],
+  [
+   "v2: 3D → realiti",
+   "Gabungan 2 Warna kini ditag “Design 3D Fi-k Studio” (0:28.4), disusuli “Gabungan 2 warna realiti.png” — dapur yang sama selepas siap — dengan tag “Realiti: projek siap Fi-k Studio” (0:31.8).",
+   28.4
+  ],
+  [
+   "v2: outro di tengah",
+   "Dalam fail asal, simbol FK (0–1.3 s) sudah di tengah tetapi wordmark terkeluar 29 px ke kanan. Kini hanya wordmark yang dialih (beransur semasa transisi); diukur: simbol x=537–538, wordmark & teks x=540.",
+   50.0
+  ],
+  [
+   "v2: thumbnail lebih rapat",
+   "Jarak baris hook dirapatkan dan blok dialih ke tengah (y ±900–1345), jauh dari tepi crop 1:1 / 4:5 dan feed TikTok.",
+   0.3
+  ],
+  [
+   "Ikut DNA v3.2",
+   "Bokeh halus, motion zoom muka, caption 1 perkataan + kotak hijau kata kunci, tajuk poin #1–#3, hook & kad di tengah, tiada muzik, outro brand.",
+   2.0
+  ],
+  [
+   "Teks besar",
+   "3 PILIHAN WARNA, BAWAH GELAP / ATAS CERAH, SETIAP 5 TAHUN — tepat seperti disebut.",
+   5.18
+  ],
+  [
+   "Audio",
+   "Denoise ringan; loudness dua laluan −14.2 LUFS, peak −1.2 dBFS. SFX lembut dijana sendiri."
+  ],
+  [
+   "Design 3D AIHouse",
+   "Dapur island (0:10.3) dan dapur basah (0:33.4), dirender dari panorama tanpa UI/nama client, tag “Design 3D Fi-k Studio”. Disimpan juga di B-ROLL/Render 3D.",
+   10.3
+  ],
+  [
+   "Contoh inspirasi warna",
+   "Kitchen Greige (0:17.9) dan Warm Kitchen (0:24.6) dengan tag “Contoh inspirasi warna” (disahkan Farhan).",
+   17.92
+  ]
+ ],
+ "todo": [
+  [
+   "Gambar realiti 600×800",
+   "Resolusi rendah; dalam 1080×1920 nampak sedikit lembut. Boleh ganti jika ada gambar lebih besar.",
+   31.8
+  ],
+  [
+   "Durasi 54.0 s (dikekalkan)",
+   "Melebihi sasaran TOFU 20–45 s; dikekalkan ikut Farhan."
+  ],
+  [
+   "FK-F-008 final: outro",
+   "Final FK-F-008 yang sudah dihantar guna alihan outro lama (simbol FK 29 px ke kiri). Boleh render semula jika mahu."
+  ],
+  [
+   "Preview MP4 & log belum di Drive",
+   "Alat Drive hadkan ±3 MB setiap muat naik dan tidak boleh tulis ganti fail sedia ada. THUMB & RINGKASAN dimuat naik ke _PREVIEW; video preview ada di halaman ini; baris log perlu ditambah manual."
+  ]
+ ],
+ "tt": "Takut kabinet putih cepat kotor? Ni 3 warna kabinet yang selamat sepanjang zaman: kelabu cair (greige), corak kayu, dan gabungan 2 warna — bawah gelap, atas cerah. Akak pilih yang mana? Komen bawah! DM untuk keterangan lanjut.",
+ "hs": "#kabinetdapur #warnakabinet #interiordesign #fikstudio #dapurrumah",
+ "changes": [
+  "Butang SAVE + bunyi klik",
+  "Gabungan 2 Warna = design 3D Fi-k, disusuli realiti",
+  "Outro: simbol FK & wordmark di tengah",
+  "Hook thumbnail: baris dirapatkan, blok di tengah"
+ ]
+}

@@ -1,4 +1,4 @@
-# DNA Editing — Fi-k Studio (v3.1)
+# DNA Editing — Fi-k Studio (v3.3)
 
 > Ikut juga peraturan umum dalam `../CLAUDE.md`. Fail ini hanya perkara khusus Fi-k Studio.
 > Folder Drive: **Konten › Fi-k Studio**
@@ -6,6 +6,8 @@
 > **v3 (16 Nov 2026)** dikunci dari FK-F-007 "Punca Renovate Lambat Siap" yang diluluskan Farhan.
 > Video contoh: https://claude.ai/artifact/5zAKQgNo7fkCJ1htsBU21t · skrip: `scripts/bokeh.py`, `fk_plan.py`, `fk_render.py`, `fk_page.py`.
 > **v3.1:** digabung dengan peraturan B-roll terperinci (folder, padanan ayat, aliran cerita, Render 3D AIHouse).
+> **v3.2 (FK-F-008):** hook thumbnail, kad B-roll dan outro di tengah; ejaan baku "sinki"; frasa CTA satu caption.
+> **v3.3 (FK-F-009):** butang save + klik; hook baris rapat; outro: alih wordmark sahaja; tag 3D → realiti.
 > Jika fail ini bercanggah dengan `../CLAUDE.md`, **ikut fail ini.**
 
 ---
@@ -88,16 +90,25 @@ Baca `BRAND/warna.txt`. Ringkasan:
 - Kedudukan ±73% tinggi frame, dalam safe zone (bukan bawah 20%, bukan jalur kanan 15%).
 - **Kata kunci** dalam **kotak hijau #304945, teks putih**: angka, lambat, delay, jangan, penting, salahkan, pertama/kedua/ketiga, kabinet, tak tepat, agreement, design, settle, harga RM, "2 kali ganda", "rugi", "tertipu", "wajib", "bajet".
 - Jangan papar caption yang sama dengan kad angka besar pada masa yang sama.
-- Istilah yang mesti dieja betul: ID, 3D, AIHouse, kabinet, quotation, kontraktor, Design & Build, reno.
+- Istilah yang mesti dieja betul: ID, 3D, AIHouse, kabinet, quotation, kontraktor, Design & Build, reno, **sinki** (ejaan baku, bukan "singki").
+- Frasa CTA/tindakan (contoh "TAG SUAMI AKAK") dipapar sebagai **satu caption penuh** supaya tak terpotong.
 - Warna merah/pink dalam video rujukan **ditukar ke hijau #304945**.
 
 ### Thumbnail / hook (1 saat)
-- Pilih frame yang menyokong hook (contoh: Farhan tunjuk 3 jari untuk "3 PUNCA").
-- Teks hook besar Montserrat Black **hijau #304945 + stroke putih tebal + bayang lembut**, 2 baris (baris 1 besar, contoh "3 PUNCA"; baris 2 lebih kecil, contoh "RENO LAMBAT SIAP"), bahagian bawah-tengah (±70–80% tinggi), tidak tutup muka atau tangan.
+- Pilih frame yang menyokong hook (contoh: Farhan tunjuk 3 jari untuk "3 PUNCA", muka ragu-ragu untuk soalan).
+- Teks hook besar Montserrat Black **hijau #304945 + stroke putih tebal + bayang lembut**, 2 baris, **di tengah frame**
+  (x = 540). **Baris rapat** (jarak baris ±0.8× saiz font) dan blok teks di tengah (±y 900–1350), jauh di dalam zon
+  crop **1:1 (y 420–1500)** dan **4:5 (y 285–1635)** supaya tak terpotong di grid Facebook/IG dan tepi feed TikTok.
+  Jangan letak hook di bahagian bawah frame.
 
 ### Grafik
 - **Tajuk poin** (kotak hijau #304945, teks putih, ExtraBold, kiri atas): "#1 …", "#2 …", "#3 …", "PALING PENTING". Kekal sepanjang poin itu diterangkan.
 - **Angka besar** 1–2 saat di tengah dada (hijau #304945 + stroke putih), tepat seperti disebut (contoh "3 PERKARA", "SEMINGGU DUA", "3 MINGGU").
+
+### Ajakan simpan / tindakan
+- Bila spokesperson sebut **"save dulu video ni"** (atau seumpamanya): papar **ikon butang save (bookmark)** di tengah
+  (x = 540, y ±1060) yang ditekan — muncul kosong, ditekan dengan riak + **bunyi klik**, bertukar hijau #304945 penuh
+  (`save_icon` dalam config).
 
 ### SFX & muzik
 - SFX sedikit dan lembut sahaja: "pop" lembut pada angka, "whoosh" lembut pada B-roll (dijana sendiri).
@@ -157,6 +168,12 @@ yang paling sesuai.
 ### 7.6 Link AIHouse 720
 - Buka link dari lajur **"Link AiHouse"** dalam sheet `Projek Fi-k Studio`, rakam paparan 720 bergerak
   (pan perlahan 8–12 saat setiap ruang, 9:16) dan jadikan klip B-roll.
+- **Cara rakam (disahkan FK-F-009):** jangan rakam skrin viewer (panorama tak keluar dalam browser headless, dan
+  UI + tajuk projek yang mengandungi **nama client** akan masuk frame). Ambil imej cubemap terus:
+  buka pautan dengan Playwright, guna krpano (`krpanoSWFObject`) untuk senarai `scene[i].title` (cth. dry kitchen,
+  island, wet kitchen) dan `loadscene(...)`, kemudian `image.cube.url` → `https://3vj-render.3vjia.com/.../show_{f,b,l,r,u,d}.jpg`.
+  Render pan 9:16 dengan `scripts/fk_pano.py <cube_dir> out.mp4 <saat> <yaw0> <yaw1> <pitch> <fov>` (pitch +10–15 pandang
+  ke kabinet, fov 70–74). Tag kecil "Design 3D Fi-k Studio" semasa klip.
 - **Semak folder `B-ROLL › Render 3D` dulu** sebelum rakam baru.
 - Klip baru disimpan dalam `B-ROLL › Render 3D` dengan nama `[PROJECT NUM]_[ruang].mp4` supaya boleh
   guna semula. Ini **tambah fail baru sahaja** — jangan padam, pindah atau tulis ganti fail sedia ada
@@ -167,10 +184,16 @@ yang paling sesuai.
   bawah B-roll (B-roll tutup visual sahaja).
 - Video B-roll: ambil bahagian paling stabil dan menarik, **1.5–3 saat** setiap potongan.
 - Gambar statik: **1.5–2.5 saat** setiap satu, dengan zoom/pan perlahan (Ken Burns). Jangan biar statik kaku.
+  Gambar potret → skrin penuh. Gambar kecil/landskap → **kad bersudut bulat di tengah skrin** (x = 540, ±44% tinggi)
+  atas latar gambar sama yang dikaburkan (`scripts/fk_imgclip.py`).
 - **Jangan ulang fail B-roll yang sama** dalam satu video.
 - Elak klip resolusi rendah (contoh `IMG_0535.MOV` 352×640) jika ada pilihan lain.
 - Fail `.HEIC` tukar ke JPG dulu sebelum guna (salinan kerja, bukan ganti fail asal).
 - **Jangan paparkan nama client atau nama firma** dalam video atau caption.
+- Design 3D Fi-k (AIHouse / render) → tag **"Design 3D Fi-k Studio"**; jika ada gambar realiti projek yang sama, letak
+  **selepas** 3D dengan tag **"Realiti: projek siap Fi-k Studio"** (3D → realiti).
+- Gambar yang **bukan projek Fi-k** (stok/AI/inspirasi) yang Farhan minta guna: letak tag kecil **"Contoh inspirasi warna"**
+  (atau seumpamanya) supaya tak menyamar projek kami, dan tanda PERLU SEMAK.
 
 ### 7.8 Dalam preview
 Dalam ringkasan dan tab **Pelan edit** preview, senaraikan B-roll untuk setiap sisipan:
@@ -188,7 +211,12 @@ supaya Farhan boleh tukar mana-mana B-roll sebelum render final.
 - Guna **`BRAND/Outro Potrait.mp4`** sebagai penutup (ganti end card statik).
   - Guna **4.0 saat pertama sahaja** (frame 0–120): selepas itu fail hanya skrin putih kosong.
   - Crossfade 0.25 saat dari frame terakhir isi ke outro.
-- Selepas wordmark statik (±1.85 s dalam outro), teks muncul perlahan di bawah wordmark (pusat x ≈ 569):
+  - Dalam fail asal, **simbol FK (frame 0–37) sudah di tengah** (x = 538) tetapi **wordmark (frame 45+) berpusat x = 569**.
+    Alih **wordmark sahaja** 29 px ke kiri, beransur semasa transisi (frame 37–47), supaya simbol FK, wordmark, tagline
+    dan CTA semuanya di tengah (x = 540). Jangan alih seluruh outro (simbol FK akan lari ke kiri).
+  - **QC automatik** dalam `scripts/fk_render.py`: selepas render, pusat outro diukur setiap 6 frame; jika lari
+    > 4 px dari x = 540, render **gagal** dan tidak boleh dihantar. `fk_plan.py` juga menolak hook di luar zon 1:1.
+- Selepas wordmark statik (±1.85 s dalam outro), teks muncul perlahan di bawah wordmark (pusat x = 540):
   - Tagline: **"Design Dulu, Baru Bina"** (Montserrat SemiBold, hijau #304945)
   - CTA: kotak hijau #304945, teks putih: **"DM untuk keterangan lanjut"**
 - **CTA cukup "DM untuk keterangan lanjut"** untuk TOFU dan BOFU, kecuali Farhan minta lain.
@@ -208,5 +236,6 @@ supaya Farhan boleh tukar mana-mana B-roll sebelum render final.
 - [ ] Tiada nama client / nama firma dalam video atau caption
 - [ ] Senarai `[baris skrip] → [fail] → [sebab]` ada dalam preview
 - [ ] Caption 1 perkataan, kata kunci dalam kotak #304945
-- [ ] Outro brand + "Design Dulu, Baru Bina" + "DM untuk keterangan lanjut"
+- [ ] Outro brand + "Design Dulu, Baru Bina" + "DM untuk keterangan lanjut", semuanya di tengah
+- [ ] Hook thumbnail di tengah, baris rapat, dalam zon crop 1:1 & 4:5; kad B-roll di tengah skrin
 - [ ] Tiada muzik (kecuali diminta)

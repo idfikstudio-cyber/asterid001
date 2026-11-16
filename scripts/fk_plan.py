@@ -1,14 +1,16 @@
-"""Pelan edit FK-F-007 (Fi-k Studio, Farhan): caption, overlay, B-roll, zoom, SFX.
+"""Pelan edit video Fi-k Studio (talking head): caption, overlay, B-roll, motion zoom, SFX.
 
-python3 fk_plan.py <transcript.json> <out_dir>
+python3 fk_plan.py <transcript.json> <out_dir> <config.json>
 Tulis: plan.json + captions.ass (masa ikut video OUTPUT: thumbnail 1s di depan).
+Semua masa dalam config ialah masa SUMBER (video asal). Contoh config: edit/FK-F-007/config.json.
 """
 import json, sys, re
 from PIL import ImageFont
 
-TR, OUT = sys.argv[1], sys.argv[2]
+TR, OUT, CFG = sys.argv[1], sys.argv[2], sys.argv[3]
+C = json.load(open(CFG))
 OFF = 1.0            # thumbnail 1 saat
-SRC_DUR = 67.87
+SRC_DUR = C["src_dur"]
 END = 121 / 30       # outro BRAND/Outro Potrait.mp4, frame 0-120 (selepas itu skrin putih kosong)
 GREEN_ASS = "&H00454930"   # #304945 (BGR)
 FONT_BLACK = "/root/.fonts/Montserrat-Black.ttf"
@@ -19,16 +21,16 @@ words = [dict(w=w["w"].strip(), s=w["s"], e=w["e"]) for s in t for w in s["words
 sents = [(s["start"], s["end"], s["text"].strip()) for s in t]
 
 # ---- pembetulan ejaan / dengar (caption ikut apa yang disebut) ----
-# disahkan Farhan (v2): "Raya dah dekat ni", "time tu"
-FIX = {"Ryan": "Raya", "adekat": "dah dekat"}
-FIX_AT = {25.94: "tu"}   # transkrip dengar "situ" selepas "time"
-PERLU_SEMAK = []
+FIX = C.get("fix", {})                                         # perkataan -> ganti (semua tempat)
+FIX_AT = {round(float(k), 2): v for k, v in C.get("fix_at", {}).items()}   # masa mula perkataan -> ganti
+PERLU_SEMAK = C.get("perlu_semak", [])
 for w in words:
     core = re.sub(r"[^\w\-]", "", w["w"])
     if round(w["s"], 2) in FIX_AT:
         w["w"] = w["w"].replace(core, FIX_AT[round(w["s"], 2)])
     elif core in FIX:
         w["w"] = w["w"].replace(core, FIX[core])
+words = [w for w in words if w["w"].strip()]   # fix_at "" = buang perkataan (cth. tersalah dengar)
 # gabung "-kadang", "-ubah", "-kerja", "-apa" dengan perkataan sebelum
 merged = []
 for w in words:
@@ -38,8 +40,7 @@ for w in words:
         merged.append(dict(w))
 words = merged
 
-KEY = {"3", "TIGA", "LAMBAT", "DELAY", "JANGAN", "SEMINGGU", "MINGGU", "PENTING", "SALAHKAN",
-       "PERTAMA", "KEDUA", "KETIGA", "KABINET", "TAK TEPAT", "BERUBAH-UBAH", "AGREEMENT", "SETTLE", "DESIGN"}
+KEY = set(C["key"])
 
 def clean(s):
     return re.sub(r"[,.?!]", "", s).upper()
@@ -57,44 +58,24 @@ while i < len(words):
 for k, c in enumerate(chunks):
     nxt = chunks[k + 1]["s"] if k + 1 < len(chunks) else c["e"] + 0.3
     c["e"] = min(max(c["e"], c["s"] + 0.18), nxt) if nxt - c["e"] < 0.35 else c["e"] + 0.1
+# force_chunks: ganti caption dalam julat [s,e) dengan satu caption tetap (cth. frasa CTA supaya jelas)
+for fc in C.get("force_chunks", []):
+    chunks = [c for c in chunks if not (fc["s"] - 0.05 <= c["s"] < fc["e"])] + [dict(text=fc["text"], s=fc["s"], e=fc["e"])]
+chunks.sort(key=lambda c: c["s"])
 
-# ---- overlay teks (masa sumber) ----
-LABEL = dict(s=0.15, e=3.3, text="Farhan · Founder Fi-k Studio")
-POINTS = [  # tajuk poin, atas frame
-    dict(s=18.56, e=22.82, text="#1  DESIGN BERUBAH-UBAH"),
-    dict(s=28.12, e=34.74, text="#2  UKURAN TAK TEPAT"),
-    dict(s=38.20, e=41.90, text="#3  TAK ADA AGREEMENT"),
-    dict(s=48.86, e=53.70, text="PALING PENTING"),
-]
-NUMS = [  # angka besar 1-2 saat, tepat seperti disebut
-    dict(s=8.30, e=9.80, text="3 PERKARA"),
-    dict(s=17.14, e=18.50, text="3 BENDA"),
-    dict(s=35.82, e=37.20, text="SEMINGGU DUA"),
-    dict(s=37.28, e=38.80, text="3 MINGGU"),
-]
-# B-roll kira-kira setiap 8 s, TIDAK pada poin penting (hook, angka, tajuk poin #1/#2/#3, "paling penting", CTA)
-BROLL = [
-    dict(s=4.60, e=7.46, clip="b5", src="B-ROLL/Video Onprogress/IMG_9303.MOV",
-         why="'Kalau nak renovate rumah, nak siapkan sebelum raya'"),
-    dict(s=13.62, e=16.12, clip="b6", src="B-ROLL/Video Onprogress/IMG_9298.MOV",
-         why="'Biasanya rumah yang tak siap sebelum raya ni'"),
-    dict(s=22.82, e=25.62, clip="b1", src="B-ROLL/Video Onprogress/IMG_9301.MOV",
-         why="'Projek tengah ongoing, nak tukar situ, nak tukar sini'"),
-    dict(s=30.76, e=33.30, clip="b2", src="B-ROLL/Video Onprogress/IMG_9321.MOV",
-         why="'kabinet yang kita rancang tu kita kena buat balik'"),
-    dict(s=41.90, e=44.62, clip="b3", src="B-ROLL/Video Onprogress/IMG_9290.MOV",
-         why="'Lepas tu, tak tahulah siapa yang bertanggungjawab'"),
-    dict(s=53.82, e=56.46, clip="b7", src="B-ROLL/Video Onprogress/IMG_9310.MOV",
-         why="'Sebab itu kita datangkan dengan design dulu'"),
-    dict(s=59.36, e=62.26, clip="b4", src="B-ROLL/Video Projek Dah Siap/IMG_0535.MOV",
-         why="'semua kerja-kerja tu akan smooth sahaja' (projek siap)"),
-]
-# punch-in: selang-seli ikut ayat (DNA Farhan: setiap 2 potongan)
-# v2: motion zoom lembut pada muka -- zoom in perlahan satu ayat, zoom out ayat seterusnya
+# ---- overlay teks, B-roll (masa sumber, dari config) ----
+LABEL = C.get("label", dict(s=0.15, e=3.3, text="Farhan · Founder Fi-k Studio"))
+POINTS = C.get("points", [])      # tajuk poin, atas frame
+NUMS = C.get("nums", [])          # angka / teks besar 1-2 saat, tepat seperti disebut
+BROLL = C["broll"]                # ±setiap 8 s, sepadan ayat, BUKAN pada poin penting; type: video | image
+# motion zoom lembut pada muka -- zoom in perlahan satu ayat, zoom out ayat seterusnya
 ZOOM = []
 for k, (s, e, _) in enumerate(sents):
     ZOOM.append(dict(s=s, e=e, z0=1.0 if k % 2 == 0 else 1.14, z1=1.14 if k % 2 == 0 else 1.0))
 SFX = [dict(t=n["s"], f="softpop") for n in NUMS] + [dict(t=b["s"] - 0.12, f="softwhoosh") for b in BROLL]
+SAVE = C.get("save_icon")         # {s, e}: ikon butang save ditekan + bunyi klik (cth. "save dulu video ni")
+if SAVE:
+    SFX.append(dict(t=SAVE["s"] + 0.45, f="click"))
 
 # ---- ASS ----
 def ts(x):
@@ -142,21 +123,27 @@ for c in chunks:
         ev.append(f"Dialogue: 1,{ts(s)},{ts(e)},CapOut,,0,0,0,,{POP}{{\\fs{fs}}}{c['text']}")
         ev.append(f"Dialogue: 2,{ts(s)},{ts(e)},CapIn,,0,0,0,,{POP}{{\\fs{fs}}}{c['text']}")
 ev.append(f"Dialogue: 3,{ts(LABEL['s']+OFF)},{ts(LABEL['e']+OFF)},Label,,0,0,0,,{{\\fad(200,250)}}{LABEL['text']}")
+# tag kecil atas B-roll (cth. "Design 3D Fi-k Studio", "Contoh inspirasi warna"), di bawah tajuk poin
+for tg in C.get("tags", []):
+    ev.append(f"Dialogue: 3,{ts(tg['s']+OFF)},{ts(tg['e']+OFF)},Label,,0,0,0,,{{\\an7\\pos(70,330)\\fad(150,150)}}{tg['text']}")
 for p in POINTS:
     ev.append(f"Dialogue: 3,{ts(p['s']+OFF)},{ts(p['e']+OFF)},Point,,0,0,0,,{{\\fad(180,200)\\move(40,230,70,230,0,220)}}{p['text']}")
 for n in NUMS:
-    fs = fit(n["text"], 150, 820)
+    fs = min(fit(line, 150, 820) for line in n["text"].split("\\N"))   # teks panjang: pecah dengan \N
     ev.append(f"Dialogue: 4,{ts(n['s']+OFF)},{ts(n['e']+OFF)},Num,,0,0,0,,{{\\an5\\pos(480,1020)\\fs{fs}\\fad(80,150)\\fscx70\\fscy70\\t(0,120,\\fscx100\\fscy100)}}{n['text']}")
-# Hook pada thumbnail (0–1s)
-h2 = fit("RENO LAMBAT SIAP", 170, 820)
-ev.append(f"Dialogue: 5,{ts(0)},{ts(1.0)},Hook,,0,0,0,,{{\\an2\\pos(470,1400)\\fs250}}3 PUNCA")
-ev.append(f"Dialogue: 5,{ts(0)},{ts(1.0)},Hook,,0,0,0,,{{\\an2\\pos(470,1530)\\fs112}}RENO LAMBAT SIAP")
+# Hook pada thumbnail (0–1s): baris dari config [{text, fs, y}] (fs None = auto muat lebar)
+# QC: blok hook mesti di tengah zon crop 1:1 (y 420-1500) dengan margin -> baseline 700..1460 (DNA 6)
+for hl in C["hook_lines"]:
+    assert 700 <= hl["y"] <= 1460, f"QC GAGAL: hook '{hl['text']}' y={hl['y']} di luar zon selamat 1:1 (700-1460)"
+for hl in C["hook_lines"]:
+    fs = hl.get("fs") or fit(hl["text"], 170, 900)
+    ev.append(f"Dialogue: 5,{ts(0)},{ts(1.0)},Hook,,0,0,0,,{{\\an2\\pos(540,{hl['y']})\\fs{fs}}}{hl['text']}")
 open(f"{OUT}/captions.ass", "w").write(hdr + "\n".join(ev) + "\n")
 
-plan = dict(offset=OFF, thumb_t=17.6, src_dur=SRC_DUR, end_card=END, total=OFF + SRC_DUR + END,
-            hook="3 PUNCA RENO LAMBAT SIAP", label=LABEL, points=POINTS, nums=NUMS, broll=BROLL,
+plan = dict(offset=OFF, thumb_t=C["thumb_t"], src_dur=SRC_DUR, end_card=END, total=OFF + SRC_DUR + END,
+            hook=" ".join(h["text"] for h in C["hook_lines"]), label=LABEL, points=POINTS, nums=NUMS, broll=BROLL,
             zoom=ZOOM, sfx=SFX, chunks=chunks, perlu_semak=PERLU_SEMAK,
-            cta="DM untuk keterangan lanjut", tagline="Design Dulu, Baru Bina")
+            save_icon=SAVE, cta=C.get("cta", "DM untuk keterangan lanjut"), tagline=C.get("tagline", "Design Dulu, Baru Bina"))
 json.dump(plan, open(f"{OUT}/plan.json", "w"), ensure_ascii=False, indent=1)
 print(len(chunks), "chunks;", "total", plan["total"])
 for p in PERLU_SEMAK: print("SEMAK", p)

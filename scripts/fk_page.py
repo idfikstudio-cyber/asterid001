@@ -1,17 +1,25 @@
-"""Jana halaman preview Artifact + RINGKASAN untuk FK-F-007.
+"""Jana halaman preview Artifact + RINGKASAN untuk satu video Fi-k Studio.
 
-python3 fk_page.py <template.html> <out_index.html> <out_ringkasan.txt>
+python3 fk_page.py <edit_dir> <out_index.html> <out_ringkasan.txt>
+
+<edit_dir> (contoh edit/FK-F-008) mesti ada:
+  transcript.json, plan.json (dari fk_plan.py), config.json (fix/fix_at/key/hook_lines/thumb_t),
+  page.json: id, topik, tag, ver, status, tarikh, edit_intro, seg [[s,e,nama,isi]...] (masa OUTPUT),
+             done [[tajuk,isi,(masa)]...], todo [[tajuk,isi,(masa)]...], tt, hs
+Templat: scripts/fk_preview_tpl.html
 """
-import json, sys, re
+import json, sys, re, os
 
-TPL, OUT_HTML, OUT_TXT = sys.argv[1:4]
-p = json.load(open('edit/FK-F-007/plan.json')); O = p['offset']; D = round(p['total'], 2)
-t = json.load(open('edit/FK-F-007/transcript.json'))
-VER = "v3"
-FIX = {"Ryan": "Raya", "adekat": "dah dekat"}
-FIX_AT = {25.94: "tu"}
-KEY = {"3", "tiga", "lambat", "delay", "jangan", "seminggu", "minggu", "penting", "salahkan", "pertama", "kedua",
-       "ketiga", "kabinet", "tepat", "berubah-ubah", "agreement", "settle", "design"}
+ED, OUT_HTML, OUT_TXT = sys.argv[1:4]
+TPL = os.path.join(os.path.dirname(os.path.abspath(__file__)), "fk_preview_tpl.html")
+p = json.load(open(f"{ED}/plan.json")); O = p['offset']; D = round(p['total'], 2)
+t = json.load(open(f"{ED}/transcript.json"))
+C = json.load(open(f"{ED}/config.json"))
+G = json.load(open(f"{ED}/page.json"))
+FIX = C.get("fix", {})
+FIX_AT = {round(float(k), 2): v for k, v in C.get("fix_at", {}).items()}
+KEY = {k.lower() for k in C["key"]}
+
 caps = []
 for s in t:
     ws = []
@@ -31,56 +39,39 @@ for s in t:
             w['hl'] = True
     caps.append({"s": round(s['start'] + O, 2), "e": round(s['end'] + O, 2), "w": ws})
 
-mg = [[0, 1.0, "Thumbnail", "Hook “3 PUNCA / RENO LAMBAT SIAP” atas frame Farhan tunjuk 3 jari (sumber 0:17.6)"],
-      [p['label']['s'] + O, p['label']['e'] + O, "Label", "Pil hijau “Farhan · Founder Fi-k Studio”"]]
-for n in p['nums']: mg.append([n['s'] + O, n['e'] + O, "Angka", f"Teks besar “{n['text']}” (hijau #304945, stroke putih)"])
+hook = " / ".join(h["text"] for h in C["hook_lines"])
+def tsm(x): return f"{int(x // 60)}:{x % 60:04.1f}"
+mg = [[0, 1.0, "Thumbnail", f"Hook “{hook}” atas frame Farhan (sumber {tsm(C['thumb_t'])}), latar bokeh"],
+      [p['label']['s'] + O, p['label']['e'] + O, "Label", f"Pil hijau “{p['label']['text']}”"]]
+for n in p['nums']: mg.append([n['s'] + O, n['e'] + O, "Teks besar", f"“{n['text'].replace(chr(92) + 'N', ' ')}” (hijau #304945, stroke putih)"])
 for q in p['points']: mg.append([q['s'] + O, q['e'] + O, "Tajuk poin", f"Kotak hijau atas: “{q['text'].replace('  ', ' ')}”"])
-for b in p['broll']: mg.append([b['s'] + O, b['e'] + O, "B-roll", f"{b['src']} ({b['e'] - b['s']:.1f} s) pada {b['why']}"])
-mg.append([D - p["end_card"], D, "Outro", "BRAND/Outro Potrait.mp4 (animasi logo, 4.0 s) + “Design Dulu, Baru Bina” + kotak hijau “DM untuk keterangan lanjut” muncul selepas logo statik"])
+for b in p['broll']:
+    kind = "gambar, Ken Burns" if b.get("type") == "image" else "video"
+    mg.append([b['s'] + O, b['e'] + O, "B-roll", f"{b['src']} ({kind}, {b['e'] - b['s']:.1f} s) pada {b['why']}"])
+mg.append([D - p["end_card"], D, "Outro", f"BRAND/Outro Potrait.mp4 (animasi logo, 4.0 s) + “{p['tagline']}” + kotak hijau “{p['cta']}” muncul selepas logo statik"])
 mg = sorted([[round(a, 2), round(b, 2), c, d] for a, b, c, d in mg])
 sfx = sorted([[round(s['t'] + O, 2), "pop lembut" if s['f'] == "softpop" else "whoosh lembut"] for s in p['sfx']])
 zoom = [{"t": round(z['s'] + O, 2), "m": f"{'zoom in' if z['z1'] > z['z0'] else 'zoom out'} perlahan {int(z['z0']*100)}% → {int(z['z1']*100)}%"} for z in p['zoom']]
-SEG = [[0, 1.0, "Thumbnail", "Hook 3 PUNCA / RENO LAMBAT SIAP"],
-       [1.0, 18.6, "Hook & masalah", "Jangan reno sebelum raya tanpa dengar penjelasan; label Farhan; B-roll 0:05.6 & 0:14.6; angka 3 PERKARA, 3 BENDA"],
-       [18.6, 29.1, "#1 Design berubah", "Tajuk poin #1 (muka Farhan) + B-roll projek ongoing (tukar situ, tukar sini)"],
-       [29.1, 38.9, "#2 Ukuran tak tepat", "Tajuk poin #2 (muka Farhan) + B-roll sinki/kabinet + angka SEMINGGU DUA / 3 MINGGU"],
-       [38.9, 48.8, "#3 Tiada agreement", "Tajuk poin #3 (muka Farhan) + B-roll klien pegang dokumen pada 'siapa yang bertanggungjawab'"],
-       [48.8, 64.98, "Paling penting", "PALING PENTING (muka Farhan, tiada B-roll) → B-roll 'design dulu' + projek siap"],
-       [64.98, D - p["end_card"], "CTA", "Raya dah dekat ni, DM kami"], [D - p["end_card"], D, "Outro", "Outro Potrait + Design Dulu, Baru Bina + DM untuk keterangan lanjut"]]
-SEG = [[round(a, 2), round(b, 2), c, d] for a, b, c, d in SEG]
-DONE = [
-    ["v3: outro brand", "End card diganti dengan BRAND/Outro Potrait.mp4. Hanya 4.0 s pertama digunakan (animasi logo); 2.2 s terakhir fail itu skrin putih kosong, jadi tidak dimasukkan. Crossfade 0.25 s dari Farhan.", 68.9],
-    ["v3: tagline & CTA", "“Design Dulu, Baru Bina” + kotak hijau “DM untuk keterangan lanjut” di bawah wordmark, muncul pada 1.85 s outro.", 71.0],
-    ["v2: bokeh lebih halus", "Blur dikurangkan (jejari 8 px, sebelum ini 26 px) dan berperingkat ikut jarak dari badan: dekat badan kurang kabur, jauh lebih kabur, macam lensa sebenar. Latar (rak, panel kayu, pokok) masih jelas nampak. Tepi badan dilembutkan supaya tak nampak 'cut-out'; sharpen dikurangkan.", 2.0],
-    ["v2: B-roll ±setiap 8 saat", "7 sisipan (0:05.6, 0:14.6, 0:23.8, 0:31.8, 0:42.9, 0:54.8, 1:00.4), semua ≤3 s. Tiada B-roll pada hook, angka, tajuk poin #1/#2/#3, “paling penting” dan CTA, jadi muka Farhan nampak pada poin penting.", 5.6],
-    ["v2: motion zoom pada muka", "Zoom in perlahan sepanjang satu ayat, zoom out pada ayat seterusnya (100% ↔ 114%, ease in/out). Zoom berpusat pada muka (dijejak setiap frame, dilicinkan 1 s), mata kekal di sepertiga atas.", 18.72],
-    ["v2: caption disahkan", "“RAYA DAH DEKAT NI” (1:05.0) dan “TIME TU” (0:26.7) ikut Farhan.", 26.7],
-    ["v2: tiada muzik", "Dikekalkan tanpa muzik, ikut Farhan."],
-    ["Footage sudah ditrim", "Tiada isi dipotong; tiada senyap >0.3 s dalam rakaman."],
-    ["Gaya ikut rujukan", "Caption 1 perkataan, huruf besar tebal, outline + stroke berwarna (hijau #304945 ikut DNA brand); hook besar; B-roll skrin penuh; end card putih dengan logo."],
-    ["Thumbnail 1 saat", "Frame Farhan tunjuk 3 jari + “3 PUNCA / RENO LAMBAT SIAP”.", 0.3],
-    ["Angka tepat seperti disebut", "3 PERKARA, 3 BENDA, SEMINGGU DUA, 3 MINGGU.", 9.3],
-    ["Audio", "High-pass, denoise ringan, −14.3 LUFS, peak −1.4 dBFS. SFX lembut dijana sendiri."]]
-TODO = [
-    ["Durasi 72.8 s", "Melebihi sasaran BOFU 30–60 s; footage sudah ditrim jadi isi tidak dipotong."],
-    ["B-roll IMG_0535 resolusi rendah", "Klip projek siap hanya 352×640, jadi nampak lembut dalam 1080p.", 60.36],
-    ["Preview MP4 & log belum di Drive", "Alat Drive hadkan ±3 MB setiap muat naik dan tidak boleh tulis ganti fail sedia ada. RINGKASAN v3 dimuat naik sebagai fail baru di _PREVIEW; video preview ada di halaman ini; baris log perlu ditambah manual."]]
-TT = "Nak reno rumah sebelum raya? Elakkan 3 punca ni dulu supaya projek tak lambat siap. DM untuk keterangan lanjut."
-HS = "#renovaterumah #interiordesign #fikstudio #renorumah #tipsrenovate"
+SEG = [[round(a, 2), round(b, 2), c, d] for a, b, c, d in G["seg"]]
+DONE, TODO, TT, HS = G["done"], G["todo"], G["tt"], G["hs"]
 
 js = ("const DATA=" + json.dumps(dict(caps=caps, mg=mg, sfx=sfx, zoom=zoom, dur=D), ensure_ascii=False)
       + ";\nconst SEG=" + json.dumps(SEG, ensure_ascii=False) + ";\nconst DONE=" + json.dumps(DONE, ensure_ascii=False)
       + ";\nconst TODO=" + json.dumps(TODO, ensure_ascii=False) + ";\nconst TT=" + json.dumps(TT, ensure_ascii=False)
       + ";\nconst HS=" + json.dumps(HS) + ";")
+meta = f"{G['tag']} · Farhan · {G['tarikh']} · 540×960 · {D:.1f} saat"
 html = open(TPL).read().replace("/*DATA*/", js)
+for k, v in {"ID": G["id"], "TOPIK": G["topik"], "STATUS": G["status"], "META": meta, "DUR": f"{D:.1f}",
+             "EDIT_INTRO": G["edit_intro"]}.items():
+    html = html.replace("{{" + k + "}}", v)
 open(OUT_HTML, "w").write(html)
 
 def ts(x): return f"{int(x // 60)}:{x % 60:05.2f}"
-L = ["RINGKASAN EDIT — FK-F-007_Farhan_Punca Renovate Lambat Siap (preview " + VER + ")",
-     "Brand: Fi-k Studio | Spokesperson: Farhan (Founder) | Tag skrip: TOFU+BOFU",
-     "Footage: SUDAH DITRIM (tiada isi dipotong) | Durasi: 72.8 s (1 s thumbnail + 67.9 s isi + 4.0 s outro)",
-     "Rujukan gaya: BRAND/rujukan video/Apa beza Kontraktor, Arkitek dan Interior Design.mp4", "",
-     "1) TEKS HOOK / THUMBNAIL", "   \"3 PUNCA / RENO LAMBAT SIAP\" atas frame Farhan tunjuk 3 jari (sumber 17.6 s).", "",
+L = [f"RINGKASAN EDIT — {G['id']}_Farhan_{G['topik']} (preview {G['ver']})",
+     f"Brand: Fi-k Studio | Spokesperson: Farhan (Founder) | Tag skrip: {G['tag']}",
+     f"Durasi: {D:.1f} s (1 s thumbnail + {p['src_dur']:.1f} s isi + 4.0 s outro)",
+     "DNA: fik-studio/CLAUDE.md v3.1", "",
+     "1) TEKS HOOK / THUMBNAIL", f"   \"{hook}\" atas frame Farhan (sumber {tsm(C['thumb_t'])}).", "",
      "2) CAPTION PENUH (ikut percakapan; masa ikut video preview)"]
 for c in caps:
     L.append(f"   [{ts(c['s'])}] " + " ".join(w['t'] for w in c['w']))
@@ -89,9 +80,12 @@ L += ["", "3) SFX, ANIMASI, B-ROLL, ZOOM (masa ikut video preview)",
 for m in mg: L.append(f"   {ts(m[0])}–{ts(m[1])}  {m[2]}: {m[3]}")
 for x in sfx: L.append(f"   {ts(x[0])}  SFX {x[1]}")
 L.append("   Motion zoom: " + "; ".join(f"{ts(z['t'])} {z['m']}" for z in zoom))
-L += ["", "4) CTA", "   Outro: \"Design Dulu, Baru Bina\" + \"DM untuk keterangan lanjut\".", "",
+L += ["", "   Senarai B-roll: [baris skrip] → [folder / nama fail] → [sebab]"]
+for b in p['broll']: L.append(f"   {ts(b['s'] + O)}  {b['why'].split(' (')[0]} → {b['src']} → {b['why']}")
+L += ["", "4) CTA", f"   Outro: \"{p['tagline']}\" + \"{p['cta']}\".", "",
       "5) PERLU SEMAK"] + [f"   - {a}: {b}" for a, b, *_ in TODO] + ["",
-      "6) CAPTION TIKTOK", "   " + TT, "   " + HS, "",
-      "Perubahan v2–v3 (ikut komen Farhan):"] + [f"   - {a}: {b}" for a, b, *_ in DONE[:7]]
+      "6) CAPTION TIKTOK", "   " + TT, "   " + HS]
+if G.get("changes"):
+    L += ["", "Perubahan (ikut komen Farhan):"] + [f"   - {x}" for x in G["changes"]]
 open(OUT_TXT, "w").write("\n".join(L) + "\n")
 print("ok", len(html))
