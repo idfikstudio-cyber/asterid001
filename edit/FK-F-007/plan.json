@@ -59,6 +59,7 @@
    "s": 4.6,
    "e": 7.46,
    "clip": "b5",
+   "type": "video",
    "src": "B-ROLL/Video Onprogress/IMG_9303.MOV",
    "why": "'Kalau nak renovate rumah, nak siapkan sebelum raya'"
   },
@@ -66,6 +67,7 @@
    "s": 13.62,
    "e": 16.12,
    "clip": "b6",
+   "type": "video",
    "src": "B-ROLL/Video Onprogress/IMG_9298.MOV",
    "why": "'Biasanya rumah yang tak siap sebelum raya ni'"
   },
@@ -73,6 +75,7 @@
    "s": 22.82,
    "e": 25.62,
    "clip": "b1",
+   "type": "video",
    "src": "B-ROLL/Video Onprogress/IMG_9301.MOV",
    "why": "'Projek tengah ongoing, nak tukar situ, nak tukar sini'"
   },
@@ -80,6 +83,7 @@
    "s": 30.76,
    "e": 33.3,
    "clip": "b2",
+   "type": "video",
    "src": "B-ROLL/Video Onprogress/IMG_9321.MOV",
    "why": "'kabinet yang kita rancang tu kita kena buat balik'"
   },
@@ -87,6 +91,7 @@
    "s": 41.9,
    "e": 44.62,
    "clip": "b3",
+   "type": "video",
    "src": "B-ROLL/Video Onprogress/IMG_9290.MOV",
    "why": "'Lepas tu, tak tahulah siapa yang bertanggungjawab'"
   },
@@ -94,6 +99,7 @@
    "s": 53.82,
    "e": 56.46,
    "clip": "b7",
+   "type": "video",
    "src": "B-ROLL/Video Onprogress/IMG_9310.MOV",
    "why": "'Sebab itu kita datangkan dengan design dulu'"
   },
@@ -101,6 +107,7 @@
    "s": 59.36,
    "e": 62.26,
    "clip": "b4",
+   "type": "video",
    "src": "B-ROLL/Video Projek Dah Siap/IMG_0535.MOV",
    "why": "'semua kerja-kerja tu akan smooth sahaja' (projek siap)"
   }
