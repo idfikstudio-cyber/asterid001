@@ -1,0 +1,72 @@
+RINGKASAN EDIT — FK-F-007_Farhan_Punca Renovate Lambat Siap
+Brand: Fi-k Studio | Spokesperson: Farhan (Founder) | Tag skrip: TOFU+BOFU
+Footage: SUDAH DITRIM (tiada isi dipotong) | Durasi preview: 70.3 s (1 s thumbnail + 67.9 s isi + 1.5 s end card)
+Rujukan gaya: BRAND/rujukan video/Apa beza Kontraktor, Arkitek dan Interior Design.mp4
+
+1) TEKS HOOK / THUMBNAIL
+   "3 PUNCA / RENO LAMBAT SIAP" atas frame Farhan tunjuk 3 jari (sumber 17.6 s). Fail: FK-F-007_Farhan_Punca Renovate Lambat Siap_THUMB.png
+
+2) CAPTION PENUH (ikut percakapan; masa ikut video preview)
+   [0:01.00] Lagi beberapa bulan nak raya, jangan renovate rumah dulu sebelum dengar penjelasan saya.
+   [0:05.60] Kalau nak renovate rumah, nak siapkan sebelum raya, kena perhatikan 3 perkara.
+   [0:10.14] Dan kadang-kadang dia boleh jadi lambat dan delay tak sempat pun siap sebelum raya.
+   [0:14.62] Biasanya rumah yang tak siap sebelum raya ni terjadi sebab 3 benda.
+   [0:18.72] Yang pertama, design ataupun struktur rumah tu berubah-ubah setiap kali kita datang.
+   [0:23.82] Projek tengah ongoing, nak tukar situ, nak tukar sini, tambah situ, banyak kerja-kerja akan delay.
+   [0:29.12] Yang kedua, ukuran tak tepat.
+   [0:30.36] Bila ukuran tak tepat, kabinet yang kita rancang tu kita kena buat balik, hantar balik kat kilang.
+   [0:35.74] Yang ini dah ambil masa dalam seminggu dua, boleh jadi dalam tiga minggu.
+   [0:38.88] Dan yang ketiga ni, tak ada agreement yang tulus dan ikhlas.
+   [0:42.90] Lepas tu, tak tahulah siapa yang bertanggungjawab.
+   [0:45.16] Kita akan salahkan kontraktor, kontraktor akan salahkan kita.
+   [0:48.30] Betul tak?
+   [0:48.80] Tapi antara tiga ni yang paling penting, yang pertama, jangan ubah apa-apa semasa kerja tengah ongoing.
+   [0:54.82] Sebab itu kita datangkan dengan design dulu.
+   [0:56.72] Bila design dah settle dan kita dah faham dah apa akan terjadi,
+   [1:00.36] semua kerja-kerja tu akan smooth sahaja dan akan settle pada waktu yang ditetapkan.
+   [1:04.98] Raya dah dekat ni, nak renovate rumah ke?
+   [1:07.18] DM kami untuk keterangan lanjut.
+   Gaya: 1 perkataan sebaris (gaya rujukan), Montserrat Black huruf besar, putih + outline gelap + stroke hijau #304945.
+   Kata kunci (3, lambat, delay, jangan, seminggu/minggu, penting, salahkan, pertama/kedua/ketiga, kabinet, tak tepat, agreement, design, settle) dalam kotak hijau #304945 teks putih.
+
+3) SFX, ANIMASI, B-ROLL (masa ikut video preview)
+   Bokeh: latar dikaburkan sepanjang video (segmentasi orang + blur lensa), Farhan kekal tajam; subjek dijernihkan (denoise ringan + sharpen).
+   0:00.00–0:01.00  Thumbnail statik + hook
+   0:01.15–0:04.30  Label kecil: "Farhan · Founder Fi-k Studio"
+   0:09.30–0:10.80  Angka besar "3 PERKARA" + SFX pop lembut
+   0:18.14–0:19.50  Angka besar "3 BENDA" + SFX pop lembut
+   0:36.82–0:38.20  Angka besar "SEMINGGU DUA" + SFX pop lembut
+   0:38.28–0:39.80  Angka besar "3 MINGGU" + SFX pop lembut
+   0:19.56–0:23.82  Tajuk poin (atas): "#1 DESIGN BERUBAH-UBAH"
+   0:29.12–0:35.74  Tajuk poin (atas): "#2 UKURAN TAK TEPAT"
+   0:39.20–0:42.90  Tajuk poin (atas): "#3 TAK ADA AGREEMENT"
+   0:49.86–0:54.70  Tajuk poin (atas): "PALING PENTING"
+   0:23.82–0:26.62  B-roll B-ROLL/Video Onprogress/IMG_9301.MOV (2.8 s) + whoosh lembut — 'Projek tengah ongoing, nak tukar situ, nak tukar sini'
+   0:31.76–0:34.30  B-roll B-ROLL/Video Onprogress/IMG_9321.MOV (2.5 s) + whoosh lembut — 'kabinet yang kita rancang tu kita kena buat balik'
+   0:40.24–0:42.62  B-roll B-ROLL/Video Onprogress/IMG_9290.MOV (2.4 s) + whoosh lembut — 'agreement yang tulus dan ikhlas' (klien pegang dokumen)
+   1:00.36–1:03.26  B-roll B-ROLL/Video Projek Dah Siap/IMG_0535.MOV (2.9 s) + whoosh lembut — 'semua kerja-kerja tu akan smooth sahaja' (projek siap)
+   Punch-in 112% (selang-seli setiap ayat) bermula pada: 0:05.60, 0:14.62, 0:23.82, 0:30.36, 0:38.88, 0:45.16, 0:48.80, 0:56.72, 1:04.98
+   1:08.87–1:10.37  End card putih: Logo Green + "We Design, You Build." + CTA
+
+4) CTA
+   End card: "DM / WhatsApp kami untuk 3D design rumah anda" (CTA BOFU). Farhan sendiri sebut "DM kami untuk keterangan lanjut".
+
+5) PERLU SEMAK
+   a) 65.0 s: transkrip dengar "Ryan adekat ni" — caption tulis "RAYA DAH DEKAT NI". Sila sahkan.
+   b) 26.7 s: transkrip dengar "time situ" — caption tulis "TAMBAH SITU". Sila sahkan perkataan sebenar.
+   c) Tag skrip TOFU+BOFU: saya guna CTA BOFU (sepadan dengan "DM kami" yang disebut). Tukar ke TOFU ("Follow untuk tips reno seterusnya") jika mahu.
+   d) Durasi 70.3 s melebihi sasaran BOFU 30–60 s. Footage sudah ditrim, jadi isi tidak dipotong.
+   e) Folder MUSIC/ kosong — tiada muzik latar. Letak lagu berlesen dalam MUSIC/ jika mahu muzik (22–25 dB bawah suara, ducking).
+   f) Gaya rujukan guna warna merah/pink; saya tukar ke hijau #304945 ikut DNA brand Fi-k Studio.
+   g) Bokeh: ada sedikit bayang kabur di tepi tangan bila tangan bergerak laju (cth. thumbnail, tepi jari). Boleh dikurangkan lagi jika perlu.
+   h) Ejaan "tulus dan ikhlas" (41 s) ikut transkrip; sila semak.
+
+6) CAPTION TIKTOK
+   Nak reno rumah sebelum raya? Elakkan 3 punca ni dulu supaya projek tak lambat siap. Simpan video ni & DM kami untuk 3D design rumah anda.
+   #renovaterumah #interiordesign #fikstudio #renorumah #tipsrenovate
+
+WARNA & AUDIO
+   Grade: kontras +4%, saturasi +5%, cerah sedikit; tiada anjakan hue (warna kulit asli).
+   Audio: highpass 70 Hz, denoise ringan (afftdn 8 dB), loudnorm -14 LUFS, limiter true peak ≤ -1 dBTP. Ukuran: -14.3 LUFS, peak -1.4 dBFS.
+   SFX: pop lembut (angka) + whoosh lembut (B-roll), dijana sendiri, bebas hak cipta.
+   Font: Montserrat (font rasmi belum ditetapkan dalam warna.txt).
