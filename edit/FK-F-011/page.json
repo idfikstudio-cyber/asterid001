@@ -1,0 +1,35 @@
+{
+ "id": "FK-F-011",
+ "topik": "Susun Dapur Teori Kitchen Work Triangle",
+ "tag": "TOFU",
+ "ver": "v1",
+ "status": "Preview v1 · tunggu komen",
+ "tarikh": "17 Nov 2026",
+ "edit_intro": "Ikut DNA Fi-k Studio v3.3. Footage sudah ditrim: tiada take ulangan dan tiada senyap lebih 0.3 s, jadi semua 84.8 s isi digunakan. Video terdiri daripada thumbnail 1 s, isi 84.8 s dan outro brand 4.0 s, jumlah 89.9 s. Empat B-roll yang Farhan pilih diletak dalam bahagian penerangan konsep (0:48–1:07), masing-masing tepat pada ayat yang sepadan. Bahagian cerita peribadi (0:11–0:40) dikekalkan pada muka Farhan kerana tiada B-roll yang sepadan. Butang SAVE dan bunyi klik pada “save dulu video ni”.",
+ "seg": [
+  [0, 1.0, "Thumbnail", "Hook SUSUN DAPUR / SEGI TIGA / KERJA. Frame Farhan sumber 0:04.5 (tangan membentuk segi), blok teks di tengah."],
+  [1.0, 11.06, "Hook", "Akak-akak yang masak heavy waktu raya, dengan kad besar SEGI TIGA KERJA. Butang SAVE ditekan (bunyi klik) pada “save dulu video ni”."],
+  [11.06, 39.74, "Cerita", "Pengalaman Farhan di rumah sewa: migraine, pusing-pusing, pening dan penat nak masak. Muka Farhan sepanjang bahagian ini."],
+  [39.74, 48.18, "Tips", "Tajuk poin TIPS: SEGI TIGA KERJA, dengan kad besar KITCHEN WORK TRIANGLE."],
+  [48.18, 57.6, "3 poin utama", "Video ilustrasi segi tiga kerja. Rajah peti ais, sinki dan dapur. Kad 3 POIN UTAMA."],
+  [57.6, 71.04, "Jarak & rancang", "“Kalau jauh sangat” dengan rajah pandangan atas. “Rancang betul-betul” dengan gambar dapur sebenar projek Fi-k."],
+  [71.04, 85.83, "CTA", "Masak dengan tenang. Dah ready dapur untuk raya? Caption penuh DM KAMI UNTUK KETERANGAN LANJUT."],
+  [85.83, 89.86, "Outro", "BRAND/Outro Potrait.mp4 + Design Dulu, Baru Bina + DM untuk keterangan lanjut"]
+ ],
+ "done": [
+  ["Footage sudah ditrim", "Tiada take ulangan dan tiada senyap lebih 0.3 s, jadi isi tidak dipotong. Ulangan “ambil barang kat depan” dikekalkan kerana memang disebut begitu (gaya bercerita, disahkan semula dengan Whisper).", 25.6],
+  ["Ejaan disahkan", "“Save dulu video ni” disahkan dengan transkrip semula; Whisper asal dengar “Saya dulu”. “ni ni” (0:49.1) dibuang dari caption sahaja, audio kekal.", 8.3],
+  ["B-roll pilihan Farhan", "KitchenWorkTriangle.mp4, kitchen work triangle 2.jpg, kitchen work triangle.jpg dan Kitchen Work Triangle Real Projek.jpeg. Setiap satu dipakai sekali sahaja, pada ayat yang sepadan.", 48.18],
+  ["Ikut DNA v3.3", "Bokeh halus, motion zoom muka, caption 1 perkataan dengan kotak hijau untuk kata kunci, label Farhan, outro di tengah, tiada muzik.", 1.0]
+ ],
+ "todo": [
+  ["“Peti ais” (0:50.2)", "Whisper dengar “Kita ais”. Caption ditulis PETI AIS ikut konteks (peti ais, sinki, dapur). Sila dengar dan sahkan.", 50.2],
+  ["Rajah bukan projek Fi-k", "KitchenWorkTriangle.mp4 dan kedua-dua rajah “kitchen work triangle” nampak seperti ilustrasi luar (teks Inggeris, gaya berbeza). Semuanya ditag “Ilustrasi konsep” supaya tak menyamar projek Fi-k. Sila sahkan boleh guna.", 48.18],
+  ["Gambar Real Projek", "Ditag “Projek siap Fi-k Studio”. Sila sahkan ini memang projek Fi-k. Gambar 1080×810 dipapar sebagai kad di tengah skrin.", 64.96],
+  ["Tiada B-roll 0:11–0:48", "Bahagian cerita peribadi (rumah sewa, migraine) panjang 29 s tanpa B-roll kerana tiada fail yang sepadan. Jika mahu, beri gambar/video dapur sempit atau Onprogress dapur untuk diselit.", 11.06],
+  ["Durasi 89.9 s", "Melebihi sasaran TOFU 20–45 s. Footage sudah ditrim, jadi isi tidak dipotong."],
+  ["Preview MP4 & log di Drive", "Alat Drive hadkan saiz muat naik, jadi THUMB dan RINGKASAN dimuat naik ke _PREVIEW. Video preview ada di halaman ini; baris log perlu ditambah manual."]
+ ],
+ "tt": "Selalu masak heavy waktu raya tapi penat dan pening dalam dapur? Cuba susun dapur ikut konsep segi tiga kerja (kitchen work triangle): peti ais, sinki dan dapur masak. Jangan jauh sangat, jangan dekat sangat. Dah ready dapur akak untuk raya? DM untuk keterangan lanjut.",
+ "hs": "#kitchenworktriangle #susunatordapur #dapurrumah #interiordesign #fikstudio"
+}

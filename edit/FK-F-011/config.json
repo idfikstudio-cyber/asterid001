@@ -1,0 +1,155 @@
+{
+ "src_dur": 84.83,
+ "thumb_t": 4.5,
+ "fix": {},
+ "fix_at": {
+  "7.3": "Save",
+  "49.2": "Peti ais",
+  "49.3": "",
+  "48.06": ""
+ },
+ "perlu_semak": [],
+ "key": [
+  "SEGI",
+  "TIGA",
+  "KERJA",
+  "3",
+  "SAVE",
+  "MIGRAINE",
+  "PENING",
+  "PENAT",
+  "PENTING",
+  "PENTINGKAN",
+  "TRIANGLE",
+  "JAUH",
+  "DEKAT",
+  "SPACE",
+  "RANCANG",
+  "TENANG",
+  "TENANG-TENANG",
+  "DM"
+ ],
+ "label": {
+  "s": 0.15,
+  "e": 3.2,
+  "text": "Farhan · Founder Fi-k Studio"
+ },
+ "points": [
+  {
+   "s": 38.8,
+   "e": 47.1,
+   "text": "TIPS: SEGI TIGA KERJA"
+  }
+ ],
+ "nums": [
+  {
+   "s": 5.36,
+   "e": 6.36,
+   "text": "SEGI TIGA KERJA"
+  },
+  {
+   "s": 45.68,
+   "e": 47.1,
+   "text": "KITCHEN WORK\\NTRIANGLE"
+  },
+  {
+   "s": 54.08,
+   "e": 55.7,
+   "text": "3 POIN UTAMA"
+  }
+ ],
+ "broll": [
+  {
+   "s": 47.18,
+   "e": 49.98,
+   "clip": "b1",
+   "type": "video",
+   "src": "B-ROLL/KitchenWorkTriangle.mp4",
+   "why": "'Kitchen work triangle ni konsep dia macam ni lah' (video ilustrasi segi tiga kerja: dapur U & island)"
+  },
+  {
+   "s": 50.7,
+   "e": 53.2,
+   "clip": "b2",
+   "type": "image",
+   "img": "kwt2.jpg",
+   "src": "B-ROLL/kitchen work triangle 2.jpg",
+   "why": "'sinki untuk basuh-basuh, dapur pula untuk memasak' (rajah peti ais – sinki – dapur masak)"
+  },
+  {
+   "s": 56.7,
+   "e": 59.2,
+   "clip": "b3",
+   "type": "image",
+   "img": "kwt1.jpg",
+   "src": "B-ROLL/kitchen work triangle.jpg",
+   "why": "'Kalau jauh sangat, dia akan memenatkan' (pandangan atas: garis jarak antara 3 titik)"
+  },
+  {
+   "s": 63.96,
+   "e": 66.36,
+   "clip": "b4",
+   "type": "image",
+   "img": "kwt_real.jpeg",
+   "src": "B-ROLL/Kitchen Work Triangle Real Projek.jpeg",
+   "why": "'kena rancang betul-betul untuk ruangan tu' (dapur sebenar projek Fi-k ikut segi tiga kerja)"
+  }
+ ],
+ "tags": [
+  {
+   "s": 47.18,
+   "e": 49.98,
+   "text": "Ilustrasi konsep"
+  },
+  {
+   "s": 50.7,
+   "e": 53.2,
+   "text": "Ilustrasi konsep"
+  },
+  {
+   "s": 56.7,
+   "e": 59.2,
+   "text": "Ilustrasi konsep"
+  },
+  {
+   "s": 63.96,
+   "e": 66.36,
+   "text": "Projek siap Fi-k Studio"
+  }
+ ],
+ "hook_lines": [
+  {
+   "text": "SUSUN DAPUR",
+   "fs": null,
+   "y": 1060
+  },
+  {
+   "text": "SEGI TIGA",
+   "fs": 210,
+   "y": 1225
+  },
+  {
+   "text": "KERJA",
+   "fs": 170,
+   "y": 1360
+  }
+ ],
+ "force_chunks": [
+  {
+   "s": 49.2,
+   "e": 49.58,
+   "text": "PETI AIS"
+  },
+  {
+   "s": 79.62,
+   "e": 81.28,
+   "text": "DM KAMI UNTUK\\NKETERANGAN LANJUT"
+  }
+ ],
+ "cta": "DM untuk keterangan lanjut",
+ "tagline": "Design Dulu, Baru Bina",
+ "save_icon": {
+  "s": 7.3,
+  "e": 9.1
+ }
+}

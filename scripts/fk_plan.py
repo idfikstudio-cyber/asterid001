@@ -115,7 +115,7 @@ for c in chunks:
     if in_num(c):
         continue   # angka besar sudah papar perkataan ini
     s, e = c["s"] + OFF, c["e"] + OFF
-    fs = fit(c["text"], 120, 800)
+    fs = min(fit(line, 120, 800) for line in c["text"].split("\\N"))   # frasa panjang: pecah dengan \N
     key = any(k in c["text"].split() or k == c["text"] for k in KEY)
     if key:
         ev.append(f"Dialogue: 2,{ts(s)},{ts(e)},CapKey,,0,0,0,,{POP}{{\\fs{fs}}}{c['text']}")
