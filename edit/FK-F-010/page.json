@@ -1,0 +1,132 @@
+{
+ "id": "FK-F-010",
+ "topik": "Kenapa Harga Kabinet Berbeza",
+ "tag": "TOFU+BOFU",
+ "ver": "v1",
+ "status": "Preview v1 · tunggu komen",
+ "tarikh": "17 Nov 2026",
+ "edit_intro": "Ikut DNA Fi-k Studio v3.3 (versi terkini di repo). Footage tiada take ulangan/senyap >0.3 s; isi 73.8 s digunakan penuh. Thumbnail 1 s + isi 73.8 s + outro brand 4.0 s = 78.9 s. B-roll projek & design 3D Fi-k ±setiap 8–12 saat, dipadan dengan ayat; tiada B-roll pada hook, tajuk poin, teks besar, harga dan CTA. QC automatik outro lulus (x=540 ±4 px).",
+ "seg": [
+  [
+   0,
+   1.0,
+   "Thumbnail",
+   "Hook KENAPA HARGA / KABINET / BERBEZA? — baris rapat, di tengah frame (zon crop 1:1 & 4:5), sumber 0:05.9"
+  ],
+  [
+   1.0,
+   21.3,
+   "Hook & janji",
+   "Harga beza-beza: ada mahal, murah, boleh terima → B-roll perbincangan dengan client → teks besar 3 PERKARA PENTING"
+  ],
+  [
+   21.3,
+   33.8,
+   "#1 Material kabinet",
+   "Tajuk poin #1 → close-up kabinet & kaunter Fi-k pada “material ni banyak jenis” (chipboard, melamine, nyatoh, aluminium)"
+  ],
+  [
+   33.8,
+   47.1,
+   "#2 Aksesori & mekanisme",
+   "Tajuk poin #2 → 3D dry kitchen (laci & pintu) pada “aksesori… mekanisme”; engsel, rel laci, risiko goyang (muka Farhan)"
+  ],
+  [
+   47.1,
+   56.3,
+   "#3 Jenis countertop",
+   "Tajuk poin #3 → island countertop marmar Fi-k pada “quartz stone, sintered stone”; konkrit, jubin"
+  ],
+  [
+   56.3,
+   65.6,
+   "Banding ikut item",
+   "Client pegang dokumen pada “bandingkan harga dengan pelbagai kontraktor” → BANDING IKUT ITEM → JANGAN AMBIL HARGA KESELURUHAN"
+  ],
+  [
+   65.6,
+   74.84,
+   "BOFU: pakej & CTA",
+   "Dapur siap Fi-k pada “pakej kabinet dan countertop kami” → BERMULA RM15,000 → DM untuk keterangan lanjut"
+  ],
+  [
+   74.84,
+   78.87,
+   "Outro",
+   "Outro Potrait (simbol FK & wordmark di tengah) + Design Dulu, Baru Bina + DM untuk keterangan lanjut"
+  ]
+ ],
+ "done": [
+  [
+   "Ikut DNA v3.3",
+   "Bokeh halus, motion zoom muka, caption 1 perkataan + kotak hijau kata kunci, tajuk poin #1–#3, hook baris rapat di tengah, kad & outro di tengah, tiada muzik.",
+   2.0
+  ],
+  [
+   "Istilah teknikal dibetulkan",
+   "Transkrip banyak salah dengar istilah kabinet; dibetulkan ikut konteks (lihat Perlu semak untuk disahkan): MELAMINE, NYATOH, ALUMINIUM, MEKANISME, ENGSEL, REL LACI, RISIKO, COUNTERTOP, QUARTZ STONE, SINTERED STONE, KONKRIT, PAKEJ.",
+   24.4
+  ],
+  [
+   "B-roll ikut ayat",
+   "Perbincangan client (0:11.7), close-up kabinet (0:24.5), 3D dry kitchen (0:36.1, tag Design 3D), island countertop (0:51.1), client pegang dokumen (0:56.6), dapur siap (1:05.8, tag Projek siap). Tiada fail berulang.",
+   11.74
+  ],
+  [
+   "Teks besar & harga",
+   "3 PERKARA PENTING, JANGAN AMBIL HARGA KESELURUHAN, BERMULA RM15,000 — tepat seperti disebut.",
+   69.22
+  ],
+  [
+   "QC automatik",
+   "Outro diukur selepas render: simbol FK, wordmark & teks di tengah (x=540 ±4 px). Hook dalam zon 1:1.",
+   76.0
+  ],
+  [
+   "Audio",
+   "Denoise ringan; loudness dua laluan −14.0 LUFS, peak −1.4 dBFS. SFX lembut dijana sendiri."
+  ]
+ ],
+ "todo": [
+  [
+   "Harga RM15,000 (1:09.8)",
+   "Disebut “pakej kabinet dan countertop… bermula dengan RM15,000 sahaja”. Tiada dalam skrip — sila sahkan harga ini tepat.",
+   69.22
+  ],
+  [
+   "Bahan kabinet (0:25–0:28)",
+   "Transkrip: “melamai, nyato, air milenium” → caption MELAMINE, NYATOH, ALUMINIUM. Sila sahkan (terutama NYATOH).",
+   25.4
+  ],
+  [
+   "Aksesori (0:39–0:41)",
+   "Transkrip: “Ansel ataupun Rilachi” → caption ENGSEL ATAUPUN REL LACI. Sila sahkan.",
+   40.18
+  ],
+  [
+   "“SEMAK-SEMAK” (0:46)",
+   "Transkrip: “sebeg-sebeg dulu benda” → caption SEMAK-SEMAK. Kurang pasti; sila beritahu perkataan sebenar.",
+   46.06
+  ],
+  [
+   "Countertop (0:48–0:55)",
+   "Transkrip: “pilih jenis kontraktor… quadstone, sinterstone, konkret” → COUNTERTOP, QUARTZ STONE, SINTERED STONE, KONKRIT. Juga “Paket kabinet dan kontraktor kami” → PAKEJ KABINET DAN COUNTERTOP (1:06). Sila sahkan.",
+   48.74
+  ],
+  [
+   "“ITEM-ITEMNYA” (1:01)",
+   "Transkrip: “ikut term-termnya” → caption ITEM-ITEMNYA. Kurang pasti; sila sahkan.",
+   61.78
+  ],
+  [
+   "Durasi 78.9 s",
+   "Melebihi sasaran BOFU 30–60 s; footage tiada ulangan jadi isi tidak dipotong."
+  ],
+  [
+   "Preview MP4 & log belum di Drive",
+   "Alat Drive hadkan ±3 MB setiap muat naik dan tidak boleh tulis ganti fail sedia ada. THUMB & RINGKASAN dimuat naik ke _PREVIEW; video preview ada di halaman ini; baris log perlu ditambah manual."
+  ]
+ ],
+ "tt": "Kenapa harga kabinet dapur boleh beza sangat? 3 perkara penting: material kabinet, aksesori & mekanisme, dan jenis countertop. Banding ikut item, jangan ambil harga keseluruhan! Pakej kabinet & countertop Fi-k bermula RM15,000. DM untuk keterangan lanjut.",
+ "hs": "#hargakabinet #kabinetdapur #renovatedapur #fikstudio #interiordesign"
+}

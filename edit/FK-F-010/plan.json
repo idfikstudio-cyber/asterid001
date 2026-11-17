@@ -1,0 +1,1077 @@
+{
+ "offset": 1.0,
+ "thumb_t": 5.9,
+ "src_dur": 73.84,
+ "end_card": 4.033333333333333,
+ "total": 78.87333333333333,
+ "hook": "KENAPA HARGA KABINET BERBEZA?",
+ "label": {
+  "s": 0.15,
+  "e": 3.2,
+  "text": "Farhan · Founder Fi-k Studio"
+ },
+ "points": [
+  {
+   "s": 20.3,
+   "e": 32.78,
+   "text": "#1  MATERIAL KABINET"
+  },
+  {
+   "s": 32.82,
+   "e": 46.02,
+   "text": "#2  AKSESORI & MEKANISME"
+  },
+  {
+   "s": 46.12,
+   "e": 55.32,
+   "text": "#3  JENIS COUNTERTOP"
+  },
+  {
+   "s": 58.56,
+   "e": 64.62,
+   "text": "BANDING IKUT ITEM"
+  }
+ ],
+ "nums": [
+  {
+   "s": 17.02,
+   "e": 18.5,
+   "text": "3 PERKARA PENTING"
+  },
+  {
+   "s": 61.62,
+   "e": 63.7,
+   "text": "JANGAN AMBIL\\NHARGA KESELURUHAN"
+  },
+  {
+   "s": 68.22,
+   "e": 70.1,
+   "text": "BERMULA\\NRM15,000"
+  }
+ ],
+ "broll": [
+  {
+   "s": 10.74,
+   "e": 13.2,
+   "clip": "v1",
+   "type": "video",
+   "src": "B-ROLL/Video Onprogress/IMG_9301.MOV",
+   "why": "'sebelum akak nak membanding-bandingkan harga tu' (perbincangan dengan client)"
+  },
+  {
+   "s": 23.54,
+   "e": 26.2,
+   "clip": "g1",
+   "type": "image",
+   "img": "gp10.jpg",
+   "src": "B-ROLL/Gambar Projek Onprogress/f865f3e6-ec4a-4000-bfc4-12b70eeaf78b.jpeg",
+   "why": "'material ni banyak jenis kak. Ada chipboard, ada melamine' (close-up kabinet & kaunter projek Fi-k)"
+  },
+  {
+   "s": 35.06,
+   "e": 37.8,
+   "clip": "p1",
+   "type": "video",
+   "src": "3D AIHouse 720 (S156348610) › dry kitchen",
+   "why": "'barang-barang aksesori dia ataupun orang panggil mekanisme' (laci & pintu kabinet, design 3D Fi-k)"
+  },
+  {
+   "s": 50.06,
+   "e": 52.8,
+   "clip": "g2",
+   "type": "image",
+   "img": "gp23.jpg",
+   "src": "B-ROLL/Gambar Projek Onprogress/b97e0480-79a4-4bac-945d-09bced40ee9b.jpeg",
+   "why": "'quartz stone, sintered stone' (island countertop marmar projek Fi-k)"
+  },
+  {
+   "s": 55.6,
+   "e": 58.4,
+   "clip": "v2",
+   "type": "video",
+   "src": "B-ROLL/Video Onprogress/IMG_9290.MOV",
+   "why": "'membanding-bandingkan harga dengan pelbagai kontraktor' (client pegang dokumen)"
+  },
+  {
+   "s": 64.76,
+   "e": 67.7,
+   "clip": "g3",
+   "type": "image",
+   "img": "gp1.jpg",
+   "src": "B-ROLL/Gambar Projek Onprogress/057fff52-b2b0-4c97-8c87-bd0c7c8af1fc.jpeg",
+   "why": "'Pakej kabinet dan countertop kami untuk dapur baru akak' (dapur siap Fi-k)"
+  }
+ ],
+ "zoom": [
+  {
+   "s": 0.0,
+   "e": 4.56,
+   "z0": 1.0,
+   "z1": 1.14
+  },
+  {
+   "s": 4.6,
+   "e": 9.66,
+   "z0": 1.14,
+   "z1": 1.0
+  },
+  {
+   "s": 9.74,
+   "e": 14.3,
+   "z0": 1.0,
+   "z1": 1.14
+  },
+  {
+   "s": 14.5,
+   "e": 20.26,
+   "z0": 1.14,
+   "z1": 1.0
+  },
+  {
+   "s": 20.3,
+   "e": 24.34,
+   "z0": 1.0,
+   "z1": 1.14
+  },
+  {
+   "s": 24.4,
+   "e": 28.56,
+   "z0": 1.14,
+   "z1": 1.0
+  },
+  {
+   "s": 28.56,
+   "e": 32.78,
+   "z0": 1.0,
+   "z1": 1.14
+  },
+  {
+   "s": 32.82,
+   "e": 38.72,
+   "z0": 1.14,
+   "z1": 1.0
+  },
+  {
+   "s": 38.82,
+   "e": 40.84,
+   "z0": 1.0,
+   "z1": 1.14
+  },
+  {
+   "s": 40.98,
+   "e": 46.02,
+   "z0": 1.14,
+   "z1": 1.0
+  },
+  {
+   "s": 46.12,
+   "e": 49.84,
+   "z0": 1.0,
+   "z1": 1.14
+  },
+  {
+   "s": 50.06,
+   "e": 55.32,
+   "z0": 1.14,
+   "z1": 1.0
+  },
+  {
+   "s": 55.44,
+   "e": 58.54,
+   "z0": 1.0,
+   "z1": 1.14
+  },
+  {
+   "s": 58.56,
+   "e": 64.62,
+   "z0": 1.14,
+   "z1": 1.0
+  },
+  {
+   "s": 64.76,
+   "e": 70.04,
+   "z0": 1.0,
+   "z1": 1.14
+  },
+  {
+   "s": 70.12,
+   "e": 73.66,
+   "z0": 1.14,
+   "z1": 1.0
+  }
+ ],
+ "sfx": [
+  {
+   "t": 17.02,
+   "f": "softpop"
+  },
+  {
+   "t": 61.62,
+   "f": "softpop"
+  },
+  {
+   "t": 68.22,
+   "f": "softpop"
+  },
+  {
+   "t": 10.620000000000001,
+   "f": "softwhoosh"
+  },
+  {
+   "t": 23.419999999999998,
+   "f": "softwhoosh"
+  },
+  {
+   "t": 34.940000000000005,
+   "f": "softwhoosh"
+  },
+  {
+   "t": 49.940000000000005,
+   "f": "softwhoosh"
+  },
+  {
+   "t": 55.480000000000004,
+   "f": "softwhoosh"
+  },
+  {
+   "t": 64.64,
+   "f": "softwhoosh"
+  }
+ ],
+ "chunks": [
+  {
+   "text": "AKAK-AKAK",
+   "s": 0.0,
+   "e": 0.46
+  },
+  {
+   "text": "DAH TANYA",
+   "s": 0.46,
+   "e": 0.86
+  },
+  {
+   "text": "BANYAK",
+   "s": 0.86,
+   "e": 1.2
+  },
+  {
+   "text": "DAH KONTRAKTOR",
+   "s": 1.2,
+   "e": 1.92
+  },
+  {
+   "text": "UNTUK",
+   "s": 1.92,
+   "e": 2.4
+  },
+  {
+   "text": "BUAT",
+   "s": 2.4,
+   "e": 2.76
+  },
+  {
+   "text": "RENOVATION",
+   "s": 2.76,
+   "e": 3.04
+  },
+  {
+   "text": "BAHAGIAN",
+   "s": 3.04,
+   "e": 3.76
+  },
+  {
+   "text": "DAPUR",
+   "s": 3.76,
+   "e": 4.08
+  },
+  {
+   "text": "RUMAH",
+   "s": 4.08,
+   "e": 4.2
+  },
+  {
+   "text": "KAKAK",
+   "s": 4.2,
+   "e": 4.56
+  },
+  {
+   "text": "TAPI",
+   "s": 4.6,
+   "e": 4.78
+  },
+  {
+   "text": "HARGA",
+   "s": 4.78,
+   "e": 5.38
+  },
+  {
+   "text": "BEZA-BEZA",
+   "s": 5.38,
+   "e": 5.92
+  },
+  {
+   "text": "KAN",
+   "s": 5.92,
+   "e": 6.1
+  },
+  {
+   "text": "ADA YANG",
+   "s": 6.18,
+   "e": 6.56
+  },
+  {
+   "text": "MAHAL",
+   "s": 6.56,
+   "e": 7.1
+  },
+  {
+   "text": "ADA YANG",
+   "s": 7.12,
+   "e": 7.56
+  },
+  {
+   "text": "MURAH",
+   "s": 7.56,
+   "e": 7.98
+  },
+  {
+   "text": "ADA YANG",
+   "s": 7.98,
+   "e": 8.4
+  },
+  {
+   "text": "MACAM",
+   "s": 8.4,
+   "e": 8.66
+  },
+  {
+   "text": "BOLEH",
+   "s": 8.66,
+   "e": 9.24
+  },
+  {
+   "text": "TERIMA",
+   "s": 9.24,
+   "e": 9.66
+  },
+  {
+   "text": "TAPI",
+   "s": 9.74,
+   "e": 10.06
+  },
+  {
+   "text": "SEBELUM",
+   "s": 10.06,
+   "e": 10.46
+  },
+  {
+   "text": "AKAK",
+   "s": 10.46,
+   "e": 10.62
+  },
+  {
+   "text": "NAK",
+   "s": 10.62,
+   "e": 10.74
+  },
+  {
+   "text": "MEMBANDING-BANDINGKAN",
+   "s": 10.74,
+   "e": 11.58
+  },
+  {
+   "text": "HARGA",
+   "s": 11.58,
+   "e": 11.96
+  },
+  {
+   "text": "TU",
+   "s": 11.96,
+   "e": 12.14
+  },
+  {
+   "text": "CUBA",
+   "s": 12.18,
+   "e": 12.58
+  },
+  {
+   "text": "AKAK",
+   "s": 12.58,
+   "e": 12.74
+  },
+  {
+   "text": "DENGAR",
+   "s": 12.74,
+   "e": 13.08
+  },
+  {
+   "text": "DULU",
+   "s": 13.08,
+   "e": 13.22
+  },
+  {
+   "text": "APA YANG",
+   "s": 13.22,
+   "e": 13.64
+  },
+  {
+   "text": "SAYA",
+   "s": 13.64,
+   "e": 13.82
+  },
+  {
+   "text": "NAK KONGSIKAN",
+   "s": 13.82,
+   "e": 14.3
+  },
+  {
+   "text": "HARGA",
+   "s": 14.5,
+   "e": 14.9
+  },
+  {
+   "text": "BERBEZA",
+   "s": 14.9,
+   "e": 15.34
+  },
+  {
+   "text": "NI BANYAK",
+   "s": 15.34,
+   "e": 15.66
+  },
+  {
+   "text": "SEBAB",
+   "s": 15.66,
+   "e": 15.98
+  },
+  {
+   "text": "TAPI",
+   "s": 15.98,
+   "e": 16.18
+  },
+  {
+   "text": "SAYA",
+   "s": 16.18,
+   "e": 16.48
+  },
+  {
+   "text": "HIGHLIGHTKAN",
+   "s": 16.48,
+   "e": 17.02
+  },
+  {
+   "text": "3 PERKARA",
+   "s": 17.02,
+   "e": 17.6
+  },
+  {
+   "text": "PENTING",
+   "s": 17.6,
+   "e": 18.12
+  },
+  {
+   "text": "SAHAJA",
+   "s": 18.12,
+   "e": 18.54
+  },
+  {
+   "text": "UNTUK",
+   "s": 18.54,
+   "e": 18.98
+  },
+  {
+   "text": "BANDINGKAN",
+   "s": 18.98,
+   "e": 19.84
+  },
+  {
+   "text": "HARGA",
+   "s": 19.84,
+   "e": 20.26
+  },
+  {
+   "text": "YANG",
+   "s": 20.3,
+   "e": 20.48
+  },
+  {
+   "text": "PERTAMA",
+   "s": 20.48,
+   "e": 20.8
+  },
+  {
+   "text": "MATERIAL",
+   "s": 21.02,
+   "e": 21.52
+  },
+  {
+   "text": "KABINET",
+   "s": 21.52,
+   "e": 22.04
+  },
+  {
+   "text": "YANG",
+   "s": 22.04,
+   "e": 22.28
+  },
+  {
+   "text": "DIPILIH",
+   "s": 22.28,
+   "e": 22.76
+  },
+  {
+   "text": "SEBAB",
+   "s": 22.78,
+   "e": 22.98
+  },
+  {
+   "text": "MATERIAL",
+   "s": 22.98,
+   "e": 23.28
+  },
+  {
+   "text": "NI BANYAK",
+   "s": 23.28,
+   "e": 23.72
+  },
+  {
+   "text": "JENIS",
+   "s": 23.72,
+   "e": 24.16
+  },
+  {
+   "text": "KAK",
+   "s": 24.16,
+   "e": 24.34
+  },
+  {
+   "text": "ADA CHIPBOARD",
+   "s": 24.4,
+   "e": 25.16
+  },
+  {
+   "text": "ADA MELAMINE",
+   "s": 25.26,
+   "e": 25.98
+  },
+  {
+   "text": "ADA NYATOH",
+   "s": 26.06,
+   "e": 26.62
+  },
+  {
+   "text": "ADA YANG",
+   "s": 26.8,
+   "e": 27.34
+  },
+  {
+   "text": "ALUMINIUM",
+   "s": 27.54,
+   "e": 28.08
+  },
+  {
+   "text": "SEKALIPUN",
+   "s": 28.08,
+   "e": 28.56
+  },
+  {
+   "text": "JADI",
+   "s": 28.56,
+   "e": 28.76
+  },
+  {
+   "text": "BANYAK",
+   "s": 28.76,
+   "e": 29.34
+  },
+  {
+   "text": "MATERIAL",
+   "s": 29.34,
+   "e": 29.82
+  },
+  {
+   "text": "NI",
+   "s": 29.82,
+   "e": 30.16
+  },
+  {
+   "text": "INI REASON",
+   "s": 30.24,
+   "e": 30.68
+  },
+  {
+   "text": "PERTAMA",
+   "s": 30.68,
+   "e": 31.040000000000003
+  },
+  {
+   "text": "HARGA",
+   "s": 31.42,
+   "e": 32.18
+  },
+  {
+   "text": "TU BERBEZA",
+   "s": 32.18,
+   "e": 32.78
+  },
+  {
+   "text": "YANG",
+   "s": 32.82,
+   "e": 32.92
+  },
+  {
+   "text": "KEDUA",
+   "s": 32.92,
+   "e": 33.4
+  },
+  {
+   "text": "BARANG-BARANG",
+   "s": 33.42,
+   "e": 34.02
+  },
+  {
+   "text": "KECIL",
+   "s": 34.02,
+   "e": 34.38
+  },
+  {
+   "text": "DIA ATAUPUN",
+   "s": 34.38,
+   "e": 35.06
+  },
+  {
+   "text": "BARANG-BARANG",
+   "s": 35.06,
+   "e": 35.88
+  },
+  {
+   "text": "AKSESORI",
+   "s": 35.88,
+   "e": 36.34
+  },
+  {
+   "text": "DIA ATAUPUN",
+   "s": 36.34,
+   "e": 37.12
+  },
+  {
+   "text": "ORANG",
+   "s": 37.12,
+   "e": 37.48
+  },
+  {
+   "text": "PANGGIL",
+   "s": 37.48,
+   "e": 37.78
+  },
+  {
+   "text": "MEKANISME",
+   "s": 37.78,
+   "e": 38.44
+  },
+  {
+   "text": "DIA",
+   "s": 38.44,
+   "e": 38.72
+  },
+  {
+   "text": "MACAM",
+   "s": 38.82,
+   "e": 39.18
+  },
+  {
+   "text": "ENGSEL",
+   "s": 39.18,
+   "e": 39.54
+  },
+  {
+   "text": "ATAUPUN",
+   "s": 39.54,
+   "e": 40.04
+  },
+  {
+   "text": "REL LACI",
+   "s": 40.04,
+   "e": 40.52
+  },
+  {
+   "text": "TU",
+   "s": 40.52,
+   "e": 40.84
+  },
+  {
+   "text": "KALAU",
+   "s": 40.98,
+   "e": 41.24
+  },
+  {
+   "text": "NAK MURAH",
+   "s": 41.24,
+   "e": 42.06
+  },
+  {
+   "text": "ADA RISIKO",
+   "s": 42.06,
+   "e": 43.06
+  },
+  {
+   "text": "AKAN",
+   "s": 43.06,
+   "e": 43.4
+  },
+  {
+   "text": "DATANG",
+   "s": 43.4,
+   "e": 43.78
+  },
+  {
+   "text": "MUNGKIN",
+   "s": 43.78,
+   "e": 43.94
+  },
+  {
+   "text": "AKAN",
+   "s": 43.94,
+   "e": 44.1
+  },
+  {
+   "text": "GOYANG",
+   "s": 44.1,
+   "e": 44.54
+  },
+  {
+   "text": "JADI",
+   "s": 44.62,
+   "e": 44.82
+  },
+  {
+   "text": "KENA",
+   "s": 44.82,
+   "e": 45.06
+  },
+  {
+   "text": "SEMAK-SEMAK",
+   "s": 45.06,
+   "e": 45.62
+  },
+  {
+   "text": "DULU",
+   "s": 45.62,
+   "e": 45.74
+  },
+  {
+   "text": "BENDA",
+   "s": 45.74,
+   "e": 46.02
+  },
+  {
+   "text": "NOMBOR",
+   "s": 46.12,
+   "e": 46.3
+  },
+  {
+   "text": "3",
+   "s": 46.3,
+   "e": 46.5
+  },
+  {
+   "text": "PILIH",
+   "s": 46.68,
+   "e": 47.34
+  },
+  {
+   "text": "JENIS",
+   "s": 47.34,
+   "e": 47.74
+  },
+  {
+   "text": "COUNTERTOP",
+   "s": 47.74,
+   "e": 48.12
+  },
+  {
+   "text": "COUNTERTOP",
+   "s": 48.26,
+   "e": 48.6
+  },
+  {
+   "text": "NI PUN BANYAK",
+   "s": 48.6,
+   "e": 49.46
+  },
+  {
+   "text": "SEBENARNYA",
+   "s": 49.46,
+   "e": 49.84
+  },
+  {
+   "text": "ADA YANG",
+   "s": 50.06,
+   "e": 50.46
+  },
+  {
+   "text": "QUARTZ STONE",
+   "s": 50.46,
+   "e": 51.0
+  },
+  {
+   "text": "SINTERED STONE",
+   "s": 51.18,
+   "e": 51.84
+  },
+  {
+   "text": "DAN BIASA",
+   "s": 51.84,
+   "e": 52.78
+  },
+  {
+   "text": "ORANG",
+   "s": 52.78,
+   "e": 53.02
+  },
+  {
+   "text": "AKAN",
+   "s": 53.02,
+   "e": 53.26
+  },
+  {
+   "text": "PILIH",
+   "s": 53.26,
+   "e": 53.72
+  },
+  {
+   "text": "KONKRIT",
+   "s": 53.72,
+   "e": 54.12
+  },
+  {
+   "text": "ATAUPUN",
+   "s": 54.12,
+   "e": 54.86
+  },
+  {
+   "text": "JUBIN",
+   "s": 54.86,
+   "e": 55.32
+  },
+  {
+   "text": "JADI",
+   "s": 55.44,
+   "e": 55.64
+  },
+  {
+   "text": "KALAU",
+   "s": 55.64,
+   "e": 55.82
+  },
+  {
+   "text": "AKAK",
+   "s": 55.82,
+   "e": 56.16
+  },
+  {
+   "text": "NAK",
+   "s": 56.16,
+   "e": 56.26
+  },
+  {
+   "text": "MEMBANDING-BANDINGKAN",
+   "s": 56.26,
+   "e": 57.02
+  },
+  {
+   "text": "HARGA",
+   "s": 57.02,
+   "e": 57.44
+  },
+  {
+   "text": "DENGAN",
+   "s": 57.44,
+   "e": 57.6
+  },
+  {
+   "text": "PELBAGAI-PELBAGAI",
+   "s": 57.6,
+   "e": 58.3
+  },
+  {
+   "text": "KONTRAKTOR",
+   "s": 58.3,
+   "e": 58.54
+  },
+  {
+   "text": "KENA",
+   "s": 58.56,
+   "e": 59.44
+  },
+  {
+   "text": "BANDINGKAN",
+   "s": 59.44,
+   "e": 60.28
+  },
+  {
+   "text": "IKUT",
+   "s": 60.28,
+   "e": 60.78
+  },
+  {
+   "text": "ITEM-ITEMNYA",
+   "s": 60.78,
+   "e": 61.58
+  },
+  {
+   "text": "JANGAN",
+   "s": 61.62,
+   "e": 62.06
+  },
+  {
+   "text": "AMBIL",
+   "s": 62.06,
+   "e": 62.6
+  },
+  {
+   "text": "HARGA",
+   "s": 62.6,
+   "e": 62.98
+  },
+  {
+   "text": "KESELURUHAN",
+   "s": 62.98,
+   "e": 63.68
+  },
+  {
+   "text": "TAK ADIL",
+   "s": 63.78,
+   "e": 64.12
+  },
+  {
+   "text": "LAH MACAM",
+   "s": 64.12,
+   "e": 64.42
+  },
+  {
+   "text": "TU",
+   "s": 64.42,
+   "e": 64.62
+  },
+  {
+   "text": "PAKEJ",
+   "s": 64.76,
+   "e": 64.98
+  },
+  {
+   "text": "KABINET",
+   "s": 64.98,
+   "e": 65.62
+  },
+  {
+   "text": "DAN COUNTERTOP",
+   "s": 65.62,
+   "e": 66.36
+  },
+  {
+   "text": "KAMI",
+   "s": 66.36,
+   "e": 66.68
+  },
+  {
+   "text": "UNTUK",
+   "s": 66.68,
+   "e": 67.12
+  },
+  {
+   "text": "DAPUR",
+   "s": 67.12,
+   "e": 67.58
+  },
+  {
+   "text": "BARU",
+   "s": 67.58,
+   "e": 67.8
+  },
+  {
+   "text": "AKAK",
+   "s": 67.8,
+   "e": 68.22
+  },
+  {
+   "text": "BERMULA",
+   "s": 68.22,
+   "e": 68.7
+  },
+  {
+   "text": "DENGAN",
+   "s": 68.7,
+   "e": 68.84
+  },
+  {
+   "text": "RM15,000",
+   "s": 68.84,
+   "e": 69.32
+  },
+  {
+   "text": "SAHAJA",
+   "s": 69.6,
+   "e": 70.04
+  },
+  {
+   "text": "DM KAMI",
+   "s": 70.12,
+   "e": 70.44
+  },
+  {
+   "text": "UNTUK",
+   "s": 70.44,
+   "e": 70.7
+  },
+  {
+   "text": "KETERANGAN",
+   "s": 70.7,
+   "e": 71.12
+  },
+  {
+   "text": "LANJUT",
+   "s": 71.12,
+   "e": 71.52
+  },
+  {
+   "text": "NANTI",
+   "s": 71.52,
+   "e": 71.94
+  },
+  {
+   "text": "SAYA",
+   "s": 71.94,
+   "e": 72.06
+  },
+  {
+   "text": "AKAN",
+   "s": 72.06,
+   "e": 72.24
+  },
+  {
+   "text": "BAGIKAN",
+   "s": 72.24,
+   "e": 72.56
+  },
+  {
+   "text": "HARGA",
+   "s": 72.56,
+   "e": 73.08
+  },
+  {
+   "text": "QUOTATION",
+   "s": 73.08,
+   "e": 73.3
+  },
+  {
+   "text": "KAMI",
+   "s": 73.3,
+   "e": 73.66
+  }
+ ],
+ "perlu_semak": [],
+ "save_icon": null,
+ "cta": "DM untuk keterangan lanjut",
+ "tagline": "Design Dulu, Baru Bina"
+}

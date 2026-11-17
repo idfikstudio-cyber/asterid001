@@ -1,0 +1,79 @@
+RINGKASAN EDIT — FK-F-010_Farhan_Kenapa Harga Kabinet Berbeza (preview v1)
+Brand: Fi-k Studio | Spokesperson: Farhan (Founder) | Tag skrip: TOFU+BOFU
+Durasi: 78.9 s (1 s thumbnail + 73.8 s isi + 4.0 s outro)
+DNA: fik-studio/CLAUDE.md v3.1
+
+1) TEKS HOOK / THUMBNAIL
+   "KENAPA HARGA / KABINET / BERBEZA?" atas frame Farhan (sumber 0:05.9).
+
+2) CAPTION PENUH (ikut percakapan; masa ikut video preview)
+   [0:01.00] Akak-akak dah tanya banyak dah kontraktor untuk buat renovation bahagian dapur rumah kakak.
+   [0:05.60] Tapi harga beza-beza kan? Ada yang mahal, ada yang murah, ada yang macam boleh terima.
+   [0:10.74] Tapi sebelum akak nak membanding-bandingkan harga tu, cuba akak dengar dulu apa yang saya nak kongsikan.
+   [0:15.50] Harga berbeza ni banyak sebab tapi saya highlightkan 3 perkara penting sahaja untuk bandingkan harga.
+   [0:21.30] Yang pertama, material kabinet yang dipilih. Sebab material ni banyak jenis kak.
+   [0:25.40] Ada chipboard, ada melamine,, ada nyatoh,, ada yang  aluminium sekalipun.
+   [0:29.56] Jadi banyak material ni. Ini reason pertama, harga tu berbeza.
+   [0:33.82] Yang kedua, barang-barang kecil dia ataupun barang-barang aksesori dia ataupun orang panggil mekanisme dia.
+   [0:39.82] Macam engsel ataupun rel laci tu.
+   [0:41.98] Kalau nak murah, ada risiko akan datang mungkin akan goyang. Jadi kena semak-sebeg dulu benda.
+   [0:47.12] Nombor 3, pilih jenis countertop.. Countertop ni pun banyak sebenarnya.
+   [0:51.06] Ada yang quartz stone,, sintered stone dan biasa orang akan pilih konkrit ataupun jubin.
+   [0:56.44] Jadi kalau akak nak membanding-bandingkan harga dengan pelbagai-pelbagai kontraktor.
+   [0:59.56] Kena bandingkan ikut item-termnya. Jangan ambil harga keseluruhan. Tak adil lah macam tu.
+   [1:05.76] Pakej kabinet dan countertop kami untuk dapur baru akak bermula dengan RM15,000 , sahaja.
+   [1:11.12] DM kami untuk keterangan lanjut. Nanti saya akan bagikan harga quotation kami.
+
+3) SFX, ANIMASI, B-ROLL, ZOOM (masa ikut video preview)
+   Bokeh halus berperingkat sepanjang video; subjek dijernihkan sedikit.
+   0:00.00–0:01.00  Thumbnail: Hook “KENAPA HARGA / KABINET / BERBEZA?” atas frame Farhan (sumber 0:05.9), latar bokeh
+   0:01.15–0:04.20  Label: Pil hijau “Farhan · Founder Fi-k Studio”
+   0:11.74–0:14.20  B-roll: B-ROLL/Video Onprogress/IMG_9301.MOV (video, 2.5 s) pada 'sebelum akak nak membanding-bandingkan harga tu' (perbincangan dengan client)
+   0:18.02–0:19.50  Teks besar: “3 PERKARA PENTING” (hijau #304945, stroke putih)
+   0:21.30–0:33.78  Tajuk poin: Kotak hijau atas: “#1 MATERIAL KABINET”
+   0:24.54–0:27.20  B-roll: B-ROLL/Gambar Projek Onprogress/f865f3e6-ec4a-4000-bfc4-12b70eeaf78b.jpeg (gambar, Ken Burns, 2.7 s) pada 'material ni banyak jenis kak. Ada chipboard, ada melamine' (close-up kabinet & kaunter projek Fi-k)
+   0:33.82–0:47.02  Tajuk poin: Kotak hijau atas: “#2 AKSESORI & MEKANISME”
+   0:36.06–0:38.80  B-roll: 3D AIHouse 720 (S156348610) › dry kitchen (video, 2.7 s) pada 'barang-barang aksesori dia ataupun orang panggil mekanisme' (laci & pintu kabinet, design 3D Fi-k)
+   0:47.12–0:56.32  Tajuk poin: Kotak hijau atas: “#3 JENIS COUNTERTOP”
+   0:51.06–0:53.80  B-roll: B-ROLL/Gambar Projek Onprogress/b97e0480-79a4-4bac-945d-09bced40ee9b.jpeg (gambar, Ken Burns, 2.7 s) pada 'quartz stone, sintered stone' (island countertop marmar projek Fi-k)
+   0:56.60–0:59.40  B-roll: B-ROLL/Video Onprogress/IMG_9290.MOV (video, 2.8 s) pada 'membanding-bandingkan harga dengan pelbagai kontraktor' (client pegang dokumen)
+   0:59.56–1:05.62  Tajuk poin: Kotak hijau atas: “BANDING IKUT ITEM”
+   1:02.62–1:04.70  Teks besar: “JANGAN AMBIL HARGA KESELURUHAN” (hijau #304945, stroke putih)
+   1:05.76–1:08.70  B-roll: B-ROLL/Gambar Projek Onprogress/057fff52-b2b0-4c97-8c87-bd0c7c8af1fc.jpeg (gambar, Ken Burns, 2.9 s) pada 'Pakej kabinet dan countertop kami untuk dapur baru akak' (dapur siap Fi-k)
+   1:09.22–1:11.10  Teks besar: “BERMULA RM15,000” (hijau #304945, stroke putih)
+   1:14.84–1:18.87  Outro: BRAND/Outro Potrait.mp4 (animasi logo, 4.0 s) + “Design Dulu, Baru Bina” + kotak hijau “DM untuk keterangan lanjut” muncul selepas logo statik
+   0:11.62  SFX whoosh lembut
+   0:18.02  SFX pop lembut
+   0:24.42  SFX whoosh lembut
+   0:35.94  SFX whoosh lembut
+   0:50.94  SFX whoosh lembut
+   0:56.48  SFX whoosh lembut
+   1:02.62  SFX pop lembut
+   1:05.64  SFX whoosh lembut
+   1:09.22  SFX pop lembut
+   Motion zoom: 0:01.00 zoom in perlahan 100% → 113%; 0:05.60 zoom out perlahan 113% → 100%; 0:10.74 zoom in perlahan 100% → 113%; 0:15.50 zoom out perlahan 113% → 100%; 0:21.30 zoom in perlahan 100% → 113%; 0:25.40 zoom out perlahan 113% → 100%; 0:29.56 zoom in perlahan 100% → 113%; 0:33.82 zoom out perlahan 113% → 100%; 0:39.82 zoom in perlahan 100% → 113%; 0:41.98 zoom out perlahan 113% → 100%; 0:47.12 zoom in perlahan 100% → 113%; 0:51.06 zoom out perlahan 113% → 100%; 0:56.44 zoom in perlahan 100% → 113%; 0:59.56 zoom out perlahan 113% → 100%; 1:05.76 zoom in perlahan 100% → 113%; 1:11.12 zoom out perlahan 113% → 100%
+
+   Senarai B-roll: [baris skrip] → [folder / nama fail] → [sebab]
+   0:11.74  'sebelum akak nak membanding-bandingkan harga tu' → B-ROLL/Video Onprogress/IMG_9301.MOV → 'sebelum akak nak membanding-bandingkan harga tu' (perbincangan dengan client)
+   0:24.54  'material ni banyak jenis kak. Ada chipboard, ada melamine' → B-ROLL/Gambar Projek Onprogress/f865f3e6-ec4a-4000-bfc4-12b70eeaf78b.jpeg → 'material ni banyak jenis kak. Ada chipboard, ada melamine' (close-up kabinet & kaunter projek Fi-k)
+   0:36.06  'barang-barang aksesori dia ataupun orang panggil mekanisme' → 3D AIHouse 720 (S156348610) › dry kitchen → 'barang-barang aksesori dia ataupun orang panggil mekanisme' (laci & pintu kabinet, design 3D Fi-k)
+   0:51.06  'quartz stone, sintered stone' → B-ROLL/Gambar Projek Onprogress/b97e0480-79a4-4bac-945d-09bced40ee9b.jpeg → 'quartz stone, sintered stone' (island countertop marmar projek Fi-k)
+   0:56.60  'membanding-bandingkan harga dengan pelbagai kontraktor' → B-ROLL/Video Onprogress/IMG_9290.MOV → 'membanding-bandingkan harga dengan pelbagai kontraktor' (client pegang dokumen)
+   1:05.76  'Pakej kabinet dan countertop kami untuk dapur baru akak' → B-ROLL/Gambar Projek Onprogress/057fff52-b2b0-4c97-8c87-bd0c7c8af1fc.jpeg → 'Pakej kabinet dan countertop kami untuk dapur baru akak' (dapur siap Fi-k)
+
+4) CTA
+   Outro: "Design Dulu, Baru Bina" + "DM untuk keterangan lanjut".
+
+5) PERLU SEMAK
+   - Harga RM15,000 (1:09.8): Disebut “pakej kabinet dan countertop… bermula dengan RM15,000 sahaja”. Tiada dalam skrip — sila sahkan harga ini tepat.
+   - Bahan kabinet (0:25–0:28): Transkrip: “melamai, nyato, air milenium” → caption MELAMINE, NYATOH, ALUMINIUM. Sila sahkan (terutama NYATOH).
+   - Aksesori (0:39–0:41): Transkrip: “Ansel ataupun Rilachi” → caption ENGSEL ATAUPUN REL LACI. Sila sahkan.
+   - “SEMAK-SEMAK” (0:46): Transkrip: “sebeg-sebeg dulu benda” → caption SEMAK-SEMAK. Kurang pasti; sila beritahu perkataan sebenar.
+   - Countertop (0:48–0:55): Transkrip: “pilih jenis kontraktor… quadstone, sinterstone, konkret” → COUNTERTOP, QUARTZ STONE, SINTERED STONE, KONKRIT. Juga “Paket kabinet dan kontraktor kami” → PAKEJ KABINET DAN COUNTERTOP (1:06). Sila sahkan.
+   - “ITEM-ITEMNYA” (1:01): Transkrip: “ikut term-termnya” → caption ITEM-ITEMNYA. Kurang pasti; sila sahkan.
+   - Durasi 78.9 s: Melebihi sasaran BOFU 30–60 s; footage tiada ulangan jadi isi tidak dipotong.
+   - Preview MP4 & log belum di Drive: Alat Drive hadkan ±3 MB setiap muat naik dan tidak boleh tulis ganti fail sedia ada. THUMB & RINGKASAN dimuat naik ke _PREVIEW; video preview ada di halaman ini; baris log perlu ditambah manual.
+
+6) CAPTION TIKTOK
+   Kenapa harga kabinet dapur boleh beza sangat? 3 perkara penting: material kabinet, aksesori & mekanisme, dan jenis countertop. Banding ikut item, jangan ambil harga keseluruhan! Pakej kabinet & countertop Fi-k bermula RM15,000. DM untuk keterangan lanjut.
+   #hargakabinet #kabinetdapur #renovatedapur #fikstudio #interiordesign

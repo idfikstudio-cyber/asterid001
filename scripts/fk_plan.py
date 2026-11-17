@@ -27,7 +27,8 @@ PERLU_SEMAK = C.get("perlu_semak", [])
 for w in words:
     core = re.sub(r"[^\w\-]", "", w["w"])
     if round(w["s"], 2) in FIX_AT:
-        w["w"] = w["w"].replace(core, FIX_AT[round(w["s"], 2)])
+        v = FIX_AT[round(w["s"], 2)]
+        w["w"] = w["w"].replace(core, v) if v else ""     # "" = buang perkataan termasuk tanda bacanya
     elif core in FIX:
         w["w"] = w["w"].replace(core, FIX[core])
 words = [w for w in words if w["w"].strip()]   # fix_at "" = buang perkataan (cth. tersalah dengar)
@@ -43,7 +44,8 @@ words = merged
 KEY = set(C["key"])
 
 def clean(s):
-    return re.sub(r"[,.?!]", "", s).upper()
+    # buang tanda baca, tetapi kekalkan koma/titik dalam nombor (cth. RM15,000)
+    return re.sub(r"(?<!\d)[,.]|[,.](?!\d)|[?!]", "", s).upper()
 
 # ---- chunk: 1 perkataan (gaya rujukan); perkataan pendek (<=3 huruf) digabung dengan seterusnya ----
 chunks = []
@@ -51,7 +53,8 @@ i = 0
 while i < len(words):
     grp = [words[i]]
     while len(grp) < 3 and len(re.sub(r"\W", "", grp[-1]["w"])) <= 3 and i + 1 < len(words) \
-            and words[i + 1]["s"] - grp[-1]["e"] < 0.25 and not re.search(r"[.,?!]$", grp[-1]["w"]):
+            and words[i + 1]["s"] - grp[-1]["e"] < 0.25 and not re.search(r"[.,?!]$", grp[-1]["w"]) \
+            and len(" ".join(g["w"] for g in grp) + " " + words[i + 1]["w"]) <= 17:   # elak caption terlalu panjang/kecil
         i += 1; grp.append(words[i])
     chunks.append(dict(text=clean(" ".join(g["w"] for g in grp)), s=grp[0]["s"], e=grp[-1]["e"]))
     i += 1
@@ -133,11 +136,11 @@ for n in NUMS:
     ev.append(f"Dialogue: 4,{ts(n['s']+OFF)},{ts(n['e']+OFF)},Num,,0,0,0,,{{\\an5\\pos(480,1020)\\fs{fs}\\fad(80,150)\\fscx70\\fscy70\\t(0,120,\\fscx100\\fscy100)}}{n['text']}")
 # Hook pada thumbnail (0–1s): baris dari config [{text, fs, y}] (fs None = auto muat lebar)
 # QC: blok hook mesti di tengah zon crop 1:1 (y 420-1500) dengan margin -> baseline 700..1460 (DNA 6)
-for hl in C["hook_lines"]:
+for hl in ([] if C.get("legacy_hook") else C["hook_lines"]):   # legacy_hook: video lama sebelum peraturan ini (FK-F-007)
     assert 700 <= hl["y"] <= 1460, f"QC GAGAL: hook '{hl['text']}' y={hl['y']} di luar zon selamat 1:1 (700-1460)"
 for hl in C["hook_lines"]:
     fs = hl.get("fs") or fit(hl["text"], 170, 900)
-    ev.append(f"Dialogue: 5,{ts(0)},{ts(1.0)},Hook,,0,0,0,,{{\\an2\\pos(540,{hl['y']})\\fs{fs}}}{hl['text']}")
+    ev.append(f"Dialogue: 5,{ts(0)},{ts(1.0)},Hook,,0,0,0,,{{\\an2\\pos({470 if C.get('legacy_hook') else 540},{hl['y']})\\fs{fs}}}{hl['text']}")
 open(f"{OUT}/captions.ass", "w").write(hdr + "\n".join(ev) + "\n")
 
 plan = dict(offset=OFF, thumb_t=C["thumb_t"], src_dur=SRC_DUR, end_card=END, total=OFF + SRC_DUR + END,

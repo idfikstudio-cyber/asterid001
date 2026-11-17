@@ -1,0 +1,186 @@
+{
+ "src_dur": 73.84,
+ "thumb_t": 5.9,
+ "fix": {},
+ "fix_at": {
+  "25.46": "melamine,",
+  "26.24": "nyatoh,",
+  "27.34": "",
+  "27.54": "aluminium",
+  "37.78": "mekanisme",
+  "39.18": "engsel",
+  "40.04": "rel laci",
+  "42.36": "risiko",
+  "45.06": "semak",
+  "45.32": "-semak",
+  "47.74": "countertop.",
+  "48.26": "Countertop",
+  "50.46": "quartz stone,",
+  "51.18": "sintered stone",
+  "53.72": "konkrit",
+  "60.78": "item",
+  "61.00": "-itemnya.",
+  "64.76": "Pakej",
+  "65.82": "countertop",
+  "68.84": "RM15,000",
+  "69.22": ""
+ },
+ "perlu_semak": [],
+ "key": [
+  "HARGA",
+  "BEZA",
+  "BEZA-BEZA",
+  "BERBEZA",
+  "MAHAL",
+  "MURAH",
+  "3",
+  "MATERIAL",
+  "CHIPBOARD",
+  "MELAMINE",
+  "NYATOH",
+  "ALUMINIUM",
+  "AKSESORI",
+  "MEKANISME",
+  "ENGSEL",
+  "REL LACI",
+  "RISIKO",
+  "GOYANG",
+  "COUNTERTOP",
+  "QUARTZ STONE",
+  "SINTERED STONE",
+  "KONKRIT",
+  "JUBIN",
+  "JANGAN",
+  "RM15,000",
+  "ITEM-ITEMNYA",
+  "KESELURUHAN"
+ ],
+ "label": {
+  "s": 0.15,
+  "e": 3.2,
+  "text": "Farhan · Founder Fi-k Studio"
+ },
+ "points": [
+  {
+   "s": 20.3,
+   "e": 32.78,
+   "text": "#1  MATERIAL KABINET"
+  },
+  {
+   "s": 32.82,
+   "e": 46.02,
+   "text": "#2  AKSESORI & MEKANISME"
+  },
+  {
+   "s": 46.12,
+   "e": 55.32,
+   "text": "#3  JENIS COUNTERTOP"
+  },
+  {
+   "s": 58.56,
+   "e": 64.62,
+   "text": "BANDING IKUT ITEM"
+  }
+ ],
+ "nums": [
+  {
+   "s": 17.02,
+   "e": 18.5,
+   "text": "3 PERKARA PENTING"
+  },
+  {
+   "s": 61.62,
+   "e": 63.7,
+   "text": "JANGAN AMBIL\\NHARGA KESELURUHAN"
+  },
+  {
+   "s": 68.22,
+   "e": 70.1,
+   "text": "BERMULA\\NRM15,000"
+  }
+ ],
+ "broll": [
+  {
+   "s": 10.74,
+   "e": 13.2,
+   "clip": "v1",
+   "type": "video",
+   "src": "B-ROLL/Video Onprogress/IMG_9301.MOV",
+   "why": "'sebelum akak nak membanding-bandingkan harga tu' (perbincangan dengan client)"
+  },
+  {
+   "s": 23.54,
+   "e": 26.2,
+   "clip": "g1",
+   "type": "image",
+   "img": "gp10.jpg",
+   "src": "B-ROLL/Gambar Projek Onprogress/f865f3e6-ec4a-4000-bfc4-12b70eeaf78b.jpeg",
+   "why": "'material ni banyak jenis kak. Ada chipboard, ada melamine' (close-up kabinet & kaunter projek Fi-k)"
+  },
+  {
+   "s": 35.06,
+   "e": 37.8,
+   "clip": "p1",
+   "type": "video",
+   "src": "3D AIHouse 720 (S156348610) › dry kitchen",
+   "why": "'barang-barang aksesori dia ataupun orang panggil mekanisme' (laci & pintu kabinet, design 3D Fi-k)"
+  },
+  {
+   "s": 50.06,
+   "e": 52.8,
+   "clip": "g2",
+   "type": "image",
+   "img": "gp23.jpg",
+   "src": "B-ROLL/Gambar Projek Onprogress/b97e0480-79a4-4bac-945d-09bced40ee9b.jpeg",
+   "why": "'quartz stone, sintered stone' (island countertop marmar projek Fi-k)"
+  },
+  {
+   "s": 55.6,
+   "e": 58.4,
+   "clip": "v2",
+   "type": "video",
+   "src": "B-ROLL/Video Onprogress/IMG_9290.MOV",
+   "why": "'membanding-bandingkan harga dengan pelbagai kontraktor' (client pegang dokumen)"
+  },
+  {
+   "s": 64.76,
+   "e": 67.7,
+   "clip": "g3",
+   "type": "image",
+   "img": "gp1.jpg",
+   "src": "B-ROLL/Gambar Projek Onprogress/057fff52-b2b0-4c97-8c87-bd0c7c8af1fc.jpeg",
+   "why": "'Pakej kabinet dan countertop kami untuk dapur baru akak' (dapur siap Fi-k)"
+  }
+ ],
+ "tags": [
+  {
+   "s": 35.06,
+   "e": 37.8,
+   "text": "Design 3D Fi-k Studio"
+  },
+  {
+   "s": 64.76,
+   "e": 67.7,
+   "text": "Projek siap Fi-k Studio"
+  }
+ ],
+ "hook_lines": [
+  {
+   "text": "KENAPA HARGA",
+   "fs": null,
+   "y": 1080
+  },
+  {
+   "text": "KABINET",
+   "fs": 210,
+   "y": 1250
+  },
+  {
+   "text": "BERBEZA?",
+   "fs": null,
+   "y": 1420
+  }
+ ],
+ "cta": "DM untuk keterangan lanjut",
+ "tagline": "Design Dulu, Baru Bina"
+}
