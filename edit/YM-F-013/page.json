@@ -1,0 +1,295 @@
+{
+ "id": "YM-F-013",
+ "topik": "Tutorial install Apps Yuran.my",
+ "tag": "TOFU",
+ "ver": "v1",
+ "status": "Preview v1",
+ "tarikh": "17 Nov 2026",
+ "edit_intro": "Video bermula dengan cover 1 saat, kemudian Farhan menerangkan fungsi app dan pilihan peranti. Dari 0:35 hingga 2:17 video masuk mod tutorial: rakaman skrin “paparan apps yuran.my” dalam kad atas latar biru, pil langkah 1–9 di atas, bulatan “klik” berdenyut pada setiap butang yang ditekan, dan Farhan dalam bulatan kecil di kiri bawah supaya suara dan wajah kekal. Penutup kembali ke Farhan (resit automatik) dan end card biru.",
+ "fix_marks": {
+  "78.12": [
+   "SEK",
+   "Sek"
+  ],
+  "79.28": [
+   "demo",
+   "Demo"
+  ],
+  "104.28": [
+   "invoice",
+   "invois"
+  ],
+  "119.26": [
+   "invoice",
+   "invois"
+  ],
+  "124.86": [
+   "invoice",
+   "invois"
+  ],
+  "138.8": [
+   "receipt",
+   "resit"
+  ],
+  "144.86": [
+   "adik",
+   "ada"
+  ],
+  "147.54": [
+   "receipt",
+   "resit"
+  ],
+  "150.64": [
+   "receipt",
+   "resit"
+  ],
+  "154.78": [
+   "Euron",
+   "Yuran"
+  ]
+ },
+ "seg": [
+  [
+   0,
+   1.0,
+   "Thumbnail",
+   "Cover statik: hook “TUTORIAL · CARA BAYAR YURAN DALAM APP”."
+  ],
+  [
+   1.0,
+   21.08,
+   "Intro",
+   "Farhan terangkan app: bayar, pantau, muat turun resit. Label nama + 3 ikon manfaat."
+  ],
+  [
+   21.08,
+   35.04,
+   "Peranti",
+   "Install ikut peranti: cip Android / iOS / Huawei."
+  ],
+  [
+   35.04,
+   40.32,
+   "Langkah 1",
+   "Cari Yuran.my di Play Store → Install. Senarai apl lain dikaburkan."
+  ],
+  [
+   40.32,
+   47.44,
+   "Langkah 2",
+   "Buka apl dari laci aplikasi → skrin pembuka → notifikasi."
+  ],
+  [
+   47.44,
+   58.36,
+   "Langkah 3",
+   "Allow notifikasi, pilih bahasa, Add New School."
+  ],
+  [
+   58.36,
+   64.1,
+   "Langkah 4",
+   "Medan URL + kad nota “URL diberi oleh admin institusi”."
+  ],
+  [
+   64.1,
+   69.52,
+   "Farhan",
+   "Setiap institusi ada URL sendiri (talking head)."
+  ],
+  [
+   69.52,
+   75.32,
+   "Langkah 4",
+   "Isi URL demo → Continue."
+  ],
+  [
+   75.32,
+   97.14,
+   "Langkah 5",
+   "Log masuk: nama institusi, nombor PIC berkelip (4 digit akhir), emel, Login."
+  ],
+  [
+   97.14,
+   104.52,
+   "Langkah 6",
+   "Pilih institusi → paparan utama."
+  ],
+  [
+   104.52,
+   112.48,
+   "Langkah 7",
+   "Senarai invois tertunggak (overdue)."
+  ],
+  [
+   112.48,
+   132.76,
+   "Langkah 8",
+   "Bayar satu invois, atau pilih banyak invois (1-2-3) → Make Payment."
+  ],
+  [
+   132.76,
+   137.24,
+   "Langkah 9",
+   "Online Banking (FPX) → pilih bank → Proceed With Payment."
+  ],
+  [
+   137.24,
+   156.95,
+   "Resit",
+   "Farhan: resit automatik, bayar bila-bila masa."
+  ],
+  [
+   156.95,
+   158.45,
+   "End card",
+   "Logo putih, Cara MUDAH Urus Yuran, CTA TOFU, hello@yuran.my."
+  ]
+ ],
+ "done": [
+  [
+   "Nombor PIC (ikut komen Farhan)",
+   "Nombor telefon PIC dikaburkan kecuali 4 digit akhir (3480). Bingkai biru berkelip-kelip dengan label “Nombor PIC admin institusi” semasa Farhan menyebut nombor PIC.",
+   86.2
+  ],
+  [
+   "Bulatan klik",
+   "23 titik klik: bulatan biru berdenyut muncul 0.25 s sebelum jari menekan, dengan label dan SFX klik lembut.",
+   37.0
+  ],
+  [
+   "Privasi",
+   "Dikaburkan: senarai apl & iklan pihak ketiga di Play Store, emel dan kata laluan, avatar pengguna, emel bawah nama institusi, blok “Bill To” dan nama pelajar dalam invois.",
+   92.0
+  ],
+  [
+   "Muzik",
+   "Instrumental cozy dijana sendiri (bebas hak cipta), −27 dB dengan ducking di bawah suara.",
+   5.0
+  ],
+  [
+   "Thumbnail",
+   "Cover 1 saat + PNG berasingan YM-F-013_Tutorial install Apps Yuran.my_THUMB.png.",
+   0.0
+  ],
+  [
+   "End card",
+   "Logo putih atas biru (tiada shadow, tiada lutsinar), tagline, CTA TOFU, hello@yuran.my.",
+   157.5
+  ],
+  [
+   "ID",
+   "Fail dinamakan YM-F-013. YM-F-011 dan YM-F-012 sudah dipakai di 02_EDITED (TestimoniMry, TestimoniAdminMRY), jadi nombor seterusnya diguna. Skrip asal bernama FK-F-011.",
+   null
+  ]
+ ],
+ "todo": [
+  [
+   "Ayat 0:13",
+   "Transkrip berbunyi “Bukan terdekat pembayaran”. Caption ikut transkrip buat masa ini. Sahkan apa yang Farhan sebut.",
+   13.44
+  ],
+  [
+   "Jumlah invois",
+   "RM 1.19, RM 35.00, RM 100.00, RM 135.00 dan RM 185.00 kelihatan dalam rakaman skrin. Saya anggap data demo (Sek Integrasi Demo). Sahkan, atau saya kaburkan.",
+   129.5
+  ],
+  [
+   "Lompatan Langkah 5",
+   "Bahagian menaip emel/kata laluan dibuang (emel jelas kelihatan dan susun atur bergerak). Video melompat dari borang kosong terus ke borang yang sudah diisi.",
+   91.1
+  ],
+  [
+   "Cip Huawei",
+   "Farhan sebut “Huawei App Store”; cip tulis nama rasmi “AppGallery”. Caption ikut sebutan.",
+   30.3
+  ],
+  [
+   "Latar kabur talking head",
+   "DNA minta latar kabur lembut (depth of field). Preview v1 belum ada bokeh pada bahagian Farhan. Boleh tambah dalam v2 jika mahu.",
+   5.0
+  ],
+  [
+   "Durasi",
+   "158.5 s, melebihi sasaran TOFU 20–45 s. Dikekalkan penuh sebagai tutorial evergreen (diluluskan dalam storyboard); dicatat dalam log.",
+   null
+  ],
+  [
+   "Log 03_LOG",
+   "edit-log.csv hanya sampai YM-F-003, sedangkan 02_EDITED ada YM-F-010 hingga 012. Baris YM-F-013 ditambah; baris yang tertinggal tidak saya isi.",
+   null
+  ]
+ ],
+ "tt": "Cara install app Yuran.my dan bayar yuran terus dari telefon, langkah demi langkah. Simpan video ni untuk rujukan nanti.",
+ "hs": "#YuranMy #YuranSekolah #KAFA #TutorialApp #BayarYuranOnline",
+ "ga": [
+  [
+   "Colour grade",
+   [
+    [
+     "Kontras",
+     "×1.04",
+     "Gambar lebih jelas."
+    ],
+    [
+     "Kecerahan",
+     "+0.015",
+     "Cerah sedikit."
+    ],
+    [
+     "Saturasi",
+     "×1.05",
+     "Warna hidup sedikit; tiada anjakan hue, warna kulit asli dikekalkan."
+    ],
+    [
+     "Gamma",
+     "1.02",
+     "Bayang muka lebih terbuka."
+    ],
+    [
+     "Ketajaman",
+     "unsharp 0.3",
+     "Butiran muka dan cermin mata lebih jelas."
+    ],
+    [
+     "Rakaman skrin",
+     "tiada grade",
+     "Warna UI apl kekal tepat."
+    ]
+   ]
+  ],
+  [
+   "Audio",
+   [
+    [
+     "High-pass",
+     "80 Hz",
+     "Buang dengung rendah aircond."
+    ],
+    [
+     "Denoise",
+     "FFT, 10 dB",
+     "Bunyi kipas/aircond berkurang tanpa suara jadi “robot”."
+    ],
+    [
+     "Loudness suara",
+     "−14 LUFS / −1 dBTP",
+     "Ikut piawai TikTok."
+    ],
+    [
+     "Muzik",
+     "−27 dB + ducking",
+     "Instrumental cozy dijana sendiri, turun automatik bila Farhan bercakap."
+    ],
+    [
+     "SFX",
+     "klik, pop, tick, ding",
+     "Lembut; dijana sendiri, bebas hak cipta."
+    ]
+   ]
+  ]
+ ],
+ "changes": [
+  "Langkah 5: nombor PIC dikaburkan kecuali 4 digit akhir, dengan bingkai berkelip-kelip “Nombor PIC admin institusi”."
+ ]
+}

@@ -1,0 +1,2898 @@
+{
+ "total": 158.45,
+ "thumb": 1.0,
+ "groups": [
+  {
+   "s": 1.0,
+   "e": 1.74,
+   "w": [
+    [
+     "Saya",
+     false
+    ],
+    [
+     "nak",
+     false
+    ],
+    [
+     "tunjukkan",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 1.74,
+   "e": 2.94,
+   "w": [
+    [
+     "macam",
+     false
+    ],
+    [
+     "mana",
+     false
+    ],
+    [
+     "ahli",
+     false
+    ],
+    [
+     "kita",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 2.94,
+   "e": 4.38,
+   "w": [
+    [
+     "boleh",
+     false
+    ],
+    [
+     "install",
+     true
+    ],
+    [
+     "aplikasi",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 4.38,
+   "e": 5.78,
+   "w": [
+    [
+     "Yuran.my",
+     true
+    ],
+    [
+     "dan",
+     false
+    ],
+    [
+     "menggunakan",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 5.78,
+   "e": 7.12,
+   "w": [
+    [
+     "aplikasi",
+     false
+    ],
+    [
+     "Yuran.my",
+     true
+    ],
+    [
+     "untuk",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 7.12,
+   "e": 7.98,
+   "w": [
+    [
+     "buat",
+     false
+    ],
+    [
+     "pembayaran",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 7.98,
+   "e": 9.54,
+   "w": [
+    [
+     "Dalam",
+     false
+    ],
+    [
+     "aplikasi",
+     false
+    ],
+    [
+     "Yuran.my",
+     true
+    ]
+   ]
+  },
+  {
+   "s": 9.54,
+   "e": 10.52,
+   "w": [
+    [
+     "yang",
+     false
+    ],
+    [
+     "kita",
+     false
+    ],
+    [
+     "sediakan",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 10.52,
+   "e": 12.02,
+   "w": [
+    [
+     "ahli",
+     false
+    ],
+    [
+     "boleh",
+     false
+    ],
+    [
+     "buat",
+     false
+    ],
+    [
+     "pembayaran",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 12.02,
+   "e": 13.44,
+   "w": [
+    [
+     "melalui",
+     false
+    ],
+    [
+     "app",
+     false
+    ],
+    [
+     "sahaja",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 13.44,
+   "e": 14.74,
+   "w": [
+    [
+     "Bukan",
+     false
+    ],
+    [
+     "terdekat",
+     false
+    ],
+    [
+     "pembayaran",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 14.74,
+   "e": 15.8,
+   "w": [
+    [
+     "boleh",
+     false
+    ],
+    [
+     "pantau",
+     false
+    ],
+    [
+     "apa",
+     false
+    ],
+    [
+     "yang",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 15.8,
+   "e": 16.5,
+   "w": [
+    [
+     "nak",
+     false
+    ],
+    [
+     "dibayar",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 16.5,
+   "e": 17.9,
+   "w": [
+    [
+     "boleh",
+     false
+    ],
+    [
+     "terus",
+     false
+    ],
+    [
+     "buat",
+     false
+    ],
+    [
+     "pembayaran",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 17.9,
+   "e": 19.1,
+   "w": [
+    [
+     "dan",
+     false
+    ],
+    [
+     "boleh",
+     false
+    ],
+    [
+     "ambil",
+     false
+    ],
+    [
+     "resit",
+     true
+    ]
+   ]
+  },
+  {
+   "s": 19.1,
+   "e": 20.08,
+   "w": [
+    [
+     "dan",
+     false
+    ],
+    [
+     "download",
+     false
+    ],
+    [
+     "resit",
+     true
+    ]
+   ]
+  },
+  {
+   "s": 20.08,
+   "e": 21.08,
+   "w": [
+    [
+     "yang",
+     false
+    ],
+    [
+     "kita",
+     false
+    ],
+    [
+     "dah",
+     false
+    ],
+    [
+     "bayar",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 21.08,
+   "e": 21.76,
+   "w": [
+    [
+     "Cara",
+     false
+    ],
+    [
+     "untuk",
+     false
+    ],
+    [
+     "install",
+     true
+    ]
+   ]
+  },
+  {
+   "s": 21.76,
+   "e": 23.07,
+   "w": [
+    [
+     "aplikasi",
+     false
+    ],
+    [
+     "Yuran.my",
+     true
+    ]
+   ]
+  },
+  {
+   "s": 23.18,
+   "e": 24.24,
+   "w": [
+    [
+     "boleh",
+     false
+    ],
+    [
+     "pergi",
+     false
+    ],
+    [
+     "install",
+     true
+    ]
+   ]
+  },
+  {
+   "s": 24.24,
+   "e": 25.9,
+   "w": [
+    [
+     "apps",
+     false
+    ],
+    [
+     "mengikut",
+     false
+    ],
+    [
+     "device",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 25.9,
+   "e": 26.54,
+   "w": [
+    [
+     "masing-masing",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 26.54,
+   "e": 27.65,
+   "w": [
+    [
+     "Contoh",
+     false
+    ],
+    [
+     "kalau",
+     false
+    ],
+    [
+     "Android",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 27.82,
+   "e": 28.32,
+   "w": [
+    [
+     "Play",
+     false
+    ],
+    [
+     "Store",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 28.38,
+   "e": 29.17,
+   "w": [
+    [
+     "Kalau",
+     false
+    ],
+    [
+     "iOS",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 29.38,
+   "e": 29.89,
+   "w": [
+    [
+     "App",
+     false
+    ],
+    [
+     "Store",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 30.0,
+   "e": 30.85,
+   "w": [
+    [
+     "Kalau",
+     false
+    ],
+    [
+     "Huawei",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 31.0,
+   "e": 32.13,
+   "w": [
+    [
+     "Huawei",
+     false
+    ],
+    [
+     "App",
+     false
+    ],
+    [
+     "Store",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 32.24,
+   "e": 33.38,
+   "w": [
+    [
+     "Macam",
+     false
+    ],
+    [
+     "contoh",
+     false
+    ],
+    [
+     "yang",
+     false
+    ],
+    [
+     "sekarang",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 33.38,
+   "e": 34.93,
+   "w": [
+    [
+     "ni",
+     false
+    ],
+    [
+     "saya",
+     false
+    ],
+    [
+     "gunakan",
+     false
+    ],
+    [
+     "Android",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 35.04,
+   "e": 35.98,
+   "w": [
+    [
+     "Pergi",
+     false
+    ],
+    [
+     "sahaja",
+     false
+    ],
+    [
+     "bahagian",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 35.98,
+   "e": 36.59,
+   "w": [
+    [
+     "Play",
+     false
+    ],
+    [
+     "Store",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 36.66,
+   "e": 38.37,
+   "w": [
+    [
+     "cari",
+     false
+    ],
+    [
+     "sahaja",
+     false
+    ],
+    [
+     "Yuran.my",
+     true
+    ]
+   ]
+  },
+  {
+   "s": 38.52,
+   "e": 39.62,
+   "w": [
+    [
+     "selepas",
+     false
+    ],
+    [
+     "tu",
+     false
+    ],
+    [
+     "install",
+     true
+    ]
+   ]
+  },
+  {
+   "s": 39.62,
+   "e": 40.32,
+   "w": [
+    [
+     "sahaja",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 40.32,
+   "e": 41.51,
+   "w": [
+    [
+     "Selepas",
+     false
+    ],
+    [
+     "dah",
+     false
+    ],
+    [
+     "install",
+     true
+    ]
+   ]
+  },
+  {
+   "s": 41.58,
+   "e": 42.36,
+   "w": [
+    [
+     "boleh",
+     false
+    ],
+    [
+     "sahaja",
+     false
+    ],
+    [
+     "pergi",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 42.36,
+   "e": 43.21,
+   "w": [
+    [
+     "ke",
+     false
+    ],
+    [
+     "apps",
+     false
+    ],
+    [
+     "tu",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 43.26,
+   "e": 44.67,
+   "w": [
+    [
+     "pergi",
+     false
+    ],
+    [
+     "Yuran.my",
+     true
+    ]
+   ]
+  },
+  {
+   "s": 44.8,
+   "e": 45.35,
+   "w": [
+    [
+     "masuk",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 45.36,
+   "e": 46.62,
+   "w": [
+    [
+     "kemudian",
+     false
+    ],
+    [
+     "ada",
+     false
+    ],
+    [
+     "paparan",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 46.62,
+   "e": 47.44,
+   "w": [
+    [
+     "seperti",
+     false
+    ],
+    [
+     "ini",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 47.44,
+   "e": 48.2,
+   "w": [
+    [
+     "Allow",
+     false
+    ],
+    [
+     "sahaja",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 48.2,
+   "e": 49.4,
+   "w": [
+    [
+     "Selepas",
+     false
+    ],
+    [
+     "dah",
+     false
+    ],
+    [
+     "masuk",
+     false
+    ],
+    [
+     "dalam",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 49.4,
+   "e": 49.94,
+   "w": [
+    [
+     "apps",
+     false
+    ],
+    [
+     "tu",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 49.94,
+   "e": 51.36,
+   "w": [
+    [
+     "kita",
+     false
+    ],
+    [
+     "ada",
+     false
+    ],
+    [
+     "beberapa",
+     false
+    ],
+    [
+     "pilihan",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 51.36,
+   "e": 52.5,
+   "w": [
+    [
+     "Sama",
+     false
+    ],
+    [
+     "ada",
+     false
+    ],
+    [
+     "nak",
+     false
+    ],
+    [
+     "pilihan",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 52.5,
+   "e": 53.56,
+   "w": [
+    [
+     "bahasa",
+     false
+    ],
+    [
+     "Melayu",
+     false
+    ],
+    [
+     "ataupun",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 53.56,
+   "e": 54.34,
+   "w": [
+    [
+     "bahasa",
+     false
+    ],
+    [
+     "English",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 54.34,
+   "e": 55.1,
+   "w": [
+    [
+     "Kat",
+     false
+    ],
+    [
+     "sini",
+     false
+    ],
+    [
+     "ada",
+     false
+    ],
+    [
+     "bahagian",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 55.1,
+   "e": 55.68,
+   "w": [
+    [
+     "tambah",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 55.68,
+   "e": 56.45,
+   "w": [
+    [
+     "add",
+     false
+    ],
+    [
+     "new",
+     false
+    ],
+    [
+     "school",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 56.54,
+   "e": 57.58,
+   "w": [
+    [
+     "Tekan",
+     false
+    ],
+    [
+     "sahaja",
+     false
+    ],
+    [
+     "bahagian",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 57.58,
+   "e": 58.35,
+   "w": [
+    [
+     "add",
+     false
+    ],
+    [
+     "new",
+     false
+    ],
+    [
+     "school",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 58.36,
+   "e": 59.44,
+   "w": [
+    [
+     "Yang",
+     false
+    ],
+    [
+     "ni",
+     false
+    ],
+    [
+     "URL",
+     true
+    ],
+    [
+     "ni",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 59.44,
+   "e": 60.3,
+   "w": [
+    [
+     "kena",
+     false
+    ],
+    [
+     "minta",
+     false
+    ],
+    [
+     "bahagian",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 60.3,
+   "e": 60.7,
+   "w": [
+    [
+     "admin",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 60.7,
+   "e": 61.66,
+   "w": [
+    [
+     "Admin",
+     false
+    ],
+    [
+     "kena",
+     false
+    ],
+    [
+     "sediakan",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 61.66,
+   "e": 62.96,
+   "w": [
+    [
+     "kepada",
+     false
+    ],
+    [
+     "ahli",
+     false
+    ],
+    [
+     "apa",
+     false
+    ],
+    [
+     "yang",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 62.96,
+   "e": 63.92,
+   "w": [
+    [
+     "kena",
+     false
+    ],
+    [
+     "isi",
+     false
+    ],
+    [
+     "di",
+     false
+    ],
+    [
+     "bahagian",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 63.92,
+   "e": 64.18,
+   "w": [
+    [
+     "sini",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 64.18,
+   "e": 64.62,
+   "w": [
+    [
+     "Sebabnya",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 64.62,
+   "e": 66.0,
+   "w": [
+    [
+     "setiap",
+     false
+    ],
+    [
+     "institusi",
+     false
+    ],
+    [
+     "yang",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 66.0,
+   "e": 66.7,
+   "w": [
+    [
+     "menggunakan",
+     false
+    ],
+    [
+     "sistem",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 66.7,
+   "e": 67.46,
+   "w": [
+    [
+     "Yuran.my",
+     true
+    ]
+   ]
+  },
+  {
+   "s": 67.46,
+   "e": 68.38,
+   "w": [
+    [
+     "kita",
+     false
+    ],
+    [
+     "memang",
+     false
+    ],
+    [
+     "sediakan",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 68.38,
+   "e": 69.52,
+   "w": [
+    [
+     "URL",
+     true
+    ],
+    [
+     "masing-masing",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 69.52,
+   "e": 71.38,
+   "w": [
+    [
+     "Setiap",
+     false
+    ],
+    [
+     "institusi",
+     false
+    ],
+    [
+     "lain-lain",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 71.38,
+   "e": 71.74,
+   "w": [
+    [
+     "lah",
+     false
+    ],
+    [
+     "ya",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 71.74,
+   "e": 72.66,
+   "w": [
+    [
+     "saya",
+     false
+    ],
+    [
+     "letakkan",
+     false
+    ],
+    [
+     "yang",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 72.66,
+   "e": 73.68,
+   "w": [
+    [
+     "ni",
+     false
+    ],
+    [
+     "sistem",
+     false
+    ],
+    [
+     "demo",
+     false
+    ],
+    [
+     "lah",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 73.68,
+   "e": 74.58,
+   "w": [
+    [
+     "sebab",
+     false
+    ],
+    [
+     "saya",
+     false
+    ],
+    [
+     "akan",
+     false
+    ],
+    [
+     "gunakan",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 74.58,
+   "e": 75.32,
+   "w": [
+    [
+     "sistem",
+     false
+    ],
+    [
+     "demo",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 75.32,
+   "e": 76.17,
+   "w": [
+    [
+     "Bila",
+     false
+    ],
+    [
+     "dah",
+     false
+    ],
+    [
+     "masuk",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 76.18,
+   "e": 77.24,
+   "w": [
+    [
+     "ada",
+     false
+    ],
+    [
+     "beberapa",
+     false
+    ],
+    [
+     "perkara",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 77.24,
+   "e": 78.23,
+   "w": [
+    [
+     "yang",
+     false
+    ],
+    [
+     "kita",
+     false
+    ],
+    [
+     "boleh",
+     false
+    ],
+    [
+     "lihat",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 78.26,
+   "e": 79.11,
+   "w": [
+    [
+     "Di",
+     false
+    ],
+    [
+     "bahagian",
+     false
+    ],
+    [
+     "sini",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 79.12,
+   "e": 80.64,
+   "w": [
+    [
+     "Sek",
+     false
+    ],
+    [
+     "Integrasi",
+     false
+    ],
+    [
+     "Demo",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 80.64,
+   "e": 81.12,
+   "w": [
+    [
+     "tu",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 81.12,
+   "e": 82.8,
+   "w": [
+    [
+     "yang",
+     false
+    ],
+    [
+     "itu",
+     false
+    ],
+    [
+     "nama",
+     false
+    ],
+    [
+     "institusi",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 82.8,
+   "e": 83.18,
+   "w": [
+    [
+     "lah",
+     false
+    ],
+    [
+     "ya",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 83.18,
+   "e": 84.5,
+   "w": [
+    [
+     "Kalau",
+     false
+    ],
+    [
+     "ahli",
+     false
+    ],
+    [
+     "ada",
+     false
+    ],
+    [
+     "problem",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 84.5,
+   "e": 85.39,
+   "w": [
+    [
+     "tentang",
+     false
+    ],
+    [
+     "apps",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 85.46,
+   "e": 86.22,
+   "w": [
+    [
+     "ahli",
+     false
+    ],
+    [
+     "boleh",
+     false
+    ],
+    [
+     "telefon",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 86.22,
+   "e": 86.86,
+   "w": [
+    [
+     "Telefon",
+     false
+    ],
+    [
+     "nombor",
+     false
+    ],
+    [
+     "yang",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 86.86,
+   "e": 87.89,
+   "w": [
+    [
+     "tertera",
+     false
+    ],
+    [
+     "dalam",
+     false
+    ],
+    [
+     "apps",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 87.94,
+   "e": 89.06,
+   "w": [
+    [
+     "Yang",
+     false
+    ],
+    [
+     "itu",
+     false
+    ],
+    [
+     "adalah",
+     false
+    ],
+    [
+     "nombor",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 89.06,
+   "e": 91.14,
+   "w": [
+    [
+     "PIC",
+     true
+    ],
+    [
+     "untuk",
+     false
+    ],
+    [
+     "setiap",
+     false
+    ],
+    [
+     "institusi",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 91.14,
+   "e": 91.9,
+   "w": [
+    [
+     "Selepas",
+     false
+    ],
+    [
+     "tu",
+     false
+    ],
+    [
+     "masukkan",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 91.9,
+   "e": 92.4,
+   "w": [
+    [
+     "email",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 92.42,
+   "e": 93.24,
+   "w": [
+    [
+     "Email",
+     false
+    ],
+    [
+     "ni",
+     false
+    ],
+    [
+     "adalah",
+     false
+    ],
+    [
+     "email",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 93.24,
+   "e": 94.1,
+   "w": [
+    [
+     "yang",
+     false
+    ],
+    [
+     "berdaftar",
+     false
+    ],
+    [
+     "lah",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 94.1,
+   "e": 94.3,
+   "w": [
+    [
+     "ya",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 94.3,
+   "e": 95.14,
+   "w": [
+    [
+     "Selepas",
+     false
+    ],
+    [
+     "dah",
+     false
+    ],
+    [
+     "masukkan",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 95.14,
+   "e": 96.07,
+   "w": [
+    [
+     "ID",
+     false
+    ],
+    [
+     "dan",
+     false
+    ],
+    [
+     "password",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 96.14,
+   "e": 97.09,
+   "w": [
+    [
+     "tekan",
+     false
+    ],
+    [
+     "sahaja",
+     false
+    ],
+    [
+     "login",
+     true
+    ]
+   ]
+  },
+  {
+   "s": 97.14,
+   "e": 97.91,
+   "w": [
+    [
+     "Bila",
+     false
+    ],
+    [
+     "dah",
+     false
+    ],
+    [
+     "login",
+     true
+    ]
+   ]
+  },
+  {
+   "s": 97.92,
+   "e": 99.46,
+   "w": [
+    [
+     "inilah",
+     false
+    ],
+    [
+     "paparan",
+     false
+    ],
+    [
+     "institusi",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 99.46,
+   "e": 100.2,
+   "w": [
+    [
+     "yang",
+     false
+    ],
+    [
+     "kita",
+     false
+    ],
+    [
+     "nak",
+     false
+    ],
+    [
+     "buat",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 100.2,
+   "e": 100.79,
+   "w": [
+    [
+     "pembayaran",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 100.82,
+   "e": 101.77,
+   "w": [
+    [
+     "Selepas",
+     false
+    ],
+    [
+     "kita",
+     false
+    ],
+    [
+     "masuk",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 101.8,
+   "e": 102.94,
+   "w": [
+    [
+     "inilah",
+     false
+    ],
+    [
+     "paparan",
+     false
+    ],
+    [
+     "untuk",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 102.94,
+   "e": 104.47,
+   "w": [
+    [
+     "kita",
+     false
+    ],
+    [
+     "punya",
+     false
+    ],
+    [
+     "institusi",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 104.52,
+   "e": 105.58,
+   "w": [
+    [
+     "Kalau",
+     false
+    ],
+    [
+     "ada",
+     false
+    ],
+    [
+     "banyak",
+     false
+    ],
+    [
+     "invois",
+     true
+    ]
+   ]
+  },
+  {
+   "s": 105.58,
+   "e": 106.84,
+   "w": [
+    [
+     "yang",
+     false
+    ],
+    [
+     "belum",
+     false
+    ],
+    [
+     "bayar",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 106.84,
+   "e": 108.24,
+   "w": [
+    [
+     "yang",
+     false
+    ],
+    [
+     "ni",
+     false
+    ],
+    [
+     "akan",
+     false
+    ],
+    [
+     "tulis",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 108.24,
+   "e": 109.5,
+   "w": [
+    [
+     "overdue-overdue",
+     true
+    ],
+    [
+     "semua",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 109.5,
+   "e": 109.86,
+   "w": [
+    [
+     "tu",
+     false
+    ],
+    [
+     "lah",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 109.86,
+   "e": 110.08,
+   "w": [
+    [
+     "Jadi",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 110.08,
+   "e": 111.28,
+   "w": [
+    [
+     "ahli",
+     false
+    ],
+    [
+     "boleh",
+     false
+    ],
+    [
+     "tengok",
+     false
+    ],
+    [
+     "apa",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 111.28,
+   "e": 112.12,
+   "w": [
+    [
+     "sahaja",
+     false
+    ],
+    [
+     "yang",
+     false
+    ],
+    [
+     "nak",
+     false
+    ],
+    [
+     "kena",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 112.12,
+   "e": 112.48,
+   "w": [
+    [
+     "bayar",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 112.48,
+   "e": 113.28,
+   "w": [
+    [
+     "Kalau",
+     false
+    ],
+    [
+     "ahli",
+     false
+    ],
+    [
+     "nak",
+     false
+    ],
+    [
+     "buat",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 113.28,
+   "e": 113.98,
+   "w": [
+    [
+     "pembayaran",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 113.98,
+   "e": 114.87,
+   "w": [
+    [
+     "ada",
+     false
+    ],
+    [
+     "dua",
+     false
+    ],
+    [
+     "cara",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 114.96,
+   "e": 116.09,
+   "w": [
+    [
+     "Satu",
+     false
+    ],
+    [
+     "cara",
+     false
+    ],
+    [
+     "adalah",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 116.22,
+   "e": 117.1,
+   "w": [
+    [
+     "buat",
+     false
+    ],
+    [
+     "satu-satu",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 117.1,
+   "e": 118.38,
+   "w": [
+    [
+     "Tekan",
+     false
+    ],
+    [
+     "sahaja",
+     false
+    ],
+    [
+     "satu",
+     false
+    ],
+    [
+     "dan",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 118.38,
+   "e": 119.28,
+   "w": [
+    [
+     "buat",
+     false
+    ],
+    [
+     "pembayaran",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 119.28,
+   "e": 120.26,
+   "w": [
+    [
+     "Tapi",
+     false
+    ],
+    [
+     "kalau",
+     false
+    ],
+    [
+     "ada",
+     false
+    ],
+    [
+     "banyak",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 120.26,
+   "e": 121.38,
+   "w": [
+    [
+     "invois",
+     true
+    ],
+    [
+     "dan",
+     false
+    ],
+    [
+     "nak",
+     false
+    ],
+    [
+     "buat",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 121.38,
+   "e": 122.82,
+   "w": [
+    [
+     "pembayaran",
+     false
+    ],
+    [
+     "secara",
+     false
+    ],
+    [
+     "pukal",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 122.82,
+   "e": 123.75,
+   "w": [
+    [
+     "ataupun",
+     false
+    ],
+    [
+     "banyak",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 123.76,
+   "e": 124.7,
+   "w": [
+    [
+     "tekan",
+     false
+    ],
+    [
+     "sahaja",
+     false
+    ],
+    [
+     "bahagian",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 124.7,
+   "e": 125.2,
+   "w": [
+    [
+     "sini",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 125.28,
+   "e": 126.08,
+   "w": [
+    [
+     "Pilih",
+     false
+    ],
+    [
+     "sahaja",
+     false
+    ],
+    [
+     "invois",
+     true
+    ]
+   ]
+  },
+  {
+   "s": 126.08,
+   "e": 127.3,
+   "w": [
+    [
+     "yang",
+     false
+    ],
+    [
+     "nak",
+     false
+    ],
+    [
+     "dibayar",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 127.3,
+   "e": 127.78,
+   "w": [
+    [
+     "Satu",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 127.78,
+   "e": 128.18,
+   "w": [
+    [
+     "dua",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 128.18,
+   "e": 128.71,
+   "w": [
+    [
+     "tiga",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 128.74,
+   "e": 129.76,
+   "w": [
+    [
+     "Kat",
+     false
+    ],
+    [
+     "situ",
+     false
+    ],
+    [
+     "ada",
+     false
+    ],
+    [
+     "paparan",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 129.76,
+   "e": 130.26,
+   "w": [
+    [
+     "harga",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 130.26,
+   "e": 131.56,
+   "w": [
+    [
+     "hanya",
+     false
+    ],
+    [
+     "terus",
+     false
+    ],
+    [
+     "buat",
+     false
+    ],
+    [
+     "pembayaran",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 131.56,
+   "e": 131.98,
+   "w": [
+    [
+     "sahaja",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 131.98,
+   "e": 132.59,
+   "w": [
+    [
+     "Make",
+     false
+    ],
+    [
+     "a",
+     false
+    ],
+    [
+     "payment",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 132.76,
+   "e": 133.24,
+   "w": [
+    [
+     "Lepas",
+     false
+    ],
+    [
+     "tu",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 133.24,
+   "e": 134.12,
+   "w": [
+    [
+     "pilih",
+     false
+    ],
+    [
+     "bayaran",
+     false
+    ],
+    [
+     "untuk",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 134.12,
+   "e": 134.92,
+   "w": [
+    [
+     "bayaran",
+     false
+    ],
+    [
+     "menggunakan",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 134.92,
+   "e": 135.53,
+   "w": [
+    [
+     "bank",
+     false
+    ],
+    [
+     "apa",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 135.56,
+   "e": 135.82,
+   "w": [
+    [
+     "Then",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 135.82,
+   "e": 136.97,
+   "w": [
+    [
+     "proceed",
+     false
+    ],
+    [
+     "with",
+     false
+    ],
+    [
+     "payment",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 137.24,
+   "e": 138.26,
+   "w": [
+    [
+     "Selepas",
+     false
+    ],
+    [
+     "buat",
+     false
+    ],
+    [
+     "pembayaran",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 138.26,
+   "e": 139.8,
+   "w": [
+    [
+     "sistem",
+     false
+    ],
+    [
+     "akan",
+     false
+    ],
+    [
+     "auto-generate",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 139.8,
+   "e": 141.4,
+   "w": [
+    [
+     "resit",
+     true
+    ],
+    [
+     "untuk",
+     false
+    ],
+    [
+     "ahli-ahli",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 141.4,
+   "e": 142.04,
+   "w": [
+    [
+     "Mudah",
+     false
+    ],
+    [
+     "kan?",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 142.04,
+   "e": 142.61,
+   "w": [
+    [
+     "Jadinya",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 142.64,
+   "e": 144.04,
+   "w": [
+    [
+     "ahli",
+     false
+    ],
+    [
+     "boleh",
+     false
+    ],
+    [
+     "buat",
+     false
+    ],
+    [
+     "pembayaran",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 144.04,
+   "e": 144.55,
+   "w": [
+    [
+     "anytime",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 144.68,
+   "e": 145.27,
+   "w": [
+    [
+     "anywhere",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 145.3,
+   "e": 146.54,
+   "w": [
+    [
+     "Selagi",
+     false
+    ],
+    [
+     "mana",
+     false
+    ],
+    [
+     "ada",
+     false
+    ],
+    [
+     "Internet",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 146.54,
+   "e": 147.88,
+   "w": [
+    [
+     "dan",
+     false
+    ],
+    [
+     "selepas",
+     false
+    ],
+    [
+     "buat",
+     false
+    ],
+    [
+     "pembayaran",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 147.88,
+   "e": 148.92,
+   "w": [
+    [
+     "ahli",
+     false
+    ],
+    [
+     "terus",
+     false
+    ],
+    [
+     "dapat",
+     false
+    ],
+    [
+     "resit",
+     true
+    ]
+   ]
+  },
+  {
+   "s": 148.92,
+   "e": 149.96,
+   "w": [
+    [
+     "secara",
+     false
+    ],
+    [
+     "automatik",
+     true
+    ]
+   ]
+  },
+  {
+   "s": 149.96,
+   "e": 151.2,
+   "w": [
+    [
+     "Dah",
+     false
+    ],
+    [
+     "tak",
+     false
+    ],
+    [
+     "perlulah",
+     false
+    ],
+    [
+     "ahli",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 151.2,
+   "e": 152.4,
+   "w": [
+    [
+     "minta",
+     false
+    ],
+    [
+     "resit",
+     true
+    ],
+    [
+     "pada",
+     false
+    ],
+    [
+     "kita",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 152.4,
+   "e": 153.6,
+   "w": [
+    [
+     "pada",
+     false
+    ],
+    [
+     "waktu-waktu",
+     false
+    ],
+    [
+     "yang",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 153.6,
+   "e": 154.71,
+   "w": [
+    [
+     "kita",
+     false
+    ],
+    [
+     "not",
+     false
+    ],
+    [
+     "available",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 155.02,
+   "e": 155.78,
+   "w": [
+    [
+     "Selamat",
+     false
+    ],
+    [
+     "menggunakan",
+     false
+    ]
+   ]
+  },
+  {
+   "s": 155.78,
+   "e": 156.4,
+   "w": [
+    [
+     "Yuran.my",
+     true
+    ]
+   ]
+  },
+  {
+   "s": 156.4,
+   "e": 156.9,
+   "w": [
+    [
+     "Terima",
+     false
+    ],
+    [
+     "kasih",
+     false
+    ]
+   ]
+  }
+ ],
+ "steps": [
+  {
+   "n": 1,
+   "title": "Cari Yuran.my di Play Store",
+   "s": 35.04,
+   "e": 40.32,
+   "b0": 7.0,
+   "b1": 20.6
+  },
+  {
+   "n": 2,
+   "title": "Buka aplikasi",
+   "s": 40.32,
+   "e": 47.44,
+   "b0": 20.6,
+   "b1": 27.0
+  },
+  {
+   "n": 3,
+   "title": "Pilih bahasa & tambah sekolah",
+   "s": 47.44,
+   "e": 58.36,
+   "b0": 27.0,
+   "b1": 56.6
+  },
+  {
+   "n": 4,
+   "title": "Masukkan URL institusi",
+   "s": 58.36,
+   "e": 64.1,
+   "b0": 56.6,
+   "b1": 62.0
+  },
+  {
+   "n": 4,
+   "title": "Masukkan URL institusi",
+   "s": 69.52,
+   "e": 75.32,
+   "b0": 94.4,
+   "b1": 100.6
+  },
+  {
+   "n": 5,
+   "title": "Log masuk",
+   "s": 75.32,
+   "e": 97.14,
+   "b0": 100.6,
+   "b1": 204.35
+  },
+  {
+   "n": 6,
+   "title": "Pilih institusi",
+   "s": 97.14,
+   "e": 104.52,
+   "b0": 204.35,
+   "b1": 218.0
+  },
+  {
+   "n": 7,
+   "title": "Semak invois tertunggak",
+   "s": 104.52,
+   "e": 112.48,
+   "b0": 218.0,
+   "b1": 244.0
+  },
+  {
+   "n": 8,
+   "title": "Bayar satu invois",
+   "s": 112.48,
+   "e": 119.28,
+   "b0": 244.0,
+   "b1": 251.4
+  },
+  {
+   "n": 8,
+   "title": "Bayar banyak invois sekali",
+   "s": 119.28,
+   "e": 132.76,
+   "b0": 251.5,
+   "b1": 277.9
+  },
+  {
+   "n": 9,
+   "title": "Pilih bank & teruskan",
+   "s": 132.76,
+   "e": 137.24,
+   "b0": 278.0,
+   "b1": 288.4
+  }
+ ],
+ "taps": [
+  {
+   "t": 37.0,
+   "label": "Klik Yuran.My"
+  },
+  {
+   "t": 39.0,
+   "label": "Klik Install"
+  },
+  {
+   "t": 44.0,
+   "label": "Buka apl"
+  },
+  {
+   "t": 47.0,
+   "label": "Klik Allow"
+  },
+  {
+   "t": 51.4,
+   "label": "Pilih bahasa"
+  },
+  {
+   "t": 56.9,
+   "label": "Add New School"
+  },
+  {
+   "t": 60.3,
+   "label": "Isi URL dari admin"
+  },
+  {
+   "t": 74.2,
+   "label": "Klik Continue"
+  },
+  {
+   "t": 79.1,
+   "label": "Nama institusi"
+  },
+  {
+   "t": 91.5,
+   "label": "Emel berdaftar"
+  },
+  {
+   "t": 96.2,
+   "label": "Klik Login"
+  },
+  {
+   "t": 100.2,
+   "label": "Pilih institusi"
+  },
+  {
+   "t": 108.24,
+   "label": "Overdue"
+  },
+  {
+   "t": 117.3,
+   "label": "Pilih satu invois"
+  },
+  {
+   "t": 118.4,
+   "label": "Make Payment"
+  },
+  {
+   "t": 124.2,
+   "label": "Bayar pukal"
+  },
+  {
+   "t": 127.3,
+   "label": "1"
+  },
+  {
+   "t": 127.78,
+   "label": "2"
+  },
+  {
+   "t": 128.18,
+   "label": "3"
+  },
+  {
+   "t": 131.5,
+   "label": "Make Payment"
+  },
+  {
+   "t": 133.0,
+   "label": "Online Banking"
+  },
+  {
+   "t": 134.4,
+   "label": "Pilih bank"
+  },
+  {
+   "t": 135.9,
+   "label": "Proceed With Payment"
+  }
+ ]
+}

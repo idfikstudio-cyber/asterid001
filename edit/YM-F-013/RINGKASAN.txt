@@ -1,0 +1,269 @@
+RINGKASAN EDIT — YM-F-013_Tutorial install Apps Yuran.my (preview v1)
+Brand: Yuran.my | Spokesperson: Farhan | Tag skrip: TOFU (tutorial evergreen)
+Durasi: 158.4 s (1 s thumbnail + 155.9 s isi + 1.5 s end card)
+DNA: yuran-my/CLAUDE.md v2
+
+1) TEKS HOOK / THUMBNAIL
+   "TUTORIAL CARA BAYAR YURAN DALAM APP" atas frame Farhan (sumber 2:30).
+
+2) CAPTION PENUH (ikut percakapan; masa ikut video preview)
+   [0:01.00] Saya nak tunjukkan
+   [0:01.74] macam mana ahli kita
+   [0:02.94] boleh install aplikasi
+   [0:04.38] Yuran.my dan menggunakan
+   [0:05.78] aplikasi Yuran.my untuk
+   [0:07.12] buat pembayaran
+   [0:07.98] Dalam aplikasi Yuran.my
+   [0:09.54] yang kita sediakan
+   [0:10.52] ahli boleh buat pembayaran
+   [0:12.02] melalui app sahaja
+   [0:13.44] Bukan terdekat pembayaran
+   [0:14.74] boleh pantau apa yang
+   [0:15.80] nak dibayar
+   [0:16.50] boleh terus buat pembayaran
+   [0:17.90] dan boleh ambil resit
+   [0:19.10] dan download resit
+   [0:20.08] yang kita dah bayar
+   [0:21.08] Cara untuk install
+   [0:21.76] aplikasi Yuran.my
+   [0:23.18] boleh pergi install
+   [0:24.24] apps mengikut device
+   [0:25.90] masing-masing
+   [0:26.54] Contoh kalau Android
+   [0:27.82] Play Store
+   [0:28.38] Kalau iOS
+   [0:29.38] App Store
+   [0:30.00] Kalau Huawei
+   [0:31.00] Huawei App Store
+   [0:32.24] Macam contoh yang sekarang
+   [0:33.38] ni saya gunakan Android
+   [0:35.04] Pergi sahaja bahagian
+   [0:35.98] Play Store
+   [0:36.66] cari sahaja Yuran.my
+   [0:38.52] selepas tu install
+   [0:39.62] sahaja
+   [0:40.32] Selepas dah install
+   [0:41.58] boleh sahaja pergi
+   [0:42.36] ke apps tu
+   [0:43.26] pergi Yuran.my
+   [0:44.80] masuk
+   [0:45.36] kemudian ada paparan
+   [0:46.62] seperti ini
+   [0:47.44] Allow sahaja
+   [0:48.20] Selepas dah masuk dalam
+   [0:49.40] apps tu
+   [0:49.94] kita ada beberapa pilihan
+   [0:51.36] Sama ada nak pilihan
+   [0:52.50] bahasa Melayu ataupun
+   [0:53.56] bahasa English
+   [0:54.34] Kat sini ada bahagian
+   [0:55.10] tambah
+   [0:55.68] add new school
+   [0:56.54] Tekan sahaja bahagian
+   [0:57.58] add new school
+   [0:58.36] Yang ni URL ni
+   [0:59.44] kena minta bahagian
+   [1:00.30] admin
+   [1:00.70] Admin kena sediakan
+   [1:01.66] kepada ahli apa yang
+   [1:02.96] kena isi di bahagian
+   [1:03.92] sini
+   [1:04.18] Sebabnya
+   [1:04.62] setiap institusi yang
+   [1:06.00] menggunakan sistem
+   [1:06.70] Yuran.my
+   [1:07.46] kita memang sediakan
+   [1:08.38] URL masing-masing
+   [1:09.52] Setiap institusi lain-lain
+   [1:11.38] lah ya
+   [1:11.74] saya letakkan yang
+   [1:12.66] ni sistem demo lah
+   [1:13.68] sebab saya akan gunakan
+   [1:14.58] sistem demo
+   [1:15.32] Bila dah masuk
+   [1:16.18] ada beberapa perkara
+   [1:17.24] yang kita boleh lihat
+   [1:18.26] Di bahagian sini
+   [1:19.12] Sek Integrasi Demo
+   [1:20.64] tu
+   [1:21.12] yang itu nama institusi
+   [1:22.80] lah ya
+   [1:23.18] Kalau ahli ada problem
+   [1:24.50] tentang apps
+   [1:25.46] ahli boleh telefon
+   [1:26.22] Telefon nombor yang
+   [1:26.86] tertera dalam apps
+   [1:27.94] Yang itu adalah nombor
+   [1:29.06] PIC untuk setiap institusi
+   [1:31.14] Selepas tu masukkan
+   [1:31.90] email
+   [1:32.42] Email ni adalah email
+   [1:33.24] yang berdaftar lah
+   [1:34.10] ya
+   [1:34.30] Selepas dah masukkan
+   [1:35.14] ID dan password
+   [1:36.14] tekan sahaja login
+   [1:37.14] Bila dah login
+   [1:37.92] inilah paparan institusi
+   [1:39.46] yang kita nak buat
+   [1:40.20] pembayaran
+   [1:40.82] Selepas kita masuk
+   [1:41.80] inilah paparan untuk
+   [1:42.94] kita punya institusi
+   [1:44.52] Kalau ada banyak invois
+   [1:45.58] yang belum bayar
+   [1:46.84] yang ni akan tulis
+   [1:48.24] overdue-overdue semua
+   [1:49.50] tu lah
+   [1:49.86] Jadi
+   [1:50.08] ahli boleh tengok apa
+   [1:51.28] sahaja yang nak kena
+   [1:52.12] bayar
+   [1:52.48] Kalau ahli nak buat
+   [1:53.28] pembayaran
+   [1:53.98] ada dua cara
+   [1:54.96] Satu cara adalah
+   [1:56.22] buat satu-satu
+   [1:57.10] Tekan sahaja satu dan
+   [1:58.38] buat pembayaran
+   [1:59.28] Tapi kalau ada banyak
+   [2:00.26] invois dan nak buat
+   [2:01.38] pembayaran secara pukal
+   [2:02.82] ataupun banyak
+   [2:03.76] tekan sahaja bahagian
+   [2:04.70] sini
+   [2:05.28] Pilih sahaja invois
+   [2:06.08] yang nak dibayar
+   [2:07.30] Satu
+   [2:07.78] dua
+   [2:08.18] tiga
+   [2:08.74] Kat situ ada paparan
+   [2:09.76] harga
+   [2:10.26] hanya terus buat pembayaran
+   [2:11.56] sahaja
+   [2:11.98] Make a payment
+   [2:12.76] Lepas tu
+   [2:13.24] pilih bayaran untuk
+   [2:14.12] bayaran menggunakan
+   [2:14.92] bank apa
+   [2:15.56] Then
+   [2:15.82] proceed with payment
+   [2:17.24] Selepas buat pembayaran
+   [2:18.26] sistem akan auto-generate
+   [2:19.80] resit untuk ahli-ahli
+   [2:21.40] Mudah kan?
+   [2:22.04] Jadinya
+   [2:22.64] ahli boleh buat pembayaran
+   [2:24.04] anytime
+   [2:24.68] anywhere
+   [2:25.30] Selagi mana ada Internet
+   [2:26.54] dan selepas buat pembayaran
+   [2:27.88] ahli terus dapat resit
+   [2:28.92] secara automatik
+   [2:29.96] Dah tak perlulah ahli
+   [2:31.20] minta resit pada kita
+   [2:32.40] pada waktu-waktu yang
+   [2:33.60] kita not available
+   [2:35.02] Selamat menggunakan
+   [2:35.78] Yuran.my
+   [2:36.40] Terima kasih
+
+3) SFX, ANIMASI, B-ROLL (masa ikut video preview)
+   0:00.00–0:01.00  Thumbnail: Hook “TUTORIAL CARA BAYAR YURAN DALAM APP” atas frame Farhan (sumber 2:30), gradien gelap bawah
+   0:01.30–0:04.60  Label: Pil biru “Farhan · Yuran.my”
+   0:12.00–0:21.00  Ikon: Kad putih + tanda ✓ biru: “Bayar dalam app”
+   0:14.96–0:21.00  Ikon: Kad putih + tanda ✓ biru: “Pantau yuran”
+   0:18.78–0:21.00  Ikon: Kad putih + tanda ✓ biru: “Muat turun resit”
+   0:27.02–0:34.90  Cip peranti: Android → Play Store
+   0:28.56–0:34.90  Cip peranti: iOS → App Store
+   0:30.28–0:34.90  Cip peranti: Huawei → AppGallery
+   0:35.04–0:40.32  Tutorial: Langkah 1: Cari Yuran.my di Play Store · B-roll paparan apps yuran.my 7.0–20.6 s
+   0:36.75–0:38.10  Klik: Bulatan berdenyut + label “Klik Yuran.My”
+   0:38.75–0:40.10  Klik: Bulatan berdenyut + label “Klik Install”
+   0:40.32–0:47.44  Tutorial: Langkah 2: Buka aplikasi · B-roll paparan apps yuran.my 20.6–27.0 s
+   0:43.75–0:45.10  Klik: Bulatan berdenyut + label “Buka apl”
+   0:46.75–0:48.10  Klik: Bulatan berdenyut + label “Klik Allow”
+   0:47.44–0:58.36  Tutorial: Langkah 3: Pilih bahasa & tambah sekolah · B-roll paparan apps yuran.my 27.0–56.6 s
+   0:51.15–0:52.50  Klik: Bulatan berdenyut + label “Pilih bahasa”
+   0:56.65–0:58.00  Klik: Bulatan berdenyut + label “Add New School”
+   0:58.36–1:04.10  Tutorial: Langkah 4: Masukkan URL institusi · B-roll paparan apps yuran.my 56.6–62.0 s
+   0:59.00–1:04.10  Kad nota: “URL diberi oleh admin institusi”
+   1:00.05–1:01.40  Klik: Bulatan berdenyut + label “Isi URL dari admin”
+   1:09.52–1:15.32  Tutorial: Langkah 4: Masukkan URL institusi · B-roll paparan apps yuran.my 94.4–100.6 s
+   1:13.95–1:15.30  Klik: Bulatan berdenyut + label “Klik Continue”
+   1:15.32–1:37.14  Tutorial: Langkah 5: Log masuk · B-roll paparan apps yuran.my 100.6–204.3 s
+   1:18.85–1:20.20  Klik: Bulatan berdenyut + label “Nama institusi”
+   1:26.20–1:31.10  PIC: Bingkai biru berkelip pada nombor telefon (hanya 4 digit akhir kelihatan) + label “Nombor PIC admin institusi”
+   1:31.25–1:32.60  Klik: Bulatan berdenyut + label “Emel berdaftar”
+   1:35.95–1:37.30  Klik: Bulatan berdenyut + label “Klik Login”
+   1:37.14–1:44.52  Tutorial: Langkah 6: Pilih institusi · B-roll paparan apps yuran.my 204.3–218.0 s
+   1:39.95–1:41.30  Klik: Bulatan berdenyut + label “Pilih institusi”
+   1:44.52–1:52.48  Tutorial: Langkah 7: Semak invois tertunggak · B-roll paparan apps yuran.my 218.0–244.0 s
+   1:47.99–1:49.34  Klik: Bulatan berdenyut + label “Overdue”
+   1:52.48–1:59.28  Tutorial: Langkah 8: Bayar satu invois · B-roll paparan apps yuran.my 244.0–251.4 s
+   1:57.05–1:58.40  Klik: Bulatan berdenyut + label “Pilih satu invois”
+   1:58.15–1:59.50  Klik: Bulatan berdenyut + label “Make Payment”
+   1:59.28–2:12.76  Tutorial: Langkah 8: Bayar banyak invois sekali · B-roll paparan apps yuran.my 251.5–277.9 s
+   2:03.95–2:05.30  Klik: Bulatan berdenyut + label “Bayar pukal”
+   2:07.05–2:08.40  Klik: Bulatan berdenyut + label “1”
+   2:07.53–2:08.88  Klik: Bulatan berdenyut + label “2”
+   2:07.93–2:09.28  Klik: Bulatan berdenyut + label “3”
+   2:11.25–2:12.60  Klik: Bulatan berdenyut + label “Make Payment”
+   2:12.75–2:14.10  Klik: Bulatan berdenyut + label “Online Banking”
+   2:12.76–2:17.24  Tutorial: Langkah 9: Pilih bank & teruskan · B-roll paparan apps yuran.my 278.0–288.4 s
+   2:14.15–2:15.50  Klik: Bulatan berdenyut + label “Pilih bank”
+   2:15.65–2:17.00  Klik: Bulatan berdenyut + label “Proceed With Payment”
+   2:19.60–2:22.00  Kad: “Resit automatik”
+   2:24.00–2:26.20  Kad: “Bila-bila masa, di mana sahaja”
+   2:36.95–2:38.45  End card: Latar biru #2A3B8F, logo putih, “Cara MUDAH Urus Yuran”, CTA “Follow untuk tips urus yuran sekolah”, hello@yuran.my
+   0:12.00  SFX pop lembut
+   0:14.96  SFX pop lembut
+   0:18.78  SFX pop lembut
+   0:27.02  SFX tick lembut
+   0:28.56  SFX tick lembut
+   0:30.28  SFX tick lembut
+   0:36.95  SFX klik lembut
+   0:38.95  SFX klik lembut
+   0:43.95  SFX klik lembut
+   0:46.95  SFX klik lembut
+   0:51.35  SFX klik lembut
+   0:56.85  SFX klik lembut
+   0:59.00  SFX pop lembut
+   1:00.25  SFX klik lembut
+   1:14.15  SFX klik lembut
+   1:19.05  SFX klik lembut
+   1:31.45  SFX klik lembut
+   1:36.15  SFX klik lembut
+   1:40.15  SFX klik lembut
+   1:48.19  SFX klik lembut
+   1:57.25  SFX klik lembut
+   1:58.35  SFX klik lembut
+   2:04.15  SFX klik lembut
+   2:07.25  SFX klik lembut
+   2:07.73  SFX klik lembut
+   2:08.13  SFX klik lembut
+   2:11.45  SFX klik lembut
+   2:12.95  SFX klik lembut
+   2:14.35  SFX klik lembut
+   2:15.85  SFX klik lembut
+   2:19.60  SFX pop lembut
+   2:21.40  SFX ding lembut
+
+4) CTA
+   End card: "Cara MUDAH Urus Yuran" + "Follow untuk tips urus yuran sekolah" + hello@yuran.my (TOFU).
+
+5) PERLU SEMAK
+   - Ayat 0:13: Transkrip berbunyi “Bukan terdekat pembayaran”. Caption ikut transkrip buat masa ini. Sahkan apa yang Farhan sebut.
+   - Jumlah invois: RM 1.19, RM 35.00, RM 100.00, RM 135.00 dan RM 185.00 kelihatan dalam rakaman skrin. Saya anggap data demo (Sek Integrasi Demo). Sahkan, atau saya kaburkan.
+   - Lompatan Langkah 5: Bahagian menaip emel/kata laluan dibuang (emel jelas kelihatan dan susun atur bergerak). Video melompat dari borang kosong terus ke borang yang sudah diisi.
+   - Cip Huawei: Farhan sebut “Huawei App Store”; cip tulis nama rasmi “AppGallery”. Caption ikut sebutan.
+   - Latar kabur talking head: DNA minta latar kabur lembut (depth of field). Preview v1 belum ada bokeh pada bahagian Farhan. Boleh tambah dalam v2 jika mahu.
+   - Durasi: 158.5 s, melebihi sasaran TOFU 20–45 s. Dikekalkan penuh sebagai tutorial evergreen (diluluskan dalam storyboard); dicatat dalam log.
+   - Log 03_LOG: edit-log.csv hanya sampai YM-F-003, sedangkan 02_EDITED ada YM-F-010 hingga 012. Baris YM-F-013 ditambah; baris yang tertinggal tidak saya isi.
+
+6) CAPTION TIKTOK
+   Cara install app Yuran.my dan bayar yuran terus dari telefon, langkah demi langkah. Simpan video ni untuk rujukan nanti.
+   #YuranMy #YuranSekolah #KAFA #TutorialApp #BayarYuranOnline
+
+Perubahan (ikut komen Farhan):
+   - Langkah 5: nombor PIC dikaburkan kecuali 4 digit akhir, dengan bingkai berkelip-kelip “Nombor PIC admin institusi”.
