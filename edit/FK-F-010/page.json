@@ -2,10 +2,10 @@
  "id": "FK-F-010",
  "topik": "Kenapa Harga Kabinet Berbeza",
  "tag": "TOFU+BOFU",
- "ver": "v1",
- "status": "Preview v1 · tunggu komen",
+ "ver": "v2",
+ "status": "Preview v2 · tunggu komen",
  "tarikh": "17 Nov 2026",
- "edit_intro": "Ikut DNA Fi-k Studio v3.3 (versi terkini di repo). Footage tiada take ulangan/senyap >0.3 s; isi 73.8 s digunakan penuh. Thumbnail 1 s + isi 73.8 s + outro brand 4.0 s = 78.9 s. B-roll projek & design 3D Fi-k ±setiap 8–12 saat, dipadan dengan ayat; tiada B-roll pada hook, tajuk poin, teks besar, harga dan CTA. QC automatik outro lulus (x=540 ±4 px).",
+ "edit_intro": "Ikut DNA Fi-k Studio v3.3 (versi terkini di repo). Footage tiada take ulangan/senyap >0.3 s; isi 73.8 s digunakan penuh. Thumbnail 1 s + isi 73.8 s + outro brand 4.0 s = 78.9 s. B-roll projek & design 3D Fi-k ±setiap 8–12 saat, dipadan dengan ayat; tiada B-roll pada hook, tajuk poin, teks besar, harga dan CTA. QC automatik outro lulus (x=540 ±4 px). v2: “SURVEY-SURVEY” (0:46) ikut Farhan; semua istilah lain dan harga RM15,000 disahkan.",
  "seg": [
   [
    0,
@@ -58,14 +58,14 @@
  ],
  "done": [
   [
+   "v2: caption disahkan",
+   "“SURVEY-SURVEY DULU BENDA” (0:46). Disahkan Farhan: RM15,000, MELAMINE / NYATOH / ALUMINIUM, ENGSEL / REL LACI, COUNTERTOP / QUARTZ STONE / SINTERED STONE / KONKRIT, PAKEJ, ITEM-ITEMNYA.",
+   46.06
+  ],
+  [
    "Ikut DNA v3.3",
    "Bokeh halus, motion zoom muka, caption 1 perkataan + kotak hijau kata kunci, tajuk poin #1–#3, hook baris rapat di tengah, kad & outro di tengah, tiada muzik.",
    2.0
-  ],
-  [
-   "Istilah teknikal dibetulkan",
-   "Transkrip banyak salah dengar istilah kabinet; dibetulkan ikut konteks (lihat Perlu semak untuk disahkan): MELAMINE, NYATOH, ALUMINIUM, MEKANISME, ENGSEL, REL LACI, RISIKO, COUNTERTOP, QUARTZ STONE, SINTERED STONE, KONKRIT, PAKEJ.",
-   24.4
   ],
   [
    "B-roll ikut ayat",
@@ -89,44 +89,19 @@
  ],
  "todo": [
   [
-   "Harga RM15,000 (1:09.8)",
-   "Disebut “pakej kabinet dan countertop… bermula dengan RM15,000 sahaja”. Tiada dalam skrip — sila sahkan harga ini tepat.",
-   69.22
-  ],
-  [
-   "Bahan kabinet (0:25–0:28)",
-   "Transkrip: “melamai, nyato, air milenium” → caption MELAMINE, NYATOH, ALUMINIUM. Sila sahkan (terutama NYATOH).",
-   25.4
-  ],
-  [
-   "Aksesori (0:39–0:41)",
-   "Transkrip: “Ansel ataupun Rilachi” → caption ENGSEL ATAUPUN REL LACI. Sila sahkan.",
-   40.18
-  ],
-  [
-   "“SEMAK-SEMAK” (0:46)",
-   "Transkrip: “sebeg-sebeg dulu benda” → caption SEMAK-SEMAK. Kurang pasti; sila beritahu perkataan sebenar.",
-   46.06
-  ],
-  [
-   "Countertop (0:48–0:55)",
-   "Transkrip: “pilih jenis kontraktor… quadstone, sinterstone, konkret” → COUNTERTOP, QUARTZ STONE, SINTERED STONE, KONKRIT. Juga “Paket kabinet dan kontraktor kami” → PAKEJ KABINET DAN COUNTERTOP (1:06). Sila sahkan.",
-   48.74
-  ],
-  [
-   "“ITEM-ITEMNYA” (1:01)",
-   "Transkrip: “ikut term-termnya” → caption ITEM-ITEMNYA. Kurang pasti; sila sahkan.",
-   61.78
-  ],
-  [
-   "Durasi 78.9 s",
-   "Melebihi sasaran BOFU 30–60 s; footage tiada ulangan jadi isi tidak dipotong."
-  ],
-  [
    "Preview MP4 & log belum di Drive",
    "Alat Drive hadkan ±3 MB setiap muat naik dan tidak boleh tulis ganti fail sedia ada. THUMB & RINGKASAN dimuat naik ke _PREVIEW; video preview ada di halaman ini; baris log perlu ditambah manual."
+  ],
+  [
+   "Durasi 78.9 s (dikekalkan)",
+   "Melebihi sasaran BOFU 30–60 s; dikekalkan ikut Farhan."
   ]
  ],
  "tt": "Kenapa harga kabinet dapur boleh beza sangat? 3 perkara penting: material kabinet, aksesori & mekanisme, dan jenis countertop. Banding ikut item, jangan ambil harga keseluruhan! Pakej kabinet & countertop Fi-k bermula RM15,000. DM untuk keterangan lanjut.",
- "hs": "#hargakabinet #kabinetdapur #renovatedapur #fikstudio #interiordesign"
+ "hs": "#hargakabinet #kabinetdapur #renovatedapur #fikstudio #interiordesign",
+ "changes": [
+  "SEMAK-SEMAK → SURVEY-SURVEY",
+  "Harga & semua istilah disahkan",
+  "Durasi dikekalkan"
+ ]
 }

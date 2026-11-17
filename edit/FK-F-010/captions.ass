@@ -193,8 +193,8 @@ Dialogue: 1,0:00:45.62,0:00:45.82,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100
 Dialogue: 2,0:00:45.62,0:00:45.82,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}JADI
 Dialogue: 1,0:00:45.82,0:00:46.06,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}KENA
 Dialogue: 2,0:00:45.82,0:00:46.06,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}KENA
-Dialogue: 1,0:00:46.06,0:00:46.62,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}SEMAK-SEMAK
-Dialogue: 2,0:00:46.06,0:00:46.62,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}SEMAK-SEMAK
+Dialogue: 1,0:00:46.06,0:00:46.62,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs110}SURVEY-SURVEY
+Dialogue: 2,0:00:46.06,0:00:46.62,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs110}SURVEY-SURVEY
 Dialogue: 1,0:00:46.62,0:00:46.74,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}DULU
 Dialogue: 2,0:00:46.62,0:00:46.74,CapIn,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}DULU
 Dialogue: 1,0:00:46.74,0:00:47.02,CapOut,,0,0,0,,{\fscx86\fscy86\t(0,90,\fscx100\fscy100)}{\fs120}BENDA
