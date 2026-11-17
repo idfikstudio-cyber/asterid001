@@ -1,0 +1,12 @@
+[
+ {"id":"s2_playstore","t":10,"step":1,"title":"Cari Yuran.my di Play Store","tap":[[540,707,80,"Klik Install"]],"cap":"cari sahaja Yuran.my"},
+ {"id":"s3_open","t":21,"step":2,"title":"Buka aplikasi","tap":[[767,470,70,"Klik Open"]],"cap":"install sahaja"},
+ {"id":"s4_lang","t":30,"step":3,"title":"Pilih bahasa & tambah sekolah","tap":[[913,162,55,"Bahasa"],[578,545,80,"Add New School"]],"cap":"add new school"},
+ {"id":"s5_url","t":98,"step":4,"title":"Masukkan URL sekolah","tap":[[540,707,70,""],[540,1188,75,"Klik Continue"]],"cap":"masukkan URL"},
+ {"id":"s6_login","t":186,"step":5,"title":"Log masuk","blur":[[150,700,930,770],[180,1130,900,1200]],"tap":[[540,1166,75,"Emel & kata laluan"]],"cap":"login"},
+ {"id":"s7_school","t":208,"step":6,"title":"Pilih sekolah","blur":[[380,830,700,870]],"tap":[[540,783,85,"Klik sekolah"]],"cap":"pilih sekolah"},
+ {"id":"s8_home","t":219,"step":7,"title":"Semak yuran tertunggak","blur":[[820,130,920,230]],"tap":[[540,1458,90,"Unpaid Invoices"]],"cap":"pantau yuran"},
+ {"id":"s9_select","t":272,"step":8,"title":"Pilih invois & bayar","tap":[[540,864,90,""],[540,1690,80,"Make Payment"]],"cap":"pilih invois"},
+ {"id":"s10_fpx","t":278,"step":9,"title":"Pilih cara bayar","tap":[[540,335,70,"Online Banking"]],"cap":"FPX"},
+ {"id":"s11_bank","t":285,"step":10,"title":"Pilih bank & teruskan","tap":[[794,1231,70,"Pilih bank"]],"cap":"proceed"}
+]

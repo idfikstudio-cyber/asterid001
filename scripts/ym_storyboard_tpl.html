@@ -1,0 +1,164 @@
+<title>YM-F-011 Storyboard Tutorial App</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: jalur masa babak di atas; senarai babak (mockup 9:16 + nota) di kiri, panel keputusan & muzik melekit di kanan. Warna brand Yuran.my. */
+:root{
+  --bg:#f3f4f8; --surface:#ffffff; --ink:#231F20; --muted:#5b6070; --line:#dfe1ea; --chip:#E7E8E9;
+  --brand:#2A3B8F; --accent:#29ABE2; --accent-ink:#1a7fae; --brand-soft:#e6e9f6;
+  --k-talk:#2A3B8F; --k-tut:#29ABE2; --k-brand:#8a90a8; --warn:#b45309;
+  --f-disp:"Inter","Segoe UI",system-ui,sans-serif;
+  --f-body:"Source Sans 3","Inter",system-ui,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0e1122; --surface:#171b33; --ink:#eceef6; --muted:#a3a8bf; --line:#2a3050; --chip:#222845;
+  --brand:#9fb0ff; --accent:#4cc0ef; --accent-ink:#7fd3f5; --brand-soft:#1f2650;
+  --k-talk:#6f83e6; --k-tut:#29ABE2; --k-brand:#5d6384; --warn:#f0a44b; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0e1122; --surface:#171b33; --ink:#eceef6; --muted:#a3a8bf; --line:#2a3050; --chip:#222845;
+  --brand:#9fb0ff; --accent:#4cc0ef; --accent-ink:#7fd3f5; --brand-soft:#1f2650;
+  --k-talk:#6f83e6; --k-tut:#29ABE2; --k-brand:#5d6384; --warn:#f0a44b; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.55}
+.wrap{max-width:1200px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:24px 64px}
+header{display:flex;flex-wrap:wrap;gap:10px 24px;align-items:end;justify-content:space-between;margin-bottom:20px}
+.eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 4px}
+h1{font-family:var(--f-disp);font-weight:800;font-size:clamp(26px,4vw,38px);line-height:1.08;margin:0;color:var(--brand);text-wrap:balance;letter-spacing:-.015em}
+.meta{display:flex;flex-wrap:wrap;gap:8px;font-size:14px;color:var(--muted)}
+.pill{display:inline-flex;align-items:center;padding:3px 12px;border-radius:999px;font-family:var(--f-disp);font-weight:700;font-size:12px;letter-spacing:.04em;background:var(--chip);color:var(--ink)}
+.pill.warn{background:color-mix(in srgb,var(--warn) 16%,transparent);color:var(--warn)}
+.strip-wrap{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px;margin-bottom:24px}
+.strip-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 16px;font-size:13px;color:var(--muted);margin-bottom:10px}
+.legend{display:flex;gap:14px;flex-wrap:wrap}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.strip{display:flex;gap:3px;height:44px}
+.seg{min-width:22px;border-radius:6px;display:flex;align-items:center;justify-content:center;text-decoration:none;color:#fff;font-family:var(--f-disp);font-weight:700;font-size:11px;overflow:hidden}
+.seg span{white-space:nowrap;overflow:hidden;text-overflow:clip;padding-inline:2px}
+.k-talk{background:var(--k-talk)}.k-tutorial{background:var(--k-tut)}.k-brand{background:var(--k-brand)}
+.seg:hover,.seg:focus-visible{outline:2px solid var(--ink);outline-offset:1px}
+.axis{display:flex;justify-content:space-between;font-family:var(--f-mono);font-size:11px;color:var(--muted);margin-top:6px}
+.grid{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:28px;align-items:start}
+@media (max-width:940px){.grid{grid-template-columns:minmax(0,1fr)}}
+.scenes{display:flex;flex-direction:column;gap:16px;min-width:0}
+.scene{display:grid;grid-template-columns:200px minmax(0,1fr);gap:20px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px;scroll-margin-top:16px}
+.scene:target{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 25%,transparent)}
+@media (max-width:560px){.scene{grid-template-columns:minmax(0,1fr)}.scene figure{max-width:260px;margin-inline:auto}}
+.scene figure{margin:0}
+.scene img{display:block;width:100%;height:auto;aspect-ratio:9/16;object-fit:cover;border-radius:12px;background:var(--chip);cursor:zoom-in}
+.sbody{min-width:0}
+.shead{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center}
+.tag{font-family:var(--f-disp);font-weight:700;font-size:12px;padding:3px 10px;border-radius:999px;color:#fff}
+.t-talk{background:var(--k-talk)}.t-tutorial{background:var(--k-tut)}.t-brand{background:var(--k-brand)}
+.time{font-family:var(--f-mono);font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.scene h3{font-family:var(--f-disp);font-size:20px;font-weight:700;margin:6px 0 10px;line-height:1.25;text-wrap:balance}
+dl{margin:0;display:grid;grid-template-columns:120px minmax(0,1fr);gap:8px 14px;font-size:15px}
+@media (max-width:560px){dl{grid-template-columns:minmax(0,1fr);gap:2px}dd{margin-bottom:8px}}
+dt{font-family:var(--f-disp);font-weight:600;font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);padding-top:3px}
+dd{margin:0}
+dd.say{font-style:italic;color:var(--ink)}
+dd.src{font-family:var(--f-mono);font-size:13px;color:var(--muted)}
+aside{position:sticky;top:calc(env(safe-area-inset-top,0px) + 16px);display:flex;flex-direction:column;gap:16px;min-width:0}
+@media (max-width:940px){aside{position:static}}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px 18px}
+.panel h2{font-family:var(--f-disp);font-size:16px;font-weight:800;margin:0 0 10px;color:var(--brand);display:flex;justify-content:space-between;align-items:center;gap:8px}
+.ask{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;max-height:56vh;overflow:auto;padding-right:4px}
+@media (max-width:940px){.ask{max-height:none}}
+.ask li{border-left:3px solid var(--warn);padding-left:10px}
+.ask h4{margin:0;font-family:var(--f-disp);font-size:14px;font-weight:700}
+.ask p{margin:2px 0 0;font-size:14px;color:var(--muted)}
+audio{width:100%;margin-top:6px}
+.small{font-size:14px;color:var(--muted);margin:6px 0 0}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin:36px 0 12px}
+.tabs button{font:600 14px var(--f-disp);border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:7px 14px;border-radius:999px;cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--brand);border-color:var(--brand);color:var(--surface)}
+.tabs button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.tabpanel{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px}
+.tx{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;max-width:75ch}
+.tx li{display:grid;grid-template-columns:52px minmax(0,1fr);gap:10px}
+.ts{font-family:var(--f-mono);font-size:13px;color:var(--accent-ink);padding-top:2px;font-variant-numeric:tabular-nums}
+mark{background:color-mix(in srgb,var(--warn) 22%,transparent);color:inherit;border-radius:3px;padding:0 2px}
+.style-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.style-grid div{min-width:0}
+.style-grid h4{margin:0 0 4px;font-family:var(--f-disp);font-size:14px}
+.style-grid p{margin:0;font-size:14px;color:var(--muted)}
+.sw{display:flex;gap:6px;margin-top:6px}
+.sw span{width:28px;height:28px;border-radius:8px;border:1px solid var(--line)}
+.cap{font-size:15px}
+.cap code{font-family:var(--f-mono);font-size:13px;background:var(--chip);padding:1px 6px;border-radius:5px}
+dialog{border:0;padding:0;background:transparent;max-width:min(92vw,460px)}
+dialog img{width:100%;height:auto;border-radius:14px;display:block}
+dialog::backdrop{background:rgba(10,12,30,.8)}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+</style>
+
+<div class="wrap">
+<header>
+  <div>
+    <p class="eyebrow">Yuran.my · TOFU · Tutorial evergreen · Draf storyboard v1</p>
+    <h1>Tutorial install & bayar yuran guna app Yuran.my</h1>
+  </div>
+  <div class="meta"><span class="pill warn">Menunggu kelulusan storyboard</span><span class="pill">Raw 2:36 ucapan</span><span class="pill">Anggaran siap ±2:15</span></div>
+</header>
+
+<section class="strip-wrap" aria-label="Jalur masa babak">
+  <div class="strip-head"><span>Klik babak untuk lompat. Lebar ikut tempoh ucapan dalam video mentah.</span>
+    <span class="legend"><span><i style="background:var(--k-talk)"></i>Farhan bercakap</span><span><i style="background:var(--k-tut)"></i>Tutorial skrin</span><span><i style="background:var(--k-brand)"></i>Thumbnail / end card</span></span></div>
+  <div class="strip">{{STRIP}}</div>
+  <div class="axis"><span>0:00</span><span>0:34</span><span>1:14</span><span>1:51</span><span>2:36</span></div>
+</section>
+
+<div class="grid">
+  <main class="scenes">
+{{ROWS}}
+  </main>
+  <aside>
+    <section class="panel">
+      <h2>Perlu keputusan Farhan <span class="pill warn">{{NASK}}</span></h2>
+      <ul class="ask">{{ASK}}</ul>
+    </section>
+    <section class="panel">
+      <h2>Muzik: instrumental cozy</h2>
+      <audio controls preload="none" src="{{MUS}}"></audio>
+      <p class="small">Sampel 40 s, dijana sendiri (piano elektrik lembut, bass, rentak perlahan 78 BPM). Bebas hak cipta. Dalam video: 22–25 dB di bawah suara, dengan ducking.</p>
+    </section>
+  </aside>
+</div>
+
+<div class="tabs" role="tablist" aria-label="Butiran lain">
+  <button role="tab" id="tab-tx" aria-selected="true" aria-controls="p-tx">Transkrip</button>
+  <button role="tab" id="tab-gaya" aria-selected="false" aria-controls="p-gaya">Gaya interaktif</button>
+  <button role="tab" id="tab-cap" aria-selected="false" aria-controls="p-cap">Caption TikTok</button>
+</div>
+<section class="tabpanel" role="tabpanel" id="p-tx" aria-labelledby="tab-tx">
+  <ol class="tx">{{TX}}</ol>
+  <p class="small">Transkrip automatik (Whisper). Bahagian bertanda perlu disahkan. Caption akhir ikut percakapan; ejaan istilah ikut DNA (Yuran.my, resit, invois).</p>
+</section>
+<section class="tabpanel" role="tabpanel" id="p-gaya" aria-labelledby="tab-gaya" hidden>
+  <div class="style-grid">
+    <div><h4>Bulatan “klik”</h4><p>Cincin biru #29ABE2 tebal, isi lutsinar halus, dua gelang denyut keluar (0.6 s). Muncul 0.2 s sebelum jari menekan, kekal sehingga skrin bertukar. Label pil di bawah: “Klik Install”, “Klik Continue”.</p></div>
+    <div><h4>Pil langkah</h4><p>Pil putih di atas dengan nombor dalam bulatan biru: “1 · Cari Yuran.my di Play Store”. Berubah dengan slide lembut setiap langkah, jadi penonton tahu di mana mereka.</p></div>
+    <div><h4>Kad skrin</h4><p>Rakaman skrin 80% saiz, sudut bulat, bayang lembut, atas latar biru #2A3B8F yang dikaburkan (gaya depth of field guideline). Zoom perlahan ke bahagian yang sedang diterangkan.</p></div>
+    <div><h4>Caption</h4><p>1–4 perkataan, Inter ExtraBold putih atas kotak gelap, dalam safe zone (atas 20% bawah, luar jalur kanan 15%). Highlight biru: resit, automatik, overdue, URL.</p><div class="sw"><span style="background:#2A3B8F"></span><span style="background:#29ABE2"></span><span style="background:#231F20"></span><span style="background:#E7E8E9"></span><span style="background:#FFFFFF"></span></div></div>
+    <div><h4>SFX</h4><p>Klik lembut pada setiap tekan, pop halus untuk kad nota dan lencana 1-2-3, ding lembut pada “Mudah kan?”. Tiada whoosh kuat, glitch atau shake.</p></div>
+    <div><h4>Privasi</h4><p>Kabur Gaussian pada emel, kata laluan, avatar, nombor telefon, iklan dan apl lain dalam Play Store. Jumlah invois ikut jawapan Farhan.</p></div>
+  </div>
+</section>
+<section class="tabpanel cap" role="tabpanel" id="p-cap" aria-labelledby="tab-cap" hidden>
+  <p><strong>Caption:</strong> Cara install app Yuran.my dan bayar yuran terus dari telefon, langkah demi langkah. Simpan video ni untuk rujukan nanti.</p>
+  <p><code>#YuranMy</code> <code>#YuranSekolah</code> <code>#KAFA</code> <code>#TutorialApp</code> <code>#BayarYuranOnline</code></p>
+  <p class="small">Hook thumbnail: “CARA BAYAR YURAN DALAM APP”. Alternatif: “INSTALL & BAYAR YURAN”, “BAYAR YURAN 9 LANGKAH”.</p>
+</section>
+</div>
+
+<dialog id="zoom"><img alt=""></dialog>
+
+<script>
+const tabs=[...document.querySelectorAll('[role=tab]')];
+tabs.forEach(t=>t.addEventListener('click',()=>{tabs.forEach(x=>{const on=x===t;x.setAttribute('aria-selected',on);document.getElementById(x.getAttribute('aria-controls')).hidden=!on});}));
+const dlg=document.getElementById('zoom'),zi=dlg.querySelector('img');
+document.querySelectorAll('.scene img').forEach(i=>i.addEventListener('click',()=>{zi.src=i.src;zi.alt=i.alt;dlg.showModal()}));
+dlg.addEventListener('click',()=>dlg.close());
+</script>

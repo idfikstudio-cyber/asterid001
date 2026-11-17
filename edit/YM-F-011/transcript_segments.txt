@@ -1,0 +1,50 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[  0.00-  6.84]  Saya nak tunjukkan macam mana ahli kita boleh install aplikasi Yuran.my dan menggunakan aplikasi Yuran.my untuk buat pembayaran.
+[  6.98- 12.36]  Dalam aplikasi Yuran.my yang kita sediakan, ahli boleh buat pembayaran melalui app sahaja.
+[ 12.44- 19.98]  Bukan terdekat pembayaran, boleh pantau apa yang nak dibayar, boleh terus buat pembayaran dan boleh ambil resit dan download resit yang kita dah bayar.
+[ 20.08- 25.54]  Cara untuk install aplikasi Yuran.my, boleh pergi install apps mengikut device masing-masing.
+[ 25.54- 30.98]  Contoh kalau Android, Play Store. Kalau iOS, App Store. Kalau Huawei, Huawei App Store.
+[ 31.24- 33.78]  Macam contoh yang sekarang ni saya gunakan Android.
+[ 34.04- 39.18]  Pergi sahaja bahagian Play Store, cari sahaja Yuran.my, selepas tu install sahaja.
+[ 39.32- 46.30]  Selepas dah install, boleh sahaja pergi ke apps tu, pergi Yuran.my, masuk, kemudian ada paparan seperti ini.
+[ 46.44- 50.34]  Allow sahaja. Selepas dah masuk dalam apps tu, kita ada beberapa pilihan.
+[ 50.36- 53.20]  Sama ada nak pilihan bahasa Melayu ataupun bahasa English.
+[ 53.34- 55.30]  Kat sini ada bahagian tambah, add new school.
+[ 55.54- 57.20]  Tekan sahaja bahagian add new school.
+[ 57.36- 59.54]  Yang ni URL ni kena minta bahagian admin.
+[ 59.70- 63.08]  Admin kena sediakan kepada ahli apa yang kena isi di bahagian sini.
+[ 63.18- 68.40]  Sebabnya, setiap institusi yang menggunakan sistem Yuran.my, kita memang sediakan URL masing-masing.
+[ 68.52- 74.20]  Setiap institusi lain-lain lah ya, saya letakkan yang ni sistem demo lah sebab saya akan gunakan sistem demo.
+[ 74.32- 77.08]  Bila dah masuk, ada beberapa perkara yang kita boleh lihat.
+[ 77.26- 82.14]  Di bahagian sini, SEK integrasi demo tu, yang itu nama institusi lah ya.
+[ 82.18- 85.22]  Kalau ahli ada problem tentang apps, ahli boleh telefon.
+[ 85.22- 86.74]  Telefon nombor yang tertera dalam apps.
+[ 86.94- 90.06]  Yang itu adalah nombor PIC untuk setiap institusi.
+[ 90.14- 91.14]  Selepas tu masukkan email.
+[ 91.42- 93.26]  Email ni adalah email yang berdaftar lah ya.
+[ 93.30- 95.94]  Selepas dah masukkan ID dan password, tekan sahaja login.
+[ 96.14- 99.64]  Bila dah login, inilah paparan institusi yang kita nak buat pembayaran.
+[ 99.82-103.32]  Selepas kita masuk, inilah paparan untuk kita punya institusi.
+[103.52-108.78]  Kalau ada banyak invoice yang belum bayar, yang ni akan tulis overdue-overdue semua tu lah.
+[108.86-111.42]  Jadi, ahli boleh tengok apa sahaja yang nak kena bayar.
+[111.48-113.72]  Kalau ahli nak buat pembayaran, ada dua cara.
+[113.96-114.94]  Satu cara adalah,
+[115.22-115.96]  buat satu-satu.
+[116.10-118.16]  Tekan sahaja satu dan buat pembayaran.
+[118.28-122.60]  Tapi kalau ada banyak invoice dan nak buat pembayaran secara pukal ataupun banyak,
+[122.76-123.92]  tekan sahaja bahagian sini.
+[124.28-126.22]  Pilih sahaja invoice yang nak dibayar.
+[126.30-127.56]  Satu, dua, tiga.
+[127.74-130.90]  Kat situ ada paparan harga, hanya terus buat pembayaran sahaja.
+[130.98-131.44]  Make a payment.
+[131.76-134.38]  Lepas tu, pilih bayaran untuk bayaran menggunakan bank apa.
+[134.56-135.82]  Then, proceed with payment.
+[136.24-140.26]  Selepas buat pembayaran, sistem akan auto-generate receipt untuk ahli-ahli.
+[140.40-140.92]  Mudah kan?
+[141.04-144.12]  Jadinya, ahli boleh buat pembayaran anytime, anywhere.
+[144.30-145.20]  Selagi mana adik.
+[145.22-148.94]  Internet dan selepas buat pembayaran, ahli terus dapat receipt secara automatik.
+[149.00-153.56]  Dah tak perlulah ahli minta receipt pada kita pada waktu-waktu yang kita not available.
+[154.04-155.34]  Selamat menggunakan Euron.my.
+[155.44-155.68]  Terima kasih.
+[169.04-170.24]  Terima kasih.
