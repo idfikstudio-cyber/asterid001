@@ -2,8 +2,8 @@
  "id": "YM-F-013",
  "topik": "Tutorial install Apps Yuran.my",
  "tag": "TOFU",
- "ver": "v1",
- "status": "Preview v1",
+ "ver": "v2",
+ "status": "Preview v2",
  "tarikh": "17 Nov 2026",
  "edit_intro": "Video bermula dengan cover 1 saat, kemudian Farhan menerangkan fungsi app dan pilihan peranti. Dari 0:35 hingga 2:17 video masuk mod tutorial: rakaman skrin “paparan apps yuran.my” dalam kad atas latar biru, pil langkah 1–9 di atas, bulatan “klik” berdenyut pada setiap butang yang ditekan, dan Farhan dalam bulatan kecil di kiri bawah supaya suara dan wajah kekal. Penutup kembali ke Farhan (resit automatik) dan end card biru.",
  "fix_marks": {
@@ -46,6 +46,10 @@
   "154.78": [
    "Euron",
    "Yuran"
+  ],
+  "12.72": [
+   "terdekat",
+   "setakat"
   ]
  },
  "seg": [
@@ -148,6 +152,26 @@
  ],
  "done": [
   [
+   "Caption 0:13 (komen Farhan)",
+   "Dibetulkan kepada “Bukan setakat pembayaran”.",
+   13.44
+  ],
+  [
+   "Bulatan Bayar pukal (komen Farhan)",
+   "Dipindah ke butang biru solid di sebelah kiri ikon senarai.",
+   124.0
+  ],
+  [
+   "Label Buka Apps (komen Farhan)",
+   "“Buka apl” ditukar kepada “Buka Apps”.",
+   44.0
+  ],
+  [
+   "Jumlah invois",
+   "Dikekalkan kelihatan (data demo, disahkan Farhan).",
+   129.5
+  ],
+  [
    "Nombor PIC (ikut komen Farhan)",
    "Nombor telefon PIC dikaburkan kecuali 4 digit akhir (3480). Bingkai biru berkelip-kelip dengan label “Nombor PIC admin institusi” semasa Farhan menyebut nombor PIC.",
    86.2
@@ -184,16 +208,6 @@
   ]
  ],
  "todo": [
-  [
-   "Ayat 0:13",
-   "Transkrip berbunyi “Bukan terdekat pembayaran”. Caption ikut transkrip buat masa ini. Sahkan apa yang Farhan sebut.",
-   13.44
-  ],
-  [
-   "Jumlah invois",
-   "RM 1.19, RM 35.00, RM 100.00, RM 135.00 dan RM 185.00 kelihatan dalam rakaman skrin. Saya anggap data demo (Sek Integrasi Demo). Sahkan, atau saya kaburkan.",
-   129.5
-  ],
   [
    "Lompatan Langkah 5",
    "Bahagian menaip emel/kata laluan dibuang (emel jelas kelihatan dan susun atur bergerak). Video melompat dari borang kosong terus ke borang yang sudah diisi.",
@@ -290,6 +304,7 @@
   ]
  ],
  "changes": [
-  "Langkah 5: nombor PIC dikaburkan kecuali 4 digit akhir, dengan bingkai berkelip-kelip “Nombor PIC admin institusi”."
+  "Langkah 5: nombor PIC dikaburkan kecuali 4 digit akhir, dengan bingkai berkelip-kelip “Nombor PIC admin institusi”.",
+  "v2: caption 0:13 “Bukan setakat pembayaran”; bulatan “Bayar pukal” pada butang biru solid; label “Buka Apps”; jumlah invois dikekalkan (data demo)."
  ]
 }

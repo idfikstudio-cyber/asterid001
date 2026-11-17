@@ -1,4 +1,4 @@
-RINGKASAN EDIT — YM-F-013_Tutorial install Apps Yuran.my (preview v1)
+RINGKASAN EDIT — YM-F-013_Tutorial install Apps Yuran.my (preview v2)
 Brand: Yuran.my | Spokesperson: Farhan | Tag skrip: TOFU (tutorial evergreen)
 Durasi: 158.4 s (1 s thumbnail + 155.9 s isi + 1.5 s end card)
 DNA: yuran-my/CLAUDE.md v2
@@ -17,7 +17,7 @@ DNA: yuran-my/CLAUDE.md v2
    [0:09.54] yang kita sediakan
    [0:10.52] ahli boleh buat pembayaran
    [0:12.02] melalui app sahaja
-   [0:13.44] Bukan terdekat pembayaran
+   [0:13.44] Bukan setakat pembayaran
    [0:14.74] boleh pantau apa yang
    [0:15.80] nak dibayar
    [0:16.50] boleh terus buat pembayaran
@@ -181,7 +181,7 @@ DNA: yuran-my/CLAUDE.md v2
    0:36.75–0:38.10  Klik: Bulatan berdenyut + label “Klik Yuran.My”
    0:38.75–0:40.10  Klik: Bulatan berdenyut + label “Klik Install”
    0:40.32–0:47.44  Tutorial: Langkah 2: Buka aplikasi · B-roll paparan apps yuran.my 20.6–27.0 s
-   0:43.75–0:45.10  Klik: Bulatan berdenyut + label “Buka apl”
+   0:43.75–0:45.10  Klik: Bulatan berdenyut + label “Buka Apps”
    0:46.75–0:48.10  Klik: Bulatan berdenyut + label “Klik Allow”
    0:47.44–0:58.36  Tutorial: Langkah 3: Pilih bahasa & tambah sekolah · B-roll paparan apps yuran.my 27.0–56.6 s
    0:51.15–0:52.50  Klik: Bulatan berdenyut + label “Pilih bahasa”
@@ -253,8 +253,6 @@ DNA: yuran-my/CLAUDE.md v2
    End card: "Cara MUDAH Urus Yuran" + "Follow untuk tips urus yuran sekolah" + hello@yuran.my (TOFU).
 
 5) PERLU SEMAK
-   - Ayat 0:13: Transkrip berbunyi “Bukan terdekat pembayaran”. Caption ikut transkrip buat masa ini. Sahkan apa yang Farhan sebut.
-   - Jumlah invois: RM 1.19, RM 35.00, RM 100.00, RM 135.00 dan RM 185.00 kelihatan dalam rakaman skrin. Saya anggap data demo (Sek Integrasi Demo). Sahkan, atau saya kaburkan.
    - Lompatan Langkah 5: Bahagian menaip emel/kata laluan dibuang (emel jelas kelihatan dan susun atur bergerak). Video melompat dari borang kosong terus ke borang yang sudah diisi.
    - Cip Huawei: Farhan sebut “Huawei App Store”; cip tulis nama rasmi “AppGallery”. Caption ikut sebutan.
    - Latar kabur talking head: DNA minta latar kabur lembut (depth of field). Preview v1 belum ada bokeh pada bahagian Farhan. Boleh tambah dalam v2 jika mahu.
@@ -267,3 +265,4 @@ DNA: yuran-my/CLAUDE.md v2
 
 Perubahan (ikut komen Farhan):
    - Langkah 5: nombor PIC dikaburkan kecuali 4 digit akhir, dengan bingkai berkelip-kelip “Nombor PIC admin institusi”.
+   - v2: caption 0:13 “Bukan setakat pembayaran”; bulatan “Bayar pukal” pada butang biru solid; label “Buka Apps”; jumlah invois dikekalkan (data demo).
