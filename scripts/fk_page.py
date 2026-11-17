@@ -70,7 +70,7 @@ def ts(x): return f"{int(x // 60)}:{x % 60:05.2f}"
 L = [f"RINGKASAN EDIT — {G['id']}_Farhan_{G['topik']} (preview {G['ver']})",
      f"Brand: Fi-k Studio | Spokesperson: Farhan (Founder) | Tag skrip: {G['tag']}",
      f"Durasi: {D:.1f} s (1 s thumbnail + {p['src_dur']:.1f} s isi + 4.0 s outro)",
-     "DNA: fik-studio/CLAUDE.md v3.1", "",
+     "DNA: fik-studio/CLAUDE.md v3.3", "",
      "1) TEKS HOOK / THUMBNAIL", f"   \"{hook}\" atas frame Farhan (sumber {tsm(C['thumb_t'])}).", "",
      "2) CAPTION PENUH (ikut percakapan; masa ikut video preview)"]
 for c in caps:

@@ -1,0 +1,78 @@
+RINGKASAN EDIT — FK-F-011_Farhan_Susun Dapur Teori Kitchen Work Triangle (preview v1)
+Brand: Fi-k Studio | Spokesperson: Farhan (Founder) | Tag skrip: TOFU
+Durasi: 89.9 s (1 s thumbnail + 84.8 s isi + 4.0 s outro)
+DNA: fik-studio/CLAUDE.md v3.3
+
+1) TEKS HOOK / THUMBNAIL
+   "SUSUN DAPUR / SEGI TIGA / KERJA" atas frame Farhan (sumber 0:04.5).
+
+2) CAPTION PENUH (ikut percakapan; masa ikut video preview)
+   [0:01.00] Akak-akak yang selalu masak heavy-heavy waktu raya nanti, dapur akak cuba ikut konsep segi tiga kerja.
+   [0:07.38] Macam mana tu?
+   [0:08.30] Save dulu video ni sebab ramai yang tak tahu tips ni.
+   [0:11.06] Dulu waktu saya bujang kan saya menyewa satu rumah tu dan rumah tu tak ikut konsep ni pun.
+   [0:16.04] Saya ni pula suka memasak dan saya ni pun ada migraine.
+   [0:19.40] Jadi bila saya nak menumis kat belakang, bila saya nak memasak dekat depan, bila saya nak ambil barang kat belakang,
+   [0:25.58] masak kat depan, ambil barang kat depan, ambil barang kat depan.
+   [0:30.00] Lagi saya pun pusing-pusing-pusing.
+   [0:31.86] Pening saya waktu tu dan saya penat nak masak.
+   [0:34.58] Ni yang buat saya malas nak masak eh.
+   [0:36.28] Dari situlah saya belajar susun atur dapur ni sangat penting.
+   [0:39.80] Jadi tipsnya, pastikan dapur akak ikut konsep segi tiga kerja.
+   [0:45.36] Ataupun dalam bahasa English ni kitchen work triangle.
+   [0:48.18] Kitchen work triangle ni  konsep dia macam ni lah.
+   [0:50.20] Peti ais  untuk ambil barang, sinki untuk basuh-basuh, dapur pula untuk memasak.
+   [0:54.88] Inilah tiga poin utama dekat dapur yang kita kena pentingkan.
+   [0:57.60] Kalau jauh sangat, dia akan memenatkan dan memeningkan.
+   [1:00.82] Kalau dekat sangat, dia tak cukup space nak masak.
+   [1:04.00] Jadi kena rancang betul-betul untuk ruangan tu ikut konsep triangle supaya kita tak penat dan tak pening.
+   [1:11.04] Nak masak time raya ni kan kena tenang-tenang.
+   [1:13.16] Bukan time raya je.
+   [1:14.26] Hari-hari kita nak masak pun kita kena tenang.
+   [1:16.68] Dah ready ke dapur akak untuk raya akan datang ni?
+   [1:19.56] Kalau tak ready lagi, DM kami untuk keterangan lanjut.
+   [1:22.28] Nanti kita akan renovkan kitchen akak sebelum raya nak dekat.
+
+3) SFX, ANIMASI, B-ROLL, ZOOM (masa ikut video preview)
+   Bokeh halus berperingkat sepanjang video; subjek dijernihkan sedikit.
+   0:00.00–0:01.00  Thumbnail: Hook “SUSUN DAPUR / SEGI TIGA / KERJA” atas frame Farhan (sumber 0:04.5), latar bokeh
+   0:01.15–0:04.20  Label: Pil hijau “Farhan · Founder Fi-k Studio”
+   0:06.36–0:07.36  Teks besar: “SEGI TIGA KERJA” (hijau #304945, stroke putih)
+   0:39.80–0:48.10  Tajuk poin: Kotak hijau atas: “TIPS: SEGI TIGA KERJA”
+   0:46.68–0:48.10  Teks besar: “KITCHEN WORK TRIANGLE” (hijau #304945, stroke putih)
+   0:48.18–0:50.98  B-roll: B-ROLL/KitchenWorkTriangle.mp4 (video, 2.8 s) pada 'Kitchen work triangle ni konsep dia macam ni lah' (video ilustrasi segi tiga kerja: dapur U & island)
+   0:51.70–0:54.20  B-roll: B-ROLL/kitchen work triangle 2.jpg (gambar, Ken Burns, 2.5 s) pada 'sinki untuk basuh-basuh, dapur pula untuk memasak' (rajah peti ais – sinki – dapur masak)
+   0:55.08–0:56.70  Teks besar: “3 POIN UTAMA” (hijau #304945, stroke putih)
+   0:57.70–1:00.20  B-roll: B-ROLL/kitchen work triangle.jpg (gambar, Ken Burns, 2.5 s) pada 'Kalau jauh sangat, dia akan memenatkan' (pandangan atas: garis jarak antara 3 titik)
+   1:04.96–1:07.36  B-roll: B-ROLL/Kitchen Work Triangle Real Projek.jpeg (gambar, Ken Burns, 2.4 s) pada 'kena rancang betul-betul untuk ruangan tu' (dapur sebenar projek Fi-k ikut segi tiga kerja)
+   1:25.83–1:29.86  Outro: BRAND/Outro Potrait.mp4 (animasi logo, 4.0 s) + “Design Dulu, Baru Bina” + kotak hijau “DM untuk keterangan lanjut” muncul selepas logo statik
+   0:06.36  SFX pop lembut
+   0:08.75  SFX whoosh lembut
+   0:46.68  SFX pop lembut
+   0:48.06  SFX whoosh lembut
+   0:51.58  SFX whoosh lembut
+   0:55.08  SFX pop lembut
+   0:57.58  SFX whoosh lembut
+   1:04.84  SFX whoosh lembut
+   Motion zoom: 0:01.00 zoom in perlahan 100% → 113%; 0:07.38 zoom out perlahan 113% → 100%; 0:08.30 zoom in perlahan 100% → 113%; 0:11.06 zoom out perlahan 113% → 100%; 0:16.04 zoom in perlahan 100% → 113%; 0:19.40 zoom out perlahan 113% → 100%; 0:25.58 zoom in perlahan 100% → 113%; 0:30.00 zoom out perlahan 113% → 100%; 0:31.86 zoom in perlahan 100% → 113%; 0:34.58 zoom out perlahan 113% → 100%; 0:36.28 zoom in perlahan 100% → 113%; 0:39.80 zoom out perlahan 113% → 100%; 0:45.36 zoom in perlahan 100% → 113%; 0:48.18 zoom out perlahan 113% → 100%; 0:50.20 zoom in perlahan 100% → 113%; 0:54.88 zoom out perlahan 113% → 100%; 0:57.60 zoom in perlahan 100% → 113%; 1:00.82 zoom out perlahan 113% → 100%; 1:04.00 zoom in perlahan 100% → 113%; 1:11.04 zoom out perlahan 113% → 100%; 1:13.16 zoom in perlahan 100% → 113%; 1:14.26 zoom out perlahan 113% → 100%; 1:16.68 zoom in perlahan 100% → 113%; 1:19.56 zoom out perlahan 113% → 100%; 1:22.28 zoom in perlahan 100% → 113%
+
+   Senarai B-roll: [baris skrip] → [folder / nama fail] → [sebab]
+   0:48.18  'Kitchen work triangle ni konsep dia macam ni lah' → B-ROLL/KitchenWorkTriangle.mp4 → 'Kitchen work triangle ni konsep dia macam ni lah' (video ilustrasi segi tiga kerja: dapur U & island)
+   0:51.70  'sinki untuk basuh-basuh, dapur pula untuk memasak' → B-ROLL/kitchen work triangle 2.jpg → 'sinki untuk basuh-basuh, dapur pula untuk memasak' (rajah peti ais – sinki – dapur masak)
+   0:57.70  'Kalau jauh sangat, dia akan memenatkan' → B-ROLL/kitchen work triangle.jpg → 'Kalau jauh sangat, dia akan memenatkan' (pandangan atas: garis jarak antara 3 titik)
+   1:04.96  'kena rancang betul-betul untuk ruangan tu' → B-ROLL/Kitchen Work Triangle Real Projek.jpeg → 'kena rancang betul-betul untuk ruangan tu' (dapur sebenar projek Fi-k ikut segi tiga kerja)
+
+4) CTA
+   Outro: "Design Dulu, Baru Bina" + "DM untuk keterangan lanjut".
+
+5) PERLU SEMAK
+   - “Peti ais” (0:50.2): Whisper dengar “Kita ais”. Caption ditulis PETI AIS ikut konteks (peti ais, sinki, dapur). Sila dengar dan sahkan.
+   - Rajah bukan projek Fi-k: KitchenWorkTriangle.mp4 dan kedua-dua rajah “kitchen work triangle” nampak seperti ilustrasi luar (teks Inggeris, gaya berbeza). Semuanya ditag “Ilustrasi konsep” supaya tak menyamar projek Fi-k. Sila sahkan boleh guna.
+   - Gambar Real Projek: Ditag “Projek siap Fi-k Studio”. Sila sahkan ini memang projek Fi-k. Gambar 1080×810 dipapar sebagai kad di tengah skrin.
+   - Tiada B-roll 0:11–0:48: Bahagian cerita peribadi (rumah sewa, migraine) panjang 29 s tanpa B-roll kerana tiada fail yang sepadan. Jika mahu, beri gambar/video dapur sempit atau Onprogress dapur untuk diselit.
+   - Durasi 89.9 s: Melebihi sasaran TOFU 20–45 s. Footage sudah ditrim, jadi isi tidak dipotong.
+   - Preview MP4 & log di Drive: Alat Drive hadkan saiz muat naik, jadi THUMB dan RINGKASAN dimuat naik ke _PREVIEW. Video preview ada di halaman ini; baris log perlu ditambah manual.
+
+6) CAPTION TIKTOK
+   Selalu masak heavy waktu raya tapi penat dan pening dalam dapur? Cuba susun dapur ikut konsep segi tiga kerja (kitchen work triangle): peti ais, sinki dan dapur masak. Jangan jauh sangat, jangan dekat sangat. Dah ready dapur akak untuk raya? DM untuk keterangan lanjut.
+   #kitchenworktriangle #susunatordapur #dapurrumah #interiordesign #fikstudio
