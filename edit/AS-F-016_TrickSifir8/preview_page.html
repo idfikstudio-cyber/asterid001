@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="ms"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>AS-F-016 Trick Sifir 8</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Lexend:wght@400;500;600&family=Caveat:wght@700&display=swap">
+<style>
+/* Layout: telefon (sticky) di kiri, helaian edit bertab di kanan; bertindan di telefon. Gaya HYBRID Aster: hitam + kuning. */
+:root{--bg:#faf4f3;--surface:#fff;--ink:#22100f;--muted:#6e5856;--line:#ecdcd9;--chip:#f6e8e6;--accent:#8a6400;--mark:#ffc83d;--mark-ink:#7a5600;--paper:#fffdf6;
+--c-seg:#1b1b1b;--c-mg:#e0a400;--c-sfx:#d9232d;--c-br:#2f8f6b;--ok:#1f7a4d;--warn:#b45309;
+--f-display:"Poppins","Arial Black",system-ui,sans-serif;--f-body:"Lexend",system-ui,-apple-system,"Segoe UI",sans-serif;--f-hand:"Caveat","Comic Sans MS",cursive;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#160b0b;--surface:#221312;--ink:#f6e9e7;--muted:#bfa3a0;--line:#3d2524;--chip:#2e1a19;--accent:#ff8a8f;--mark:#ffc83d;--mark-ink:#ffd970;--paper:#2a1817;--c-seg:#f2c9c6;--c-mg:#ffc83d;--c-sfx:#ff6a72;--c-br:#5fd3a4;--ok:#4ccf8f;--warn:#f0a44b;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#160b0b;--surface:#221312;--ink:#f6e9e7;--muted:#bfa3a0;--line:#3d2524;--chip:#2e1a19;--accent:#ff8a8f;--mark:#ffc83d;--mark-ink:#ffd970;--paper:#2a1817;--c-seg:#f2c9c6;--c-mg:#ffc83d;--c-sfx:#ff6a72;--c-br:#5fd3a4;--ok:#4ccf8f;--warn:#f0a44b;color-scheme:dark}
+*{box-sizing:border-box}html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.55}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px 56px}
+header.top{display:flex;flex-wrap:wrap;gap:8px 24px;align-items:end;justify-content:space-between;margin-bottom:18px}
+h1{font-family:var(--f-display);font-weight:800;font-size:clamp(24px,4vw,36px);line-height:1.08;margin:0;text-wrap:balance;letter-spacing:-.02em}
+h1 mark{background:linear-gradient(transparent 55%,var(--mark) 55%);color:inherit;padding:0 .1em}
+.status{display:inline-flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:13px;color:var(--muted)}
+.status b{background:var(--mark);color:#3a2a00;font-weight:600;padding:2px 10px;border-radius:999px;font-size:12px;letter-spacing:.05em;text-transform:uppercase}
+.grid{display:grid;grid-template-columns:minmax(0,400px) minmax(0,1fr);gap:28px;align-items:start}
+@media (max-width:860px){.grid{grid-template-columns:minmax(0,1fr)}}
+.player{position:sticky;top:calc(env(safe-area-inset-top,0px) + 12px);display:flex;flex-direction:column;gap:10px;max-width:400px;width:100%;margin-inline:auto}
+@media (max-width:860px){.player{position:static}}
+.phone{width:100%;aspect-ratio:9/16;border-radius:22px;overflow:hidden;background:#000;box-shadow:0 18px 50px -22px rgba(60,10,10,.6)}
+.phone video{width:100%;height:100%;display:block;object-fit:contain;background:#000}
+.hint{font-size:12.5px;color:var(--muted);margin:0}
+.panel{min-width:0;display:flex;flex-direction:column;gap:14px}
+.tl{position:relative;height:72px;border-radius:10px;background:var(--surface);border:1px solid var(--line);overflow:hidden;cursor:pointer;touch-action:none}
+.tl .seg{position:absolute;top:0;height:22px;border-right:1px solid var(--bg);font:600 10.5px var(--f-body);color:var(--bg);background:var(--c-seg);padding:4px 6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tl .mg{position:absolute;top:40px;height:10px;border-radius:3px;background:var(--c-mg);opacity:.85}
+.tl .sx{position:absolute;top:56px;width:2px;height:10px;background:var(--c-sfx)}
+.tl .ph{position:absolute;top:0;bottom:0;width:2px;background:var(--c-sfx)}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:12.5px;color:var(--muted);margin-top:8px}
+.legend span{display:inline-flex;gap:6px;align-items:center}.legend i{width:10px;height:10px;border-radius:3px}
+.tabs{display:flex;gap:2px;flex-wrap:wrap;border-bottom:1px solid var(--line)}
+.tab{font:500 14px var(--f-body);background:none;border:0;border-bottom:3px solid transparent;color:var(--muted);padding:10px 10px 8px;cursor:pointer}
+.tab[aria-selected="true"]{color:var(--ink);border-color:var(--mark)}
+.tab .n{display:inline-block;min-width:18px;margin-left:4px;padding:0 5px;border-radius:99px;background:var(--mark);color:#3a2a00;font-size:11px;font-weight:600;text-align:center}
+:is(.tab,.cap-row,.ev,.tl,.btn,a):focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+a{color:var(--accent)}.pane{min-width:0}
+.pane h2{font-family:var(--f-display);font-weight:700;font-size:20px;margin:6px 0 6px;letter-spacing:-.01em}
+.pane h3{font-size:15px;margin:18px 0 6px;font-weight:600}.pane p,.pane li{max-width:68ch}.pane p{margin:0 0 10px}
+.mood{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin:8px 0 4px}
+.mood .h{font:700 26px/1.1 var(--f-hand);color:var(--accent)}
+.mood small{display:block;font:600 11px var(--f-body);letter-spacing:.08em;text-transform:uppercase;color:var(--c-sfx);margin-bottom:2px}
+.caps,.evs{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.cap-row,.ev{display:grid;gap:10px;padding:8px 6px;border:0;border-bottom:1px solid var(--line);background:none;text-align:left;font:inherit;color:inherit;cursor:pointer;align-items:baseline}
+.cap-row{grid-template-columns:64px minmax(0,1fr)}.ev{grid-template-columns:64px 130px minmax(0,1fr)}
+@media (max-width:520px){.ev{grid-template-columns:56px minmax(0,1fr)}.ev .k{grid-column:2}}
+.cap-row:hover,.ev:hover{background:var(--chip)}.cap-row.on{background:color-mix(in srgb,var(--mark) 26%,transparent)}
+time{font-variant-numeric:tabular-nums;color:var(--muted);font-size:13px}
+.hl{font-weight:600;color:var(--mark-ink)}.fix{background:var(--mark);color:#3a2a00;border-radius:4px;padding:0 4px}
+.rv{text-decoration:underline wavy var(--warn);text-underline-offset:3px}
+.cap-row .sec{display:block;font-size:12px;color:var(--muted)}
+.ev .k{font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--mark-ink)}.ev .k.sfx{color:var(--c-sfx)}
+.tbl{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:14px;min-width:460px}
+th,td{text-align:left;padding:8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);font-weight:600}td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
+.list{display:flex;flex-direction:column;gap:10px;padding:0;margin:0;list-style:none}
+.q{border:1px solid var(--line);border-left:4px solid var(--warn);border-radius:10px;padding:10px 14px;background:var(--surface)}.q.done{border-left-color:var(--ok)}
+.q b{display:block;margin-bottom:2px}
+.tag{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:1px 8px;border-radius:99px;margin-right:6px}
+.tag.w{background:color-mix(in srgb,var(--warn) 18%,transparent);color:var(--warn)}.tag.o{background:color-mix(in srgb,var(--ok) 18%,transparent);color:var(--ok)}
+.tt{border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:14px 16px;white-space:pre-wrap;font-size:15px}.tt .hs{color:var(--accent);font-weight:600}
+.btn{font:500 14px var(--f-body);border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:10px;padding:8px 14px;cursor:pointer;min-height:40px;margin-top:10px}
+.copied{font-size:13px;color:var(--ok);margin-left:8px}
+</style></head><body>
+<div class="wrap">
+  <header class="top">
+    <h1>AS-F-016 <mark>Trick Sifir 8</mark>: preview</h1>
+    <span class="status"><b>Menunggu semakan</b> TOFU+BOFU → HYBRID · preview v1 · 540×960 · 56.3 saat · skrin terbelah</span>
+  </header>
+  <div class="grid">
+    <section class="player" aria-label="Pemain preview">
+      <div class="phone"><video id="v" controls playsinline preload="metadata" poster="thumb.jpg" src="preview.mp4"></video></div>
+      <p class="hint">Tekan ▶ untuk main dengan bunyi. Klik baris transkrip atau cue pelan edit untuk lompat ke masa itu.</p>
+    </section>
+    <section class="panel">
+      <div>
+        <div class="tl" id="tl" role="slider" tabindex="0" aria-label="Garis masa edit" aria-valuemin="0" aria-valuemax="56.26" aria-valuenow="0"></div>
+        <div class="legend"><span><i style="background:var(--c-seg)"></i>Babak</span><span><i style="background:var(--c-br)"></i>B-roll</span><span><i style="background:var(--c-mg)"></i>Animasi / grafik</span><span><i style="background:var(--c-sfx)"></i>Sound effect</span></div>
+      </div>
+      <div class="tabs" role="tablist">
+        <button class="tab" role="tab" aria-selected="true" data-p="p-tr" id="tab-tr">Transkrip</button>
+        <button class="tab" role="tab" aria-selected="false" data-p="p-ed" id="tab-ed">Pelan edit</button>
+        <button class="tab" role="tab" aria-selected="false" data-p="p-ga" id="tab-ga">Warna &amp; audio</button>
+        <button class="tab" role="tab" aria-selected="false" data-p="p-q" id="tab-q">Status<span class="n" id="nq"></span></button>
+        <button class="tab" role="tab" aria-selected="false" data-p="p-cp" id="tab-cp">Caption</button>
+      </div>
+      <div class="pane" id="p-tr" role="tabpanel">
+        <h2>Transkrip</h2>
+        <p>Ditranskrip dengan Whisper large-v3 (masa setiap perkataan); frasa kurang jelas disemak dengan transkrip kedua. <span class="hl">Tebal kuning</span> = kata kunci berlatar kuning dalam video. <span class="fix">Berlatar kuning</span> = ejaan dibetulkan dari transkrip (hover untuk asal). <span class="rv">Garis beralun</span> = perlu disahkan.</p>
+        <div class="caps" id="caps"></div>
+      </div>
+      <div class="pane" id="p-ed" role="tabpanel" hidden>
+        <h2>Pelan edit</h2>
+        <p>Satu take, tiada potongan: jeda semasa menulis dikekalkan supaya ibu sempat ikut. Video = thumbnail 1 s + isi 53.8 s + end card 1.5 s. Tag <b>TOFU+BOFU</b> → gaya <b>HYBRID hitam + kuning</b>: pembuka talking head, kemudian <b>skrin terbelah</b> (papan B-Roll Sifir 8 di atas, Cikgu di bawah) dengan LANGKAH 1–4, kemudian sebab trick ini dan jualan.</p>
+        <div class="mood"><small>Mood video</small><div class="h">Sifir 8 siap dalam 4 langkah, tanpa menghafal</div></div>
+        <h3>Babak</h3>
+        <div class="tbl"><table><thead><tr><th>Masa</th><th>Babak</th><th>Grafik utama</th></tr></thead><tbody id="segtbl"></tbody></table></div>
+        <h3>Punch-in zoom</h3>
+        <p>Talking head: selang-seli 100% dan 112% setiap ayat, berpaut pada muka (mata di sepertiga atas). Skrin terbelah: Cikgu di panel bawah.</p>
+        <div class="tbl"><table><thead><tr><th>Masa video</th><th>Zoom</th></tr></thead><tbody id="cuttbl"></tbody></table></div>
+        <h3>Semua cue animasi dan SFX</h3>
+        <div class="evs" id="evs"></div>
+      </div>
+      <div class="pane" id="p-ga" role="tabpanel" hidden>
+        <h2>Warna dan audio</h2>
+        <h3>Colour grade</h3>
+        <div class="tbl"><table><thead><tr><th>Langkah</th><th>Nilai</th><th>Kesan</th></tr></thead><tbody>
+          <tr><td>Kecerahan</td><td class="n">gamma 0.92, +3%</td><td>Pencahayaan studio sudah baik; muka diangkat sedikit.</td></tr>
+          <tr><td>Saturasi</td><td class="n">×1.05</td><td>Warna lebih hidup; warna kulit asli kekal (tiada anjakan hue).</td></tr>
+          <tr><td>Papan B-roll</td><td class="n">dipotong ke kawasan tulisan, ×1.25</td><td>Nombor besar dan jelas di telefon.</td></tr>
+        </tbody></table></div>
+        <h3>Audio</h3>
+        <div class="tbl"><table><thead><tr><th>Langkah</th><th>Kesan</th></tr></thead><tbody>
+          <tr><td>High-pass 80 Hz + noise reduction ringan + compressor 2.5:1 + EQ kejelasan +1.5 dB @3.5 kHz</td><td>Suara jelas dan sekata.</td></tr>
+          <tr><td>Muzik latar</td><td>Muzik rasmi Aster: Aster_MuzikLatar_Ceria_100BPM (MUSIC/). Tiada kredit perlu. ±23 dB di bawah suara, naik pada thumbnail dan end card.</td></tr>
+          <tr><td>SFX</td><td>Pop (grafik), whoosh (tukar babak), tick lembut (setiap nombor ditulis), ding (LANGKAH, siap, jualan, end card), swoosh (pangkah MENGHAFAL), click (DM).</td></tr>
+          <tr><td>Loudness akhir</td><td>−14.0 LUFS, true peak −1.0 dBTP.</td></tr>
+        </tbody></table></div>
+      </div>
+      <div class="pane" id="p-q" role="tabpanel" hidden>
+        <h2>Status</h2><h3>Perlu semak</h3><ul class="list" id="todo"></ul><h3>Sudah dibuat</h3><ul class="list" id="done"></ul>
+      </div>
+      <div class="pane" id="p-cp" role="tabpanel" hidden>
+        <h2>Caption TikTok</h2><div class="tt" id="tt"></div>
+        <button class="btn" id="copy">Salin caption</button><span class="copied" id="copied" hidden>Disalin</span>
+      </div>
+    </section>
+  </div>
+</div>
+<script>
+const P={"DATA": {"caps": [{"s": 1.0, "e": 1.56, "w": [{"t": "Jadi", "hl": false, "fix": null, "q": false}, {"t": "untuk", "hl": false, "fix": null, "q": false}, {"t": "anak", "hl": false, "fix": null, "q": false}]}, {"s": 1.56, "e": 2.32, "w": [{"t": "yang", "hl": false, "fix": null, "q": false}, {"t": "masih", "hl": false, "fix": null, "q": false}, {"t": "lemah", "hl": true, "fix": null, "q": false}]}, {"s": 2.32, "e": 2.86, "w": [{"t": "sifir", "hl": true, "fix": null, "q": false}, {"t": "8", "hl": true, "fix": null, "q": false}]}, {"s": 2.86, "e": 3.6, "w": [{"t": "nanti", "hl": false, "fix": null, "q": false}, {"t": "boleh", "hl": false, "fix": null, "q": false}, {"t": "tunjuk", "hl": false, "fix": null, "q": false}]}, {"s": 3.6, "e": 4.28, "w": [{"t": "dekat", "hl": false, "fix": null, "q": false}, {"t": "anak", "hl": false, "fix": null, "q": false}, {"t": "ya", "hl": false, "fix": null, "q": false}]}, {"s": 4.28, "e": 4.92, "w": [{"t": "Kita", "hl": false, "fix": null, "q": false}, {"t": "kena", "hl": false, "fix": null, "q": false}, {"t": "mulakan", "hl": false, "fix": null, "q": false}]}, {"s": 4.92, "e": 5.74, "w": [{"t": "dengan", "hl": false, "fix": null, "q": false}, {"t": "kosong", "hl": true, "fix": null, "q": false}]}, {"s": 5.74, "e": 6.41, "w": [{"t": "1", "hl": true, "fix": null, "q": false}]}, {"s": 6.48, "e": 7.17, "w": [{"t": "2", "hl": true, "fix": null, "q": false}]}, {"s": 7.44, "e": 8.01, "w": [{"t": "3", "hl": true, "fix": null, "q": false}]}, {"s": 8.24, "e": 9.03, "w": [{"t": "4", "hl": true, "fix": null, "q": false}]}, {"s": 9.18, "e": 9.68, "w": [{"t": "Lepas", "hl": false, "fix": null, "q": false}, {"t": "tu", "hl": false, "fix": null, "q": false}, {"t": "kita", "hl": false, "fix": null, "q": false}]}, {"s": 9.68, "e": 10.16, "w": [{"t": "sambung", "hl": false, "fix": null, "q": false}]}, {"s": 10.16, "e": 10.61, "w": [{"t": "4", "hl": true, "fix": null, "q": false}]}, {"s": 10.68, "e": 11.25, "w": [{"t": "5", "hl": true, "fix": null, "q": false}]}, {"s": 11.36, "e": 12.15, "w": [{"t": "6", "hl": true, "fix": null, "q": false}]}, {"s": 12.2, "e": 12.72, "w": [{"t": "7", "hl": true, "fix": null, "q": false}]}, {"s": 12.72, "e": 13.11, "w": [{"t": "8", "hl": true, "fix": null, "q": false}]}, {"s": 13.26, "e": 14.04, "w": [{"t": "Seterusnya", "hl": false, "fix": null, "q": false}, {"t": "macam", "hl": false, "fix": null, "q": false}, {"t": "mana", "hl": false, "fix": null, "q": false}]}, {"s": 14.04, "e": 14.22, "w": [{"t": "pula?", "hl": false, "fix": null, "q": false}]}, {"s": 14.22, "e": 14.82, "w": [{"t": "Kita", "hl": false, "fix": null, "q": false}, {"t": "kena", "hl": false, "fix": null, "q": false}, {"t": "buat", "hl": false, "fix": null, "q": false}]}, {"s": 14.82, "e": 15.86, "w": [{"t": "gandaan", "hl": true, "fix": null, "q": false}, {"t": "2", "hl": true, "fix": null, "q": false}, {"t": "pula", "hl": false, "fix": null, "q": false}]}, {"s": 15.86, "e": 16.84, "w": [{"t": "Gandaan", "hl": true, "fix": null, "q": false}, {"t": "2", "hl": true, "fix": null, "q": false}, {"t": "mula", "hl": false, "fix": null, "q": false}]}, {"s": 16.84, "e": 17.78, "w": [{"t": "dengan", "hl": false, "fix": null, "q": false}, {"t": "kosong", "hl": true, "fix": null, "q": false}]}, {"s": 17.78, "e": 18.37, "w": [{"t": "2", "hl": true, "fix": null, "q": false}]}, {"s": 18.42, "e": 19.47, "w": [{"t": "4", "hl": true, "fix": null, "q": false}]}, {"s": 19.54, "e": 20.35, "w": [{"t": "6", "hl": true, "fix": null, "q": false}]}, {"s": 20.4, "e": 21.07, "w": [{"t": "8", "hl": true, "fix": null, "q": false}]}, {"s": 21.16, "e": 21.78, "w": [{"t": "Sebelah", "hl": false, "fix": null, "q": false}, {"t": "dia", "hl": false, "fix": null, "q": false}, {"t": "pun", "hl": false, "fix": null, "q": false}]}, {"s": 21.78, "e": 22.66, "w": [{"t": "kita", "hl": false, "fix": null, "q": false}, {"t": "buat", "hl": false, "fix": null, "q": false}, {"t": "gandaan", "hl": true, "fix": null, "q": false}, {"t": "2", "hl": true, "fix": null, "q": false}]}, {"s": 22.66, "e": 23.22, "w": [{"t": "juga", "hl": false, "fix": null, "q": false}, {"t": "ya", "hl": false, "fix": null, "q": false}]}, {"s": 23.22, "e": 24.18, "w": [{"t": "kosong", "hl": true, "fix": null, "q": false}]}, {"s": 24.18, "e": 24.71, "w": [{"t": "2", "hl": true, "fix": null, "q": false}]}, {"s": 24.92, "e": 25.85, "w": [{"t": "4", "hl": true, "fix": null, "q": false}]}, {"s": 25.88, "e": 26.69, "w": [{"t": "6", "hl": true, "fix": null, "q": false}]}, {"s": 26.72, "e": 27.37, "w": [{"t": "8", "hl": true, "fix": null, "q": false}]}, {"s": 27.5, "e": 28.14, "w": [{"t": "Selesai", "hl": true, "fix": null, "q": false}]}, {"s": 28.14, "e": 29.03, "w": [{"t": "1", "hl": true, "fix": null, "q": false}, {"t": "kali", "hl": true, "fix": null, "q": false}, {"t": "8", "hl": true, "fix": null, "q": false}]}, {"s": 29.2, "e": 29.89, "w": [{"t": "2", "hl": true, "fix": null, "q": false}, {"t": "kali", "hl": true, "fix": null, "q": false}, {"t": "8", "hl": true, "fix": null, "q": false}]}, {"s": 29.94, "e": 30.71, "w": [{"t": "3", "hl": true, "fix": null, "q": false}, {"t": "kali", "hl": true, "fix": null, "q": false}, {"t": "8", "hl": true, "fix": null, "q": false}]}, {"s": 30.74, "e": 31.32, "w": [{"t": "4", "hl": true, "fix": null, "q": false}, {"t": "kali", "hl": true, "fix": null, "q": false}, {"t": "8", "hl": true, "fix": null, "q": false}]}, {"s": 31.32, "e": 33.15, "w": [{"t": "dan", "hl": false, "fix": null, "q": false}, {"t": "seterusnya", "hl": false, "fix": null, "q": false}]}, {"s": 33.64, "e": 34.54, "w": [{"t": "Mudah", "hl": true, "fix": null, "q": false}, {"t": "kan?", "hl": false, "fix": null, "q": false}]}, {"s": 34.54, "e": 35.78, "w": [{"t": "Sebenarnya", "hl": false, "fix": null, "q": false}, {"t": "banyak", "hl": false, "fix": null, "q": false}, {"t": "cara", "hl": false, "fix": null, "q": false}]}, {"s": 35.78, "e": 36.62, "w": [{"t": "dan", "hl": false, "fix": null, "q": false}, {"t": "trick", "hl": true, "fix": "trik", "q": false}, {"t": "untuk", "hl": false, "fix": null, "q": false}]}, {"s": 36.62, "e": 38.06, "w": [{"t": "kita", "hl": false, "fix": null, "q": false}, {"t": "kuasai", "hl": false, "fix": null, "q": false}, {"t": "sifir", "hl": true, "fix": null, "q": false}]}, {"s": 38.06, "e": 38.88, "w": [{"t": "Salah", "hl": false, "fix": null, "q": false}, {"t": "satunya", "hl": false, "fix": null, "q": false}, {"t": "memang", "hl": false, "fix": null, "q": false}]}, {"s": 38.88, "e": 39.6, "w": [{"t": "menghafal", "hl": true, "fix": null, "q": false}]}, {"s": 39.6, "e": 40.34, "w": [{"t": "Tapi", "hl": false, "fix": null, "q": false}, {"t": "tak", "hl": false, "fix": null, "q": false}, {"t": "semua", "hl": false, "fix": null, "q": false}]}, {"s": 40.34, "e": 41.42, "w": [{"t": "anak", "hl": false, "fix": null, "q": false}, {"t": "kita", "hl": false, "fix": null, "q": false}, {"t": "mampu", "hl": true, "fix": null, "q": false}]}, {"s": 41.42, "e": 42.0, "w": [{"t": "menghafal", "hl": true, "fix": null, "q": false}]}, {"s": 42.0, "e": 43.2, "w": [{"t": "Jadi", "hl": false, "fix": null, "q": false}, {"t": "kita", "hl": false, "fix": null, "q": false}, {"t": "datangkan", "hl": false, "fix": null, "q": false}]}, {"s": 43.2, "e": 43.96, "w": [{"t": "dengan", "hl": false, "fix": null, "q": false}, {"t": "pelbagai", "hl": false, "fix": null, "q": false}, {"t": "cara", "hl": false, "fix": null, "q": false}]}, {"s": 43.96, "e": 45.52, "w": [{"t": "untuk", "hl": false, "fix": null, "q": false}, {"t": "anak-anak", "hl": false, "fix": null, "q": false}, {"t": "kuasai", "hl": false, "fix": null, "q": false}]}, {"s": 45.52, "e": 46.05, "w": [{"t": "sifir", "hl": true, "fix": null, "q": false}]}, {"s": 46.1, "e": 46.86, "w": [{"t": "Ibu", "hl": false, "fix": null, "q": false}, {"t": "ayah", "hl": false, "fix": null, "q": false}, {"t": "jangan", "hl": false, "fix": null, "q": false}]}, {"s": 46.86, "e": 48.16, "w": [{"t": "berputus", "hl": false, "fix": null, "q": false}, {"t": "asa", "hl": false, "fix": null, "q": false}, {"t": "untuk", "hl": false, "fix": null, "q": false}]}, {"s": 48.16, "e": 50.4, "w": [{"t": "cari", "hl": false, "fix": null, "q": false}, {"t": "platform-platform", "hl": false, "fix": null, "q": false}, {"t": "supaya", "hl": false, "fix": null, "q": false}]}, {"s": 50.4, "e": 51.4, "w": [{"t": "anak", "hl": false, "fix": null, "q": false}, {"t": "kita", "hl": false, "fix": null, "q": false}, {"t": "dapat", "hl": false, "fix": null, "q": false}]}, {"s": 51.4, "e": 53.12, "w": [{"t": "sukses", "hl": true, "fix": null, "q": false}, {"t": "dalam", "hl": false, "fix": null, "q": false}, {"t": "peperiksaan", "hl": true, "fix": null, "q": false}]}, {"s": 53.12, "e": 54.0, "w": [{"t": "DM", "hl": true, "fix": "Dan", "q": true}, {"t": "kami", "hl": false, "fix": null, "q": false}, {"t": "untuk", "hl": false, "fix": null, "q": false}]}, {"s": 54.0, "e": 54.76, "w": [{"t": "keterangan", "hl": false, "fix": null, "q": false}, {"t": "lanjut", "hl": false, "fix": null, "q": false}]}], "mg": [[0, 1.0, "Thumbnail", "Cikgu pandang kamera + TRICK SIFIR 8 / UNTUK ANAK LEMAH SIFIR + tulisan 8 × 7 = 56"], [0, 56.26, "Watermark", "asteredu11.com.my sepanjang video (termasuk thumbnail & end card), putih ±40% + bayang halus, atas-kiri 12%"], [1.3, 4.2, "Label nama", "Wajah bulatan emas + Cikgu AlFarhan"], [1.3, 4.25, "Tajuk", "Anak masih lemah SIFIR 8?"], [4.2, 33.7, "Skrin terbelah + B-roll papan (29 s)", "B-Roll Sifir 8 (rakaman skrin iPad) di atas, Cikgu di bawah, garis kuning SIFIR 8 · CIKGU ALFARHAN; tulisan diselaraskan dengan setiap nombor disebut"], [4.28, 9.1, "LANGKAH 1", "Tulis 0 → 4 · sorotan ikut nombor"], [9.18, 13.2, "LANGKAH 2", "Sambung 4 → 8 di sebelah"], [13.26, 21.1, "LANGKAH 3", "Gandaan 2 dari bawah: 0, 2, 4, 6, 8 · pil ↑ mula dari bawah"], [21.16, 23.2, "CTA Follow", "Kad Cikgu AlFarhan · @aster.edu_tpg · Follow saya (TOFU, tengah video)"], [21.16, 27.45, "LANGKAH 4", "Sebelah pun gandaan 2"], [27.5, 28.3, "Cop", "SIFIR 8 SIAP ✓"], [27.5, 33.3, "SIAP", "Baca setiap baris = jawapan · label 1 × 8 = … 5 × 8 = ikut sebutan"], [33.64, 34.5, "Pil kuning", "Mudah kan? ✓"], [34.54, 38.0, "Kad", "Sebenarnya banyak cara & trick kuasai sifir"], [38.06, 41.95, "Teks besar", "Salah satunya memang / Tak semua anak mampu MENGHAFAL (dipangkah)"], [42.0, 45.95, "Kad", "Jadi kami datangkan PELBAGAI CARA untuk anak kuasai sifir ✓"], [46.1, 54.76, "Pil merah", "Pendaftaran 2027 dibuka (mula jualan)"], [46.1, 48.6, "Kad", "Ibu ayah jangan berputus asa 💪"], [48.7, 51.4, "Lower third", "MATH TURBO 2027 · Tuisyen online bersama Cikgu AlFarhan"], [51.4, 53.1, "Pil kuning", "SUKSES dalam peperiksaan ✓"], [53.12, 54.76, "Pil", "DM kami"], [54.76, 56.26, "End card", "Hitam + kuning: wajah bulatan emas, Cikgu AlFarhan, @aster.edu_tpg, WhatsApp Cikgu AlFarhan untuk daftar / cuba kelas, asteredu11.com.my besar, WhatsApp 011-5596 9070"]], "sfx": [[0.0, "pop"], [0.95, "whoosh"], [1.3, "pop"], [1.3, "pop"], [4.2, "whoosh"], [4.28, "ding"], [5.41, "tick"], [5.99, "tick"], [6.73, "tick"], [7.69, "tick"], [8.49, "tick"], [9.18, "ding"], [10.41, "tick"], [10.93, "tick"], [11.61, "tick"], [12.45, "tick"], [12.97, "tick"], [13.26, "ding"], [17.1, "pop"], [17.19, "tick"], [18.03, "tick"], [18.67, "tick"], [19.79, "tick"], [20.65, "tick"], [21.16, "ding"], [21.4, "pop"], [23.65, "tick"], [24.43, "tick"], [25.17, "tick"], [26.13, "tick"], [26.97, "tick"], [27.5, "ding"], [27.52, "impact"], [28.39, "tick"], [29.45, "tick"], [30.19, "tick"], [30.99, "tick"], [33.3, "whoosh"], [33.64, "pop"], [34.54, "pop"], [38.06, "pop"], [41.3, "swoosh_down"], [42.0, "pop"], [46.1, "whoosh"], [46.15, "ding"], [48.7, "pop"], [51.4, "pop"], [53.12, "click"], [54.76, "whoosh"], [54.84, "ding"]], "zoom": [{"t": 1.0, "m": "100%"}, {"t": 4.28, "m": "skrin terbelah (bawah)"}, {"t": 9.18, "m": "skrin terbelah (bawah)"}, {"t": 13.26, "m": "skrin terbelah (bawah)"}, {"t": 15.86, "m": "skrin terbelah (bawah)"}, {"t": 21.16, "m": "skrin terbelah (bawah)"}, {"t": 23.12, "m": "skrin terbelah (bawah)"}, {"t": 27.5, "m": "skrin terbelah (bawah)"}, {"t": 33.64, "m": "100%"}, {"t": 34.54, "m": "112% punch-in"}, {"t": 38.06, "m": "100%"}, {"t": 39.6, "m": "112% punch-in"}, {"t": 42.0, "m": "100%"}, {"t": 46.1, "m": "112% punch-in"}, {"t": 53.12, "m": "100%"}], "dur": 56.26, "broll": [[4.2, 33.7]]}, "SEG": [[0, 1.0, "Thumbnail", "TRICK SIFIR 8"], [1.0, 4.28, "Pembuka", "Anak masih lemah sifir 8?"], [4.28, 9.18, "Langkah 1", "0 → 4"], [9.18, 13.26, "Langkah 2", "4 → 8"], [13.26, 21.16, "Langkah 3", "Gandaan 2 dari bawah"], [21.16, 27.5, "Langkah 4", "Sebelah gandaan 2 · CTA Follow"], [27.5, 33.64, "Siap", "1 × 8 … 4 × 8 dan seterusnya"], [33.64, 46.1, "Kenapa", "Mudah · banyak cara · tak semua mampu menghafal · pelbagai cara"], [46.1, 54.76, "Jualan", "Pendaftaran 2027 · jangan berputus asa · MATH TURBO 2027 · DM kami"], [54.76, 56.26, "End card", "CTA BOFU + asteredu11.com.my"]], "TODO": [["'DM kami'", "Transkrip dengar 'Dan kami untuk keterangan lanjut'. Caption ditulis 'DM kami' (sama seperti 'DM saya' yang disahkan dalam AS-F-015). Sahkan.", 53.12], ["Susun atur: skrin terbelah biasa", "Footage ini berpakaian kemas, jadi saya guna gaya HYBRID biasa (papan atas, Cikgu penuh di bawah) dan bukan wajah dalam bulatan seperti Sifir 6. Beritahu jika mahu bulatan supaya siri sekata.", 6.0], ["ID fail skrip berbeza", "Video: AS-F-016-Trick Sifir 8.mp4; skrip: AS-F-015_Trick Sifir 8.txt (sama seperti Sifir 6). Saya guna AS-F-016 ikut nama video dan arahan. Tag skrip TOFU+BOFU → HYBRID.", null], ["Lower third MATH TURBO 2027 + pil Pendaftaran 2027 dibuka", "Tidak disebut; ikut DNA HYBRID dan video Aster sebelum ini.", 46.1]], "DONE": [["Kandungan papan disemak", "Jawapan 08, 16, 24, 32, 40 | 48, 56, 64, 72, 80 betul; sebutan sepadan dengan tulisan.", 28.14], ["Papan diselaraskan dengan suara", "B-roll dirakam berasingan (41 s): setiap nombor muncul dan disorot ketika disebut; label 1 × 8 = … mengikut sebutan.", 10.68], ["Durasi 56.3 s", "Dalam sasaran BOFU 30–60 s. Satu take, tiada potongan (jeda tulis dikekalkan untuk rentak mengajar).", null], ["Thumbnail", "Frame Cikgu senyum pandang kamera (0:01.5). Hook 4 + 4 perkataan dalam safe zone.", 0.5], ["Muzik rasmi Aster", "Aster_MuzikLatar_Ceria_100BPM. Tiada kredit perlu.", 2.0], ["Safe zone & watermark", "Teks di atas 80% frame dan di luar jalur kanan 15%; watermark sepanjang video.", 0.5]], "TT": "Anak masih lemah sifir 8? Cuba trick ni 👇 Tulis 0 hingga 4, sebelah tu 4 hingga 8. Lepas tu gandaan 2 dari bawah (0, 2, 4, 6, 8) untuk kedua-dua lajur. Siap sifir 8! Tak semua anak mampu menghafal, jadi kami datangkan pelbagai cara untuk anak kuasai sifir. Ibu ayah jangan berputus asa, DM kami untuk keterangan lanjut.", "HS": "#sifir8 #cikgualfarhan #trickmatematik #tuisyenonline #asteredu"};
+const DATA=P.DATA,SEG=P.SEG,TODO=P.TODO,DONE=P.DONE,TT=P.TT,HS=P.HS;
+const $=id=>document.getElementById(id);
+const v=$("v"),D=DATA.dur;
+const fmt=t=>{t=Math.max(0,t);const m=Math.floor(t/60),s=t-m*60;return m+":"+(s<10?"0":"")+s.toFixed(1)};
+const seek=t=>{v.currentTime=Math.min(Math.max(0,t),D-0.05);};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]));
+const tl=$("tl");let h="";
+SEG.forEach(s=>h+=`<div class="seg" style="left:${s[0]/D*100}%;width:${(s[1]-s[0])/D*100}%" title="${esc(s[2])}">${esc(s[2])}</div>`);
+DATA.mg.filter(m=>m[2]!=="Watermark").forEach(m=>h+=`<div class="mg" style="left:${m[0]/D*100}%;width:${Math.max(.5,(m[1]-m[0])/D*100)}%"></div>`);
+DATA.sfx.forEach(x=>h+=`<div class="sx" style="left:${x[0]/D*100}%"></div>`);
+tl.innerHTML=h+'<div class="ph" id="ph"></div>';
+tl.addEventListener("pointerdown",e=>{const r=tl.getBoundingClientRect();seek((e.clientX-r.left)/r.width*D)});
+tl.addEventListener("keydown",e=>{if(e.key==="ArrowRight")seek(v.currentTime+1);if(e.key==="ArrowLeft")seek(v.currentTime-1)});
+const segOf=t=>SEG.find(s=>t>=s[0]&&t<s[1])||SEG[SEG.length-1];
+let last="";
+$("caps").innerHTML=DATA.caps.map((c,i)=>{const sg=segOf(c.s)[2];const head=sg!==last?`<span class="sec">${esc(sg)}</span>`:"";last=sg;
+  const txt=c.w.map(w=>{let t=esc(w.t);if(w.hl)t=`<span class="hl">${t}</span>`;if(w.fix)t=`<span class="fix" title="Transkrip: ${esc(w.fix)}">${t}</span>`;if(w.q)t=`<span class="rv" title="Perlu disahkan: transkrip \u2018Dan kami\u2019">${t}</span>`;return t}).join(" ");
+  return `<button class="cap-row" data-t="${c.s}" id="cr${i}"><time>${fmt(c.s)}</time><span>${head}${txt}</span></button>`}).join("");
+$("segtbl").innerHTML=SEG.map(s=>`<tr><td class="n"><a href="#" data-t="${s[0]}">${fmt(s[0])}–${fmt(s[1])}</a></td><td>${esc(s[2])}</td><td>${esc(s[3])}</td></tr>`).join("");
+$("cuttbl").innerHTML=DATA.zoom.map(c=>`<tr><td class="n"><a href="#" data-t="${c.t}">${fmt(c.t)}</a></td><td>${esc(c.m)}</td></tr>`).join("");
+const evs=DATA.mg.map(m=>({t:m[0],k:m[2],d:m[3]+" (hingga "+fmt(m[1])+")",s:false})).concat(DATA.sfx.map(x=>({t:x[0],k:"SFX",d:x[1],s:true}))).sort((a,b)=>a.t-b.t);
+$("evs").innerHTML=evs.map(e=>`<button class="ev" data-t="${e.t}"><time>${fmt(e.t)}</time><span class="k${e.s?" sfx":""}">${esc(e.k)}</span><span>${esc(e.d)}</span></button>`).join("");
+const li=(d,cls,tag,lab)=>`<li class="q${cls}"><b><span class="tag ${tag}">${lab}</span>${esc(d[0])}</b>${esc(d[1])}${d[2]!=null?` <a href="#" data-t="${d[2]}">Lihat ${fmt(d[2])}</a>`:""}</li>`;
+$("done").innerHTML=DONE.map(d=>li(d," done","o","Siap")).join("");
+$("todo").innerHTML=TODO.map(d=>li(d,"","w","Perlu semak")).join("");
+$("nq").textContent=TODO.length;
+$("tt").innerHTML=esc(TT)+"\n\n<span class=\"hs\">"+esc(HS)+"</span>";
+$("copy").onclick=()=>{const t=TT+"\n\n"+HS;const ok=()=>{$("copied").hidden=false;setTimeout(()=>$("copied").hidden=true,1800)};
+  const sel=()=>{const r=document.createRange();r.selectNodeContents($("tt"));const s=getSelection();s.removeAllRanges();s.addRange(r);};
+  try{navigator.clipboard.writeText(t).then(ok,sel)}catch(e){sel()}};
+document.addEventListener("click",e=>{const b=e.target.closest("[data-t]");if(!b||b===tl)return;e.preventDefault();seek(+b.dataset.t+0.02);});
+document.querySelectorAll(".tab").forEach(tb=>tb.onclick=()=>{document.querySelectorAll(".tab").forEach(x=>{x.setAttribute("aria-selected",x===tb);$(x.dataset.p).hidden=x!==tb});
+  try{localStorage.setItem("asf016-tab",tb.id)}catch(e){}});
+try{const k=localStorage.getItem("asf016-tab");if(k&&$(k))$(k).click();}catch(e){}
+let lastCr=-1;
+function loop(){const t=v.currentTime||0;$("ph").style.left=(t/D*100)+"%";tl.setAttribute("aria-valuenow",t.toFixed(1));
+  const ci=DATA.caps.findIndex(c=>t>=c.s&&t<c.e);
+  if(ci!==lastCr){document.querySelectorAll(".cap-row.on").forEach(x=>x.classList.remove("on"));if(ci>=0)$("cr"+ci).classList.add("on");lastCr=ci;}
+  requestAnimationFrame(loop);}
+loop();
+</script>
+</body></html>

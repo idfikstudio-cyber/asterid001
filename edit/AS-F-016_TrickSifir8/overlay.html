@@ -1,0 +1,229 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="fonts_local.css"><style>
+/* AS-F-010 · gaya HYBRID Aster: hitam + kuning */
+:root{--blk:#111;--blk2:#1d1d1d;--yel:#ffd21f;--yel2:#b58b00;--red:#e0322b;--ink:#1a1405;--ok:#1f9d4c}
+html,body{margin:0;background:transparent;overflow:hidden}
+#stage{position:absolute;left:0;top:0;width:1080px;height:1920px;transform-origin:0 0;font-family:Poppins,sans-serif;color:#fff}
+.el{position:absolute;opacity:0}
+#wm{left:72px;top:212px;font:600 30px Poppins;color:rgba(255,255,255,.42);text-shadow:0 1px 3px rgba(0,0,0,.55),0 0 8px rgba(0,0,0,.25);opacity:1;z-index:50}
+/* paper card */
+.paper{background:#fffdf6;color:#1b1b1b;border-radius:20px;box-shadow:0 12px 30px rgba(0,0,0,.45);padding:18px 24px}
+.paper small{display:block;font:800 22px Poppins;letter-spacing:2px;color:#8a7a50;text-transform:uppercase}
+.hand{font-family:Caveat,cursive;font-weight:700}
+.pill{display:inline-flex;align-items:center;gap:14px;background:var(--blk);color:#fff;border:4px solid var(--yel);border-radius:999px;padding:10px 30px 10px 14px;font:800 40px Poppins;box-shadow:0 8px 20px rgba(0,0,0,.4);white-space:nowrap}
+.pill .ic{width:54px;height:54px;border-radius:50%;background:var(--yel);display:grid;place-items:center;flex:none}
+.pill .ic svg{width:32px;height:32px}
+.pill.y{background:var(--yel);color:var(--ink);border-color:#111}
+.pill b{color:var(--yel)}
+.pill.y b{color:#111}
+/* name */
+#name{left:70px;top:1030px;display:flex;align-items:center}
+#name .ring{width:104px;height:104px;border-radius:50%;border:6px solid var(--yel);overflow:hidden;z-index:2;box-shadow:0 4px 14px rgba(0,0,0,.4)}
+#name .ring img,.ringimg{width:100%;height:100%;object-fit:cover;display:block}
+#name .txt{margin-left:-22px;background:var(--blk);color:#fff;border-radius:0 999px 999px 0;padding:12px 30px 12px 40px;font:800 38px Poppins;border:3px solid var(--yel);border-left:0}
+/* captions */
+#cap{left:60px;width:860px;top:1290px;text-align:center;font:800 66px/1.18 Poppins;letter-spacing:-.5px;opacity:1}
+#cap .w{display:inline-block;margin:0 9px;color:#fff;-webkit-text-stroke:10px rgba(0,0,0,.9);paint-order:stroke fill;text-shadow:0 5px 10px rgba(0,0,0,.5)}
+#cap .w.hl{color:var(--yel)}
+/* clock */
+#clock{left:560px;top:270px;width:340px;display:flex;align-items:center;gap:16px}
+#clock .face{width:96px;height:96px;border-radius:50%;border:7px solid #111;position:relative;flex:none;background:#fff}
+#clock .face i{position:absolute;left:50%;bottom:50%;width:7px;margin-left:-3.5px;background:#111;border-radius:4px;transform-origin:50% 100%}
+#clock .t{font:900 54px/1 Poppins}
+#clock .t span{display:block;font:800 26px Poppins;color:#8a7a50}
+/* bubbles */
+.bub{background:#fff;color:#1b1b1b;border-radius:28px;padding:12px 26px;font:800 36px/1.2 Poppins;box-shadow:0 10px 24px rgba(0,0,0,.4);position:absolute;white-space:nowrap}
+.bub:after{content:"";position:absolute;bottom:-18px;left:60px;border:18px solid transparent;border-top-color:#fff;border-bottom:0}
+.bub .who{display:block;font:800 22px Poppins;color:var(--red);letter-spacing:1px}
+/* strike words */
+.strike{font:900 120px/1 Poppins;color:var(--yel);-webkit-text-stroke:12px #111;paint-order:stroke fill;position:relative;display:inline-block;letter-spacing:-2px}
+.strike .ln{position:absolute;left:-14px;top:50%;height:16px;background:var(--red);border-radius:8px;box-shadow:0 2px 0 #111}
+.strike small{display:block;font:900 40px Poppins;color:#fff;-webkit-text-stroke:8px #111;letter-spacing:1px;margin-bottom:4px}
+/* note card */
+#note{left:70px;top:985px;width:600px}
+#note .h{font:700 54px/1 Caveat;color:#1b1b1b}
+#note .r{display:flex;align-items:center;gap:12px;font:800 40px Poppins;margin-top:10px}
+#note .r i{font-style:normal;width:48px;height:48px;border-radius:50%;background:var(--red);color:#fff;display:grid;place-items:center;font:900 30px Poppins}
+/* follow */
+#follow{left:520px;top:265px;width:400px;background:#fff;color:#111;border-radius:22px;padding:16px;display:flex;flex-direction:column;align-items:center;box-shadow:0 12px 30px rgba(0,0,0,.45)}
+#follow .ring{width:96px;height:96px;border-radius:50%;border:6px solid var(--yel);overflow:hidden}
+#follow b{font:800 30px Poppins;margin-top:6px}
+#follow span{font:600 22px Poppins;color:#666}
+#follow .btn{margin-top:10px;background:var(--yel);color:#111;border-radius:12px;padding:8px 26px;font:900 28px Poppins;border:3px solid #111}
+/* lower third */
+#lt{left:70px;top:1090px;display:flex;flex-direction:column}
+#lt .a{background:var(--yel);color:#111;font:900 62px/1 Poppins;padding:12px 26px 10px;letter-spacing:-1px;border-radius:12px 12px 12px 0}
+#lt .b{align-self:flex-start;background:#111;color:#fff;font:700 28px Poppins;padding:8px 20px;border-radius:0 0 12px 12px}
+/* 2 guru card */
+#guru{left:66px;top:985px;width:640px;background:#111;border:5px solid var(--yel);border-radius:26px;padding:20px 24px;box-shadow:0 14px 34px rgba(0,0,0,.5)}
+#guru .h{white-space:nowrap;font:900 48px/1 Poppins;color:#fff;display:flex;align-items:center;gap:14px}
+#guru .h b{background:var(--yel);color:#111;border-radius:12px;padding:2px 14px}
+#guru .r{display:flex;align-items:center;gap:16px;margin-top:14px;font:700 34px/1.15 Poppins}
+#guru .r .av{width:62px;height:62px;border-radius:50%;background:var(--yel);display:grid;place-items:center;flex:none}
+#guru .r .av svg{width:38px;height:38px}
+#guru .r small{display:block;font:800 22px Poppins;color:var(--yel);letter-spacing:1px}
+/* off card */
+#off{left:70px;top:985px;width:600px;background:#111;border:5px solid var(--yel);border-radius:24px;padding:16px 22px;box-shadow:0 14px 34px rgba(0,0,0,.5)}
+#off .r{display:flex;align-items:center;gap:16px;font:800 38px Poppins;padding:6px 0}
+#off .r .ic{width:66px;height:66px;border-radius:16px;background:#2a2a2a;display:grid;place-items:center;position:relative;flex:none}
+#off .r .ic svg{width:40px;height:40px}
+#off .r .ic:after{content:"";position:absolute;width:76px;height:7px;background:var(--red);transform:rotate(-45deg);border-radius:4px}
+#off .r span{color:var(--yel)}
+/* chat */
+#chat{left:66px;top:950px;width:640px;background:#1f1f22;border-radius:22px;padding:14px 18px 18px;box-shadow:0 14px 34px rgba(0,0,0,.5);border:3px solid #333}
+#chat .bar{font:700 24px Poppins;color:#bbb;display:flex;align-items:center;gap:8px;margin-bottom:10px}
+#chat .bar i{width:14px;height:14px;border-radius:50%;background:#1f9d4c;display:inline-block}
+#chat .m{display:flex;margin-top:10px}
+#chat .m .bb{border-radius:18px;padding:10px 18px;font:700 30px/1.2 Poppins;max-width:470px}
+#chat .m.me{justify-content:flex-end}
+#chat .m.me .bb{background:var(--yel);color:#111;border-bottom-right-radius:4px}
+#chat .m.cg .bb{background:#fff;color:#111;border-bottom-left-radius:4px}
+#chat .bb small{display:block;font:800 18px Poppins;color:#8a6d00;letter-spacing:1px}
+#chat .m.cg small{color:var(--ok)}
+.dots span{display:inline-block;width:14px;height:14px;border-radius:50%;background:#111;margin:0 4px;opacity:.35}
+/* end */
+#end{left:0;top:0;width:1080px;height:1920px;background:radial-gradient(circle at 50% 35%,#2a2a2a 0%,#141414 55%,#050505 100%);text-align:center}
+#end .ring{position:absolute;left:360px;top:300px;width:360px;height:360px;border-radius:50%;border:12px solid var(--yel);overflow:hidden;box-shadow:0 0 0 8px rgba(255,210,31,.3),0 18px 40px rgba(0,0,0,.6)}
+#end .nm{position:absolute;left:0;width:1080px;top:700px;font:900 76px Poppins;letter-spacing:-1px}
+#end .hd{position:absolute;left:0;width:1080px;top:800px;font:800 42px Poppins;color:var(--yel)}
+#end .cta{position:absolute;left:170px;width:740px;top:900px;background:#fff;color:#111;border-radius:26px;padding:22px 26px;font:800 42px/1.25 Poppins}
+#end .cta b{color:var(--ok)}
+#end .web{position:absolute;left:150px;width:780px;top:1130px;background:var(--yel);color:#111;border-radius:24px;padding:16px 0;font:900 74px Poppins;letter-spacing:-1px;box-shadow:0 8px 0 var(--yel2)}
+#end .wa{position:absolute;left:0;width:1080px;top:1300px;font:800 52px Poppins;display:flex;justify-content:center;align-items:center;gap:16px}
+#end .wa svg{width:60px;height:60px}
+/* thumb */
+#thumb{left:0;top:0;width:1080px;height:1920px}
+#thumb .hook{position:absolute;left:70px;width:860px;top:960px;text-align:center}
+#thumb .h1{white-space:nowrap;font:900 104px/1 Poppins;color:#fff;-webkit-text-stroke:16px #111;paint-order:stroke fill;letter-spacing:-3px;text-shadow:0 10px 20px rgba(0,0,0,.5)}
+#thumb .h2{white-space:nowrap;display:inline-block;margin-top:14px;font:900 80px/1.05 Poppins;color:#111;background:var(--yel);padding:6px 30px 12px;border-radius:22px;letter-spacing:-2px;box-shadow:0 10px 0 #7a5d00,0 18px 34px rgba(0,0,0,.45);transform:rotate(-2deg)}
+#thumb .sub{margin-top:40px}
+
+#board{left:70px;top:262px;width:620px;background:#1e2a22;border:10px solid #6b4a2b;border-radius:16px;padding:14px 26px;box-shadow:0 12px 30px rgba(0,0,0,.5);color:#f4f1e6}
+#board .t{font:900 46px Poppins;color:var(--yel);letter-spacing:1px}
+#board .eq{font:700 82px/1 Caveat;margin-top:4px}
+#board .eq span{opacity:0}
+.brwrap{left:80px;top:300px;width:820px;height:820px;border-radius:26px;overflow:hidden;border:8px solid var(--yel);box-shadow:0 20px 50px rgba(0,0,0,.6);background:#fff}
+.brimg{width:100%;height:100%;object-fit:cover;display:block;transform-origin:50% 40%}
+#brbg{left:0;top:0;width:1080px;height:1920px;background:radial-gradient(circle at 50% 35%,#2a2a2a,#0b0b0b)}
+#brlab{left:80px;top:1140px;width:820px;text-align:center}
+.chiprow{left:90px;top:1110px;display:flex;gap:14px}
+.warn{font:900 92px/1 Poppins;color:#fff;-webkit-text-stroke:12px #111;paint-order:stroke fill;letter-spacing:-2px}
+.warn b{color:#ff4d3d}
+.warn small{display:block;font:900 40px Poppins;color:var(--yel);-webkit-text-stroke:8px #111;letter-spacing:1px;margin-bottom:6px}
+
+#wm{top:232px}
+.hw{font:700 104px/1 Caveat;color:#fff;letter-spacing:2px;text-shadow:0 4px 14px rgba(0,0,0,.7)}
+.title{display:inline-block;font:900 128px/0.95 Poppins;color:var(--yel);-webkit-text-stroke:14px #111;paint-order:stroke fill;letter-spacing:-3px;text-shadow:0 10px 24px rgba(0,0,0,.6)}
+.title small{display:block;font:900 44px Poppins;color:#fff;-webkit-text-stroke:8px #111;letter-spacing:1px;margin-bottom:6px}
+#divbar{left:0;top:1032px;width:1080px;height:12px;background:var(--yel)}
+#divbar span{position:absolute;right:190px;top:-38px;background:var(--yel);color:#111;font:900 24px Poppins;letter-spacing:2px;padding:6px 14px;border-radius:10px 10px 0 0}
+.step{left:92px;top:282px;display:flex;align-items:center;gap:14px;font:800 32px Poppins;color:#fff;white-space:nowrap}
+.step b{background:var(--yel);color:#111;font:900 30px Poppins;padding:6px 16px;border-radius:10px;letter-spacing:1px}
+.rowhl{height:72px;border-radius:14px;background:rgba(255,210,31,.16);border:4px solid var(--yel);box-sizing:border-box}
+.lab{left:60px;width:232px;text-align:right;font:800 36px Poppins;color:var(--yel);white-space:nowrap}
+.up{display:inline-block;background:#111;color:var(--yel);border:3px solid var(--yel);border-radius:999px;font:800 26px Poppins;padding:4px 16px}
+.stamp{display:inline-block;font:900 78px Poppins;color:#111;background:var(--yel);padding:10px 34px;border-radius:20px;border:6px solid #111;transform:rotate(-4deg);box-shadow:0 14px 34px rgba(0,0,0,.6)}
+#cap .w{margin:0 7px}
+</style></head>
+<body><div id="stage">
+<div id="thumb" class="el" data-in="0" data-out="1.0" data-a="none">
+  <div class="hw" style="position:absolute;left:0;width:920px;top:300px;text-align:center">8 × 7 = <span style="color:#f2b33d">56</span></div>
+  <div class="hook" style="top:1130px;left:60px;width:800px"><div class="h1">TRICK SIFIR 8</div><div class="h2" style="font-size:58px">UNTUK ANAK LEMAH SIFIR</div></div>
+</div>
+<div id="name" class="el" data-in="1.3" data-out="4.2" data-a="slide" style="top:1135px"><div class="ring"><img src="face.png"></div><div class="txt">Cikgu AlFarhan</div></div>
+<div class="el" data-in="1.3" data-out="4.25" data-a="pop" style="left:0;width:1000px;top:272px;text-align:center"><div class="title"><small>Anak masih lemah</small>SIFIR 8?</div></div>
+<div id="divbar" class="el" data-in="4.35" data-out="33.6" data-a="fade" data-fo="0.3"><span>SIFIR 8 · CIKGU ALFARHAN</span></div>
+<div class="el step" data-in="4.28" data-out="9.1" data-a="slide"><b>LANGKAH 1</b>Tulis 0 → 4</div>
+<div class="el step" data-in="9.18" data-out="13.2" data-a="slide"><b>LANGKAH 2</b>Sambung 4 → 8 di sebelah</div>
+<div class="el step" data-in="13.26" data-out="21.1" data-a="slide"><b>LANGKAH 3</b>Gandaan 2 dari bawah: 0, 2, 4, 6, 8</div>
+<div class="el step" data-in="21.16" data-out="27.45" data-a="slide"><b>LANGKAH 4</b>Sebelah pun gandaan 2</div>
+<div class="el step" data-in="27.5" data-out="33.3" data-a="slide"><b>SIAP!</b>Baca setiap baris = jawapan</div>
+<div class="el rowhl" data-in="5.36" data-out="6.34" data-a="fade" data-fo="0.2" style="left:302px;top:392px;width:150px"></div>
+<div class="el rowhl" data-in="5.94" data-out="6.86" data-a="fade" data-fo="0.2" style="left:302px;top:507px;width:150px"></div>
+<div class="el rowhl" data-in="6.68" data-out="7.62" data-a="fade" data-fo="0.2" style="left:302px;top:613px;width:150px"></div>
+<div class="el rowhl" data-in="7.64" data-out="8.46" data-a="fade" data-fo="0.2" style="left:302px;top:739px;width:150px"></div>
+<div class="el rowhl" data-in="8.44" data-out="9.48" data-a="fade" data-fo="0.2" style="left:302px;top:866px;width:150px"></div>
+<div class="el rowhl" data-in="10.36" data-out="11.06" data-a="fade" data-fo="0.2" style="left:602px;top:392px;width:125px"></div>
+<div class="el rowhl" data-in="10.88" data-out="11.7" data-a="fade" data-fo="0.2" style="left:602px;top:507px;width:125px"></div>
+<div class="el rowhl" data-in="11.56" data-out="12.6" data-a="fade" data-fo="0.2" style="left:602px;top:613px;width:125px"></div>
+<div class="el rowhl" data-in="12.4" data-out="13.24" data-a="fade" data-fo="0.2" style="left:602px;top:739px;width:125px"></div>
+<div class="el rowhl" data-in="12.92" data-out="13.56" data-a="fade" data-fo="0.2" style="left:602px;top:866px;width:125px"></div>
+<div class="el rowhl" data-in="17.14" data-out="18.36" data-a="fade" data-fo="0.2" style="left:452px;top:866px;width:150px"></div>
+<div class="el rowhl" data-in="17.98" data-out="18.82" data-a="fade" data-fo="0.2" style="left:452px;top:739px;width:150px"></div>
+<div class="el rowhl" data-in="18.62" data-out="19.92" data-a="fade" data-fo="0.2" style="left:452px;top:613px;width:150px"></div>
+<div class="el rowhl" data-in="19.74" data-out="20.8" data-a="fade" data-fo="0.2" style="left:452px;top:507px;width:150px"></div>
+<div class="el rowhl" data-in="20.6" data-out="21.52" data-a="fade" data-fo="0.2" style="left:452px;top:392px;width:150px"></div>
+<div class="el rowhl" data-in="23.6" data-out="24.78" data-a="fade" data-fo="0.2" style="left:727px;top:866px;width:150px"></div>
+<div class="el rowhl" data-in="24.38" data-out="25.16" data-a="fade" data-fo="0.2" style="left:727px;top:739px;width:150px"></div>
+<div class="el rowhl" data-in="25.12" data-out="26.3" data-a="fade" data-fo="0.2" style="left:727px;top:613px;width:150px"></div>
+<div class="el rowhl" data-in="26.08" data-out="27.14" data-a="fade" data-fo="0.2" style="left:727px;top:507px;width:150px"></div>
+<div class="el rowhl" data-in="26.92" data-out="27.82" data-a="fade" data-fo="0.2" style="left:727px;top:392px;width:150px"></div>
+<div class="el rowhl" data-in="28.34" data-out="29.48" data-a="fade" data-fo="0.2" style="left:290px;top:392px;width:600px"></div>
+<div class="el rowhl" data-in="29.4" data-out="30.34" data-a="fade" data-fo="0.2" style="left:290px;top:507px;width:600px"></div>
+<div class="el rowhl" data-in="30.14" data-out="31.16" data-a="fade" data-fo="0.2" style="left:290px;top:613px;width:600px"></div>
+<div class="el rowhl" data-in="30.94" data-out="31.92" data-a="fade" data-fo="0.2" style="left:290px;top:739px;width:600px"></div>
+
+<div class="el lab" data-in="28.39" data-out="33.3" data-a="slide" style="top:402px">1 × 8 =</div>
+<div class="el lab" data-in="29.45" data-out="33.3" data-a="slide" style="top:517px">2 × 8 =</div>
+<div class="el lab" data-in="30.19" data-out="33.3" data-a="slide" style="top:623px">3 × 8 =</div>
+<div class="el lab" data-in="30.99" data-out="33.3" data-a="slide" style="top:749px">4 × 8 =</div>
+<div class="el lab" data-in="31.6" data-out="33.3" data-a="slide" style="top:876px">5 × 8 =</div>
+<div class="el lab" data-in="31.9" data-out="33.3" data-a="slide" style="top:402px;left:883px;text-align:left;width:auto">← 6 × 8</div>
+
+<div class="el" data-in="17.1" data-out="21.1" data-a="pop" style="left:442px;top:946px"><span class="up">↑ mula dari bawah</span></div>
+<div class="el" data-in="27.5" data-out="28.3" data-a="pop" style="left:0;width:1080px;top:560px;text-align:center"><span class="stamp">SIFIR 8 SIAP ✓</span></div>
+<div id="follow" class="el" data-in="21.16" data-out="23.2" data-a="pop" style="left:700px;top:1300px;width:210px;padding:12px"><b style="font-size:24px">Cikgu AlFarhan</b><span style="font-size:19px">@aster.edu_tpg</span><div class="btn" style="font-size:26px">Follow saya</div></div>
+<div class="el" data-in="33.64" data-out="34.5" data-a="pop" style="left:0;width:1000px;top:290px;text-align:center"><span class="pill y" style="font-size:52px">Mudah kan? ✓</span></div>
+<div class="el paper" data-in="34.54" data-out="38.0" data-a="pop" style="left:0;right:80px;margin:auto;top:292px;width:640px;text-align:center"><small>Sebenarnya</small><div style="font:900 52px/1.1 Poppins">banyak cara &amp; <span style="background:var(--yel);padding:0 10px;border-radius:10px">trick</span> kuasai sifir</div></div>
+<div class="el" data-in="38.06" data-out="41.95" data-a="pop" style="left:0;width:1000px;top:276px;text-align:center"><div class="strike"><small class="el" data-in="38.06" data-out="39.55" data-a="none" style="position:absolute;left:0;right:0;top:-46px">Salah satunya: memang</small><small class="el" data-in="39.6" data-out="41.95" data-a="none" style="position:absolute;left:0;right:0;top:-46px">Tak semua anak mampu</small>MENGHAFAL<span class="ln el" data-in="41.3" data-out="41.95" data-a="wipe" style="width:106%"></span></div></div>
+<div class="el paper" data-in="42.0" data-out="45.95" data-a="pop" style="left:0;right:80px;margin:auto;top:292px;width:660px;text-align:center"><small>Jadi kami datangkan</small><div style="font:900 52px/1.1 Poppins"><span style="color:#1f9d4c">PELBAGAI CARA</span><br>untuk anak kuasai sifir ✓</div></div>
+<div class="el" data-in="46.1" data-out="54.76" data-a="drop" style="left:0;width:1000px;top:268px;text-align:center"><span class="pill" style="background:#e0322b;border-color:#fff">Pendaftaran 2027 dibuka</span></div>
+<div class="el paper" data-in="46.1" data-out="48.6" data-a="pop" style="left:0;right:80px;margin:auto;top:370px;width:600px;text-align:center"><small>Ibu ayah</small><div style="font:900 50px/1.1 Poppins">jangan berputus asa 💪</div></div>
+<div id="lt" class="el" data-in="48.7" data-out="51.4" data-a="slide" style="top:1120px"><div class="a">MATH TURBO 2027</div><div class="b">Tuisyen online bersama Cikgu AlFarhan</div></div>
+<div class="el" data-in="51.4" data-out="53.1" data-a="pop" style="left:0;width:1000px;top:1130px;text-align:center"><span class="pill y"><b>SUKSES</b> dalam peperiksaan ✓</span></div>
+<div class="el" data-in="53.12" data-out="54.76" data-a="pop" style="left:0;width:1000px;top:1130px;text-align:center"><span class="pill"><span class="ic"><svg viewBox="0 0 24 24" fill="#111"><path d="M4 4h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H8l-4 4V6a2 2 0 0 1 2-2z"/></svg></span>DM kami</span></div>
+
+<div id="end" class="el" data-in="54.76" data-out="99" data-a="fade">
+  <div class="ring"><img class="ringimg" src="face.png"></div>
+  <div class="nm">Cikgu AlFarhan</div><div class="hd">@aster.edu_tpg</div>
+  <div class="cta"><b>WhatsApp</b> Cikgu AlFarhan untuk daftar / cuba kelas</div>
+  <div class="web">asteredu11.com.my</div>
+  <div class="wa"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#25d366"/><path fill="#fff" d="M16.4 15.6c-.2.5-1.1 1-1.6 1-.4.1-.9.1-1.5-.1a13 13 0 0 1-5.6-4.9c-.4-.6-.9-1.6-.9-2.6 0-1 .5-1.5.7-1.7.2-.2.4-.3.6-.3h.4c.1 0 .3 0 .5.4l.7 1.6c.1.1.1.3 0 .4l-.3.5-.4.4c-.1.1-.3.3-.1.5.2.3.7 1.2 1.6 1.9 1.1 1 2 1.3 2.3 1.4.3.1.4.1.6-.1l.8-1c.2-.2.3-.2.6-.1l1.6.8c.2.1.4.2.4.3.1.1.1.6-.1 1.1z"/></svg>011-5596 9070</div>
+</div>
+
+<div id="cap" class="el"></div>
+<div id="wm" class="el">asteredu11.com.my</div>
+</div><script>
+const CAPS=[[1.0, 1.56, "Jadi untuk anak"], [1.56, 2.32, "yang masih *lemah"], [2.32, 2.86, "*sifir *8"], [2.86, 3.6, "nanti boleh tunjuk"], [3.6, 4.28, "dekat anak ya"], [4.28, 4.92, "Kita kena mulakan"], [4.92, 5.74, "dengan *kosong"], [5.74, 6.41, "*1"], [6.48, 7.17, "*2"], [7.44, 8.01, "*3"], [8.24, 9.03, "*4"], [9.18, 9.68, "Lepas tu kita"], [9.68, 10.16, "sambung"], [10.16, 10.61, "*4"], [10.68, 11.25, "*5"], [11.36, 12.15, "*6"], [12.2, 12.72, "*7"], [12.72, 13.11, "*8"], [13.26, 14.04, "Seterusnya macam mana"], [14.04, 14.22, "pula?"], [14.22, 14.82, "Kita kena buat"], [14.82, 15.86, "*gandaan *2 pula"], [15.86, 16.84, "*Gandaan *2 mula"], [16.84, 17.78, "dengan *kosong"], [17.78, 18.37, "*2"], [18.42, 19.47, "*4"], [19.54, 20.35, "*6"], [20.4, 21.07, "*8"], [21.16, 21.78, "Sebelah dia pun"], [21.78, 22.66, "kita buat *gandaan *2"], [22.66, 23.22, "juga ya"], [23.22, 24.18, "*kosong"], [24.18, 24.71, "*2"], [24.92, 25.85, "*4"], [25.88, 26.69, "*6"], [26.72, 27.37, "*8"], [27.5, 28.14, "*Selesai"], [28.14, 29.03, "*1 *kali *8"], [29.2, 29.89, "*2 *kali *8"], [29.94, 30.71, "*3 *kali *8"], [30.74, 31.32, "*4 *kali *8"], [31.32, 33.15, "dan seterusnya"], [33.64, 34.54, "*Mudah kan?"], [34.54, 35.78, "Sebenarnya banyak cara"], [35.78, 36.62, "dan *trick untuk"], [36.62, 38.06, "kita kuasai *sifir"], [38.06, 38.88, "Salah satunya memang"], [38.88, 39.6, "*menghafal"], [39.6, 40.34, "Tapi tak semua"], [40.34, 41.42, "anak kita *mampu"], [41.42, 42.0, "*menghafal"], [42.0, 43.2, "Jadi kita datangkan"], [43.2, 43.96, "dengan pelbagai cara"], [43.96, 45.52, "untuk anak-anak kuasai"], [45.52, 46.05, "*sifir"], [46.1, 46.86, "Ibu ayah jangan"], [46.86, 48.16, "berputus asa untuk"], [48.16, 50.4, "cari platform-platform supaya"], [50.4, 51.4, "anak kita dapat"], [51.4, 53.12, "*sukses dalam *peperiksaan"], [53.12, 54.0, "*DM kami untuk"], [54.0, 54.76, "keterangan lanjut"]];
+const els=[...document.querySelectorAll('.el[data-in]')];
+const cap=document.getElementById('cap');
+const clamp=x=>Math.max(0,Math.min(1,x));
+const back=x=>{const c1=1.70158,c3=c1+1;return 1+c3*Math.pow(x-1,3)+c1*Math.pow(x-1,2)};
+const outc=x=>1-Math.pow(1-x,3);
+let lastCap=-2;
+window.render=function(t){
+    for(const e of els){
+    const a=+e.dataset.in,b=+e.dataset.out,fo=+(e.dataset.fo||0.18),kind=e.dataset.a;
+    if(e.classList.contains('r')||e.classList.contains('m'))e.style.display=t<a?'none':'flex';
+    if(e.classList.contains('chiprow')){e.style.opacity=(t>=a&&t<b)?1:0;continue}
+    if(t<a||t>=b){e.style.opacity=0;continue}
+    const k=clamp((t-a)/0.28),o=clamp((b-t)/fo);
+    let op=Math.min(clamp((t-a)/0.12),o),tr='';
+    if(kind==='pop'){tr=`scale(${0.55+0.45*back(k)})`}
+    else if(kind==='slide'){tr=`translateX(${(1-outc(k))*-60}px)`}
+    else if(kind==='drop'){tr=`translateY(${(1-outc(k))*-40}px)`}
+    else if(kind==='wipe'){e.style.transformOrigin='0 50%';tr=`scaleX(${outc(clamp((t-a)/0.3))})`;op=o}
+    else if(kind==='fade'){op=Math.min(clamp((t-a)/0.25),o)}
+    else {op=1}
+    if(['pop','slide','drop'].includes(kind)&&o<1) tr+=` scale(${0.94+0.06*o})`;
+    e.style.opacity=op;e.style.transform=tr;
+  }
+  
+  
+  const i=CAPS.findIndex(c=>t>=c[0]&&t<c[1]);
+  if(i!==lastCap){lastCap=i;
+    cap.innerHTML=i<0?'':CAPS[i][2].split(' ').map(w=>w[0]==='*'?`<span class="w hl">${w.slice(1)}</span>`:`<span class="w">${w.replace(/^~/,'')}</span>`).join(' ');}
+  cap.style.top=(t>=4.50&&t<33.50)?'1062px':'1290px';
+  if(i>=0){cap.style.transform=`scale(${0.9+0.1*outc(clamp((t-CAPS[i][0])/0.12))})`}
+};
+window.scaleStage=s=>{document.getElementById('stage').style.transform=`scale(${s})`};
+</script></body></html>
