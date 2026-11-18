@@ -18,7 +18,7 @@ def s2o(s):
         if s<=b: return acc+s-a
         acc+=b-a
     return acc
-TEACH=(3.20,32.30); TR=0.40          # skrin terbelah: papan atas, Cikgu bawah
+TEACH=(3.20,33.50); TR=0.40          # skrin terbelah: papan atas, Cikgu bawah
 def phase(src):
     if src is None: return 0.0
     a,b=TEACH
@@ -45,9 +45,12 @@ _kx=np.array([k[0] for k in KP]);_ky=np.array([k[1] for k in KP])
 assert (np.diff(_kx)>0).all()
 def board(src): return float(np.interp(src if src is not None else 80,_kx,_ky))
 # susun atur
-BCROP=(60,320,620,540); BSCALE=1.25; BPOS=(152,340)       # potongan B-roll 1080x1440 -> panel atas
+BCROP=(150,320,500,540); BSCALE=1.25; BPOS=(122,340)       # potongan B-roll 1080x1440 -> panel atas
 DIV=1040                                                    # garis pembahagi skrin terbelah
 ROWS=[(362,419),(452,513),(534,601),(635,701),(740,800)]
 def row_y(r): return BPOS[1]+((ROWS[r][0]+ROWS[r][1])/2-BCROP[1])*BSCALE
 def bx(X): return BPOS[0]+(X-BCROP[0])*BSCALE
 if __name__=="__main__": print("durasi",round(DUR,2)); print([round(row_y(r)) for r in range(5)],round(bx(180)),round(bx(650)))
+
+# v2: label lajur kanan 6x8 .. 10x8 (komen Farhan), muncul satu demi satu semasa "dan seterusnya"
+RLAB=[(30.62+0.3*i, i) for i in range(5)]

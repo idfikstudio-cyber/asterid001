@@ -74,14 +74,15 @@ Aster · TOFU+BOFU → HYBRID (hitam + kuning) · spokesperson FARHAN · durasi 
  0:00.0–0:56.3 Watermark: asteredu11.com.my sepanjang video (termasuk thumbnail & end card), putih ±40% + bayang halus, atas-kiri 12%
  0:01.3–0:04.2 Label nama: Wajah bulatan emas + Cikgu AlFarhan
  0:01.3–0:04.2 Tajuk: Anak masih lemah SIFIR 8?
- 0:04.2–0:33.7 Skrin terbelah + B-roll papan (29 s): B-Roll Sifir 8 (rakaman skrin iPad) di atas, Cikgu di bawah, garis kuning SIFIR 8 · CIKGU ALFARHAN; tulisan diselaraskan dengan setiap nombor disebut
+ 0:04.2–0:34.9 Skrin terbelah + B-roll papan (30 s): B-Roll Sifir 8 (rakaman skrin iPad) di atas, Cikgu di bawah, garis kuning SIFIR 8 · CIKGU ALFARHAN; tulisan diselaraskan dengan setiap nombor disebut
  0:04.3–0:09.1 LANGKAH 1: Tulis 0 → 4 · sorotan ikut nombor
  0:09.2–0:13.2 LANGKAH 2: Sambung 4 → 8 di sebelah
  0:13.3–0:21.1 LANGKAH 3: Gandaan 2 dari bawah: 0, 2, 4, 6, 8 · pil ↑ mula dari bawah
  0:21.2–0:23.2 CTA Follow: Kad Cikgu AlFarhan · @aster.edu_tpg · Follow saya (TOFU, tengah video)
  0:21.2–0:27.4 LANGKAH 4: Sebelah pun gandaan 2
  0:27.5–0:28.3 Cop: SIFIR 8 SIAP ✓
- 0:27.5–0:33.3 SIAP: Baca setiap baris = jawapan · label 1 × 8 = … 5 × 8 = ikut sebutan
+ 0:27.5–0:34.5 SIAP: Baca setiap baris = jawapan · label 1 × 8 = … 5 × 8 = ikut sebutan
+ 0:31.6–0:34.5 v2: label lajur kanan: ← 6 × 8, 7 × 8, 8 × 8, 9 × 8, 10 × 8 muncul satu demi satu (dengan sorotan) semasa 'dan seterusnya'; skrin terbelah dipanjangkan hingga 'Mudah kan?'
  0:33.6–0:34.5 Pil kuning: Mudah kan? ✓
  0:34.5–0:38.0 Kad: Sebenarnya banyak cara & trick kuasai sifir
  0:38.1–0:42.0 Teks besar: Salah satunya memang / Tak semua anak mampu MENGHAFAL (dipangkah)
@@ -92,8 +93,8 @@ Aster · TOFU+BOFU → HYBRID (hitam + kuning) · spokesperson FARHAN · durasi 
  0:51.4–0:53.1 Pil kuning: SUKSES dalam peperiksaan ✓
  0:53.1–0:54.8 Pil: DM kami
  0:54.8–0:56.3 End card: Hitam + kuning: wajah bulatan emas, Cikgu AlFarhan, @aster.edu_tpg, WhatsApp Cikgu AlFarhan untuk daftar / cuba kelas, asteredu11.com.my besar, WhatsApp 011-5596 9070
- SFX: 0:00.0 pop, 0:00.9 whoosh, 0:01.3 pop, 0:01.3 pop, 0:04.2 whoosh, 0:04.3 ding, 0:05.4 tick, 0:06.0 tick, 0:06.7 tick, 0:07.7 tick, 0:08.5 tick, 0:09.2 ding, 0:10.4 tick, 0:10.9 tick, 0:11.6 tick, 0:12.4 tick, 0:13.0 tick, 0:13.3 ding, 0:17.1 pop, 0:17.2 tick, 0:18.0 tick, 0:18.7 tick, 0:19.8 tick, 0:20.6 tick, 0:21.2 ding, 0:21.4 pop, 0:23.6 tick, 0:24.4 tick, 0:25.2 tick, 0:26.1 tick, 0:27.0 tick, 0:27.5 ding, 0:27.5 impact, 0:28.4 tick, 0:29.4 tick, 0:30.2 tick, 0:31.0 tick, 0:33.3 whoosh, 0:33.6 pop, 0:34.5 pop, 0:38.1 pop, 0:41.3 swoosh_down, 0:42.0 pop, 0:46.1 whoosh, 0:46.1 ding, 0:48.7 pop, 0:51.4 pop, 0:53.1 click, 0:54.8 whoosh, 0:54.8 ding
- Zoom: 0:01.0 100%, 0:04.3 skrin terbelah (bawah), 0:09.2 skrin terbelah (bawah), 0:13.3 skrin terbelah (bawah), 0:15.9 skrin terbelah (bawah), 0:21.2 skrin terbelah (bawah), 0:23.1 skrin terbelah (bawah), 0:27.5 skrin terbelah (bawah), 0:33.6 100%, 0:34.5 112% punch-in, 0:38.1 100%, 0:39.6 112% punch-in, 0:42.0 100%, 0:46.1 112% punch-in, 0:53.1 100%
+ SFX: 0:00.0 pop, 0:00.9 whoosh, 0:01.3 pop, 0:01.3 pop, 0:04.2 whoosh, 0:04.3 ding, 0:05.4 tick, 0:06.0 tick, 0:06.7 tick, 0:07.7 tick, 0:08.5 tick, 0:09.2 ding, 0:10.4 tick, 0:10.9 tick, 0:11.6 tick, 0:12.4 tick, 0:13.0 tick, 0:13.3 ding, 0:17.1 pop, 0:17.2 tick, 0:18.0 tick, 0:18.7 tick, 0:19.8 tick, 0:20.6 tick, 0:21.2 ding, 0:21.4 pop, 0:23.6 tick, 0:24.4 tick, 0:25.2 tick, 0:26.1 tick, 0:27.0 tick, 0:27.5 ding, 0:27.5 impact, 0:28.4 tick, 0:29.4 tick, 0:30.2 tick, 0:31.0 tick, 0:31.6 pop, 0:31.9 pop, 0:32.2 pop, 0:32.5 pop, 0:32.8 pop, 0:33.6 pop, 0:34.5 whoosh, 0:34.5 pop, 0:38.1 pop, 0:41.3 swoosh_down, 0:42.0 pop, 0:46.1 whoosh, 0:46.1 ding, 0:48.7 pop, 0:51.4 pop, 0:53.1 click, 0:54.8 whoosh, 0:54.8 ding
+ Zoom: 0:01.0 100%, 0:04.3 skrin terbelah (bawah), 0:09.2 skrin terbelah (bawah), 0:13.3 skrin terbelah (bawah), 0:15.9 skrin terbelah (bawah), 0:21.2 skrin terbelah (bawah), 0:23.1 skrin terbelah (bawah), 0:27.5 skrin terbelah (bawah), 0:33.6 skrin terbelah (bawah), 0:34.5 112% punch-in, 0:38.1 100%, 0:39.6 112% punch-in, 0:42.0 100%, 0:46.1 112% punch-in, 0:53.1 100%
 
 4. CTA
  Tengah video (TOFU, ±0:21): kad Follow saya @aster.edu_tpg
@@ -101,10 +102,9 @@ Aster · TOFU+BOFU → HYBRID (hitam + kuning) · spokesperson FARHAN · durasi 
  End card (HYBRID → CTA BOFU): WhatsApp Cikgu AlFarhan untuk daftar / cuba kelas · asteredu11.com.my · WhatsApp 011-5596 9070 · @aster.edu_tpg
 
 5. PERLU SEMAK
- - 'DM kami': Transkrip dengar 'Dan kami untuk keterangan lanjut'. Caption ditulis 'DM kami' (sama seperti 'DM saya' yang disahkan dalam AS-F-015). Sahkan.
- - Susun atur: skrin terbelah biasa: Footage ini berpakaian kemas, jadi saya guna gaya HYBRID biasa (papan atas, Cikgu penuh di bawah) dan bukan wajah dalam bulatan seperti Sifir 6. Beritahu jika mahu bulatan supaya siri sekata.
- - ID fail skrip berbeza: Video: AS-F-016-Trick Sifir 8.mp4; skrip: AS-F-015_Trick Sifir 8.txt (sama seperti Sifir 6). Saya guna AS-F-016 ikut nama video dan arahan. Tag skrip TOFU+BOFU → HYBRID.
- - Lower third MATH TURBO 2027 + pil Pendaftaran 2027 dibuka: Tidak disebut; ikut DNA HYBRID dan video Aster sebelum ini.
+ Tiada (semua perkara v1 diterima Farhan). Pembetulan v2:
+ - v2: lengkapkan 6 × 8 hingga 10 × 8 (komen Farhan): Label lajur kanan ditambah seperti lajur kiri; papan dikekalkan hingga 0:34.5 supaya semua 10 baris sempat dibaca.
+ - v2: disahkan Farhan: 'DM kami' ✓ · skrin terbelah (bukan bulatan) ✓ · ID AS-F-016 ✓ · lower third MATH TURBO 2027 + pil Pendaftaran 2027 dibuka ✓
 
 6. CAPTION TIKTOK + 5 HASHTAG
  Anak masih lemah sifir 8? Cuba trick ni 👇 Tulis 0 hingga 4, sebelah tu 4 hingga 8. Lepas tu gandaan 2 dari bawah (0, 2, 4, 6, 8) untuk kedua-dua lajur. Siap sifir 8! Tak semua anak mampu menghafal, jadi kami datangkan pelbagai cara untuk anak kuasai sifir. Ibu ayah jangan berputus asa, DM kami untuk keterangan lanjut.

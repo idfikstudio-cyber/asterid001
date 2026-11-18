@@ -6,10 +6,11 @@ WD=sys.argv[1];HERE=os.path.dirname(os.path.abspath(__file__));RAW=f"{WD}/../dl/
 SFXD=f"{HERE}/../sfx";MUS=f"{HERE}/../../aster/music/Aster_MuzikLatar_Ceria_100BPM.mp3"
 o=T.s2o;D=T.DUR;E0=D-T.END
 SFX=[(0.0,"pop",.6),(0.95,"whoosh",.55),(1.3,"pop",.35),(o(0.3),"pop",.35),(o(3.2),"whoosh",.5),(o(3.28),"ding",.35),(o(8.18),"ding",.35),(o(12.26),"ding",.35),
-(o(16.1),"pop",.3),(o(20.16),"ding",.35),(o(20.4),"pop",.35),(o(26.5),"ding",.45),(o(26.52),"impact",.3),(o(32.3),"whoosh",.5),(o(32.64),"pop",.4),(o(33.54),"pop",.35),
+(o(16.1),"pop",.3),(o(20.16),"ding",.35),(o(20.4),"pop",.35),(o(26.5),"ding",.45),(o(26.52),"impact",.3),(o(T.TEACH[1]),"whoosh",.5),(o(32.64),"pop",.4),(o(33.54),"pop",.35),
 (o(37.06),"pop",.35),(o(40.3),"swoosh_down",.4),(o(41.0),"pop",.35),(o(45.1),"whoosh",.45),(o(45.15),"ding",.4),(o(47.7),"pop",.35),(o(50.4),"pop",.35),(o(52.12),"click",.45),(E0,"whoosh",.45),(E0+0.08,"ding",.35)]
 for col in (T.T1,T.T2,T.U1,T.U2,T.RL[:4]):
     for (s,e),_ in col: SFX.append((o(s),"tick",.22))
+for t,_ in T.RLAB: SFX.append((o(t),"pop",.28))
 SFX.sort()
 def run(c): return subprocess.run(c,shell=True,capture_output=True,text=True)
 
