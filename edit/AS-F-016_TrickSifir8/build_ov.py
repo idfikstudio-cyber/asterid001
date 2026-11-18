@@ -45,10 +45,12 @@ def hl(grp,cols,rows,cls="rowhl"):
         y=T.row_y(r)-36
         h+=f'<div class="el {cls}" data-in="{o(s-0.05)}" data-out="{o(e+0.35)}" data-a="fade" data-fo="0.2" style="left:{bx(cols[0])}px;top:{y:.0f}px;width:{bx(cols[1])-bx(cols[0])}px"></div>\n'
     return h
+def hlbox(grp,rows):   # v3: kotak sorotan = label + jawapan lajur kiri sahaja, contoh [1 x 8 = 08]
+    return "".join(f'<div class="el rowhl" data-in="{o(s-0.05)}" data-out="{o(e+0.35)}" data-a="fade" data-fo="0.2" style="left:8px;top:{T.row_y(r)-36:.0f}px;width:{bx(405)-8}px"></div>\n' for ((s,e),_),r in zip(grp,rows))
 labels="".join(f'<div class="el lab" data-in="{o(s)}" data-out="{o(T.TEACH[1])}" data-a="slide" style="top:{T.row_y(r)-26:.0f}px">{r+1} × 8 =</div>\n' for r,((s,e),_) in enumerate(T.RL[:4]))
 labels+=f'<div class="el lab" data-in="{o(30.6)}" data-out="{o(T.TEACH[1])}" data-a="slide" style="top:{T.row_y(4)-26:.0f}px">5 × 8 =</div>\n'
 labels+="".join(f'<div class="el labr" data-in="{o(t)}" data-out="{o(T.TEACH[1])}" data-a="slide" style="top:{T.row_y(r)-24:.0f}px">← {r+6} × 8</div>\n' for t,r in T.RLAB)
-labels+="".join(f'<div class="el rowhl" data-in="{o(t)}" data-out="{o(t+0.45)}" data-a="fade" data-fo="0.2" style="left:{bx(410)}px;top:{T.row_y(r)-36:.0f}px;width:{bx(640)-bx(410)}px"></div>\n' for t,r in T.RLAB)
+labels+="".join(f'<div class="el rowhl" data-in="{o(t)}" data-out="{o(t+0.45)}" data-a="fade" data-fo="0.2" style="left:{bx(410)}px;top:{T.row_y(r)-36:.0f}px;width:{bx(605)+160-bx(410)}px"></div>\n' for t,r in T.RLAB)
 body=f"""
 <div id="thumb" class="el" data-in="0" data-out="1.0" data-a="none">
   <div class="hw" style="position:absolute;left:0;width:920px;top:300px;text-align:center">8 × 7 = <span style="color:#f2b33d">56</span></div>
@@ -62,7 +64,7 @@ body=f"""
 <div class="el step" data-in="{o(12.26)}" data-out="{o(20.1)}" data-a="slide"><b>LANGKAH 3</b>Gandaan 2 dari bawah: 0, 2, 4, 6, 8</div>
 <div class="el step" data-in="{o(20.16)}" data-out="{o(26.45)}" data-a="slide"><b>LANGKAH 4</b>Sebelah pun gandaan 2</div>
 <div class="el step" data-in="{o(26.5)}" data-out="{o(T.TEACH[1])}" data-a="slide"><b>SIAP!</b>Baca setiap baris = jawapan</div>
-{hl(T.T1,(180,300),range(5))}{hl(T.T2,(420,520),range(5))}{hl(T.U1,(300,420),[4,3,2,1,0])}{hl(T.U2,(520,640),[4,3,2,1,0])}{hl(T.RL[:4],(170,650),range(4))}
+{hl(T.T1,(180,300),range(5))}{hl(T.T2,(420,520),range(5))}{hl(T.U1,(300,420),[4,3,2,1,0])}{hl(T.U2,(520,640),[4,3,2,1,0])}{hlbox(T.RL[:4],range(4))}
 {labels}
 <div class="el" data-in="{o(16.1)}" data-out="{o(20.1)}" data-a="pop" style="left:{bx(300)-10}px;top:{T.row_y(4)+44:.0f}px"><span class="up">↑ mula dari bawah</span></div>
 <div class="el" data-in="{o(26.5)}" data-out="{o(27.3)}" data-a="pop" style="left:0;width:1080px;top:560px;text-align:center"><span class="stamp">SIFIR 8 SIAP ✓</span></div>

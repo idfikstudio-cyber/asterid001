@@ -29,7 +29,7 @@ SEG=[[0,1.0,"Thumbnail","TRICK SIFIR 8"],[1.0,o(3.28),"Pembuka","Anak masih lema
 [o(12.26),o(20.16),"Langkah 3","Gandaan 2 dari bawah"],[o(20.16),o(26.5),"Langkah 4","Sebelah gandaan 2 · CTA Follow"],[o(26.5),o(32.64),"Siap","1 × 8 … 4 × 8 dan seterusnya"],
 [o(32.64),o(45.1),"Kenapa","Mudah · banyak cara · tak semua mampu menghafal · pelbagai cara"],[o(45.1),E0,"Jualan","Pendaftaran 2027 · jangan berputus asa · MATH TURBO 2027 · DM kami"],[E0,T.DUR,"End card","CTA BOFU + asteredu11.com.my"]]
 TODO=[]
-DONE=[["v2: lengkapkan 6 × 8 hingga 10 × 8 (komen Farhan)","Label lajur kanan ditambah seperti lajur kiri; papan dikekalkan hingga 0:34.5 supaya semua 10 baris sempat dibaca.",o(30.62)],["v2: disahkan Farhan","'DM kami' ✓ · skrin terbelah (bukan bulatan) ✓ · ID AS-F-016 ✓ · lower third MATH TURBO 2027 + pil Pendaftaran 2027 dibuka ✓",o(52.12)],["Kandungan papan disemak","Jawapan 08, 16, 24, 32, 40 | 48, 56, 64, 72, 80 betul; sebutan sepadan dengan tulisan.",o(27.14)],
+DONE=[["v3: kotak sorotan setiap baris (komen Farhan)","Kotak 'N kali 8' kini merangkumi label + jawapan lajur kiri sahaja, contoh [1 × 8 = 08]; lajur kanan [48 ← 6 × 8]. Tidak lagi memanjang merentas dua lajur.",o(27.39)],["v2: lengkapkan 6 × 8 hingga 10 × 8 (komen Farhan)","Label lajur kanan ditambah seperti lajur kiri; papan dikekalkan hingga 0:34.5 supaya semua 10 baris sempat dibaca.",o(30.62)],["v2: disahkan Farhan","'DM kami' ✓ · skrin terbelah (bukan bulatan) ✓ · ID AS-F-016 ✓ · lower third MATH TURBO 2027 + pil Pendaftaran 2027 dibuka ✓",o(52.12)],["Kandungan papan disemak","Jawapan 08, 16, 24, 32, 40 | 48, 56, 64, 72, 80 betul; sebutan sepadan dengan tulisan.",o(27.14)],
 ["Papan diselaraskan dengan suara","B-roll dirakam berasingan (41 s): setiap nombor muncul dan disorot ketika disebut; label 1 × 8 = … mengikut sebutan.",o(9.68)],
 ["Durasi 56.3 s","Dalam sasaran BOFU 30–60 s. Satu take, tiada potongan (jeda tulis dikekalkan untuk rentak mengajar).",None],
 ["Thumbnail","Frame Cikgu senyum pandang kamera (0:01.5). Hook 4 + 4 perkataan dalam safe zone.",0.5],
@@ -42,7 +42,7 @@ t=open(f"{HERE}/../AS-F-015_TrickSifir6/preview_page.html").read()
 t=re.sub(r"const P=\{.*?\};\n","const P=__P__;\n",t,count=1,flags=re.S)
 R=[("<title>AS-F-015 Trick Sifir 6</title>","<title>AS-F-016 Trick Sifir 8</title>"),
 ('<h1>AS-F-015 <mark>Trick Sifir 6</mark>: final</h1>','<h1>AS-F-016 <mark>Trick Sifir 8</mark>: preview</h1>'),
-(re.search(r'<span class="status">.*?</span>\n',t).group(0),f'<span class="status"><b>Menunggu semakan</b> TOFU+BOFU → HYBRID · preview v2 · 540×960 · {T.DUR:.1f} saat · skrin terbelah</span>\n'),
+(re.search(r'<span class="status">.*?</span>\n',t).group(0),f'<span class="status"><b>Menunggu semakan</b> TOFU+BOFU → HYBRID · preview v3 · 540×960 · {T.DUR:.1f} saat · skrin terbelah</span>\n'),
 (re.search(r'aria-valuemax="[\d.]+"',t).group(0),f'aria-valuemax="{T.DUR:.2f}"'),
 (re.search(r'<p>Satu take: hanya.*?</p>',t,re.S).group(0),'<p>Satu take, tiada potongan: jeda semasa menulis dikekalkan supaya ibu sempat ikut. Video = thumbnail 1 s + isi 53.8 s + end card 1.5 s. Tag <b>TOFU+BOFU</b> → gaya <b>HYBRID hitam + kuning</b>: pembuka talking head, kemudian <b>skrin terbelah</b> (papan B-Roll Sifir 8 di atas, Cikgu di bawah) dengan LANGKAH 1–4, kemudian sebab trick ini dan jualan.</p>'),
 ('<div class="h">Malam yang tenang: ibu boleh ajar sifir 6 dalam 3 langkah</div>','<div class="h">Sifir 8 siap dalam 4 langkah, tanpa menghafal</div>'),
@@ -70,6 +70,6 @@ L+=[f" {f(c[0])} {c[2].replace('*','')}" for c in caps]
 L+=["","3. SFX, ANIMASI & B-ROLL (masa video)"]+[f" {f(m[0])}–{f(m[1])} {m[2]}: {m[3]}" for m in MG]
 L+=[" SFX: "+", ".join(f"{f(t)} {n}" for t,n in sfx)," Zoom: "+", ".join(f"{f(z['t'])} {z['m']}" for z in ZOOM)]
 L+=["","4. CTA"," Tengah video (TOFU, ±0:21): kad Follow saya @aster.edu_tpg"," Pil 'DM kami' (ikut sebutan)"," End card (HYBRID → CTA BOFU): WhatsApp Cikgu AlFarhan untuk daftar / cuba kelas · asteredu11.com.my · WhatsApp 011-5596 9070 · @aster.edu_tpg"]
-L+=["","5. PERLU SEMAK"," Tiada (semua perkara v1 diterima Farhan). Pembetulan v2:"]+[f" - {a}: {b}" for a,b,_ in DONE[:2]]
+L+=["","5. PERLU SEMAK"," Tiada (semua perkara v1 diterima Farhan). Pembetulan v2–v3:"]+[f" - {a}: {b}" for a,b,_ in DONE[:3]]
 L+=["","6. CAPTION TIKTOK + 5 HASHTAG"," "+TT,""," "+HS,""," Muzik: Aster_MuzikLatar_Ceria_100BPM (muzik rasmi Aster, tiada kredit perlu)","","Artifact preview: https://claude.ai/artifact/XVWkM7TSLYswp4sBsHnf8R"]
 open(f"{HERE}/RINGKASAN.txt","w").write("\n".join(L)+"\n")
