@@ -1,4 +1,4 @@
-"""Halaman preview + RINGKASAN AS-F-013. python3 mkpage.py <out_dir>"""
+"""Halaman preview + RINGKASAN AS-F-015. python3 mkpage.py <out_dir>"""
 import json,re,sys,os
 sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
 import timeline as T
@@ -11,7 +11,8 @@ for s,e,txt in caps:
     for w in txt.split():
         t=w.lstrip("*");fx=FIX.get(t) if t in("trick","tuisyen","DM") else None
         if t=="mampu" and 59<s<61: fx="mahu (semakan kedua: mampu)"
-        q=(t=="5" and abs(s-o(45.54))<0.3)
+        if t=="6" and abs(s-o(45.70))<0.3: fx="5 (sebutan asal; diganti 'enam' Cikgu sendiri)"
+        q=False
         ws.append({"t":t,"hl":w.startswith("*"),"fix":fx,"q":q})
     C.append({"s":s,"e":e,"w":ws})
 sfx=[[x["t"],x["name"]] for x in json.load(open(f"{HERE}/sfx.json"))]
@@ -35,15 +36,11 @@ SEG=[[0,1.0,"Thumbnail","TRICK SIFIR 6"],[1.0,o(11.6),"Pembuka","12 tengah malam
 [o(11.6),o(22.02),"Papan sedia","Sifir 6 ditulis 1–10, ada tambah dan sama dengan"],[o(22.02),o(30.0),"Langkah 1","Tulis 1 → 10"],
 [o(30.0),o(42.52),"Langkah 2","Gandaan 5: 5 → 50 · CTA Follow"],[o(42.52),o(55.04),"Langkah 3","Tambah = jawapan · Selesai sifir 6"],
 [o(55.04),o(68.1),"Kenapa","Kena faham · tak semua anak mampu hafal · trick lain"],[o(68.1),E0,"Jualan","Pendaftaran 2027 · MATH TURBO 2027 · subjek teras · DM · jadual kelas"],[E0,T.DUR,"End card","CTA BOFU + asteredu11.com.my"]]
-TODO=[["6 × 1 = 1 + 5 = 5 (sepatutnya 6)","Cikgu SEBUT '1 tambah 5, 5' (disahkan dengan dua transkrip) dan papan B-roll juga TULIS '= 5' di baris pertama. 1 + 5 = 6. Caption & papan dibiarkan seperti asal kerana saya tidak boleh ubah fakta sendiri. Pilihan: (a) kekal; (b) saya tampal '6' pada papan + caption '6' dan buang sebutan '5' kedua (0.3 s, '1 tambah 5... 12'); (c) rakam semula bahagian ini. Sila pilih.",o(45.54)],
-["'boleh DM saya'","Transkrip: 'boleh jadi M saya'. Caption ditulis 'boleh DM saya' (perkataan 'jadi' tidak dipapar). Sahkan.",o(71.94)],
-["'Tapi tak semua anak mampu hafal'","Transkrip pertama: 'tak semua anak mahu. Mereka pun hafal'; semakan kedua (klip pendek): 'tak semua anak mampu hafal'. Caption guna semakan kedua.",o(58.68)],
-["Ejaan 'trick'","Ikut tajuk skrip ('Trick Sifir 6'). Cikgu sebut 'trik'. Beritahu jika mahu ejaan Melayu 'trik'.",o(5.62)],
-["B-roll papan 43 s (melebihi had 3 s)","Ikut arahan Farhan: B-Roll Sifir 6 untuk konten ini + wajah dalam bulatan sahaja. B-roll dirakam berasingan (78 s), jadi tulisan dipercepat/ditahan supaya setiap nombor muncul tepat bila disebut. 1 frame rosak (papan kosong sekejap) dalam rakaman asal ditapis.",o(23.32)],
-["Lower third MATH TURBO 2027 + pil Pendaftaran 2027 dibuka","Tidak disebut; ikut DNA HYBRID (bila beralih ke jualan) dan AS-F-012 yang diluluskan.",o(68.1)],
-["Durasi 77.4 s","Melebihi sasaran BOFU 30–60 s. Isi tidak dipotong (hanya 'Prosesnya adalah,' yang tersilap mula dibuang).",None],
-["ID fail skrip berbeza","Video: AS-F-013_Trick Sifir 6.mp4; skrip: AS-F-015_Trick Sifir 6.txt. Saya guna AS-F-013 ikut arahan. Tag skrip 'TOFU+BOFU' → HYBRID.",None]]
-DONE=[["Wajah dalam bulatan sahaja + dicerahkan","Tiada talking head penuh. Wajah dipotong mengikut kedudukan muka (dijejak), midtone diangkat, kontras ringan, lampu muka lembut, sedikit licin (kusam berkurang); hue kulit tidak dianjak.",2.0],
+TODO=[]
+DONE=[["v2: 6 × 1 = 1 + 5 = 6 (pilihan B Farhan)","Sebutan 'lima' kedua (sumber 0:45.70–46.16) diganti dengan suara Cikgu sendiri menyebut 'enam' dari kiraan 1–10 (sumber 0:27.08–27.50); aras suara dipadankan, panjang kekal. Papan: '5' dipadam dan diganti '6' tulisan tangan Cikgu (digit 6 dari '36', baris 6 × 6), muncul seperti ditulis. Caption '6'. Disahkan transkrip: '1 tambah 5, 6, 12, 18'.",o(45.70)],
+["v2: disahkan Farhan","'boleh DM saya' ✓ · 'tak semua anak mampu hafal' ✓ · ejaan 'trick' ✓ · durasi 77.4 s + B-roll papan ±43 s dikekalkan kerana video mengajar ✓ · ID ditukar kepada AS-F-015 (ikut skrip) ✓",o(71.94)],
+["Lower third MATH TURBO 2027 + pil Pendaftaran 2027 dibuka","Ikut DNA HYBRID (bila beralih ke jualan) dan AS-F-012 yang diluluskan.",o(68.1)],
+["Wajah dalam bulatan sahaja + dicerahkan","Tiada talking head penuh. Wajah dipotong mengikut kedudukan muka (dijejak), midtone diangkat, kontras ringan, lampu muka lembut, sedikit licin (kusam berkurang); hue kulit tidak dianjak.",2.0],
 ["Gaya HYBRID hitam + kuning","Ikut rujukan TOFU+BOFU_Sifir9: papan + LANGKAH 1/2/3, CTA Follow tengah video, lower third + pil Pendaftaran 2027 dibuka, end card CTA BOFU.",o(22.05)],
 ["Papan diselaraskan dengan suara","Setiap nombor (1–10, 5–50, jawapan) muncul dan disorot tepat ketika disebut.",o(34.18)],
 ["Potongan","Footage satu take: buang tersilap mula 'Prosesnya adalah,' + senyap 0.24 s. Disemak semula dengan transkrip: 'Prosesnya macam mana? Prosesnya kita tulis saja…'",o(20.66)],
@@ -77,9 +74,9 @@ GA="""<div class="pane" id="p-ga" role="tabpanel" hidden>
       """
 t=t[:a]+GA+t[b:]
 ED_OLD=re.search(r'<p>Footage satu take.*?</p>',t,re.S).group(0)
-R=[("<title>AS-F-012 Darjah 6 ke T1</title>","<title>AS-F-013 Trick Sifir 6</title>"),
-('<h1>AS-F-012 <mark>Darjah 6 ke Tingkatan 1</mark>: final</h1>','<h1>AS-F-013 <mark>Trick Sifir 6</mark>: preview</h1>'),
-(re.search(r'<span class="status">.*?</span>\n',t).group(0),f'<span class="status"><b>Menunggu semakan</b> TOFU+BOFU → HYBRID · preview v1 · 540×960 · {T.DUR:.1f} saat · wajah dalam bulatan</span>\n'),
+R=[("<title>AS-F-012 Darjah 6 ke T1</title>","<title>AS-F-015 Trick Sifir 6</title>"),
+('<h1>AS-F-012 <mark>Darjah 6 ke Tingkatan 1</mark>: final</h1>','<h1>AS-F-015 <mark>Trick Sifir 6</mark>: preview</h1>'),
+(re.search(r'<span class="status">.*?</span>\n',t).group(0),f'<span class="status"><b>Menunggu kelulusan final</b> TOFU+BOFU → HYBRID · preview v2 · 540×960 · {T.DUR:.1f} saat · wajah dalam bulatan</span>\n'),
 ('aria-valuemax="24.58"',f'aria-valuemax="{T.DUR:.2f}"'),
 (ED_OLD,'<p>Satu take: hanya tersilap mula "Prosesnya adalah," dan senyap 0.24 s dibuang. Video = thumbnail 1 s + isi 74.9 s + end card 1.5 s. Atas arahan Farhan, wajah dipapar <b>dalam bulatan emas sahaja</b> dan dicerahkan. Tag <b>TOFU+BOFU</b> → gaya <b>HYBRID hitam + kuning</b>: pembuka (bulatan besar), papan B-Roll Sifir 6 dengan LANGKAH 1–3 (bulatan kecil di bawah), sebab trick ini, kemudian jualan.</p>'),
 ('<div class="h">Jangan tunggu Tingkatan 1: kukuhkan asas sekarang</div>','<div class="h">Malam yang tenang: ibu boleh ajar sifir 6 dalam 3 langkah</div>'),
@@ -94,12 +91,12 @@ open(f"{OUT}/index.html","w").write(t)
 json.dump(P,open(f"{HERE}/pagedata.json","w"),ensure_ascii=False)
 # ---- RINGKASAN ----
 f=lambda x:f"{int(x//60)}:{x%60:04.1f}"
-L=[f"AS-F-013_Trick Sifir 6 — RINGKASAN PREVIEW",f"Aster · TOFU+BOFU → HYBRID (hitam + kuning) · spokesperson FARHAN · durasi {T.DUR:.1f} s · preview 540x960 · wajah dalam bulatan sahaja (arahan Farhan)","",
-"1. TEKS HOOK / THUMBNAIL"," TRICK SIFIR 6 / UNTUK IBU AJAR ANAK + tulisan '6 × 7 = 7 + 35 = 42'",f" Wajah dalam bulatan emas (sumber 1:{T.THUMB_SRC-60:04.1f}). Fail: AS-F-013_Trick Sifir 6_THUMB.png","","2. CAPTION PENUH (burn-in, ikut sebutan)"]
+L=[f"AS-F-015_Trick Sifir 6 — RINGKASAN PREVIEW",f"Aster · TOFU+BOFU → HYBRID (hitam + kuning) · spokesperson FARHAN · durasi {T.DUR:.1f} s · preview 540x960 · wajah dalam bulatan sahaja (arahan Farhan)","",
+"1. TEKS HOOK / THUMBNAIL"," TRICK SIFIR 6 / UNTUK IBU AJAR ANAK + tulisan '6 × 7 = 7 + 35 = 42'",f" Wajah dalam bulatan emas (sumber 1:{T.THUMB_SRC-60:04.1f}). Fail: AS-F-015_Trick Sifir 6_THUMB.png","","2. CAPTION PENUH (burn-in, ikut sebutan)"]
 L+=[f" {f(c[0])} {c[2].replace('*','')}" for c in caps]
 L+=["","3. SFX, ANIMASI & B-ROLL (masa video)"]+[f" {f(m[0])}–{f(m[1])} {m[2]}: {m[3]}" for m in MG]
 L+=[" SFX: "+", ".join(f"{f(t)} {n}" for t,n in sfx)," Zoom (dalam bulatan): "+", ".join(f"{f(z['t'])} {z['m']}" for z in ZOOM)]
 L+=["","4. CTA"," Tengah video (TOFU, ±0:30): kad Follow saya @aster.edu_tpg"," Pil 'DM saya' (ikut sebutan) + 'Jadual kelas'"," End card (HYBRID → CTA BOFU): WhatsApp Cikgu AlFarhan untuk daftar / cuba kelas · asteredu11.com.my · WhatsApp 011-5596 9070 · @aster.edu_tpg"]
-L+=["","5. PERLU SEMAK"]+[f" - {a}: {b}" for a,b,_ in TODO]
+L+=["","5. PERLU SEMAK"," Tiada (semua perkara v1 diputuskan Farhan). Pembetulan v2:"]+[f" - {a}: {b}" for a,b,_ in DONE[:2]]
 L+=["","6. CAPTION TIKTOK + 5 HASHTAG"," "+TT,""," "+HS,""," Muzik: Aster_MuzikLatar_Ceria_100BPM (muzik rasmi Aster, tiada kredit perlu)"]
 open(f"{HERE}/RINGKASAN.txt","w").write("\n".join(L)+"\n")

@@ -1,4 +1,4 @@
-"""Jana overlay.html AS-F-013 (gaya HYBRID hitam+kuning; CSS/JS asas dari AS-F-012)."""
+"""Jana overlay.html AS-F-015 (gaya HYBRID hitam+kuning; CSS/JS asas dari AS-F-012)."""
 import re,json,os,sys
 sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
 import timeline as T
@@ -18,6 +18,11 @@ W=[w for w in W if w[0]!="mah"]
 # 58.68-60.48: semakan kedua -> "Tapi tak semua anak mampu hafal."
 W=[w for w in W if not (58.6<w[1]<60.5)]+[["Tapi",58.68,58.88],["tak",58.88,59.14],["semua",59.14,59.36],["anak",59.36,59.70],["mampu",59.70,60.2],["hafal.",60.2,60.48]]
 W=[w for w in W if not (w[0]=="jadi" and 72<w[1]<72.5)]
+# v2: "lima" kedua diganti "enam" (audio ditampal, diluluskan Farhan) + masa sebenar
+for w in W:
+    if w[0]=="5," and 45.5<w[1]<45.6: w[0],w[1],w[2]="6,",45.70,46.12
+    elif w[0]=="12," and 45.9<w[1]<46.1: w[1],w[2]="46.17",46.55
+W=[[a,float(b),c] for a,b,c in W]
 FIX={"M":"DM","tuition":"tuisyen","trik":"trick","ibu":"ibu","-ibu":"-ibu"}
 W.sort(key=lambda w:w[1])
 # gabung "-anak" / "-ibu" / "-soalan" / "-jadual" ke perkataan sebelum

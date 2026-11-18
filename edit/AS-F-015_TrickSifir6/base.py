@@ -1,4 +1,4 @@
-"""Lapisan asas AS-F-013: latar hitam+kuning, papan B-roll (diselaras dgn suara), wajah dalam bulatan emas (dicerahkan).
+"""Lapisan asas AS-F-015: latar hitam+kuning, papan B-roll (diselaras dgn suara), wajah dalam bulatan emas (dicerahkan).
 python3 base.py <W> <out.mp4>"""
 import sys,os,subprocess,cv2,numpy as np
 sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
@@ -25,6 +25,22 @@ class Seq:
         return s_.f
 raw=Seq(RAW);br=Seq(BR)
 BR_BAD={65}
+# digit "6" tulisan Cikgu (dari "36") untuk ganti "5" di 6x1
+_c=cv2.VideoCapture(BR);_c.set(cv2.CAP_PROP_POS_FRAMES,int(T.BOARD6["src_t"]*30));_ok,_bf=_c.read();_c.release()
+_x0,_y0,_x1,_y1=T.BOARD6["src"];_six=_bf[_y0-4:_y1+4,_x0-4:_x1+4].astype(np.float32)
+_six=cv2.resize(_six,None,fx=T.BOARD6["scale"],fy=T.BOARD6["scale"],interpolation=cv2.INTER_CUBIC)
+_sa=np.clip((_six.max(2,keepdims=True)-25)/120,0,1)
+def blueish(f):
+    hh=cv2.cvtColor(f,cv2.COLOR_BGR2HSV);return (hh[...,0]>95)&(hh[...,0]<135)&(hh[...,1]>60)&(hh[...,2]>50)
+def fix6(f,bt):
+    if bt<T.BOARD6["t0"]:return f
+    f=f.copy();ex0,ey0,ex1,ey1=T.BOARD6["erase"];reg=f[ey0:ey1,ex0:ex1]
+    m=cv2.dilate(blueish(reg).astype(np.uint8),np.ones((5,5),np.uint8))>0;reg[m]=0
+    k=min(1.0,(bt-T.BOARD6["t0"])/(T.BOARD6["t1"]-T.BOARD6["t0"]))
+    h,w=_six.shape[:2];cx,cy=T.BOARD6["dst_c"];px,py=int(cx-w/2),int(cy-h/2)
+    a=_sa.copy();a[int(h*k):]=0                                   # muncul dari atas ke bawah seperti ditulis
+    f[py:py+h,px:px+w]=(f[py:py+h,px:px+w]*(1-a)+_six*a).astype(np.uint8)
+    return f
 ff=subprocess.Popen(["ffmpeg","-v","error","-y","-f","rawvideo","-pix_fmt","bgr24","-s",f"{W}x{H}","-r","30","-i","-","-c:v","libx264","-crf","14","-preset","fast","-pix_fmt","yuv420p",OUT],stdin=subprocess.PIPE)
 N=int(round(T.DUR*30)) if len(sys.argv)<4 else int(sys.argv[3])
 thumb=None
@@ -41,7 +57,7 @@ for n in range(N):
         if p>0.001:
             bi=int(round(T.board(src)*30))
             if bi in BR_BAD: bi-=1                      # frame rosak (papan kosong sekejap) dalam rakaman skrin asal
-            bf=br.get(bi)
+            bf=fix6(br.get(bi),bi/30)
             pan=cv2.resize(bf[by:by+bh,bx:bx+bw],(PW,PH),interpolation=cv2.INTER_AREA).astype(np.float32)
             reg=im[PY:PY+PH,PX:PX+PW]
             im[PY:PY+PH,PX:PX+PW]=reg*(1-p)+pan*p

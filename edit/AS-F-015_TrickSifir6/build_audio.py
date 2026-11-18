@@ -1,4 +1,4 @@
-"""Audio AS-F-013: suara (EDL) dijernihkan -> -14 LUFS, muzik rasmi Aster + SFX. python3 build_audio.py <work_dir>"""
+"""Audio AS-F-015: suara (EDL) dijernihkan -> -14 LUFS, muzik rasmi Aster + SFX. python3 build_audio.py <work_dir>"""
 import subprocess,json,re,sys,os
 sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
 import timeline as T
@@ -13,6 +13,21 @@ for col in (T.NW,T.KW,T.RW):
     for s,e in col: SFX.append((o(s),"tick",.22))
 SFX.sort()
 def run(c): return subprocess.run(c,shell=True,capture_output=True,text=True)
+# --- tampal "enam" (Cikgu sendiri) ganti "lima" kedua; panjang dikekalkan supaya semua masa sama ---
+import numpy as np,wave
+run(f"ffmpeg -v error -y -i {RAW} -ac 1 -ar 48000 -c:a pcm_s16le {WD}/src48.wav")
+w=wave.open(f"{WD}/src48.wav");a=np.frombuffer(w.readframes(w.getnframes()),np.int16).astype(np.float32);w.close()
+R=48000;(d0,d1),(s0,s1)=T.AUDIO_PATCH["dst"],T.AUDIO_PATCH["src"]
+clip=a[int(s0*R):int(s1*R)].copy();dst=a[int(d0*R):int(d1*R)]
+g=np.sqrt((dst**2).mean())/np.sqrt((clip**2).mean());clip*=min(max(g,0.7),1.4)
+n=int(0.012*R);rmp=np.linspace(0,1,n)
+seg=np.zeros(len(dst),np.float32);seg[:len(clip)]=clip
+seg[:n]=seg[:n]*rmp+dst[:n]*(1-rmp)                    # silang-pudar di awal
+tail=len(clip);seg[tail-n:tail]*=rmp[::-1]
+seg[tail-n:]+=dst[tail-n:]*np.concatenate([rmp,np.ones(len(dst)-tail)])*0.0+0
+b=a.copy();b[int(d0*R):int(d0*R)+len(dst)]=seg
+w=wave.open(f"{WD}/src_patched.wav","w");w.setnchannels(1);w.setsampwidth(2);w.setframerate(R);w.writeframes(np.clip(b,-32768,32767).astype(np.int16).tobytes());w.close()
+RAW=f"{WD}/src_patched.wav"
 parts=[f"[0:a]atrim={a}:{b},asetpts=PTS-STARTPTS,afade=t=in:d=0.015,afade=t=out:st={b-a-0.02:.3f}:d=0.02[v{i}]" for i,(a,b) in enumerate(T.EDL)]
 cat=";".join(parts)+";"+"".join(f"[v{i}]" for i in range(len(T.EDL)))+f"concat=n={len(T.EDL)}:v=0:a=1[c]"
 pre="highpass=f=80,afftdn=nr=10:nf=-45:tn=1,acompressor=threshold=-20dB:ratio=2.5:attack=8:release=120:makeup=2,equalizer=f=3500:t=q:w=1:g=1.5"
