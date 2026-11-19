@@ -1,0 +1,583 @@
+{
+ "title": "YM-F-015 Storyboard Template Migration",
+ "eyebrow": "Yuran.my · TOFU + Tutorial · Evergreen · Draf storyboard v1",
+ "h1": "Cara Isi Data didalam Template Migration",
+ "pills": [
+  "Menunggu kelulusan storyboard",
+  "Raw 3:19 ucapan",
+  "Anggaran siap ±3:21"
+ ],
+ "tutlabel": "Skrin Google Sheet (zoom & highlight)",
+ "axis": [
+  "0:00",
+  "0:35",
+  "1:35",
+  "2:07",
+  "2:54",
+  "3:19"
+ ],
+ "scenes": [
+  {
+   "img": "a0_thumb",
+   "label": "Thumbnail",
+   "kind": "brand",
+   "title": "Cover 1 saat",
+   "say": "—",
+   "vis": "Frame Farhan (0:02) + tajuk sama dengan nama fail video: “CARA ISI DATA DIDALAM TEMPLATE MIGRATION”, pil TUTORIAL.",
+   "anim": "Statik. Tiada logo.",
+   "src": "Raw 0:02",
+   "time": "0:00 · 1.0 s",
+   "w": 2
+  },
+  {
+   "img": "a1_intro",
+   "label": "Intro",
+   "kind": "talk",
+   "title": "Isi data dalam template migration",
+   "say": "“Cara nak isi data di dalam template migration yang telah kami sediakan … macam mana nak isi data-data institusi kita …”",
+   "vis": "Talking head, punch-in. Label “Farhan · Yuran.my” ±3 s.",
+   "anim": "—",
+   "src": "Raw",
+   "s": 0,
+   "e": 10.3
+  },
+  {
+   "img": "a2_three",
+   "label": "3 bahagian",
+   "kind": "talk",
+   "title": "Tiga bahagian utama",
+   "say": "“Template ini ada tiga bahagian utama … program, student dan staff.”",
+   "vis": "Kad 1 Programs, 2 Students, 3 Staffs muncul ikut sebutan.",
+   "anim": "Tick lembut setiap kad.",
+   "src": "Grafik",
+   "s": 10.3,
+   "e": 18.2
+  },
+  {
+   "img": "b1_groups",
+   "label": "Tab Programs",
+   "kind": "tutorial",
+   "title": "Tab Programs: 4 perkara wajib",
+   "say": "“Untuk bahagian tab program … Terdapat empat perkara yang perlu kita isi … program, kategori, modul dan class. Jadi kita pergi satu per satu.”",
+   "vis": "Skrin biru, tajuk “Tab Programs”, kad tangkapan skrin Google Sheet. Mula dengan paparan penuh, kemudian kamera bergerak ke setiap kumpulan ikut sebutan: Program Details, Category Details, Module Details, Class Details. Farhan dalam bulatan atas kanan.",
+   "anim": "Kotak biru berdenyut pada setiap kumpulan (28.1 / 29.9 / 31.4 / 32.9 s). Klik lembut.",
+   "src": "Google Sheet templat (tangkapan skrin sebenar)",
+   "s": 18.3,
+   "e": 35.4,
+   "short": "Tab P"
+  },
+  {
+   "img": "b2_program",
+   "label": "1 Program",
+   "kind": "tutorial",
+   "title": "Kod program + nama program",
+   "say": "“Untuk bahagian program, kita perlukan dua sahaja yang wajib iaitu kod program dan nama program … AR1 dan … Bahasa Arab. Setiap program ada kod-kod yang tersendiri. Jangan campur-campurkan.”",
+   "vis": "Zoom ke lajur A–B. Highlight “Program Code *” dan “Program (Negeri) *” bersama contoh AR1 / Bahasa Arab. Kad nota “AR1 → Bahasa Arab”, kemudian “Setiap program ada kod tersendiri”.",
+   "anim": "Highlight ikut sebutan: kod (38.9 s), nama (40.0 s), contoh (41.9 s).",
+   "src": "Google Sheet templat (tangkapan skrin sebenar)",
+   "s": 35.5,
+   "e": 50.6,
+   "short": "Prog"
+  },
+  {
+   "img": "b3_kategori",
+   "label": "2 Kategori",
+   "kind": "tutorial",
+   "title": "Kod kategori + nama kategori",
+   "say": "“Untuk bahagian kategori pula … kod kategori dan nama kategori … pagi dan nama kategori adalah sesi pagi.”",
+   "vis": "Kamera pan ke lajur G–H. Highlight Category Code / Category (Daerah) + contoh PAGI / Sesi Pagi.",
+   "anim": "Pan lancar 0.6 s; highlight ikut sebutan.",
+   "src": "Google Sheet templat (tangkapan skrin sebenar)",
+   "s": 50.7,
+   "e": 61.8,
+   "short": "Kat"
+  },
+  {
+   "img": "b4_modul",
+   "label": "3 Modul",
+   "kind": "tutorial",
+   "title": "Kod modul + nama modul",
+   "say": "“Untuk bahagian modul juga sama … kod modul dan nama modul … L1 merujuk kepada … level 1.”",
+   "vis": "Pan ke lajur I–J. Highlight Module Code / Module + contoh L1 / Level 1.",
+   "anim": "Highlight ikut sebutan.",
+   "src": "Google Sheet templat (tangkapan skrin sebenar)",
+   "s": 61.8,
+   "e": 74.4,
+   "short": "Mod"
+  },
+  {
+   "img": "b5_class",
+   "label": "4 Class",
+   "kind": "tutorial",
+   "title": "Kod class + nama class",
+   "say": "“Untuk bahagian class … kod class dan nama class … AR1A dan nama class tersebut adalah kelas 1A.”",
+   "vis": "Pan ke lajur K–L. Highlight Class Code / Class (Subjek) + contoh AR1A / Kelas 1A.",
+   "anim": "Highlight ikut sebutan.",
+   "src": "Google Sheet templat (tangkapan skrin sebenar)",
+   "s": 74.5,
+   "e": 86.3,
+   "short": "Cls"
+  },
+  {
+   "img": "b6_konsisten",
+   "label": "Konsisten",
+   "kind": "talk",
+   "title": "Kod mesti konsisten",
+   "say": "“Kod-kod ni pastikan konsisten … kod-kod ni adalah yang akan menghubungkan dengan nama-nama student yang kita masuk.”",
+   "vis": "Farhan penuh. Empat kad kod (AR1 · Program, PAGI · Kategori, L1 · Modul, AR1A · Class) + pil biru “Kod mesti konsisten”.",
+   "anim": "Pop lembut.",
+   "src": "Grafik",
+   "s": 86.4,
+   "e": 95.0
+  },
+  {
+   "img": "b7_fees",
+   "label": "Class Fees",
+   "kind": "tutorial",
+   "title": "Class Fees (RM)",
+   "say": "“Seterusnya, bahagian column fee … fee pendaftaran, material fee. Apa-apa sahaja yuran yang kita nak kenakan boleh kita letak di bahagian column yang ini.”",
+   "vis": "Zoom ke lajur yuran kuning. Highlight Registration Fee (RM50), Material Fee (RM25), Course Fee (RM100), kemudian sapu ke lajur (Extra Fee).",
+   "anim": "Highlight ikut sebutan.",
+   "src": "Google Sheet templat (tangkapan skrin sebenar)",
+   "s": 95.1,
+   "e": 108.5,
+   "short": "Fee"
+  },
+  {
+   "img": "b8_trainer",
+   "label": "Trainer",
+   "kind": "tutorial",
+   "title": "Trainer & Assistant: pilihan",
+   "say": "“Kalau bahagian trainer details dan class assistant details, tak ada pun tak apa. Tapi kalau ada, bonus.”",
+   "vis": "Pan ke lajur W–AD. Highlight Trainer Details dan Class Assistant Details. Kad “Kalau ada, bonus”.",
+   "anim": "—",
+   "src": "Google Sheet templat (tangkapan skrin sebenar)",
+   "s": 108.6,
+   "e": 114.7,
+   "short": "Trn"
+  },
+  {
+   "img": "c1_tab_students",
+   "label": "Ke Students",
+   "kind": "tutorial",
+   "title": "Klik tab Students",
+   "say": "“Selesai bahagian program. Kita pergi bahagian tab yang kedua … student.”",
+   "vis": "Kamera turun ke bar tab di bawah sheet; bulatan klik pada tab “Students”, sheet bertukar.",
+   "anim": "Klik + swoosh lembut.",
+   "src": "Google Sheet templat (tangkapan skrin sebenar)",
+   "s": 114.7,
+   "e": 118.5,
+   "short": "→S"
+  },
+  {
+   "img": "c2_students",
+   "label": "Students",
+   "kind": "tutorial",
+   "title": "Nama pelajar + Class Code",
+   "say": "“Yang pertama, nama student. Dan student tu nak masuk kelas mana? Kita linkkan balik dengan kod class tadi.”",
+   "vis": "Zoom ke lajur A–B tab Students. Highlight Name * (biru) dan Class Code (oren).",
+   "anim": "Highlight ikut sebutan.",
+   "src": "Google Sheet templat (tangkapan skrin sebenar)",
+   "s": 118.6,
+   "e": 126.6,
+   "short": "Stu"
+  },
+  {
+   "img": "c3_warning",
+   "label": "⚠ Class Code",
+   "kind": "tutorial",
+   "title": "Peringatan: Class Code mesti sama",
+   "say": "“Pastikan nama kod class untuk pelajar tersebut sama dengan di bahagian program tadi, bahagian column kelas.”",
+   "vis": "Dua panel: Class Code AR1A di tab Programs (atas) dan Class Code AR1A di tab Students (bawah), dihubungkan dengan tanda “=”. Kad amaran oren: “Kod class mesti sama — Class Code di tab Students mesti sama dengan kod di tab Programs.”",
+   "anim": "Kotak oren berdenyut; ding lembut pada “sama”.",
+   "src": "Google Sheet templat (tangkapan skrin sebenar) + kad amaran (permintaan Farhan)",
+   "s": 126.7,
+   "e": 132.4,
+   "short": "!"
+  },
+  {
+   "img": "c4_parents",
+   "label": "Ibu bapa",
+   "kind": "tutorial",
+   "title": "Maklumat ibu bapa",
+   "say": "“Benda yang penting untuk parents adalah nama, nombor telefon dan email … kalau tak ada email pun tak apa. Nanti kita masukkan email dummy … hanya satu sahaja … sudah memadai … mak, ayah, atuk, nenek pun … boleh masukkan juga.”",
+   "vis": "Pan ke lajur M–R. Highlight Father Name, Father HP No, Father Email ikut sebutan. Kad nota: “Tiada email? Kami masukkan email dummy”, kemudian “Satu penjaga sudah memadai”. Contoh nombor telefon dalam templat sudah bertopeng (6019XXX8585).",
+   "anim": "Highlight ikut sebutan.",
+   "src": "Google Sheet templat (tangkapan skrin sebenar)",
+   "s": 132.5,
+   "e": 153.4,
+   "short": "Ibu"
+  },
+  {
+   "img": "d0_tab_staffs",
+   "label": "Ke Staffs",
+   "kind": "tutorial",
+   "title": "Klik tab Staffs",
+   "say": "“Selesai bahagian student, kita pergi bahagian staff pula. Nak selesai dah ni.”",
+   "vis": "Bar tab; bulatan klik pada tab “Staffs”.",
+   "anim": "Klik + swoosh lembut.",
+   "src": "Google Sheet templat (tangkapan skrin sebenar)",
+   "s": 153.5,
+   "e": 157.1,
+   "short": "→T"
+  },
+  {
+   "img": "d1_noshare",
+   "label": "Akses staff",
+   "kind": "talk",
+   "title": "Jangan kongsi ID",
+   "say": "“Kita masukkan staff yang boleh access sistem ni … Kita tak galakkan institusi untuk kongsi ID. Sebabnya Yuran.my ada sediakan activity log untuk setiap ID …”",
+   "vis": "Farhan penuh. Kad “Jangan kongsi ID” (162.6 s) dan “Activity log untuk setiap ID” (165.4 s).",
+   "anim": "Pop lembut.",
+   "src": "Grafik",
+   "s": 157.2,
+   "e": 173.6
+  },
+  {
+   "img": "d2_staffs",
+   "label": "Staffs",
+   "kind": "tutorial",
+   "title": "Nama, telefon, email, level",
+   "say": "“Untuk bahagian staff ni, yang penting adalah nama, nombor telefon, email dan level staff tersebut. Sama ada admin, supervisor, clerk, class assistant ataupun class admin.”",
+   "vis": "Zoom ke lajur A–E tab Staffs. Highlight Name, Handphone No, Email, Roles (oren). Senarai level muncul satu-satu ikut sebutan.",
+   "anim": "Tick setiap level.",
+   "src": "Google Sheet templat (tangkapan skrin sebenar)",
+   "s": 173.7,
+   "e": 187.3,
+   "short": "Stf"
+  },
+  {
+   "img": "d3_ready",
+   "label": "Penutup",
+   "kind": "talk",
+   "title": "Data sedia untuk migrasi",
+   "say": "“Bila dah selesai tiga-tiga ni, data dah ready untuk migratekan ke dalam sistem Yuran.my … maklumkan dengan kami, kita akan bantu. Terima kasih …”",
+   "vis": "Farhan penuh. Pil biru “Data sedia untuk migrasi”.",
+   "anim": "Ding lembut.",
+   "src": "Grafik",
+   "s": 187.4,
+   "e": 198.5
+  },
+  {
+   "img": "e_end",
+   "label": "End card",
+   "kind": "brand",
+   "title": "Penutup 1.5 s",
+   "say": "—",
+   "vis": "Logo putih atas biru, “Cara MUDAH Urus Yuran”, CTA TOFU, hello@yuran.my.",
+   "anim": "Muzik fade out.",
+   "src": "BRAND/Logo Yuran White.png",
+   "time": "akhir · 1.5 s",
+   "w": 2
+  }
+ ],
+ "ask": [
+  [
+   "Rakaman skrin",
+   "Tiada rakaman skrin dalam folder. Saya buka pautan Google Sheet Farhan dalam pelayar dan ambil tangkapan skrin resolusi tinggi bagi ketiga-tiga tab. Video kemudian zoom dan pan ke setiap lajur ikut sebutan, dengan kesan seperti rakaman skrin yang tersusun. Bar tajuk dan avatar penonton dipotong. Setuju?"
+  ],
+  [
+   "Nama fail “IQMA”",
+   "Fail bernama “Copy of IQMA Data Migration Template”. Jika IQMA nama pelanggan sebenar, ia tidak akan kelihatan dalam video (bar tajuk dipotong). Data contoh dalam templat (AR1, Bahasa Arab, Farhan, Halit, Ali bin Abu, nombor bertopeng XXX) dikekalkan. Sahkan semua data contoh."
+  ],
+  [
+   "Peringatan Class Code",
+   "Kad amaran oren pada 2:07–2:13: “Kod class mesti sama: Class Code di tab Students mesti sama dengan kod di tab Programs”, dengan dua panel AR1A = AR1A."
+  ],
+  [
+   "Istilah caption",
+   "Farhan sebut “kolam” (column) dan “klub” (clerk). Caption tulis “column” dan “clerk”. Setuju?"
+  ],
+  [
+   "Ayat 3:12",
+   "Transkrip: “Garip, kalau masih ada bela-bela lagi, maklumkan dengan kami”. Apa sebutan sebenar? (Mungkin “Get it?” dan “yang belum jelas lagi”.)"
+  ],
+  [
+   "Durasi",
+   "±3:21, melebihi TOFU 20–45 s. Dikekalkan penuh sebagai tutorial (sama seperti YM-F-013/014)."
+  ],
+  [
+   "ID",
+   "Cadangan YM-F-015."
+  ],
+  [
+   "CTA",
+   "Skrip TOFU + Tutorial: end card CTA TOFU “Follow untuk tips urus yuran sekolah”."
+  ]
+ ],
+ "mus_title": "Muzik: instrumental cozy (versi 3)",
+ "mus_note": "Sampel 40 s, dijana sendiri: keluarga bunyi sama, melodi baharu, 80 BPM. Bebas hak cipta. Dalam video: −27 dB dengan ducking.",
+ "style": [
+  [
+   "Skrin Google Sheet",
+   "Tangkapan skrin sebenar dalam kad bulat atas latar biru. Saiz kad ikut kawasan yang di-zoom supaya teks besar dan jelas di telefon. Kamera pan lancar antara lajur ikut sebutan."
+  ],
+  [
+   "Highlight",
+   "Kotak biru #29ABE2 berdenyut pada tajuk lajur + sel contoh; label pil di bawah sel supaya tidak menutup contoh. Oren untuk perkara amaran (Class Code, level staff)."
+  ],
+  [
+   "Fokus",
+   "Matlamat bukan mengajar Excel: hanya lajur wajib (*) yang dihighlight, contoh nilai ditunjuk, lajur lain dibiarkan."
+  ],
+  [
+   "Kad nota",
+   "Kad putih ringkas di bawah sheet, guna ayat Farhan sendiri (contoh: “Kalau ada, bonus”)."
+  ],
+  [
+   "Farhan",
+   "Bulatan atas kanan sebaris dengan tajuk skrin (seperti YM-F-014). Babak talking head penuh di intro, konsisten, akses staff dan penutup."
+  ],
+  [
+   "Caption",
+   "1–4 perkataan, highlight biru: program, kategori, modul, class, kod, student, staff, email, Yuran.my."
+  ]
+ ],
+ "tt": "Cara isi template migration Yuran.my: tab Programs, Students dan Staffs. Pastikan kod class sama di setiap tab supaya data pelajar dipadankan dengan betul.",
+ "hs": [
+  "#YuranMy",
+  "#SistemYuran",
+  "#DataMigration",
+  "#TutorialApp",
+  "#PengurusanSekolah"
+ ],
+ "hook_note": "Hook thumbnail sama dengan nama fail video: “CARA ISI DATA DIDALAM TEMPLATE MIGRATION”.",
+ "tx": [
+  [
+   "0:00",
+   "Cara nak isi data di dalam template migration yang telah kami sediakan."
+  ],
+  [
+   "0:03",
+   "Dalam video ini, saya nak tunjukkan macam mana nak isi data-data institusi kita di dalam template yang telah kami sediakan."
+  ],
+  [
+   "0:10",
+   "Template ini ada tiga bahagian utama yang perlu kita lengkapkan."
+  ],
+  [
+   "0:13",
+   "Yang pertama adalah program, yang kedua adalah student dan yang ketiga adalah staff."
+  ],
+  [
+   "0:18",
+   "Untuk bahagian tab program, di dalam tab program, kita nak ceritakan apa program yang ditawarkan oleh institusi kita."
+  ],
+  [
+   "0:25",
+   "Terdapat empat perkara yang perlu kita isi."
+  ],
+  [
+   "0:27",
+   "Yang ini penting."
+  ],
+  [
+   "0:28",
+   "Yang pertama adalah program, yang kedua adalah kategori, yang ketiga adalah modul dan yang keempat adalah class."
+  ],
+  [
+   "0:33",
+   "Jadi kita pergi satu per satu."
+  ],
+  [
+   "0:35",
+   "Untuk bahagian program, kita perlukan dua sahaja yang wajib iaitu kod program dan nama program yang kita nak tawarkan."
+  ],
+  [
+   "0:41",
+   "Sebagai contoh, kod program AR1 dan nama program dia adalah Bahasa Arab."
+  ],
+  [
+   "0:46",
+   "Setiap program ada kod-kod yang tersendiri. Jangan campur-campurkan."
+  ],
+  [
+   "0:50",
+   "Untuk bahagian kategori pula, kita perlu ada dua juga iaitu kod kategori dan nama kategori tersebut."
+  ],
+  [
+   "0:56",
+   "Sebagai contoh, kod kategori."
+  ],
+  [
+   "0:58",
+   "Kod kategori adalah pagi dan nama kategori adalah sesi pagi."
+  ],
+  [
+   "1:01",
+   "Untuk bahagian modul juga sama. Kita ada dua sahaja perkara yang penting ialah kod modul dan nama modul tersebut."
+  ],
+  [
+   "1:08",
+   "Sebagai contoh, kod modul adalah L1 merujuk kepada nama modul dia level 1."
+  ],
+  [
+   "1:14",
+   "Untuk bahagian class juga pun sama. Kita ada dua sahaja kod class dan nama class tersebut."
+  ],
+  [
+   "1:20",
+   "Sebagai contoh, kod class dia AR1A dan nama class tersebut adalah kelas 1A."
+  ],
+  [
+   "1:26",
+   "Kod-kod ni pastikan konsisten."
+  ],
+  [
+   "1:28",
+   "Untuk setiap maklumat yang kita berikan."
+  ],
+  [
+   "1:30",
+   "Sebabnya nanti kod-kod ni adalah yang akan menghubungkan dengan nama-nama student yang kita masuk."
+  ],
+  [
+   "1:35",
+   "Seterusnya, bahagian [column] fee."
+  ],
+  [
+   "1:36",
+   "Dekat sini kita masukkan apa sahaja fee yang kita nak kenakan untuk pelajar tersebut."
+  ],
+  [
+   "1:41",
+   "Sebagai contoh, kita ada fee pendaftaran, material fee."
+  ],
+  [
+   "1:44",
+   "Apa-apa sahaja yuran yang kita nak kenakan boleh kita letak di bahagian [column] yang ini."
+  ],
+  [
+   "1:48",
+   "Kalau bahagian trainer details dan class assistant details, tak ada pun tak apa."
+  ],
+  [
+   "1:53",
+   "Tapi kalau ada, bonus."
+  ],
+  [
+   "1:54",
+   "Selesai bahagian program."
+  ],
+  [
+   "1:55",
+   "Kita pergi bahagian tab yang kedua adalah."
+  ],
+  [
+   "1:57",
+   "Bahagian student."
+  ],
+  [
+   "1:58",
+   "Untuk bahagian student, kita ada beberapa perkara yang penting."
+  ],
+  [
+   "2:01",
+   "Yang pertama, nama student."
+  ],
+  [
+   "2:02",
+   "Dan student tu nak masuk kelas mana?"
+  ],
+  [
+   "2:04",
+   "Kita linkkan balik dengan kod class tadi."
+  ],
+  [
+   "2:06",
+   "Pastikan nama kod class untuk pelajar tersebut sama dengan di bahagian program tadi, bahagian [column] kelas."
+  ],
+  [
+   "2:12",
+   "Seterusnya, bahagian parents pula."
+  ],
+  [
+   "2:14",
+   "Benda yang penting untuk parents adalah nama, nombor telefon dan email."
+  ],
+  [
+   "2:18",
+   "Tapi kalau tak ada email pun tak apa."
+  ],
+  [
+   "2:20",
+   "Nanti kita masukkan email dummy."
+  ],
+  [
+   "2:22",
+   "Tapi kalau ada email parents tu, bonus tau."
+  ],
+  [
+   "2:24",
+   "Untuk maklumat parents yang lain, hanya satu sahaja."
+  ],
+  [
+   "2:27",
+   "Dia tu sudah memadai."
+  ],
+  [
+   "2:28",
+   "Tapi kalau ada yang lebih macam mak, ayah, atuk, nenek pun tak jadi masalah."
+  ],
+  [
+   "2:32",
+   "Boleh masukkan juga."
+  ],
+  [
+   "2:33",
+   "Selesai bahagian student, kita pergi bahagian staff pula."
+  ],
+  [
+   "2:36",
+   "Nak selesai dah ni?"
+  ],
+  [
+   "2:37",
+   "Untuk bahagian staff ni, kita masukkan staff yang boleh access sistem ni."
+  ],
+  [
+   "2:41",
+   "Tak payahlah semua."
+  ],
+  [
+   "2:42",
+   "Kita tak galakkan institusi untuk kongsi ID."
+  ],
+  [
+   "2:45",
+   "Sebabnya Yuran.my ada sediakan activity log untuk setiap ID."
+  ],
+  [
+   "2:49",
+   "Kalau kongsi ID, kan susah nak trace siapa yang buat ini, siapa yang buat itu."
+  ],
+  [
+   "2:53",
+   "Untuk bahagian staff ni, yang penting adalah nama, nombor telefon,"
+  ],
+  [
+   "2:56",
+   "email dan level staff tersebut."
+  ],
+  [
+   "2:59",
+   "Sama ada admin, supervisor, [clerk], class assistant ataupun class admin."
+  ],
+  [
+   "3:04",
+   "Pilihlah tahap-tahap yang sesuai untuk staff tersebut."
+  ],
+  [
+   "3:07",
+   "Bila dah selesai tiga-tiga ni, data dah ready untuk migratekan ke dalam sistem Yuran.my."
+  ],
+  [
+   "3:11",
+   "[Garip], kalau masih ada [bela-bela] lagi, maklumkan dengan kami, kita akan bantu."
+  ],
+  [
+   "3:16",
+   "Terima kasih kerana menggunakan sistem Yuran.my."
+  ]
+ ]
+}
