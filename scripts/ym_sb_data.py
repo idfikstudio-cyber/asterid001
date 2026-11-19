@@ -53,11 +53,16 @@ for n, t, c in [("b1_program", 41.5, [("Program", True), ("tu", False), ("bahasa
     T.tree(im, t, rv); pip(im, 40); cap(im, c, "tut"); save(im, n)
 im = T.bg_blue(W, H).convert("RGBA"); T.tree(im, 67.5, R, names={0: ("Adiwira", 65.6), 1: ("Wira", 66.3), 2: ("Satria", 67.0)})
 pip(im, 40); cap(im, [("kelas", False), ("satria", True)], "tut"); save(im, "b5_rename")
-# 6 simulasi Abu
-pt = [71.4, 73.6, 75.6, 78.4]
-for n, t, c in [("c1_abu_prog", 72.5, [("join", False), ("program", True), ("bahasa", False), ("Arab", False)]),
-                ("c2_abu_kelas", 80.5, [("dalam", False), ("kelas", False), ("yang", False), ("pertama", True)])]:
-    im = T.bg_blue(W, H).convert("RGBA"); T.tree(im, t, R, path=[0, 1, 1, 0], path_t=pt); pip(im, 70); cap(im, c, "tut"); save(im, n)
+# 6 simulasi Abu langkah demi langkah
+AT = [70.9, 72.2, 74.6, 77.2, 80.1]
+for n, t, c in [("c1_abu_start", 71.5, [("nama", False), ("dia", False), ("Abu", True)]),
+                ("c2_abu_kat", 75.3, [("masuk", False), ("sesi", True), ("petang", True)]),
+                ("c3_abu_kelas", 81.6, [("Nampak", False), ("tak", False), ("kaitan", True), ("dia?", False)])]:
+    im = T.bg_blue(W, H).convert("RGBA"); T.abu_flow(im, t, AT, glow_t=81.3); pip(im, 70); cap(im, c, "tut"); save(im, n)
+# 6b jenis institusi
+IT = [86.6, 87.7, 88.8, 89.8, 90.8, 91.8]
+for n, t, c in [("c4_inst_mid", 88.9, [("institusi", True)]), ("c5_inst_full", 92.5, [("operasi", False), ("dia", False), ("macam", False), ("mana", False)])]:
+    im = T.bg_blue(W, H).convert("RGBA"); T.inst_list(im, t, 85.9, IT); pip(im, 83); cap(im, c, "tut"); save(im, n)
 # 7 banyak program & sesi
 im = raw(96); T.chips_rows(im, 106.0, [("Program Bahasa Arab", [("Intensif", 95.1), ("Mingguan", 98.0), ("Bulanan", 100.0)]), ("Sesi", [("Pagi", 103.4), ("Petang", 104.4), ("Malam", 105.4)])], 107.4)
 cap(im, [("sesi", False), ("malam", True)]); save(im, "d1_many")

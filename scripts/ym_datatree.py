@@ -187,3 +187,83 @@ def chips_rows(img, t, rows, t_end, y=820):
             c = card(txt, fs=42); paste_a(img, c, S(x), S(yy + 96) + (1 - a) * S(20), a); x += c.width / SC + 18
         yy += 250
     return img
+
+# ---------- simulasi Abu: langkah demi langkah ----------
+ABU_STEPS = [("PELAJAR", "Abu"), ("PROGRAM", "Bahasa Arab"), ("KATEGORI", "Sesi Petang"), ("MODUL", "Peringkat 2"), ("KELAS", "Kelas 1")]
+ABU_Y0, ABU_DY, ABU_H = 330, 205, 132
+
+def _chev(d, cx, cy, s, col, w=6):
+    d.line((S(cx - s), S(cy - s / 2), S(cx), S(cy + s / 2), S(cx + s), S(cy - s / 2)), fill=col, width=S(w), joint="curve")
+
+def abu_flow(img, t, times, glow_t=None, t_in=None):
+    """times: masa Abu tiba di setiap langkah [abu, program, kategori, modul, kelas]."""
+    o = Image.new("RGBA", img.size, (0, 0, 0, 0)); d = ImageDraw.Draw(o)
+    a0 = ramp(t, t_in if t_in is not None else times[0] - 0.6, 0.35)
+    d.text((S(70), S(200)), "Simulasi pelajar", font=F(FX, 54), fill=WH + (int(255 * a0),))
+    d.text((S(70), S(268)), "Abu → Program → Kategori → Modul → Kelas", font=F(FS, 30), fill=GR + (int(210 * a0),))
+    x0, x1 = 230, 1010
+    reached = [t >= tt for tt in times]
+    k = max([i for i, r in enumerate(reached) if r], default=-1)
+    # rel kiri
+    rx = 140
+    y_top = ABU_Y0 + ABU_H / 2; y_bot = ABU_Y0 + 4 * ABU_DY + ABU_H / 2
+    d.line((S(rx), S(y_top), S(rx), S(y_bot)), fill=(90, 108, 190, int(255 * a0)), width=S(6))
+    if k >= 1:
+        # bahagian rel yang sudah dilalui
+        prog = k + (ramp(t, times[k + 1] - 0.5, 0.5) if k + 1 < len(times) and t >= times[k + 1] - 0.5 else 0)
+        d.line((S(rx), S(y_top), S(rx), S(y_top + ABU_DY * min(prog, 4))), fill=B2 + (255,), width=S(10))
+    for i, (lab, val) in enumerate(ABU_STEPS):
+        y = ABU_Y0 + i * ABU_DY
+        on = reached[i]
+        ka = ramp(t, times[i], 0.3) if on else 0
+        glow = glow_t is not None and t >= glow_t
+        # kad
+        if on:
+            fill = (B2 if i > 0 else WH) + (255,)
+        else:
+            fill = (55, 72, 160, int(255 * a0))
+        d.rounded_rectangle((S(x0), S(y), S(x1), S(y + ABU_H)), S(26), fill=fill,
+                            outline=(WH + (255,)) if (glow and on) else (110, 128, 205, int(255 * a0)), width=S(5 if glow and on else 3))
+        # titik pada rel
+        d.ellipse((S(rx - 16), S(y + ABU_H / 2 - 16), S(rx + 16), S(y + ABU_H / 2 + 16)), fill=(B2 if on else (90, 108, 190)) + (int(255 * a0),))
+        if i == 0:
+            d.text((S(x0 + 40), S(y + 40)), lab, font=F(FX, 26), fill=(B2 if on else GR) + (int(255 * a0),), anchor="lm")
+            d.text((S(x0 + 40), S(y + 88)), val if on else "?", font=F(FX, 46), fill=(B1 if on else GR) + (int(255 * a0),), anchor="lm")
+        else:
+            d.text((S(x0 + 40), S(y + 40)), f"{i}  {lab}", font=F(FX, 26), fill=(WH if on else GR) + (int(255 * a0),), anchor="lm")
+            if on:
+                d.text((S(x0 + 40), S(y + 88) + (1 - ka) * S(16)), val, font=F(FX, 46), fill=WH + (int(255 * ka),), anchor="lm")
+            else:
+                d.text((S(x0 + 40), S(y + 88)), "…", font=F(FX, 46), fill=(150, 165, 225, int(255 * a0)), anchor="lm")
+        if i < 4:
+            _chev(d, (x0 + x1) / 2, y + ABU_H + (ABU_DY - ABU_H) / 2, 16, (B2 if reached[i + 1] else (120, 138, 210)) + (int(255 * a0),))
+    # token Abu bergerak di rel
+    if k >= 0:
+        if k + 1 < len(times) and t >= times[k + 1] - 0.5:
+            f = ramp(t, times[k + 1] - 0.5, 0.5)
+        else:
+            f = 0
+        cy = ABU_Y0 + ABU_H / 2 + ABU_DY * (k + f)
+        r = 40
+        ta = ramp(t, times[0], 0.3)
+        d.ellipse((S(rx - r), S(cy - r), S(rx + r), S(cy + r)), fill=WH + (int(255 * ta),), outline=B2 + (int(255 * ta),), width=S(7))
+        d.text((S(rx), S(cy)), "A", font=F(FX, 40), fill=B1 + (int(255 * ta),), anchor="mm")
+    img.alpha_composite(o)
+    return img
+
+# ---------- jenis institusi ----------
+INST = ["Pusat Tuisyen", "Sekolah Asrama", "Sekolah Harian", "Persatuan Penduduk", "Kelab Sukan", "Dan lain-lain"]
+
+def inst_list(img, t, t0, item_t):
+    o = Image.new("RGBA", img.size, (0, 0, 0, 0)); d = ImageDraw.Draw(o)
+    a = ramp(t, t0, 0.35)
+    d.text((S(90), S(330)), "Jenis Institusi", font=F(FX, 84), fill=WH + (int(255 * a),))
+    d.rounded_rectangle((S(90), S(450), S(90) + S(150) * a, S(460)), S(5), fill=B2 + (int(255 * a),))
+    for i, (txt, ti) in enumerate(zip(INST, item_t)):
+        if t < ti: continue
+        k = ramp(t, ti, 0.3); y = 540 + i * 128; dx = (1 - k) * 40
+        for cx in (112, 142):   # ">>"
+            d.line((S(cx + dx - 9), S(y + 30), S(cx + dx + 9), S(y + 46), S(cx + dx - 9), S(y + 62)), fill=B2 + (int(255 * k),), width=S(8), joint="curve")
+        d.text((S(186 + dx), S(y + 46)), txt, font=F(FX, 56), fill=(WH if i < 5 else GR) + (int(255 * k),), anchor="lm")
+    img.alpha_composite(o)
+    return img

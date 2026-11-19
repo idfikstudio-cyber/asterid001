@@ -1,6 +1,6 @@
 {
  "title": "YM-F-014 Storyboard Susun Data",
- "eyebrow": "Yuran.my · TOFU + Tutorial · Evergreen · Draf storyboard v1",
+ "eyebrow": "Yuran.my · TOFU + Tutorial · Evergreen · Draf storyboard v2",
  "h1": "Macam mana nak susun data institusi dalam Yuran.my",
  "pills": [
   "Menunggu kelulusan storyboard",
@@ -143,42 +143,56 @@
    "src": "Grafik baharu"
   },
   {
-   "img": "c1_abu_prog",
+   "img": "c1_abu_start",
    "label": "Simulasi Abu",
    "short": "Abu",
    "kind": "tutorial",
    "s": 69.6,
-   "e": 76.0,
-   "title": "Abu masuk program & sesi",
-   "say": "“Contoh satu pelajar, nama dia Abu. Abu ni join program bahasa Arab. Kemudian, dia masuk sesi petang.”",
-   "vis": "Nama kelas kembali ke Kelas 1–4. Token bulat “A · Abu” muncul pada Bahasa Arab; kad lain dimalapkan; laluan dipilih menyala biru #29ABE2.",
-   "anim": "Token bergerak turun ke Sesi Petang pada “sesi petang” (73.6 s). SFX pop.",
+   "e": 73.5,
+   "title": "Abu → Program",
+   "say": "“Contoh satu pelajar, nama dia Abu. Abu ni join program bahasa Arab.”",
+   "vis": "Skrin biru penuh “Simulasi pelajar”. Lima kad bertingkat: Pelajar, 1 Program, 2 Kategori, 3 Modul, 4 Kelas. Kad yang belum dicapai kosong (…) dan malap. Token bulat “A” di rel kiri.",
+   "anim": "Kad Pelajar terisi “Abu” pada 70.9 s. Token turun ke Program dan kad jadi biru dengan “Bahasa Arab” pada 72.2 s. Pop lembut setiap langkah.",
    "src": "Grafik baharu"
   },
   {
-   "img": "c2_abu_kelas",
+   "img": "c2_abu_kat",
    "label": "Abu",
    "short": "Abu",
    "kind": "tutorial",
-   "s": 76.0,
-   "e": 82.5,
-   "title": "Peringkat 2 → Kelas 1",
-   "say": "“Sesi petang tu pula, dia masuk level yang kedua. Dan dia dimasukkan di dalam kelas yang pertama. Nampak tak kaitan dia?”",
-   "vis": "Token turun ke Peringkat 2 (75.6 s) dan Kelas 1 (78.4 s). Seluruh laluan Bahasa Arab → Sesi Petang → Peringkat 2 → Kelas 1 menyala.",
-   "anim": "Ding lembut pada “Nampak tak kaitan dia?”.",
+   "s": 73.5,
+   "e": 79.9,
+   "title": "→ Kategori → Modul",
+   "say": "“Kemudian, dia masuk sesi petang. Sesi petang tu pula, dia masuk level yang kedua.”",
+   "vis": "Rel kiri menyala biru setakat langkah yang dilalui.",
+   "anim": "Token bergerak turun: Sesi Petang (74.6 s), Peringkat 2 (77.2 s).",
    "src": "Grafik baharu"
   },
   {
-   "img": "a5_depend",
-   "label": "Bergantung",
-   "kind": "talk",
-   "s": 82.5,
+   "img": "c3_abu_kelas",
+   "label": "Abu",
+   "short": "Abu",
+   "kind": "tutorial",
+   "s": 79.9,
+   "e": 85.9,
+   "title": "→ Kelas 1, nampak kaitannya",
+   "say": "“Dan dia dimasukkan di dalam kelas yang pertama. Nampak tak kaitan dia? Inilah simulasi macam mana data tu tersusun.”",
+   "vis": "Kad Kelas 1 menyala (80.1 s). Pada “Nampak tak kaitan dia?” semua kad mendapat bingkai putih: laluan Abu → Bahasa Arab → Sesi Petang → Peringkat 2 → Kelas 1 lengkap.",
+   "anim": "Ding lembut pada 81.3 s.",
+   "src": "Grafik baharu"
+  },
+  {
+   "img": "c5_inst_full",
+   "label": "Jenis Institusi",
+   "short": "Inst",
+   "kind": "tutorial",
+   "s": 85.9,
    "e": 93.0,
-   "title": "Bergantung pada institusi",
-   "say": "“Inilah simulasi macam mana data tu tersusun. Tetapi, dia bergantung kepada [ada] setiap institusi … pengurusan operasi dia macam mana.”",
-   "vis": "Kembali ke Farhan penuh, punch-in. Caption sahaja.",
-   "anim": "—",
-   "src": "Raw"
+   "title": "Jenis Institusi",
+   "say": "“Tetapi, dia bergantung kepada [ada] setiap institusi. Macam mana institusi itu melakukan pengurusan operasi dia macam mana.”",
+   "vis": "Skrin biru penuh, tajuk besar “Jenis Institusi” dengan garis biru. Senarai berikon >>: Pusat Tuisyen, Sekolah Asrama, Sekolah Harian, Persatuan Penduduk, Kelab Sukan, Dan lain-lain.",
+   "anim": "Setiap baris slide masuk dari kiri kira-kira setiap 1 s (86.6 s hingga 91.8 s). Tick lembut setiap baris.",
+   "src": "Grafik baharu (ikut arahan Farhan)"
   },
   {
    "img": "d1_many",
@@ -276,10 +290,6 @@
    "Latar biru #2A3B8F dengan grid titik halus. Empat aras berlabel nombor biru #29ABE2; kad putih teks biru; garis penyambung dilukis dari aras atas ke bawah. Tidak bersepah, ikut guideline."
   ],
   [
-   "Laluan Abu",
-   "Kad yang tidak dipilih dimalapkan; kad terpilih jadi biru #29ABE2 teks putih; garis laluan tebal menyala. Token bulat “A” bergerak turun mengikut sebutan."
-  ],
-  [
    "Grafik atas talking head",
    "Kad putih bernombor di kiri bawah dada, tidak menutup wajah. Caption kekal di tengah, atas 20% bawah skrin."
   ],
@@ -294,6 +304,14 @@
   [
    "Warna & audio",
    "Grade ringan (kontras +4%, saturasi +5%, warna kulit asli). Denoise ringan, −14 LUFS, −1 dBTP."
+  ],
+  [
+   "Simulasi Abu",
+   "Lima kad bertingkat dengan rel di kiri. Token “A” turun langkah demi langkah ikut sebutan; kad yang dicapai jadi biru #29ABE2 dan nilainya muncul."
+  ],
+  [
+   "Jenis Institusi",
+   "Skrin biru penuh, tajuk besar putih, ikon >> biru, setiap baris muncul satu-satu."
   ]
  ],
  "tt": "Sebelum guna sistem yuran, susun data institusi dulu: Program, Kategori, Modul dan Kelas. Ini contoh macam mana semuanya berkait.",
