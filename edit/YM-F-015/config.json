@@ -1,0 +1,1285 @@
+{
+ "id": "YM-F-015",
+ "topik": "Cara Isi Data didalam Template Migration",
+ "tag": "TOFU",
+ "raw_in": 0.0,
+ "raw_out": 198.6,
+ "thumb_t": 2,
+ "hook": [
+  [
+   "TUTORIAL",
+   "pill"
+  ],
+  [
+   "CARA ISI DATA",
+   "w"
+  ],
+  [
+   "DIDALAM",
+   "w"
+  ],
+  [
+   "TEMPLATE",
+   "a"
+  ],
+  [
+   "MIGRATION",
+   "a"
+  ]
+ ],
+ "label": {
+  "text": "Farhan · Yuran.my",
+  "s": 0.3,
+  "e": 3.6
+ },
+ "zoom_cuts": [
+  0,
+  3.66,
+  10.34,
+  13.92,
+  86.38,
+  90.48,
+  157.18,
+  162.6,
+  169.34,
+  187.36,
+  191.78,
+  196.32
+ ],
+ "face": [
+  530,
+  450
+ ],
+ "fix": {
+  "Euron": "Yuran",
+  "kolam": "column",
+  "klub,": "clerk,",
+  "Garip,": "Get it?"
+ },
+ "fix_at": {},
+ "key": [
+  "program",
+  "kategori",
+  "modul",
+  "class",
+  "kod",
+  "student",
+  "staff",
+  "email",
+  "yuran.my",
+  "fee",
+  "template",
+  "migration",
+  "konsisten",
+  "id"
+ ],
+ "cards": [
+  [
+   14.82,
+   18.3,
+   70,
+   760,
+   "Programs",
+   "white",
+   1,
+   420
+  ],
+  [
+   16.2,
+   18.3,
+   70,
+   880,
+   "Students",
+   "white",
+   2,
+   420
+  ],
+  [
+   17.8,
+   18.3,
+   70,
+   1000,
+   "Staffs",
+   "white",
+   3,
+   420
+  ],
+  [
+   86.6,
+   95.1,
+   70,
+   740,
+   "AR1  ·  Program",
+   "white",
+   1,
+   470
+  ],
+  [
+   86.85,
+   95.1,
+   70,
+   858,
+   "PAGI  ·  Kategori",
+   "white",
+   2,
+   470
+  ],
+  [
+   87.1,
+   95.1,
+   70,
+   976,
+   "L1  ·  Modul",
+   "white",
+   3,
+   470
+  ],
+  [
+   87.35,
+   95.1,
+   70,
+   1094,
+   "AR1A  ·  Class",
+   "white",
+   4,
+   470
+  ],
+  [
+   87.3,
+   95.1,
+   580,
+   920,
+   "Kod mesti konsisten",
+   "blue",
+   null,
+   null
+  ],
+  [
+   164.38,
+   173.68,
+   70,
+   780,
+   "Jangan kongsi ID",
+   "navy",
+   null,
+   null
+  ],
+  [
+   167.22,
+   173.68,
+   70,
+   900,
+   "Activity log untuk setiap ID",
+   "white",
+   null,
+   null
+  ],
+  [
+   189.18,
+   192.0,
+   70,
+   900,
+   "Data sedia untuk migrasi",
+   "blue",
+   null,
+   null
+  ]
+ ],
+ "graphics": [
+  {
+   "kind": "sheet",
+   "s": 18.3,
+   "e": 35.5,
+   "tab": "Programs",
+   "title": "Tab Programs",
+   "sub": "4 perkara wajib diisi",
+   "cams": [
+    [
+     18.3,
+     [
+      92,
+      300,
+      1616,
+      588
+     ],
+     30
+    ],
+    [
+     28.6,
+     [
+      "Programs",
+      "A",
+      "F",
+      3,
+      5
+     ],
+     30
+    ],
+    [
+     29.9,
+     [
+      "Programs",
+      "G",
+      "H",
+      3,
+      5
+     ],
+     40
+    ],
+    [
+     31.4,
+     [
+      "Programs",
+      "I",
+      "J",
+      3,
+      5
+     ],
+     40
+    ],
+    [
+     33.0,
+     [
+      "Programs",
+      "K",
+      "L",
+      3,
+      5
+     ],
+     40
+    ]
+   ],
+   "hl": [
+    [
+     28.98,
+     35.5,
+     [
+      "Programs",
+      "A",
+      "F",
+      3,
+      3
+     ],
+     "Program",
+     "blue"
+    ],
+    [
+     30.2,
+     35.5,
+     [
+      "Programs",
+      "G",
+      "H",
+      3,
+      3
+     ],
+     "Kategori",
+     "blue"
+    ],
+    [
+     31.78,
+     35.5,
+     [
+      "Programs",
+      "I",
+      "J",
+      3,
+      3
+     ],
+     "Modul",
+     "blue"
+    ],
+    [
+     33.38,
+     35.5,
+     [
+      "Programs",
+      "K",
+      "L",
+      3,
+      3
+     ],
+     "Class",
+     "blue"
+    ]
+   ],
+   "notes": []
+  },
+  {
+   "kind": "sheet",
+   "s": 35.5,
+   "e": 50.72,
+   "tab": "Programs",
+   "title": "1 · Program",
+   "sub": "Kod program + nama program",
+   "cams": [
+    [
+     35.5,
+     [
+      "Programs",
+      "A",
+      "B",
+      4,
+      5
+     ],
+     60
+    ]
+   ],
+   "hl": [
+    [
+     38.78,
+     50.72,
+     [
+      "Programs",
+      "A",
+      "A",
+      4,
+      5
+     ],
+     "Kod program",
+     "blue"
+    ],
+    [
+     39.9,
+     50.72,
+     [
+      "Programs",
+      "B",
+      "B",
+      4,
+      5
+     ],
+     "Nama program",
+     "blue"
+    ]
+   ],
+   "notes": [
+    [
+     43.54,
+     50.72,
+     "AR1 → Bahasa Arab"
+    ],
+    [
+     46.8,
+     50.72,
+     "Setiap program ada kod tersendiri"
+    ]
+   ]
+  },
+  {
+   "kind": "sheet",
+   "s": 50.72,
+   "e": 61.78,
+   "tab": "Programs",
+   "title": "2 · Kategori",
+   "sub": "Kod kategori + nama kategori",
+   "cams": [
+    [
+     50.72,
+     [
+      "Programs",
+      "G",
+      "H",
+      4,
+      5
+     ],
+     60
+    ]
+   ],
+   "hl": [
+    [
+     54.18,
+     61.78,
+     [
+      "Programs",
+      "G",
+      "G",
+      4,
+      5
+     ],
+     "Kod kategori",
+     "blue"
+    ],
+    [
+     55.24,
+     61.78,
+     [
+      "Programs",
+      "H",
+      "H",
+      4,
+      5
+     ],
+     "Nama kategori",
+     "blue"
+    ]
+   ],
+   "notes": [
+    [
+     58.36,
+     61.78,
+     "PAGI → Sesi Pagi"
+    ]
+   ]
+  },
+  {
+   "kind": "sheet",
+   "s": 61.78,
+   "e": 74.5,
+   "tab": "Programs",
+   "title": "3 · Modul",
+   "sub": "Kod modul + nama modul",
+   "cams": [
+    [
+     61.78,
+     [
+      "Programs",
+      "I",
+      "J",
+      4,
+      5
+     ],
+     60
+    ]
+   ],
+   "hl": [
+    [
+     65.58,
+     74.5,
+     [
+      "Programs",
+      "I",
+      "I",
+      4,
+      5
+     ],
+     "Kod modul",
+     "blue"
+    ],
+    [
+     66.9,
+     74.5,
+     [
+      "Programs",
+      "J",
+      "J",
+      4,
+      5
+     ],
+     "Nama modul",
+     "blue"
+    ]
+   ],
+   "notes": [
+    [
+     70.36,
+     74.5,
+     "L1 → Level 1"
+    ]
+   ]
+  },
+  {
+   "kind": "sheet",
+   "s": 74.5,
+   "e": 86.38,
+   "tab": "Programs",
+   "title": "4 · Class",
+   "sub": "Kod class + nama class",
+   "cams": [
+    [
+     74.5,
+     [
+      "Programs",
+      "K",
+      "L",
+      4,
+      5
+     ],
+     60
+    ]
+   ],
+   "hl": [
+    [
+     77.64,
+     86.38,
+     [
+      "Programs",
+      "K",
+      "K",
+      4,
+      5
+     ],
+     "Kod class",
+     "blue"
+    ],
+    [
+     78.72,
+     86.38,
+     [
+      "Programs",
+      "L",
+      "L",
+      4,
+      5
+     ],
+     "Nama class",
+     "blue"
+    ]
+   ],
+   "notes": [
+    [
+     81.64,
+     86.38,
+     "AR1A → Kelas 1A"
+    ]
+   ]
+  },
+  {
+   "kind": "sheet",
+   "s": 95.1,
+   "e": 108.64,
+   "tab": "Programs",
+   "title": "Class Fees (RM)",
+   "sub": "Masukkan semua yuran yang dikenakan",
+   "cams": [
+    [
+     95.1,
+     [
+      "Programs",
+      "M",
+      "O",
+      3,
+      5
+     ],
+     30
+    ],
+    [
+     104.52,
+     [
+      "Programs",
+      "P",
+      "V",
+      3,
+      5
+     ],
+     30
+    ]
+   ],
+   "hl": [
+    [
+     102.36,
+     104.6,
+     [
+      "Programs",
+      "M",
+      "M",
+      4,
+      5
+     ],
+     "Pendaftaran",
+     "blue"
+    ],
+    [
+     103.46,
+     104.6,
+     [
+      "Programs",
+      "N",
+      "N",
+      4,
+      5
+     ],
+     "Material",
+     "blue"
+    ],
+    [
+     105.2,
+     108.64,
+     [
+      "Programs",
+      "P",
+      "V",
+      4,
+      5
+     ],
+     "Fee tambahan lain",
+     "blue"
+    ]
+   ],
+   "notes": []
+  },
+  {
+   "kind": "sheet",
+   "s": 108.64,
+   "e": 114.72,
+   "tab": "Programs",
+   "title": "Trainer & Assistant",
+   "sub": "Pilihan: tak ada pun tak apa",
+   "cams": [
+    [
+     108.64,
+     [
+      5078,
+      432,
+      6600,
+      548
+     ],
+     30
+    ]
+   ],
+   "hl": [
+    [
+     109.26,
+     114.72,
+     [
+      "Programs",
+      "W",
+      "Z",
+      3,
+      4
+     ],
+     "Trainer details",
+     "blue"
+    ],
+    [
+     110.72,
+     114.72,
+     [
+      "Programs",
+      "AA",
+      "AD",
+      3,
+      4
+     ],
+     "Assistant details",
+     "blue"
+    ]
+   ],
+   "notes": [
+    [
+     113.26,
+     114.72,
+     "Kalau ada, bonus"
+    ]
+   ]
+  },
+  {
+   "kind": "sheet",
+   "s": 114.72,
+   "e": 117.62,
+   "tab": "Programs",
+   "title": "Tab Students",
+   "sub": "Bahagian kedua",
+   "cams": [
+    [
+     114.72,
+     "raw",
+     100,
+     1080,
+     600,
+     190
+    ]
+   ],
+   "hl": [
+    [
+     116.4,
+     117.62,
+     [
+      420,
+      1222,
+      590,
+      1268
+     ],
+     "Klik tab Students",
+     "blue"
+    ]
+   ],
+   "notes": []
+  },
+  {
+   "kind": "sheet",
+   "s": 117.62,
+   "e": 126.68,
+   "tab": "Students",
+   "title": "Tab Students",
+   "sub": "Nama pelajar + kod class",
+   "cams": [
+    [
+     117.62,
+     [
+      "Students",
+      "A",
+      "B",
+      4,
+      5
+     ],
+     60
+    ]
+   ],
+   "hl": [
+    [
+     121.76,
+     126.68,
+     [
+      "Students",
+      "B",
+      "B",
+      4,
+      5
+     ],
+     "Nama pelajar",
+     "blue"
+    ],
+    [
+     123.7,
+     126.68,
+     [
+      "Students",
+      "A",
+      "A",
+      4,
+      5
+     ],
+     "Class Code",
+     "warn"
+    ]
+   ],
+   "notes": []
+  },
+  {
+   "kind": "warn2",
+   "s": 126.68,
+   "e": 132.48,
+   "title": "Penting: Class Code",
+   "sub": "Students mesti sama dengan Programs",
+   "t_eq": 128.94,
+   "t_warn": 127.36
+  },
+  {
+   "kind": "sheet",
+   "s": 132.48,
+   "e": 153.52,
+   "tab": "Students",
+   "title": "Maklumat ibu bapa",
+   "sub": "Nama, nombor telefon, email",
+   "cams": [
+    [
+     132.48,
+     [
+      "Students",
+      "M",
+      "O",
+      3,
+      5
+     ],
+     30
+    ]
+   ],
+   "hl": [
+    [
+     135.76,
+     153.52,
+     [
+      "Students",
+      "M",
+      "M",
+      4,
+      5
+     ],
+     "Nama",
+     "blue"
+    ],
+    [
+     136.48,
+     153.52,
+     [
+      "Students",
+      "N",
+      "N",
+      4,
+      5
+     ],
+     "No. telefon",
+     "blue"
+    ],
+    [
+     137.8,
+     153.52,
+     [
+      "Students",
+      "O",
+      "O",
+      4,
+      5
+     ],
+     "Email",
+     "blue"
+    ]
+   ],
+   "notes": [
+    [
+     140.26,
+     153.52,
+     "Tiada email? Kami masukkan email dummy"
+    ],
+    [
+     146.18,
+     153.52,
+     "Satu sahaja sudah memadai"
+    ]
+   ]
+  },
+  {
+   "kind": "sheet",
+   "s": 153.52,
+   "e": 157.18,
+   "tab": "Students",
+   "title": "Tab Staffs",
+   "sub": "Bahagian ketiga",
+   "cams": [
+    [
+     153.52,
+     "raw",
+     100,
+     1080,
+     760,
+     190
+    ]
+   ],
+   "hl": [
+    [
+     155.3,
+     157.18,
+     [
+      636,
+      1222,
+      740,
+      1268
+     ],
+     "Klik tab Staffs",
+     "blue"
+    ]
+   ],
+   "notes": []
+  },
+  {
+   "kind": "sheet",
+   "s": 173.68,
+   "e": 187.36,
+   "tab": "Staffs",
+   "title": "Tab Staffs",
+   "sub": "Nama, telefon, email dan level",
+   "cams": [
+    [
+     173.68,
+     [
+      92,
+      480,
+      1292,
+      760
+     ],
+     30
+    ]
+   ],
+   "hl": [
+    [
+     175.42,
+     187.36,
+     [
+      "Staffs",
+      "A",
+      "A",
+      4,
+      5
+     ],
+     "Nama",
+     "blue"
+    ],
+    [
+     176.12,
+     187.36,
+     [
+      "Staffs",
+      "D",
+      "D",
+      4,
+      5
+     ],
+     "Telefon",
+     "blue"
+    ],
+    [
+     176.76,
+     187.36,
+     [
+      "Staffs",
+      "C",
+      "C",
+      4,
+      5
+     ],
+     "Email",
+     "blue"
+    ],
+    [
+     177.76,
+     187.36,
+     [
+      1100,
+      480,
+      1292,
+      760
+     ],
+     "Level",
+     "warn"
+    ]
+   ],
+   "notes": [
+    [
+     179.88,
+     187.36,
+     "admin · supervisor · clerk"
+    ],
+    [
+     182.3,
+     187.36,
+     "class-assistant · class-admin"
+    ]
+   ]
+  }
+ ],
+ "sfx": [
+  [
+   14.82,
+   "pop.wav",
+   -12
+  ],
+  [
+   16.2,
+   "pop.wav",
+   -12
+  ],
+  [
+   17.8,
+   "pop.wav",
+   -12
+  ],
+  [
+   18.3,
+   "whoosh.wav",
+   -18
+  ],
+  [
+   28.98,
+   "tick.wav",
+   -10
+  ],
+  [
+   30.2,
+   "tick.wav",
+   -10
+  ],
+  [
+   31.78,
+   "tick.wav",
+   -10
+  ],
+  [
+   33.38,
+   "tick.wav",
+   -10
+  ],
+  [
+   35.5,
+   "whoosh.wav",
+   -18
+  ],
+  [
+   38.78,
+   "tick.wav",
+   -10
+  ],
+  [
+   39.9,
+   "tick.wav",
+   -10
+  ],
+  [
+   43.54,
+   "pop.wav",
+   -12
+  ],
+  [
+   46.8,
+   "pop.wav",
+   -12
+  ],
+  [
+   50.72,
+   "whoosh.wav",
+   -18
+  ],
+  [
+   54.18,
+   "tick.wav",
+   -10
+  ],
+  [
+   55.24,
+   "tick.wav",
+   -10
+  ],
+  [
+   58.36,
+   "pop.wav",
+   -12
+  ],
+  [
+   61.78,
+   "whoosh.wav",
+   -18
+  ],
+  [
+   65.58,
+   "tick.wav",
+   -10
+  ],
+  [
+   66.9,
+   "tick.wav",
+   -10
+  ],
+  [
+   70.36,
+   "pop.wav",
+   -12
+  ],
+  [
+   74.5,
+   "whoosh.wav",
+   -18
+  ],
+  [
+   77.64,
+   "tick.wav",
+   -10
+  ],
+  [
+   78.72,
+   "tick.wav",
+   -10
+  ],
+  [
+   81.64,
+   "pop.wav",
+   -12
+  ],
+  [
+   86.6,
+   "pop.wav",
+   -12
+  ],
+  [
+   86.85,
+   "pop.wav",
+   -12
+  ],
+  [
+   87.1,
+   "pop.wav",
+   -12
+  ],
+  [
+   87.3,
+   "pop.wav",
+   -12
+  ],
+  [
+   87.35,
+   "pop.wav",
+   -12
+  ],
+  [
+   95.1,
+   "whoosh.wav",
+   -18
+  ],
+  [
+   102.36,
+   "tick.wav",
+   -10
+  ],
+  [
+   103.46,
+   "tick.wav",
+   -10
+  ],
+  [
+   105.2,
+   "tick.wav",
+   -10
+  ],
+  [
+   108.64,
+   "whoosh.wav",
+   -18
+  ],
+  [
+   109.26,
+   "tick.wav",
+   -10
+  ],
+  [
+   110.72,
+   "tick.wav",
+   -10
+  ],
+  [
+   113.26,
+   "pop.wav",
+   -12
+  ],
+  [
+   114.72,
+   "whoosh.wav",
+   -18
+  ],
+  [
+   116.4,
+   "click.wav",
+   -10
+  ],
+  [
+   117.62,
+   "whoosh.wav",
+   -18
+  ],
+  [
+   121.76,
+   "tick.wav",
+   -10
+  ],
+  [
+   123.7,
+   "tick.wav",
+   -10
+  ],
+  [
+   126.68,
+   "whoosh.wav",
+   -18
+  ],
+  [
+   127.36,
+   "ding.wav",
+   -14
+  ],
+  [
+   132.48,
+   "whoosh.wav",
+   -18
+  ],
+  [
+   135.76,
+   "tick.wav",
+   -10
+  ],
+  [
+   136.48,
+   "tick.wav",
+   -10
+  ],
+  [
+   137.8,
+   "tick.wav",
+   -10
+  ],
+  [
+   140.26,
+   "pop.wav",
+   -12
+  ],
+  [
+   146.18,
+   "pop.wav",
+   -12
+  ],
+  [
+   153.52,
+   "whoosh.wav",
+   -18
+  ],
+  [
+   155.3,
+   "click.wav",
+   -10
+  ],
+  [
+   164.38,
+   "pop.wav",
+   -12
+  ],
+  [
+   167.22,
+   "pop.wav",
+   -12
+  ],
+  [
+   173.68,
+   "whoosh.wav",
+   -18
+  ],
+  [
+   175.42,
+   "tick.wav",
+   -10
+  ],
+  [
+   176.12,
+   "tick.wav",
+   -10
+  ],
+  [
+   176.76,
+   "tick.wav",
+   -10
+  ],
+  [
+   177.76,
+   "tick.wav",
+   -10
+  ],
+  [
+   179.88,
+   "pop.wav",
+   -12
+  ],
+  [
+   182.3,
+   "pop.wav",
+   -12
+  ],
+  [
+   189.18,
+   "ding.wav",
+   -16
+  ],
+  [
+   189.18,
+   "pop.wav",
+   -12
+  ]
+ ],
+ "shots": {
+  "Programs": "tab_Programs.png",
+  "Students": "tab_Students.png",
+  "Staffs": "tab_Staffs.png"
+ },
+ "cta": "Follow untuk tips urus yuran sekolah",
+ "tagline": "Cara MUDAH Urus Yuran",
+ "email": "hello@yuran.my",
+ "end_card": 1.5,
+ "hook_y": 960,
+ "hook_fs": 92,
+ "hook_step": 104
+}

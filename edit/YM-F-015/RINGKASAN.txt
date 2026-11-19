@@ -1,0 +1,350 @@
+RINGKASAN EDIT — YM-F-015_Cara Isi Data didalam Template Migration (preview v1)
+Brand: Yuran.my | Spokesperson: Farhan | Tag skrip: TOFU
+Durasi: 201.1 s (1 s thumbnail + 198.6 s isi + 1.5 s end card)
+DNA: yuran-my/CLAUDE.md v2
+
+1) TEKS HOOK / THUMBNAIL
+   "TUTORIAL CARA ISI DATA DIDALAM TEMPLATE MIGRATION" atas frame Farhan.
+
+2) CAPTION PENUH (ikut percakapan; masa ikut video preview)
+   [0:01.00] Cara nak isi data
+   [0:01.80] di dalam template migration
+   [0:03.24] yang telah kami sediakan
+   [0:04.66] Dalam video ini
+   [0:05.52] saya nak tunjukkan
+   [0:06.30] macam mana nak isi
+   [0:07.32] data-data institusi
+   [0:08.54] kita di dalam template
+   [0:10.04] yang telah kami sediakan
+   [0:11.34] Template ini ada tiga
+   [0:12.54] bahagian utama yang
+   [0:13.70] perlu kita lengkapkan
+   [0:14.92] Yang pertama adalah
+   [0:15.82] program
+   [0:16.52] yang kedua adalah student
+   [0:17.52] dan yang ketiga adalah
+   [0:18.80] staff
+   [0:19.30] Untuk bahagian tab
+   [0:20.02] program
+   [0:20.66] di dalam tab program
+   [0:21.80] kita nak ceritakan
+   [0:22.82] apa program yang ditawarkan
+   [0:24.72] oleh institusi kita
+   [0:26.28] Terdapat empat perkara
+   [0:27.34] yang perlu kita isi
+   [0:28.30] Yang ini penting
+   [0:29.12] Yang pertama adalah
+   [0:29.98] program
+   [0:30.60] yang kedua adalah kategori
+   [0:31.88] yang ketiga adalah
+   [0:32.78] modul dan yang keempat
+   [0:34.06] adalah class
+   [0:34.80] Jadi kita pergi satu
+   [0:35.68] per satu
+   [0:36.50] Untuk bahagian program
+   [0:37.74] kita perlukan dua sahaja
+   [0:38.86] yang wajib iaitu kod
+   [0:40.18] program dan nama program
+   [0:41.76] yang kita nak tawarkan
+   [0:42.90] Sebagai contoh
+   [0:43.70] kod program AR1 dan
+   [0:46.04] nama program dia adalah
+   [0:47.10] Bahasa Arab
+   [0:47.80] Setiap program ada
+   [0:48.84] kod-kod yang tersendiri
+   [0:50.22] Jangan campur-campurkan
+   [0:51.72] Untuk bahagian kategori
+   [0:52.78] pula
+   [0:53.08] kita perlu ada dua
+   [0:54.24] juga iaitu kod kategori
+   [0:56.08] dan nama kategori tersebut
+   [0:57.62] Sebagai contoh
+   [0:58.46] kod kategori
+   [0:59.12] Kod kategori adalah
+   [0:59.36] pagi dan nama kategori
+   [1:01.26] adalah sesi pagi
+   [1:02.78] Untuk bahagian modul
+   [1:03.72] juga sama
+   [1:04.34] Kita ada dua sahaja
+   [1:05.48] perkara yang penting
+   [1:06.36] ialah kod modul dan
+   [1:07.90] nama modul tersebut
+   [1:09.50] Sebagai contoh
+   [1:10.34] kod modul adalah L1
+   [1:12.02] merujuk kepada nama
+   [1:13.78] modul dia level 1
+   [1:15.50] Untuk bahagian class
+   [1:16.40] juga pun sama
+   [1:17.42] Kita ada dua sahaja
+   [1:18.64] kod class dan nama
+   [1:20.18] class tersebut
+   [1:21.08] Sebagai contoh
+   [1:21.86] kod class dia AR1A
+   [1:23.94] dan nama class tersebut
+   [1:25.62] adalah kelas 1A
+   [1:27.38] Kod-kod ni pastikan
+   [1:28.30] konsisten
+   [1:29.12] Untuk setiap maklumat
+   [1:30.64] yang kita berikan
+   [1:31.48] Sebabnya nanti kod-kod
+   [1:32.72] ni adalah yang akan
+   [1:33.46] menghubungkan dengan
+   [1:34.40] nama-nama student yang
+   [1:35.46] kita masuk
+   [1:36.10] Seterusnya
+   [1:36.58] bahagian column fee
+   [1:37.80] Dekat sini kita masukkan
+   [1:38.98] apa sahaja fee yang
+   [1:40.02] kita nak kenakan untuk
+   [1:41.12] pelajar tersebut
+   [1:42.30] Sebagai contoh
+   [1:43.00] kita ada fee pendaftaran
+   [1:44.46] material fee
+   [1:45.52] Apa-apa sahaja yuran
+   [1:46.82] yang kita nak kenakan
+   [1:47.70] boleh kita letak di
+   [1:48.54] bahagian column yang
+   [1:49.42] ini
+   [1:49.64] Kalau bahagian trainer
+   [1:50.46] details dan class assistant
+   [1:52.68] details
+   [1:53.30] tak ada pun tak
+   [1:53.98] apa
+   [1:54.26] Tapi kalau ada
+   [1:55.12] bonus
+   [1:55.72] Selesai bahagian program
+   [1:56.64] Kita pergi bahagian
+   [1:57.66] tab yang kedua adalah
+   [1:58.62] Bahagian student
+   [1:59.56] Untuk bahagian student
+   [2:00.46] kita ada beberapa perkara
+   [2:01.60] yang penting
+   [2:02.14] Yang pertama
+   [2:02.76] nama student
+   [2:03.52] Dan student tu nak
+   [2:04.36] masuk kelas mana?
+   [2:05.34] Kita linkkan balik
+   [2:06.44] dengan kod class tadi
+   [2:07.68] Pastikan nama kod class
+   [2:08.86] untuk pelajar tersebut
+   [2:09.94] sama dengan di bahagian
+   [2:11.46] program tadi
+   [2:12.16] bahagian column kelas
+   [2:13.48] Seterusnya
+   [2:14.02] bahagian parents pula
+   [2:15.20] Benda yang penting
+   [2:15.92] untuk parents adalah
+   [2:16.76] nama
+   [2:17.48] nombor telefon dan
+   [2:18.80] email
+   [2:19.50] Tapi kalau tak ada
+   [2:20.30] email pun tak apa
+   [2:21.26] Nanti kita masukkan
+   [2:22.26] email dummy
+   [2:23.02] Tapi kalau ada email
+   [2:24.02] parents tu
+   [2:24.90] bonus tau
+   [2:25.70] Untuk maklumat parents
+   [2:26.66] yang lain
+   [2:27.18] hanya satu sahaja
+   [2:28.26] Dia tu sudah memadai
+   [2:29.08] Tapi kalau ada yang
+   [2:30.06] lebih macam mak
+   [2:31.04] ayah
+   [2:31.42] atuk
+   [2:32.02] nenek pun tak jadi
+   [2:32.80] masalah
+   [2:33.22] Boleh masukkan juga
+   [2:34.52] Selesai bahagian student
+   [2:35.60] kita pergi bahagian
+   [2:36.48] staff pula
+   [2:37.16] Nak selesai dah ni?
+   [2:38.18] Untuk bahagian staff
+   [2:39.00] ni
+   [2:39.22] kita masukkan staff
+   [2:40.34] yang boleh access sistem
+   [2:42.06] ni
+   [2:42.46] Tak payahlah semua
+   [2:43.60] Kita tak galakkan institusi
+   [2:44.98] untuk kongsi ID
+   [2:46.36] Sebabnya Yuran.my ada
+   [2:47.74] sediakan activity log
+   [2:49.18] untuk setiap ID
+   [2:50.34] Kalau kongsi ID
+   [2:51.48] kan susah nak trace
+   [2:52.44] siapa yang buat ini
+   [2:53.66] siapa yang buat itu
+   [2:54.68] Untuk bahagian staff
+   [2:55.34] ni
+   [2:55.60] yang penting adalah
+   [2:56.42] nama
+   [2:57.12] nombor telefon
+   [2:57.76] email dan level staff
+   [2:59.70] tersebut
+   [3:00.30] Sama ada admin
+   [3:01.86] supervisor
+   [3:02.78] clerk
+   [3:03.30] class assistant ataupun
+   [3:04.74] class admin
+   [3:05.60] Pilihlah tahap-tahap
+   [3:06.78] yang sesuai untuk staff
+   [3:07.82] tersebut
+   [3:08.36] Bila dah selesai tiga-tiga
+   [3:09.40] ni
+   [3:09.66] data dah ready untuk
+   [3:10.70] migratekan ke dalam
+   [3:11.64] sistem Yuran.my
+   [3:12.78] Get it?
+   [3:13.20] kalau masih ada bela-bela
+   [3:14.82] lagi
+   [3:15.34] maklumkan dengan kami
+   [3:16.48] kita akan bantu
+   [3:17.32] Terima kasih kerana
+   [3:18.02] menggunakan sistem
+   [3:18.70] Yuran.my
+
+3) SFX, ANIMASI, GRAFIK (masa ikut video preview)
+   0:00.00–0:01.00  Thumbnail: Hook “TUTORIAL CARA ISI DATA DIDALAM TEMPLATE MIGRATION” atas frame Farhan, gradien gelap bawah
+   0:01.30–0:04.60  Label: Pil biru “Farhan · Yuran.my”
+   0:15.82–0:19.30  Kad: “Programs”
+   0:17.20–0:19.30  Kad: “Students”
+   0:18.80–0:19.30  Kad: “Staffs”
+   0:19.30–0:36.50  Google Sheet: Tab Programs — tab Programs: 4 perkara wajib diisi
+   0:29.98–0:36.50  Highlight: “Program”
+   0:31.20–0:36.50  Highlight: “Kategori”
+   0:32.78–0:36.50  Highlight: “Modul”
+   0:34.38–0:36.50  Highlight: “Class”
+   0:36.50–0:51.72  Google Sheet: 1 · Program — tab Programs: Kod program + nama program
+   0:39.78–0:51.72  Highlight: “Kod program”
+   0:40.90–0:51.72  Highlight: “Nama program”
+   0:44.54–0:51.72  Nota: “AR1 → Bahasa Arab”
+   0:47.80–0:51.72  Nota: “Setiap program ada kod tersendiri”
+   0:51.72–1:02.78  Google Sheet: 2 · Kategori — tab Programs: Kod kategori + nama kategori
+   0:55.18–1:02.78  Highlight: “Kod kategori”
+   0:56.24–1:02.78  Highlight: “Nama kategori”
+   0:59.36–1:02.78  Nota: “PAGI → Sesi Pagi”
+   1:02.78–1:15.50  Google Sheet: 3 · Modul — tab Programs: Kod modul + nama modul
+   1:06.58–1:15.50  Highlight: “Kod modul”
+   1:07.90–1:15.50  Highlight: “Nama modul”
+   1:11.36–1:15.50  Nota: “L1 → Level 1”
+   1:15.50–1:27.38  Google Sheet: 4 · Class — tab Programs: Kod class + nama class
+   1:18.64–1:27.38  Highlight: “Kod class”
+   1:19.72–1:27.38  Highlight: “Nama class”
+   1:22.64–1:27.38  Nota: “AR1A → Kelas 1A”
+   1:27.60–1:36.10  Kad: “AR1  ·  Program”
+   1:27.85–1:36.10  Kad: “PAGI  ·  Kategori”
+   1:28.10–1:36.10  Kad: “L1  ·  Modul”
+   1:28.30–1:36.10  Kad: “Kod mesti konsisten”
+   1:28.35–1:36.10  Kad: “AR1A  ·  Class”
+   1:36.10–1:49.64  Google Sheet: Class Fees (RM) — tab Programs: Masukkan semua yuran yang dikenakan
+   1:43.36–1:45.60  Highlight: “Pendaftaran”
+   1:44.46–1:45.60  Highlight: “Material”
+   1:46.20–1:49.64  Highlight: “Fee tambahan lain”
+   1:49.64–1:55.72  Google Sheet: Trainer & Assistant — tab Programs: Pilihan: tak ada pun tak apa
+   1:50.26–1:55.72  Highlight: “Trainer details”
+   1:51.72–1:55.72  Highlight: “Assistant details”
+   1:54.26–1:55.72  Nota: “Kalau ada, bonus”
+   1:55.72–1:58.62  Google Sheet: Tab Students — tab Programs: Bahagian kedua
+   1:57.40–1:58.62  Highlight: “Klik tab Students”
+   1:58.62–2:07.68  Google Sheet: Tab Students — tab Students: Nama pelajar + kod class
+   2:02.76–2:07.68  Highlight: “Nama pelajar”
+   2:04.70–2:07.68  Highlight oren: “Class Code”
+   2:07.68–2:13.48  Amaran: Dua panel Class Code AR1A (Programs = Students) + kad amaran “Kod class mesti sama”
+   2:13.48–2:34.52  Google Sheet: Maklumat ibu bapa — tab Students: Nama, nombor telefon, email
+   2:16.76–2:34.52  Highlight: “Nama”
+   2:17.48–2:34.52  Highlight: “No. telefon”
+   2:18.80–2:34.52  Highlight: “Email”
+   2:21.26–2:34.52  Nota: “Tiada email? Kami masukkan email dummy”
+   2:27.18–2:34.52  Nota: “Satu sahaja sudah memadai”
+   2:34.52–2:38.18  Google Sheet: Tab Staffs — tab Students: Bahagian ketiga
+   2:36.30–2:38.18  Highlight: “Klik tab Staffs”
+   2:45.38–2:54.68  Kad: “Jangan kongsi ID”
+   2:48.22–2:54.68  Kad: “Activity log untuk setiap ID”
+   2:54.68–3:08.36  Google Sheet: Tab Staffs — tab Staffs: Nama, telefon, email dan level
+   2:56.42–3:08.36  Highlight: “Nama”
+   2:57.12–3:08.36  Highlight: “Telefon”
+   2:57.76–3:08.36  Highlight: “Email”
+   2:58.76–3:08.36  Highlight oren: “Level”
+   3:00.88–3:08.36  Nota: “admin · supervisor · clerk”
+   3:03.30–3:08.36  Nota: “class-assistant · class-admin”
+   3:10.18–3:13.00  Kad: “Data sedia untuk migrasi”
+   3:19.60–3:21.10  End card: Latar biru #2A3B8F, logo putih, “Cara MUDAH Urus Yuran”, CTA “Follow untuk tips urus yuran sekolah”, hello@yuran.my
+   0:15.82  SFX pop lembut
+   0:17.20  SFX pop lembut
+   0:18.80  SFX pop lembut
+   0:19.30  SFX whoosh lembut
+   0:29.98  SFX tick lembut
+   0:31.20  SFX tick lembut
+   0:32.78  SFX tick lembut
+   0:34.38  SFX tick lembut
+   0:36.50  SFX whoosh lembut
+   0:39.78  SFX tick lembut
+   0:40.90  SFX tick lembut
+   0:44.54  SFX pop lembut
+   0:47.80  SFX pop lembut
+   0:51.72  SFX whoosh lembut
+   0:55.18  SFX tick lembut
+   0:56.24  SFX tick lembut
+   0:59.36  SFX pop lembut
+   1:02.78  SFX whoosh lembut
+   1:06.58  SFX tick lembut
+   1:07.90  SFX tick lembut
+   1:11.36  SFX pop lembut
+   1:15.50  SFX whoosh lembut
+   1:18.64  SFX tick lembut
+   1:19.72  SFX tick lembut
+   1:22.64  SFX pop lembut
+   1:27.60  SFX pop lembut
+   1:27.85  SFX pop lembut
+   1:28.10  SFX pop lembut
+   1:28.30  SFX pop lembut
+   1:28.35  SFX pop lembut
+   1:36.10  SFX whoosh lembut
+   1:43.36  SFX tick lembut
+   1:44.46  SFX tick lembut
+   1:46.20  SFX tick lembut
+   1:49.64  SFX whoosh lembut
+   1:50.26  SFX tick lembut
+   1:51.72  SFX tick lembut
+   1:54.26  SFX pop lembut
+   1:55.72  SFX whoosh lembut
+   1:57.40  SFX klik lembut
+   1:58.62  SFX whoosh lembut
+   2:02.76  SFX tick lembut
+   2:04.70  SFX tick lembut
+   2:07.68  SFX whoosh lembut
+   2:08.36  SFX ding lembut
+   2:13.48  SFX whoosh lembut
+   2:16.76  SFX tick lembut
+   2:17.48  SFX tick lembut
+   2:18.80  SFX tick lembut
+   2:21.26  SFX pop lembut
+   2:27.18  SFX pop lembut
+   2:34.52  SFX whoosh lembut
+   2:36.30  SFX klik lembut
+   2:45.38  SFX pop lembut
+   2:48.22  SFX pop lembut
+   2:54.68  SFX whoosh lembut
+   2:56.42  SFX tick lembut
+   2:57.12  SFX tick lembut
+   2:57.76  SFX tick lembut
+   2:58.76  SFX tick lembut
+   3:00.88  SFX pop lembut
+   3:03.30  SFX pop lembut
+   3:10.18  SFX ding lembut
+   3:10.18  SFX pop lembut
+
+4) CTA
+   End card: "Cara MUDAH Urus Yuran" + "Follow untuk tips urus yuran sekolah" + hello@yuran.my (TOFU).
+
+5) PERLU SEMAK
+   - Ayat 3:12: Transkrip dengar “Garip, kalau masih ada bela-bela lagi”. Caption sementara: “Get it? kalau masih ada bela-bela lagi”. Sahkan sebutan sebenar.
+   - Latar kabur talking head: Belum ada bokeh pada bahagian Farhan (sama seperti video sebelum ini).
+   - Durasi: 201 s, melebihi TOFU 20–45 s; dikekalkan penuh sebagai tutorial (diluluskan dalam storyboard).
+
+6) CAPTION TIKTOK
+   Cara isi template migration Yuran.my: tab Programs, Students dan Staffs. Pastikan kod class sama di setiap tab supaya data pelajar dipadankan dengan betul.
+   #YuranMy #SistemYuran #DataMigration #TutorialApp #PengurusanSekolah
+
+Perubahan (ikut komen Farhan):
+   - Storyboard: Extra Fee digesir untuk tunjuk fee tambahan lain (komen Farhan).

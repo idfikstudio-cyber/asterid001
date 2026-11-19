@@ -70,6 +70,8 @@ def sheet(img, path, cam, hl=(), notes=(), card_a=1.0):
         col = T.B2 if style == "blue" else (245, 166, 35)
         x0, y0 = P(box[0], box[1]); x1, y1 = P(box[2], box[3])
         x0 = max(x0, S(cx0) + S(6)); x1 = min(x1, S(cx1) - S(6))
+        y0 = max(y0, S(cy0) + S(6)); y1 = min(y1, S(cy1) - S(6))
+        if x1 - x0 < S(20) or y1 - y0 < S(10): continue
         d.rounded_rectangle((x0 - S(6), y0 - S(6), x1 + S(6), y1 + S(6)), S(12), fill=col + (int(40 * a),), outline=col + (int(255 * a),), width=S(7))
         if label: labels.append((label, (x0 + x1) / 2, y1 + S(18), a, style))
     # gelapkan luar kad sedikit bila ada highlight? tidak — kekal kemas

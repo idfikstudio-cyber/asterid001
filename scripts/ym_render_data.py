@@ -7,6 +7,7 @@ import json, re, subprocess, sys, os
 from PIL import Image, ImageDraw, ImageFilter
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import ym_datatree as T
+import ym_sheet as SH
 
 ED, RAW, BRAND, SFXD, MUSIC, OUT = sys.argv[1:7]
 SC = float(sys.argv[7]) if len(sys.argv) > 7 else 0.5
@@ -82,13 +83,14 @@ def thumb_img():
     im = Image.open(os.environ["THUMB_SRC"]).convert("RGB").resize((W, H))
     g = Image.new("L", (1, H), 0)
     for y in range(int(H * 0.47), H): g.putpixel((0, y), int(235 * (y - H * 0.47) / (H * 0.53)))
-    im.paste(Image.new("RGB", (W, H), INK), (0, 0), g.resize((W, H))); d = ImageDraw.Draw(im); y = S(1020)
+    im.paste(Image.new("RGB", (W, H), INK), (0, 0), g.resize((W, H))); d = ImageDraw.Draw(im); y = S(C.get("hook_y", 1020))
+    hfs, hst = C.get("hook_fs", 96), C.get("hook_step", 108)
     for t, k in C["hook"]:
         if k == "pill":
             f = F(T.FX, 50); tw = d.textlength(t, font=f)
             d.rounded_rectangle((S(80), y, S(80) + tw + S(60), y + S(80)), S(40), fill=B2); d.text((S(110), y + S(40)), t, font=f, fill=WH, anchor="lm"); y += S(110)
         else:
-            d.text((S(80), y), t, font=F(T.FX, 96), fill=B2 if k == "a" else WH, stroke_width=S(4), stroke_fill=INK); y += S(108)
+            d.text((S(80), y), t, font=F(T.FX, hfs), fill=B2 if k == "a" else WH, stroke_width=S(4), stroke_fill=INK); y += S(hst)
     return im
 
 def end_img():
@@ -101,6 +103,19 @@ def end_img():
     d.text((W / 2, S(1380)), C["email"], font=F(T.FB, 46), fill=GR, anchor="mm")
     return im
 LABEL = T.card(C["label"]["text"], fill=B1, ink=WH, fs=36)
+_cc = {}
+def CARDS(text, fill, ink, num, w):
+    k = (text, fill, num, w)
+    if k not in _cc: _cc[k] = T.card(text, w=w, fill=fill, ink=ink, num=num, fs=40 if num else 38)
+    return _cc[k]
+SHOTS = {k: os.path.join(os.environ.get("SHOT_DIR", ""), v) for k, v in C.get("shots", {}).items()}
+def box_of(b): return SH.cell(*b) if isinstance(b[0], str) else tuple(b)
+def cam_of(k): return tuple(k[2:6]) if k[1] == "raw" else SH.cam_for(box_of(k[1]), k[2] if len(k) > 2 else 60)
+def cam_at(g, r):
+    ks = g["cams"]; i = max(j for j, k in enumerate(ks) if k[0] <= r) if ks[0][0] <= r else 0
+    cur = cam_of(ks[i])
+    if i > 0 and r < ks[i][0] + 0.6: return SH.lerp_cam(cam_of(ks[i - 1]), cur, (r - ks[i][0]) / 0.6)
+    return cur
 
 zc = C["zoom_cuts"]
 def zoom_at(r): return 1.0 if max(k for k, z in enumerate(zc) if z <= r) % 2 == 0 else 1.12
@@ -116,10 +131,15 @@ def talk_frame(r, rf):
     lb = C["label"]
     if lb["s"] <= r < lb["e"]:
         a = min(ease((r - lb["s"]) / 0.3), ease((lb["e"] - r) / 0.3)); T.paste_a(img, LABEL, S(70), S(300) - (1 - a) * S(20), a)
-    m = C["messy"]; T.messy_to_tidy(img, r, m["t0"], m["snap"], m["end"])
-    l4 = C["list4"]; T.list4(img, r, l4["ts"], l4["end"], chain_t=l4["chain"])
-    ch = C["chips"]; T.chips_rows(img, r, ch["rows"], ch["end"])
-    rd = C["ready"]; T.messy_to_tidy(img, r, rd["t0"], rd["snap"], rd["end"], label_b=rd["label"])
+    if "messy" in C: m = C["messy"]; T.messy_to_tidy(img, r, m["t0"], m["snap"], m["end"])
+    if "list4" in C: l4 = C["list4"]; T.list4(img, r, l4["ts"], l4["end"], chain_t=l4["chain"])
+    if "chips" in C: ch = C["chips"]; T.chips_rows(img, r, ch["rows"], ch["end"])
+    if "ready" in C: rd = C["ready"]; T.messy_to_tidy(img, r, rd["t0"], rd["snap"], rd["end"], label_b=rd["label"])
+    for t0, t1, x, y, text, style, num, w in C.get("cards", []):
+        if t0 <= r < t1 + 0.3:
+            a = min(ramp(r, t0, 0.3), ease((t1 - r) / 0.3))
+            fill, ink = {"white": (WH, B1), "blue": (B2, WH), "navy": (B1, WH)}[style]
+            T.paste_a(img, CARDS(text, fill, ink, num, w), S(x) - (1 - a) * S(40), S(y), a)
     caption(img, r, "talk")
     return img
 
@@ -137,6 +157,22 @@ def gfx_frame(g, r, rf):
         T.abu_flow(img, r, g["times"], glow_t=g["glow"], t_in=g["s"])
     elif g["kind"] == "inst":
         T.inst_list(img, r, g["s"], g["items"])
+    elif g["kind"] == "sheet":
+        SH.header(img, g["title"], g.get("sub"), ramp(r, g["s"], 0.3))
+        hls = [(box_of(b), lab, min(ramp(r, t0, 0.25), ease((t1 - r) / 0.25)), st) for t0, t1, b, lab, st in g["hl"] if t0 <= r < t1 + 0.25]
+        nts = [(txt, min(ramp(r, t0, 0.3), ease((t1 - r) / 0.3))) for t0, t1, txt in g["notes"] if t0 <= r < t1 + 0.3]
+        SH.sheet(img, SHOTS[g["tab"]], cam_at(g, r), hls, nts)
+    elif g["kind"] == "warn2":
+        SH.header(img, g["title"], g.get("sub"))
+        SH.CARD = (40, 380, 1040, 740)
+        SH.sheet(img, SHOTS["Programs"], SH.cam_for(SH.cell("Programs", "K", "K", 4, 5), 24, ar=0.36), [(SH.cell("Programs", "K", "K", 4, 5), None, 1.0, "warn")])
+        SH.CARD = (40, 800, 1040, 1160)
+        SH.sheet(img, SHOTS["Students"], SH.cam_for(SH.cell("Students", "A", "A", 4, 5), 24, ar=0.36), [(SH.cell("Students", "A", "A", 4, 5), None, ramp(r, g["s"] + 0.6, 0.3), "warn")])
+        SH.CARD = (40, 380, 1040, 1180)
+        if r >= g["t_eq"]:
+            d = ImageDraw.Draw(img); k = ramp(r, g["t_eq"], 0.25); rr = 45 * k
+            d.ellipse((S(540 - rr), S(770 - rr), S(540 + rr), S(770 + rr)), fill=B2); d.text((S(540), S(770)), "=", font=F(T.FX, int(64 * k) + 1), fill=WH, anchor="mm")
+        SH.warn_card(img, "Kod class mesti sama", ["Class Code di tab Students mesti sama", "dengan kod di tab Programs."], ramp(r, g["t_warn"], 0.35), y=1170)
     f, m = face_pip(rf, 210); d = ImageDraw.Draw(img); px, py = S(820), S(140)   # sebaris dengan tajuk grafik
     d.ellipse((px - S(6), py - S(6), px + f.width + S(6), py + f.height + S(6)), fill=WH); img.paste(f, (px, py), m)
     caption(img, r, "gfx")

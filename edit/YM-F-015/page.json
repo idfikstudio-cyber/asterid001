@@ -1,0 +1,632 @@
+{
+ "id": "YM-F-015",
+ "topik": "Cara Isi Data didalam Template Migration",
+ "tag": "TOFU",
+ "ver": "v1",
+ "status": "Preview v1",
+ "tarikh": "19 Nov 2026",
+ "edit_intro": "Cover 1 saat dengan tajuk fail video. Farhan bercakap di intro, bahagian kod konsisten, akses staff dan penutup. Selebihnya skrin Google Sheet sebenar (tangkapan skrin templat) dalam kad atas latar biru: kamera zoom dan gesir ke lajur yang sedang disebut, kotak biru highlight tajuk lajur + contoh, label di bawah sel, dan kad nota guna ayat Farhan. Farhan kekal dalam bulatan atas kanan. Peringatan Class Code (oren) pada 2:08.",
+ "seg": [
+  [
+   0,
+   1.0,
+   "Thumbnail",
+   "Hook “CARA ISI DATA DIDALAM TEMPLATE MIGRATION”."
+  ],
+  [
+   1.0,
+   11.34,
+   "Intro",
+   "Isi data dalam template migration."
+  ],
+  [
+   11.34,
+   19.3,
+   "3 bahagian",
+   "Kad Programs, Students, Staffs."
+  ],
+  [
+   19.3,
+   36.5,
+   "Tab Programs",
+   "4 kumpulan: Program, Kategori, Modul, Class."
+  ],
+  [
+   36.5,
+   51.72,
+   "Program",
+   "Kod + nama program (AR1 → Bahasa Arab)."
+  ],
+  [
+   51.72,
+   62.78,
+   "Kategori",
+   "PAGI → Sesi Pagi."
+  ],
+  [
+   62.78,
+   75.5,
+   "Modul",
+   "L1 → Level 1."
+  ],
+  [
+   75.5,
+   87.38,
+   "Class",
+   "AR1A → Kelas 1A."
+  ],
+  [
+   87.38,
+   96.1,
+   "Konsisten",
+   "Kod mesti konsisten."
+  ],
+  [
+   96.1,
+   109.64,
+   "Class Fees",
+   "Pendaftaran, Material, kemudian gesir ke Extra Fee."
+  ],
+  [
+   109.64,
+   115.72,
+   "Trainer",
+   "Pilihan: kalau ada, bonus."
+  ],
+  [
+   115.72,
+   118.62,
+   "→ Students",
+   "Klik tab Students."
+  ],
+  [
+   118.62,
+   127.68,
+   "Students",
+   "Nama pelajar + Class Code."
+  ],
+  [
+   127.68,
+   133.48,
+   "⚠ Class Code",
+   "Kod class mesti sama dengan tab Programs."
+  ],
+  [
+   133.48,
+   154.52,
+   "Ibu bapa",
+   "Nama, telefon, email; email dummy."
+  ],
+  [
+   154.52,
+   158.18,
+   "→ Staffs",
+   "Klik tab Staffs."
+  ],
+  [
+   158.18,
+   174.68,
+   "Akses staff",
+   "Jangan kongsi ID; activity log."
+  ],
+  [
+   174.68,
+   188.36,
+   "Staffs",
+   "Nama, telefon, email, level."
+  ],
+  [
+   188.36,
+   199.6,
+   "Penutup",
+   "Data sedia untuk migrasi."
+  ],
+  [
+   199.6,
+   201.1,
+   "End card",
+   "Logo, tagline, CTA TOFU, hello@yuran.my."
+  ]
+ ],
+ "mg": [
+  [
+   0.3,
+   3.6,
+   "Label",
+   "Pil biru “Farhan · Yuran.my”"
+  ],
+  [
+   14.82,
+   18.3,
+   "Kad",
+   "“Programs”"
+  ],
+  [
+   16.2,
+   18.3,
+   "Kad",
+   "“Students”"
+  ],
+  [
+   17.8,
+   18.3,
+   "Kad",
+   "“Staffs”"
+  ],
+  [
+   86.6,
+   95.1,
+   "Kad",
+   "“AR1  ·  Program”"
+  ],
+  [
+   86.85,
+   95.1,
+   "Kad",
+   "“PAGI  ·  Kategori”"
+  ],
+  [
+   87.1,
+   95.1,
+   "Kad",
+   "“L1  ·  Modul”"
+  ],
+  [
+   87.35,
+   95.1,
+   "Kad",
+   "“AR1A  ·  Class”"
+  ],
+  [
+   87.3,
+   95.1,
+   "Kad",
+   "“Kod mesti konsisten”"
+  ],
+  [
+   164.38,
+   173.68,
+   "Kad",
+   "“Jangan kongsi ID”"
+  ],
+  [
+   167.22,
+   173.68,
+   "Kad",
+   "“Activity log untuk setiap ID”"
+  ],
+  [
+   189.18,
+   192.0,
+   "Kad",
+   "“Data sedia untuk migrasi”"
+  ],
+  [
+   18.3,
+   35.5,
+   "Google Sheet",
+   "Tab Programs — tab Programs: 4 perkara wajib diisi"
+  ],
+  [
+   28.98,
+   35.5,
+   "Highlight",
+   "“Program”"
+  ],
+  [
+   30.2,
+   35.5,
+   "Highlight",
+   "“Kategori”"
+  ],
+  [
+   31.78,
+   35.5,
+   "Highlight",
+   "“Modul”"
+  ],
+  [
+   33.38,
+   35.5,
+   "Highlight",
+   "“Class”"
+  ],
+  [
+   35.5,
+   50.72,
+   "Google Sheet",
+   "1 · Program — tab Programs: Kod program + nama program"
+  ],
+  [
+   38.78,
+   50.72,
+   "Highlight",
+   "“Kod program”"
+  ],
+  [
+   39.9,
+   50.72,
+   "Highlight",
+   "“Nama program”"
+  ],
+  [
+   43.54,
+   50.72,
+   "Nota",
+   "“AR1 → Bahasa Arab”"
+  ],
+  [
+   46.8,
+   50.72,
+   "Nota",
+   "“Setiap program ada kod tersendiri”"
+  ],
+  [
+   50.72,
+   61.78,
+   "Google Sheet",
+   "2 · Kategori — tab Programs: Kod kategori + nama kategori"
+  ],
+  [
+   54.18,
+   61.78,
+   "Highlight",
+   "“Kod kategori”"
+  ],
+  [
+   55.24,
+   61.78,
+   "Highlight",
+   "“Nama kategori”"
+  ],
+  [
+   58.36,
+   61.78,
+   "Nota",
+   "“PAGI → Sesi Pagi”"
+  ],
+  [
+   61.78,
+   74.5,
+   "Google Sheet",
+   "3 · Modul — tab Programs: Kod modul + nama modul"
+  ],
+  [
+   65.58,
+   74.5,
+   "Highlight",
+   "“Kod modul”"
+  ],
+  [
+   66.9,
+   74.5,
+   "Highlight",
+   "“Nama modul”"
+  ],
+  [
+   70.36,
+   74.5,
+   "Nota",
+   "“L1 → Level 1”"
+  ],
+  [
+   74.5,
+   86.38,
+   "Google Sheet",
+   "4 · Class — tab Programs: Kod class + nama class"
+  ],
+  [
+   77.64,
+   86.38,
+   "Highlight",
+   "“Kod class”"
+  ],
+  [
+   78.72,
+   86.38,
+   "Highlight",
+   "“Nama class”"
+  ],
+  [
+   81.64,
+   86.38,
+   "Nota",
+   "“AR1A → Kelas 1A”"
+  ],
+  [
+   95.1,
+   108.64,
+   "Google Sheet",
+   "Class Fees (RM) — tab Programs: Masukkan semua yuran yang dikenakan"
+  ],
+  [
+   102.36,
+   104.6,
+   "Highlight",
+   "“Pendaftaran”"
+  ],
+  [
+   103.46,
+   104.6,
+   "Highlight",
+   "“Material”"
+  ],
+  [
+   105.2,
+   108.64,
+   "Highlight",
+   "“Fee tambahan lain”"
+  ],
+  [
+   108.64,
+   114.72,
+   "Google Sheet",
+   "Trainer & Assistant — tab Programs: Pilihan: tak ada pun tak apa"
+  ],
+  [
+   109.26,
+   114.72,
+   "Highlight",
+   "“Trainer details”"
+  ],
+  [
+   110.72,
+   114.72,
+   "Highlight",
+   "“Assistant details”"
+  ],
+  [
+   113.26,
+   114.72,
+   "Nota",
+   "“Kalau ada, bonus”"
+  ],
+  [
+   114.72,
+   117.62,
+   "Google Sheet",
+   "Tab Students — tab Programs: Bahagian kedua"
+  ],
+  [
+   116.4,
+   117.62,
+   "Highlight",
+   "“Klik tab Students”"
+  ],
+  [
+   117.62,
+   126.68,
+   "Google Sheet",
+   "Tab Students — tab Students: Nama pelajar + kod class"
+  ],
+  [
+   121.76,
+   126.68,
+   "Highlight",
+   "“Nama pelajar”"
+  ],
+  [
+   123.7,
+   126.68,
+   "Highlight oren",
+   "“Class Code”"
+  ],
+  [
+   126.68,
+   132.48,
+   "Amaran",
+   "Dua panel Class Code AR1A (Programs = Students) + kad amaran “Kod class mesti sama”"
+  ],
+  [
+   132.48,
+   153.52,
+   "Google Sheet",
+   "Maklumat ibu bapa — tab Students: Nama, nombor telefon, email"
+  ],
+  [
+   135.76,
+   153.52,
+   "Highlight",
+   "“Nama”"
+  ],
+  [
+   136.48,
+   153.52,
+   "Highlight",
+   "“No. telefon”"
+  ],
+  [
+   137.8,
+   153.52,
+   "Highlight",
+   "“Email”"
+  ],
+  [
+   140.26,
+   153.52,
+   "Nota",
+   "“Tiada email? Kami masukkan email dummy”"
+  ],
+  [
+   146.18,
+   153.52,
+   "Nota",
+   "“Satu sahaja sudah memadai”"
+  ],
+  [
+   153.52,
+   157.18,
+   "Google Sheet",
+   "Tab Staffs — tab Students: Bahagian ketiga"
+  ],
+  [
+   155.3,
+   157.18,
+   "Highlight",
+   "“Klik tab Staffs”"
+  ],
+  [
+   173.68,
+   187.36,
+   "Google Sheet",
+   "Tab Staffs — tab Staffs: Nama, telefon, email dan level"
+  ],
+  [
+   175.42,
+   187.36,
+   "Highlight",
+   "“Nama”"
+  ],
+  [
+   176.12,
+   187.36,
+   "Highlight",
+   "“Telefon”"
+  ],
+  [
+   176.76,
+   187.36,
+   "Highlight",
+   "“Email”"
+  ],
+  [
+   177.76,
+   187.36,
+   "Highlight oren",
+   "“Level”"
+  ],
+  [
+   179.88,
+   187.36,
+   "Nota",
+   "“admin · supervisor · clerk”"
+  ],
+  [
+   182.3,
+   187.36,
+   "Nota",
+   "“class-assistant · class-admin”"
+  ]
+ ],
+ "done": [
+  [
+   "Extra Fee (komen Farhan)",
+   "Pada “Apa-apa sahaja yuran…” kamera gesir dari Registration/Material Fee ke lajur (Extra Fee) dengan label “Fee tambahan lain”.",
+   106.0
+  ],
+  [
+   "Peringatan Class Code (permintaan Farhan)",
+   "Dua panel AR1A di tab Programs = AR1A di tab Students + kad amaran oren “Kod class mesti sama”.",
+   128.5
+  ],
+  [
+   "Fokus data, bukan Excel",
+   "Hanya lajur wajib dan contoh nilai yang di-highlight ikut sebutan.",
+   40.0
+  ],
+  [
+   "Privasi",
+   "Bar tajuk (nama fail IQMA) dan avatar penonton dipotong. Data contoh templat dikekalkan; nombor telefon sudah bertopeng XXX.",
+   20.0
+  ],
+  [
+   "Caption",
+   "“kolam” → column, “klub” → clerk, “Euron” → Yuran.",
+   97.0
+  ],
+  [
+   "Thumbnail",
+   "Tajuk sama dengan nama fail video.",
+   0.0
+  ],
+  [
+   "ID",
+   "YM-F-015.",
+   null
+  ]
+ ],
+ "todo": [
+  [
+   "Ayat 3:12",
+   "Transkrip dengar “Garip, kalau masih ada bela-bela lagi”. Caption sementara: “Get it? kalau masih ada bela-bela lagi”. Sahkan sebutan sebenar.",
+   192.9
+  ],
+  [
+   "Latar kabur talking head",
+   "Belum ada bokeh pada bahagian Farhan (sama seperti video sebelum ini).",
+   5.0
+  ],
+  [
+   "Durasi",
+   "201 s, melebihi TOFU 20–45 s; dikekalkan penuh sebagai tutorial (diluluskan dalam storyboard).",
+   null
+  ]
+ ],
+ "tt": "Cara isi template migration Yuran.my: tab Programs, Students dan Staffs. Pastikan kod class sama di setiap tab supaya data pelajar dipadankan dengan betul.",
+ "hs": "#YuranMy #SistemYuran #DataMigration #TutorialApp #PengurusanSekolah",
+ "ga": [
+  [
+   "Colour grade",
+   [
+    [
+     "Kontras",
+     "×1.04",
+     "Gambar lebih jelas."
+    ],
+    [
+     "Kecerahan",
+     "+0.015",
+     "Cerah sedikit."
+    ],
+    [
+     "Saturasi",
+     "×1.05",
+     "Warna kulit asli dikekalkan."
+    ],
+    [
+     "Ketajaman",
+     "unsharp 0.3",
+     "Butiran muka lebih jelas."
+    ],
+    [
+     "Skrin Google Sheet",
+     "tiada grade",
+     "Warna templat kekal tepat."
+    ]
+   ]
+  ],
+  [
+   "Audio",
+   [
+    [
+     "High-pass",
+     "80 Hz",
+     "Buang dengung rendah."
+    ],
+    [
+     "Denoise",
+     "FFT, 10 dB",
+     "Bunyi latar berkurang."
+    ],
+    [
+     "Loudness suara",
+     "−14 LUFS / −1 dBTP",
+     "Piawai TikTok."
+    ],
+    [
+     "Muzik",
+     "−27 dB + ducking",
+     "Instrumental cozy dijana sendiri (versi 3)."
+    ],
+    [
+     "SFX",
+     "tick, klik, pop, whoosh, ding",
+     "Lembut; bebas hak cipta."
+    ]
+   ]
+  ]
+ ],
+ "changes": [
+  "Storyboard: Extra Fee digesir untuk tunjuk fee tambahan lain (komen Farhan)."
+ ]
+}
