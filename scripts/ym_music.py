@@ -4,9 +4,9 @@
 import sys, numpy as np, wave
 
 SR = 44100
-BPM = 78
+BPM = float(sys.argv[4]) if len(sys.argv) > 4 else 78
 DUR = float(sys.argv[2]) if len(sys.argv) > 2 else 90.0
-rng = np.random.default_rng(11)
+rng = np.random.default_rng(int(sys.argv[3]) if len(sys.argv) > 3 else 11)
 beat = 60 / BPM
 bar = 4 * beat
 N = int(SR * DUR)

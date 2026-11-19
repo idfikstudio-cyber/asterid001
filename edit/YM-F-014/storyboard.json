@@ -1,0 +1,514 @@
+{
+ "title": "YM-F-014 Storyboard Susun Data",
+ "eyebrow": "Yuran.my · TOFU + Tutorial · Evergreen · Draf storyboard v1",
+ "h1": "Macam mana nak susun data institusi dalam Yuran.my",
+ "pills": [
+  "Menunggu kelulusan storyboard",
+  "Raw 2:05 ucapan",
+  "Anggaran siap ±2:08"
+ ],
+ "tutlabel": "Grafik struktur data (skrin penuh)",
+ "axis": [
+  "0:00",
+  "0:22",
+  "0:38",
+  "1:09",
+  "1:33",
+  "2:05"
+ ],
+ "scenes": [
+  {
+   "img": "a0_thumb",
+   "label": "Thumbnail",
+   "kind": "brand",
+   "time": "0:00 · 1.0 s",
+   "w": 1.5,
+   "title": "Cover 1 saat",
+   "say": "—",
+   "vis": "Frame Farhan senyum (2:03) + hook 3 baris dalam safe zone kiri, pil TUTORIAL.",
+   "anim": "Statik. Tiada logo.",
+   "src": "Raw 2:03"
+  },
+  {
+   "img": "a1_intro",
+   "label": "Intro",
+   "kind": "talk",
+   "s": 0.0,
+   "e": 11.1,
+   "title": "Satu perkara sebelum guna sistem",
+   "say": "“Untuk institusi yang nak menggunakan sistem Yuran.my, ada satu perkara yang kita kena sediakan dulu … Itulah namanya data untuk setiap institusi. Kenapa data ni penting?”",
+   "vis": "Talking head, punch-in 100% ↔ 112% pada permulaan ayat. Label “Farhan · Yuran.my” ±3 s.",
+   "anim": "Kata “data” di-highlight biru.",
+   "src": "Raw"
+  },
+  {
+   "img": "a2_messy",
+   "label": "Kenapa",
+   "kind": "talk",
+   "s": 11.1,
+   "e": 15.2,
+   "title": "Data bersepah → data tersusun",
+   "say": "“Tanpa data yang tersusun dengan baik, sistem pun tak dapat nak run dengan baik.”",
+   "vis": "Empat kad (Program, Kategori, Modul, Kelas) bertaburan senget dengan label hitam “Data bersepah”, kemudian tersusun rapi menjadi satu lajur dengan label biru “Data tersusun”.",
+   "anim": "Kad tersusun pada perkataan “tersusun” (13.6 s). SFX whoosh lembut + pop.",
+   "src": "Grafik baharu"
+  },
+  {
+   "img": "a3_list",
+   "label": "4 komponen",
+   "kind": "talk",
+   "s": 15.3,
+   "e": 28.6,
+   "title": "Empat komponen wajib",
+   "say": "“Yang pertama, perlu ada program. Yang kedua, kena ada kategori. Yang ketiga, kena ada modul. Dan yang keempat, kena ada kelas.”",
+   "vis": "Kad bernombor 1–4 muncul satu-satu di kiri tepat pada sebutan (22.1 / 23.7 / 25.3 / 27.0 s). Wajah Farhan tidak ditutup.",
+   "anim": "Slide masuk dari kiri + tick lembut setiap kad.",
+   "src": "Grafik baharu"
+  },
+  {
+   "img": "a4_chain",
+   "label": "Berkait",
+   "kind": "talk",
+   "s": 28.6,
+   "e": 38.4,
+   "title": "Berkait rapat",
+   "say": "“Keempat-empat perkara ni berkait rapat supaya sistem tu berjalan dengan smooth … satu contoh macam mana … berkait rapat.”",
+   "vis": "Garis biru menyambung kad 1→4 dari atas ke bawah, kemudian pil “Berkait rapat”. Kad hilang sebelum masuk contoh.",
+   "anim": "Garis dilukis 0.8 s. SFX swoosh lembut ke babak grafik penuh.",
+   "src": "Grafik baharu"
+  },
+  {
+   "img": "b1_program",
+   "label": "Contoh: Program",
+   "short": "Prog",
+   "kind": "tutorial",
+   "s": 38.4,
+   "e": 44.5,
+   "title": "Program: Bahasa Arab",
+   "say": "“Sebagai contoh, kita ada program tadi kan? Program tu bahasa Arab. Di bawah program tu, kita ada kategori.”",
+   "vis": "Skrin penuh latar biru #2A3B8F. Tajuk “Struktur data Yuran.my”. Aras 1 PROGRAM: kad “Bahasa Arab”. Farhan dalam bulatan PIP kiri bawah; caption dalam kotak gelap.",
+   "anim": "Kad muncul dari bawah (pop lembut) pada “bahasa Arab” 40.6 s.",
+   "src": "Grafik baharu (ganti B-roll PNG statik)"
+  },
+  {
+   "img": "b2_kategori",
+   "label": "Kategori",
+   "short": "Kat",
+   "kind": "tutorial",
+   "s": 44.5,
+   "e": 48.2,
+   "title": "Kategori: Sesi Pagi / Sesi Petang",
+   "say": "“Kategori ni kita boleh pecahkan kepada sesi petang ataupun sesi pagi.”",
+   "vis": "Garis cabang dilukis dari Bahasa Arab ke dua kad: Sesi Pagi, Sesi Petang.",
+   "anim": "Garis tumbuh 0.35 s, kad muncul berturutan.",
+   "src": "Grafik baharu"
+  },
+  {
+   "img": "b3_modul",
+   "label": "Modul",
+   "short": "Mod",
+   "kind": "tutorial",
+   "s": 48.2,
+   "e": 57.5,
+   "title": "Modul: Peringkat 1 / 2 / 3",
+   "say": "“Dan modul tu pula kita boleh pecahkan by peringkat. Peringkat 1, ataupun peringkat 2, ataupun peringkat 3. Contoh je lah ya.”",
+   "vis": "Aras 3 MODUL dengan tiga kad Peringkat 1–3, muncul tepat pada sebutan nombor.",
+   "anim": "Pop lembut × 3.",
+   "src": "Grafik baharu"
+  },
+  {
+   "img": "b4_kelas",
+   "label": "Kelas",
+   "short": "Kls",
+   "kind": "tutorial",
+   "s": 57.5,
+   "e": 65.4,
+   "title": "Kelas 1 hingga 4",
+   "say": "“Selepas kita dah readykan modul tu, kita akan masuk bahagian kelas … kelas 1, kelas 2, kelas 3, kelas 4. Ni nama-nama ni boleh ketukar.”",
+   "vis": "Aras 4 KELAS: empat kad. Struktur lengkap 4 aras kelihatan.",
+   "anim": "Kad muncul ikut sebutan 1-2-3-4.",
+   "src": "Grafik baharu"
+  },
+  {
+   "img": "b5_rename",
+   "label": "Nama kelas",
+   "short": "Nama",
+   "kind": "tutorial",
+   "s": 65.4,
+   "e": 69.6,
+   "title": "Nama kelas boleh ditukar",
+   "say": "“Kelas adwira, kelas wira, kelas satria. Macam-macam lah kita boleh set up.”",
+   "vis": "Kad Kelas 1–3 bertukar nama menjadi Adiwira, Wira, Satria ikut sebutan.",
+   "anim": "Teks flip lembut setiap kad.",
+   "src": "Grafik baharu"
+  },
+  {
+   "img": "c1_abu_prog",
+   "label": "Simulasi Abu",
+   "short": "Abu",
+   "kind": "tutorial",
+   "s": 69.6,
+   "e": 76.0,
+   "title": "Abu masuk program & sesi",
+   "say": "“Contoh satu pelajar, nama dia Abu. Abu ni join program bahasa Arab. Kemudian, dia masuk sesi petang.”",
+   "vis": "Nama kelas kembali ke Kelas 1–4. Token bulat “A · Abu” muncul pada Bahasa Arab; kad lain dimalapkan; laluan dipilih menyala biru #29ABE2.",
+   "anim": "Token bergerak turun ke Sesi Petang pada “sesi petang” (73.6 s). SFX pop.",
+   "src": "Grafik baharu"
+  },
+  {
+   "img": "c2_abu_kelas",
+   "label": "Abu",
+   "short": "Abu",
+   "kind": "tutorial",
+   "s": 76.0,
+   "e": 82.5,
+   "title": "Peringkat 2 → Kelas 1",
+   "say": "“Sesi petang tu pula, dia masuk level yang kedua. Dan dia dimasukkan di dalam kelas yang pertama. Nampak tak kaitan dia?”",
+   "vis": "Token turun ke Peringkat 2 (75.6 s) dan Kelas 1 (78.4 s). Seluruh laluan Bahasa Arab → Sesi Petang → Peringkat 2 → Kelas 1 menyala.",
+   "anim": "Ding lembut pada “Nampak tak kaitan dia?”.",
+   "src": "Grafik baharu"
+  },
+  {
+   "img": "a5_depend",
+   "label": "Bergantung",
+   "kind": "talk",
+   "s": 82.5,
+   "e": 93.0,
+   "title": "Bergantung pada institusi",
+   "say": "“Inilah simulasi macam mana data tu tersusun. Tetapi, dia bergantung kepada [ada] setiap institusi … pengurusan operasi dia macam mana.”",
+   "vis": "Kembali ke Farhan penuh, punch-in. Caption sahaja.",
+   "anim": "—",
+   "src": "Raw"
+  },
+  {
+   "img": "d1_many",
+   "label": "Banyak program",
+   "kind": "talk",
+   "s": 93.0,
+   "e": 107.4,
+   "title": "Banyak program, banyak sesi",
+   "say": "“Ada institusi yang banyak program. Contohnya, program bahasa Arab secara intensif … mingguan … bulanan. Dan ada pula banyak sesi. Sesi pagi, sesi petang, sesi malam.”",
+   "vis": "Atas talking head: baris “Program Bahasa Arab” dengan cip Intensif / Mingguan / Bulanan, kemudian baris “Sesi” dengan Pagi / Petang / Malam, muncul ikut sebutan.",
+   "anim": "Pop lembut setiap cip.",
+   "src": "Grafik baharu"
+  },
+  {
+   "img": "a6_share",
+   "label": "Kongsi",
+   "kind": "talk",
+   "s": 107.4,
+   "e": 118.5,
+   "title": "Kami bantu kenal pasti",
+   "say": "“Jadi, cuba kongsikan dengan kami macam mana operasi pengurusan data untuk institusi anda. Kita akan bantu untuk kenal pasti macam mana nak susun data tu menggunakan sistem Yuran.my.”",
+   "vis": "Farhan penuh, punch-in. Caption sahaja (tiada teks tambahan).",
+   "anim": "—",
+   "src": "Raw"
+  },
+  {
+   "img": "d2_ready",
+   "label": "Tersusun",
+   "kind": "talk",
+   "s": 118.5,
+   "e": 122.1,
+   "title": "Data tersusun, baru guna sistem",
+   "say": "“Selepas data dah tersusun, barulah kita boleh gunakan sistem. Get it?”",
+   "vis": "Callback grafik awal: empat kad tersusun dengan label biru “Sedia guna sistem”.",
+   "anim": "Pop + tanda ✓.",
+   "src": "Grafik baharu"
+  },
+  {
+   "img": "e_end",
+   "label": "End card",
+   "kind": "brand",
+   "s": 122.1,
+   "e": 125.0,
+   "time": "2:02–akhir · 2.9 s + 1.5 s",
+   "title": "Penutup",
+   "say": "“Selamat menggunakan sistem Yuran.my.”",
+   "vis": "Ayat akhir Farhan dikekalkan, kemudian end card 1.5 s: logo putih atas biru, “Cara MUDAH Urus Yuran”, CTA TOFU, hello@yuran.my.",
+   "anim": "Muzik fade out.",
+   "src": "BRAND/Logo Yuran White.png"
+  }
+ ],
+ "ask": [
+  [
+   "B-roll PNG",
+   "Gambar “Macam mana nak susun data.png” dijadikan rujukan sahaja. Saya bina semula sebagai grafik gerak (aras muncul satu-satu, laluan Abu menyala). Gambar asal tidak dipakai kerana tajuk aras 2–4 hampir tidak kelihatan."
+  ],
+  [
+   "Peringkat atau Level",
+   "Gambar B-roll tulis “Level 1, Level 2”, tetapi Farhan sebut “peringkat 1, 2, 3” dan “level yang kedua” untuk Abu. Grafik guna “Peringkat 1/2/3” ikut sebutan. Setuju?"
+  ],
+  [
+   "Kelas atau Class",
+   "Gambar B-roll tulis “4. CLASS”. Grafik guna “KELAS” ikut sebutan."
+  ],
+  [
+   "Ejaan nama kelas",
+   "Transkrip: “kelas adwira, kelas wira, kelas satria”. Saya eja Adiwira, Wira, Satria. Sahkan ejaan Adiwira."
+  ],
+  [
+   "Ayat 1:27",
+   "Transkrip: “dia bergantung kepada… Ada setiap institusi”. Mungkin “pada setiap institusi”. Sahkan."
+  ],
+  [
+   "CTA",
+   "Skrip bertanda TOFU + Tutorial, jadi end card guna CTA TOFU “Follow untuk tips urus yuran sekolah”. Farhan juga ajak penonton “kongsikan dengan kami”; jika mahu CTA BOFU “Hubungi kami untuk demo sistem Yuran.my”, beritahu."
+  ],
+  [
+   "Durasi",
+   "±2:08, melebihi TOFU 20–45 s. Dikekalkan penuh seperti video tutorial sebelum ini; dicatat dalam log."
+  ],
+  [
+   "ID",
+   "Cadangan YM-F-014 (YM-F-013 dipakai untuk tutorial install app)."
+  ],
+  [
+   "Tiada rujukan gaya",
+   "Masih tiada rujukan-gaya-*.mp4 dalam BRAND/. Saya ikut gaya YM-F-013 yang telah diluluskan."
+  ]
+ ],
+ "mus_title": "Muzik: instrumental cozy (versi baharu)",
+ "mus_note": "Sampel 40 s, dijana sendiri: keluarga bunyi sama dengan YM-F-013 tetapi melodi baharu dan sedikit lebih rancak (82 BPM). Bebas hak cipta. Dalam video: −27 dB dengan ducking di bawah suara.",
+ "style": [
+  [
+   "Grafik struktur data",
+   "Latar biru #2A3B8F dengan grid titik halus. Empat aras berlabel nombor biru #29ABE2; kad putih teks biru; garis penyambung dilukis dari aras atas ke bawah. Tidak bersepah, ikut guideline."
+  ],
+  [
+   "Laluan Abu",
+   "Kad yang tidak dipilih dimalapkan; kad terpilih jadi biru #29ABE2 teks putih; garis laluan tebal menyala. Token bulat “A” bergerak turun mengikut sebutan."
+  ],
+  [
+   "Grafik atas talking head",
+   "Kad putih bernombor di kiri bawah dada, tidak menutup wajah. Caption kekal di tengah, atas 20% bawah skrin."
+  ],
+  [
+   "Caption",
+   "1–4 perkataan, Inter ExtraBold. Highlight biru: data, program, kategori, modul, kelas, tersusun, sistem, Yuran.my."
+  ],
+  [
+   "SFX",
+   "Pop dan tick lembut untuk kad, swoosh lembut ke grafik penuh, ding lembut pada “Nampak tak kaitan dia?”. Tiada glitch atau shake."
+  ],
+  [
+   "Warna & audio",
+   "Grade ringan (kontras +4%, saturasi +5%, warna kulit asli). Denoise ringan, −14 LUFS, −1 dBTP."
+  ]
+ ],
+ "tt": "Sebelum guna sistem yuran, susun data institusi dulu: Program, Kategori, Modul dan Kelas. Ini contoh macam mana semuanya berkait.",
+ "hs": [
+  "#YuranMy",
+  "#SistemYuran",
+  "#PengurusanSekolah",
+  "#TutorialApp",
+  "#KAFA"
+ ],
+ "hook_note": "Hook thumbnail: “SUSUN DATA DULU, BARU GUNA SISTEM”. Alternatif: “4 DATA WAJIB SEBELUM GUNA SISTEM”, “DATA BERSEPAH, SISTEM TERSEKAT”.",
+ "tx": [
+  [
+   "0:00",
+   "Untuk institusi yang nak menggunakan sistem Yuran.my, ada satu perkara yang kita kena sediakan dulu sebelum kita gunakan sistem."
+  ],
+  [
+   "0:06",
+   "Itulah namanya data untuk setiap institusi."
+  ],
+  [
+   "0:10",
+   "Kenapa data ni penting?"
+  ],
+  [
+   "0:11",
+   "Tanpa data yang tersusun dengan baik, sistem pun tak dapat nak run dengan baik."
+  ],
+  [
+   "0:15",
+   "Ada beberapa perkara ataupun komponen yang perlu difahami."
+  ],
+  [
+   "0:18",
+   "Ini saya nak kongsikan apa komponen-komponen ataupun perkara-perkara."
+  ],
+  [
+   "0:22",
+   "Yang pertama, perlu ada program."
+  ],
+  [
+   "0:23",
+   "Yang kedua, kena ada kategori."
+  ],
+  [
+   "0:25",
+   "Yang ketiga, kena ada modul."
+  ],
+  [
+   "0:27",
+   "Dan yang keempat, kena ada kelas."
+  ],
+  [
+   "0:28",
+   "Keempat-empat perkara ni berkait rapat supaya sistem tu berjalan dengan smooth."
+  ],
+  [
+   "0:33",
+   "Ini saya nak bawakan satu contoh macam mana perkara-perkara ni ataupun komponen-komponen ni berkait rapat."
+  ],
+  [
+   "0:38",
+   "Sebagai contoh, kita ada program tadi kan?"
+  ],
+  [
+   "0:40",
+   "Program tu bahasa Arab."
+  ],
+  [
+   "0:42",
+   "Di bawah program tu, kita ada kategori."
+  ],
+  [
+   "0:44",
+   "Kategori ni kita boleh pecahkan kepada sesi petang ataupun sesi pagi."
+  ],
+  [
+   "0:48",
+   "Dan modul tu pula kita boleh pecahkan by peringkat."
+  ],
+  [
+   "0:50",
+   "Peringkat 1, ataupun peringkat 2, ataupun peringkat 3."
+  ],
+  [
+   "0:54",
+   "Contoh je lah ya."
+  ],
+  [
+   "0:55",
+   "Selepas kita dah readykan modul tu,"
+  ],
+  [
+   "0:57",
+   "kita akan masuk bahagian kelas."
+  ],
+  [
+   "0:59",
+   "Kelas-kelas ni boleh kita kategorikan sebagai kelas 1, kelas 2, kelas 3, kelas 4."
+  ],
+  [
+   "1:03",
+   "Ni nama-nama ni boleh ketukar."
+  ],
+  [
+   "1:05",
+   "Kelas [adwira], kelas wira, kelas satria."
+  ],
+  [
+   "1:08",
+   "Macam-macam lah kita boleh set up."
+  ],
+  [
+   "1:09",
+   "Contoh satu pelajar, nama dia Abu."
+  ],
+  [
+   "1:11",
+   "Abu ni join program bahasa Arab."
+  ],
+  [
+   "1:13",
+   "Kemudian, dia masuk sesi petang."
+  ],
+  [
+   "1:15",
+   "Sesi petang tu pula, dia masuk level yang kedua."
+  ],
+  [
+   "1:18",
+   "Dan dia dimasukkan di dalam kelas yang pertama."
+  ],
+  [
+   "1:21",
+   "Nampak tak kaitan dia?"
+  ],
+  [
+   "1:22",
+   "Inilah simulasi macam mana data tu tersusun."
+  ],
+  [
+   "1:25",
+   "Tetapi, dia bergantung kepada..."
+  ],
+  [
+   "1:27",
+   "[Ada] setiap institusi."
+  ],
+  [
+   "1:28",
+   "Macam mana institusi itu melakukan pengurusan operasi dia macam mana."
+  ],
+  [
+   "1:33",
+   "Ada institusi yang banyak program."
+  ],
+  [
+   "1:35",
+   "Contohnya, program bahasa Arab secara intensif."
+  ],
+  [
+   "1:38",
+   "Program bahasa Arab secara mingguan."
+  ],
+  [
+   "1:39",
+   "Program bahasa Arab secara bulanan."
+  ],
+  [
+   "1:41",
+   "Dan ada pula banyak sesi."
+  ],
+  [
+   "1:43",
+   "Sesi pagi, sesi petang, sesi malam."
+  ],
+  [
+   "1:46",
+   "Macam-macam kan?"
+  ],
+  [
+   "1:47",
+   "Jadi, cuba kongsikan dengan kami..."
+  ],
+  [
+   "1:49",
+   "Macam mana operasi pengurusan data untuk institusi anda."
+  ],
+  [
+   "1:53",
+   "Kita akan bantu untuk kenal pasti..."
+  ],
+  [
+   "1:55",
+   "Macam mana nak susun data tu..."
+  ],
+  [
+   "1:57",
+   "menggunakan sistem Yuran.my"
+  ],
+  [
+   "1:58",
+   "Selepas data dah tersusun,"
+  ],
+  [
+   "2:00",
+   "barulah kita boleh gunakan sistem."
+  ],
+  [
+   "2:02",
+   "Get it?"
+  ],
+  [
+   "2:02",
+   "Selamat menggunakan sistem Yuran.my"
+  ]
+ ]
+}
