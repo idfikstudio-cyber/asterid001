@@ -29,7 +29,7 @@ im = raw(123.5); g = Image.new("L", (1, H), 0)
 for y in range(900, H): g.putpixel((0, y), int(235 * (y - 900) / (H - 900)))
 im.paste(Image.new("RGBA", (W, H), T.INK + (255,)), (0, 0), g.resize((W, H))); d = ImageDraw.Draw(im)
 d.rounded_rectangle((80, 1020, 470, 1100), 40, fill=T.B2); d.text((275, 1060), "TUTORIAL", font=F(T.FX, 50), fill=T.WH, anchor="mm")
-for i, (t, c) in enumerate([("SUSUN DATA", T.WH), ("DULU, BARU", T.WH), ("GUNA SISTEM", T.B2)]):
+for i, (t, c) in enumerate([("MACAM MANA", T.WH), ("NAK SUSUN", T.WH), ("DATA", T.B2)]):
     d.text((80, 1130 + i * 108), t, font=F(T.FX, 96), fill=c, stroke_width=4, stroke_fill=T.INK)
 save(im, "a0_thumb")
 # 1 intro + label

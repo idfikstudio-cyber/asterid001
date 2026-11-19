@@ -1,6 +1,6 @@
 {
  "title": "YM-F-014 Storyboard Susun Data",
- "eyebrow": "Yuran.my · TOFU + Tutorial · Evergreen · Draf storyboard v2",
+ "eyebrow": "Yuran.my · TOFU + Tutorial · Evergreen · Draf storyboard v3",
  "h1": "Macam mana nak susun data institusi dalam Yuran.my",
  "pills": [
   "Menunggu kelulusan storyboard",
@@ -25,7 +25,7 @@
    "w": 1.5,
    "title": "Cover 1 saat",
    "say": "—",
-   "vis": "Frame Farhan senyum (2:03) + hook 3 baris dalam safe zone kiri, pil TUTORIAL.",
+   "vis": "Frame Farhan senyum (2:03) + hook ikut tajuk video “MACAM MANA NAK SUSUN DATA” dalam 3 baris (DATA biru aksen), safe zone kiri, pil TUTORIAL.",
    "anim": "Statik. Tiada logo.",
    "src": "Raw 2:03"
   },
@@ -322,7 +322,7 @@
   "#TutorialApp",
   "#KAFA"
  ],
- "hook_note": "Hook thumbnail: “SUSUN DATA DULU, BARU GUNA SISTEM”. Alternatif: “4 DATA WAJIB SEBELUM GUNA SISTEM”, “DATA BERSEPAH, SISTEM TERSEKAT”.",
+ "hook_note": "Hook thumbnail ikut tajuk video: “MACAM MANA NAK SUSUN DATA” (pil TUTORIAL di atas).",
  "tx": [
   [
    "0:00",
