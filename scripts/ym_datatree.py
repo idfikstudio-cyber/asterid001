@@ -27,11 +27,17 @@ LEVELS = [
 ]
 NODE_H = 124
 
+TREE_X0, TREE_W = 300, 710
+
 def node_boxes(lv):
-    n = len(lv["items"]); gap = 22; total = 940
-    w = (total - gap * (n - 1)) / n
-    x0 = (1080 - total) / 2; y = lv["y"] + 52
-    return [(x0 + i * (w + gap), y, x0 + i * (w + gap) + w, y + NODE_H) for i in range(n)]
+    n = len(lv["items"]); gap = 22
+    w = (TREE_W - gap * (n - 1)) / n
+    y = lv["y"] + 40
+    return [(TREE_X0 + i * (w + gap), y, TREE_X0 + i * (w + gap) + w, y + NODE_H) for i in range(n)]
+
+def parent_of(li, bi):
+    pb = node_boxes(LEVELS[li - 1]); n = len(LEVELS[li]["items"])
+    return min(len(pb) - 1, int(bi * len(pb) / n))
 
 def bg_blue(W, H):
     im = Image.new("RGB", (W, H), B1); d = ImageDraw.Draw(im)
@@ -53,11 +59,11 @@ def tree(img, t, reveal, names=None, path=None, path_t=None, title_a=1.0, items=
         t0 = reveal[li]
         if t is None or t0 is None or t < t0: continue
         a = ramp(t, t0, 0.3)
-        # label aras
-        lab = f"{lv['n']}  {lv['name']}"
-        d.rounded_rectangle((S(70), S(lv["y"]) - S(4), S(70) + S(40), S(lv["y"]) + S(36)), S(10), fill=B2 + (int(255 * a),))
-        d.text((S(90), S(lv["y"]) + S(16)), str(lv["n"]), font=F(FX, 28), fill=WH + (int(255 * a),), anchor="mm")
-        d.text((S(126), S(lv["y"]) + S(16)), lv["name"], font=F(FX, 34), fill=WH + (int(255 * a),), anchor="lm")
+        # label aras: lajur kiri (x 70-280), berpusat pada baris kotak
+        cy = lv["y"] + 40 + NODE_H / 2
+        d.ellipse((S(70), S(cy - 52), S(118), S(cy - 4)), fill=B2 + (int(255 * a),))
+        d.text((S(94), S(cy - 28)), str(lv["n"]), font=F(FX, 30), fill=WH + (int(255 * a),), anchor="mm")
+        d.text((S(70), S(cy + 24)), lv["name"], font=F(FX, 30), fill=WH + (int(255 * a),), anchor="lm")
         boxes = node_boxes(lv)
         # penyambung dari aras atas
         if li > 0 and reveal[li - 1] is not None:
@@ -66,11 +72,12 @@ def tree(img, t, reveal, names=None, path=None, path_t=None, title_a=1.0, items=
                 it0 = items[li][bi] if items and li in items else t0 + bi * 0.12
                 ta = ramp(t, it0 - 0.15, 0.35)
                 if ta <= 0: continue
-                src = pb[min(len(pb) - 1, int(bi * len(pb) / len(boxes)))] if len(pb) > 1 else pb[0]
+                src = pb[parent_of(li, bi)]
                 if path is not None and path_t is not None and li < len(path) and path[li] == bi and t >= path_t[li]:
                     src = pb[path[li - 1]]
+                # gaya bas: turun dari induk ke garis bas tepat atas aras anak, mendatar, turun ke anak
                 sx, sy = (src[0] + src[2]) / 2, src[3]; ex, ey = (x0 + x1) / 2, y0
-                my = (sy + ey) / 2
+                my = ey - 40
                 pts = [(sx, sy), (sx, my), (ex, my), (ex, ey)]
                 L = [abs(pts[i + 1][0] - pts[i][0]) + abs(pts[i + 1][1] - pts[i][1]) for i in range(3)]; tot = sum(L) * ta
                 cur = [pts[0]]
@@ -194,7 +201,7 @@ def chips_rows(img, t, rows, t_end, y=820):
 
 # ---------- simulasi Abu: langkah demi langkah ----------
 ABU_STEPS = [("PELAJAR", "Abu"), ("PROGRAM", "Bahasa Arab"), ("KATEGORI", "Sesi Petang"), ("MODUL", "Peringkat 2"), ("KELAS", "Kelas 1")]
-ABU_Y0, ABU_DY, ABU_H = 330, 205, 132
+ABU_Y0, ABU_DY, ABU_H = 400, 200, 132
 
 def _chev(d, cx, cy, s, col, w=6):
     d.line((S(cx - s), S(cy - s / 2), S(cx), S(cy + s / 2), S(cx + s), S(cy - s / 2)), fill=col, width=S(w), joint="curve")

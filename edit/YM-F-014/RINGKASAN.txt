@@ -1,4 +1,4 @@
-RINGKASAN EDIT — YM-F-014_Macam mana nak susun data (preview v1)
+RINGKASAN EDIT — YM-F-014_Macam mana nak susun data (preview v2)
 Brand: Yuran.my | Spokesperson: Farhan | Tag skrip: TOFU
 Durasi: 127.5 s (1 s thumbnail + 125.0 s isi + 1.5 s end card)
 DNA: yuran-my/CLAUDE.md v2
@@ -139,7 +139,7 @@ DNA: yuran-my/CLAUDE.md v2
    0:12.10–0:16.00  Grafik: Empat kad bertaburan senget + label hitam “Data bersepah”
    0:24.00–0:39.20  Kad: Kad bernombor 1 Program, 2 Kategori, 3 Modul, 4 Kelas muncul ikut sebutan
    0:30.98–0:39.20  Garis: Garis biru menyambung kad 1→4 + pil “Berkait rapat”
-   0:39.40–1:10.60  Grafik penuh: Struktur data Yuran.my: aras Program, Kategori, Modul, Kelas dibina ikut sebutan; Farhan dalam PIP
+   0:39.40–1:10.60  Grafik penuh: Struktur data Yuran.my: aras Program, Kategori, Modul, Kelas dibina ikut sebutan; Farhan dalam bulatan atas kanan
    1:06.74–1:10.60  Nama kelas: Kelas 1–3 bertukar Adiwira, Wira, Satria
    1:10.60–1:26.90  Grafik penuh: Simulasi pelajar: token Abu turun langkah demi langkah; kad terisi Bahasa Arab, Sesi Petang, Peringkat 2, Kelas 1
    1:22.30–1:26.90  Sorotan: Semua kad laluan Abu berbingkai putih (“Nampak tak kaitan dia?”)
@@ -203,3 +203,4 @@ DNA: yuran-my/CLAUDE.md v2
 
 Perubahan (ikut komen Farhan):
    - Storyboard v2–v3: simulasi Abu langkah demi langkah, skrin Jenis Institusi, hook thumbnail ikut tajuk video.
+   - Preview v2: garis penyambung struktur data tidak bertindih; bulatan Farhan sebaris dengan tajuk grafik.

@@ -53,9 +53,9 @@ def caption(img, r, mode):
     d = ImageDraw.Draw(img); base = 66 if mode == "talk" else 56; f = F(T.FX, base)
     ws = [(x["t"].rstrip("."), x["hl"]) for x in g["w"]]; sp = d.textlength(" ", font=f)
     tw = sum(d.textlength(t, font=f) for t, _ in ws) + sp * (len(ws) - 1)
-    maxw = S(900) if mode == "talk" else S(640)
+    maxw = S(900)
     if tw > maxw: f = F(T.FX, base * maxw / tw); sp = d.textlength(" ", font=f); tw = maxw
-    cx, cy = (W / 2, S(1340)) if mode == "talk" else (S(650), S(1440))
+    cx, cy = (W / 2, S(1340)) if mode == "talk" else (W / 2, S(1440))
     if mode != "talk": d.rounded_rectangle((cx - tw / 2 - S(26), cy - S(46), cx + tw / 2 + S(26), cy + S(46)), S(22), fill=INK)
     x = cx - tw / 2
     for t, hl in ws:
@@ -123,8 +123,8 @@ def talk_frame(r, rf):
     caption(img, r, "talk")
     return img
 
-def face_pip(rf):
-    cs = S(560); x0, y0 = S(FX_) - cs // 2, S(FY_) - cs // 2; d = S(230)
+def face_pip(rf, d=230):
+    cs = S(560); x0, y0 = S(FX_) - cs // 2, S(FY_) - cs // 2; d = S(d)
     f = rf.crop((x0, y0, x0 + cs, y0 + cs)).resize((d, d), Image.LANCZOS)
     m = Image.new("L", (d, d), 0); ImageDraw.Draw(m).ellipse((0, 0, d - 1, d - 1), fill=255); return f, m
 
@@ -137,7 +137,7 @@ def gfx_frame(g, r, rf):
         T.abu_flow(img, r, g["times"], glow_t=g["glow"], t_in=g["s"])
     elif g["kind"] == "inst":
         T.inst_list(img, r, g["s"], g["items"])
-    f, m = face_pip(rf); d = ImageDraw.Draw(img); px, py = S(40), S(1330)
+    f, m = face_pip(rf, 210); d = ImageDraw.Draw(img); px, py = S(820), S(140)   # sebaris dengan tajuk grafik
     d.ellipse((px - S(6), py - S(6), px + f.width + S(6), py + f.height + S(6)), fill=WH); img.paste(f, (px, py), m)
     caption(img, r, "gfx")
     return img

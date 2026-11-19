@@ -2,56 +2,282 @@
  "id": "YM-F-014",
  "topik": "Macam mana nak susun data",
  "tag": "TOFU",
- "ver": "v1",
- "status": "Preview v1",
+ "ver": "v2",
+ "status": "Preview v2",
  "tarikh": "19 Nov 2026",
- "edit_intro": "Cover 1 saat dengan tajuk video, kemudian Farhan menerangkan kenapa data perlu disusun. Kad grafik muncul atas talking head ikut sebutan (data bersepah, empat komponen, banyak program & sesi). Dari 0:39 hingga 1:34 video masuk tiga babak grafik skrin penuh: struktur data, simulasi pelajar Abu langkah demi langkah, dan Jenis Institusi, dengan Farhan dalam bulatan kecil. Penutup: kad tersusun “Sedia guna sistem” dan end card biru.",
+ "edit_intro": "Cover 1 saat dengan tajuk video, kemudian Farhan menerangkan kenapa data perlu disusun. Kad grafik muncul atas talking head ikut sebutan (data bersepah, empat komponen, banyak program & sesi). Dari 0:39 hingga 1:34 video masuk tiga babak grafik skrin penuh: struktur data, simulasi pelajar Abu langkah demi langkah, dan Jenis Institusi, dengan Farhan dalam bulatan kecil di atas kanan, sebaris dengan tajuk. Penutup: kad tersusun “Sedia guna sistem” dan end card biru.",
  "seg": [
-  [0, 1.0, "Thumbnail", "Hook “MACAM MANA NAK SUSUN DATA”."],
-  [1.0, 12.1, "Intro", "Data perlu disediakan sebelum guna sistem. Label nama."],
-  [12.1, 16.3, "Kenapa", "Kad data bertaburan: “Data bersepah”."],
-  [16.3, 39.4, "4 komponen", "Kad 1–4: Program, Kategori, Modul, Kelas; garis “Berkait rapat”."],
-  [39.4, 70.6, "Struktur data", "Grafik penuh: Bahasa Arab → Sesi Pagi/Petang → Peringkat 1–3 → Kelas 1–4 → Adiwira, Wira, Satria."],
-  [70.6, 86.9, "Simulasi Abu", "Abu → Program → Kategori → Modul → Kelas, langkah demi langkah."],
-  [86.9, 94.0, "Jenis Institusi", "Pusat Tuisyen, Sekolah Asrama, Sekolah Harian, Persatuan Penduduk, Kelab Sukan, Dan lain-lain."],
-  [94.0, 108.5, "Banyak program", "Cip Intensif/Mingguan/Bulanan dan Pagi/Petang/Malam."],
-  [108.5, 119.5, "Kongsi", "Farhan ajak kongsi cara pengurusan data."],
-  [119.5, 123.1, "Tersusun", "Kad tersusun: “Sedia guna sistem”."],
-  [123.1, 126.0, "Penutup", "Selamat menggunakan sistem Yuran.my."],
-  [126.0, 127.5, "End card", "Logo putih, Cara MUDAH Urus Yuran, CTA TOFU, hello@yuran.my."]
+  [
+   0,
+   1.0,
+   "Thumbnail",
+   "Hook “MACAM MANA NAK SUSUN DATA”."
+  ],
+  [
+   1.0,
+   12.1,
+   "Intro",
+   "Data perlu disediakan sebelum guna sistem. Label nama."
+  ],
+  [
+   12.1,
+   16.3,
+   "Kenapa",
+   "Kad data bertaburan: “Data bersepah”."
+  ],
+  [
+   16.3,
+   39.4,
+   "4 komponen",
+   "Kad 1–4: Program, Kategori, Modul, Kelas; garis “Berkait rapat”."
+  ],
+  [
+   39.4,
+   70.6,
+   "Struktur data",
+   "Grafik penuh: Bahasa Arab → Sesi Pagi/Petang → Peringkat 1–3 → Kelas 1–4 → Adiwira, Wira, Satria."
+  ],
+  [
+   70.6,
+   86.9,
+   "Simulasi Abu",
+   "Abu → Program → Kategori → Modul → Kelas, langkah demi langkah."
+  ],
+  [
+   86.9,
+   94.0,
+   "Jenis Institusi",
+   "Pusat Tuisyen, Sekolah Asrama, Sekolah Harian, Persatuan Penduduk, Kelab Sukan, Dan lain-lain."
+  ],
+  [
+   94.0,
+   108.5,
+   "Banyak program",
+   "Cip Intensif/Mingguan/Bulanan dan Pagi/Petang/Malam."
+  ],
+  [
+   108.5,
+   119.5,
+   "Kongsi",
+   "Farhan ajak kongsi cara pengurusan data."
+  ],
+  [
+   119.5,
+   123.1,
+   "Tersusun",
+   "Kad tersusun: “Sedia guna sistem”."
+  ],
+  [
+   123.1,
+   126.0,
+   "Penutup",
+   "Selamat menggunakan sistem Yuran.my."
+  ],
+  [
+   126.0,
+   127.5,
+   "End card",
+   "Logo putih, Cara MUDAH Urus Yuran, CTA TOFU, hello@yuran.my."
+  ]
  ],
  "mg": [
-  [0.3, 3.6, "Label", "Pil biru “Farhan · Yuran.my”"],
-  [11.1, 15.0, "Grafik", "Empat kad bertaburan senget + label hitam “Data bersepah”"],
-  [23.0, 38.2, "Kad", "Kad bernombor 1 Program, 2 Kategori, 3 Modul, 4 Kelas muncul ikut sebutan"],
-  [29.98, 38.2, "Garis", "Garis biru menyambung kad 1→4 + pil “Berkait rapat”"],
-  [38.4, 69.6, "Grafik penuh", "Struktur data Yuran.my: aras Program, Kategori, Modul, Kelas dibina ikut sebutan; Farhan dalam PIP"],
-  [65.74, 69.6, "Nama kelas", "Kelas 1–3 bertukar Adiwira, Wira, Satria"],
-  [69.6, 85.9, "Grafik penuh", "Simulasi pelajar: token Abu turun langkah demi langkah; kad terisi Bahasa Arab, Sesi Petang, Peringkat 2, Kelas 1"],
-  [81.3, 85.9, "Sorotan", "Semua kad laluan Abu berbingkai putih (“Nampak tak kaitan dia?”)"],
-  [85.9, 93.0, "Grafik penuh", "Jenis Institusi: 6 baris >> muncul satu demi satu"],
-  [95.7, 107.4, "Cip", "Program Bahasa Arab: Intensif, Mingguan, Bulanan; Sesi: Pagi, Petang, Malam"],
-  [118.5, 122.1, "Grafik", "Empat kad tersusun + label biru “Sedia guna sistem”"]
+  [
+   0.3,
+   3.6,
+   "Label",
+   "Pil biru “Farhan · Yuran.my”"
+  ],
+  [
+   11.1,
+   15.0,
+   "Grafik",
+   "Empat kad bertaburan senget + label hitam “Data bersepah”"
+  ],
+  [
+   23.0,
+   38.2,
+   "Kad",
+   "Kad bernombor 1 Program, 2 Kategori, 3 Modul, 4 Kelas muncul ikut sebutan"
+  ],
+  [
+   29.98,
+   38.2,
+   "Garis",
+   "Garis biru menyambung kad 1→4 + pil “Berkait rapat”"
+  ],
+  [
+   38.4,
+   69.6,
+   "Grafik penuh",
+   "Struktur data Yuran.my: aras Program, Kategori, Modul, Kelas dibina ikut sebutan; Farhan dalam bulatan atas kanan"
+  ],
+  [
+   65.74,
+   69.6,
+   "Nama kelas",
+   "Kelas 1–3 bertukar Adiwira, Wira, Satria"
+  ],
+  [
+   69.6,
+   85.9,
+   "Grafik penuh",
+   "Simulasi pelajar: token Abu turun langkah demi langkah; kad terisi Bahasa Arab, Sesi Petang, Peringkat 2, Kelas 1"
+  ],
+  [
+   81.3,
+   85.9,
+   "Sorotan",
+   "Semua kad laluan Abu berbingkai putih (“Nampak tak kaitan dia?”)"
+  ],
+  [
+   85.9,
+   93.0,
+   "Grafik penuh",
+   "Jenis Institusi: 6 baris >> muncul satu demi satu"
+  ],
+  [
+   95.7,
+   107.4,
+   "Cip",
+   "Program Bahasa Arab: Intensif, Mingguan, Bulanan; Sesi: Pagi, Petang, Malam"
+  ],
+  [
+   118.5,
+   122.1,
+   "Grafik",
+   "Empat kad tersusun + label biru “Sedia guna sistem”"
+  ]
  ],
  "done": [
-  ["Thumbnail", "Hook ikut tajuk video: MACAM MANA NAK SUSUN DATA (komen Farhan). PNG berasingan disediakan.", 0.0],
-  ["Simulasi Abu", "Abu bergerak langkah demi langkah: Abu → Program → Kategori → Modul → Kelas (komen Farhan).", 71.0],
-  ["Jenis Institusi", "Skrin biru penuh dengan 6 jenis institusi (komen Farhan).", 87.0],
-  ["Istilah", "Peringkat dan Kelas ikut sebutan Farhan (bukan Level / Class dalam gambar B-roll). Nama kelas dieja Adiwira, Wira, Satria.", 52.0],
-  ["Caption", "“Euron.my” → Yuran.my; 1:28 “Ada setiap institusi” → “pada setiap institusi”.", 88.5],
-  ["Muzik", "Instrumental cozy dijana sendiri (versi 82 BPM), −27 dB dengan ducking.", 5.0],
-  ["ID", "YM-F-014.", null]
+  [
+   "Garis penyambung (komen Farhan)",
+   "Label aras dipindah ke lajur kiri; garis gaya bas (induk → garis mendatar → anak) supaya tidak bertindih dengan label atau bersilang.",
+   56.0
+  ],
+  [
+   "Kedudukan gambar Farhan (komen Farhan)",
+   "Bulatan Farhan dipindah ke atas kanan, sebaris dengan tajuk grafik, supaya tidak menutup kotak Kelas. Sama untuk skrin Simulasi pelajar dan Jenis Institusi; caption dipusatkan.",
+   66.0
+  ],
+  [
+   "Thumbnail",
+   "Hook ikut tajuk video: MACAM MANA NAK SUSUN DATA (komen Farhan). PNG berasingan disediakan.",
+   0.0
+  ],
+  [
+   "Simulasi Abu",
+   "Abu bergerak langkah demi langkah: Abu → Program → Kategori → Modul → Kelas (komen Farhan).",
+   71.0
+  ],
+  [
+   "Jenis Institusi",
+   "Skrin biru penuh dengan 6 jenis institusi (komen Farhan).",
+   87.0
+  ],
+  [
+   "Istilah",
+   "Peringkat dan Kelas ikut sebutan Farhan (bukan Level / Class dalam gambar B-roll). Nama kelas dieja Adiwira, Wira, Satria.",
+   52.0
+  ],
+  [
+   "Caption",
+   "“Euron.my” → Yuran.my; 1:28 “Ada setiap institusi” → “pada setiap institusi”.",
+   88.5
+  ],
+  [
+   "Muzik",
+   "Instrumental cozy dijana sendiri (versi 82 BPM), −27 dB dengan ducking.",
+   5.0
+  ],
+  [
+   "ID",
+   "YM-F-014.",
+   null
+  ]
  ],
  "todo": [
-  ["Grafik data bersepah", "Dalam storyboard kad tersusun pada perkataan “tersusun” (0:13). Saya kekalkan bersepah sepanjang ayat “Tanpa data yang tersusun … sistem pun tak dapat nak run” supaya maksudnya tepat; kad tersusun ditunjuk di hujung (2:00). Beritahu jika mahu ikut storyboard.", 13.0],
-  ["Latar kabur talking head", "Belum ada bokeh pada bahagian Farhan (sama seperti YM-F-013).", 5.0],
-  ["Durasi", "127.5 s, melebihi sasaran TOFU 20–45 s. Dikekalkan penuh sebagai tutorial (diluluskan dalam storyboard); dicatat dalam log.", null]
+  [
+   "Grafik data bersepah",
+   "Dalam storyboard kad tersusun pada perkataan “tersusun” (0:13). Saya kekalkan bersepah sepanjang ayat “Tanpa data yang tersusun … sistem pun tak dapat nak run” supaya maksudnya tepat; kad tersusun ditunjuk di hujung (2:00). Beritahu jika mahu ikut storyboard.",
+   13.0
+  ],
+  [
+   "Latar kabur talking head",
+   "Belum ada bokeh pada bahagian Farhan (sama seperti YM-F-013).",
+   5.0
+  ],
+  [
+   "Durasi",
+   "127.5 s, melebihi sasaran TOFU 20–45 s. Dikekalkan penuh sebagai tutorial (diluluskan dalam storyboard); dicatat dalam log.",
+   null
+  ]
  ],
  "tt": "Sebelum guna sistem yuran, susun data institusi dulu: Program, Kategori, Modul dan Kelas. Ini contoh macam mana semuanya berkait.",
  "hs": "#YuranMy #SistemYuran #PengurusanSekolah #TutorialApp #KAFA",
  "ga": [
-  ["Colour grade", [["Kontras", "×1.04", "Gambar lebih jelas."], ["Kecerahan", "+0.015", "Cerah sedikit."], ["Saturasi", "×1.05", "Warna hidup sedikit; warna kulit asli dikekalkan."], ["Gamma", "1.02", "Bayang muka lebih terbuka."], ["Ketajaman", "unsharp 0.3", "Butiran muka lebih jelas."]]],
-  ["Audio", [["High-pass", "80 Hz", "Buang dengung rendah."], ["Denoise", "FFT, 10 dB", "Bunyi latar berkurang tanpa suara jadi “robot”."], ["Loudness suara", "−14 LUFS / −1 dBTP", "Ikut piawai TikTok."], ["Muzik", "−27 dB + ducking", "Instrumental cozy dijana sendiri, turun bila Farhan bercakap."], ["SFX", "pop, tick, klik, whoosh, ding", "Lembut; dijana sendiri, bebas hak cipta."]]]
+  [
+   "Colour grade",
+   [
+    [
+     "Kontras",
+     "×1.04",
+     "Gambar lebih jelas."
+    ],
+    [
+     "Kecerahan",
+     "+0.015",
+     "Cerah sedikit."
+    ],
+    [
+     "Saturasi",
+     "×1.05",
+     "Warna hidup sedikit; warna kulit asli dikekalkan."
+    ],
+    [
+     "Gamma",
+     "1.02",
+     "Bayang muka lebih terbuka."
+    ],
+    [
+     "Ketajaman",
+     "unsharp 0.3",
+     "Butiran muka lebih jelas."
+    ]
+   ]
+  ],
+  [
+   "Audio",
+   [
+    [
+     "High-pass",
+     "80 Hz",
+     "Buang dengung rendah."
+    ],
+    [
+     "Denoise",
+     "FFT, 10 dB",
+     "Bunyi latar berkurang tanpa suara jadi “robot”."
+    ],
+    [
+     "Loudness suara",
+     "−14 LUFS / −1 dBTP",
+     "Ikut piawai TikTok."
+    ],
+    [
+     "Muzik",
+     "−27 dB + ducking",
+     "Instrumental cozy dijana sendiri, turun bila Farhan bercakap."
+    ],
+    [
+     "SFX",
+     "pop, tick, klik, whoosh, ding",
+     "Lembut; dijana sendiri, bebas hak cipta."
+    ]
+   ]
+  ]
  ],
- "changes": ["Storyboard v2–v3: simulasi Abu langkah demi langkah, skrin Jenis Institusi, hook thumbnail ikut tajuk video."]
+ "changes": [
+  "Storyboard v2–v3: simulasi Abu langkah demi langkah, skrin Jenis Institusi, hook thumbnail ikut tajuk video.",
+  "Preview v2: garis penyambung struktur data tidak bertindih; bulatan Farhan sebaris dengan tajuk grafik."
+ ]
 }
