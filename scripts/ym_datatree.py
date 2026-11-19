@@ -42,7 +42,7 @@ def bg_blue(W, H):
         for x in range(S(60), W, S(60)): d.ellipse((x - 1, y - 1, x + 1, y + 1), fill=(70, 88, 170))
     return im
 
-def tree(img, t, reveal, names=None, path=None, path_t=None, title_a=1.0):
+def tree(img, t, reveal, names=None, path=None, path_t=None, title_a=1.0, items=None):
     """reveal: senarai masa mula setiap aras [t1,t2,t3,t4]; item dalam aras muncul berperingkat.
     names: gantian nama kelas {indeks: (nama_baru, t_mula)}. path: indeks nod terpilih setiap aras, path_t masa setiap langkah."""
     o = Image.new("RGBA", img.size, (0, 0, 0, 0)); d = ImageDraw.Draw(o)
@@ -63,7 +63,8 @@ def tree(img, t, reveal, names=None, path=None, path_t=None, title_a=1.0):
         if li > 0 and reveal[li - 1] is not None:
             pb = node_boxes(LEVELS[li - 1])
             for bi, (x0, y0, x1, y1) in enumerate(boxes):
-                ta = ramp(t, t0 + bi * 0.12, 0.35)
+                it0 = items[li][bi] if items and li in items else t0 + bi * 0.12
+                ta = ramp(t, it0 - 0.15, 0.35)
                 if ta <= 0: continue
                 src = pb[min(len(pb) - 1, int(bi * len(pb) / len(boxes)))] if len(pb) > 1 else pb[0]
                 if path is not None and path_t is not None and li < len(path) and path[li] == bi and t >= path_t[li]:
@@ -81,7 +82,8 @@ def tree(img, t, reveal, names=None, path=None, path_t=None, title_a=1.0):
                 col = B2 + (255,) if on_path else (150, 165, 225, int(200 * ta))
                 d.line([(S(x), S(y)) for x, y in cur], fill=col, width=S(8 if on_path else 4), joint="curve")
         for bi, (x0, y0, x1, y1) in enumerate(boxes):
-            ba = ramp(t, t0 + bi * 0.12, 0.3)
+            it0 = items[li][bi] if items and li in items else t0 + bi * 0.12
+            ba = ramp(t, it0, 0.3)
             if ba <= 0: continue
             dy = (1 - ba) * 24
             sel = path is not None and path_t is not None and li < len(path) and path[li] == bi and t >= path_t[li]
@@ -176,9 +178,11 @@ def chips_rows(img, t, rows, t_end, y=820):
     ae = ease((t_end - t) / 0.3)
     if t > t_end: return img
     yy = y
-    for title, items in rows:
-        if t < items[0][1] - 0.2: yy += 250; continue
-        ta = min(ramp(t, items[0][1] - 0.2, 0.3), ae)
+    for row in rows:
+        if len(row) == 3: title, tt0, items = row
+        else: (title, items), tt0 = row, row[1][0][1] - 0.2
+        if t < tt0: yy += 250; continue
+        ta = min(ramp(t, tt0, 0.3), ae)
         tc = card(title, fill=B1, ink=WH, fs=36); paste_a(img, tc, S(70), S(yy), ta)
         x = 70
         for txt, t0 in items:

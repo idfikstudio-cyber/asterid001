@@ -1,0 +1,205 @@
+RINGKASAN EDIT — YM-F-014_Macam mana nak susun data (preview v1)
+Brand: Yuran.my | Spokesperson: Farhan | Tag skrip: TOFU
+Durasi: 127.5 s (1 s thumbnail + 125.0 s isi + 1.5 s end card)
+DNA: yuran-my/CLAUDE.md v2
+
+1) TEKS HOOK / THUMBNAIL
+   "TUTORIAL MACAM MANA NAK SUSUN DATA" atas frame Farhan.
+
+2) CAPTION PENUH (ikut percakapan; masa ikut video preview)
+   [0:01.00] Untuk institusi yang
+   [0:02.14] nak menggunakan sistem
+   [0:03.10] Yuran.my
+   [0:04.06] ada satu perkara yang
+   [0:05.24] kita kena sediakan
+   [0:06.18] dulu sebelum kita gunakan
+   [0:07.40] sistem
+   [0:07.90] Itulah namanya data
+   [0:08.84] untuk setiap institusi
+   [0:11.00] Kenapa data ni penting?
+   [0:12.12] Tanpa data yang tersusun
+   [0:13.64] dengan baik
+   [0:14.30] sistem pun tak dapat
+   [0:15.30] nak run dengan baik
+   [0:16.28] Ada beberapa perkara
+   [0:17.56] ataupun komponen yang
+   [0:18.56] perlu difahami
+   [0:19.52] Ini saya nak kongsikan
+   [0:20.40] apa komponen-komponen
+   [0:21.92] ataupun perkara-perkara
+   [0:23.08] Yang pertama
+   [0:23.76] perlu ada program
+   [0:24.68] Yang kedua
+   [0:25.26] kena ada kategori
+   [0:26.30] Yang ketiga
+   [0:26.96] kena ada modul
+   [0:28.04] Dan yang keempat
+   [0:28.82] kena ada kelas
+   [0:29.64] Keempat-empat perkara
+   [0:30.80] ni berkait rapat supaya
+   [0:32.58] sistem tu berjalan
+   [0:33.70] dengan smooth
+   [0:34.30] Ini saya nak bawakan
+   [0:34.86] satu contoh macam mana
+   [0:36.24] perkara-perkara ni
+   [0:37.44] ataupun komponen-komponen
+   [0:38.54] ni berkait rapat
+   [0:39.44] Sebagai contoh
+   [0:40.26] kita ada program tadi
+   [0:41.20] kan?
+   [0:41.58] Program tu bahasa Arab
+   [0:43.02] Di bawah program tu
+   [0:44.16] kita ada kategori
+   [0:45.64] Kategori ni kita boleh
+   [0:46.68] pecahkan kepada sesi
+   [0:47.62] petang ataupun sesi
+   [0:48.78] pagi
+   [0:49.24] Dan modul tu pula
+   [0:50.02] kita boleh pecahkan
+   [0:50.98] by peringkat
+   [0:51.96] Peringkat 1
+   [0:53.00] ataupun peringkat 2
+   [0:54.46] ataupun peringkat 3
+   [0:55.82] Contoh je lah ya
+   [0:56.74] Selepas kita dah readykan
+   [0:57.86] modul tu
+   [0:58.54] kita akan masuk bahagian
+   [0:59.98] kelas
+   [1:00.36] Kelas-kelas ni boleh
+   [1:01.18] kita kategorikan sebagai
+   [1:02.36] kelas 1
+   [1:03.18] kelas 2
+   [1:03.82] kelas 3
+   [1:04.36] kelas 4
+   [1:04.96] Ni nama-nama ni boleh
+   [1:05.94] ketukar
+   [1:06.48] Kelas Adiwira
+   [1:07.36] kelas Wira
+   [1:08.20] kelas Satria
+   [1:09.04] Macam-macam lah kita
+   [1:10.16] boleh set up
+   [1:10.68] Contoh satu pelajar
+   [1:11.52] nama dia Abu
+   [1:12.38] Abu ni join program
+   [1:13.42] bahasa Arab
+   [1:14.54] Kemudian
+   [1:15.02] dia masuk sesi petang
+   [1:16.50] Sesi petang tu pula
+   [1:17.76] dia masuk level yang
+   [1:18.80] kedua
+   [1:19.28] Dan dia dimasukkan
+   [1:20.76] di dalam kelas yang
+   [1:21.62] pertama
+   [1:22.30] Nampak tak kaitan dia?
+   [1:23.56] Inilah simulasi macam
+   [1:25.08] mana data tu tersusun
+   [1:26.92] Tetapi
+   [1:27.40] dia bergantung kepada
+   [1:28.54] pada setiap institusi
+   [1:29.78] Macam mana institusi
+   [1:31.42] itu melakukan pengurusan
+   [1:32.96] operasi dia macam mana
+   [1:34.10] Ada institusi yang
+   [1:35.08] banyak program
+   [1:36.08] Contohnya
+   [1:36.74] program bahasa Arab
+   [1:37.64] secara intensif
+   [1:39.02] Program bahasa Arab
+   [1:40.00] secara mingguan
+   [1:40.98] Program bahasa Arab
+   [1:41.86] secara bulanan
+   [1:42.74] Dan ada pula banyak
+   [1:43.76] sesi
+   [1:44.40] Sesi pagi
+   [1:45.30] sesi petang
+   [1:46.24] sesi malam
+   [1:47.26] Macam-macam kan?
+   [1:48.50] Jadi
+   [1:48.86] cuba kongsikan dengan
+   [1:49.96] kami
+   [1:50.46] Macam mana operasi
+   [1:52.08] pengurusan data untuk
+   [1:53.72] institusi anda
+   [1:54.54] Kita akan bantu untuk
+   [1:55.62] kenal pasti
+   [1:56.40] Macam mana nak susun
+   [1:57.50] data tu
+   [1:58.54] menggunakan sistem
+   [1:58.90] Yuran.my Selepas data
+   [2:00.32] dah tersusun
+   [2:01.26] barulah kita boleh
+   [2:02.06] gunakan sistem
+   [2:03.18] Get it?
+   [2:03.78] Selamat menggunakan
+   [2:04.84] sistem Yuran.my
+
+3) SFX, ANIMASI, GRAFIK (masa ikut video preview)
+   0:00.00–0:01.00  Thumbnail: Hook “TUTORIAL MACAM MANA NAK SUSUN DATA” atas frame Farhan, gradien gelap bawah
+   0:01.30–0:04.60  Label: Pil biru “Farhan · Yuran.my”
+   0:12.10–0:16.00  Grafik: Empat kad bertaburan senget + label hitam “Data bersepah”
+   0:24.00–0:39.20  Kad: Kad bernombor 1 Program, 2 Kategori, 3 Modul, 4 Kelas muncul ikut sebutan
+   0:30.98–0:39.20  Garis: Garis biru menyambung kad 1→4 + pil “Berkait rapat”
+   0:39.40–1:10.60  Grafik penuh: Struktur data Yuran.my: aras Program, Kategori, Modul, Kelas dibina ikut sebutan; Farhan dalam PIP
+   1:06.74–1:10.60  Nama kelas: Kelas 1–3 bertukar Adiwira, Wira, Satria
+   1:10.60–1:26.90  Grafik penuh: Simulasi pelajar: token Abu turun langkah demi langkah; kad terisi Bahasa Arab, Sesi Petang, Peringkat 2, Kelas 1
+   1:22.30–1:26.90  Sorotan: Semua kad laluan Abu berbingkai putih (“Nampak tak kaitan dia?”)
+   1:26.90–1:34.00  Grafik penuh: Jenis Institusi: 6 baris >> muncul satu demi satu
+   1:36.70–1:48.40  Cip: Program Bahasa Arab: Intensif, Mingguan, Bulanan; Sesi: Pagi, Petang, Malam
+   1:59.50–2:03.10  Grafik: Empat kad tersusun + label biru “Sedia guna sistem”
+   2:06.00–2:07.50  End card: Latar biru #2A3B8F, logo putih, “Cara MUDAH Urus Yuran”, CTA “Follow untuk tips urus yuran sekolah”, hello@yuran.my
+   0:12.10  SFX whoosh lembut
+   0:24.00  SFX tick lembut
+   0:25.55  SFX tick lembut
+   0:27.40  SFX tick lembut
+   0:29.30  SFX tick lembut
+   0:30.98  SFX swoosh lembut
+   0:39.40  SFX whoosh lembut
+   0:42.20  SFX pop lembut
+   0:47.40  SFX pop lembut
+   0:48.60  SFX pop lembut
+   0:52.00  SFX pop lembut
+   0:53.50  SFX pop lembut
+   0:54.90  SFX pop lembut
+   1:02.40  SFX tick lembut
+   1:03.20  SFX tick lembut
+   1:03.80  SFX tick lembut
+   1:04.40  SFX tick lembut
+   1:06.74  SFX klik lembut
+   1:07.78  SFX klik lembut
+   1:08.48  SFX klik lembut
+   1:11.90  SFX pop lembut
+   1:13.20  SFX pop lembut
+   1:15.60  SFX pop lembut
+   1:18.20  SFX pop lembut
+   1:21.10  SFX pop lembut
+   1:22.30  SFX ding lembut
+   1:26.90  SFX whoosh lembut
+   1:27.60  SFX tick lembut
+   1:28.70  SFX tick lembut
+   1:29.80  SFX tick lembut
+   1:30.80  SFX tick lembut
+   1:31.80  SFX tick lembut
+   1:32.80  SFX tick lembut
+   1:38.26  SFX pop lembut
+   1:40.42  SFX pop lembut
+   1:42.22  SFX pop lembut
+   1:44.74  SFX pop lembut
+   1:45.54  SFX pop lembut
+   1:46.42  SFX pop lembut
+   2:00.66  SFX pop lembut
+   2:02.00  SFX ding lembut
+
+4) CTA
+   End card: "Cara MUDAH Urus Yuran" + "Follow untuk tips urus yuran sekolah" + hello@yuran.my (TOFU).
+
+5) PERLU SEMAK
+   - Grafik data bersepah: Dalam storyboard kad tersusun pada perkataan “tersusun” (0:13). Saya kekalkan bersepah sepanjang ayat “Tanpa data yang tersusun … sistem pun tak dapat nak run” supaya maksudnya tepat; kad tersusun ditunjuk di hujung (2:00). Beritahu jika mahu ikut storyboard.
+   - Latar kabur talking head: Belum ada bokeh pada bahagian Farhan (sama seperti YM-F-013).
+   - Durasi: 127.5 s, melebihi sasaran TOFU 20–45 s. Dikekalkan penuh sebagai tutorial (diluluskan dalam storyboard); dicatat dalam log.
+
+6) CAPTION TIKTOK
+   Sebelum guna sistem yuran, susun data institusi dulu: Program, Kategori, Modul dan Kelas. Ini contoh macam mana semuanya berkait.
+   #YuranMy #SistemYuran #PengurusanSekolah #TutorialApp #KAFA
+
+Perubahan (ikut komen Farhan):
+   - Storyboard v2–v3: simulasi Abu langkah demi langkah, skrin Jenis Institusi, hook thumbnail ikut tajuk video.
